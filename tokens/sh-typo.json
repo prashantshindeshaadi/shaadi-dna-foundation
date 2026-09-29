@@ -1,0 +1,1767 @@
+{
+  "modes": [
+    "Desktop",
+    "Mobile",
+    "Tablet"
+  ],
+  "tokens": {
+    "font-family/primary": {
+      "type": "string",
+      "description": "sh-typo/font-family/primary\nPurpose: Primary typeface for standard Shaadi interface text.\nPlatforms: Main font is the variable Lexend-SH VF (PostScript name LexendSHVF-Regular, one weight axis). Web: font-family 'Lexend-SH VF', system-ui, sans-serif, loaded from LexendSH-VF.woff2 · Android: res/font/lexendsh_vf.ttf on API 26+; below 26 use the static files · iOS: LexendSHVF-Regular with a wght variation. Static fallback: family 'Lexend-SH', one file per weight token (LexendSH-Regular, -Medium, -Bold, -Black), for Android below API 26, React Native, Flutter and email. Lexend-SH is Shaadi's build of Lexend: ss01 double-storey 'a' and 'g' are the defaults, serifed I/J kept. Files: sh-typo-kit.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:4",
+      "figmaType": "string",
+      "values": {
+        "Desktop": "Lexend-SH VF",
+        "Mobile": "Lexend-SH VF",
+        "Tablet": "Lexend-SH VF"
+      }
+    },
+    "weight/regular": {
+      "type": "number",
+      "description": "sh-typo/weight/regular\nPurpose: Default weight for body copy and long reading.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: LexendSH-Regular.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:6",
+      "figmaType": null,
+      "values": {
+        "Desktop": 360,
+        "Mobile": 360,
+        "Tablet": 360
+      }
+    },
+    "weight/medium": {
+      "type": "number",
+      "description": "sh-typo/weight/medium\nPurpose: Weight for titles, buttons, labels and controls needing more emphasis than Regular.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: LexendSH-Medium.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:7",
+      "figmaType": null,
+      "values": {
+        "Desktop": 480,
+        "Mobile": 480,
+        "Tablet": 480
+      }
+    },
+    "weight/bold": {
+      "type": "number",
+      "description": "sh-typo/weight/bold\nPurpose: Weight for section headings and uppercase metadata. Not for buttons or long body copy.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: LexendSH-Bold.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:8",
+      "figmaType": null,
+      "values": {
+        "Desktop": 600,
+        "Mobile": 600,
+        "Tablet": 600
+      }
+    },
+    "weight/black": {
+      "type": "number",
+      "description": "sh-typo/weight/black\nPurpose: Weight for display and high-emphasis headings only.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: LexendSH-Black.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:9",
+      "figmaType": null,
+      "values": {
+        "Desktop": 720,
+        "Mobile": 720,
+        "Tablet": 720
+      }
+    },
+    "letter-spacing/display-tight": {
+      "type": "number",
+      "description": "sh-typo/letter-spacing/display-tight\nPurpose: Tight tracking for expressive display text. Changes by mode.\nPlatforms: Absolute tracking in px, applied at the size of the style that uses it. Web and Android em = value ÷ that style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:10",
+      "figmaType": null,
+      "values": {
+        "Desktop": -0.9599999785423279,
+        "Mobile": -0.800000011920929,
+        "Tablet": -0.8799999952316284
+      }
+    },
+    "letter-spacing/heading-tight": {
+      "type": "number",
+      "description": "sh-typo/letter-spacing/heading-tight\nPurpose: Tight tracking for compact, confident headings.\nPlatforms: Absolute tracking in px, applied at the size of the style that uses it. Web and Android em = value ÷ that style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:11",
+      "figmaType": null,
+      "values": {
+        "Desktop": -0.1599999964237213,
+        "Mobile": -0.1599999964237213,
+        "Tablet": -0.1599999964237213
+      }
+    },
+    "letter-spacing/title-default": {
+      "type": "number",
+      "description": "sh-typo/letter-spacing/title-default\nPurpose: Standard tracking for interface titles.\nPlatforms: Absolute tracking in px, applied at the size of the style that uses it. Web and Android em = value ÷ that style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:12",
+      "figmaType": null,
+      "values": {
+        "Desktop": -0.10000000149011612,
+        "Mobile": -0.10000000149011612,
+        "Tablet": -0.10000000149011612
+      }
+    },
+    "letter-spacing/body-normal": {
+      "type": "number",
+      "description": "sh-typo/letter-spacing/body-normal\nPurpose: Tracking for readable standard body text.\nPlatforms: Absolute tracking in px, applied at the size of the style that uses it. Web and Android em = value ÷ that style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:13",
+      "figmaType": null,
+      "values": {
+        "Desktop": 0,
+        "Mobile": 0,
+        "Tablet": 0
+      }
+    },
+    "letter-spacing/uppercase-wide": {
+      "type": "number",
+      "description": "sh-typo/letter-spacing/uppercase-wide\nPurpose: Wide tracking for uppercase labels and metadata.\nPlatforms: Absolute tracking in px, applied at the size of the style that uses it. Web and Android em = value ÷ that style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:14",
+      "figmaType": null,
+      "values": {
+        "Desktop": 1,
+        "Mobile": 1,
+        "Tablet": 1
+      }
+    },
+    "display/font": {
+      "type": "string",
+      "description": "sh-typo/display/font\nPurpose: Controls font family for hero statements.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:15",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "display/weight": {
+      "type": "number",
+      "description": "sh-typo/display/weight\nPurpose: Controls font weight for hero statements.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:16",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/black"
+        },
+        "Mobile": {
+          "alias": "weight/black"
+        },
+        "Tablet": {
+          "alias": "weight/black"
+        }
+      }
+    },
+    "display/size": {
+      "type": "number",
+      "description": "sh-typo/display/size\nPurpose: Controls text size for hero statements. Changes by mode.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:17",
+      "figmaType": null,
+      "values": {
+        "Desktop": 48,
+        "Mobile": 40,
+        "Tablet": 44
+      }
+    },
+    "display/line-height": {
+      "type": "number",
+      "description": "sh-typo/display/line-height\nPurpose: Controls vertical rhythm for hero statements. Changes by mode.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:18",
+      "figmaType": null,
+      "values": {
+        "Desktop": 60,
+        "Mobile": 50,
+        "Tablet": 54
+      }
+    },
+    "display/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/display/letter-spacing\nPurpose: Controls character spacing for hero statements. Changes by mode.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:19",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/display-tight"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/display-tight"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/display-tight"
+        }
+      }
+    },
+    "heading/lg/font": {
+      "type": "string",
+      "description": "sh-typo/heading/lg/font\nPurpose: Controls font family for prominent page or section headings.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:20",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "heading/lg/weight": {
+      "type": "number",
+      "description": "sh-typo/heading/lg/weight\nPurpose: Controls font weight for prominent page or section headings.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:21",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/black"
+        },
+        "Mobile": {
+          "alias": "weight/black"
+        },
+        "Tablet": {
+          "alias": "weight/black"
+        }
+      }
+    },
+    "heading/lg/size": {
+      "type": "number",
+      "description": "sh-typo/heading/lg/size\nPurpose: Controls text size for prominent page or section headings. Changes by mode.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:22",
+      "figmaType": null,
+      "values": {
+        "Desktop": 40,
+        "Mobile": 32,
+        "Tablet": 36
+      }
+    },
+    "heading/lg/line-height": {
+      "type": "number",
+      "description": "sh-typo/heading/lg/line-height\nPurpose: Controls vertical rhythm for prominent page or section headings. Changes by mode.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:23",
+      "figmaType": null,
+      "values": {
+        "Desktop": 50,
+        "Mobile": 40,
+        "Tablet": 44
+      }
+    },
+    "heading/lg/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/heading/lg/letter-spacing\nPurpose: Controls character spacing for prominent page or section headings.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:24",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/heading-tight"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/heading-tight"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/heading-tight"
+        }
+      }
+    },
+    "heading/md/font": {
+      "type": "string",
+      "description": "sh-typo/heading/md/font\nPurpose: Controls font family for standard section headings.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:25",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "heading/md/weight": {
+      "type": "number",
+      "description": "sh-typo/heading/md/weight\nPurpose: Controls font weight for standard section headings.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:26",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/bold"
+        },
+        "Mobile": {
+          "alias": "weight/bold"
+        },
+        "Tablet": {
+          "alias": "weight/bold"
+        }
+      }
+    },
+    "heading/md/size": {
+      "type": "number",
+      "description": "sh-typo/heading/md/size\nPurpose: Controls text size for standard section headings. Changes by mode.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:27",
+      "figmaType": null,
+      "values": {
+        "Desktop": 32,
+        "Mobile": 24,
+        "Tablet": 28
+      }
+    },
+    "heading/md/line-height": {
+      "type": "number",
+      "description": "sh-typo/heading/md/line-height\nPurpose: Controls vertical rhythm for standard section headings. Changes by mode.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:28",
+      "figmaType": null,
+      "values": {
+        "Desktop": 40,
+        "Mobile": 32,
+        "Tablet": 36
+      }
+    },
+    "heading/md/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/heading/md/letter-spacing\nPurpose: Controls character spacing for standard section headings.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:29",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/heading-tight"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/heading-tight"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/heading-tight"
+        }
+      }
+    },
+    "heading/sm/font": {
+      "type": "string",
+      "description": "sh-typo/heading/sm/font\nPurpose: Controls font family for compact section headings.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:30",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "heading/sm/weight": {
+      "type": "number",
+      "description": "sh-typo/heading/sm/weight\nPurpose: Controls font weight for compact section headings.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:31",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/bold"
+        },
+        "Mobile": {
+          "alias": "weight/bold"
+        },
+        "Tablet": {
+          "alias": "weight/bold"
+        }
+      }
+    },
+    "heading/sm/size": {
+      "type": "number",
+      "description": "sh-typo/heading/sm/size\nPurpose: Controls text size for compact section headings. Changes by mode.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:32",
+      "figmaType": null,
+      "values": {
+        "Desktop": 24,
+        "Mobile": 20,
+        "Tablet": 20
+      }
+    },
+    "heading/sm/line-height": {
+      "type": "number",
+      "description": "sh-typo/heading/sm/line-height\nPurpose: Controls vertical rhythm for compact section headings. Changes by mode.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:33",
+      "figmaType": null,
+      "values": {
+        "Desktop": 32,
+        "Mobile": 28,
+        "Tablet": 28
+      }
+    },
+    "heading/sm/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/heading/sm/letter-spacing\nPurpose: Controls character spacing for compact section headings.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:34",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/heading-tight"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/heading-tight"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/heading-tight"
+        }
+      }
+    },
+    "title/lg/font": {
+      "type": "string",
+      "description": "sh-typo/title/lg/font\nPurpose: Controls font family for large page or card titles.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:35",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "title/lg/weight": {
+      "type": "number",
+      "description": "sh-typo/title/lg/weight\nPurpose: Controls font weight for large page or card titles.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:36",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/medium"
+        },
+        "Mobile": {
+          "alias": "weight/medium"
+        },
+        "Tablet": {
+          "alias": "weight/medium"
+        }
+      }
+    },
+    "title/lg/size": {
+      "type": "number",
+      "description": "sh-typo/title/lg/size\nPurpose: Controls text size for large page or card titles.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:37",
+      "figmaType": null,
+      "values": {
+        "Desktop": 17,
+        "Mobile": 17,
+        "Tablet": 17
+      }
+    },
+    "title/lg/line-height": {
+      "type": "number",
+      "description": "sh-typo/title/lg/line-height\nPurpose: Controls vertical rhythm for large page or card titles.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:38",
+      "figmaType": null,
+      "values": {
+        "Desktop": 24,
+        "Mobile": 24,
+        "Tablet": 24
+      }
+    },
+    "title/lg/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/title/lg/letter-spacing\nPurpose: Controls character spacing for large page or card titles.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:39",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/title-default"
+        }
+      }
+    },
+    "title/md/font": {
+      "type": "string",
+      "description": "sh-typo/title/md/font\nPurpose: Controls font family for standard card and list titles.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:40",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "title/md/weight": {
+      "type": "number",
+      "description": "sh-typo/title/md/weight\nPurpose: Controls font weight for standard card and list titles.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:41",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/medium"
+        },
+        "Mobile": {
+          "alias": "weight/medium"
+        },
+        "Tablet": {
+          "alias": "weight/medium"
+        }
+      }
+    },
+    "title/md/size": {
+      "type": "number",
+      "description": "sh-typo/title/md/size\nPurpose: Controls text size for standard card and list titles.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:42",
+      "figmaType": null,
+      "values": {
+        "Desktop": 15,
+        "Mobile": 15,
+        "Tablet": 15
+      }
+    },
+    "title/md/line-height": {
+      "type": "number",
+      "description": "sh-typo/title/md/line-height\nPurpose: Controls vertical rhythm for standard card and list titles.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:43",
+      "figmaType": null,
+      "values": {
+        "Desktop": 22,
+        "Mobile": 22,
+        "Tablet": 22
+      }
+    },
+    "title/md/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/title/md/letter-spacing\nPurpose: Controls character spacing for standard card and list titles.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:44",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/title-default"
+        }
+      }
+    },
+    "title/sm/font": {
+      "type": "string",
+      "description": "sh-typo/title/sm/font\nPurpose: Controls font family for compact row and card titles.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:45",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "title/sm/weight": {
+      "type": "number",
+      "description": "sh-typo/title/sm/weight\nPurpose: Controls font weight for compact row and card titles.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:46",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/medium"
+        },
+        "Mobile": {
+          "alias": "weight/medium"
+        },
+        "Tablet": {
+          "alias": "weight/medium"
+        }
+      }
+    },
+    "title/sm/size": {
+      "type": "number",
+      "description": "sh-typo/title/sm/size\nPurpose: Controls text size for compact row and card titles.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:47",
+      "figmaType": null,
+      "values": {
+        "Desktop": 13,
+        "Mobile": 13,
+        "Tablet": 13
+      }
+    },
+    "title/sm/line-height": {
+      "type": "number",
+      "description": "sh-typo/title/sm/line-height\nPurpose: Controls vertical rhythm for compact row and card titles.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:48",
+      "figmaType": null,
+      "values": {
+        "Desktop": 18,
+        "Mobile": 18,
+        "Tablet": 18
+      }
+    },
+    "title/sm/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/title/sm/letter-spacing\nPurpose: Controls character spacing for compact row and card titles.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:49",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/title-default"
+        }
+      }
+    },
+    "body/lg/default/font": {
+      "type": "string",
+      "description": "sh-typo/body/lg/default/font\nPurpose: Controls font family for long-form primary reading content.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:50",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "body/lg/default/weight": {
+      "type": "number",
+      "description": "sh-typo/body/lg/default/weight\nPurpose: Controls font weight for long-form primary reading content.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:51",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/regular"
+        },
+        "Mobile": {
+          "alias": "weight/regular"
+        },
+        "Tablet": {
+          "alias": "weight/regular"
+        }
+      }
+    },
+    "body/lg/default/size": {
+      "type": "number",
+      "description": "sh-typo/body/lg/default/size\nPurpose: Controls text size for long-form primary reading content.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:52",
+      "figmaType": null,
+      "values": {
+        "Desktop": 16,
+        "Mobile": 16,
+        "Tablet": 16
+      }
+    },
+    "body/lg/default/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/lg/default/line-height\nPurpose: Controls vertical rhythm for long-form primary reading content.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:53",
+      "figmaType": null,
+      "values": {
+        "Desktop": 24,
+        "Mobile": 24,
+        "Tablet": 24
+      }
+    },
+    "body/lg/default/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/lg/default/paragraph-spacing\nPurpose: Controls space between paragraphs for long-form primary reading content.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:54",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "body/lg/default/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/lg/default/letter-spacing\nPurpose: Controls character spacing for long-form primary reading content.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:55",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/body-normal"
+        }
+      }
+    },
+    "body/lg/tight/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/lg/tight/line-height\nPurpose: Controls vertical rhythm for long-form primary reading content in dense layouts. Use Default when space allows.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:56",
+      "figmaType": null,
+      "values": {
+        "Desktop": 22,
+        "Mobile": 22,
+        "Tablet": 22
+      }
+    },
+    "body/lg/tight/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/lg/tight/paragraph-spacing\nPurpose: Controls space between paragraphs for long-form primary reading content in dense layouts. Use Default when space allows.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:57",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "body/lg/loose/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/lg/loose/line-height\nPurpose: Controls vertical rhythm for long-form primary reading content with relaxed rhythm. Use Default for most interface copy.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:58",
+      "figmaType": null,
+      "values": {
+        "Desktop": 28,
+        "Mobile": 28,
+        "Tablet": 28
+      }
+    },
+    "body/lg/loose/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/lg/loose/paragraph-spacing\nPurpose: Controls space between paragraphs for long-form primary reading content with relaxed rhythm. Use Default for most interface copy.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:59",
+      "figmaType": null,
+      "values": {
+        "Desktop": 14,
+        "Mobile": 14,
+        "Tablet": 14
+      }
+    },
+    "body/md/default/font": {
+      "type": "string",
+      "description": "sh-typo/body/md/default/font\nPurpose: Controls font family for standard body copy and descriptions.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:60",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "body/md/default/weight": {
+      "type": "number",
+      "description": "sh-typo/body/md/default/weight\nPurpose: Controls font weight for standard body copy and descriptions.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:61",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/regular"
+        },
+        "Mobile": {
+          "alias": "weight/regular"
+        },
+        "Tablet": {
+          "alias": "weight/regular"
+        }
+      }
+    },
+    "body/md/default/size": {
+      "type": "number",
+      "description": "sh-typo/body/md/default/size\nPurpose: Controls text size for standard body copy and descriptions.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:62",
+      "figmaType": null,
+      "values": {
+        "Desktop": 14,
+        "Mobile": 14,
+        "Tablet": 14
+      }
+    },
+    "body/md/default/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/md/default/line-height\nPurpose: Controls vertical rhythm for standard body copy and descriptions.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:63",
+      "figmaType": null,
+      "values": {
+        "Desktop": 20,
+        "Mobile": 20,
+        "Tablet": 20
+      }
+    },
+    "body/md/default/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/md/default/paragraph-spacing\nPurpose: Controls space between paragraphs for standard body copy and descriptions.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:64",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "body/md/default/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/md/default/letter-spacing\nPurpose: Controls character spacing for standard body copy and descriptions.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:65",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/body-normal"
+        }
+      }
+    },
+    "body/md/tight/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/md/tight/line-height\nPurpose: Controls vertical rhythm for standard body copy and descriptions in dense layouts. Use Default when space allows.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:66",
+      "figmaType": null,
+      "values": {
+        "Desktop": 18,
+        "Mobile": 18,
+        "Tablet": 18
+      }
+    },
+    "body/md/tight/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/md/tight/paragraph-spacing\nPurpose: Controls space between paragraphs for standard body copy and descriptions in dense layouts. Use Default when space allows.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:67",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "body/md/loose/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/md/loose/line-height\nPurpose: Controls vertical rhythm for standard body copy and descriptions with relaxed rhythm. Use Default for most interface copy.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:68",
+      "figmaType": null,
+      "values": {
+        "Desktop": 24,
+        "Mobile": 24,
+        "Tablet": 24
+      }
+    },
+    "body/md/loose/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/md/loose/paragraph-spacing\nPurpose: Controls space between paragraphs for standard body copy and descriptions with relaxed rhythm. Use Default for most interface copy.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:69",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "body/sm/default/font": {
+      "type": "string",
+      "description": "sh-typo/body/sm/default/font\nPurpose: Controls font family for compact supporting copy.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:70",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "body/sm/default/weight": {
+      "type": "number",
+      "description": "sh-typo/body/sm/default/weight\nPurpose: Controls font weight for compact supporting copy.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:71",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/regular"
+        },
+        "Mobile": {
+          "alias": "weight/regular"
+        },
+        "Tablet": {
+          "alias": "weight/regular"
+        }
+      }
+    },
+    "body/sm/default/size": {
+      "type": "number",
+      "description": "sh-typo/body/sm/default/size\nPurpose: Controls text size for compact supporting copy.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:72",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "body/sm/default/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/sm/default/line-height\nPurpose: Controls vertical rhythm for compact supporting copy.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:73",
+      "figmaType": null,
+      "values": {
+        "Desktop": 18,
+        "Mobile": 18,
+        "Tablet": 18
+      }
+    },
+    "body/sm/default/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/sm/default/paragraph-spacing\nPurpose: Controls space between paragraphs for compact supporting copy.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:74",
+      "figmaType": null,
+      "values": {
+        "Desktop": 8,
+        "Mobile": 8,
+        "Tablet": 8
+      }
+    },
+    "body/sm/default/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/sm/default/letter-spacing\nPurpose: Controls character spacing for compact supporting copy.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:75",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/body-normal"
+        }
+      }
+    },
+    "body/sm/tight/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/sm/tight/line-height\nPurpose: Controls vertical rhythm for compact supporting copy in dense layouts. Use Default when space allows.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:76",
+      "figmaType": null,
+      "values": {
+        "Desktop": 16,
+        "Mobile": 16,
+        "Tablet": 16
+      }
+    },
+    "body/sm/tight/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/sm/tight/paragraph-spacing\nPurpose: Controls space between paragraphs for compact supporting copy in dense layouts. Use Default when space allows.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:77",
+      "figmaType": null,
+      "values": {
+        "Desktop": 8,
+        "Mobile": 8,
+        "Tablet": 8
+      }
+    },
+    "body/sm/loose/line-height": {
+      "type": "number",
+      "description": "sh-typo/body/sm/loose/line-height\nPurpose: Controls vertical rhythm for compact supporting copy with relaxed rhythm. Use Default for most interface copy.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:78",
+      "figmaType": null,
+      "values": {
+        "Desktop": 20,
+        "Mobile": 20,
+        "Tablet": 20
+      }
+    },
+    "body/sm/loose/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/sm/loose/paragraph-spacing\nPurpose: Controls space between paragraphs for compact supporting copy with relaxed rhythm. Use Default for most interface copy.\nPlatforms: Space between consecutive paragraphs. Web rem = value ÷ 16 · Android dp = value · iOS pt = value.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:79",
+      "figmaType": null,
+      "values": {
+        "Desktop": 10,
+        "Mobile": 10,
+        "Tablet": 10
+      }
+    },
+    "support/label/font": {
+      "type": "string",
+      "description": "sh-typo/support/label/font\nPurpose: Controls font family for control labels.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:80",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "support/label/weight": {
+      "type": "number",
+      "description": "sh-typo/support/label/weight\nPurpose: Controls font weight for control labels.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:81",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/medium"
+        },
+        "Mobile": {
+          "alias": "weight/medium"
+        },
+        "Tablet": {
+          "alias": "weight/medium"
+        }
+      }
+    },
+    "support/label/size": {
+      "type": "number",
+      "description": "sh-typo/support/label/size\nPurpose: Controls text size for control labels.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:82",
+      "figmaType": null,
+      "values": {
+        "Desktop": 11,
+        "Mobile": 11,
+        "Tablet": 11
+      }
+    },
+    "support/label/line-height": {
+      "type": "number",
+      "description": "sh-typo/support/label/line-height\nPurpose: Controls vertical rhythm for control labels.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:83",
+      "figmaType": null,
+      "values": {
+        "Desktop": 16,
+        "Mobile": 16,
+        "Tablet": 16
+      }
+    },
+    "support/label/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/support/label/letter-spacing\nPurpose: Controls character spacing for control labels.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:84",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/body-normal"
+        }
+      }
+    },
+    "support/micro/font": {
+      "type": "string",
+      "description": "sh-typo/support/micro/font\nPurpose: Controls font family for compact uppercase metadata.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:85",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "support/micro/weight": {
+      "type": "number",
+      "description": "sh-typo/support/micro/weight\nPurpose: Controls font weight for compact uppercase metadata.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:86",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/bold"
+        },
+        "Mobile": {
+          "alias": "weight/bold"
+        },
+        "Tablet": {
+          "alias": "weight/bold"
+        }
+      }
+    },
+    "support/micro/size": {
+      "type": "number",
+      "description": "sh-typo/support/micro/size\nPurpose: Controls text size for compact uppercase metadata.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:87",
+      "figmaType": null,
+      "values": {
+        "Desktop": 10,
+        "Mobile": 10,
+        "Tablet": 10
+      }
+    },
+    "support/micro/line-height": {
+      "type": "number",
+      "description": "sh-typo/support/micro/line-height\nPurpose: Controls vertical rhythm for compact uppercase metadata.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:88",
+      "figmaType": null,
+      "values": {
+        "Desktop": 14,
+        "Mobile": 14,
+        "Tablet": 14
+      }
+    },
+    "support/micro/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/support/micro/letter-spacing\nPurpose: Controls character spacing for compact uppercase metadata.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:89",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/uppercase-wide"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/uppercase-wide"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/uppercase-wide"
+        }
+      }
+    },
+    "support/meta/font": {
+      "type": "string",
+      "description": "sh-typo/support/meta/font\nPurpose: Controls font family for non-essential metadata.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:90",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "support/meta/weight": {
+      "type": "number",
+      "description": "sh-typo/support/meta/weight\nPurpose: Controls font weight for non-essential metadata.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:91",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/regular"
+        },
+        "Mobile": {
+          "alias": "weight/regular"
+        },
+        "Tablet": {
+          "alias": "weight/regular"
+        }
+      }
+    },
+    "support/meta/size": {
+      "type": "number",
+      "description": "sh-typo/support/meta/size\nPurpose: Controls text size for non-essential metadata: timestamps, counts, \"last seen\", secondary card details. Never use for form guidance, errors, prices, legal copy, or anything a member must read to act. For input helper text use body/sm/default.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:92",
+      "figmaType": null,
+      "values": {
+        "Desktop": 9,
+        "Mobile": 9,
+        "Tablet": 9
+      }
+    },
+    "support/meta/line-height": {
+      "type": "number",
+      "description": "sh-typo/support/meta/line-height\nPurpose: Controls vertical rhythm for non-essential metadata.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:93",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "support/meta/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/support/meta/letter-spacing\nPurpose: Controls character spacing for non-essential metadata.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:94",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/body-normal"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/body-normal"
+        }
+      }
+    },
+    "button/lg/font": {
+      "type": "string",
+      "description": "sh-typo/button/lg/font\nPurpose: Controls font family for lg button labels.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:95",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "button/lg/weight": {
+      "type": "number",
+      "description": "sh-typo/button/lg/weight\nPurpose: Controls font weight for lg button labels.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:96",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/medium"
+        },
+        "Mobile": {
+          "alias": "weight/medium"
+        },
+        "Tablet": {
+          "alias": "weight/medium"
+        }
+      }
+    },
+    "button/lg/size": {
+      "type": "number",
+      "description": "sh-typo/button/lg/size\nPurpose: Controls text size for lg button labels.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:97",
+      "figmaType": null,
+      "values": {
+        "Desktop": 16,
+        "Mobile": 16,
+        "Tablet": 16
+      }
+    },
+    "button/lg/line-height": {
+      "type": "number",
+      "description": "sh-typo/button/lg/line-height\nPurpose: Controls vertical rhythm for lg button labels.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:98",
+      "figmaType": null,
+      "values": {
+        "Desktop": 24,
+        "Mobile": 24,
+        "Tablet": 24
+      }
+    },
+    "button/lg/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/button/lg/letter-spacing\nPurpose: Controls character spacing for lg button labels.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:99",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/title-default"
+        }
+      }
+    },
+    "button/md/font": {
+      "type": "string",
+      "description": "sh-typo/button/md/font\nPurpose: Controls font family for md button labels.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:100",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "button/md/weight": {
+      "type": "number",
+      "description": "sh-typo/button/md/weight\nPurpose: Controls font weight for md button labels.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:101",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/medium"
+        },
+        "Mobile": {
+          "alias": "weight/medium"
+        },
+        "Tablet": {
+          "alias": "weight/medium"
+        }
+      }
+    },
+    "button/md/size": {
+      "type": "number",
+      "description": "sh-typo/button/md/size\nPurpose: Controls text size for md button labels.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:102",
+      "figmaType": null,
+      "values": {
+        "Desktop": 14,
+        "Mobile": 14,
+        "Tablet": 14
+      }
+    },
+    "button/md/line-height": {
+      "type": "number",
+      "description": "sh-typo/button/md/line-height\nPurpose: Controls vertical rhythm for md button labels.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:103",
+      "figmaType": null,
+      "values": {
+        "Desktop": 20,
+        "Mobile": 20,
+        "Tablet": 20
+      }
+    },
+    "button/md/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/button/md/letter-spacing\nPurpose: Controls character spacing for md button labels.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:104",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/title-default"
+        }
+      }
+    },
+    "button/sm/font": {
+      "type": "string",
+      "description": "sh-typo/button/sm/font\nPurpose: Controls font family for sm button labels.\nPlatforms: Uses sh-typo/font-family/primary; see that token for font files per platform.",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "id": "VariableID:4:105",
+      "figmaType": "string",
+      "values": {
+        "Desktop": {
+          "alias": "font-family/primary"
+        },
+        "Mobile": {
+          "alias": "font-family/primary"
+        },
+        "Tablet": {
+          "alias": "font-family/primary"
+        }
+      }
+    },
+    "button/sm/weight": {
+      "type": "number",
+      "description": "sh-typo/button/sm/weight\nPurpose: Controls font weight for sm button labels.\nPlatforms: Web font-weight = value · Android FontWeight(value) · iOS wght axis = value. Use the value as-is; don't replace it with a named weight like Normal or Bold. Static fallback: the LexendSH file for the weight token this aliases.",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "id": "VariableID:4:106",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "weight/medium"
+        },
+        "Mobile": {
+          "alias": "weight/medium"
+        },
+        "Tablet": {
+          "alias": "weight/medium"
+        }
+      }
+    },
+    "button/sm/size": {
+      "type": "number",
+      "description": "sh-typo/button/sm/size\nPurpose: Controls text size for sm button labels.\nPlatforms: Web rem = value ÷ 16 · Android sp = value · iOS pt = value.",
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "id": "VariableID:4:107",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "button/sm/line-height": {
+      "type": "number",
+      "description": "sh-typo/button/sm/line-height\nPurpose: Controls vertical rhythm for sm button labels.\nPlatforms: Web unitless line-height = value ÷ this style's size · Android sp = value · iOS pt = value (set as exact line height, not extra spacing).",
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "id": "VariableID:4:108",
+      "figmaType": null,
+      "values": {
+        "Desktop": 16,
+        "Mobile": 16,
+        "Tablet": 16
+      }
+    },
+    "button/sm/letter-spacing": {
+      "type": "number",
+      "description": "sh-typo/button/sm/letter-spacing\nPurpose: Controls character spacing for sm button labels.\nPlatforms: Absolute tracking in px. Web and Android em = value ÷ this style's size · iOS kern = value in pt.",
+      "scopes": [
+        "LETTER_SPACING"
+      ],
+      "id": "VariableID:4:109",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Mobile": {
+          "alias": "letter-spacing/title-default"
+        },
+        "Tablet": {
+          "alias": "letter-spacing/title-default"
+        }
+      }
+    }
+  }
+}

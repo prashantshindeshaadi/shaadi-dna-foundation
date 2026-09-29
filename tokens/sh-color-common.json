@@ -1,0 +1,3391 @@
+{
+  "modes": [
+    "Dark",
+    "Light"
+  ],
+  "tokens": {
+    "background/default": {
+      "type": "color",
+      "description": "sh-color-common/background/default\nPurpose: Base surface for standard pages and containers.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:295",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "background/soft": {
+      "type": "color",
+      "description": "sh-color-common/background/soft\nPurpose: Supporting surface with subtle separation inside a default layout.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1827:16014",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/800",
+          "targetId": "VariableID:42ff6c88aa37c5730f26e034f1cda5c90d6f28ea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/25",
+          "targetId": "VariableID:7a8e371c0f7839d271cc68390f1922982b171042/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "background/strong": {
+      "type": "color",
+      "description": "sh-color-common/background/strong\nPurpose: Non-interactive surface needing more separation than Soft.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:298",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/600",
+          "targetId": "VariableID:70f0297f1dd78c6ff3294603fe02b6cfbbf65e30/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/100",
+          "targetId": "VariableID:0610f26f827b37b9efe1dd4a1143278bedf8f7e0/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "background/selected": {
+      "type": "color",
+      "description": "sh-color-common/background/selected\nPurpose: Selected surface. Pair with a visible selected state cue.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:805:13590",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/900",
+          "targetId": "VariableID:118e261ee2bb7806a6d2dc5582e8c8767ceaa09d/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/25",
+          "targetId": "VariableID:d33b2fef44d6906c2e02a4fe5a14188058d10ea5/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "background/disabled": {
+      "type": "color",
+      "description": "sh-color-common/background/disabled\nPurpose: Inactive surface. Pair with disabled text, icons, and behaviour.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:297",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/700",
+          "targetId": "VariableID:40c73eda9ce630eafe60060903887efb66d94214/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/100",
+          "targetId": "VariableID:0610f26f827b37b9efe1dd4a1143278bedf8f7e0/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "background/transparent": {
+      "type": "color",
+      "description": "sh-color-common/background/transparent\nPurpose: Surface with no visible fill.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:376",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/transparent",
+          "targetId": "VariableID:969bee27270e1e813eecc3844c7fa082f59bf6e6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/transparent",
+          "targetId": "VariableID:969bee27270e1e813eecc3844c7fa082f59bf6e6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "background/inverse": {
+      "type": "color",
+      "description": "sh-color-common/background/inverse\nPurpose: High-contrast surface that reverses the current theme.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:805:13588",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/25",
+          "targetId": "VariableID:7a8e371c0f7839d271cc68390f1922982b171042/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "background/brand": {
+      "type": "color",
+      "description": "sh-color-common/background/brand\nPurpose: High-emphasis Shaadi brand surface, not a generic container.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:805:13589",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/700",
+          "targetId": "VariableID:8040ea4b5923aa5735773f306b1a512756eb5c7a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/500",
+          "targetId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/soft": {
+      "type": "color",
+      "description": "sh-color-common/border/soft\nPurpose: Subtle structural boundary for contained content.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:1826:15565",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/800",
+          "targetId": "VariableID:42ff6c88aa37c5730f26e034f1cda5c90d6f28ea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/100",
+          "targetId": "VariableID:0610f26f827b37b9efe1dd4a1143278bedf8f7e0/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/default": {
+      "type": "color",
+      "description": "sh-color-common/border/default\nPurpose: Standard boundary for everyday controls and containers.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:326",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/600",
+          "targetId": "VariableID:70f0297f1dd78c6ff3294603fe02b6cfbbf65e30/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/300",
+          "targetId": "VariableID:74d5e93b724067f9eb6c355ef09e5e30c54793ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/strong": {
+      "type": "color",
+      "description": "sh-color-common/border/strong\nPurpose: Boundary when Default is too subtle to define the surface.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:327",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/500",
+          "targetId": "VariableID:8c20a08e3285ff669ecab2a6c29982f0a707736c/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/500",
+          "targetId": "VariableID:8c20a08e3285ff669ecab2a6c29982f0a707736c/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/selected": {
+      "type": "color",
+      "description": "sh-color-common/border/selected\nPurpose: Selected boundary. Pair with another selected state cue.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:942:12461",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/400",
+          "targetId": "VariableID:a07593a207022ff5e5713bfe1b5b44e60a43c724/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/400",
+          "targetId": "VariableID:a07593a207022ff5e5713bfe1b5b44e60a43c724/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/disabled": {
+      "type": "color",
+      "description": "sh-color-common/border/disabled\nPurpose: Boundary for inactive controls.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:1108:13973",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/700",
+          "targetId": "VariableID:40c73eda9ce630eafe60060903887efb66d94214/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/200",
+          "targetId": "VariableID:c8e3bc0ebdf5da65aee48cc5a626139448708061/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/inverse": {
+      "type": "color",
+      "description": "sh-color-common/border/inverse\nPurpose: Boundary on inverse or contrasting surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:329",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/focus": {
+      "type": "color",
+      "description": "sh-color-common/border/focus\nPurpose: Keyboard focus boundary only, never a static border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:328",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/300",
+          "targetId": "VariableID:74d5e93b724067f9eb6c355ef09e5e30c54793ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/brand": {
+      "type": "color",
+      "description": "sh-color-common/border/brand\nPurpose: Intentional Shaadi brand boundary, not a generic container.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:330",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/400",
+          "targetId": "VariableID:a07593a207022ff5e5713bfe1b5b44e60a43c724/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/500",
+          "targetId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/primary": {
+      "type": "color",
+      "description": "sh-color-common/text/primary\nPurpose: Highest-priority readable text: titles, key values, and primary content.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:303",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/100",
+          "targetId": "VariableID:0610f26f827b37b9efe1dd4a1143278bedf8f7e0/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/secondary": {
+      "type": "color",
+      "description": "sh-color-common/text/secondary\nPurpose: Supporting text that remains easy to scan.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:304",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/300",
+          "targetId": "VariableID:74d5e93b724067f9eb6c355ef09e5e30c54793ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/700",
+          "targetId": "VariableID:40c73eda9ce630eafe60060903887efb66d94214/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/tertiary": {
+      "type": "color",
+      "description": "sh-color-common/text/tertiary\nPurpose: Low-priority supporting text that should not compete with primary content.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:305",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/400",
+          "targetId": "VariableID:0db5695a1b70b516a33024b4776c23f0b5679616/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/500",
+          "targetId": "VariableID:8c20a08e3285ff669ecab2a6c29982f0a707736c/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/disabled": {
+      "type": "color",
+      "description": "sh-color-common/text/disabled\nPurpose: Text for inactive controls. Pair with disabled behaviour.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:306",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/500",
+          "targetId": "VariableID:8c20a08e3285ff669ecab2a6c29982f0a707736c/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/400",
+          "targetId": "VariableID:0db5695a1b70b516a33024b4776c23f0b5679616/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/inverse": {
+      "type": "color",
+      "description": "sh-color-common/text/inverse\nPurpose: Text on background/inverse and other dark or contrasting surfaces. On brand surfaces use text/on-brand.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13567",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/brand": {
+      "type": "color",
+      "description": "sh-color-common/text/brand\nPurpose: Intentional Shaadi brand emphasis, not standard body text.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:308",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/300",
+          "targetId": "VariableID:3b0d347ef6228a5f51f7d27ceef2e3ebc0df8159/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/500",
+          "targetId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/inline-text": {
+      "type": "color",
+      "description": "sh-color-common/text/inline-text\nPurpose: Inline brand emphasis inside text, not a standalone action.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:309",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/300",
+          "targetId": "VariableID:3b0d347ef6228a5f51f7d27ceef2e3ebc0df8159/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/600",
+          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/on-brand": {
+      "type": "color",
+      "description": "sh-color-common/text/on-brand\nPurpose: Text on background/brand. Use this, not text/inverse, on brand surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1904:4320",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/primary": {
+      "type": "color",
+      "description": "sh-color-common/icon/primary\nPurpose: Icon for primary actions and navigation.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:314",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/100",
+          "targetId": "VariableID:0610f26f827b37b9efe1dd4a1143278bedf8f7e0/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/secondary": {
+      "type": "color",
+      "description": "sh-color-common/icon/secondary\nPurpose: Icon for standard supporting actions and metadata.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:315",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/300",
+          "targetId": "VariableID:74d5e93b724067f9eb6c355ef09e5e30c54793ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/700",
+          "targetId": "VariableID:40c73eda9ce630eafe60060903887efb66d94214/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/tertiary": {
+      "type": "color",
+      "description": "sh-color-common/icon/tertiary\nPurpose: Icon for low-emphasis supporting content.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:316",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/400",
+          "targetId": "VariableID:0db5695a1b70b516a33024b4776c23f0b5679616/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/500",
+          "targetId": "VariableID:8c20a08e3285ff669ecab2a6c29982f0a707736c/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/disabled": {
+      "type": "color",
+      "description": "sh-color-common/icon/disabled\nPurpose: Icon for inactive controls. Pair with disabled behaviour.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:317",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/500",
+          "targetId": "VariableID:8c20a08e3285ff669ecab2a6c29982f0a707736c/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/400",
+          "targetId": "VariableID:0db5695a1b70b516a33024b4776c23f0b5679616/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/inverse": {
+      "type": "color",
+      "description": "sh-color-common/icon/inverse\nPurpose: Icon on background/inverse and other dark or contrasting surfaces. On brand surfaces use icon/on-brand.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:805:13573",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/brand": {
+      "type": "color",
+      "description": "sh-color-common/icon/brand\nPurpose: Icon for intentional Shaadi brand emphasis.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:319",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/300",
+          "targetId": "VariableID:3b0d347ef6228a5f51f7d27ceef2e3ebc0df8159/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/500",
+          "targetId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/inline-icon": {
+      "type": "color",
+      "description": "sh-color-common/icon/inline-icon\nPurpose: Inline brand icon paired with text content.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:805:13572",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/300",
+          "targetId": "VariableID:3b0d347ef6228a5f51f7d27ceef2e3ebc0df8159/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/600",
+          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/on-brand": {
+      "type": "color",
+      "description": "sh-color-common/icon/on-brand\nPurpose: Icon on background/brand. Use this, not icon/inverse, on brand surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:1904:4321",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "overlay/scrim/default": {
+      "type": "color",
+      "description": "sh-color-common/overlay/scrim/default\nPurpose: Overlay behind modal content to reduce background attention.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:343",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.6399999856948853,
+          "hex": "#000000"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.6000000238418579,
+          "hex": "#000000"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 64
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 60.000003814697266
+            }
+          }
+        }
+      }
+    },
+    "overlay/image/base": {
+      "type": "color",
+      "description": "sh-color-common/overlay/image/base\nPurpose: Base image overlay for reliable content legibility.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16271",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "overlay/image/wash": {
+      "type": "color",
+      "description": "sh-color-common/overlay/image/wash\nPurpose: Subtle tonal wash over imagery.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16272",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.1599999964237213,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.1599999964237213,
+          "hex": "#0F172A"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 16
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 16
+            }
+          }
+        }
+      }
+    },
+    "overlay/image/content-bottom/start": {
+      "type": "color",
+      "description": "sh-color-common/overlay/image/content-bottom/start\nPurpose: Gradient start stop for bottom image content legibility. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16273",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0,
+          "hex": "#0F172A"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 0
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 0
+            }
+          }
+        }
+      }
+    },
+    "overlay/image/content-bottom/end": {
+      "type": "color",
+      "description": "sh-color-common/overlay/image/content-bottom/end\nPurpose: Gradient end stop for bottom image content legibility. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16274",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.8999999761581421,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.8999999761581421,
+          "hex": "#0F172A"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 90
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 90
+            }
+          }
+        }
+      }
+    },
+    "overlay/image/content-top/start": {
+      "type": "color",
+      "description": "sh-color-common/overlay/image/content-top/start\nPurpose: Gradient start stop for top image content legibility. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16275",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.8999999761581421,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.8999999761581421,
+          "hex": "#0F172A"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 90
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 90
+            }
+          }
+        }
+      }
+    },
+    "overlay/image/content-top/end": {
+      "type": "color",
+      "description": "sh-color-common/overlay/image/content-top/end\nPurpose: Gradient end stop for top image content legibility. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16276",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0,
+          "hex": "#0F172A"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 0
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 0
+            }
+          }
+        }
+      }
+    },
+    "button/primary/background/default/start": {
+      "type": "color",
+      "description": "sh-color-common/button/primary/background/default/start\nPurpose: Starting gradient stop for the default Primary button. Use with its matching stop only.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:348",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "pink/500",
+          "targetId": "VariableID:c87b7f5048cf4d97dd7b89287bbed13ab28f19a9/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "pink/500",
+          "targetId": "VariableID:c87b7f5048cf4d97dd7b89287bbed13ab28f19a9/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/primary/background/default/end": {
+      "type": "color",
+      "description": "sh-color-common/button/primary/background/default/end\nPurpose: Ending gradient stop for the default Primary button. Use with its matching stop only.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16023",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "orange/600",
+          "targetId": "VariableID:3590e876447a631d13f5315257ebe383e581909e/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "orange/500",
+          "targetId": "VariableID:c8792a77adbb6bdb468309009adbe128c3fd2bd2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/primary/background/hover/start": {
+      "type": "color",
+      "description": "sh-color-common/button/primary/background/hover/start\nPurpose: Starting gradient stop for the hover Primary button. Use with its matching stop only.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:350",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "pink/600",
+          "targetId": "VariableID:67ded50f8efe276525309259813aa9da1a6743c0/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "pink/600",
+          "targetId": "VariableID:67ded50f8efe276525309259813aa9da1a6743c0/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/primary/background/hover/end": {
+      "type": "color",
+      "description": "sh-color-common/button/primary/background/hover/end\nPurpose: Ending gradient stop for the hover Primary button. Use with its matching stop only.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16024",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "orange/700",
+          "targetId": "VariableID:48d883b482d08fca6c1fedacbc54625653e830f1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "orange/600",
+          "targetId": "VariableID:3590e876447a631d13f5315257ebe383e581909e/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/primary/background/pressed/start": {
+      "type": "color",
+      "description": "sh-color-common/button/primary/background/pressed/start\nPurpose: Starting gradient stop for the pressed Primary button. Use with its matching stop only.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:352",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "pink/700",
+          "targetId": "VariableID:c3a8e56c2167f9b073bebd896d7d53cb3cdecb81/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "pink/700",
+          "targetId": "VariableID:c3a8e56c2167f9b073bebd896d7d53cb3cdecb81/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/primary/background/pressed/end": {
+      "type": "color",
+      "description": "sh-color-common/button/primary/background/pressed/end\nPurpose: Ending gradient stop for the pressed Primary button. Use with its matching stop only.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16025",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "orange/800",
+          "targetId": "VariableID:2e41928bd05f558d118b3668f133a3e24c6e4f81/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "orange/700",
+          "targetId": "VariableID:48d883b482d08fca6c1fedacbc54625653e830f1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/primary/text/default": {
+      "type": "color",
+      "description": "sh-color-common/button/primary/text/default\nPurpose: Text on the Primary button surface.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:354",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/primary/icon/default": {
+      "type": "color",
+      "description": "sh-color-common/button/primary/icon/default\nPurpose: Icon on the Primary button surface.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:356",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/secondary/background/default": {
+      "type": "color",
+      "description": "sh-color-common/button/secondary/background/default\nPurpose: Default surface for the Secondary button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:358",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/800",
+          "targetId": "VariableID:ef6e80dc5275e4bd78de47cdb17e81402716f2ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/100",
+          "targetId": "VariableID:a9e47969a9e467048c3b12d28b6bfd8658890455/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/secondary/background/hover": {
+      "type": "color",
+      "description": "sh-color-common/button/secondary/background/hover\nPurpose: Hover surface for the Secondary button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:359",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/700",
+          "targetId": "VariableID:8040ea4b5923aa5735773f306b1a512756eb5c7a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/200",
+          "targetId": "VariableID:a2919f2cfaa9c387e5e67e4b1e19e1711d462814/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/secondary/background/pressed": {
+      "type": "color",
+      "description": "sh-color-common/button/secondary/background/pressed\nPurpose: Pressed surface for the Secondary button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:360",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/600",
+          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/300",
+          "targetId": "VariableID:3b0d347ef6228a5f51f7d27ceef2e3ebc0df8159/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/secondary/text/default": {
+      "type": "color",
+      "description": "sh-color-common/button/secondary/text/default\nPurpose: Text on the Secondary button surface.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:363",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/100",
+          "targetId": "VariableID:a9e47969a9e467048c3b12d28b6bfd8658890455/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/900",
+          "targetId": "VariableID:118e261ee2bb7806a6d2dc5582e8c8767ceaa09d/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/secondary/icon/default": {
+      "type": "color",
+      "description": "sh-color-common/button/secondary/icon/default\nPurpose: Icon on the Secondary button surface.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:365",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/100",
+          "targetId": "VariableID:a9e47969a9e467048c3b12d28b6bfd8658890455/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/900",
+          "targetId": "VariableID:118e261ee2bb7806a6d2dc5582e8c8767ceaa09d/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/tertiary/background/pressed": {
+      "type": "color",
+      "description": "sh-color-common/button/tertiary/background/pressed\nPurpose: Pressed surface for the Tertiary button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:369",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/600",
+          "targetId": "VariableID:70f0297f1dd78c6ff3294603fe02b6cfbbf65e30/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/200",
+          "targetId": "VariableID:c8e3bc0ebdf5da65aee48cc5a626139448708061/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/tertiary/background/default": {
+      "type": "color",
+      "description": "sh-color-common/button/tertiary/background/default\nPurpose: Default surface for the Tertiary button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16026",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/800",
+          "targetId": "VariableID:42ff6c88aa37c5730f26e034f1cda5c90d6f28ea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/50",
+          "targetId": "VariableID:f94a38875d81751d706d7e3e6e6e544028288e33/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/tertiary/background/hover": {
+      "type": "color",
+      "description": "sh-color-common/button/tertiary/background/hover\nPurpose: Hover surface for the Tertiary button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16027",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/700",
+          "targetId": "VariableID:40c73eda9ce630eafe60060903887efb66d94214/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/100",
+          "targetId": "VariableID:0610f26f827b37b9efe1dd4a1143278bedf8f7e0/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/tertiary/text/default": {
+      "type": "color",
+      "description": "sh-color-common/button/tertiary/text/default\nPurpose: Text on the Tertiary button surface.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1771:16028",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/300",
+          "targetId": "VariableID:74d5e93b724067f9eb6c355ef09e5e30c54793ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/800",
+          "targetId": "VariableID:42ff6c88aa37c5730f26e034f1cda5c90d6f28ea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/tertiary/icon/default": {
+      "type": "color",
+      "description": "sh-color-common/button/tertiary/icon/default\nPurpose: Icon on the Tertiary button surface.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:1771:16029",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/300",
+          "targetId": "VariableID:74d5e93b724067f9eb6c355ef09e5e30c54793ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/800",
+          "targetId": "VariableID:42ff6c88aa37c5730f26e034f1cda5c90d6f28ea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/ghost/text/default": {
+      "type": "color",
+      "description": "sh-color-common/button/ghost/text/default\nPurpose: Text on the Ghost button surface.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:380",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/200",
+          "targetId": "VariableID:a2919f2cfaa9c387e5e67e4b1e19e1711d462814/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/600",
+          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/ghost/icon/default": {
+      "type": "color",
+      "description": "sh-color-common/button/ghost/icon/default\nPurpose: Icon on the Ghost button surface.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:382",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/200",
+          "targetId": "VariableID:a2919f2cfaa9c387e5e67e4b1e19e1711d462814/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/600",
+          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/ghost/background/default": {
+      "type": "color",
+      "description": "sh-color-common/button/ghost/background/default\nPurpose: Default surface for the Ghost button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16030",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/transparent",
+          "targetId": "VariableID:969bee27270e1e813eecc3844c7fa082f59bf6e6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/transparent",
+          "targetId": "VariableID:969bee27270e1e813eecc3844c7fa082f59bf6e6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/ghost/background/hover": {
+      "type": "color",
+      "description": "sh-color-common/button/ghost/background/hover\nPurpose: Hover surface for the Ghost button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16031",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/900",
+          "targetId": "VariableID:118e261ee2bb7806a6d2dc5582e8c8767ceaa09d/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/25",
+          "targetId": "VariableID:d33b2fef44d6906c2e02a4fe5a14188058d10ea5/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "button/ghost/background/pressed": {
+      "type": "color",
+      "description": "sh-color-common/button/ghost/background/pressed\nPurpose: Pressed surface for the Ghost button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16032",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/800",
+          "targetId": "VariableID:ef6e80dc5275e4bd78de47cdb17e81402716f2ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/100",
+          "targetId": "VariableID:a9e47969a9e467048c3b12d28b6bfd8658890455/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/border/default": {
+      "type": "color",
+      "description": "sh-color-common/premium/border/default\nPurpose: Boundary for Premium surfaces and experiences.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:332",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/400",
+          "targetId": "VariableID:3fe7fdb8ae182820bc07884aeaa2482098921035/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/500",
+          "targetId": "VariableID:f9cd1b106cca67a5d05097f767b755d894185892/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/premium/text/on-soft\nPurpose: Text on Premium Soft surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:399",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/100",
+          "targetId": "VariableID:549dbc456aaf5edaaab2a8578c418b9008e5ec86/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/800",
+          "targetId": "VariableID:edf1adefda513b03fc8ccb9e84bec900b6a5291f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/premium/text/on-solid\nPurpose: Text on Premium Solid surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:391",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/icon/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/premium/icon/on-soft\nPurpose: Icon on Premium Soft surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:401",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/100",
+          "targetId": "VariableID:549dbc456aaf5edaaab2a8578c418b9008e5ec86/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/800",
+          "targetId": "VariableID:edf1adefda513b03fc8ccb9e84bec900b6a5291f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/icon/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/premium/icon/on-solid\nPurpose: Icon on Premium Solid surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:393",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/soft/default": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/soft/default\nPurpose: Premium Soft surface for its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:395",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/900",
+          "targetId": "VariableID:b7ba83779cde1cc0a4303dae963ddd4add422473/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/100",
+          "targetId": "VariableID:549dbc456aaf5edaaab2a8578c418b9008e5ec86/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/soft/hover": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/soft/hover\nPurpose: Premium Soft surface for its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:396",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/800",
+          "targetId": "VariableID:edf1adefda513b03fc8ccb9e84bec900b6a5291f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/200",
+          "targetId": "VariableID:13fcdb1db39934d7781f116f4d4afdb04b5d7e5f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/soft/pressed": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/soft/pressed\nPurpose: Premium Soft surface for its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:397",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/700",
+          "targetId": "VariableID:ec8bd670163558f824905dfef05f230537f334ec/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/300",
+          "targetId": "VariableID:2667f0ff49893b1f239819071d38e0088f1cabf4/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/solid/default/start": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/solid/default/start\nPurpose: Starting gradient stop for the default Premium Solid surface. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:385",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/400",
+          "targetId": "VariableID:3fe7fdb8ae182820bc07884aeaa2482098921035/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/300",
+          "targetId": "VariableID:2667f0ff49893b1f239819071d38e0088f1cabf4/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/solid/default/end": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/solid/default/end\nPurpose: Ending gradient stop for the default Premium Solid surface. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16033",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/500",
+          "targetId": "VariableID:f9cd1b106cca67a5d05097f767b755d894185892/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/400",
+          "targetId": "VariableID:3fe7fdb8ae182820bc07884aeaa2482098921035/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/solid/hover/start": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/solid/hover/start\nPurpose: Starting gradient stop for the hover Premium Solid surface. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16034",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/300",
+          "targetId": "VariableID:2667f0ff49893b1f239819071d38e0088f1cabf4/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/200",
+          "targetId": "VariableID:13fcdb1db39934d7781f116f4d4afdb04b5d7e5f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/solid/hover/end": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/solid/hover/end\nPurpose: Ending gradient stop for the hover Premium Solid surface. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16035",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/400",
+          "targetId": "VariableID:3fe7fdb8ae182820bc07884aeaa2482098921035/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/300",
+          "targetId": "VariableID:2667f0ff49893b1f239819071d38e0088f1cabf4/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/solid/pressed/start": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/solid/pressed/start\nPurpose: Starting gradient stop for the pressed Premium Solid surface. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16036",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/500",
+          "targetId": "VariableID:f9cd1b106cca67a5d05097f767b755d894185892/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/400",
+          "targetId": "VariableID:3fe7fdb8ae182820bc07884aeaa2482098921035/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/background/solid/pressed/end": {
+      "type": "color",
+      "description": "sh-color-common/premium/background/solid/pressed/end\nPurpose: Ending gradient stop for the pressed Premium Solid surface. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16037",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/600",
+          "targetId": "VariableID:e16e87a5d2446843fbe03f46383e5c05a9a6997c/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/500",
+          "targetId": "VariableID:f9cd1b106cca67a5d05097f767b755d894185892/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "sia/illustration/start": {
+      "type": "color",
+      "description": "sh-color-common/sia/illustration/start\nPurpose: Starting gradient stop for SIA illustration. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1833:1778",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/500",
+          "targetId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/400",
+          "targetId": "VariableID:a07593a207022ff5e5713bfe1b5b44e60a43c724/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "sia/illustration/end": {
+      "type": "color",
+      "description": "sh-color-common/sia/illustration/end\nPurpose: Ending gradient stop for SIA illustration. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1833:1779",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/500",
+          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/400",
+          "targetId": "VariableID:38d14cd5a0f27caa884c52262bd893a13e20e7c1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "sia/card/background/start": {
+      "type": "color",
+      "description": "sh-color-common/sia/card/background/start\nPurpose: Background starting gradient stop for SIA cards. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1833:1780",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/900",
+          "targetId": "VariableID:118e261ee2bb7806a6d2dc5582e8c8767ceaa09d/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/50",
+          "targetId": "VariableID:33d4c2e7c0c9fed39e84ae0e106ce018e5525f58/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "sia/card/background/end": {
+      "type": "color",
+      "description": "sh-color-common/sia/card/background/end\nPurpose: Background ending gradient stop for SIA cards. Use with its matching stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1833:1781",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/900",
+          "targetId": "VariableID:c14e93dfc6057609224c8d39d37a5cafe24b20f2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/50",
+          "targetId": "VariableID:e3b781fc4cc62afb1c9bfa040ffb4e930a9aac86/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "sia/card/border/start": {
+      "type": "color",
+      "description": "sh-color-common/sia/card/border/start\nPurpose: Border starting gradient stop for SIA cards. Use with its matching stop.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:1833:1782",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/800",
+          "targetId": "VariableID:ef6e80dc5275e4bd78de47cdb17e81402716f2ad/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/100",
+          "targetId": "VariableID:a9e47969a9e467048c3b12d28b6bfd8658890455/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "sia/card/border/end": {
+      "type": "color",
+      "description": "sh-color-common/sia/card/border/end\nPurpose: Border ending gradient stop for SIA cards. Use with its matching stop.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:1833:1783",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/800",
+          "targetId": "VariableID:ea33d8f343351a7e37a66eedfef97e0bf6979cc1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/100",
+          "targetId": "VariableID:7337a2438551457c8c4131d032602b81adba0f32/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/border/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/border/default\nPurpose: Default success boundary for standard feedback.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:805:13579",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/400",
+          "targetId": "VariableID:e088b925283ee80484e9909d0a23267b7d502f13/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/500",
+          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/border/soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/border/soft\nPurpose: Soft success boundary for low-emphasis feedback.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:1765:16004",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/700",
+          "targetId": "VariableID:0df68579255d13783d69b273af799494980c5356/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/100",
+          "targetId": "VariableID:3ac27914639dea6e75edcbf45e2b328321f9bf9f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/text/on-soft\nPurpose: Text on soft success feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13568",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/200",
+          "targetId": "VariableID:fe98ae37a2402b4ecb8fff9a59e3dfb674a6176a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/600",
+          "targetId": "VariableID:6ff3528b16937c6f964b6acf671b24e59fed71c2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/text/on-solid\nPurpose: Text on solid success feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1190:16293",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/background/soft/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/background/soft/default\nPurpose: Soft success surface for inline feedback in its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:805:13591",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/900",
+          "targetId": "VariableID:e73742450aba7ccfe89c4e94f164e15bab2ec952/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/50",
+          "targetId": "VariableID:82d1c14f6e1de4c7856a0d4ec32e4b9eddfc038f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/background/soft/hover": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/background/soft/hover\nPurpose: Soft success surface for inline feedback in its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16040",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/800",
+          "targetId": "VariableID:0a4de6569cf60ffb4e157a698f360440934d3a72/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/100",
+          "targetId": "VariableID:3ac27914639dea6e75edcbf45e2b328321f9bf9f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/background/soft/pressed": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/background/soft/pressed\nPurpose: Soft success surface for inline feedback in its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16041",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/700",
+          "targetId": "VariableID:0df68579255d13783d69b273af799494980c5356/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/200",
+          "targetId": "VariableID:fe98ae37a2402b4ecb8fff9a59e3dfb674a6176a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/background/solid/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/background/solid/default\nPurpose: Solid success surface for high-emphasis feedback in its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16292",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/500",
+          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/500",
+          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/background/solid/hover": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/background/solid/hover\nPurpose: Solid success surface for high-emphasis feedback in its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16038",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/600",
+          "targetId": "VariableID:6ff3528b16937c6f964b6acf671b24e59fed71c2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/600",
+          "targetId": "VariableID:6ff3528b16937c6f964b6acf671b24e59fed71c2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/background/solid/pressed": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/background/solid/pressed\nPurpose: Solid success surface for high-emphasis feedback in its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16039",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/700",
+          "targetId": "VariableID:0df68579255d13783d69b273af799494980c5356/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/700",
+          "targetId": "VariableID:0df68579255d13783d69b273af799494980c5356/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/icon/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/icon/on-solid\nPurpose: Icon on solid success feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:207:938",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/icon/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/icon/on-soft\nPurpose: Icon on soft success feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:407",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/200",
+          "targetId": "VariableID:fe98ae37a2402b4ecb8fff9a59e3dfb674a6176a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/600",
+          "targetId": "VariableID:6ff3528b16937c6f964b6acf671b24e59fed71c2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/border/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/border/default\nPurpose: Default warning boundary for standard feedback.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:805:13580",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/400",
+          "targetId": "VariableID:6bd7931445167b48e4ceb6da18fa61f350630b05/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/500",
+          "targetId": "VariableID:5c517546f0c4e3e26cf9d6982f8dd891c7995138/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/border/soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/border/soft\nPurpose: Soft warning boundary for low-emphasis feedback.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:1765:16005",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/700",
+          "targetId": "VariableID:03eeec1ed324df13a744a44cad47cad826b9008a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/100",
+          "targetId": "VariableID:1917c2aaf931edd04a0a80fb9ab4ba57e7275a51/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/text/on-soft\nPurpose: Text on soft warning feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13569",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/200",
+          "targetId": "VariableID:be55aeeaa3ea63e7b5b33b63c3e6e2b2fc0923b9/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/600",
+          "targetId": "VariableID:71dc51a504e2816d1cf8fc9d5b12796335f714ec/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/text/on-solid\nPurpose: Text on solid warning feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1190:16297",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/background/soft/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/background/soft/default\nPurpose: Soft warning surface for inline feedback in its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:805:13592",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/900",
+          "targetId": "VariableID:819aee56884a89ac87938780b549e75e376f968b/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/50",
+          "targetId": "VariableID:10dfe2b2db1aa19f27d8c516efe65758ab6389d3/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/background/soft/hover": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/background/soft/hover\nPurpose: Soft warning surface for inline feedback in its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16044",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/800",
+          "targetId": "VariableID:1e1d4e8af7812dea219e6a2ea364adedad2e7cdc/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/100",
+          "targetId": "VariableID:1917c2aaf931edd04a0a80fb9ab4ba57e7275a51/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/background/soft/pressed": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/background/soft/pressed\nPurpose: Soft warning surface for inline feedback in its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16045",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/700",
+          "targetId": "VariableID:03eeec1ed324df13a744a44cad47cad826b9008a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/200",
+          "targetId": "VariableID:be55aeeaa3ea63e7b5b33b63c3e6e2b2fc0923b9/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/background/solid/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/background/solid/default\nPurpose: Solid warning surface for high-emphasis feedback in its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16296",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/500",
+          "targetId": "VariableID:5c517546f0c4e3e26cf9d6982f8dd891c7995138/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/500",
+          "targetId": "VariableID:5c517546f0c4e3e26cf9d6982f8dd891c7995138/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/background/solid/hover": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/background/solid/hover\nPurpose: Solid warning surface for high-emphasis feedback in its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16042",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/600",
+          "targetId": "VariableID:71dc51a504e2816d1cf8fc9d5b12796335f714ec/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/600",
+          "targetId": "VariableID:71dc51a504e2816d1cf8fc9d5b12796335f714ec/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/background/solid/pressed": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/background/solid/pressed\nPurpose: Solid warning surface for high-emphasis feedback in its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16043",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/700",
+          "targetId": "VariableID:03eeec1ed324df13a744a44cad47cad826b9008a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/700",
+          "targetId": "VariableID:03eeec1ed324df13a744a44cad47cad826b9008a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/icon/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/icon/on-solid\nPurpose: Icon on solid warning feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:207:954",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/icon/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/icon/on-soft\nPurpose: Icon on soft warning feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:421",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/200",
+          "targetId": "VariableID:be55aeeaa3ea63e7b5b33b63c3e6e2b2fc0923b9/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/600",
+          "targetId": "VariableID:71dc51a504e2816d1cf8fc9d5b12796335f714ec/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/border/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/border/default\nPurpose: Default error boundary for standard feedback.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:805:13581",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/400",
+          "targetId": "VariableID:40e10243b73dbed2d3204bda4fdb1e611006552a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/500",
+          "targetId": "VariableID:ea978641263ee036502799aecaa15e5d8e689006/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/border/soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/border/soft\nPurpose: Soft error boundary for low-emphasis feedback.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:1765:16006",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/700",
+          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/100",
+          "targetId": "VariableID:b49bc624ecd8b8b3c1a9646d8999c9cf8342872b/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/text/on-soft\nPurpose: Text on soft error feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13570",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/200",
+          "targetId": "VariableID:dc2f30c16ba1f3fc372535d802e8276348eae728/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/700",
+          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/text/on-solid\nPurpose: Text on solid error feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1190:16295",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/background/soft/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/background/soft/default\nPurpose: Soft error surface for inline feedback in its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:805:13593",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/900",
+          "targetId": "VariableID:0c71e67ce7fd9afa773c35ad6858a5f1f1bbbf2c/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/50",
+          "targetId": "VariableID:62fccf083688c284eeab00264d16622022eacf26/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/background/soft/hover": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/background/soft/hover\nPurpose: Soft error surface for inline feedback in its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16048",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/800",
+          "targetId": "VariableID:93561b9bd29240a7ed8b92392a7230465833d414/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/100",
+          "targetId": "VariableID:b49bc624ecd8b8b3c1a9646d8999c9cf8342872b/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/background/soft/pressed": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/background/soft/pressed\nPurpose: Soft error surface for inline feedback in its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16049",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/700",
+          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/200",
+          "targetId": "VariableID:dc2f30c16ba1f3fc372535d802e8276348eae728/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/background/solid/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/background/solid/default\nPurpose: Solid error surface for high-emphasis feedback in its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16294",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/500",
+          "targetId": "VariableID:ea978641263ee036502799aecaa15e5d8e689006/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/500",
+          "targetId": "VariableID:ea978641263ee036502799aecaa15e5d8e689006/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/background/solid/hover": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/background/solid/hover\nPurpose: Solid error surface for high-emphasis feedback in its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16046",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/600",
+          "targetId": "VariableID:3cfcad5c1f90e44e61209a894df5391dcf90f562/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/600",
+          "targetId": "VariableID:3cfcad5c1f90e44e61209a894df5391dcf90f562/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/background/solid/pressed": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/background/solid/pressed\nPurpose: Solid error surface for high-emphasis feedback in its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16047",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/700",
+          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/700",
+          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/icon/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/icon/on-solid\nPurpose: Icon on solid error feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:207:946",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/icon/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/icon/on-soft\nPurpose: Icon on soft error feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:414",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/200",
+          "targetId": "VariableID:dc2f30c16ba1f3fc372535d802e8276348eae728/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/700",
+          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/border/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/border/default\nPurpose: Default information boundary for standard feedback.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:805:13582",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/400",
+          "targetId": "VariableID:38d14cd5a0f27caa884c52262bd893a13e20e7c1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/500",
+          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/border/soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/border/soft\nPurpose: Soft information boundary for low-emphasis feedback.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:1765:16007",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/700",
+          "targetId": "VariableID:64f7ae787abb47e6bc971ebcea1b2da5ff42d931/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/100",
+          "targetId": "VariableID:7337a2438551457c8c4131d032602b81adba0f32/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/text/on-soft\nPurpose: Text on soft information feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13571",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/200",
+          "targetId": "VariableID:8510cf58f0f2da19f7fa7cb061b84d9832de4148/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/600",
+          "targetId": "VariableID:95bbc1dbed9a20abc2fede251445b16d5209e8b2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/text/on-solid\nPurpose: Text on solid information feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1190:16299",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/background/soft/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/background/soft/default\nPurpose: Soft information surface for inline feedback in its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:805:13594",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/900",
+          "targetId": "VariableID:c14e93dfc6057609224c8d39d37a5cafe24b20f2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/50",
+          "targetId": "VariableID:e3b781fc4cc62afb1c9bfa040ffb4e930a9aac86/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/background/soft/hover": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/background/soft/hover\nPurpose: Soft information surface for inline feedback in its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16052",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/800",
+          "targetId": "VariableID:ea33d8f343351a7e37a66eedfef97e0bf6979cc1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/100",
+          "targetId": "VariableID:7337a2438551457c8c4131d032602b81adba0f32/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/background/soft/pressed": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/background/soft/pressed\nPurpose: Soft information surface for inline feedback in its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16053",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/700",
+          "targetId": "VariableID:64f7ae787abb47e6bc971ebcea1b2da5ff42d931/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/200",
+          "targetId": "VariableID:8510cf58f0f2da19f7fa7cb061b84d9832de4148/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/background/solid/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/background/solid/default\nPurpose: Solid information surface for high-emphasis feedback in its Default state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1190:16298",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/500",
+          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/500",
+          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/background/solid/hover": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/background/solid/hover\nPurpose: Solid information surface for high-emphasis feedback in its Hover state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16050",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/600",
+          "targetId": "VariableID:95bbc1dbed9a20abc2fede251445b16d5209e8b2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/600",
+          "targetId": "VariableID:95bbc1dbed9a20abc2fede251445b16d5209e8b2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/background/solid/pressed": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/background/solid/pressed\nPurpose: Solid information surface for high-emphasis feedback in its Pressed state.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:1771:16051",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/700",
+          "targetId": "VariableID:64f7ae787abb47e6bc971ebcea1b2da5ff42d931/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/700",
+          "targetId": "VariableID:64f7ae787abb47e6bc971ebcea1b2da5ff42d931/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/icon/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/icon/on-solid\nPurpose: Icon on solid information feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:207:962",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/icon/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/icon/on-soft\nPurpose: Icon on soft information feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE"
+      ],
+      "id": "VariableID:16:428",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/200",
+          "targetId": "VariableID:8510cf58f0f2da19f7fa7cb061b84d9832de4148/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/600",
+          "targetId": "VariableID:95bbc1dbed9a20abc2fede251445b16d5209e8b2/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    }
+  }
+}

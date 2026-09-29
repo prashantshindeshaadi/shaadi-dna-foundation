@@ -1,0 +1,175 @@
+{
+  "modes": [
+    "Value"
+  ],
+  "tokens": {
+    "size/12": {
+      "type": "number",
+      "description": "sh-icon/size/12\nPurpose: Interface icon for micro indicators and inline metadata. Pairs with support-meta.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:27:502",
+      "figmaType": null,
+      "values": {
+        "Value": 12
+      }
+    },
+    "size/14": {
+      "type": "number",
+      "description": "sh-icon/size/14\nPurpose: Interface icon for compact helper content and trailing actions. Pairs with support-micro and button-sm.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:2066:9156",
+      "figmaType": null,
+      "values": {
+        "Value": 14
+      }
+    },
+    "size/16": {
+      "type": "number",
+      "description": "sh-icon/size/16\nPurpose: Interface icon for dense controls and compact rows. Pairs with support-label, body-sm, title-sm and button-md.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:27:504",
+      "figmaType": null,
+      "values": {
+        "Value": 16
+      }
+    },
+    "size/20": {
+      "type": "number",
+      "description": "sh-icon/size/20\nPurpose: Standard interface icon for fields, lists and controls. Pairs with body-md, title-md and button-lg.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:127:2899",
+      "figmaType": null,
+      "values": {
+        "Value": 20
+      }
+    },
+    "size/24": {
+      "type": "number",
+      "description": "sh-icon/size/24\nPurpose: Interface icon for navigation and prominent controls. Pairs with body-lg and title-lg.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:27:505",
+      "figmaType": null,
+      "values": {
+        "Value": 24
+      }
+    },
+    "stroke/12": {
+      "type": "number",
+      "description": "sh-icon/stroke/12\nPurpose: The only stroke for sh-icon/size/12, used everywhere.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:27:507",
+      "figmaType": null,
+      "values": {
+        "Value": 1
+      }
+    },
+    "stroke/14": {
+      "type": "number",
+      "description": "sh-icon/stroke/14\nPurpose: The only stroke for sh-icon/size/14, used everywhere.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:2066:9157",
+      "figmaType": null,
+      "values": {
+        "Value": 1.25
+      }
+    },
+    "stroke/16": {
+      "type": "number",
+      "description": "sh-icon/stroke/16\nPurpose: The only stroke for sh-icon/size/16, used everywhere.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:127:2901",
+      "figmaType": null,
+      "values": {
+        "Value": 1.5
+      }
+    },
+    "stroke/20": {
+      "type": "number",
+      "description": "sh-icon/stroke/20\nPurpose: The only stroke for sh-icon/size/20, used everywhere.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:27:509",
+      "figmaType": null,
+      "values": {
+        "Value": 1.5
+      }
+    },
+    "stroke/24": {
+      "type": "number",
+      "description": "sh-icon/stroke/24\nPurpose: The only stroke for sh-icon/size/24, used everywhere.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:27:510",
+      "figmaType": null,
+      "values": {
+        "Value": 1.75
+      }
+    },
+    "target/default": {
+      "type": "number",
+      "description": "sh-icon/target/default\nPurpose: Touch target for icon-only actions. It can contain a smaller visible icon.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:27:512",
+      "figmaType": null,
+      "values": {
+        "Value": 48
+      }
+    },
+    "pictogram/size/28": {
+      "type": "number",
+      "description": "sh-icon/pictogram/size/28\nPurpose: Full-colour image pictogram for compact badges and visual identifiers. Never recolour.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:227:1130",
+      "figmaType": null,
+      "values": {
+        "Value": 28
+      }
+    },
+    "pictogram/size/40": {
+      "type": "number",
+      "description": "sh-icon/pictogram/size/40\nPurpose: Full-colour image pictogram for cards, benefit rows, and supporting empty states. Never recolour.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:227:1131",
+      "figmaType": null,
+      "values": {
+        "Value": 40
+      }
+    },
+    "pictogram/size/64": {
+      "type": "number",
+      "description": "sh-icon/pictogram/size/64\nPurpose: Full-colour image pictogram for hero cards, onboarding, and prominent communication. Never recolour.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:227:1132",
+      "figmaType": null,
+      "values": {
+        "Value": 64
+      }
+    }
+  }
+}

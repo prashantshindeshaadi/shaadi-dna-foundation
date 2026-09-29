@@ -1,0 +1,362 @@
+{
+  "modes": [
+    "Desktop",
+    "Mobile",
+    "Tablet"
+  ],
+  "tokens": {
+    "0": {
+      "type": "number",
+      "description": "sh-space/0\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:449",
+      "figmaType": null,
+      "values": {
+        "Desktop": 0,
+        "Mobile": 0,
+        "Tablet": 0
+      }
+    },
+    "2": {
+      "type": "number",
+      "description": "sh-space/2\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:65:10",
+      "figmaType": null,
+      "values": {
+        "Desktop": 2,
+        "Mobile": 2,
+        "Tablet": 2
+      }
+    },
+    "4": {
+      "type": "number",
+      "description": "sh-space/4\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:450",
+      "figmaType": null,
+      "values": {
+        "Desktop": 4,
+        "Mobile": 4,
+        "Tablet": 4
+      }
+    },
+    "6": {
+      "type": "number",
+      "description": "sh-space/6\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:65:11",
+      "figmaType": null,
+      "values": {
+        "Desktop": 6,
+        "Mobile": 6,
+        "Tablet": 6
+      }
+    },
+    "8": {
+      "type": "number",
+      "description": "sh-space/8\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:451",
+      "figmaType": null,
+      "values": {
+        "Desktop": 8,
+        "Mobile": 8,
+        "Tablet": 8
+      }
+    },
+    "10": {
+      "type": "number",
+      "description": "sh-space/10\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:452",
+      "figmaType": null,
+      "values": {
+        "Desktop": 10,
+        "Mobile": 10,
+        "Tablet": 10
+      }
+    },
+    "12": {
+      "type": "number",
+      "description": "sh-space/12\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:453",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
+      }
+    },
+    "16": {
+      "type": "number",
+      "description": "sh-space/16\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:454",
+      "figmaType": null,
+      "values": {
+        "Desktop": 16,
+        "Mobile": 16,
+        "Tablet": 16
+      }
+    },
+    "20": {
+      "type": "number",
+      "description": "sh-space/20\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:455",
+      "figmaType": null,
+      "values": {
+        "Desktop": 20,
+        "Mobile": 20,
+        "Tablet": 20
+      }
+    },
+    "24": {
+      "type": "number",
+      "description": "sh-space/24\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:456",
+      "figmaType": null,
+      "values": {
+        "Desktop": 24,
+        "Mobile": 24,
+        "Tablet": 24
+      }
+    },
+    "32": {
+      "type": "number",
+      "description": "sh-space/32\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:457",
+      "figmaType": null,
+      "values": {
+        "Desktop": 32,
+        "Mobile": 32,
+        "Tablet": 32
+      }
+    },
+    "40": {
+      "type": "number",
+      "description": "sh-space/40\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:458",
+      "figmaType": null,
+      "values": {
+        "Desktop": 40,
+        "Mobile": 40,
+        "Tablet": 40
+      }
+    },
+    "48": {
+      "type": "number",
+      "description": "sh-space/48\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:459",
+      "figmaType": null,
+      "values": {
+        "Desktop": 48,
+        "Mobile": 48,
+        "Tablet": 48
+      }
+    },
+    "80": {
+      "type": "number",
+      "description": "sh-space/80\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:467",
+      "figmaType": null,
+      "values": {
+        "Desktop": 80,
+        "Mobile": 80,
+        "Tablet": 80
+      }
+    },
+    "page/margin": {
+      "type": "number",
+      "description": "sh-space/page/margin\nPurpose: Horizontal space between page content and the viewport edge.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:460",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "80"
+        },
+        "Mobile": {
+          "alias": "20"
+        },
+        "Tablet": {
+          "alias": "40"
+        }
+      }
+    },
+    "padding/card": {
+      "type": "number",
+      "description": "sh-space/padding/card\nPurpose: Internal padding for card surfaces.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:461",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "24"
+        },
+        "Mobile": {
+          "alias": "16"
+        },
+        "Tablet": {
+          "alias": "20"
+        }
+      }
+    },
+    "padding/sheet-dialog": {
+      "type": "number",
+      "description": "sh-space/padding/sheet-dialog\nPurpose: Internal padding for sheets and dialogs.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:21:462",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "32"
+        },
+        "Mobile": {
+          "alias": "16"
+        },
+        "Tablet": {
+          "alias": "20"
+        }
+      }
+    },
+    "gap/card": {
+      "type": "number",
+      "description": "sh-space/gap/card\nPurpose: Space between related content inside a card.",
+      "scopes": [
+        "GAP"
+      ],
+      "id": "VariableID:21:463",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "20"
+        },
+        "Mobile": {
+          "alias": "12"
+        },
+        "Tablet": {
+          "alias": "16"
+        }
+      }
+    },
+    "gap/section": {
+      "type": "number",
+      "description": "sh-space/gap/section\nPurpose: Space between major content sections.",
+      "scopes": [
+        "GAP"
+      ],
+      "id": "VariableID:21:464",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "40"
+        },
+        "Mobile": {
+          "alias": "24"
+        },
+        "Tablet": {
+          "alias": "32"
+        }
+      }
+    },
+    "gap/form": {
+      "type": "number",
+      "description": "sh-space/gap/form\nPurpose: Space between related fields in a form.",
+      "scopes": [
+        "GAP"
+      ],
+      "id": "VariableID:21:465",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "24"
+        },
+        "Mobile": {
+          "alias": "16"
+        },
+        "Tablet": {
+          "alias": "20"
+        }
+      }
+    },
+    "gap/list": {
+      "type": "number",
+      "description": "sh-space/gap/list\nPurpose: Space between repeated list items.",
+      "scopes": [
+        "GAP"
+      ],
+      "id": "VariableID:21:466",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "20"
+        },
+        "Mobile": {
+          "alias": "12"
+        },
+        "Tablet": {
+          "alias": "16"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "modes": [
+    "Value"
+  ],
+  "tokens": {
+    "hidden": {
+      "type": "number",
+      "description": "sh-opacity/hidden\nPurpose: Hide a layer while preserving layout, transitions, or interaction logic.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:27:542",
+      "figmaType": null,
+      "values": {
+        "Value": 0
+      }
+    },
+    "disabled": {
+      "type": "number",
+      "description": "sh-opacity/disabled\nPurpose: Visual treatment for disabled controls. Always pair with disabled behaviour.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:1814:8800",
+      "figmaType": null,
+      "values": {
+        "Value": 40
+      }
+    },
+    "muted": {
+      "type": "number",
+      "description": "sh-opacity/muted\nPurpose: De-emphasize decorative imagery and non-essential visual content without disabling it.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:27:543",
+      "figmaType": null,
+      "values": {
+        "Value": 64
+      }
+    },
+    "full": {
+      "type": "number",
+      "description": "sh-opacity/full\nPurpose: Default visibility when no opacity reduction is needed.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:27:544",
+      "figmaType": null,
+      "values": {
+        "Value": 100
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "modes": [
+    "Value"
+  ],
+  "tokens": {
+    "none": {
+      "type": "number",
+      "description": "sh-stroke/none\nPurpose: No visible outline. Use only where the component does not need a boundary.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:18:445",
+      "figmaType": null,
+      "values": {
+        "Value": 0
+      }
+    },
+    "default": {
+      "type": "number",
+      "description": "sh-stroke/default\nPurpose: Standard outline thickness for everyday controls and containers.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:18:446",
+      "figmaType": null,
+      "values": {
+        "Value": 1
+      }
+    },
+    "medium": {
+      "type": "number",
+      "description": "sh-stroke/medium\nPurpose: Outline thickness when Default lacks enough visual definition.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:65:14",
+      "figmaType": null,
+      "values": {
+        "Value": 1.5
+      }
+    },
+    "strong": {
+      "type": "number",
+      "description": "sh-stroke/strong\nPurpose: High-emphasis outline thickness when Medium is still too subtle.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:18:447",
+      "figmaType": null,
+      "values": {
+        "Value": 2
+      }
+    }
+  }
+}

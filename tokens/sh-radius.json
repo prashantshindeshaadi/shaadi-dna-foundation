@@ -1,0 +1,117 @@
+{
+  "modes": [
+    "Value"
+  ],
+  "tokens": {
+    "default": {
+      "type": "number",
+      "description": "sh-radius/default\nPurpose: Standard Shaadi rounding for familiar controls and containers.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:24:472",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "md"
+        }
+      }
+    },
+    "none": {
+      "type": "number",
+      "description": "sh-radius/none\nPurpose: Square corners for flush edges and joined surfaces.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:24:469",
+      "figmaType": null,
+      "values": {
+        "Value": 0
+      }
+    },
+    "xxs": {
+      "type": "number",
+      "description": "sh-radius/xxs\nPurpose: Smallest rounding for tight, compact UI details.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:65:13",
+      "figmaType": null,
+      "values": {
+        "Value": 4
+      }
+    },
+    "xs": {
+      "type": "number",
+      "description": "sh-radius/xs\nPurpose: Small rounding for compact controls and small containers.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:65:12",
+      "figmaType": null,
+      "values": {
+        "Value": 6
+      }
+    },
+    "sm": {
+      "type": "number",
+      "description": "sh-radius/sm\nPurpose: Moderate rounding for everyday controls and containers.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:24:470",
+      "figmaType": null,
+      "values": {
+        "Value": 8
+      }
+    },
+    "md": {
+      "type": "number",
+      "description": "sh-radius/md\nPurpose: Larger rounding for cards, sheets, and prominent containers.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:24:471",
+      "figmaType": null,
+      "values": {
+        "Value": 12
+      }
+    },
+    "lg": {
+      "type": "number",
+      "description": "sh-radius/lg\nPurpose: Generous rounding for feature surfaces and large cards.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:24:473",
+      "figmaType": null,
+      "values": {
+        "Value": 16
+      }
+    },
+    "xl": {
+      "type": "number",
+      "description": "sh-radius/xl\nPurpose: Largest standard rounding for hero surfaces and prominent media.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:24:474",
+      "figmaType": null,
+      "values": {
+        "Value": 24
+      }
+    },
+    "full": {
+      "type": "number",
+      "description": "sh-radius/full\nPurpose: Full rounding for pills, circular controls, and avatars.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:24:475",
+      "figmaType": null,
+      "values": {
+        "Value": 999
+      }
+    }
+  }
+}

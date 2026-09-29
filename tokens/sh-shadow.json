@@ -1,0 +1,841 @@
+{
+  "modes": [
+    "Dark",
+    "Light"
+  ],
+  "tokens": {
+    "soft/x": {
+      "type": "number",
+      "description": "sh-shadow/soft/x\nPurpose: Horizontal offset for Soft elevation. Subtle elevation for raised cards and contained content.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12823",
+      "figmaType": null,
+      "values": {
+        "Dark": 0,
+        "Light": 0
+      }
+    },
+    "soft/y": {
+      "type": "number",
+      "description": "sh-shadow/soft/y\nPurpose: Vertical offset for Soft elevation. Subtle elevation for raised cards and contained content.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12824",
+      "figmaType": null,
+      "values": {
+        "Dark": 2,
+        "Light": 2
+      }
+    },
+    "soft/blur": {
+      "type": "number",
+      "description": "sh-shadow/soft/blur\nPurpose: Blur for Soft elevation. Subtle elevation for raised cards and contained content.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12825",
+      "figmaType": null,
+      "values": {
+        "Dark": 8,
+        "Light": 8
+      }
+    },
+    "soft/spread": {
+      "type": "number",
+      "description": "sh-shadow/soft/spread\nPurpose: Spread for Soft elevation. Subtle elevation for raised cards and contained content.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12826",
+      "figmaType": null,
+      "values": {
+        "Dark": -1,
+        "Light": -1
+      }
+    },
+    "soft/color": {
+      "type": "color",
+      "description": "sh-shadow/soft/color\nPurpose: Colour treatment for Soft elevation. Subtle elevation for raised cards and contained content.",
+      "scopes": [
+        "EFFECT_COLOR"
+      ],
+      "id": "VariableID:1838:12827",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.11999999731779099,
+          "hex": "#000000"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.05999999865889549,
+          "hex": "#000000"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 12
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 6
+            }
+          }
+        }
+      }
+    },
+    "default/x": {
+      "type": "number",
+      "description": "sh-shadow/default/x\nPurpose: Horizontal offset for Default elevation. Standard elevation for cards, sheets, and raised surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12833",
+      "figmaType": null,
+      "values": {
+        "Dark": 0,
+        "Light": 0
+      }
+    },
+    "default/y": {
+      "type": "number",
+      "description": "sh-shadow/default/y\nPurpose: Vertical offset for Default elevation. Standard elevation for cards, sheets, and raised surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12834",
+      "figmaType": null,
+      "values": {
+        "Dark": 4,
+        "Light": 4
+      }
+    },
+    "default/blur": {
+      "type": "number",
+      "description": "sh-shadow/default/blur\nPurpose: Blur for Default elevation. Standard elevation for cards, sheets, and raised surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12835",
+      "figmaType": null,
+      "values": {
+        "Dark": 16,
+        "Light": 16
+      }
+    },
+    "default/spread": {
+      "type": "number",
+      "description": "sh-shadow/default/spread\nPurpose: Spread for Default elevation. Standard elevation for cards, sheets, and raised surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12836",
+      "figmaType": null,
+      "values": {
+        "Dark": -2,
+        "Light": -2
+      }
+    },
+    "default/color": {
+      "type": "color",
+      "description": "sh-shadow/default/color\nPurpose: Colour treatment for Default elevation. Standard elevation for cards, sheets, and raised surfaces.",
+      "scopes": [
+        "EFFECT_COLOR"
+      ],
+      "id": "VariableID:1838:12837",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.1599999964237213,
+          "hex": "#000000"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.07999999821186066,
+          "hex": "#000000"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 16
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 8
+            }
+          }
+        }
+      }
+    },
+    "strong/x": {
+      "type": "number",
+      "description": "sh-shadow/strong/x\nPurpose: Horizontal offset for Strong elevation. High-priority elevation above Default and below Floating.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12843",
+      "figmaType": null,
+      "values": {
+        "Dark": 0,
+        "Light": 0
+      }
+    },
+    "strong/y": {
+      "type": "number",
+      "description": "sh-shadow/strong/y\nPurpose: Vertical offset for Strong elevation. High-priority elevation above Default and below Floating.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12844",
+      "figmaType": null,
+      "values": {
+        "Dark": 8,
+        "Light": 8
+      }
+    },
+    "strong/blur": {
+      "type": "number",
+      "description": "sh-shadow/strong/blur\nPurpose: Blur for Strong elevation. High-priority elevation above Default and below Floating.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12845",
+      "figmaType": null,
+      "values": {
+        "Dark": 24,
+        "Light": 24
+      }
+    },
+    "strong/spread": {
+      "type": "number",
+      "description": "sh-shadow/strong/spread\nPurpose: Spread for Strong elevation. High-priority elevation above Default and below Floating.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12846",
+      "figmaType": null,
+      "values": {
+        "Dark": -4,
+        "Light": -4
+      }
+    },
+    "strong/color": {
+      "type": "color",
+      "description": "sh-shadow/strong/color\nPurpose: Colour treatment for Strong elevation. High-priority elevation above Default and below Floating.",
+      "scopes": [
+        "EFFECT_COLOR"
+      ],
+      "id": "VariableID:1838:12847",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.20000000298023224,
+          "hex": "#000000"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.11999999731779099,
+          "hex": "#000000"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 20
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 12
+            }
+          }
+        }
+      }
+    },
+    "floating/x": {
+      "type": "number",
+      "description": "sh-shadow/floating/x\nPurpose: Horizontal offset for Floating elevation. Highest elevation for menus, dialogs, and active task surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12853",
+      "figmaType": null,
+      "values": {
+        "Dark": 0,
+        "Light": 0
+      }
+    },
+    "floating/y": {
+      "type": "number",
+      "description": "sh-shadow/floating/y\nPurpose: Vertical offset for Floating elevation. Highest elevation for menus, dialogs, and active task surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12854",
+      "figmaType": null,
+      "values": {
+        "Dark": 12,
+        "Light": 12
+      }
+    },
+    "floating/blur": {
+      "type": "number",
+      "description": "sh-shadow/floating/blur\nPurpose: Blur for Floating elevation. Highest elevation for menus, dialogs, and active task surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12855",
+      "figmaType": null,
+      "values": {
+        "Dark": 32,
+        "Light": 32
+      }
+    },
+    "floating/spread": {
+      "type": "number",
+      "description": "sh-shadow/floating/spread\nPurpose: Spread for Floating elevation. Highest elevation for menus, dialogs, and active task surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12856",
+      "figmaType": null,
+      "values": {
+        "Dark": -6,
+        "Light": -6
+      }
+    },
+    "floating/color": {
+      "type": "color",
+      "description": "sh-shadow/floating/color\nPurpose: Colour treatment for Floating elevation. Highest elevation for menus, dialogs, and active task surfaces.",
+      "scopes": [
+        "EFFECT_COLOR"
+      ],
+      "id": "VariableID:1838:12857",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.23999999463558197,
+          "hex": "#000000"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.1599999964237213,
+          "hex": "#000000"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 24
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
+                "targetVariableName": "neutral/black",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 16
+            }
+          }
+        }
+      }
+    },
+    "brand/x": {
+      "type": "number",
+      "description": "sh-shadow/brand/x\nPurpose: Horizontal offset for Brand elevation. Brand-tinted standard elevation for intentional Shaadi moments.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12863",
+      "figmaType": null,
+      "values": {
+        "Dark": 0,
+        "Light": 0
+      }
+    },
+    "brand/y": {
+      "type": "number",
+      "description": "sh-shadow/brand/y\nPurpose: Vertical offset for Brand elevation. Brand-tinted standard elevation for intentional Shaadi moments.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12864",
+      "figmaType": null,
+      "values": {
+        "Dark": 4,
+        "Light": 4
+      }
+    },
+    "brand/blur": {
+      "type": "number",
+      "description": "sh-shadow/brand/blur\nPurpose: Blur for Brand elevation. Brand-tinted standard elevation for intentional Shaadi moments.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12865",
+      "figmaType": null,
+      "values": {
+        "Dark": 16,
+        "Light": 16
+      }
+    },
+    "brand/spread": {
+      "type": "number",
+      "description": "sh-shadow/brand/spread\nPurpose: Spread for Brand elevation. Brand-tinted standard elevation for intentional Shaadi moments.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12866",
+      "figmaType": null,
+      "values": {
+        "Dark": -2,
+        "Light": -2
+      }
+    },
+    "brand/color": {
+      "type": "color",
+      "description": "sh-shadow/brand/color\nPurpose: Colour treatment for Brand elevation. Brand-tinted standard elevation for intentional Shaadi moments.",
+      "scopes": [
+        "EFFECT_COLOR"
+      ],
+      "id": "VariableID:1838:12867",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9607843160629272,
+            0.239215686917305,
+            0.40784314274787903
+          ],
+          "alpha": 0.14000000059604645,
+          "hex": "#F53D68"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9058823585510254,
+            0.054901961237192154,
+            0.250980406999588
+          ],
+          "alpha": 0.10000000149011612,
+          "hex": "#E70E40"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:a07593a207022ff5e5713bfe1b5b44e60a43c724/-1:-1",
+                "targetVariableName": "brand/400",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 14
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+                "targetVariableName": "brand/500",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 10
+            }
+          }
+        }
+      }
+    },
+    "premium/x": {
+      "type": "number",
+      "description": "sh-shadow/premium/x\nPurpose: Horizontal offset for Premium elevation. Premium-tinted standard elevation for Premium surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12873",
+      "figmaType": null,
+      "values": {
+        "Dark": 0,
+        "Light": 0
+      }
+    },
+    "premium/y": {
+      "type": "number",
+      "description": "sh-shadow/premium/y\nPurpose: Vertical offset for Premium elevation. Premium-tinted standard elevation for Premium surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12874",
+      "figmaType": null,
+      "values": {
+        "Dark": 4,
+        "Light": 4
+      }
+    },
+    "premium/blur": {
+      "type": "number",
+      "description": "sh-shadow/premium/blur\nPurpose: Blur for Premium elevation. Premium-tinted standard elevation for Premium surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12875",
+      "figmaType": null,
+      "values": {
+        "Dark": 16,
+        "Light": 16
+      }
+    },
+    "premium/spread": {
+      "type": "number",
+      "description": "sh-shadow/premium/spread\nPurpose: Spread for Premium elevation. Premium-tinted standard elevation for Premium surfaces.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12876",
+      "figmaType": null,
+      "values": {
+        "Dark": -2,
+        "Light": -2
+      }
+    },
+    "premium/color": {
+      "type": "color",
+      "description": "sh-shadow/premium/color\nPurpose: Colour treatment for Premium elevation. Premium-tinted standard elevation for Premium surfaces.",
+      "scopes": [
+        "EFFECT_COLOR"
+      ],
+      "id": "VariableID:1838:12877",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9137254953384399,
+            0.6784313917160034,
+            0.29411765933036804
+          ],
+          "alpha": 0.14000000059604645,
+          "hex": "#E9AD4B"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.843137264251709,
+            0.572549045085907,
+            0.18431372940540314
+          ],
+          "alpha": 0.10000000149011612,
+          "hex": "#D7922F"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:3fe7fdb8ae182820bc07884aeaa2482098921035/-1:-1",
+                "targetVariableName": "premium/400",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 14
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:f9cd1b106cca67a5d05097f767b755d894185892/-1:-1",
+                "targetVariableName": "premium/500",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 10
+            }
+          }
+        }
+      }
+    },
+    "sia/x": {
+      "type": "number",
+      "description": "sh-shadow/sia/x\nPurpose: Horizontal offset for Sia elevation. SIA-tinted standard elevation for SIA moments.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12883",
+      "figmaType": null,
+      "values": {
+        "Dark": 0,
+        "Light": 0
+      }
+    },
+    "sia/y": {
+      "type": "number",
+      "description": "sh-shadow/sia/y\nPurpose: Vertical offset for Sia elevation. SIA-tinted standard elevation for SIA moments.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12884",
+      "figmaType": null,
+      "values": {
+        "Dark": 4,
+        "Light": 4
+      }
+    },
+    "sia/blur": {
+      "type": "number",
+      "description": "sh-shadow/sia/blur\nPurpose: Blur for Sia elevation. SIA-tinted standard elevation for SIA moments.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12885",
+      "figmaType": null,
+      "values": {
+        "Dark": 16,
+        "Light": 16
+      }
+    },
+    "sia/spread": {
+      "type": "number",
+      "description": "sh-shadow/sia/spread\nPurpose: Spread for Sia elevation. SIA-tinted standard elevation for SIA moments.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:1838:12886",
+      "figmaType": null,
+      "values": {
+        "Dark": -2,
+        "Light": -2
+      }
+    },
+    "sia/color": {
+      "type": "color",
+      "description": "sh-shadow/sia/color\nPurpose: Colour treatment for Sia elevation. SIA-tinted standard elevation for SIA moments.",
+      "scopes": [
+        "EFFECT_COLOR"
+      ],
+      "id": "VariableID:1838:12887",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9058823585510254,
+            0.054901961237192154,
+            0.250980406999588
+          ],
+          "alpha": 0.14000000059604645,
+          "hex": "#E70E40"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9607843160629272,
+            0.239215686917305,
+            0.40784314274787903
+          ],
+          "alpha": 0.10000000149011612,
+          "hex": "#F53D68"
+        }
+      },
+      "figmaExtras": {
+        "Dark": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+                "targetVariableName": "brand/500",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 14
+            }
+          }
+        },
+        "Light": {
+          "com.figma.composedColor": {
+            "colorArg": {
+              "type": "alias",
+              "alias": {
+                "targetVariableId": "VariableID:a07593a207022ff5e5713bfe1b5b44e60a43c724/-1:-1",
+                "targetVariableName": "brand/400",
+                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+                "targetVariableSetName": "sh-color-basic"
+              }
+            },
+            "opacityArg": {
+              "type": "number",
+              "value": 10
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,378 @@
+{
+  "modes": [
+    "Dark",
+    "Light"
+  ],
+  "tokens": {
+    "surface/extra-soft": {
+      "type": "color",
+      "description": "sh-translucent/surface/extra-soft\nPurpose: Lightest glass layer. Use when imagery needs minimal separation.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:951:20999",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.11999999731779099,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.11999999731779099,
+          "hex": "#FFFFFF"
+        }
+      }
+    },
+    "surface/soft": {
+      "type": "color",
+      "description": "sh-translucent/surface/soft\nPurpose: Subtle glass layer over simple media. Choose Default for clearer separation.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:17:432",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.20000000298023224,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.20000000298023224,
+          "hex": "#FFFFFF"
+        }
+      }
+    },
+    "surface/default": {
+      "type": "color",
+      "description": "sh-translucent/surface/default\nPurpose: Standard glass layer over imagery. Choose Strong over busy media.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:17:433",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.5,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.4000000059604645,
+          "hex": "#FFFFFF"
+        }
+      }
+    },
+    "surface/strong": {
+      "type": "color",
+      "description": "sh-translucent/surface/strong\nPurpose: Strong glass layer over busy imagery when softer layers lack separation.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:17:434",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.800000011920929,
+          "hex": "#0F172A"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.800000011920929,
+          "hex": "#FFFFFF"
+        }
+      }
+    },
+    "surface/brand/extra-soft": {
+      "type": "color",
+      "description": "sh-translucent/surface/brand/extra-soft\nPurpose: Lightest brand-tinted glass layer. Use when imagery needs minimal separation.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:536:2315",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9764705896377563,
+            0.48235294222831726,
+            0.5960784554481506
+          ],
+          "alpha": 0.07999999821186066,
+          "hex": "#F97B98"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 0.07999999821186066,
+          "hex": "#C20F38"
+        }
+      }
+    },
+    "surface/brand/soft": {
+      "type": "color",
+      "description": "sh-translucent/surface/brand/soft\nPurpose: Subtle brand-tinted glass layer over simple media. Choose Default for clearer separation.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:17:438",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9764705896377563,
+            0.48235294222831726,
+            0.5960784554481506
+          ],
+          "alpha": 0.11999999731779099,
+          "hex": "#F97B98"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 0.11999999731779099,
+          "hex": "#C20F38"
+        }
+      }
+    },
+    "surface/brand/default": {
+      "type": "color",
+      "description": "sh-translucent/surface/brand/default\nPurpose: Standard brand-tinted glass layer over imagery. Choose Strong over busy media.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:17:439",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9764705896377563,
+            0.48235294222831726,
+            0.5960784554481506
+          ],
+          "alpha": 0.20000000298023224,
+          "hex": "#F97B98"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 0.20000000298023224,
+          "hex": "#C20F38"
+        }
+      }
+    },
+    "surface/brand/strong": {
+      "type": "color",
+      "description": "sh-translucent/surface/brand/strong\nPurpose: Strong brand-tinted glass layer over busy imagery when softer layers lack separation.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:17:440",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9764705896377563,
+            0.48235294222831726,
+            0.5960784554481506
+          ],
+          "alpha": 0.3199999928474426,
+          "hex": "#F97B98"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 0.3199999928474426,
+          "hex": "#C20F38"
+        }
+      }
+    },
+    "blur/background/extra-soft": {
+      "type": "number",
+      "description": "sh-translucent/blur/background/extra-soft\nPurpose: Extra-Soft blur paired with the matching translucent surface level.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:536:2316",
+      "figmaType": null,
+      "values": {
+        "Dark": 4,
+        "Light": 4
+      }
+    },
+    "blur/background/soft": {
+      "type": "number",
+      "description": "sh-translucent/blur/background/soft\nPurpose: Soft blur paired with the matching translucent surface level.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:17:441",
+      "figmaType": null,
+      "values": {
+        "Dark": 8,
+        "Light": 8
+      }
+    },
+    "blur/background/default": {
+      "type": "number",
+      "description": "sh-translucent/blur/background/default\nPurpose: Default blur paired with the matching translucent surface level.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:17:442",
+      "figmaType": null,
+      "values": {
+        "Dark": 16,
+        "Light": 16
+      }
+    },
+    "blur/background/strong": {
+      "type": "number",
+      "description": "sh-translucent/blur/background/strong\nPurpose: Strong blur paired with the matching translucent surface level.",
+      "scopes": [
+        "EFFECT_FLOAT"
+      ],
+      "id": "VariableID:17:443",
+      "figmaType": null,
+      "values": {
+        "Dark": 24,
+        "Light": 24
+      }
+    },
+    "border/brand/start": {
+      "type": "color",
+      "description": "sh-translucent/border/brand/start\nPurpose: Starting gradient stop for brand translucent borders. Use with its matching stop.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:1373:12354",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9764705896377563,
+            0.48235294222831726,
+            0.5960784554481506
+          ],
+          "alpha": 0,
+          "hex": "#F97B98"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 0,
+          "hex": "#C20F38"
+        }
+      }
+    },
+    "border/brand/end": {
+      "type": "color",
+      "description": "sh-translucent/border/brand/end\nPurpose: Ending gradient stop for brand translucent borders. Use with its matching stop.",
+      "scopes": [
+        "STROKE"
+      ],
+      "id": "VariableID:1373:12355",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9764705896377563,
+            0.48235294222831726,
+            0.5960784554481506
+          ],
+          "alpha": 1,
+          "hex": "#F97B98"
+        },
+        "Light": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 1,
+          "hex": "#C20F38"
+        }
+      }
+    }
+  }
+}
