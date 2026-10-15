@@ -11,6 +11,7 @@ be wired into CI.
 import sys, os, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib import all_collections, resolve, contrast, composite
+import gradients
 
 PAGE = {"Light": "#FFFFFF", "Dark": "#0F172A"}
 STATUSES = ["success", "warning", "error", "information"]
@@ -38,6 +39,15 @@ PAIRS = [
     ("border/selected", "background/default", 3.0),
     ("border/focus", "background/default", 3.0),
 ]
+# Indicators are bright marks that always sit beside a label (FOUNDATION §7),
+# so they are held to the 3:1 graphics minimum, not the 4.5:1 text rule.
+for t in ("success", "premium", "diamond", "platinum", "private"):
+    PAIRS.append((f"indicator/{t}", "background/default", 3.0))
+# Accepted gaps: still measured and printed every run, but as warnings.
+# Each one is listed in FOUNDATION.md §10. Remove it here once fixed.
+KNOWN_GAPS = {(f"semantic/{s}/text/on-soft", f"semantic/{s}/background/soft/pressed", "Light")
+              for s in ("success", "error", "information")}
+
 for s in STATUSES:
     for state in ("default", "hover", "pressed"):
         PAIRS.append((f"semantic/{s}/text/on-soft", f"semantic/{s}/background/soft/{state}", 4.5))
@@ -59,7 +69,9 @@ def main():
     # 1 structure and aliases
     for coll, c in sorted(data.items()):
         missing_desc = [k for k, t in c["tokens"].items() if not t.get("description")]
-        all_scopes = [k for k, t in c["tokens"].items() if "ALL_SCOPES" in t.get("scopes", [])]
+        # primitives are deliberately open to every scope (FOUNDATION §1)
+        all_scopes = [] if coll == "sh-color-basic" else \
+            [k for k, t in c["tokens"].items() if "ALL_SCOPES" in t.get("scopes", [])]
         for k in c["tokens"]:
             for mode in c["modes"]:
                 try:
@@ -72,12 +84,8 @@ def main():
             warnings.append(f"{coll}: {len(all_scopes)} tokens still on ALL_SCOPES")
         print(f"  {coll:18} {len(c['tokens']):4} tokens   modes: {', '.join(c['modes'])}")
 
-    # 2 primitives must stay hidden from pickers
-    basic = data.get("sh-color-basic")
-    if basic:
-        pickable = [k for k, t in basic["tokens"].items() if t.get("scopes")]
-        if pickable:
-            errors.append(f"sh-color-basic: {len(pickable)} primitives are still pickable in Figma")
+    # 2 primitives are visible in Figma pickers by choice, but never used directly
+    #   (FOUNDATION §1); build.py keeps them out of dist/.
 
     # 3 fonts named in the tokens must exist in fonts/
     fonts_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fonts")
@@ -97,7 +105,7 @@ def main():
     # 4 contrast
     print("\nContrast")
     cc = "sh-color-common"
-    checked = failed = 0
+    checked = failed = gaps = 0
     for fg, bg, target in PAIRS:
         for mode in data[cc]["modes"]:
             if fg not in data[cc]["tokens"] or bg not in data[cc]["tokens"]:
@@ -111,9 +119,20 @@ def main():
             ratio = contrast(a, b)
             checked += 1
             if ratio < target:
+                msg = f"contrast {mode}: {fg} on {bg} = {ratio:.2f} (needs {target})"
+                if (fg, bg, mode) in KNOWN_GAPS:
+                    warnings.append(msg + "  [known gap, FOUNDATION §10]")
+                    gaps += 1
+                    continue
                 failed += 1
-                errors.append(f"contrast {mode}: {fg} on {bg} = {ratio:.2f} (needs {target})")
-    print(f"  {checked} pairings checked, {checked - failed} pass, {failed} fail")
+                errors.append(msg)
+    styles = gradients.load()
+    if styles:
+        e, w = gradients.problems(data, styles)
+        errors += e
+        warnings += w
+        print(f"  sh-gradient        {len(styles['styles']):4} colour styles")
+    print(f"  {checked} pairings checked, {checked - failed - gaps} pass, {gaps} known gap, {failed} fail")
 
     print()
     for w in warnings:

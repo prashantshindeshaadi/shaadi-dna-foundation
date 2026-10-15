@@ -16,7 +16,9 @@ Two separate layers. Work out which one is being asked for before doing anything
 
 ## Layer 1 — Variable code syntax
 
-Sets the WEB, ANDROID and iOS name Dev Mode shows next to each variable.
+Sets the WEB, ANDROID and iOS name Dev Mode shows next to each variable. A
+platform name is only set where `build.py` generates it; shadows, font-family
+strings and blur are web-only, and native typography comes from the type kit.
 
 ### Steps
 
@@ -30,8 +32,7 @@ Writes two files:
 - `dist/figma/apply-code-syntax.js` — a script that applies all of them
 
 Apply it through the Figma MCP (`use_figma`) or a plugin console. Figma has no
-import UI for code syntax, so a script is the only practical route for 336
-tokens.
+import UI for code syntax, so a script is the only practical route.
 
 ### After it runs
 
@@ -68,8 +69,8 @@ becomes the standard.
 
 ### Steps
 
-1. Copy `code-connect/button.figma.tsx` as the pattern.
-2. One file per component, `<name>.figma.tsx`, in `code-connect/`.
+1. Create `code-connect/` at the repo root when the first component is ready.
+2. One file per component, `<name>.figma.tsx`, using the pattern below.
 3. Map props to Figma **component properties**, never layer names. Layer names
    get renamed in a tidy-up; properties are the contract.
 4. Cover every variant the blueprint defines. A partially mapped component is
@@ -82,6 +83,24 @@ npx figma connect publish --token $FIGMA_TOKEN
 
 Publish from CI on merge, not from a laptop, so the mapping always matches the
 merged code.
+
+Pattern (Button; Figma property names come from `components/button.md`):
+
+```tsx
+import figma from "@figma/code-connect";
+import { Button } from "@shaadi/catalogue";   // the real component
+
+figma.connect(Button, "<Figma URL of the sh-button component set>", {
+  props: {
+    variant: figma.enum("Type", { Primary: "primary", Secondary: "secondary",
+      Tertiary: "tertiary", Ghost: "ghost", "Premium Solid": "premium-solid",
+      "Premium Soft": "premium-soft" }),
+    size: figma.enum("Size", { Large: "lg", Medium: "md", Small: "sm" }),
+    label: figma.string("Label"),
+  },
+  example: (p) => <Button variant={p.variant} size={p.size}>{p.label}</Button>,
+});
+```
 
 ### When code and blueprint disagree
 

@@ -27,8 +27,8 @@
 
 ## Why
 
-Two separate pushes. The typeface change came out of a review with Anupam and
-the feedback that followed. The accessibility work came from an audit that
+Two separate pushes. The typeface change came out of a design review and the
+feedback that followed. The accessibility work came from an audit that
 measured every foreground and background pairing against WCAG AA, rather than
 trusting that they looked fine.
 

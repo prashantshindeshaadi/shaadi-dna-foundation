@@ -22,6 +22,12 @@ zip. It prints every change before writing anything, then asks to confirm.
 Read that output carefully. It is the basis for the update-log entry, and it is
 the only place an unintended change will show up.
 
+### 1b. Colour styles (when `sh-gradient/*` changed)
+
+Variable exports don't include styles. Run `tools/read_styles.js` through the
+Figma MCP (`figma_execute`) in the Shaadi DNA file, save the returned JSON, then
+`python3 tools/import.py <that file>`.
+
 ### 2. Check
 
 ```bash
@@ -29,7 +35,7 @@ python3 tools/check.py
 ```
 
 Verifies that every alias resolves, every token has a description, no token is
-on `ALL_SCOPES`, primitives stay hidden from pickers, and all 64 approved colour
+on `ALL_SCOPES`, every `sh-gradient` stop is a real token, and all approved colour
 pairings still meet WCAG AA.
 
 **If contrast fails, stop.** Don't build, don't commit. Take the failing pair

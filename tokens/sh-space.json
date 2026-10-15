@@ -357,6 +357,18 @@
           "alias": "16"
         }
       }
+    },
+    "14": {
+      "type": "number",
+      "description": "sh-space/14\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [],
+      "id": "VariableID:2180:1261",
+      "figmaType": null,
+      "values": {
+        "Desktop": 14,
+        "Mobile": 14,
+        "Tablet": 14
+      }
     }
   }
 }

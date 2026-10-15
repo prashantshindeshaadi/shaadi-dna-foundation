@@ -79,8 +79,10 @@ def merge_export(files):
 
 
 def all_collections():
+    """Variable collections only. tokens/sh-gradient.json holds colour styles (see gradients.py)."""
     return {os.path.basename(p)[:-5]: json.load(open(p))
-            for p in sorted(glob.glob(os.path.join(TOKENS, "*.json")))}
+            for p in sorted(glob.glob(os.path.join(TOKENS, "*.json")))
+            if not p.endswith("sh-gradient.json")}
 
 
 def resolve(data, coll, mode, key, seen=None):

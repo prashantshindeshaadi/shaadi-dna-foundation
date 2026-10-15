@@ -5,7 +5,7 @@
   "tokens": {
     "default": {
       "type": "number",
-      "description": "sh-radius/default\nPurpose: Standard Shaadi rounding for familiar controls and containers.",
+      "description": "sh-radius/default\nPurpose: Fallback rounding when no role-named radius fits.",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -31,7 +31,7 @@
     },
     "xxs": {
       "type": "number",
-      "description": "sh-radius/xxs\nPurpose: Smallest rounding for tight, compact UI details.",
+      "description": "sh-radius/xxs\nPurpose: Smallest rounding for tight, compact details.",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -43,7 +43,7 @@
     },
     "xs": {
       "type": "number",
-      "description": "sh-radius/xs\nPurpose: Small rounding for compact controls and small containers.",
+      "description": "sh-radius/xs\nPurpose: Small rounding for compact controls.",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -55,7 +55,7 @@
     },
     "sm": {
       "type": "number",
-      "description": "sh-radius/sm\nPurpose: Moderate rounding for everyday controls and containers.",
+      "description": "sh-radius/sm\nPurpose: Moderate rounding for small containers.",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -67,7 +67,7 @@
     },
     "md": {
       "type": "number",
-      "description": "sh-radius/md\nPurpose: Larger rounding for cards, sheets, and prominent containers.",
+      "description": "sh-radius/md\nPurpose: Standard rounding for controls and fields.",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -79,7 +79,7 @@
     },
     "lg": {
       "type": "number",
-      "description": "sh-radius/lg\nPurpose: Generous rounding for feature surfaces and large cards.",
+      "description": "sh-radius/lg\nPurpose: Larger rounding for cards and prominent containers.",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -89,9 +89,9 @@
         "Value": 16
       }
     },
-    "xl": {
+    "xxl": {
       "type": "number",
-      "description": "sh-radius/xl\nPurpose: Largest standard rounding for hero surfaces and prominent media.",
+      "description": "sh-radius/xxl\nPurpose: Largest standard rounding for hero surfaces and large media.",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -103,7 +103,7 @@
     },
     "full": {
       "type": "number",
-      "description": "sh-radius/full\nPurpose: Full rounding for pills, circular controls, and avatars.",
+      "description": "sh-radius/full\nPurpose: Full rounding for pills, circular controls and avatars.",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -111,6 +111,158 @@
       "figmaType": null,
       "values": {
         "Value": 999
+      }
+    },
+    "xl": {
+      "type": "number",
+      "description": "sh-radius/xl\nPurpose: Generous rounding for sheets and dialogs.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15403",
+      "figmaType": null,
+      "values": {
+        "Value": 20
+      }
+    },
+    "button": {
+      "type": "number",
+      "description": "sh-radius/button\nPurpose: Rounding for every button, in all types and sizes.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15404",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "full"
+        }
+      }
+    },
+    "avatar": {
+      "type": "number",
+      "description": "sh-radius/avatar\nPurpose: Rounding for profile photos and circular identity images.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15405",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "full"
+        }
+      }
+    },
+    "chip": {
+      "type": "number",
+      "description": "sh-radius/chip\nPurpose: Rounding for chips and filters.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15406",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "xs"
+        }
+      }
+    },
+    "tag": {
+      "type": "number",
+      "description": "sh-radius/tag\nPurpose: Rounding for tags and badges.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15407",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "xs"
+        }
+      }
+    },
+    "tooltip": {
+      "type": "number",
+      "description": "sh-radius/tooltip\nPurpose: Rounding for tooltips and small popovers.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15408",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "xs"
+        }
+      }
+    },
+    "input": {
+      "type": "number",
+      "description": "sh-radius/input\nPurpose: Rounding for text fields, selects and other form controls.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15409",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "md"
+        }
+      }
+    },
+    "card": {
+      "type": "number",
+      "description": "sh-radius/card\nPurpose: Rounding for cards and standard containers.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15410",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "lg"
+        }
+      }
+    },
+    "media": {
+      "type": "number",
+      "description": "sh-radius/media\nPurpose: Rounding for photos and thumbnails. Matches card so an image inside a card shares its corner.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15411",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "lg"
+        }
+      }
+    },
+    "sheet": {
+      "type": "number",
+      "description": "sh-radius/sheet\nPurpose: Rounding for bottom sheets and dialogs.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15412",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "xl"
+        }
+      }
+    },
+    "hero": {
+      "type": "number",
+      "description": "sh-radius/hero\nPurpose: Rounding for hero surfaces and full-width media.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15413",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "xxl"
+        }
       }
     }
   }

@@ -1,0 +1,941 @@
+{
+  "collection": "sh-gradient",
+  "kind": "paint-styles",
+  "styles": {
+    "sia/soft": {
+      "description": "sh-gradient/sia/soft\nPurpose: Soft SIA gradient for SIA card backgrounds.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/sia/card/background/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/sia/card/background/end"
+            }
+          ]
+        }
+      ]
+    },
+    "sia/top-match": {
+      "description": "Top match / compatibility card background: lilac-pink to blue wash fading to white.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "hex": "#EDCCF1",
+              "alpha": 1
+            },
+            {
+              "position": 1,
+              "hex": "#E2E9FC",
+              "alpha": 1
+            }
+          ]
+        },
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "hex": "#FFFFFF",
+              "alpha": 0
+            },
+            {
+              "position": 0.42,
+              "hex": "#FFFFFF",
+              "alpha": 1
+            },
+            {
+              "position": 0.85,
+              "hex": "#FFFFFF",
+              "alpha": 1
+            },
+            {
+              "position": 1,
+              "hex": "#FDF5FC",
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    "sia/solid": {
+      "description": "sh-gradient/sia/solid\nPurpose: Strong SIA gradient for compact solid surfaces such as badges.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/sia/illustration/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/sia/illustration/end"
+            }
+          ]
+        }
+      ]
+    },
+    "overlay/bottom": {
+      "description": "sh-gradient/overlay/bottom\nPurpose: Fade behind content at the bottom of an image, so the content stays readable.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/overlay/image/content/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/overlay/image/content/end"
+            }
+          ]
+        }
+      ]
+    },
+    "overlay/top": {
+      "description": "sh-gradient/overlay/top\nPurpose: Fade behind content at the top of an image, so the content stays readable.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/overlay/image/content/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/overlay/image/content/end"
+            }
+          ]
+        }
+      ]
+    },
+    "overlay/scrim": {
+      "description": "sh-gradient/overlay/scrim\nPurpose: Dimming layer behind modal content, to reduce attention on the background.",
+      "layers": [
+        {
+          "type": "solid",
+          "opacity": 0.6,
+          "stops": [
+            {
+              "token": "sh-color-common/overlay/scrim/default"
+            }
+          ]
+        }
+      ]
+    },
+    "overlay/wash": {
+      "description": "sh-gradient/overlay/wash\nPurpose: Subtle tonal wash over imagery.",
+      "layers": [
+        {
+          "type": "solid",
+          "opacity": 0.16,
+          "stops": [
+            {
+              "token": "sh-color-common/overlay/image/wash"
+            }
+          ]
+        }
+      ]
+    },
+    "brand/default": {
+      "description": "sh-gradient/brand/default\nPurpose: Brand gradient for the primary button at rest.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/button/primary/background/default/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/button/primary/background/default/end"
+            }
+          ]
+        }
+      ]
+    },
+    "brand/border": {
+      "description": "sh-gradient/brand/border\nPurpose: Brand gradient edge for brand strokes and outlined brand surfaces.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/border/brand/start"
+            },
+            {
+              "position": 0.5,
+              "token": "sh-translucent/border/brand/middle"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/border/brand/end"
+            }
+          ]
+        }
+      ]
+    },
+    "brand/hover": {
+      "description": "sh-gradient/brand/hover\nPurpose: Brand gradient for the primary button on hover.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/button/primary/background/hover/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/button/primary/background/hover/end"
+            }
+          ]
+        }
+      ]
+    },
+    "brand/pressed": {
+      "description": "sh-gradient/brand/pressed\nPurpose: Brand gradient for the primary button while pressed.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/button/primary/background/pressed/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/button/primary/background/pressed/end"
+            }
+          ]
+        }
+      ]
+    },
+    "premium/default": {
+      "description": "sh-gradient/premium/default\nPurpose: Premium gradient for solid premium surfaces at rest.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/premium/background/solid/default/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/premium/background/solid/default/end"
+            }
+          ]
+        }
+      ]
+    },
+    "premium/soft": {
+      "description": "sh-gradient/premium/soft\nPurpose: Soft premium surface for supporting premium moments.",
+      "layers": [
+        {
+          "type": "solid",
+          "opacity": 1,
+          "stops": [
+            {
+              "token": "sh-color-common/premium/background/soft/default"
+            }
+          ]
+        }
+      ]
+    },
+    "premium/hover": {
+      "description": "sh-gradient/premium/hover\nPurpose: Premium gradient for solid premium surfaces on hover.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/premium/background/solid/hover/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/premium/background/solid/hover/end"
+            }
+          ]
+        }
+      ]
+    },
+    "premium/pressed": {
+      "description": "sh-gradient/premium/pressed\nPurpose: Premium gradient for solid premium surfaces while pressed.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/premium/background/solid/pressed/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/premium/background/solid/pressed/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/light/default": {
+      "description": "sh-gradient/translucent/light/default\nPurpose: Standard light glass over most imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/light/default/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/light/default/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/light/extra-soft": {
+      "description": "sh-gradient/translucent/light/extra-soft\nPurpose: Lightest light glass, when the image needs minimal separation. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/light/extra-soft/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/light/extra-soft/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/light/soft": {
+      "description": "sh-gradient/translucent/light/soft\nPurpose: Subtle light glass over simple imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/light/soft/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/light/soft/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/light/strong": {
+      "description": "sh-gradient/translucent/light/strong\nPurpose: Strong light glass over busy imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/light/strong/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/light/strong/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/dark/default": {
+      "description": "sh-gradient/translucent/dark/default\nPurpose: Standard dark glass over most imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/dark/default/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/dark/default/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/dark/extra-soft": {
+      "description": "sh-gradient/translucent/dark/extra-soft\nPurpose: Lightest dark glass, when the image needs minimal separation. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/dark/extra-soft/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/dark/extra-soft/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/dark/soft": {
+      "description": "sh-gradient/translucent/dark/soft\nPurpose: Subtle dark glass over simple imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/dark/soft/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/dark/soft/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/dark/strong": {
+      "description": "sh-gradient/translucent/dark/strong\nPurpose: Strong dark glass over busy imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/dark/strong/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/dark/strong/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/brand/default": {
+      "description": "sh-gradient/translucent/brand/default\nPurpose: Standard brand glass over most imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/brand/default/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/brand/default/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/brand/extra-soft": {
+      "description": "sh-gradient/translucent/brand/extra-soft\nPurpose: Lightest brand glass, when the image needs minimal separation. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/brand/extra-soft/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/brand/extra-soft/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/brand/soft": {
+      "description": "sh-gradient/translucent/brand/soft\nPurpose: Subtle brand glass over simple imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/brand/soft/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/brand/soft/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/brand/strong": {
+      "description": "sh-gradient/translucent/brand/strong\nPurpose: Strong brand glass over busy imagery. Pair with the matching blur and border.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/background/brand/strong/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/background/brand/strong/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/border/light": {
+      "description": "sh-gradient/translucent/border/light\nPurpose: Light glass edge, the highlight that makes a translucent surface read as glass.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/border/light/start"
+            },
+            {
+              "position": 0.5,
+              "token": "sh-translucent/border/light/middle"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/border/light/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/border/dark": {
+      "description": "sh-gradient/translucent/border/dark\nPurpose: Dark glass edge, for translucent surfaces over light imagery.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/border/dark/start"
+            },
+            {
+              "position": 0.5,
+              "token": "sh-translucent/border/dark/middle"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/border/dark/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/border/brand": {
+      "description": "sh-gradient/translucent/border/brand\nPurpose: Brand glass edge, for brand translucent surfaces.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0.5,
+              0.5,
+              0
+            ],
+            [
+              -0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/border/brand/start"
+            },
+            {
+              "position": 0.5,
+              "token": "sh-translucent/border/brand/middle"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/border/brand/end"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

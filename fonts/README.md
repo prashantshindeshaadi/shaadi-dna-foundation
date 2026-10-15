@@ -1,95 +1,108 @@
-# Lexend-SH
+# Lexend-SH · sh-typo kit
 
-Shaadi's build of Lexend. The ss01 double-storey `a` and `g` are the default
-glyphs; the serifed `I` and `J` are kept, so "Il1" stays distinguishable.
+Shaadi's typeface: **Lexend-SH VF**, a derivative of Lexend. 22 text styles,
+3 breakpoints. Font version 1.009.
 
-Weights: **360 regular · 480 medium · 600 bold · 720 black**. These are not
-standard weights. Use them as-is — never round to 400/500/600/700, or the
-calibration is lost.
+This file is also the README of the shareable kit. Build the kit with
+`python3 tools/build.py`; it lands at `dist/sh-typo-kit.zip`.
 
-## Files
+## Which file is mine
 
-| File | Family | PostScript | Use |
-|---|---|---|---|
-| `LexendSH-VF.ttf` | **Lexend-SH VF** | `LexendSHVF-Regular` | **Primary.** Variable, wght 100–900, default 360 |
-| `LexendSH-Regular.ttf` | Lexend-SH | `LexendSH-Regular` | Static fallback, 360 |
-| `LexendSH-Medium.ttf` | Lexend-SH Medium | `LexendSH-Medium` | Static fallback, 480 |
-| `LexendSH-Bold.ttf` | Lexend-SH | `LexendSH-Bold` | Static fallback, 600 |
-| `LexendSH-Black.ttf` | Lexend-SH Black | `LexendSH-Black` | Static fallback, 720 |
+| You are | Kit folder | Font |
+|---|---|---|
+| Designer | `designer/` | `LexendSH-VF.ttf` (variable) |
+| Web developer | `developer/web/` | `fonts/LexendSH-VF.woff2` (variable) |
+| Android developer | `developer/android/` | `res/font/lexendsh_*.ttf` (4 static) |
+| iOS developer | `developer/ios/` | `Fonts/LexendSH-*.ttf` (4 static) |
 
-The two families are deliberately separate. `Lexend-SH VF` is the variable font;
-`Lexend-SH` is the static set. Keeping them apart stops the operating system
-deduplicating one against the other.
+```
+sh-typo-kit/
+  README.md · OFL.txt
+  designer/    LexendSH-VF.ttf · figma-variables/ (Mobile, Tablet, Desktop)
+  developer/
+    web/       fonts/LexendSH-VF.woff2 · sh-typo.css · preview.html
+    android/   res/font/lexendsh_{regular,medium,bold,black}.ttf · ShTypography.kt
+    ios/       Fonts/LexendSH-{Regular,Medium,Bold,Black}.ttf · ShTypography.swift
+```
 
-Static fallbacks are for Android below API 26, React Native, Flutter and email —
-anywhere variable fonts aren't reliable.
+Figma and web use the variable font; Android and iOS use the four static files.
+All are cut from the same outlines at the same weights, so they render
+identically.
 
 ## Designers
 
-Install `LexendSH-VF.ttf`. Figma shows **Lexend-SH VF** with Regular, Medium,
-Bold and Black as styles, plus a Variable tab with the weight slider.
+1. Remove older Lexend-SH from Font Book.
+2. Install `designer/LexendSH-VF.ttf`. Figma shows **Lexend-SH VF** with
+   Regular, Medium, Bold and Black.
 
-Install the statics only if you need them for a specific export path. Having
-both sets installed is fine, since the family names differ.
+`figma-variables/` is a backup of the `sh-typo` collection, for restoring it or
+setting up a new file. The live variables are already in the Shaadi DNA library.
 
 ## Web
 
-Compress to WOFF2 first — never ship TTF:
+Copy `developer/web/` into the project, keeping `fonts/` next to the CSS. Load
+`sh-typo.css` once. Then use a class or the variables:
 
-```bash
-pip install fonttools brotli
-fonttools ttLib.woff2 compress fonts/LexendSH-VF.ttf
+```html
+<h1 class="sh-heading-lg">Find someone who feels like home</h1>
 ```
 
 ```css
-@font-face {
-  font-family: 'Lexend-SH VF';
-  src: url('LexendSH-VF.woff2') format('woff2-variations');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+.profile-name {
+  font-family: var(--sh-typo-font-family-primary);
+  font-size: var(--sh-typo-title-lg-size);
+  line-height: var(--sh-typo-title-lg-line-height);
+  font-weight: var(--sh-typo-title-lg-weight);
+  letter-spacing: var(--sh-typo-title-lg-letter-spacing);
 }
-
-:root { font-synthesis: none; }
-
-body { font-family: 'Lexend-SH VF', system-ui, sans-serif; font-weight: 360; }
 ```
 
-The `font-weight: 100 900` range is what makes 360 and 480 resolve exactly
-instead of snapping to the nearest standard weight.
+The names match Figma Dev Mode and the foundation's `tokens.css`. Breakpoints
+(768px, 1024px) are inside the CSS. Never ship the TTF to the web.
 
-## Android
+## Android (Jetpack Compose)
 
-API 26+, variable: `res/font/lexendsh_vf.ttf`
+Copy `res/font/*.ttf` into `app/src/main/res/font/`, add `ShTypography.kt`, set
+its `package` and `R` import.
 
-```xml
-<TextView
-    android:fontFamily="@font/lexendsh_vf"
-    android:fontVariationSettings="'wght' 360" />
+```kotlin
+val type = ShTypography.forWidth(LocalConfiguration.current.screenWidthDp)
+Text("Find someone who feels like home", style = type.headingLg)
 ```
 
-Below API 26, statics as `lexend_sh_regular.ttf` and so on, with a
-`font-family` XML mapping each file to its `android:fontWeight`.
+Switches at 600dp and 840dp. Support Micro is uppercase: pass `text.uppercase()`.
 
-## iOS
+## iOS (SwiftUI / UIKit)
 
-Add to the bundle and list under `UIAppFonts`.
+Add `Fonts/*.ttf` to the app target, list them under **Fonts provided by
+application** (`UIAppFonts`) in Info.plist, add `ShTypography.swift`.
 
 ```swift
-// Static
-UIFont(name: "LexendSH-Medium", size: 16)
-
-// Variable — UIKit has no public axis API, so Core Text is needed
-let desc = UIFontDescriptor(fontAttributes: [
-    .name: "LexendSHVF-Regular",
-    kCTFontVariationAttribute as UIFontDescriptor.AttributeName: [2003265652: 480]
-])   // 2003265652 = 'wght'
-let font = UIFont(descriptor: desc, size: 16)
+Text("Find someone who feels like home").shTextStyle(.headingLg)          // SwiftUI
+label.attributedText = ShTextStyle.bodyMd.spec(.mobile).attributed("Hi")   // UIKit
 ```
+
+Compact width uses Mobile, regular width (iPad) uses Tablet. Sizes follow
+Dynamic Type.
+
+## Rules
+
+1. Use the weight numbers below exactly. Never `normal`, `bold`, 400 or 700. A
+   wrong number still renders, so nothing warns you.
+2. Use a style, never a loose size. No style fits? Ask.
+3. One Display per screen. `support/meta` only for timestamps, counts and
+   "last seen", never anything a member must read to act.
+
+## Version 1.009
+
+- Weights recalibrated (table below). Regular unchanged.
+- Every glyph sits 30 units (3% of the size) higher, so text is optically
+  centred in its line box. Line heights didn't change; no code change needed.
+  Side effects: next to another font on the same line (Hindi, Marathi system
+  fallback) Lexend-SH sits 3% higher, and cap-height trimming (Figma vertical
+  trim, CSS `text-box-trim`) is 30 units out.
 
 ## Licence
 
-Derivative of Lexend (Copyright 2019 The Lexend Project Authors) under the SIL
-Open Font License 1.1. Lexend declares no Reserved Font Name, so the renamed
-derivative is permitted. Keep `OFL.txt` alongside these files. Modifications are
-recorded in each file's copyright notice.
+Derivative of Lexend under the SIL Open Font License 1.1. `OFL.txt` travels with
+the font files, always.

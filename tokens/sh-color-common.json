@@ -202,7 +202,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1826:15565",
       "figmaType": null,
@@ -227,7 +227,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:326",
       "figmaType": null,
@@ -252,7 +252,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:327",
       "figmaType": null,
@@ -277,7 +277,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:942:12461",
       "figmaType": null,
@@ -302,7 +302,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1108:13973",
       "figmaType": null,
@@ -327,7 +327,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:329",
       "figmaType": null,
@@ -352,7 +352,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:328",
       "figmaType": null,
@@ -377,7 +377,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:330",
       "figmaType": null,
@@ -580,13 +580,36 @@
         }
       }
     },
+    "text/on-image": {
+      "type": "color",
+      "description": "sh-color-common/text/on-image\nPurpose: Text placed on a photo, video or translucent surface. Use this, not text/inverse, whenever an image sits behind the text.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:2434:15396",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
     "icon/primary": {
       "type": "color",
       "description": "sh-color-common/icon/primary\nPurpose: Icon for primary actions and navigation.",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:314",
       "figmaType": null,
@@ -611,7 +634,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:315",
       "figmaType": null,
@@ -636,7 +659,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:316",
       "figmaType": null,
@@ -661,7 +684,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:317",
       "figmaType": null,
@@ -686,7 +709,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:805:13573",
       "figmaType": null,
@@ -711,7 +734,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:319",
       "figmaType": null,
@@ -736,7 +759,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:805:13572",
       "figmaType": null,
@@ -761,9 +784,34 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1904:4321",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/on-image": {
+      "type": "color",
+      "description": "sh-color-common/icon/on-image\nPurpose: Icon placed on a photo, video or translucent surface. Use this, not icon/inverse, whenever an image sits behind the icon.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:2434:15397",
       "figmaType": null,
       "values": {
         "Dark": {
@@ -793,22 +841,22 @@
         "Dark": {
           "colorSpace": "srgb",
           "components": [
-            0,
-            0,
-            0
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
           ],
           "alpha": 0.6399999856948853,
-          "hex": "#000000"
+          "hex": "#0F172A"
         },
         "Light": {
           "colorSpace": "srgb",
           "components": [
-            0,
-            0,
-            0
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
           ],
           "alpha": 0.6000000238418579,
-          "hex": "#000000"
+          "hex": "#0F172A"
         }
       },
       "figmaExtras": {
@@ -817,8 +865,8 @@
             "colorArg": {
               "type": "alias",
               "alias": {
-                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
-                "targetVariableName": "neutral/black",
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
                 "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
                 "targetVariableSetName": "sh-color-basic"
               }
@@ -834,15 +882,15 @@
             "colorArg": {
               "type": "alias",
               "alias": {
-                "targetVariableId": "VariableID:328e07e8e13a1a1fc42f956dea437fbafc74f858/-1:-1",
-                "targetVariableName": "neutral/black",
+                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+                "targetVariableName": "neutral/900",
                 "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
                 "targetVariableSetName": "sh-color-basic"
               }
             },
             "opacityArg": {
               "type": "number",
-              "value": 60.000003814697266
+              "value": 60
             }
           }
         }
@@ -902,47 +950,11 @@
           "alpha": 0.1599999964237213,
           "hex": "#0F172A"
         }
-      },
-      "figmaExtras": {
-        "Dark": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 16
-            }
-          }
-        },
-        "Light": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 16
-            }
-          }
-        }
       }
     },
-    "overlay/image/content-bottom/start": {
+    "overlay/image/content/start": {
       "type": "color",
-      "description": "sh-color-common/overlay/image/content-bottom/start\nPurpose: Gradient start stop for bottom image content legibility. Use with its matching stop.",
+      "description": "sh-color-common/overlay/image/content/start\nPurpose: Transparent stop for the image content gradient. Use with its end stop; flip the angle for a top or bottom fade.",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -970,47 +982,11 @@
           "alpha": 0,
           "hex": "#0F172A"
         }
-      },
-      "figmaExtras": {
-        "Dark": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 0
-            }
-          }
-        },
-        "Light": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 0
-            }
-          }
-        }
       }
     },
-    "overlay/image/content-bottom/end": {
+    "overlay/image/content/end": {
       "type": "color",
-      "description": "sh-color-common/overlay/image/content-bottom/end\nPurpose: Gradient end stop for bottom image content legibility. Use with its matching stop.",
+      "description": "sh-color-common/overlay/image/content/end\nPurpose: Opaque stop for the image content gradient. Place it behind the text so content stays readable over any photo.",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -1019,196 +995,16 @@
       "figmaType": null,
       "values": {
         "Dark": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.8999999761581421,
-          "hex": "#0F172A"
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
         },
         "Light": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.8999999761581421,
-          "hex": "#0F172A"
-        }
-      },
-      "figmaExtras": {
-        "Dark": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 90
-            }
-          }
-        },
-        "Light": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 90
-            }
-          }
-        }
-      }
-    },
-    "overlay/image/content-top/start": {
-      "type": "color",
-      "description": "sh-color-common/overlay/image/content-top/start\nPurpose: Gradient start stop for top image content legibility. Use with its matching stop.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:1190:16275",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.8999999761581421,
-          "hex": "#0F172A"
-        },
-        "Light": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.8999999761581421,
-          "hex": "#0F172A"
-        }
-      },
-      "figmaExtras": {
-        "Dark": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 90
-            }
-          }
-        },
-        "Light": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 90
-            }
-          }
-        }
-      }
-    },
-    "overlay/image/content-top/end": {
-      "type": "color",
-      "description": "sh-color-common/overlay/image/content-top/end\nPurpose: Gradient end stop for top image content legibility. Use with its matching stop.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:1190:16276",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0,
-          "hex": "#0F172A"
-        },
-        "Light": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0,
-          "hex": "#0F172A"
-        }
-      },
-      "figmaExtras": {
-        "Dark": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 0
-            }
-          }
-        },
-        "Light": {
-          "com.figma.composedColor": {
-            "colorArg": {
-              "type": "alias",
-              "alias": {
-                "targetVariableId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-                "targetVariableName": "neutral/900",
-                "targetVariableSetId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-                "targetVariableSetName": "sh-color-basic"
-              }
-            },
-            "opacityArg": {
-              "type": "number",
-              "value": 0
-            }
-          }
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
         }
       }
     },
@@ -1385,7 +1181,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:356",
       "figmaType": null,
@@ -1499,13 +1295,36 @@
         }
       }
     },
+    "button/secondary/text/subtext": {
+      "type": "color",
+      "description": "sh-color-common/button/secondary/text/subtext\nPurpose: Supporting sub-text under the label on the Secondary button surface.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:2644:46022",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/300",
+          "targetId": "VariableID:3b0d347ef6228a5f51f7d27ceef2e3ebc0df8159/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/700",
+          "targetId": "VariableID:8040ea4b5923aa5735773f306b1a512756eb5c7a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
     "button/secondary/icon/default": {
       "type": "color",
       "description": "sh-color-common/button/secondary/icon/default\nPurpose: Icon on the Secondary button surface.",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:365",
       "figmaType": null,
@@ -1625,7 +1444,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1771:16029",
       "figmaType": null,
@@ -1673,7 +1492,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:382",
       "figmaType": null,
@@ -1770,7 +1589,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:332",
       "figmaType": null,
@@ -1841,7 +1660,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:401",
       "figmaType": null,
@@ -1866,7 +1685,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:393",
       "figmaType": null,
@@ -2201,7 +2020,7 @@
       "type": "color",
       "description": "sh-color-common/sia/card/border/start\nPurpose: Border starting gradient stop for SIA cards. Use with its matching stop.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1833:1782",
       "figmaType": null,
@@ -2224,7 +2043,7 @@
       "type": "color",
       "description": "sh-color-common/sia/card/border/end\nPurpose: Border ending gradient stop for SIA cards. Use with its matching stop.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1833:1783",
       "figmaType": null,
@@ -2243,11 +2062,83 @@
         }
       }
     },
+    "sia/top-match/start": {
+      "type": "color",
+      "description": "sh-color-common/sia/top-match/start\nPurpose: Opening stop of the SIA top-match card wash. Use with its middle and end stops.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2434:15398",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "brand/100",
+          "targetId": "VariableID:a9e47969a9e467048c3b12d28b6bfd8658890455/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "brand/100",
+          "targetId": "VariableID:a9e47969a9e467048c3b12d28b6bfd8658890455/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "sia/top-match/middle": {
+      "type": "color",
+      "description": "sh-color-common/sia/top-match/middle\nPurpose: Middle stop of the SIA top-match card wash. Keeps the fade clean between the warm and cool ends.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2434:15399",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "sia/top-match/end": {
+      "type": "color",
+      "description": "sh-color-common/sia/top-match/end\nPurpose: Closing stop of the SIA top-match card wash. Use with its start and middle stops.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2434:15400",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/100",
+          "targetId": "VariableID:7337a2438551457c8c4131d032602b81adba0f32/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/100",
+          "targetId": "VariableID:7337a2438551457c8c4131d032602b81adba0f32/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
     "semantic/success/border/default": {
       "type": "color",
       "description": "sh-color-common/semantic/success/border/default\nPurpose: Default success boundary for standard feedback.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:805:13579",
       "figmaType": null,
@@ -2270,7 +2161,7 @@
       "type": "color",
       "description": "sh-color-common/semantic/success/border/soft\nPurpose: Soft success boundary for low-emphasis feedback.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1765:16004",
       "figmaType": null,
@@ -2305,8 +2196,8 @@
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "green/600",
-          "targetId": "VariableID:6ff3528b16937c6f964b6acf671b24e59fed71c2/-1:-1",
+          "alias": "green/500",
+          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -2485,7 +2376,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:207:938",
       "figmaType": null,
@@ -2510,7 +2401,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:407",
       "figmaType": null,
@@ -2522,8 +2413,8 @@
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "green/600",
-          "targetId": "VariableID:6ff3528b16937c6f964b6acf671b24e59fed71c2/-1:-1",
+          "alias": "green/500",
+          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -2533,7 +2424,7 @@
       "type": "color",
       "description": "sh-color-common/semantic/warning/border/default\nPurpose: Default warning boundary for standard feedback.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:805:13580",
       "figmaType": null,
@@ -2556,7 +2447,7 @@
       "type": "color",
       "description": "sh-color-common/semantic/warning/border/soft\nPurpose: Soft warning boundary for low-emphasis feedback.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1765:16005",
       "figmaType": null,
@@ -2771,7 +2662,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:207:954",
       "figmaType": null,
@@ -2796,7 +2687,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:421",
       "figmaType": null,
@@ -2819,7 +2710,7 @@
       "type": "color",
       "description": "sh-color-common/semantic/error/border/default\nPurpose: Default error boundary for standard feedback.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:805:13581",
       "figmaType": null,
@@ -2842,7 +2733,7 @@
       "type": "color",
       "description": "sh-color-common/semantic/error/border/soft\nPurpose: Soft error boundary for low-emphasis feedback.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1765:16006",
       "figmaType": null,
@@ -2877,8 +2768,8 @@
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "red/700",
-          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "alias": "red/600",
+          "targetId": "VariableID:3cfcad5c1f90e44e61209a894df5391dcf90f562/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -3057,7 +2948,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:207:946",
       "figmaType": null,
@@ -3082,7 +2973,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:414",
       "figmaType": null,
@@ -3094,8 +2985,8 @@
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "red/700",
-          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "alias": "red/600",
+          "targetId": "VariableID:3cfcad5c1f90e44e61209a894df5391dcf90f562/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -3105,7 +2996,7 @@
       "type": "color",
       "description": "sh-color-common/semantic/information/border/default\nPurpose: Default information boundary for standard feedback.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:805:13582",
       "figmaType": null,
@@ -3128,7 +3019,7 @@
       "type": "color",
       "description": "sh-color-common/semantic/information/border/soft\nPurpose: Soft information boundary for low-emphasis feedback.",
       "scopes": [
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:1765:16007",
       "figmaType": null,
@@ -3163,8 +3054,8 @@
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "blue/600",
-          "targetId": "VariableID:95bbc1dbed9a20abc2fede251445b16d5209e8b2/-1:-1",
+          "alias": "blue/500",
+          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -3343,7 +3234,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:207:962",
       "figmaType": null,
@@ -3368,7 +3259,7 @@
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
-        "STROKE"
+        "STROKE_COLOR"
       ],
       "id": "VariableID:16:428",
       "figmaType": null,
@@ -3380,9 +3271,134 @@
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "blue/600",
-          "targetId": "VariableID:95bbc1dbed9a20abc2fede251445b16d5209e8b2/-1:-1",
+          "alias": "blue/500",
+          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "indicator/success": {
+      "type": "color",
+      "description": "sh-color-common/indicator/success\nPurpose: Bright indicator for check marks, success icons and completed or positive status dots. Use on icons, dots and badge marks only, never for text.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:2716:39686",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/vivid",
+          "targetId": "VariableID:2716:39681",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/vivid",
+          "targetId": "VariableID:2716:39681",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "indicator/premium": {
+      "type": "color",
+      "description": "sh-color-common/indicator/premium\nPurpose: Bright indicator for Gold and premium checks, icons and badges. Use on icons, dots and badge marks only, never for text.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:2716:39687",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/vivid",
+          "targetId": "VariableID:2716:39682",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/vivid",
+          "targetId": "VariableID:2716:39682",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "indicator/diamond": {
+      "type": "color",
+      "description": "sh-color-common/indicator/diamond\nPurpose: Bright indicator for Diamond checks, icons and badges. Use on icons, dots and badge marks only, never for text.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:2716:39688",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "mint/vivid",
+          "targetId": "VariableID:2716:39683",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "mint/vivid",
+          "targetId": "VariableID:2716:39683",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "indicator/platinum": {
+      "type": "color",
+      "description": "sh-color-common/indicator/platinum\nPurpose: Bright indicator for Platinum checks, icons and badges. Use on icons, dots and badge marks only, never for text.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:2716:39689",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/vivid",
+          "targetId": "VariableID:2716:39684",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/vivid",
+          "targetId": "VariableID:2716:39684",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "indicator/private": {
+      "type": "color",
+      "description": "sh-color-common/indicator/private\nPurpose: Bright indicator for Private and VIP checks, icons and badges. Use on icons, dots and badge marks only, never for text.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:2716:39690",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "purple/vivid",
+          "targetId": "VariableID:2716:39685",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "purple/vivid",
+          "targetId": "VariableID:2716:39685",
+          "setId": "VariableCollectionId:13:64",
           "setName": "sh-color-basic"
         }
       }

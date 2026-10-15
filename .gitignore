@@ -1,6 +1,5 @@
 dist/
-.DS_Store
+.claude/
 __pycache__/
 *.pyc
-.claude/
-*.woff2
+.DS_Store

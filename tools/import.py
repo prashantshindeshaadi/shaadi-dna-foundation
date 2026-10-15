@@ -5,6 +5,7 @@ Update one collection from a Figma export.
     python3 tools/import.py ~/Downloads/sh-color-common.zip
     python3 tools/import.py ~/Downloads/sh-typo/          # folder of mode files
     python3 tools/import.py ~/Downloads/Shaadi_Foundation.zip   # whole foundation
+    python3 tools/import.py sh-gradient.styles.json             # colour styles (tools/read_styles.js)
 
 Takes a Figma variables export, merges it into tokens/<collection>.json, and
 prints exactly what changed. Nothing is written until you confirm.
@@ -74,12 +75,38 @@ def show(v):
     return str(v)
 
 
+def import_styles(src, auto):
+    """Colour styles saved from tools/read_styles.js -> tokens/sh-gradient.json."""
+    new = json.load(open(src))
+    target = os.path.join(TOKENS, "sh-gradient.json")
+    old = json.load(open(target)) if os.path.exists(target) else {"styles": {}}
+    o, n = old["styles"], new["styles"]
+    print(f"\nsh-gradient  ({len(n)} colour styles)")
+    for k in n:
+        if k not in o:
+            print(f"  + added      {k}")
+        elif o[k] != n[k]:
+            print(f"  ~ changed    {k}")
+    for k in o.keys() - n.keys():
+        print(f"  - removed    {k}")
+    if o == n:
+        print("  no changes")
+        return
+    if not auto and input("\nWrite tokens/sh-gradient.json? [y/N] ").strip().lower() != "y":
+        print("Cancelled.")
+        return
+    json.dump(new, open(target, "w"), indent=2, ensure_ascii=False)
+    print("  wrote tokens/sh-gradient.json")
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
         sys.exit(1)
     src = os.path.expanduser(sys.argv[1])
     auto = "--yes" in sys.argv
+    if src.endswith(".json") and json.load(open(src)).get("kind") == "paint-styles":
+        return import_styles(src, auto)
     work = tempfile.mkdtemp()
     try:
         root = unpack(src, work)

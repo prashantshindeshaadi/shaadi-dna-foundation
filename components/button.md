@@ -1,6 +1,6 @@
 # Button (`sh-button`)
 
-6 types × 3 sizes × 6 states. Horizontal auto-layout, hug content, radius `full`.
+6 types × 3 sizes × 6 states. Horizontal auto-layout, hug content, radius `sh-radius/button`.
 
 **Anatomy:** leading icon (optional) → label → trailing icon (optional); loader replaces all content in the Loading state.
 
@@ -25,9 +25,9 @@ Large is for hero sections, modals and full-width containers. Medium is the ever
 | **Premium Solid** | `premium/background/solid/default/*` | `/hover/*` + `sh-shadow/<mode>/Default` | `/pressed/*` | `premium/text/on-solid`, `premium/icon/on-solid` |
 | **Premium Soft** | `premium/background/soft/default` | `/hover` | `/pressed` | `premium/text/on-soft`, `premium/icon/on-soft` |
 
-**All types share these two states:**
+**All types share these three states:**
 
-- **Disabled:** `background/disabled`, `text/disabled`, `icon/disabled`. No shadow, no gradient, no pointer events.
+- **Disabled:** the type's Default look with `sh-opacity/disabled` on the button root. No shadow, no pointer events.
 - **Focus:** the ring from §7.2. The resting background does not change.
 - **Loading:** label and both icons hidden; `sh-icon/line-icon/loader` shown at the size's icon size, inheriting the type's label colour; background stays default; input blocked.
 

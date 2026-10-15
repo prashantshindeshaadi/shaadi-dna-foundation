@@ -5,7 +5,7 @@
   "tokens": {
     "size/12": {
       "type": "number",
-      "description": "sh-icon/size/12\nPurpose: Interface icon for micro indicators and inline metadata. Pairs with support-meta.",
+      "description": "sh-icon/size/12\nPurpose: Interface icon for micro indicators and inline markers inside dense text.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -17,7 +17,7 @@
     },
     "size/14": {
       "type": "number",
-      "description": "sh-icon/size/14\nPurpose: Interface icon for compact helper content and trailing actions. Pairs with support-micro and button-sm.",
+      "description": "sh-icon/size/14\nPurpose: Interface icon for compact helper text, chips and small buttons.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -29,7 +29,7 @@
     },
     "size/16": {
       "type": "number",
-      "description": "sh-icon/size/16\nPurpose: Interface icon for dense controls and compact rows. Pairs with support-label, body-sm, title-sm and button-md.",
+      "description": "sh-icon/size/16\nPurpose: Interface icon for dense controls, list rows and medium buttons.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -41,7 +41,7 @@
     },
     "size/20": {
       "type": "number",
-      "description": "sh-icon/size/20\nPurpose: Standard interface icon for fields, lists and controls. Pairs with body-md, title-md and button-lg.",
+      "description": "sh-icon/size/20\nPurpose: Standard interface icon for fields, large buttons and list leading icons.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -53,7 +53,7 @@
     },
     "size/24": {
       "type": "number",
-      "description": "sh-icon/size/24\nPurpose: Interface icon for navigation and prominent controls. Pairs with body-lg and title-lg.",
+      "description": "sh-icon/size/24\nPurpose: Interface icon for navigation, headers and primary actions.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -65,7 +65,7 @@
     },
     "stroke/12": {
       "type": "number",
-      "description": "sh-icon/stroke/12\nPurpose: The only stroke for sh-icon/size/12, used everywhere.",
+      "description": "sh-icon/stroke/12\nPurpose: Stroke weight for 12px line icons; bound to glyph strokes so the pack follows the token.",
       "scopes": [
         "STROKE_FLOAT"
       ],
@@ -77,7 +77,7 @@
     },
     "stroke/14": {
       "type": "number",
-      "description": "sh-icon/stroke/14\nPurpose: The only stroke for sh-icon/size/14, used everywhere.",
+      "description": "sh-icon/stroke/14\nPurpose: Stroke weight for 14px line icons; bound to glyph strokes so the pack follows the token.",
       "scopes": [
         "STROKE_FLOAT"
       ],
@@ -89,43 +89,43 @@
     },
     "stroke/16": {
       "type": "number",
-      "description": "sh-icon/stroke/16\nPurpose: The only stroke for sh-icon/size/16, used everywhere.",
+      "description": "sh-icon/stroke/16\nPurpose: Stroke weight for 16px line icons; bound to glyph strokes so the pack follows the token.",
       "scopes": [
         "STROKE_FLOAT"
       ],
       "id": "VariableID:127:2901",
       "figmaType": null,
       "values": {
-        "Value": 1.5
+        "Value": 1.4500000476837158
       }
     },
     "stroke/20": {
       "type": "number",
-      "description": "sh-icon/stroke/20\nPurpose: The only stroke for sh-icon/size/20, used everywhere.",
+      "description": "sh-icon/stroke/20\nPurpose: Stroke weight for 20px line icons; bound to glyph strokes so the pack follows the token.",
       "scopes": [
         "STROKE_FLOAT"
       ],
       "id": "VariableID:27:509",
       "figmaType": null,
       "values": {
-        "Value": 1.5
+        "Value": 1.5499999523162842
       }
     },
     "stroke/24": {
       "type": "number",
-      "description": "sh-icon/stroke/24\nPurpose: The only stroke for sh-icon/size/24, used everywhere.",
+      "description": "sh-icon/stroke/24\nPurpose: Stroke weight for 24px line icons; bound to glyph strokes so the pack follows the token.",
       "scopes": [
         "STROKE_FLOAT"
       ],
       "id": "VariableID:27:510",
       "figmaType": null,
       "values": {
-        "Value": 1.75
+        "Value": 1.649999976158142
       }
     },
     "target/default": {
       "type": "number",
-      "description": "sh-icon/target/default\nPurpose: Touch target for icon-only actions. It can contain a smaller visible icon.",
+      "description": "sh-icon/target/default\nPurpose: Touch target for icon-only controls so the hit area stays accessible regardless of icon size.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -137,7 +137,7 @@
     },
     "pictogram/size/28": {
       "type": "number",
-      "description": "sh-icon/pictogram/size/28\nPurpose: Full-colour image pictogram for compact badges and visual identifiers. Never recolour.",
+      "description": "sh-icon/pictogram/size/28\nPurpose: Full-colour image pictogram for inline badges and tags.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -149,7 +149,7 @@
     },
     "pictogram/size/40": {
       "type": "number",
-      "description": "sh-icon/pictogram/size/40\nPurpose: Full-colour image pictogram for cards, benefit rows, and supporting empty states. Never recolour.",
+      "description": "sh-icon/pictogram/size/40\nPurpose: Full-colour image pictogram for list rows and payment options.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -161,7 +161,7 @@
     },
     "pictogram/size/64": {
       "type": "number",
-      "description": "sh-icon/pictogram/size/64\nPurpose: Full-colour image pictogram for hero cards, onboarding, and prominent communication. Never recolour.",
+      "description": "sh-icon/pictogram/size/64\nPurpose: Full-colour image pictogram for hero spots, sheets and empty states.",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -169,6 +169,30 @@
       "figmaType": null,
       "values": {
         "Value": 64
+      }
+    },
+    "pictogram/size/96": {
+      "type": "number",
+      "description": "sh-icon/pictogram/size/96\nPurpose: Pictogram frame size for the largest size step — hero spots and empty states.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:2660:11323",
+      "figmaType": null,
+      "values": {
+        "Value": 96
+      }
+    },
+    "brand/size/32": {
+      "type": "number",
+      "description": "sh-icon/brand/size/32\nPurpose: Single frame size for brand and social-media marks; instances scale the vector as needed.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:2660:11324",
+      "figmaType": null,
+      "values": {
+        "Value": 32
       }
     }
   }
