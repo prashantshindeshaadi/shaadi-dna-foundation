@@ -236,11 +236,12 @@ If two treatments compete, remove one. The neutral version is always safe.
 
 ## 8. Components
 
-Blueprints live in `components/`, one file per component. A component is "in
-the system" only when its file is complete.
+Blueprints live in `components/`, one folder per component named like Figma:
+`components/sh-chip/sh-chip.md`. A component is "in the system" only when its
+blueprint is complete. Figma Code Connect links each component to its blueprint.
 
 **Specified:** every `sh-*` component on the Core page, generated from Figma
-(`components/README.md` is the index; `button.md` is hand-written). Components
+(`components/README.md` is the index; `sh-button.md` is hand-written). Components
 from the migration pages (profile card, full profile view, account) are included
 but still in progress. Icons: `components/icons.md`, SVGs in `icons/`.
 

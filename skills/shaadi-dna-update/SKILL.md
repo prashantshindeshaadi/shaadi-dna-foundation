@@ -33,7 +33,8 @@ Figma MCP (`figma_execute`) in the Shaadi DNA file, save the returned JSON, then
 Run `tools/read_components.js` (with `SETS` = the changed component-set ids, or
 all of them) and `tools/read_icons.js` through the Figma MCP, save each result,
 then `python3 tools/components.py <files…>`. It rewrites the blueprints, the
-index and the icon files. `components/button.md` is hand-written and kept.
+index and the icon files. `components/sh-button/sh-button.md` is hand-written and kept.
+New components need a Code Connect link too (see `/shaadi-code-connect`, Layer 2a).
 
 ### 2. Check
 

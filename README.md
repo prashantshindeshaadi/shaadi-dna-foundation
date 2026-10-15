@@ -21,7 +21,8 @@ FOUNDATION.md   The rules. Which token, what sits on what, what's not allowed.
 tokens/         The values. One file per Figma collection, every mode inside,
                 plus sh-gradient.json: the 30 sh-gradient colour styles.
 fonts/          Lexend-SH: variable TTF + WOFF2, 4 static TTFs, licence.
-components/     One blueprint per sh-* component, generated from Figma. Index in
+components/     One folder per sh-* component: components/sh-chip/sh-chip.md, generated
+                from Figma and linked from Figma via Code Connect. Index in
                 components/README.md; icon map in components/icons.md.
 icons/          Every sh-icon: SVG (line/filled use currentColor), bitmap pictograms as PNG.
 updates/        Change log in plain language, one file per update.
@@ -77,7 +78,7 @@ pair or broken alias can't merge.
 | `read_styles.js` | Run in Figma: reads the `sh-gradient` colour styles |
 | `gradients.py` | Turns `sh-gradient.json` into CSS, Android drawables and Swift |
 | `read_components.js`, `read_icons.js` | Run in Figma: read sh-* component sets and icons |
-| `components.py` | Writes `components/*.md`, `components/icons.md` and `icons/` from those reads |
+| `components.py` | Writes `components/<sh-name>/<sh-name>.md`, the index, `components/icons.md` and `icons/` |
 | `check.py` | Validates tokens; exits non-zero on any failure |
 | `build.py` | Writes `dist/` for web, Android, iOS, JSON, and the type kit |
 | `typo_kit.py` | The type kit part of the build |

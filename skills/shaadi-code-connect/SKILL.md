@@ -10,7 +10,8 @@ Two separate layers. Work out which one is being asked for before doing anything
 | Layer | Question it answers | Needs |
 |---|---|---|
 | **Variable code syntax** | "What do I write instead of `#0F172A`?" | Only tokens. Ready now |
-| **Code Connect** | "What do I write instead of this frame?" | Real code components |
+| **Code Connect → blueprint** | "Where is the spec for this component?" | Only blueprints. Done for all 86 |
+| **Code Connect → code** | "What do I write instead of this frame?" | Real code components |
 
 ---
 
@@ -52,6 +53,22 @@ unmapped. Unmapped usually means a variable exists in Figma but not in
 
 ---
 
+## Layer 2a — Code Connect to the blueprint (until code exists)
+
+Every `sh-*` component in Figma links to its own blueprint with label
+**Markdown**, so Dev Mode and the Figma MCP (`get_code_connect_map`) point to
+`components/<sh-name>/<sh-name>.md`.
+
+For a new component: regenerate blueprints (`/shaadi-dna-update`, step 1c),
+push, then map it with the Figma MCP:
+
+    add_code_connect_map(fileKey, nodeId = <component set id>, label = "Markdown",
+      componentName = "<sh-name>",
+      source = "https://github.com/prashantshindeshaadi/shaadi-dna-foundation/blob/main/components/<path>/<sh-name>.md")
+
+Node ids are in `components/README.md`. Or link it by hand in Figma: Dev Mode →
+Code Connect → the component → enter the path.
+
 ## Layer 2 — Code Connect for components
 
 Maps a Figma component to the real code component, so Dev Mode shows the
@@ -59,7 +76,7 @@ component's own JSX.
 
 ### Before starting, check all three exist
 
-1. A blueprint in `components/<name>.md`
+1. A blueprint in `components/<sh-name>/<sh-name>.md`
 2. A built component in the catalogue app
 3. A published Figma component with proper component **properties**
 
@@ -69,8 +86,8 @@ becomes the standard.
 
 ### Steps
 
-1. Create `code-connect/` at the repo root when the first component is ready.
-2. One file per component, `<name>.figma.tsx`, using the pattern below.
+1. The component's folder already exists: `components/<sh-name>/`.
+2. One file per component, `<sh-name>.figma.tsx`, using the pattern below.
 3. Map props to Figma **component properties**, never layer names. Layer names
    get renamed in a tidy-up; properties are the contract.
 4. Cover every variant the blueprint defines. A partially mapped component is
@@ -84,7 +101,11 @@ npx figma connect publish --token $FIGMA_TOKEN
 Publish from CI on merge, not from a laptop, so the mapping always matches the
 merged code.
 
-Pattern (Button; Figma property names come from `components/button.md`):
+Put `<sh-name>.figma.tsx` (and the component) in the component's own folder,
+`components/<sh-name>/`, and add a mapping with the code label (React, SwiftUI,
+Compose…) next to the Markdown one.
+
+Pattern (Button; Figma property names come from `components/sh-button/sh-button.md`):
 
 ```tsx
 import figma from "@figma/code-connect";
