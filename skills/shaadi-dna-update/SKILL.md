@@ -28,6 +28,13 @@ Variable exports don't include styles. Run `tools/read_styles.js` through the
 Figma MCP (`figma_execute`) in the Shaadi DNA file, save the returned JSON, then
 `python3 tools/import.py <that file>`.
 
+### 1c. Components and icons (when `sh-*` components changed)
+
+Run `tools/read_components.js` (with `SETS` = the changed component-set ids, or
+all of them) and `tools/read_icons.js` through the Figma MCP, save each result,
+then `python3 tools/components.py <files…>`. It rewrites the blueprints, the
+index and the icon files. `components/button.md` is hand-written and kept.
+
 ### 2. Check
 
 ```bash

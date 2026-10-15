@@ -21,7 +21,9 @@ FOUNDATION.md   The rules. Which token, what sits on what, what's not allowed.
 tokens/         The values. One file per Figma collection, every mode inside,
                 plus sh-gradient.json: the 30 sh-gradient colour styles.
 fonts/          Lexend-SH: variable TTF + WOFF2, 4 static TTFs, licence.
-components/     Component blueprints. Button is specified.
+components/     One blueprint per sh-* component, generated from Figma. Index in
+                components/README.md; icon map in components/icons.md.
+icons/          Every sh-icon: SVG (line/filled use currentColor), bitmap pictograms as PNG.
 updates/        Change log in plain language, one file per update.
 tools/          Python scripts (standard library only).
 skills/         Claude Code workflows: /shaadi-dna-update, /shaadi-code-connect.
@@ -59,6 +61,7 @@ Values change in Figma, never here.
 ```bash
 python3 tools/import.py <figma-export.zip>   # variables: shows every change, asks before writing
 python3 tools/import.py <styles.json>        # sh-gradient styles, saved from tools/read_styles.js
+python3 tools/components.py <reads…>         # blueprints + icons, from tools/read_components.js / read_icons.js
 python3 tools/check.py                       # aliases, descriptions, scopes, fonts, 64 contrast pairs
 python3 tools/build.py                       # regenerate dist/ and the type kit
 python3 tools/new_update.py "Short title"    # start the log entry in updates/
@@ -73,6 +76,8 @@ pair or broken alias can't merge.
 | `import.py` | Merges a Figma variables export (or the styles JSON) into `tokens/` |
 | `read_styles.js` | Run in Figma: reads the `sh-gradient` colour styles |
 | `gradients.py` | Turns `sh-gradient.json` into CSS, Android drawables and Swift |
+| `read_components.js`, `read_icons.js` | Run in Figma: read sh-* component sets and icons |
+| `components.py` | Writes `components/*.md`, `components/icons.md` and `icons/` from those reads |
 | `check.py` | Validates tokens; exits non-zero on any failure |
 | `build.py` | Writes `dist/` for web, Android, iOS, JSON, and the type kit |
 | `typo_kit.py` | The type kit part of the build |

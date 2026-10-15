@@ -38,6 +38,10 @@
 - Space step `14` added.
 - Icon strokes retuned for 16 / 20 / 24. `pictogram/size/96` and `brand/size/32` added.
 
+**Components and icons — new in the repo**
+- A blueprint for every `sh-*` component: 60 Core, 8 profile card, 9 full profile view, 8 account/payment, 1 utility. Each lists properties, anatomy, sizes and the token behind every bound value in every variant, generated straight from Figma (`tools/components.py`). `button.md` stays hand-written.
+- Icon library: 317 icons mapped in `components/icons.md`; SVGs in `icons/` (line and filled use `currentColor`), bitmap pictograms as 2x PNGs.
+
 **Repo**
 - Removed the `features/` and `code-connect/` placeholders and two index files that repeated other docs. Code Connect steps now live in the `/shaadi-code-connect` skill.
 - `build.py` now also makes the shareable type kit (`dist/sh-typo-kit.zip`), and its iOS output compiles.

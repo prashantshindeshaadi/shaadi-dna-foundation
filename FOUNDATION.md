@@ -239,9 +239,13 @@ If two treatments compete, remove one. The neutral version is always safe.
 Blueprints live in `components/`, one file per component. A component is "in
 the system" only when its file is complete.
 
-**Specified:** Button (`components/button.md`).
-**Not yet:** input, card, list row, status banner, chip, sheet, badge, avatar,
-tab bar. Build from these rules and **flag it** — don't invent a blueprint.
+**Specified:** every `sh-*` component on the Core page, generated from Figma
+(`components/README.md` is the index; `button.md` is hand-written). Components
+from the migration pages (profile card, full profile view, account) are included
+but still in progress. Icons: `components/icons.md`, SVGs in `icons/`.
+
+Need something that has no blueprint? Build from these rules and **flag it** —
+don't invent one.
 
 Every interactive element defines default, hover, pressed, focus, disabled,
 and loading where async. Pressed must differ visibly from hover.
