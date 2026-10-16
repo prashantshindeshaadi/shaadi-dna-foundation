@@ -5,7 +5,7 @@
   "tokens": {
     "hidden": {
       "type": "number",
-      "description": "sh-opacity/hidden\nPurpose: Hide a layer while preserving layout, transitions, or interaction logic.",
+      "description": "sh-opacity/hidden\nPurpose: Hide a layer while keeping its layout, transitions and interaction logic in place.",
       "scopes": [
         "OPACITY"
       ],
@@ -17,7 +17,7 @@
     },
     "disabled": {
       "type": "number",
-      "description": "sh-opacity/disabled\nPurpose: Visual treatment for disabled controls. Always pair with disabled behaviour.",
+      "description": "sh-opacity/disabled\nPurpose: Disabled controls. Always pair with disabled behaviour; never use to de-emphasise active content.",
       "scopes": [
         "OPACITY"
       ],
@@ -25,18 +25,6 @@
       "figmaType": null,
       "values": {
         "Value": 40
-      }
-    },
-    "muted": {
-      "type": "number",
-      "description": "sh-opacity/muted\nPurpose: De-emphasize decorative imagery and non-essential visual content without disabling it.",
-      "scopes": [
-        "OPACITY"
-      ],
-      "id": "VariableID:27:543",
-      "figmaType": null,
-      "values": {
-        "Value": 64
       }
     },
     "full": {
@@ -49,6 +37,54 @@
       "figmaType": null,
       "values": {
         "Value": 100
+      }
+    },
+    "strong": {
+      "type": "number",
+      "description": "sh-opacity/strong\nPurpose: De-emphasised but readable: muted text, secondary imagery and non-essential visual content that stays active.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:27:543",
+      "figmaType": null,
+      "values": {
+        "Value": 64
+      }
+    },
+    "extra-soft": {
+      "type": "number",
+      "description": "sh-opacity/extra-soft\nPurpose: Barely-there layer: hairline and bright borders, faint washes and subtle highlights on photos and dark or translucent surfaces.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:2801:12888",
+      "figmaType": null,
+      "values": {
+        "Value": 10
+      }
+    },
+    "soft": {
+      "type": "number",
+      "description": "sh-opacity/soft\nPurpose: Light layer: scrims, image washes and translucent tints that sit behind content without hiding it.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:2811:41403",
+      "figmaType": null,
+      "values": {
+        "Value": 24
+      }
+    },
+    "extra-strong": {
+      "type": "number",
+      "description": "sh-opacity/extra-strong\nPurpose: Heavy layer: dark overlays and near-solid scrims that should hide most of what sits behind them.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:2811:41404",
+      "figmaType": null,
+      "values": {
+        "Value": 88
       }
     }
   }

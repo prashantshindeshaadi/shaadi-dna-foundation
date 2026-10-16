@@ -96,7 +96,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Trailing icon | height | sh-icon/size/20 |
 | Icon container | padding | sh-space/4 *(set on 6/12 variants)* |
 | Icon container | fill | background/strong *(set on 6/12 variants)* |
-| Content / Row / Label wrap | opacity | sh-opacity/muted *(set on 6/12 variants)* |
+| Content / Row / Label wrap | opacity | sh-opacity/strong *(set on 6/12 variants)* |
 | Content / Row / Label wrap / Label | fill | text/primary *(set on 6/12 variants)* |
 | Content / Row / Label wrap / Label | textRangeFills | text/primary *(set on 6/12 variants)* |
 | Content / Row / Label wrap / Label | text style | sh-typo/Body/SM/Default *(set on 6/12 variants)* |

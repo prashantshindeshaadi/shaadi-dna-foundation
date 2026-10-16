@@ -38,7 +38,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 |---|---|---|
 | root | gap | sh-space/8 |
 | root | opacity | sh-opacity/full *(set on 2/4 variants)* |
-| Note | opacity | sh-opacity/muted *(set on 2/4 variants)* |
+| Note | opacity | sh-opacity/strong *(set on 2/4 variants)* |
 | Note | fill | Style=In card → text/on-image; Style=Floating → text/secondary |
 | Note | text style | Type=Pre-written message → sh-typo/Body/SM/Italic; Type=Action → sh-typo/Body/SM/Default |
 | Link slot / sh-text-link | gap | sh-space/4 |

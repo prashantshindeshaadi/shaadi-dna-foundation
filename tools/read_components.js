@@ -94,6 +94,6 @@ for (const id of SETS) {
     try { vp = c.variantProperties || {}; } catch (e) {}
     variants.push({ name: c.name, variant: vp, w: Math.round(c.width * 100) / 100, h: Math.round(c.height * 100) / 100, root, bindings: rows, tree });
   }
-  out.push({ id, name: s.name, page: s.parent && s.parent.type === "PAGE" ? s.parent.name : (s.parent && s.parent.parent ? s.parent.parent.name : null), description: s.description, props, propsError, variants });
+  out.push({ id, name: s.name, page: (() => { let p = s.parent; while (p && p.type !== "PAGE") p = p.parent; return p ? p.name : null; })(), description: s.description, props, propsError, variants });
 }
 return JSON.stringify(out);

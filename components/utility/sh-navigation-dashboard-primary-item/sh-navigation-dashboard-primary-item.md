@@ -43,7 +43,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Label | text:fontFamily | sh-typo/support/label/font |
 | Label | text:fontSize | sh-typo/support/label/size |
 | root | fill | State=Hover → unknown VariableID:16:296; State=Selected → background/selected *(set on 2/5 variants)* |
-| .focus-ring | opacity | sh-opacity/muted *(set on 1/5 variants)* |
+| .focus-ring | opacity | sh-opacity/strong *(set on 1/5 variants)* |
 | .focus-ring | stroke | border/focus *(set on 1/5 variants)* |
 
 > Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:16:296

@@ -45,5 +45,5 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Track / Thumb / Icon | height | sh-icon/size/16 *(set on 9/10 variants)* |
 | root | opacity | sh-opacity/disabled *(set on 2/10 variants)* |
 | .focus-ring | radius | sh-radius/full *(set on 2/10 variants)* |
-| .focus-ring | opacity | sh-opacity/muted *(set on 2/10 variants)* |
+| .focus-ring | opacity | sh-opacity/strong *(set on 2/10 variants)* |
 | .focus-ring | stroke | border/focus *(set on 2/10 variants)* |

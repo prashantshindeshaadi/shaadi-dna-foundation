@@ -110,9 +110,11 @@ work in progress and may still change.
 | `sh-action-note` | 4 | 5 | [profile-card/sh-action-note/sh-action-note.md](profile-card/sh-action-note/sh-action-note.md) | [`2594:16750`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16750) |
 | `sh-action-row` | 6 | 3 | [profile-card/sh-action-row/sh-action-row.md](profile-card/sh-action-row/sh-action-row.md) | [`2594:16861`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16861) |
 | `sh-avatar-placeholder` | 4 | 2 | [profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md](profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md) | [`2239:13257`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257) |
-| `sh-mini-card` | 2 | 7 | [profile-card/sh-mini-card/sh-mini-card.md](profile-card/sh-mini-card/sh-mini-card.md) | [`2780:68360`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360) |
+| `sh-info-detail` | 4 | 4 | [profile-card/sh-info-detail/sh-info-detail.md](profile-card/sh-info-detail/sh-info-detail.md) | [`2825:43215`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2825-43215) |
+| `sh-mini-card` | 2 | 9 | [profile-card/sh-mini-card/sh-mini-card.md](profile-card/sh-mini-card/sh-mini-card.md) | [`2780:68360`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360) |
 | `sh-profile-card` | 8 | 3 | [profile-card/sh-profile-card/sh-profile-card.md](profile-card/sh-profile-card/sh-profile-card.md) | [`2579:25592`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2579-25592) |
 | `sh-profile-card-info` | 1 | 14 | [profile-card/sh-profile-card-info/sh-profile-card-info.md](profile-card/sh-profile-card-info/sh-profile-card-info.md) | [`2496:27797`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-27797) |
+| `sh-tag-profile` | 6 | 1 | [profile-card/sh-tag-profile/sh-tag-profile.md](profile-card/sh-tag-profile/sh-tag-profile.md) | [`2813:41954`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2813-41954) |
 | `sh-user-images` | 26 | 2 | [profile-card/sh-user-images/sh-user-images.md](profile-card/sh-user-images/sh-user-images.md) | [`2248:13619`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2248-13619) |
 
 ## Utility

@@ -59,5 +59,5 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Trailing icon / Trailing icon | width | Size=Small → sh-icon/size/12; Size=Medium → sh-icon/size/14; Size=Large → sh-icon/size/16 |
 | Trailing icon / Trailing icon | height | Size=Small → sh-icon/size/12; Size=Medium → sh-icon/size/14; Size=Large → sh-icon/size/16 |
 | .focus-ring | radius | sh-radius/full *(set on 22/44 variants)* |
-| .focus-ring | opacity | sh-opacity/muted *(set on 22/44 variants)* |
+| .focus-ring | opacity | sh-opacity/strong *(set on 22/44 variants)* |
 | .focus-ring | stroke | Type=Neutral → border/focus; Type=Link → border/focus; Type=Inverse → border/inverse; Type=Premium → border/focus *(set on 22/44 variants)* |

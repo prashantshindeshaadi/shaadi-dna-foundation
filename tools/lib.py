@@ -124,3 +124,75 @@ def composite(hex_c, alpha, bg):
     c = [int(hex_c[i:i + 2], 16) for i in (1, 3, 5)]
     b = [int(bg[i:i + 2], 16) for i in (1, 3, 5)]
     return "#%02X%02X%02X" % tuple(round(x * alpha + y * (1 - alpha)) for x, y in zip(c, b))
+
+
+TYPES = {"COLOR": "color", "FLOAT": "number", "STRING": "string", "BOOLEAN": "boolean"}
+
+
+def merge_dump(collections, old_all):
+    """tools/read_variables.js output -> {collection: merged} in the same shape as merge_export.
+
+    Alias ids and Figma extras from the previous tokens/ file are kept where the
+    value is unchanged, so a re-read shows real changes only.
+    """
+    by_id = {v["id"]: (c, v) for c in collections for v in c["vars"]}
+    out = {}
+    for c in collections:
+        prev = old_all.get(c["name"], {}).get("tokens", {})
+        tokens = {}
+        for v in c["vars"]:
+            old = prev.get(v["name"], {})
+            entry = {"type": TYPES[v["type"]], "description": v["description"], "scopes": v["scopes"],
+                     "id": v["id"], "figmaType": "string" if v["type"] == "STRING" else None, "values": {}}
+            extras = {}
+            for mode in c["modes"]:
+                val = v["values"][mode]
+                old_val = old.get("values", {}).get(mode)
+                old_extra = dict(old.get("figmaExtras", {}).get(mode, {}))
+                old_composed = old_extra.pop("com.figma.composedColor", None)
+                if old_extra:
+                    extras.setdefault(mode, {}).update(old_extra)   # e.g. hiddenFromPublishing
+                if isinstance(val, dict) and val.get("composed"):
+                    tc, tv = by_id[val["targetId"]]
+                    base = tv["values"][tc["modes"][0]]
+                    same = old_composed and old_composed["colorArg"]["alias"]["targetVariableName"] == val["target"] \
+                        and old_composed["opacityArg"]["value"] == val["opacity"]
+                    entry["values"][mode] = old_val if same else {"colorSpace": "srgb", "components": base["components"],
+                                                                   "alpha": val["opacity"] / 100, "hex": base["hex"]}
+                    extras.setdefault(mode, {})["com.figma.composedColor"] = old_composed if same else {
+                        "colorArg": {"type": "alias", "alias": {"targetVariableId": val["targetId"], "targetVariableName": val["target"],
+                                                                "targetVariableSetId": val["setId"], "targetVariableSetName": val["setName"]}},
+                        "opacityArg": {"type": "number", "value": val["opacity"]}}
+                elif isinstance(val, dict) and "alias" in val:
+                    if isinstance(old_val, dict) and old_val.get("alias") == val["alias"]:
+                        entry["values"][mode] = old_val
+                    elif v["type"] == "COLOR":
+                        entry["values"][mode] = val
+                    else:
+                        entry["values"][mode] = {"alias": val["alias"]}
+                else:
+                    entry["values"][mode] = old_val if old_val == val else val
+            if extras:
+                entry["figmaExtras"] = extras
+            tokens[v["name"]] = entry
+        # keep the previous file's order so diffs show changes, not reshuffles
+        old_modes = old_all.get(c["name"], {}).get("modes", [])
+        modes = old_modes if set(old_modes) == set(c["modes"]) else c["modes"]
+        order = [k for k in prev if k in tokens] + [k for k in tokens if k not in prev]
+        for t in tokens.values():
+            t["values"] = {m: t["values"][m] for m in modes}
+            if "figmaExtras" in t:
+                t["figmaExtras"] = {m: t["figmaExtras"][m] for m in modes if m in t["figmaExtras"]}
+        out[c["name"]] = {"modes": modes, "tokens": {k: tokens[k] for k in order}}
+    return out
+
+
+def load_tool_json(path):
+    """A saved figma_execute result: raw JSON, or the MCP wrapper {"result": "<json>"}."""
+    raw = open(path).read().strip()
+    if raw.startswith("[") and '"type": "text"' in raw[:200]:   # tool-results file
+        raw = json.loads(raw)[0]["text"]
+    data = json.loads(raw[raw.index("{") if raw.startswith("{") else 0:])
+    if isinstance(data, dict) and "result" in data and isinstance(data["result"], str):
+        data = json.loads(data["result"].strip())
+    return data

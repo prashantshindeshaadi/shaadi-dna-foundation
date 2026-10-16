@@ -55,7 +55,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Badge | text style | Size=Large → sh-typo/Body/LG/Default; Size=Medium → sh-typo/Body/MD/Default; Size=Small → sh-typo/Body/SM/Default |
 | .accessibility-label | fill | text/primary |
 | .accessibility-label | text style | sh-typo/Support/Micro |
-| .focus-ring | opacity | sh-opacity/muted *(set on 15/75 variants)* |
+| .focus-ring | opacity | sh-opacity/strong *(set on 15/75 variants)* |
 | .focus-ring | stroke | border/focus *(set on 15/75 variants)* |
 | root | strokeTopWeight | sh-stroke/none *(set on 12/75 variants)* |
 | root | strokeBottomWeight | sh-stroke/none *(set on 12/75 variants)* |

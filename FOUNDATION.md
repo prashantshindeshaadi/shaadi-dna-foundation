@@ -57,7 +57,7 @@ For every UI task, in order:
 | `sh-radius` | Corner steps and corner roles per component | — |
 | `sh-icon` | Icon sizes, paired strokes, pictogram and brand sizes, target | — |
 | `sh-shadow` | Elevation, including Brand, Premium and Sia | Light / Dark |
-| `sh-opacity` | Hidden, disabled, muted, full | — |
+| `sh-opacity` | Hidden, extra-soft, soft, disabled, strong, extra-strong, full | — |
 
 ---
 
@@ -224,7 +224,7 @@ If two treatments compete, remove one. The neutral version is always safe.
    tier badges) held to 3:1. Use them only beside a label or another cue,
    never as text.
 2. **Focus.** 2px ring in `border/focus`, 4px outside the element, radius
-   matching the element, at `sh-opacity/muted`. Added, never substituted.
+   matching the element, at `sh-opacity/strong`. Added, never substituted.
 3. **Targets.** 48×48 minimum, including icon-only buttons and Small buttons.
 4. **Selection needs a second cue.** A check, a filled control, a label change,
    or `aria-selected` / `aria-checked` in code. Colour alone never carries it.

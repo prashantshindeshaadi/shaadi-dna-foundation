@@ -11,19 +11,19 @@ Profile card (migration, not yet core) · 1 variant · [Open in Figma](https://w
 | Property | Type | Values | Default |
 |---|---|---|---|
 | Name | text | — | Sneha Kaul |
-| Details line 1 | text | — | 5' 6" • Kashmiri Pandit |
-| Details line 2 | text | — | Pimpri-Chinchwad • Software Developer |
-| Show status | boolean | — | false |
-| Show tags | boolean | — | false |
+| Show status | boolean | — | true |
+| Show tags | boolean | — | true |
 | Show badge 1 | boolean | — | true |
 | Badge 1 | instance swap | — | instance |
 | Show badge 2 | boolean | — | true |
 | Badge 2 | instance swap | — | instance |
 | Show badge 3 | boolean | — | true |
 | Badge 3 | instance swap | — | instance |
-| Show details line 1 | boolean | — | true |
-| Show details line 2 | boolean | — | true |
 | Age | text | — | 26 |
+| Show detail 1 | boolean | — | true |
+| Show detail 2 | boolean | — | true |
+| Show detail 3 | boolean | — | true |
+| Show detail 4 | boolean | — | true |
 
 ## Anatomy
 
@@ -37,21 +37,24 @@ Layer tree of `sh-profile-card-info`. Nested components are shown by name; their
         - Age — text "26"
         - Badge 2 — **sh-icon/badge/premium**
         - Badge 3 — **sh-icon/badge/vip**
-        - Status — **sh-tag** (Trailing icon (Small) instance, Trailing icon (Medium) instance, Leading icon (Small) instance, Leading icon (Medium) instance, Label Online, Mode Translucent, Size Small, Shape Pill) · hidden by default
+        - Status — **sh-tag-profile** (Type Online)
       - Spacer — fill × fixed
       - Badge 1 — **sh-icon/badge/verified**
-    - Detail 1 — text "5' 6" • Kashmiri Pandit"
-    - Detail 2 — text "Pimpri-Chinchwad • Software Developer"
-  - Tags — row · hidden by default · fixed × hug
-    - Tag — **sh-tag** (Trailing icon (Medium) instance, Leading icon (Medium) instance, Trailing icon (Small) instance, Leading icon (Small) instance, Label Online, Mode Translucent, Size Medium, Shape Rounded) · hidden by default
-    - Tag — **sh-tag** (Trailing icon (Medium) instance, Trailing icon (Small) instance, Leading icon (Small) instance, Leading icon (Medium) instance, Label You & Her, Mode Dark, Size Medium, Shape Rounded)
-    - Tag — **sh-tag** (Trailing icon (Medium) instance, Trailing icon (Small) instance, Leading icon (Small) instance, Leading icon (Medium) instance, Label Astro, Mode Dark, Size Medium, Shape Rounded)
+    - Details — row · fill × hug
+      - Info detail 1 — **sh-info-detail** (Label 5' 6", Mode On image, Size Medium)
+      - Info detail 2 — **sh-info-detail** (Label Kashmiri Pandit, Mode On image, Size Medium)
+      - Info detail 3 — **sh-info-detail** (Label Pimpri-Chinchwad, Mode On image, Size Medium)
+      - Info detail 4 — **sh-info-detail** (Label Software Developer, Mode On image, Size Medium)
+  - Tags — row · fill × hug
+    - Tag — **sh-tag-profile** (Type Online) · hidden by default
+    - Tag — **sh-tag-profile** (Type You & Her)
+    - Tag — **sh-tag-profile** (Type Astro)
   - Divider — **sh-divider** (Orientation Horizontal, Type Soft)
   - Actions — **sh-action-island** (Style In card)
 
 ## Size
 
-316 × 195
+316 × 223
 
 ## Tokens
 
@@ -70,38 +73,21 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Content box | gap | sh-space/2 |
 | Content box | padding-x | sh-space/0 |
 | Content box | padding-y | unknown VariableID:46703fb61c241c75f1244dcab872d413be6d45e1/1135:148 |
-| Content box / Name row | gap | sh-space/6 |
 | Content box / Name row | padding:bottom | sh-space/2 |
 | Content box / Name row / Name group / Name | fill | text/on-image |
 | Content box / Name row / Name group / Name | text style | sh-typo/Heading/SM |
 | Content box / Name row / Name group / Age | fill | text/on-image |
 | Content box / Name row / Name group / Age | text style | sh-typo/Heading/SM |
-| Content box / Name row / Name group / Status | gap | sh-space/2 |
-| Content box / Name row / Name group / Status | padding-x | sh-space/4 |
-| Content box / Name row / Name group / Status | padding-y | sh-space/0 |
-| Content box / Name row / Name group / Status | radius | sh-radius/full |
-| Content box / Name row / Name group / Status | strokeTopWeight | sh-stroke/default |
-| Content box / Name row / Name group / Status | strokeBottomWeight | sh-stroke/default |
-| Content box / Name row / Name group / Status | strokeLeftWeight | sh-stroke/default |
-| Content box / Name row / Name group / Status | strokeRightWeight | sh-stroke/default |
-| Content box / Name row / Name group / Status | fill | sh-gradient/translucent/light/extra-soft |
-| Content box / Detail 1 | fill | text/on-image |
-| Content box / Detail 1 | text style | sh-typo/Body/MD/Default |
-| Content box / Detail 2 | fill | text/on-image |
-| Content box / Detail 2 | text style | sh-typo/Body/MD/Default |
+| Content box / Details | gap | sh-space/8 |
+| Content box / Details | row-gap | sh-space/2 |
+| Content box / Details / Info detail 1 | gap | sh-space/8 |
+| Content box / Details / Info detail 2 | gap | sh-space/8 |
+| Content box / Details / Info detail 3 | gap | sh-space/8 |
+| Content box / Details / Info detail 4 | gap | sh-space/8 |
 | Tags | gap | sh-space/8 |
 | Tags | row-gap | sh-space/8 |
-| Tags / Tag | gap | sh-space/2 |
-| Tags / Tag | padding-x | sh-space/4 |
-| Tags / Tag | padding-y | sh-space/2 |
-| Tags / Tag | radius | sh-radius/xs |
-| Tags / Tag | strokeTopWeight | sh-stroke/default |
-| Tags / Tag | strokeBottomWeight | sh-stroke/default |
-| Tags / Tag | strokeLeftWeight | sh-stroke/default |
-| Tags / Tag | strokeRightWeight | sh-stroke/default |
-| Tags / Tag | fill | background/inverse |
 | Divider | radius | sh-radius/xxs |
-| Divider | opacity | sh-opacity/disabled |
+| Divider | opacity | sh-opacity/extra-soft |
 | Actions | gap | sh-space/12 |
 | Actions | padding | sh-space/0 |
 

@@ -342,6 +342,8 @@ def main():
             icons += data["icons"]
         else:
             comps += [c for c in data if not c.get("missing")]
+    # a later read of the same component replaces an earlier one
+    comps = list({c["id"]: c for c in comps}.values())
     entries = []
     for c in comps:
         folder, label = group_of(c.get("page"))

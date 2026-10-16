@@ -62,7 +62,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Content / Label | fill | State=Default, Selected=false → text/primary; State=Hover, Selected=false → text/primary; State=Pressed, Selected=false → text/primary; State=Focus, Selected=false → text/primary; State=Disabled, Selected=false → text/disabled; State=Focus, Selected=true → text/brand; State=Default, Selected=true → text/brand; State=Hover, Selected=true → text/brand; State=Pressed, Selected=true → text/brand; State=Disabled, Selected=true → text/brand |
 | Content / Label | text style | Size=Small → sh-typo/Body/SM/Default; Size=Medium → sh-typo/Body/MD/Default; Size=Large → sh-typo/Body/LG/Default |
 | .focus-ring | radius | Size=Small, Selected=false → sh-radius/sm; Size=Medium, Selected=false → sh-radius/md; Size=Large, Selected=false → sh-radius/md; Size=Small, Selected=true → sh-radius/sm; Size=Medium, Selected=true → sh-radius/md; Size=Large, Selected=true → sh-radius/default *(set on 6/33 variants)* |
-| .focus-ring | opacity | sh-opacity/muted *(set on 6/33 variants)* |
+| .focus-ring | opacity | sh-opacity/strong *(set on 6/33 variants)* |
 | .focus-ring | stroke | border/focus *(set on 6/33 variants)* |
 | Leading icon | width | Size=Small → sh-icon/size/14; Size=Medium → sh-icon/size/16; Size=Large → sh-icon/size/20 *(set on 23/33 variants)* |
 | Leading icon | height | Size=Small → sh-icon/size/14; Size=Medium → sh-icon/size/16; Size=Large → sh-icon/size/20 *(set on 23/33 variants)* |

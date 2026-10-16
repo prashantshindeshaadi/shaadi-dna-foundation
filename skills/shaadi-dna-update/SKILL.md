@@ -22,6 +22,13 @@ zip. It prints every change before writing anything, then asks to confirm.
 Read that output carefully. It is the basis for the update-log entry, and it is
 the only place an unintended change will show up.
 
+### 1a. Or read the variables live
+
+No export at hand? Run `tools/read_variables.js` through the Figma MCP
+(`figma_execute`) in the Shaadi DNA file, save the result, and pass that file to
+`tools/import.py`. Same diff, same confirmation; alias ids and Figma extras are
+kept where nothing changed.
+
 ### 1b. Colour styles (when `sh-gradient/*` changed)
 
 Variable exports don't include styles. Run `tools/read_styles.js` through the

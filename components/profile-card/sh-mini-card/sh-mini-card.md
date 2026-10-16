@@ -11,11 +11,13 @@ Profile card (migration, not yet core) · 2 variants · [Open in Figma](https://
 | Property | Type | Values | Default |
 |---|---|---|---|
 | Name | text | — | Sneha P, 26 |
-| Details | text | — | 5’6” • Kayastha • Pune, MH |
 | Show badge 1 | boolean | — | true |
 | Badge 1 | instance swap | — | instance |
 | Show badge 2 | boolean | — | true |
 | Badge 2 | instance swap | — | instance |
+| Show detail 1 | boolean | — | true |
+| Show detail 2 | boolean | — | true |
+| Show detail 3 | boolean | — | true |
 | Type | variant | Default, No photo | Default |
 
 ## Anatomy
@@ -30,7 +32,10 @@ Layer tree of `Type=Default`. Nested components are shown by name; their interna
       - Badges — row · hug × hug
         - Badge 1 — **sh-icon/badge/verified**
         - Badge 2 — **sh-icon/badge/premium**
-    - Details — text "5’6” • Kayastha • Pune, MH"
+    - Details — row · fill × hug
+      - Info detail 1 — **sh-info-detail** (Label 5’6”, Mode Default, Size Small)
+      - Info detail 2 — **sh-info-detail** (Label Kayastha, Mode Default, Size Small)
+      - Info detail 3 — **sh-info-detail** (Label Pune, MH, Mode Default, Size Small)
   - Action — **sh-button** (Trailing icon (Small) instance, Trailing icon (Medium) instance, Leading icon (Medium) instance, Leading icon (Large) instance, Leading icon (Small) instance, Label Connect Now, Trailing icon (Large) instance, Sublabel Supporting text, Type Primary, Size Small, State Default)
 
 ## Size
@@ -62,8 +67,11 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Info / Name row / Name | fill | text/primary |
 | Info / Name row / Name | text style | sh-typo/Title/SM |
 | Info / Name row / Badges | gap | sh-space/4 |
-| Info / Details | fill | text/secondary |
-| Info / Details | text style | sh-typo/Body/SM/Tight |
+| Info / Details | gap | sh-space/6 |
+| Info / Details | row-gap | sh-space/0 |
+| Info / Details / Info detail 1 | gap | sh-space/6 |
+| Info / Details / Info detail 2 | gap | sh-space/6 |
+| Info / Details / Info detail 3 | gap | sh-space/6 |
 | Action | gap | sh-space/2 |
 | Action | padding-x | sh-space/12 |
 | Action | radius | sh-radius/full |

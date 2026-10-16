@@ -6,6 +6,7 @@ Update one collection from a Figma export.
     python3 tools/import.py ~/Downloads/sh-typo/          # folder of mode files
     python3 tools/import.py ~/Downloads/Shaadi_Foundation.zip   # whole foundation
     python3 tools/import.py sh-gradient.styles.json             # colour styles (tools/read_styles.js)
+    python3 tools/import.py variables.json                      # live read (tools/read_variables.js)
 
 Takes a Figma variables export, merges it into tokens/<collection>.json, and
 prints exactly what changed. Nothing is written until you confirm.
@@ -14,7 +15,7 @@ After it runs, write an entry in updates/ (see tools/new_update.py).
 """
 import sys, os, json, glob, zipfile, tempfile, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib import merge_export, TOKENS
+from lib import merge_export, merge_dump, load_tool_json, all_collections, TOKENS
 
 
 def collections_in(path):
@@ -65,6 +66,27 @@ def diff(old, new):
     return out
 
 
+def report(name, new, old, d, changes):
+    print(f"\n{name}  ({len(new['tokens'])} tokens, modes: {', '.join(new['modes'])})")
+    if not old:
+        print("  NEW collection")
+    elif changes == 0:
+        print("  no changes")
+    else:
+        for k in d["added"]:
+            print(f"  + added      {k}")
+        for k in d["removed"]:
+            print(f"  - removed    {k}")
+        for k, mode, a, b in d["values"]:
+            print(f"  ~ {mode:8} {k}: {a} -> {b}")
+        if d["descriptions"]:
+            print(f"  ~ descriptions updated: {len(d['descriptions'])}")
+        if d["meta"]:
+            print(f"  ~ Figma metadata refreshed on {len(d['meta'])} tokens")
+        for k, a, b in d["scopes"]:
+            print(f"  ~ scopes     {k}: {a} -> {b}")
+
+
 def show(v):
     if isinstance(v, dict):
         if "alias" in v:
@@ -75,9 +97,31 @@ def show(v):
     return str(v)
 
 
+def import_variables(collections, auto):
+    """Variables read live from Figma by tools/read_variables.js."""
+    old_all = all_collections()
+    summary = []
+    for name, new in sorted(merge_dump(collections, old_all).items()):
+        old = old_all.get(name, {})
+        d = diff(old, new)
+        changes = sum(len(v) for v in d.values())
+        report(name, new, old, d, changes)
+        summary.append((name, new, changes))
+    if sum(c for _, _, c in summary) == 0:
+        print("\nNothing to write.")
+        return
+    if not auto and input(f"\nWrite {len(summary)} collection file(s)? [y/N] ").strip().lower() != "y":
+        print("Cancelled.")
+        return
+    for name, new, _ in summary:
+        json.dump(new, open(os.path.join(TOKENS, name + ".json"), "w"), indent=2, ensure_ascii=False)
+        print(f"  wrote tokens/{name}.json")
+    print("\nNext: python3 tools/check.py   then   python3 tools/new_update.py")
+
+
 def import_styles(src, auto):
     """Colour styles saved from tools/read_styles.js -> tokens/sh-gradient.json."""
-    new = json.load(open(src))
+    new = load_tool_json(src)
     target = os.path.join(TOKENS, "sh-gradient.json")
     old = json.load(open(target)) if os.path.exists(target) else {"styles": {}}
     o, n = old["styles"], new["styles"]
@@ -105,8 +149,12 @@ def main():
         sys.exit(1)
     src = os.path.expanduser(sys.argv[1])
     auto = "--yes" in sys.argv
-    if src.endswith(".json") and json.load(open(src)).get("kind") == "paint-styles":
-        return import_styles(src, auto)
+    if os.path.isfile(src) and not src.endswith(".zip"):
+        data = load_tool_json(src)
+        if isinstance(data, dict) and data.get("kind") == "paint-styles":
+            return import_styles(src, auto)
+        if isinstance(data, list) or (isinstance(data, dict) and data.get("kind") == "figma-variables"):
+            return import_variables(data if isinstance(data, list) else data["collections"], auto)
     work = tempfile.mkdtemp()
     try:
         root = unpack(src, work)
@@ -122,24 +170,7 @@ def main():
             new = merge_export(files)
             d = diff(old, new)
             changes = sum(len(v) for v in d.values())
-            print(f"\n{name}  ({len(new['tokens'])} tokens, modes: {', '.join(new['modes'])})")
-            if not old:
-                print("  NEW collection")
-            elif changes == 0:
-                print("  no changes")
-            else:
-                for k in d["added"]:
-                    print(f"  + added      {k}")
-                for k in d["removed"]:
-                    print(f"  - removed    {k}")
-                for k, mode, a, b in d["values"]:
-                    print(f"  ~ {mode:8} {k}: {a} -> {b}")
-                if d["descriptions"]:
-                    print(f"  ~ descriptions updated: {len(d['descriptions'])}")
-                if d["meta"]:
-                    print(f"  ~ Figma metadata refreshed on {len(d['meta'])} tokens")
-                for k, a, b in d["scopes"]:
-                    print(f"  ~ scopes     {k}: {a} -> {b}")
+            report(name, new, old, d, changes)
             summary.append((name, new, changes, d))
 
         total = sum(c for _, _, c, _ in summary)

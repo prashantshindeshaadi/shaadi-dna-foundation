@@ -61,6 +61,7 @@ Values change in Figma, never here.
 
 ```bash
 python3 tools/import.py <figma-export.zip>   # variables: shows every change, asks before writing
+python3 tools/import.py <variables.json>     # or variables read live with tools/read_variables.js
 python3 tools/import.py <styles.json>        # sh-gradient styles, saved from tools/read_styles.js
 python3 tools/components.py <reads…>         # blueprints + icons, from tools/read_components.js / read_icons.js
 python3 tools/check.py                       # aliases, descriptions, scopes, fonts, 64 contrast pairs
@@ -75,6 +76,7 @@ pair or broken alias can't merge.
 | Script | Does |
 |---|---|
 | `import.py` | Merges a Figma variables export (or the styles JSON) into `tokens/` |
+| `read_variables.js` | Run in Figma: reads every variable collection (no manual export needed) |
 | `read_styles.js` | Run in Figma: reads the `sh-gradient` colour styles |
 | `gradients.py` | Turns `sh-gradient.json` into CSS, Android drawables and Swift |
 | `read_components.js`, `read_icons.js` | Run in Figma: read sh-* component sets and icons |
