@@ -43,6 +43,12 @@ then `python3 tools/components.py <files…>`. It rewrites the blueprints, the
 index and the icon files. `components/sh-button/sh-button.md` is hand-written and kept.
 New components need a Code Connect link too (see `/shaadi-code-connect`, Layer 2a).
 
+### 1d. Keep the hierarchy
+
+New tokens land at the end of their file. Run `python3 tools/order.py` to slot
+them into hierarchy order (low → high, light → strong). Order only; it proves
+nothing else changed.
+
 ### 2. Check
 
 ```bash

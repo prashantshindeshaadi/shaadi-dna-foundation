@@ -829,20 +829,6 @@
         "Tablet": 24
       }
     },
-    "body/lg/default/paragraph-spacing": {
-      "type": "number",
-      "description": "sh-typo/body/lg/default/paragraph-spacing\nPurpose: Controls space between paragraphs for long-form primary reading content.",
-      "scopes": [
-        "PARAGRAPH_SPACING"
-      ],
-      "id": "VariableID:4:54",
-      "figmaType": null,
-      "values": {
-        "Desktop": 12,
-        "Mobile": 12,
-        "Tablet": 12
-      }
-    },
     "body/lg/default/letter-spacing": {
       "type": "number",
       "description": "sh-typo/body/lg/default/letter-spacing\nPurpose: Controls character spacing for long-form primary reading content.",
@@ -861,6 +847,20 @@
         "Tablet": {
           "alias": "letter-spacing/body-normal"
         }
+      }
+    },
+    "body/lg/default/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/lg/default/paragraph-spacing\nPurpose: Controls space between paragraphs for long-form primary reading content.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:54",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
       }
     },
     "body/lg/tight/line-height": {
@@ -987,20 +987,6 @@
         "Tablet": 20
       }
     },
-    "body/md/default/paragraph-spacing": {
-      "type": "number",
-      "description": "sh-typo/body/md/default/paragraph-spacing\nPurpose: Controls space between paragraphs for standard body copy and descriptions.",
-      "scopes": [
-        "PARAGRAPH_SPACING"
-      ],
-      "id": "VariableID:4:64",
-      "figmaType": null,
-      "values": {
-        "Desktop": 12,
-        "Mobile": 12,
-        "Tablet": 12
-      }
-    },
     "body/md/default/letter-spacing": {
       "type": "number",
       "description": "sh-typo/body/md/default/letter-spacing\nPurpose: Controls character spacing for standard body copy and descriptions.",
@@ -1019,6 +1005,20 @@
         "Tablet": {
           "alias": "letter-spacing/body-normal"
         }
+      }
+    },
+    "body/md/default/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/md/default/paragraph-spacing\nPurpose: Controls space between paragraphs for standard body copy and descriptions.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:64",
+      "figmaType": null,
+      "values": {
+        "Desktop": 12,
+        "Mobile": 12,
+        "Tablet": 12
       }
     },
     "body/md/tight/line-height": {
@@ -1145,20 +1145,6 @@
         "Tablet": 18
       }
     },
-    "body/sm/default/paragraph-spacing": {
-      "type": "number",
-      "description": "sh-typo/body/sm/default/paragraph-spacing\nPurpose: Controls space between paragraphs for compact supporting copy.",
-      "scopes": [
-        "PARAGRAPH_SPACING"
-      ],
-      "id": "VariableID:4:74",
-      "figmaType": null,
-      "values": {
-        "Desktop": 8,
-        "Mobile": 8,
-        "Tablet": 8
-      }
-    },
     "body/sm/default/letter-spacing": {
       "type": "number",
       "description": "sh-typo/body/sm/default/letter-spacing\nPurpose: Controls character spacing for compact supporting copy.",
@@ -1177,6 +1163,20 @@
         "Tablet": {
           "alias": "letter-spacing/body-normal"
         }
+      }
+    },
+    "body/sm/default/paragraph-spacing": {
+      "type": "number",
+      "description": "sh-typo/body/sm/default/paragraph-spacing\nPurpose: Controls space between paragraphs for compact supporting copy.",
+      "scopes": [
+        "PARAGRAPH_SPACING"
+      ],
+      "id": "VariableID:4:74",
+      "figmaType": null,
+      "values": {
+        "Desktop": 8,
+        "Mobile": 8,
+        "Tablet": 8
       }
     },
     "body/sm/tight/line-height": {

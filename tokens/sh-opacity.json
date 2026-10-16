@@ -15,42 +15,6 @@
         "Value": 0
       }
     },
-    "disabled": {
-      "type": "number",
-      "description": "sh-opacity/disabled\nPurpose: Disabled controls. Always pair with disabled behaviour; never use to de-emphasise active content.",
-      "scopes": [
-        "OPACITY"
-      ],
-      "id": "VariableID:1814:8800",
-      "figmaType": null,
-      "values": {
-        "Value": 40
-      }
-    },
-    "full": {
-      "type": "number",
-      "description": "sh-opacity/full\nPurpose: Default visibility when no opacity reduction is needed.",
-      "scopes": [
-        "OPACITY"
-      ],
-      "id": "VariableID:27:544",
-      "figmaType": null,
-      "values": {
-        "Value": 100
-      }
-    },
-    "strong": {
-      "type": "number",
-      "description": "sh-opacity/strong\nPurpose: De-emphasised but readable: muted text, secondary imagery and non-essential visual content that stays active.",
-      "scopes": [
-        "OPACITY"
-      ],
-      "id": "VariableID:27:543",
-      "figmaType": null,
-      "values": {
-        "Value": 64
-      }
-    },
     "extra-soft": {
       "type": "number",
       "description": "sh-opacity/extra-soft\nPurpose: Barely-there layer: hairline and bright borders, faint washes and subtle highlights on photos and dark or translucent surfaces.",
@@ -75,6 +39,30 @@
         "Value": 24
       }
     },
+    "disabled": {
+      "type": "number",
+      "description": "sh-opacity/disabled\nPurpose: Disabled controls. Always pair with disabled behaviour; never use to de-emphasise active content.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:1814:8800",
+      "figmaType": null,
+      "values": {
+        "Value": 40
+      }
+    },
+    "strong": {
+      "type": "number",
+      "description": "sh-opacity/strong\nPurpose: De-emphasised but readable: muted text, secondary imagery and non-essential visual content that stays active.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:27:543",
+      "figmaType": null,
+      "values": {
+        "Value": 64
+      }
+    },
     "extra-strong": {
       "type": "number",
       "description": "sh-opacity/extra-strong\nPurpose: Heavy layer: dark overlays and near-solid scrims that should hide most of what sits behind them.",
@@ -85,6 +73,18 @@
       "figmaType": null,
       "values": {
         "Value": 88
+      }
+    },
+    "full": {
+      "type": "number",
+      "description": "sh-opacity/full\nPurpose: Default visibility when no opacity reduction is needed.",
+      "scopes": [
+        "OPACITY"
+      ],
+      "id": "VariableID:27:544",
+      "figmaType": null,
+      "values": {
+        "Value": 100
       }
     }
   }

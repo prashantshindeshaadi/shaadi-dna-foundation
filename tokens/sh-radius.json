@@ -3,20 +3,6 @@
     "Value"
   ],
   "tokens": {
-    "default": {
-      "type": "number",
-      "description": "sh-radius/default\nPurpose: Fallback rounding when no role-named radius fits.",
-      "scopes": [
-        "CORNER_RADIUS"
-      ],
-      "id": "VariableID:24:472",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "alias": "md"
-        }
-      }
-    },
     "none": {
       "type": "number",
       "description": "sh-radius/none\nPurpose: Square corners for flush edges and joined surfaces.",
@@ -77,6 +63,20 @@
         "Value": 12
       }
     },
+    "default": {
+      "type": "number",
+      "description": "sh-radius/default\nPurpose: Fallback rounding when no role-named radius fits.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:24:472",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "md"
+        }
+      }
+    },
     "lg": {
       "type": "number",
       "description": "sh-radius/lg\nPurpose: Larger rounding for cards and prominent containers.",
@@ -87,6 +87,18 @@
       "figmaType": null,
       "values": {
         "Value": 16
+      }
+    },
+    "xl": {
+      "type": "number",
+      "description": "sh-radius/xl\nPurpose: Generous rounding for sheets and dialogs.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15403",
+      "figmaType": null,
+      "values": {
+        "Value": 20
       }
     },
     "xxl": {
@@ -113,43 +125,17 @@
         "Value": 999
       }
     },
-    "xl": {
+    "tag": {
       "type": "number",
-      "description": "sh-radius/xl\nPurpose: Generous rounding for sheets and dialogs.",
+      "description": "sh-radius/tag\nPurpose: Rounding for tags and badges.",
       "scopes": [
         "CORNER_RADIUS"
       ],
-      "id": "VariableID:2434:15403",
-      "figmaType": null,
-      "values": {
-        "Value": 20
-      }
-    },
-    "button": {
-      "type": "number",
-      "description": "sh-radius/button\nPurpose: Rounding for every button, in all types and sizes.",
-      "scopes": [
-        "CORNER_RADIUS"
-      ],
-      "id": "VariableID:2434:15404",
+      "id": "VariableID:2434:15407",
       "figmaType": null,
       "values": {
         "Value": {
-          "alias": "full"
-        }
-      }
-    },
-    "avatar": {
-      "type": "number",
-      "description": "sh-radius/avatar\nPurpose: Rounding for profile photos and circular identity images.",
-      "scopes": [
-        "CORNER_RADIUS"
-      ],
-      "id": "VariableID:2434:15405",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "alias": "full"
+          "alias": "xs"
         }
       }
     },
@@ -160,20 +146,6 @@
         "CORNER_RADIUS"
       ],
       "id": "VariableID:2434:15406",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "alias": "xs"
-        }
-      }
-    },
-    "tag": {
-      "type": "number",
-      "description": "sh-radius/tag\nPurpose: Rounding for tags and badges.",
-      "scopes": [
-        "CORNER_RADIUS"
-      ],
-      "id": "VariableID:2434:15407",
       "figmaType": null,
       "values": {
         "Value": {
@@ -262,6 +234,34 @@
       "values": {
         "Value": {
           "alias": "xxl"
+        }
+      }
+    },
+    "button": {
+      "type": "number",
+      "description": "sh-radius/button\nPurpose: Rounding for every button, in all types and sizes.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15404",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "full"
+        }
+      }
+    },
+    "avatar": {
+      "type": "number",
+      "description": "sh-radius/avatar\nPurpose: Rounding for profile photos and circular identity images.",
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "id": "VariableID:2434:15405",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "alias": "full"
         }
       }
     }

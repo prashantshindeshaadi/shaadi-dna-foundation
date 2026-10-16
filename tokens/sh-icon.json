@@ -135,6 +135,18 @@
         "Value": 48
       }
     },
+    "brand/size/32": {
+      "type": "number",
+      "description": "sh-icon/brand/size/32\nPurpose: Single frame size for brand and social-media marks; instances scale the vector as needed.",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "id": "VariableID:2660:11324",
+      "figmaType": null,
+      "values": {
+        "Value": 32
+      }
+    },
     "pictogram/size/28": {
       "type": "number",
       "description": "sh-icon/pictogram/size/28\nPurpose: Full-colour image pictogram for inline badges and tags.",
@@ -181,18 +193,6 @@
       "figmaType": null,
       "values": {
         "Value": 96
-      }
-    },
-    "brand/size/32": {
-      "type": "number",
-      "description": "sh-icon/brand/size/32\nPurpose: Single frame size for brand and social-media marks; instances scale the vector as needed.",
-      "scopes": [
-        "WIDTH_HEIGHT"
-      ],
-      "id": "VariableID:2660:11324",
-      "figmaType": null,
-      "values": {
-        "Value": 32
       }
     }
   }

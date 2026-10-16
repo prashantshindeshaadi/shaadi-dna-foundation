@@ -179,6 +179,182 @@
         }
       }
     },
+    "background/dark/extra-soft/start": {
+      "type": "color",
+      "description": "sh-translucent/background/dark/extra-soft/start\nPurpose: Dark glass, for content over light imagery. Start stop of the lightest glass level, when the image needs minimal separation. Use both stops as one gradient, with the matching blur and border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2323:15089",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.1599999964237213,
+          "hex": "#000000"
+        }
+      }
+    },
+    "background/dark/extra-soft/end": {
+      "type": "color",
+      "description": "sh-translucent/background/dark/extra-soft/end\nPurpose: Dark glass, for content over light imagery. End stop of the lightest glass level, when the image needs minimal separation. Use both stops as one gradient, with the matching blur and border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2434:15418",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.07999999821186066,
+          "hex": "#000000"
+        }
+      }
+    },
+    "background/dark/soft/start": {
+      "type": "color",
+      "description": "sh-translucent/background/dark/soft/start\nPurpose: Dark glass, for content over light imagery. Start stop of a subtle glass level, over simple imagery. Use both stops as one gradient, with the matching blur and border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2323:15090",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.2800000011920929,
+          "hex": "#0F172A"
+        }
+      }
+    },
+    "background/dark/soft/end": {
+      "type": "color",
+      "description": "sh-translucent/background/dark/soft/end\nPurpose: Dark glass, for content over light imagery. End stop of a subtle glass level, over simple imagery. Use both stops as one gradient, with the matching blur and border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2434:15419",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.14000000059604645,
+          "hex": "#0F172A"
+        }
+      }
+    },
+    "background/dark/default/start": {
+      "type": "color",
+      "description": "sh-translucent/background/dark/default/start\nPurpose: Dark glass, for content over light imagery. Start stop of the standard glass level, over most imagery. Use both stops as one gradient, with the matching blur and border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2323:15091",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.6000000238418579,
+          "hex": "#0F172A"
+        }
+      }
+    },
+    "background/dark/default/end": {
+      "type": "color",
+      "description": "sh-translucent/background/dark/default/end\nPurpose: Dark glass, for content over light imagery. End stop of the standard glass level, over most imagery. Use both stops as one gradient, with the matching blur and border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2434:15420",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.4000000059604645,
+          "hex": "#0F172A"
+        }
+      }
+    },
+    "background/dark/strong/start": {
+      "type": "color",
+      "description": "sh-translucent/background/dark/strong/start\nPurpose: Dark glass, for content over light imagery. Start stop of a strong glass level, over busy imagery. Use both stops as one gradient, with the matching blur and border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2323:15092",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.8799999952316284,
+          "hex": "#0F172A"
+        }
+      }
+    },
+    "background/dark/strong/end": {
+      "type": "color",
+      "description": "sh-translucent/background/dark/strong/end\nPurpose: Dark glass, for content over light imagery. End stop of a strong glass level, over busy imagery. Use both stops as one gradient, with the matching blur and border.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:2434:15421",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.09019608050584793,
+            0.16470588743686676
+          ],
+          "alpha": 0.699999988079071,
+          "hex": "#0F172A"
+        }
+      }
+    },
     "background/brand/extra-soft/start": {
       "type": "color",
       "description": "sh-translucent/background/brand/extra-soft/start\nPurpose: Brand-tinted glass, for brand moments over imagery. Start stop of the lightest glass level, when the image needs minimal separation. Use both stops as one gradient, with the matching blur and border.",
@@ -403,245 +579,6 @@
         "Value": 24
       }
     },
-    "background/dark/extra-soft/start": {
-      "type": "color",
-      "description": "sh-translucent/background/dark/extra-soft/start\nPurpose: Dark glass, for content over light imagery. Start stop of the lightest glass level, when the image needs minimal separation. Use both stops as one gradient, with the matching blur and border.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:2323:15089",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0,
-            0,
-            0
-          ],
-          "alpha": 0.1599999964237213,
-          "hex": "#000000"
-        }
-      }
-    },
-    "background/dark/extra-soft/end": {
-      "type": "color",
-      "description": "sh-translucent/background/dark/extra-soft/end\nPurpose: Dark glass, for content over light imagery. End stop of the lightest glass level, when the image needs minimal separation. Use both stops as one gradient, with the matching blur and border.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:2434:15418",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0,
-            0,
-            0
-          ],
-          "alpha": 0.07999999821186066,
-          "hex": "#000000"
-        }
-      }
-    },
-    "background/dark/soft/start": {
-      "type": "color",
-      "description": "sh-translucent/background/dark/soft/start\nPurpose: Dark glass, for content over light imagery. Start stop of a subtle glass level, over simple imagery. Use both stops as one gradient, with the matching blur and border.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:2323:15090",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.2800000011920929,
-          "hex": "#0F172A"
-        }
-      }
-    },
-    "background/dark/soft/end": {
-      "type": "color",
-      "description": "sh-translucent/background/dark/soft/end\nPurpose: Dark glass, for content over light imagery. End stop of a subtle glass level, over simple imagery. Use both stops as one gradient, with the matching blur and border.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:2434:15419",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.14000000059604645,
-          "hex": "#0F172A"
-        }
-      }
-    },
-    "background/dark/default/start": {
-      "type": "color",
-      "description": "sh-translucent/background/dark/default/start\nPurpose: Dark glass, for content over light imagery. Start stop of the standard glass level, over most imagery. Use both stops as one gradient, with the matching blur and border.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:2323:15091",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.6000000238418579,
-          "hex": "#0F172A"
-        }
-      }
-    },
-    "background/dark/default/end": {
-      "type": "color",
-      "description": "sh-translucent/background/dark/default/end\nPurpose: Dark glass, for content over light imagery. End stop of the standard glass level, over most imagery. Use both stops as one gradient, with the matching blur and border.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:2434:15420",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.4000000059604645,
-          "hex": "#0F172A"
-        }
-      }
-    },
-    "background/dark/strong/start": {
-      "type": "color",
-      "description": "sh-translucent/background/dark/strong/start\nPurpose: Dark glass, for content over light imagery. Start stop of a strong glass level, over busy imagery. Use both stops as one gradient, with the matching blur and border.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:2323:15092",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.8799999952316284,
-          "hex": "#0F172A"
-        }
-      }
-    },
-    "background/dark/strong/end": {
-      "type": "color",
-      "description": "sh-translucent/background/dark/strong/end\nPurpose: Dark glass, for content over light imagery. End stop of a strong glass level, over busy imagery. Use both stops as one gradient, with the matching blur and border.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:2434:15421",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.05882352963089943,
-            0.09019608050584793,
-            0.16470588743686676
-          ],
-          "alpha": 0.699999988079071,
-          "hex": "#0F172A"
-        }
-      }
-    },
-    "border/brand/start": {
-      "type": "color",
-      "description": "sh-translucent/border/brand/start\nPurpose: Brand glass edge, for brand translucent surfaces. Start stop of the border gradient; use all three stops together.",
-      "scopes": [
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:1373:12354",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.7607843279838562,
-            0.05882352963089943,
-            0.21960784494876862
-          ],
-          "alpha": 0,
-          "hex": "#C20F38"
-        }
-      }
-    },
-    "border/brand/middle": {
-      "type": "color",
-      "description": "sh-translucent/border/brand/middle\nPurpose: Brand glass edge, for brand translucent surfaces. Middle stop of the border gradient; use all three stops together.",
-      "scopes": [
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:2434:15432",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.7607843279838562,
-            0.05882352963089943,
-            0.21960784494876862
-          ],
-          "alpha": 0.5,
-          "hex": "#C20F38"
-        }
-      }
-    },
-    "border/brand/end": {
-      "type": "color",
-      "description": "sh-translucent/border/brand/end\nPurpose: Brand glass edge, for brand translucent surfaces. End stop of the border gradient; use all three stops together.",
-      "scopes": [
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:1373:12355",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.7607843279838562,
-            0.05882352963089943,
-            0.21960784494876862
-          ],
-          "alpha": 1,
-          "hex": "#C20F38"
-        }
-      }
-    },
     "border/light/start": {
       "type": "color",
       "description": "sh-translucent/border/light/start\nPurpose: Light glass edge, the highlight that makes a translucent surface read as glass. Start stop of the border gradient; use all three stops together.",
@@ -765,6 +702,69 @@
           ],
           "alpha": 0.05999999865889549,
           "hex": "#0F172A"
+        }
+      }
+    },
+    "border/brand/start": {
+      "type": "color",
+      "description": "sh-translucent/border/brand/start\nPurpose: Brand glass edge, for brand translucent surfaces. Start stop of the border gradient; use all three stops together.",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:1373:12354",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 0,
+          "hex": "#C20F38"
+        }
+      }
+    },
+    "border/brand/middle": {
+      "type": "color",
+      "description": "sh-translucent/border/brand/middle\nPurpose: Brand glass edge, for brand translucent surfaces. Middle stop of the border gradient; use all three stops together.",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:2434:15432",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 0.5,
+          "hex": "#C20F38"
+        }
+      }
+    },
+    "border/brand/end": {
+      "type": "color",
+      "description": "sh-translucent/border/brand/end\nPurpose: Brand glass edge, for brand translucent surfaces. End stop of the border gradient; use all three stops together.",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:1373:12355",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7607843279838562,
+            0.05882352963089943,
+            0.21960784494876862
+          ],
+          "alpha": 1,
+          "hex": "#C20F38"
         }
       }
     }

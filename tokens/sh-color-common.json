@@ -124,25 +124,25 @@
         }
       }
     },
-    "background/transparent": {
+    "background/brand": {
       "type": "color",
-      "description": "sh-color-common/background/transparent\nPurpose: Surface with no visible fill.",
+      "description": "sh-color-common/background/brand\nPurpose: High-emphasis Shaadi brand surface, not a generic container.",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
       ],
-      "id": "VariableID:16:376",
+      "id": "VariableID:805:13589",
       "figmaType": null,
       "values": {
         "Dark": {
-          "alias": "neutral/transparent",
-          "targetId": "VariableID:969bee27270e1e813eecc3844c7fa082f59bf6e6/-1:-1",
+          "alias": "brand/700",
+          "targetId": "VariableID:8040ea4b5923aa5735773f306b1a512756eb5c7a/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "neutral/transparent",
-          "targetId": "VariableID:969bee27270e1e813eecc3844c7fa082f59bf6e6/-1:-1",
+          "alias": "brand/500",
+          "targetId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -172,25 +172,25 @@
         }
       }
     },
-    "background/brand": {
+    "background/transparent": {
       "type": "color",
-      "description": "sh-color-common/background/brand\nPurpose: High-emphasis Shaadi brand surface, not a generic container.",
+      "description": "sh-color-common/background/transparent\nPurpose: Surface with no visible fill.",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
       ],
-      "id": "VariableID:805:13589",
+      "id": "VariableID:16:376",
       "figmaType": null,
       "values": {
         "Dark": {
-          "alias": "brand/700",
-          "targetId": "VariableID:8040ea4b5923aa5735773f306b1a512756eb5c7a/-1:-1",
+          "alias": "neutral/transparent",
+          "targetId": "VariableID:969bee27270e1e813eecc3844c7fa082f59bf6e6/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "brand/500",
-          "targetId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+          "alias": "neutral/transparent",
+          "targetId": "VariableID:969bee27270e1e813eecc3844c7fa082f59bf6e6/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -296,56 +296,6 @@
         }
       }
     },
-    "border/disabled": {
-      "type": "color",
-      "description": "sh-color-common/border/disabled\nPurpose: Boundary for inactive controls.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:1108:13973",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "neutral/700",
-          "targetId": "VariableID:40c73eda9ce630eafe60060903887efb66d94214/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "neutral/200",
-          "targetId": "VariableID:c8e3bc0ebdf5da65aee48cc5a626139448708061/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "border/inverse": {
-      "type": "color",
-      "description": "sh-color-common/border/inverse\nPurpose: Boundary on inverse or contrasting surfaces.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:16:329",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "neutral/900",
-          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "neutral/white",
-          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
     "border/focus": {
       "type": "color",
       "description": "sh-color-common/border/focus\nPurpose: Keyboard focus boundary only, never a static border.",
@@ -391,6 +341,56 @@
         "Light": {
           "alias": "brand/500",
           "targetId": "VariableID:9c976c7cb3836f979e33b2450856d3274625b56a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/disabled": {
+      "type": "color",
+      "description": "sh-color-common/border/disabled\nPurpose: Boundary for inactive controls.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:1108:13973",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/700",
+          "targetId": "VariableID:40c73eda9ce630eafe60060903887efb66d94214/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/200",
+          "targetId": "VariableID:c8e3bc0ebdf5da65aee48cc5a626139448708061/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "border/inverse": {
+      "type": "color",
+      "description": "sh-color-common/border/inverse\nPurpose: Boundary on inverse or contrasting surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:16:329",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -488,29 +488,6 @@
         }
       }
     },
-    "text/inverse": {
-      "type": "color",
-      "description": "sh-color-common/text/inverse\nPurpose: Text on background/inverse and other dark or contrasting surfaces. On brand surfaces use text/on-brand.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:805:13567",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "neutral/900",
-          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "neutral/white",
-          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
     "text/brand": {
       "type": "color",
       "description": "sh-color-common/text/brand\nPurpose: Intentional Shaadi brand emphasis, not standard body text.",
@@ -552,6 +529,29 @@
         "Light": {
           "alias": "brand/600",
           "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "text/inverse": {
+      "type": "color",
+      "description": "sh-color-common/text/inverse\nPurpose: Text on background/inverse and other dark or contrasting surfaces. On brand surfaces use text/on-brand.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13567",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -703,31 +703,6 @@
         }
       }
     },
-    "icon/inverse": {
-      "type": "color",
-      "description": "sh-color-common/icon/inverse\nPurpose: Icon on background/inverse and other dark or contrasting surfaces. On brand surfaces use icon/on-brand.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:805:13573",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "neutral/900",
-          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "neutral/white",
-          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
     "icon/brand": {
       "type": "color",
       "description": "sh-color-common/icon/brand\nPurpose: Icon for intentional Shaadi brand emphasis.",
@@ -773,6 +748,31 @@
         "Light": {
           "alias": "brand/600",
           "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "icon/inverse": {
+      "type": "color",
+      "description": "sh-color-common/icon/inverse\nPurpose: Icon on background/inverse and other dark or contrasting surfaces. On brand surfaces use icon/on-brand.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:805:13573",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -1343,30 +1343,6 @@
         }
       }
     },
-    "button/tertiary/background/pressed": {
-      "type": "color",
-      "description": "sh-color-common/button/tertiary/background/pressed\nPurpose: Pressed surface for the Tertiary button.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL"
-      ],
-      "id": "VariableID:16:369",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "neutral/600",
-          "targetId": "VariableID:70f0297f1dd78c6ff3294603fe02b6cfbbf65e30/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "neutral/200",
-          "targetId": "VariableID:c8e3bc0ebdf5da65aee48cc5a626139448708061/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
     "button/tertiary/background/default": {
       "type": "color",
       "description": "sh-color-common/button/tertiary/background/default\nPurpose: Default surface for the Tertiary button.",
@@ -1415,6 +1391,30 @@
         }
       }
     },
+    "button/tertiary/background/pressed": {
+      "type": "color",
+      "description": "sh-color-common/button/tertiary/background/pressed\nPurpose: Pressed surface for the Tertiary button.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:16:369",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/600",
+          "targetId": "VariableID:70f0297f1dd78c6ff3294603fe02b6cfbbf65e30/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/200",
+          "targetId": "VariableID:c8e3bc0ebdf5da65aee48cc5a626139448708061/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
     "button/tertiary/text/default": {
       "type": "color",
       "description": "sh-color-common/button/tertiary/text/default\nPurpose: Text on the Tertiary button surface.",
@@ -1458,54 +1458,6 @@
         "Light": {
           "alias": "neutral/800",
           "targetId": "VariableID:42ff6c88aa37c5730f26e034f1cda5c90d6f28ea/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "button/ghost/text/default": {
-      "type": "color",
-      "description": "sh-color-common/button/ghost/text/default\nPurpose: Text on the Ghost button surface.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:16:380",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "brand/200",
-          "targetId": "VariableID:a2919f2cfaa9c387e5e67e4b1e19e1711d462814/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "brand/600",
-          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "button/ghost/icon/default": {
-      "type": "color",
-      "description": "sh-color-common/button/ghost/icon/default\nPurpose: Icon on the Ghost button surface.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:16:382",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "brand/200",
-          "targetId": "VariableID:a2919f2cfaa9c387e5e67e4b1e19e1711d462814/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "brand/600",
-          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -1583,122 +1535,49 @@
         }
       }
     },
-    "premium/border/default": {
+    "button/ghost/text/default": {
       "type": "color",
-      "description": "sh-color-common/premium/border/default\nPurpose: Boundary for Premium surfaces and experiences.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:16:332",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "premium/400",
-          "targetId": "VariableID:3fe7fdb8ae182820bc07884aeaa2482098921035/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "premium/500",
-          "targetId": "VariableID:f9cd1b106cca67a5d05097f767b755d894185892/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "premium/text/on-soft": {
-      "type": "color",
-      "description": "sh-color-common/premium/text/on-soft\nPurpose: Text on Premium Soft surfaces.",
+      "description": "sh-color-common/button/ghost/text/default\nPurpose: Text on the Ghost button surface.",
       "scopes": [
         "TEXT_FILL"
       ],
-      "id": "VariableID:16:399",
+      "id": "VariableID:16:380",
       "figmaType": null,
       "values": {
         "Dark": {
-          "alias": "premium/100",
-          "targetId": "VariableID:549dbc456aaf5edaaab2a8578c418b9008e5ec86/-1:-1",
+          "alias": "brand/200",
+          "targetId": "VariableID:a2919f2cfaa9c387e5e67e4b1e19e1711d462814/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "premium/800",
-          "targetId": "VariableID:edf1adefda513b03fc8ccb9e84bec900b6a5291f/-1:-1",
+          "alias": "brand/600",
+          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
       }
     },
-    "premium/text/on-solid": {
+    "button/ghost/icon/default": {
       "type": "color",
-      "description": "sh-color-common/premium/text/on-solid\nPurpose: Text on Premium Solid surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:16:391",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "neutral/900",
-          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "neutral/900",
-          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "premium/icon/on-soft": {
-      "type": "color",
-      "description": "sh-color-common/premium/icon/on-soft\nPurpose: Icon on Premium Soft surfaces.",
+      "description": "sh-color-common/button/ghost/icon/default\nPurpose: Icon on the Ghost button surface.",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
         "STROKE_COLOR"
       ],
-      "id": "VariableID:16:401",
+      "id": "VariableID:16:382",
       "figmaType": null,
       "values": {
         "Dark": {
-          "alias": "premium/100",
-          "targetId": "VariableID:549dbc456aaf5edaaab2a8578c418b9008e5ec86/-1:-1",
+          "alias": "brand/200",
+          "targetId": "VariableID:a2919f2cfaa9c387e5e67e4b1e19e1711d462814/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "premium/800",
-          "targetId": "VariableID:edf1adefda513b03fc8ccb9e84bec900b6a5291f/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "premium/icon/on-solid": {
-      "type": "color",
-      "description": "sh-color-common/premium/icon/on-solid\nPurpose: Icon on Premium Solid surfaces.",
-      "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:16:393",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "neutral/900",
-          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "neutral/900",
-          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "alias": "brand/600",
+          "targetId": "VariableID:519b23bd21d42b8169943fe03bdf4e7d595411e1/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }
@@ -1920,6 +1799,127 @@
         }
       }
     },
+    "premium/border/default": {
+      "type": "color",
+      "description": "sh-color-common/premium/border/default\nPurpose: Boundary for Premium surfaces and experiences.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:16:332",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/400",
+          "targetId": "VariableID:3fe7fdb8ae182820bc07884aeaa2482098921035/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/500",
+          "targetId": "VariableID:f9cd1b106cca67a5d05097f767b755d894185892/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/premium/text/on-soft\nPurpose: Text on Premium Soft surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:399",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/100",
+          "targetId": "VariableID:549dbc456aaf5edaaab2a8578c418b9008e5ec86/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/800",
+          "targetId": "VariableID:edf1adefda513b03fc8ccb9e84bec900b6a5291f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/premium/text/on-solid\nPurpose: Text on Premium Solid surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:16:391",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/icon/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/premium/icon/on-soft\nPurpose: Icon on Premium Soft surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:16:401",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "premium/100",
+          "targetId": "VariableID:549dbc456aaf5edaaab2a8578c418b9008e5ec86/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "premium/800",
+          "targetId": "VariableID:edf1adefda513b03fc8ccb9e84bec900b6a5291f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "premium/icon/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/premium/icon/on-solid\nPurpose: Icon on Premium Solid surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:16:393",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/900",
+          "targetId": "VariableID:f28d7b207f5f14c847aa1c75159f327f90cc7d96/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
     "sia/illustration/start": {
       "type": "color",
       "description": "sh-color-common/sia/illustration/start\nPurpose: Starting gradient stop for SIA illustration. Use with its matching stop.",
@@ -2134,98 +2134,6 @@
         }
       }
     },
-    "semantic/success/border/default": {
-      "type": "color",
-      "description": "sh-color-common/semantic/success/border/default\nPurpose: Default success boundary for standard feedback.",
-      "scopes": [
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:805:13579",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "green/400",
-          "targetId": "VariableID:e088b925283ee80484e9909d0a23267b7d502f13/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "green/500",
-          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/success/border/soft": {
-      "type": "color",
-      "description": "sh-color-common/semantic/success/border/soft\nPurpose: Soft success boundary for low-emphasis feedback.",
-      "scopes": [
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:1765:16004",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "green/700",
-          "targetId": "VariableID:0df68579255d13783d69b273af799494980c5356/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "green/100",
-          "targetId": "VariableID:3ac27914639dea6e75edcbf45e2b328321f9bf9f/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/success/text/on-soft": {
-      "type": "color",
-      "description": "sh-color-common/semantic/success/text/on-soft\nPurpose: Text on soft success feedback surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:805:13568",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "green/200",
-          "targetId": "VariableID:fe98ae37a2402b4ecb8fff9a59e3dfb674a6176a/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "green/500",
-          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/success/text/on-solid": {
-      "type": "color",
-      "description": "sh-color-common/semantic/success/text/on-solid\nPurpose: Text on solid success feedback surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:1190:16293",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "neutral/white",
-          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "neutral/white",
-          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
     "semantic/success/background/soft/default": {
       "type": "color",
       "description": "sh-color-common/semantic/success/background/soft/default\nPurpose: Soft success surface for inline feedback in its Default state.",
@@ -2370,15 +2278,82 @@
         }
       }
     },
-    "semantic/success/icon/on-solid": {
+    "semantic/success/border/soft": {
       "type": "color",
-      "description": "sh-color-common/semantic/success/icon/on-solid\nPurpose: Icon on solid success feedback surfaces.",
+      "description": "sh-color-common/semantic/success/border/soft\nPurpose: Soft success boundary for low-emphasis feedback.",
       "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
         "STROKE_COLOR"
       ],
-      "id": "VariableID:207:938",
+      "id": "VariableID:1765:16004",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/700",
+          "targetId": "VariableID:0df68579255d13783d69b273af799494980c5356/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/100",
+          "targetId": "VariableID:3ac27914639dea6e75edcbf45e2b328321f9bf9f/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/border/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/border/default\nPurpose: Default success boundary for standard feedback.",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:805:13579",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/400",
+          "targetId": "VariableID:e088b925283ee80484e9909d0a23267b7d502f13/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/500",
+          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/text/on-soft\nPurpose: Text on soft success feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13568",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "green/200",
+          "targetId": "VariableID:fe98ae37a2402b4ecb8fff9a59e3dfb674a6176a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "green/500",
+          "targetId": "VariableID:985e2e2bdafe235d2612581906a434bc76f5fce6/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/success/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/success/text/on-solid\nPurpose: Text on solid success feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1190:16293",
       "figmaType": null,
       "values": {
         "Dark": {
@@ -2420,82 +2395,15 @@
         }
       }
     },
-    "semantic/warning/border/default": {
+    "semantic/success/icon/on-solid": {
       "type": "color",
-      "description": "sh-color-common/semantic/warning/border/default\nPurpose: Default warning boundary for standard feedback.",
+      "description": "sh-color-common/semantic/success/icon/on-solid\nPurpose: Icon on solid success feedback surfaces.",
       "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
         "STROKE_COLOR"
       ],
-      "id": "VariableID:805:13580",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "amber/400",
-          "targetId": "VariableID:6bd7931445167b48e4ceb6da18fa61f350630b05/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "amber/500",
-          "targetId": "VariableID:5c517546f0c4e3e26cf9d6982f8dd891c7995138/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/warning/border/soft": {
-      "type": "color",
-      "description": "sh-color-common/semantic/warning/border/soft\nPurpose: Soft warning boundary for low-emphasis feedback.",
-      "scopes": [
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:1765:16005",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "amber/700",
-          "targetId": "VariableID:03eeec1ed324df13a744a44cad47cad826b9008a/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "amber/100",
-          "targetId": "VariableID:1917c2aaf931edd04a0a80fb9ab4ba57e7275a51/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/warning/text/on-soft": {
-      "type": "color",
-      "description": "sh-color-common/semantic/warning/text/on-soft\nPurpose: Text on soft warning feedback surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:805:13569",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "amber/200",
-          "targetId": "VariableID:be55aeeaa3ea63e7b5b33b63c3e6e2b2fc0923b9/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "amber/600",
-          "targetId": "VariableID:71dc51a504e2816d1cf8fc9d5b12796335f714ec/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/warning/text/on-solid": {
-      "type": "color",
-      "description": "sh-color-common/semantic/warning/text/on-solid\nPurpose: Text on solid warning feedback surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:1190:16297",
+      "id": "VariableID:207:938",
       "figmaType": null,
       "values": {
         "Dark": {
@@ -2656,15 +2564,82 @@
         }
       }
     },
-    "semantic/warning/icon/on-solid": {
+    "semantic/warning/border/soft": {
       "type": "color",
-      "description": "sh-color-common/semantic/warning/icon/on-solid\nPurpose: Icon on solid warning feedback surfaces.",
+      "description": "sh-color-common/semantic/warning/border/soft\nPurpose: Soft warning boundary for low-emphasis feedback.",
       "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
         "STROKE_COLOR"
       ],
-      "id": "VariableID:207:954",
+      "id": "VariableID:1765:16005",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/700",
+          "targetId": "VariableID:03eeec1ed324df13a744a44cad47cad826b9008a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/100",
+          "targetId": "VariableID:1917c2aaf931edd04a0a80fb9ab4ba57e7275a51/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/border/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/border/default\nPurpose: Default warning boundary for standard feedback.",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:805:13580",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/400",
+          "targetId": "VariableID:6bd7931445167b48e4ceb6da18fa61f350630b05/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/500",
+          "targetId": "VariableID:5c517546f0c4e3e26cf9d6982f8dd891c7995138/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/text/on-soft\nPurpose: Text on soft warning feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13569",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "amber/200",
+          "targetId": "VariableID:be55aeeaa3ea63e7b5b33b63c3e6e2b2fc0923b9/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "amber/600",
+          "targetId": "VariableID:71dc51a504e2816d1cf8fc9d5b12796335f714ec/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/warning/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/warning/text/on-solid\nPurpose: Text on solid warning feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1190:16297",
       "figmaType": null,
       "values": {
         "Dark": {
@@ -2706,82 +2681,15 @@
         }
       }
     },
-    "semantic/error/border/default": {
+    "semantic/warning/icon/on-solid": {
       "type": "color",
-      "description": "sh-color-common/semantic/error/border/default\nPurpose: Default error boundary for standard feedback.",
+      "description": "sh-color-common/semantic/warning/icon/on-solid\nPurpose: Icon on solid warning feedback surfaces.",
       "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
         "STROKE_COLOR"
       ],
-      "id": "VariableID:805:13581",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "red/400",
-          "targetId": "VariableID:40e10243b73dbed2d3204bda4fdb1e611006552a/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "red/500",
-          "targetId": "VariableID:ea978641263ee036502799aecaa15e5d8e689006/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/error/border/soft": {
-      "type": "color",
-      "description": "sh-color-common/semantic/error/border/soft\nPurpose: Soft error boundary for low-emphasis feedback.",
-      "scopes": [
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:1765:16006",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "red/700",
-          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "red/100",
-          "targetId": "VariableID:b49bc624ecd8b8b3c1a9646d8999c9cf8342872b/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/error/text/on-soft": {
-      "type": "color",
-      "description": "sh-color-common/semantic/error/text/on-soft\nPurpose: Text on soft error feedback surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:805:13570",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "red/200",
-          "targetId": "VariableID:dc2f30c16ba1f3fc372535d802e8276348eae728/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "red/600",
-          "targetId": "VariableID:3cfcad5c1f90e44e61209a894df5391dcf90f562/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/error/text/on-solid": {
-      "type": "color",
-      "description": "sh-color-common/semantic/error/text/on-solid\nPurpose: Text on solid error feedback surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:1190:16295",
+      "id": "VariableID:207:954",
       "figmaType": null,
       "values": {
         "Dark": {
@@ -2942,15 +2850,82 @@
         }
       }
     },
-    "semantic/error/icon/on-solid": {
+    "semantic/error/border/soft": {
       "type": "color",
-      "description": "sh-color-common/semantic/error/icon/on-solid\nPurpose: Icon on solid error feedback surfaces.",
+      "description": "sh-color-common/semantic/error/border/soft\nPurpose: Soft error boundary for low-emphasis feedback.",
       "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
         "STROKE_COLOR"
       ],
-      "id": "VariableID:207:946",
+      "id": "VariableID:1765:16006",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/700",
+          "targetId": "VariableID:ed0f84d30cc36847acfbcdc91bf72a0dbeeef739/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/100",
+          "targetId": "VariableID:b49bc624ecd8b8b3c1a9646d8999c9cf8342872b/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/border/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/border/default\nPurpose: Default error boundary for standard feedback.",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:805:13581",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/400",
+          "targetId": "VariableID:40e10243b73dbed2d3204bda4fdb1e611006552a/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/500",
+          "targetId": "VariableID:ea978641263ee036502799aecaa15e5d8e689006/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/text/on-soft\nPurpose: Text on soft error feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13570",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "red/200",
+          "targetId": "VariableID:dc2f30c16ba1f3fc372535d802e8276348eae728/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "red/600",
+          "targetId": "VariableID:3cfcad5c1f90e44e61209a894df5391dcf90f562/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/error/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/error/text/on-solid\nPurpose: Text on solid error feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1190:16295",
       "figmaType": null,
       "values": {
         "Dark": {
@@ -2992,82 +2967,15 @@
         }
       }
     },
-    "semantic/information/border/default": {
+    "semantic/error/icon/on-solid": {
       "type": "color",
-      "description": "sh-color-common/semantic/information/border/default\nPurpose: Default information boundary for standard feedback.",
+      "description": "sh-color-common/semantic/error/icon/on-solid\nPurpose: Icon on solid error feedback surfaces.",
       "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
         "STROKE_COLOR"
       ],
-      "id": "VariableID:805:13582",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "blue/400",
-          "targetId": "VariableID:38d14cd5a0f27caa884c52262bd893a13e20e7c1/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "blue/500",
-          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/information/border/soft": {
-      "type": "color",
-      "description": "sh-color-common/semantic/information/border/soft\nPurpose: Soft information boundary for low-emphasis feedback.",
-      "scopes": [
-        "STROKE_COLOR"
-      ],
-      "id": "VariableID:1765:16007",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "blue/700",
-          "targetId": "VariableID:64f7ae787abb47e6bc971ebcea1b2da5ff42d931/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "blue/100",
-          "targetId": "VariableID:7337a2438551457c8c4131d032602b81adba0f32/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/information/text/on-soft": {
-      "type": "color",
-      "description": "sh-color-common/semantic/information/text/on-soft\nPurpose: Text on soft information feedback surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:805:13571",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "blue/200",
-          "targetId": "VariableID:8510cf58f0f2da19f7fa7cb061b84d9832de4148/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "blue/500",
-          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
-    "semantic/information/text/on-solid": {
-      "type": "color",
-      "description": "sh-color-common/semantic/information/text/on-solid\nPurpose: Text on solid information feedback surfaces.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:1190:16299",
+      "id": "VariableID:207:946",
       "figmaType": null,
       "values": {
         "Dark": {
@@ -3228,15 +3136,82 @@
         }
       }
     },
-    "semantic/information/icon/on-solid": {
+    "semantic/information/border/soft": {
       "type": "color",
-      "description": "sh-color-common/semantic/information/icon/on-solid\nPurpose: Icon on solid information feedback surfaces.",
+      "description": "sh-color-common/semantic/information/border/soft\nPurpose: Soft information boundary for low-emphasis feedback.",
       "scopes": [
-        "FRAME_FILL",
-        "SHAPE_FILL",
         "STROKE_COLOR"
       ],
-      "id": "VariableID:207:962",
+      "id": "VariableID:1765:16007",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/700",
+          "targetId": "VariableID:64f7ae787abb47e6bc971ebcea1b2da5ff42d931/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/100",
+          "targetId": "VariableID:7337a2438551457c8c4131d032602b81adba0f32/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/border/default": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/border/default\nPurpose: Default information boundary for standard feedback.",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:805:13582",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/400",
+          "targetId": "VariableID:38d14cd5a0f27caa884c52262bd893a13e20e7c1/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/500",
+          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/text/on-soft": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/text/on-soft\nPurpose: Text on soft information feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:805:13571",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "blue/200",
+          "targetId": "VariableID:8510cf58f0f2da19f7fa7cb061b84d9832de4148/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "blue/500",
+          "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/text/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/text/on-solid\nPurpose: Text on solid information feedback surfaces.",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "id": "VariableID:1190:16299",
       "figmaType": null,
       "values": {
         "Dark": {
@@ -3273,6 +3248,31 @@
         "Light": {
           "alias": "blue/500",
           "targetId": "VariableID:4c31e4e6b0eef912fe8c383e506610eb651faaea/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "semantic/information/icon/on-solid": {
+      "type": "color",
+      "description": "sh-color-common/semantic/information/icon/on-solid\nPurpose: Icon on solid information feedback surfaces.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "STROKE_COLOR"
+      ],
+      "id": "VariableID:207:962",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
+          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/white",
+          "targetId": "VariableID:743a9631f37d01c03056f5289b2bb177b5704985/-1:-1",
           "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
           "setName": "sh-color-basic"
         }

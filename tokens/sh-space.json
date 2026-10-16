@@ -110,6 +110,18 @@
         "Tablet": 12
       }
     },
+    "14": {
+      "type": "number",
+      "description": "sh-space/14\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
+      "scopes": [],
+      "id": "VariableID:2180:1261",
+      "figmaType": null,
+      "values": {
+        "Desktop": 14,
+        "Mobile": 14,
+        "Tablet": 14
+      }
+    },
     "16": {
       "type": "number",
       "description": "sh-space/16\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
@@ -215,24 +227,83 @@
         "Tablet": 80
       }
     },
-    "page/margin": {
+    "gap/card": {
       "type": "number",
-      "description": "sh-space/page/margin\nPurpose: Horizontal space between page content and the viewport edge.",
+      "description": "sh-space/gap/card\nPurpose: Space between related content inside a card.",
       "scopes": [
-        "WIDTH_HEIGHT",
         "GAP"
       ],
-      "id": "VariableID:21:460",
+      "id": "VariableID:21:463",
       "figmaType": null,
       "values": {
         "Desktop": {
-          "alias": "80"
-        },
-        "Mobile": {
           "alias": "20"
         },
+        "Mobile": {
+          "alias": "12"
+        },
         "Tablet": {
+          "alias": "16"
+        }
+      }
+    },
+    "gap/list": {
+      "type": "number",
+      "description": "sh-space/gap/list\nPurpose: Space between repeated list items.",
+      "scopes": [
+        "GAP"
+      ],
+      "id": "VariableID:21:466",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "20"
+        },
+        "Mobile": {
+          "alias": "12"
+        },
+        "Tablet": {
+          "alias": "16"
+        }
+      }
+    },
+    "gap/form": {
+      "type": "number",
+      "description": "sh-space/gap/form\nPurpose: Space between related fields in a form.",
+      "scopes": [
+        "GAP"
+      ],
+      "id": "VariableID:21:465",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "24"
+        },
+        "Mobile": {
+          "alias": "16"
+        },
+        "Tablet": {
+          "alias": "20"
+        }
+      }
+    },
+    "gap/section": {
+      "type": "number",
+      "description": "sh-space/gap/section\nPurpose: Space between major content sections.",
+      "scopes": [
+        "GAP"
+      ],
+      "id": "VariableID:21:464",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
           "alias": "40"
+        },
+        "Mobile": {
+          "alias": "24"
+        },
+        "Tablet": {
+          "alias": "32"
         }
       }
     },
@@ -278,96 +349,25 @@
         }
       }
     },
-    "gap/card": {
+    "page/margin": {
       "type": "number",
-      "description": "sh-space/gap/card\nPurpose: Space between related content inside a card.",
+      "description": "sh-space/page/margin\nPurpose: Horizontal space between page content and the viewport edge.",
       "scopes": [
+        "WIDTH_HEIGHT",
         "GAP"
       ],
-      "id": "VariableID:21:463",
+      "id": "VariableID:21:460",
       "figmaType": null,
       "values": {
         "Desktop": {
-          "alias": "20"
+          "alias": "80"
         },
         "Mobile": {
-          "alias": "12"
+          "alias": "20"
         },
         "Tablet": {
-          "alias": "16"
-        }
-      }
-    },
-    "gap/section": {
-      "type": "number",
-      "description": "sh-space/gap/section\nPurpose: Space between major content sections.",
-      "scopes": [
-        "GAP"
-      ],
-      "id": "VariableID:21:464",
-      "figmaType": null,
-      "values": {
-        "Desktop": {
           "alias": "40"
-        },
-        "Mobile": {
-          "alias": "24"
-        },
-        "Tablet": {
-          "alias": "32"
         }
-      }
-    },
-    "gap/form": {
-      "type": "number",
-      "description": "sh-space/gap/form\nPurpose: Space between related fields in a form.",
-      "scopes": [
-        "GAP"
-      ],
-      "id": "VariableID:21:465",
-      "figmaType": null,
-      "values": {
-        "Desktop": {
-          "alias": "24"
-        },
-        "Mobile": {
-          "alias": "16"
-        },
-        "Tablet": {
-          "alias": "20"
-        }
-      }
-    },
-    "gap/list": {
-      "type": "number",
-      "description": "sh-space/gap/list\nPurpose: Space between repeated list items.",
-      "scopes": [
-        "GAP"
-      ],
-      "id": "VariableID:21:466",
-      "figmaType": null,
-      "values": {
-        "Desktop": {
-          "alias": "20"
-        },
-        "Mobile": {
-          "alias": "12"
-        },
-        "Tablet": {
-          "alias": "16"
-        }
-      }
-    },
-    "14": {
-      "type": "number",
-      "description": "sh-space/14\nPurpose: Base spacing step. Use named space tokens when a semantic role exists.",
-      "scopes": [],
-      "id": "VariableID:2180:1261",
-      "figmaType": null,
-      "values": {
-        "Desktop": 14,
-        "Mobile": 14,
-        "Tablet": 14
       }
     }
   }

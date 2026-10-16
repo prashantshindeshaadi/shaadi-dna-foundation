@@ -234,6 +234,27 @@
         }
       }
     },
+    "neutral/transparent": {
+      "type": "color",
+      "description": "sh-color-basic/neutral/transparent\nPurpose: Raw transparent colour for aliases. Never apply directly in product UI.",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "id": "VariableID:1765:15444",
+      "figmaType": null,
+      "values": {
+        "Value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0,
+          "hex": "#FFFFFF"
+        }
+      }
+    },
     "neutral/white": {
       "type": "color",
       "description": "sh-color-basic/neutral/white\nPurpose: Raw white primitive for aliases. Never apply directly in product UI.",
@@ -252,27 +273,6 @@
           ],
           "alpha": 1,
           "hex": "#FFFFFF"
-        }
-      }
-    },
-    "neutral/black": {
-      "type": "color",
-      "description": "sh-color-basic/neutral/black\nPurpose: Raw black primitive for aliases. Never apply directly in product UI.",
-      "scopes": [
-        "ALL_SCOPES"
-      ],
-      "id": "VariableID:15:88",
-      "figmaType": null,
-      "values": {
-        "Value": {
-          "colorSpace": "srgb",
-          "components": [
-            0,
-            0,
-            0
-          ],
-          "alpha": 1,
-          "hex": "#000000"
         }
       }
     },
@@ -507,24 +507,24 @@
         }
       }
     },
-    "neutral/transparent": {
+    "neutral/black": {
       "type": "color",
-      "description": "sh-color-basic/neutral/transparent\nPurpose: Raw transparent colour for aliases. Never apply directly in product UI.",
+      "description": "sh-color-basic/neutral/black\nPurpose: Raw black primitive for aliases. Never apply directly in product UI.",
       "scopes": [
         "ALL_SCOPES"
       ],
-      "id": "VariableID:1765:15444",
+      "id": "VariableID:15:88",
       "figmaType": null,
       "values": {
         "Value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0,
+            0,
+            0
           ],
-          "alpha": 0,
-          "hex": "#FFFFFF"
+          "alpha": 1,
+          "hex": "#000000"
         }
       }
     },

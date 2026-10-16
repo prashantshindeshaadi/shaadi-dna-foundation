@@ -15,6 +15,18 @@
         "Value": 0
       }
     },
+    "thin": {
+      "type": "number",
+      "description": "sh-stroke/thin\nPurpose: Subtle outline thickness for fine dividers and low-emphasis borders.",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "id": "VariableID:2801:8307",
+      "figmaType": null,
+      "values": {
+        "Value": 0.5
+      }
+    },
     "default": {
       "type": "number",
       "description": "sh-stroke/default\nPurpose: Standard outline thickness for everyday controls and containers.",
@@ -49,18 +61,6 @@
       "figmaType": null,
       "values": {
         "Value": 2
-      }
-    },
-    "thin": {
-      "type": "number",
-      "description": "sh-stroke/thin\nPurpose: Subtle outline thickness for fine dividers and low-emphasis borders.",
-      "scopes": [
-        "STROKE_FLOAT"
-      ],
-      "id": "VariableID:2801:8307",
-      "figmaType": null,
-      "values": {
-        "Value": 0.5
       }
     }
   }

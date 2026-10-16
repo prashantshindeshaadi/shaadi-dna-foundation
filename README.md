@@ -81,6 +81,7 @@ pair or broken alias can't merge.
 | `gradients.py` | Turns `sh-gradient.json` into CSS, Android drawables and Swift |
 | `read_components.js`, `read_icons.js` | Run in Figma: read sh-* component sets and icons |
 | `components.py` | Writes `components/<sh-name>/<sh-name>.md`, the index, `components/icons.md` and `icons/` |
+| `order.py` | Puts every token file in hierarchy order (low → high, light → strong); `--check` reports drift |
 | `check.py` | Validates tokens; exits non-zero on any failure |
 | `build.py` | Writes `dist/` for web, Android, iOS, JSON, and the type kit |
 | `typo_kit.py` | The type kit part of the build |
