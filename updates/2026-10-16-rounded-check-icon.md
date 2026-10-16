@@ -1,16 +1,18 @@
-# Rounded check icon
+# Check icon: round ends, sharp joint
 
 **2026-10-16**
 
 ## What changed
-- **`sh-icon/check`, Line:** stroke ends are round and the corner is a round join, instead of square-cut ends and a pointed corner. All five sizes.
-- **`sh-icon/check`, Filled:** every corner is rounded with iOS corner smoothing (60%), radius scaled to the size (1 at 24 down to 0.5 at 12), so the tick keeps its shape without sharp points.
-- `sh-checkbox`, and everything else that uses the check (Connect buttons, tags, badges), picks this up automatically.
-- `icons/line/check.svg` and `icons/filled/check.svg` re-exported. The filled check now uses `currentColor` like every other filled icon (it was hard-coded black).
+- **`sh-icon/check` now follows the Hugeicons drawing style**, so it sits in the same family as `check-circle`, `shield-check`, `user-check` and the rest of the icon set: fully round ends, same line weight as the other line icons.
+- **The joint stays sharp** (mitre), by choice: the tick keeps a crisp point at the elbow.
+- **Line:** round caps, mitre join, stroke still bound to `sh-icon/stroke/<size>`. All five sizes.
+- **Filled:** rebuilt as the same tick drawn with a heavier stroke (round ends, mitre joint) and outlined, so Line and Filled are one mark in two weights. Arm thickness and footprint are unchanged (16.3 × 12 at 24), so nothing shifts in buttons, checkboxes or badges.
+- Everything that uses the check — `sh-checkbox`, Connect buttons, lists, read receipts — updates automatically.
+- `icons/line/check.svg` and `icons/filled/check.svg` re-exported; the filled check uses `currentColor` like every other filled icon.
 
 ## Why
 
-The tick read as sharp and mechanical next to the rounded, iOS-smoothed boxes and buttons around it.
+The old tick had square-cut ends and a pointed polygon shape, so it looked like it came from a different icon set than the Hugeicons-based icons around it.
 
 ## Who needs to do something
 - **Designers:** nothing; pull the library.
@@ -18,4 +20,4 @@ The tick read as sharp and mechanical next to the rounded, iOS-smoothed boxes an
 
 ## Checks
 - [x] `python3 tools/check.py` passes
-- [x] Checked visually in Figma at all sizes and in every sh-checkbox state
+- [x] Compared side by side with Hugeicons `check-circle` and `user-check`; checked in every `sh-checkbox` state
