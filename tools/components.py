@@ -18,7 +18,7 @@ layer uses in every variant. Prose comes from the Figma description only.
 """
 import sys, os, re, json, itertools, base64
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib import all_collections, ROOT
+from lib import all_collections, load_tool_json, ROOT
 
 COMPONENTS = os.path.join(ROOT, "components")
 ICONS = os.path.join(ROOT, "icons")
@@ -34,15 +34,7 @@ FIGMA_FILE = "https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA"
 
 
 def load(path):
-    raw = open(path).read()
-    start = raw.index("{") if raw.lstrip().startswith("{") and '"result"' in raw[:200] else -1
-    if start >= 0:
-        try:
-            wrapper = json.loads(raw[start:raw.rindex("}") + 1])
-            raw = wrapper["result"]
-        except (ValueError, KeyError):
-            pass
-    return json.loads(raw)
+    return load_tool_json(path)
 
 
 # ---- token naming --------------------------------------------------------
@@ -270,7 +262,7 @@ def icon_type(name, t):
 def current_color(svg, mono):
     if not mono:
         return svg
-    return re.sub(r'(fill|stroke)="#[0-9A-Fa-f]{3,8}"', r'\1="currentColor"', svg)
+    return re.sub(r'(fill|stroke)="(#[0-9A-Fa-f]{3,8}|black)"', r'\1="currentColor"', svg)
 
 
 def write_icons(icons):
@@ -342,8 +334,9 @@ def main():
             icons += data["icons"]
         else:
             comps += [c for c in data if not c.get("missing")]
-    # a later read of the same component replaces an earlier one
+    # a later read of the same component or icon replaces an earlier one
     comps = list({c["id"]: c for c in comps}.values())
+    icons = list({i["name"]: i for i in icons}.values())
     entries = []
     for c in comps:
         folder, label = group_of(c.get("page"))
