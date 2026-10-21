@@ -6,6 +6,8 @@
 //   dist/sh-typo-kit/developer/ios/ShTypography.swift     .shTextStyle(…) + Lexend-SH fonts
 // Icons: add icons/<type>/<name>.svg to the asset catalogue as "sh-icon/<type>/<name>"
 // (Preserve Vector Data, Render As Template). Badges: "sh-icon/misc/<name>" (Render As Original).
+// Images: ../../sh-avatar-placeholder/assets/female-1x1@3x.png as "sh-avatar-placeholder/female-1x1";
+// the requested portrait (../../sh-user-images/assets/requested-*.jpg) is passed in as `requestedPortrait`.
 //
 // Every colour, space, radius, stroke, blur, shadow and gradient is a DNA token.
 // Corners use .continuous, which is iOS corner smoothing (FOUNDATION: 60 % smoothing).
@@ -74,8 +76,8 @@ public struct ShProfileCard: View {
     public var showTopTags: Bool = true
     /// Figma property "Show photo actions".
     public var showPhotoActions: Bool = true
-    /// Photo requested only: the soft portrait the app ships (sh-user-images Gender=Female/Male requested).
-    /// Fills the photo and, cropped round, the overlay avatar.
+    /// Photo requested only: the soft portrait the app ships, composed with the face at its centre
+    /// (../../sh-user-images/assets/requested-female.jpg or requested-male.jpg).
     public var requestedPortrait: Image? = nil
     public var actions = ShProfileCardActions()
 
@@ -109,7 +111,10 @@ public struct ShProfileCard: View {
             ZStack(alignment: .top) {
                 if let image = photoImage {
                     image.resizable().scaledToFill()
-                        .frame(width: geo.size.width, height: geo.size.height).clipped()
+                        .frame(width: geo.size.width, height: geo.size.height)
+                        // Photo requested: scaled from the bottom so the face sits mid photo area, above the info card
+                        .scaleEffect(type == .photoRequested ? Self.requestedCrop : 1, anchor: .bottom)
+                        .clipped()
                         .blur(radius: type == .locked ? SH.Blur.backgroundBlurStrong : 0)   // image Style=Blur
                 }
                 SH.Gradient.overlayTop.view.frame(height: SH.Space.step24)
@@ -117,6 +122,9 @@ public struct ShProfileCard: View {
             }
         }
     }
+
+    /// Figma crop of the requested portrait on the card (face centred above the info card).
+    static let requestedCrop: CGFloat = 1.36
 
     private var photoImage: Image? {
         switch type {
@@ -138,15 +146,21 @@ public struct ShProfileCard: View {
             }
         case .noPhoto:
             overlayStack(background: SH.Color.overlayImageBase.color, top: SH.Space.step40) {
-                avatarPlaceholder
-                Text("No Photo added yet").shTextStyle(.bodyMd)
+                VStack(spacing: SH.Space.step12) {
+                    illustration(Image("sh-avatar-placeholder/female-1x1"))          // the "No Photo Avatar"
+                        .accessibilityLabel("No photo")
+                    Text("No Photo added yet").shTextStyle(.bodyMd).modifier(ShShadowDefault())
+                }
                 ShButton(.tertiary, "Request a Photo", icon: "line/help-circle", small: true, action: actions.onRequestPhoto)
+                    .modifier(ShShadowDefault())
             }
         case .photoRequested:
             // No background blur here: the soft portrait shows through the scrim; text carries sh-shadow/default.
             overlayStack(background: SH.Color.overlayScrimDefault.color, top: SH.Space.step40, blur: false) {
-                requestedAvatar
-                Text("No Photo added yet").shTextStyle(.bodyMd).modifier(ShShadowDefault())
+                VStack(spacing: SH.Space.step12) {
+                    illustration(nil)                                                // empty slot keeps the text in place
+                    Text("No Photo added yet").shTextStyle(.bodyMd).modifier(ShShadowDefault())
+                }
                 HStack(spacing: SH.Space.step4) {
                     ShIcon("filled/check", size: SH.Icon.size16)
                     Text("Photo Requested").shTextStyle(.buttonSm)
@@ -160,21 +174,12 @@ public struct ShProfileCard: View {
         }
     }
 
-    private var avatarPlaceholder: some View {
-        Circle().fill(SH.Color.backgroundStrong.color)
-            .frame(width: SH.Space.step48 * 2, height: SH.Space.step48 * 2)     // avatar lg
-            .accessibilityLabel("No photo")
-    }
-
-    @ViewBuilder private var requestedAvatar: some View {
-        if let portrait = requestedPortrait {
-            portrait.resizable().scaledToFill()
-                .frame(width: SH.Space.step48 * 2, height: SH.Space.step48 * 2)     // avatar lg
-                .clipShape(Circle())
-                .accessibilityHidden(true)
-        } else {
-            avatarPlaceholder
+    /// 160 Icon/Illustration slot of sh-overlay. The placeholder art is drawn full width from the top, unclipped.
+    private func illustration(_ image: Image?) -> some View {
+        ZStack(alignment: .top) {
+            if let image { image.resizable().aspectRatio(contentMode: .fit).frame(width: SH.Space.step80 * 2) }
         }
+        .frame(width: SH.Space.step80 * 2, height: SH.Space.step80 * 2, alignment: .top)
     }
 
     private func overlayStack<C: View>(background: Color, top: CGFloat, blur: Bool = true,

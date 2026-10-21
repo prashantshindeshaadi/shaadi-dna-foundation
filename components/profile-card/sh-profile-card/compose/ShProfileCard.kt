@@ -6,6 +6,8 @@
 //   dist/sh-typo-kit/developer/android/ShTypography.kt + res/font/        → ShTypography, LexendSH
 // Icons: import icons/<type>/<name>.svg as vector drawables named sh_icon_<type>_<name>
 // (hyphens → underscores), e.g. icons/filled/check.svg → R.drawable.sh_icon_filled_check.
+// Images: ../../sh-avatar-placeholder/assets/female-1x1@3x.png → drawable-xxxhdpi/sh_avatar_placeholder_female_1x1.png;
+// the requested portrait (../../sh-user-images/assets/requested-*.jpg) is passed in as `requestedPortrait`.
 //
 // Every colour, space, radius, stroke, blur, shadow and opacity is a DNA token resource.
 // Gradients are built from their start/end colour tokens (shape drawables can't be a Brush).
@@ -34,7 +36,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -47,12 +51,14 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
@@ -190,8 +196,8 @@ fun ShProfileCard(
     showTopTags: Boolean = true,
     /** Figma property "Show photo actions". */
     showPhotoActions: Boolean = true,
-    /** Photo requested only: the soft portrait the app ships (sh-user-images Gender=Female/Male requested).
-     *  Fills the photo and, cropped round, the overlay avatar. */
+    /** Photo requested only: the soft portrait the app ships, composed with the face at its centre
+     *  (../../sh-user-images/assets/requested-female.jpg or requested-male.jpg). */
     requestedPortrait: Painter? = null,
     actions: ShProfileCardActions = ShProfileCardActions(),
 ) {
@@ -228,8 +234,14 @@ private fun BoxScope.Photo(type: ShProfileCardType, member: ShProfileMember, req
         Image(
             photo, contentDescription = null, contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize().then(
-                if (type == ShProfileCardType.Locked) Modifier.blur(d(R.dimen.sh_translucent_background_blur_strong))  // image Style=Blur
-                else Modifier),
+                when (type) {
+                    ShProfileCardType.Locked -> Modifier.blur(d(R.dimen.sh_translucent_background_blur_strong))  // image Style=Blur
+                    // Scaled from the bottom so the face sits mid photo area, above the info card (Figma crop)
+                    ShProfileCardType.PhotoRequested -> Modifier.graphicsLayer {
+                        scaleX = REQUESTED_CROP; scaleY = REQUESTED_CROP; transformOrigin = TransformOrigin(0.5f, 1f)
+                    }
+                    else -> Modifier
+                }),
         )
     }
     Box(Modifier.align(Alignment.TopCenter).fillMaxWidth().height(d(R.dimen.sh_space_24)).background(overlayFill(up = true)))
@@ -247,17 +259,18 @@ private fun Overlay(type: ShProfileCardType, requestedPortrait: Painter?, action
             ShButton(ShButtonKind.Tertiary, "Upgrade to View", R.drawable.sh_icon_line_premium, small = true, onClick = actions.onUpgradeToView)
         }
         ShProfileCardType.NoPhoto -> OverlayStack(c(R.color.sh_overlay_image_base), d(R.dimen.sh_space_40)) {
-            AvatarPlaceholder()
-            Text("No Photo added yet", style = t.bodyMd)
+            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_12))) {
+                Illustration(painterResource(R.drawable.sh_avatar_placeholder_female_1x1), "No photo")   // the "No Photo Avatar"
+                Text("No Photo added yet", style = t.bodyMd.copy(shadow = shadowDefault()))
+            }
             ShButton(ShButtonKind.Tertiary, "Request a Photo", R.drawable.sh_icon_line_help_circle, small = true, onClick = actions.onRequestPhoto)
         }
-        // The soft portrait shows through the scrim; text carries sh-shadow/default.
+        // No background blur: the soft portrait shows through the scrim; text carries sh-shadow/default.
         ShProfileCardType.PhotoRequested -> OverlayStack(c(R.color.sh_overlay_scrim_default), d(R.dimen.sh_space_40)) {
-            if (requestedPortrait != null) {
-                Image(requestedPortrait, contentDescription = null, contentScale = ContentScale.Crop,
-                    modifier = Modifier.size(d(R.dimen.sh_space_48) * 2).clip(CircleShape))               // avatar lg
-            } else AvatarPlaceholder()
-            Text("No Photo added yet", style = t.bodyMd.copy(shadow = shadowDefault()))
+            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_12))) {
+                Illustration(null)                                                  // empty slot keeps the text in place
+                Text("No Photo added yet", style = t.bodyMd.copy(shadow = shadowDefault()))
+            }
             Row(Modifier.padding(vertical = d(R.dimen.sh_space_6)), horizontalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_4)),
                 verticalAlignment = Alignment.CenterVertically) {
                 ShIcon(R.drawable.sh_icon_filled_check, d(R.dimen.sh_icon_size_16), tint = c(R.color.sh_indicator_success))
@@ -268,10 +281,17 @@ private fun Overlay(type: ShProfileCardType, requestedPortrait: Painter?, action
     }
 }
 
+/** Figma crop of the requested portrait on the card (face centred above the info card). */
+private const val REQUESTED_CROP = 1.36f
+
+/** 160 Icon/Illustration slot of sh-overlay. The placeholder art is drawn full width from the top, unclipped. */
 @Composable
-private fun AvatarPlaceholder() {
-    Box(Modifier.size(d(R.dimen.sh_space_48) * 2).clip(CircleShape).background(c(R.color.sh_background_strong))  // avatar lg
-        .semantics { contentDescription = "No photo" })
+private fun Illustration(art: Painter?, label: String? = null) {
+    val slot = d(R.dimen.sh_space_80) * 2
+    Box(Modifier.size(slot), contentAlignment = Alignment.TopCenter) {
+        if (art != null) Image(art, contentDescription = label, contentScale = ContentScale.FillWidth,
+            modifier = Modifier.requiredWidth(slot).wrapContentHeight(Alignment.Top, unbounded = true))
+    }
 }
 
 @Composable

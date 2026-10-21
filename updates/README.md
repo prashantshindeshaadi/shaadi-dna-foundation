@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-21 — No photo avatar restored, requested portraits face-centred](2026-10-21-no-photo-avatar-restored-requested-portraits-face-.md)
 - [2026-10-21 — Profile card code: Web, Compose, SwiftUI](2026-10-21-profile-card-code-web-compose-swiftui.md)
 - [2026-10-20 — Photo requested: soft portrait images](2026-10-20-photo-requested-images.md)
 - [2026-10-20 — Icon pack: cleaner icons, rounded style](2026-10-20-icon-pack-cleaner-icons.md)

@@ -182,11 +182,11 @@ def explain(by_variant, axes):
 
 VARIANT_OF = {}
 
-PLATFORMS = (("web", "Web (HTML/CSS)"), ("compose", "Jetpack Compose"), ("swiftui", "SwiftUI"))
+PLATFORMS = (("web", "Web (HTML/CSS)"), ("compose", "Jetpack Compose"), ("swiftui", "SwiftUI"), ("assets", "Assets"))
 
 
 def code_line(here):
-    """Links to the platform folders that exist next to the blueprint (web/, compose/, swiftui/)."""
+    """Links to the platform and asset folders that exist next to the blueprint (web/, compose/, swiftui/, assets/)."""
     links = []
     for sub, label in PLATFORMS:
         d = os.path.join(here, sub)
