@@ -76,7 +76,7 @@ public struct ShProfileCard: View {
     public var showTopTags: Bool = true
     /// Figma property "Show photo actions".
     public var showPhotoActions: Bool = true
-    /// Photo requested only: the soft portrait the app ships, composed with the face at its centre
+    /// Photo requested only: the soft requested portrait the app ships, shown full width and top-aligned
     /// (../../sh-user-images/assets/requested-female.jpg or requested-male.jpg).
     public var requestedPortrait: Image? = nil
     public var actions = ShProfileCardActions()
@@ -111,20 +111,16 @@ public struct ShProfileCard: View {
             ZStack(alignment: .top) {
                 if let image = photoImage {
                     image.resizable().scaledToFill()
-                        .frame(width: geo.size.width, height: geo.size.height)
-                        // Photo requested: scaled from the bottom so the face sits mid photo area, above the info card
-                        .scaleEffect(type == .photoRequested ? Self.requestedCrop : 1, anchor: .bottom)
+                        .frame(width: geo.size.width, height: geo.size.height,
+                               alignment: type == .photoRequested ? .top : .center)   // requested portrait: top-aligned
                         .clipped()
                         .blur(radius: type == .locked ? SH.Blur.backgroundBlurStrong : 0)   // image Style=Blur
                 }
-                SH.Gradient.overlayTop.view.frame(height: SH.Space.step24)
+                SH.Gradient.overlayTop.view.frame(height: SH.Space.step24).opacity(SH.Opacity.strong)
                 VStack { Spacer(); SH.Gradient.overlayBottom.view.frame(height: geo.size.height * 0.48) }   // 260 of 542
             }
         }
     }
-
-    /// Figma crop of the requested portrait on the card (face centred above the info card).
-    static let requestedCrop: CGFloat = 1.36
 
     private var photoImage: Image? {
         switch type {
@@ -140,9 +136,13 @@ public struct ShProfileCard: View {
         switch type {
         case .locked:
             overlayStack(background: SH.Color.overlayScrimDefault.color, top: SH.Space.step40 * 2) {
-                ShIcon("filled/photo-locked", size: SH.Icon.size24)
-                Text("She has shared photos with\nPremium members").shTextStyle(.bodyMd).multilineTextAlignment(.center)
+                VStack(spacing: SH.Space.step12) {
+                    ShIcon("filled/photo-locked", size: SH.Icon.size24)
+                    Text("She has shared Photos with\nPremium Members").shTextStyle(.bodyMd)
+                        .multilineTextAlignment(.center).modifier(ShShadowDefault())
+                }
                 ShButton(.tertiary, "Upgrade to View", icon: "line/premium", small: true, action: actions.onUpgradeToView)
+                    .modifier(ShShadowDefault())
             }
         case .noPhoto:
             overlayStack(background: SH.Color.overlayImageBase.color, top: SH.Space.step40) {
@@ -197,7 +197,8 @@ public struct ShProfileCard: View {
     private var topRow: some View {
         HStack(spacing: SH.Space.step8) {
             if showTopTags, let tag = member.topTag {
-                ShTag(tag == .promoted ? "Promoted" : "Top Profile", icon: "tag/megaphone-03", style: .white)
+                ShTag(tag == .promoted ? "Promoted" : "Top Profile", icon: "tag/megaphone-03", style: .white,
+                      paint: .color(SH.Color.iconSecondary.color))
             }
             Spacer(minLength: 0)
             if showPhotoActions {
@@ -225,14 +226,14 @@ public struct ShProfileCard: View {
                 HStack(spacing: SH.Space.step8) {
                     ForEach(member.tags.indices, id: \.self) { i in
                         member.tags[i] == .youAndHer
-                            ? ShTag("You & Her", icon: "line/link-rings", style: .translucentLight)
-                            : ShTag("Astro", icon: "line/astro", style: .translucentLight)
+                            ? ShTag("You & Her", icon: "line/link-rings", style: .translucentLight, paint: .gradient(SH.Gradient.brandDefault))
+                            : ShTag("Astro", icon: "line/astro", style: .translucentLight, paint: .gradient(SH.Gradient.premiumDefault))
                     }
                 }
             }
-            Rectangle().fill(SH.Color.textOnImage.color).frame(height: SH.Stroke.default)
-                .opacity(SH.Opacity.extraSoft)                                  // divider
-            VStack(alignment: .leading, spacing: SH.Space.step12) {
+            Rectangle().fill(SH.Color.borderSoft.color).frame(height: SH.Stroke.default)
+                .opacity(SH.Opacity.extraSoft)                                  // sh-divider Soft
+            VStack(alignment: .leading, spacing: type == .connected ? SH.Space.step8 : SH.Space.step12) {
                 note
                 actionRow
             }
@@ -240,7 +241,10 @@ public struct ShProfileCard: View {
         .padding(.top, SH.Space.step14)
         .padding([.horizontal, .bottom], SH.Space.step16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .modifier(ShGlass(radius: SH.Radius.lg))
+        // Connect: translucent/dark/soft; every other Type: dark/extra-soft. Locked has no blur (its photo is blurred).
+        .modifier(ShGlass(radius: SH.Radius.lg,
+                          fill: type == .connect ? SH.Gradient.translucentDarkSoft : SH.Gradient.translucentDarkExtraSoft,
+                          blur: type != .locked))
     }
 
     private var nameRow: some View {
@@ -248,7 +252,7 @@ public struct ShProfileCard: View {
             Text(member.name).shTextStyle(.headingSm).lineLimit(1).truncationMode(.tail)   // long names cut before the age
             Text("\(member.age)").shTextStyle(.headingSm).fixedSize()
             if type == .vip { ShBadge("misc/vip-badge", label: "VIP") }
-            if member.isOnline { ShTag("Online", icon: "tag/online", style: .translucentLight, pill: true, border: true) }
+            if member.isOnline { ShTag("Online", icon: "tag/online", style: .translucentLight, paint: .original, pill: true, border: true) }
             Spacer(minLength: 0)
             if member.isVerified { ShBadge("misc/verified-badge", label: "Verified") }
         }
@@ -274,12 +278,12 @@ public struct ShProfileCard: View {
                 Spacer(minLength: 0)
                 ShTextLink("Edit", action: actions.onEditMessage)
             }
-        case .connected:
+        case .connected:                                                    // Type=Action: centred
             HStack(spacing: SH.Space.step8) {
                 Text("To contact her directly").shTextStyle(.bodySm)
-                Spacer(minLength: 0)
                 ShTextLink("Upgrade Now", premium: true, action: actions.onUpgradeNow)
             }
+            .frame(maxWidth: .infinity)
         default:
             EmptyView()
         }
@@ -329,16 +333,17 @@ public struct ShProfileCard: View {
 
 // MARK: - Parts (named after their DNA components; move to their own folders when those get code)
 
-/// Translucent dark glass: material blur + sh-gradient/translucent/dark/soft + light gradient edge.
+/// Translucent dark glass: material blur + translucent gradient fill + light gradient edge.
 struct ShGlass: ViewModifier {
     var radius: CGFloat
     var fill: SHGradient = SH.Gradient.translucentDarkSoft
     var edge: SHGradient = SH.Gradient.translucentBorderLight
+    var blur = true
     func body(content: Content) -> some View {
         let shape = RoundedRectangle(cornerRadius: radius, style: .continuous)
         content
             .background(fill.view.clipShape(shape))
-            .background(.ultraThinMaterial, in: shape)
+            .background { if blur { shape.fill(.ultraThinMaterial) } }
             .overlay(shape.strokeBorder(edge.layers[0].linear, lineWidth: SH.Stroke.default))
     }
 }
@@ -354,11 +359,17 @@ struct ShShadowDefault: ViewModifier {
 struct ShIcon: View {
     var name: String
     var size: CGFloat
-    init(_ name: String, size: CGFloat) { self.name = name; self.size = size }
+    var original = false                                                     // multi-colour icons keep their art
+    init(_ name: String, size: CGFloat, original: Bool = false) { self.name = name; self.size = size; self.original = original }
     var body: some View {
-        Image("sh-icon/" + name).renderingMode(.template).resizable().scaledToFit()
+        Image("sh-icon/" + name).renderingMode(original ? .original : .template).resizable().scaledToFit()
             .frame(width: size, height: size).accessibilityHidden(true)
     }
+}
+
+/// How a tag icon is painted: a colour token, a gradient token, or its own colours.
+enum ShIconPaint {
+    case inherit, color(Color), gradient(SHGradient), original
 }
 
 struct ShBadge: View {
@@ -376,15 +387,24 @@ struct ShTag: View {
     var label: String
     var icon: String
     var style: Style
+    var paint: ShIconPaint = .inherit
     var pill = false
     var border = false
-    init(_ label: String, icon: String, style: Style, pill: Bool = false, border: Bool = false) {
-        self.label = label; self.icon = icon; self.style = style; self.pill = pill; self.border = border
+    init(_ label: String, icon: String, style: Style, paint: ShIconPaint = .inherit, pill: Bool = false, border: Bool = false) {
+        self.label = label; self.icon = icon; self.style = style; self.paint = paint; self.pill = pill; self.border = border
+    }
+    @ViewBuilder private var glyph: some View {
+        switch paint {
+        case .inherit: ShIcon(icon, size: SH.Icon.size12)
+        case .color(let c): ShIcon(icon, size: SH.Icon.size12).foregroundStyle(c)
+        case .gradient(let g): ShIcon(icon, size: SH.Icon.size12).foregroundStyle(g.layers[0].linear)
+        case .original: ShIcon(icon, size: SH.Icon.size12, original: true)
+        }
     }
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: pill ? SH.Radius.full : SH.Radius.xs, style: .continuous)
         HStack(spacing: SH.Space.step2) {
-            ShIcon(icon, size: SH.Icon.size12)
+            glyph
             Text(label).shTextStyle(.supportLabel).lineLimit(1)
         }
         .padding(.horizontal, SH.Space.step4)
@@ -394,9 +414,8 @@ struct ShTag: View {
             if style == .white { shape.fill(SH.Color.backgroundDefault.color) }
             else { SH.Gradient.translucentLightExtraSoft.view.clipShape(shape) }
         }
-        .overlay {
-            if style == .white { shape.strokeBorder(SH.Color.borderDefault.color, lineWidth: SH.Stroke.default) }
-            else if border { shape.strokeBorder(SH.Gradient.translucentBorderLight.layers[0].linear, lineWidth: SH.Stroke.thin) }
+        .overlay {                                                           // only the Online pill has an edge
+            if border { shape.strokeBorder(SH.Gradient.translucentBorderLight.layers[0].linear, lineWidth: SH.Stroke.thin) }
         }
     }
 }
@@ -431,7 +450,7 @@ struct ShTextLink: View {
     init(_ label: String, premium: Bool = false, action: @escaping () -> Void) { self.label = label; self.premium = premium; self.action = action }
     var body: some View {
         Button(action: action) {
-            Text(label).shTextStyle(premium ? .buttonSm : .bodySm).underline()
+            Text(label).shTextStyle(.buttonSm).underline()                  // sh-text-link Size Small
                 .foregroundStyle(premium ? SH.Color.premiumBackgroundSolidDefaultEnd.color : SH.Color.textOnImage.color)
                 .opacity(premium ? 1 : SH.Opacity.strong)
                 .frame(minHeight: SH.Icon.targetDefault).contentShape(Rectangle())
@@ -489,7 +508,6 @@ struct ShButton: View {
         case .primary: SH.Gradient.brandDefault.view.clipShape(shape)
         case .secondary: shape.fill(SH.Color.buttonSecondaryBackgroundDefault.color)
         case .tertiary: shape.fill(SH.Color.buttonTertiaryBackgroundDefault.color)
-            .overlay(shape.strokeBorder(SH.Color.borderDefault.color, lineWidth: SH.Stroke.default))
         case .premiumSolid: SH.Gradient.premiumDefault.view.clipShape(shape)
         }
     }
@@ -509,7 +527,7 @@ struct ShLabelledAction: View {
                     .frame(maxWidth: .infinity)
                     .foregroundStyle(SH.Color.buttonSecondaryTextDefault.color)
                     .background(SH.Color.buttonSecondaryBackgroundDefault.color,
-                                in: RoundedRectangle(cornerRadius: SH.Radius.md, style: .continuous))
+                                in: Capsule(style: .continuous))                    // sh-icon-button Secondary Medium
                 Text(label).shTextStyle(.supportLabel).foregroundStyle(SH.Color.textOnImage.color)
             }
         }

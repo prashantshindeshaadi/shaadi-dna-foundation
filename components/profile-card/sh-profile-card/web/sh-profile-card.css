@@ -43,11 +43,10 @@
 .sh-profile-card__photo { position: absolute; inset: 0; border-radius: var(--sh-radius-none); }
 .sh-profile-card__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .sh-profile-card__image--blur { filter: blur(var(--sh-translucent-background-blur-strong)); transform: scale(1.1); }
-/* Photo requested: the portrait is composed with the face at its centre; on the card it is scaled from the
-   bottom so the face sits in the middle of the photo area above the info card (same crop as Figma) */
-.sh-profile-card[data-type="photo-requested"] .sh-profile-card__image { transform: scale(1.36); transform-origin: 50% 100%; }
+/* Photo requested: the original requested portrait, full width and top-aligned (shown whole on the card) */
+.sh-profile-card[data-type="photo-requested"] .sh-profile-card__image { object-position: top; }
 .sh-profile-card__scrim { position: absolute; left: 0; right: 0; pointer-events: none; }
-.sh-profile-card__scrim--top { top: 0; height: var(--sh-space-24); background: var(--sh-gradient-overlay-top); }
+.sh-profile-card__scrim--top { top: 0; height: var(--sh-space-24); background: var(--sh-gradient-overlay-top); opacity: var(--sh-opacity-strong); }
 .sh-profile-card__scrim--bottom { bottom: 0; height: 48%; background: var(--sh-gradient-overlay-bottom); }   /* 260 of 542 */
 
 /* ---- photo overlay (sh-overlay) ----------------------------------------- */
@@ -69,18 +68,16 @@
 /* 160 slot: sh-avatar-placeholder on No photo; empty on Photo requested so the text sits in the same place */
 .sh-overlay__illustration { display: flex; justify-content: center; width: calc(var(--sh-space-80) * 2); height: calc(var(--sh-space-80) * 2); }
 .sh-overlay__illustration img { width: 100%; height: auto; align-self: flex-start; }
-/* sh-shadow/default on the No photo and Photo requested text, glyphs and action */
-.sh-overlay--no-photo .sh-overlay__message,
-.sh-overlay--photo-requested .sh-overlay__message,
+/* sh-shadow/default on overlay text, glyphs and action */
+.sh-overlay__message,
 .sh-overlay__status {
   text-shadow: var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-color);
 }
 .sh-overlay__status .sh-icon {
   filter: drop-shadow(var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-color));
 }
-.sh-overlay--no-photo .sh-button--tertiary {
-  box-shadow: inset 0 0 0 var(--sh-stroke-default) var(--sh-border-default),
-    var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-spread) var(--sh-shadow-default-color);
+.sh-overlay .sh-button {
+  box-shadow: var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-spread) var(--sh-shadow-default-color);
 }
 .sh-overlay__message { margin: 0; color: var(--sh-text-on-image); }
 .sh-overlay__status { display: inline-flex; align-items: center; gap: var(--sh-space-4); padding-block: var(--sh-space-6); color: var(--sh-indicator-success); }
@@ -109,10 +106,13 @@
   display: flex; flex-direction: column; gap: var(--sh-space-10);
   padding: var(--sh-space-14) var(--sh-space-16) var(--sh-space-16);
   border-radius: var(--sh-radius-lg);
-  background: var(--sh-gradient-translucent-dark-soft);
+  background: var(--sh-gradient-translucent-dark-extra-soft);
   -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-strong));
   backdrop-filter: blur(var(--sh-translucent-background-blur-strong));
 }
+/* Connect uses the stronger glass; Locked has no blur (its photo is already blurred) */
+.sh-profile-card[data-type="connect"] .sh-profile-card__info { background: var(--sh-gradient-translucent-dark-soft); }
+.sh-profile-card[data-type="locked"] .sh-profile-card__info { -webkit-backdrop-filter: none; backdrop-filter: none; }
 .sh-profile-card__content { display: flex; flex-direction: column; gap: var(--sh-space-2); }
 .sh-profile-card__name-row { display: flex; align-items: center; gap: var(--sh-space-6); padding-bottom: var(--sh-space-2); min-width: 0; }
 .sh-profile-card__name-group { display: flex; align-items: center; gap: var(--sh-space-6); min-width: 0; }
@@ -132,7 +132,7 @@
 }
 
 .sh-profile-card__tags { display: flex; flex-wrap: wrap; gap: var(--sh-space-8); }
-.sh-profile-card__divider { width: 100%; height: var(--sh-stroke-default); margin: 0; border: 0; border-radius: var(--sh-radius-full); background: var(--sh-text-on-image); opacity: var(--sh-opacity-extra-soft); }
+.sh-profile-card__divider { width: 100%; height: var(--sh-stroke-default); margin: 0; border: 0; border-radius: var(--sh-radius-full); background: var(--sh-border-soft); opacity: var(--sh-opacity-extra-soft); }   /* sh-divider Soft */
 
 /* ---- sh-tag ------------------------------------------------------------- */
 .sh-tag {
@@ -142,7 +142,8 @@
   white-space: nowrap;
 }
 .sh-tag--pill { border-radius: var(--sh-radius-full); }
-.sh-tag--white { background: var(--sh-background-default); color: var(--sh-text-secondary); box-shadow: inset 0 0 0 var(--sh-stroke-default) var(--sh-border-default); }
+.sh-tag--white { background: var(--sh-background-default); color: var(--sh-text-secondary); }
+.sh-tag--white .sh-icon { background: var(--sh-icon-secondary); }
 .sh-tag--translucent-light { background: var(--sh-gradient-translucent-light-extra-soft); color: var(--sh-text-on-image); }
 .sh-tag--bordered { --sh-glass-edge: var(--sh-gradient-translucent-border-light); }
 .sh-tag--bordered::after { padding: var(--sh-stroke-thin); }
@@ -152,6 +153,10 @@
 .sh-icon--12 { width: var(--sh-icon-size-12); height: var(--sh-icon-size-12); }
 .sh-icon--20 { width: var(--sh-icon-size-20); height: var(--sh-icon-size-20); }
 .sh-icon--24 { width: var(--sh-icon-size-24); height: var(--sh-icon-size-24); }
+/* tag icons keep their own colour: You & Her = brand gradient, Astro = premium gradient */
+.sh-icon--brand { background: var(--sh-gradient-brand-default); }
+.sh-icon--premium { background: var(--sh-gradient-premium-default); }
+img.sh-icon { background: none; -webkit-mask: none; mask: none; }   /* multi-colour icons (Online) */
 
 /* ---- sh-icon-button: Type Translucent, Size Small ----------------------- */
 .sh-icon-button {
@@ -171,12 +176,15 @@
 
 /* ---- sh-action-island / sh-action-note ---------------------------------- */
 .sh-profile-card__actions { display: flex; flex-direction: column; gap: var(--sh-space-12); }
+.sh-profile-card[data-type="connected"] .sh-profile-card__actions { gap: var(--sh-space-8); }
 .sh-action-note { display: flex; align-items: center; gap: var(--sh-space-8); margin: 0; }
 .sh-action-note__text { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--sh-text-on-image); }
 .sh-action-note--message .sh-action-note__text { font-style: italic; opacity: var(--sh-opacity-strong); }
+.sh-action-note--action { justify-content: center; }   /* Type=Action: text and link centred */
+.sh-action-note--action .sh-action-note__text { flex: none; }
 .sh-text-link {
   position: relative; display: inline-flex; gap: var(--sh-space-4); flex: none;
-  color: var(--sh-text-on-image); text-decoration: underline; text-underline-offset: var(--sh-space-2);
+  color: var(--sh-text-on-image); text-decoration: underline; text-decoration-thickness: var(--sh-stroke-default); text-underline-offset: var(--sh-space-2);
   opacity: var(--sh-opacity-strong); cursor: pointer; background: none; border: 0; padding: 0; font-family: inherit;
 }
 .sh-text-link--premium { color: var(--sh-premium-background-solid-default-end); opacity: 1; }
@@ -199,14 +207,14 @@
 .sh-button__label { display: inline-flex; align-items: center; gap: var(--sh-space-4); }
 .sh-button--primary { background: var(--sh-gradient-brand-default); color: var(--sh-button-primary-text-default); }
 .sh-button--secondary { background: var(--sh-button-secondary-background-default); color: var(--sh-button-secondary-text-default); }
-.sh-button--tertiary { background: var(--sh-button-tertiary-background-default); color: var(--sh-button-tertiary-text-default); box-shadow: inset 0 0 0 var(--sh-stroke-default) var(--sh-border-default); }
+.sh-button--tertiary { background: var(--sh-button-tertiary-background-default); color: var(--sh-button-tertiary-text-default); }
 .sh-button--premium-solid { background: var(--sh-gradient-premium-default); color: var(--sh-premium-text-on-solid); }
 .sh-button__sublabel { color: var(--sh-button-secondary-text-subtext); }
 .sh-button--small { min-height: auto; padding: var(--sh-space-6) var(--sh-space-12); }
 
 /* ---- sh-icon-button-with-label (Connected: Shaadi Chat / WhatsApp / Call) */
 .sh-labelled-action { display: flex; flex-direction: column; align-items: center; gap: var(--sh-space-4); border: 0; background: none; padding: 0; cursor: pointer; font: inherit; color: var(--sh-text-on-image); }
-.sh-labelled-action__icon { display: flex; align-items: center; justify-content: center; width: 100%; padding: var(--sh-space-10); border-radius: var(--sh-radius-md); background: var(--sh-button-secondary-background-default); color: var(--sh-button-secondary-text-default); }
+.sh-labelled-action__icon { display: flex; align-items: center; justify-content: center; width: 100%; padding: var(--sh-space-10); border-radius: var(--sh-radius-full); background: var(--sh-button-secondary-background-default); color: var(--sh-button-secondary-text-default); }
 
 /* focus ring (FOUNDATION §7.2) */
 .sh-profile-card :is(button, a):focus-visible { outline: var(--sh-stroke-strong) solid var(--sh-border-focus); outline-offset: var(--sh-space-4); }

@@ -50,15 +50,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
@@ -138,6 +140,10 @@ private val LocalShType = compositionLocalOf<ShTypographySet> { ShTypography.mob
 @Composable private fun glassFill() = Brush.linearGradient(
     listOf(c(R.color.sh_translucent_background_dark_soft_start), c(R.color.sh_translucent_background_dark_soft_end)))
 
+/** sh-gradient/translucent/dark/extra-soft, 135°. */
+@Composable private fun glassFillExtraSoft() = Brush.linearGradient(
+    listOf(c(R.color.sh_translucent_background_dark_extra_soft_start), c(R.color.sh_translucent_background_dark_extra_soft_end)))
+
 /** sh-gradient/translucent/light/extra-soft, 135°. */
 @Composable private fun lightGlassFill() = Brush.linearGradient(
     listOf(c(R.color.sh_translucent_background_light_extra_soft_start), c(R.color.sh_translucent_background_light_extra_soft_end)))
@@ -174,9 +180,9 @@ private val LocalShType = compositionLocalOf<ShTypographySet> { ShTypography.mob
 }
 
 /** Translucent dark glass: gradient fill + light gradient edge. */
-@Composable private fun Modifier.glass(shape: Shape, ring: Boolean = false) = this
+@Composable private fun Modifier.glass(shape: Shape, ring: Boolean = false, fill: Brush = glassFill()) = this
     .clip(shape)
-    .background(glassFill(), shape)
+    .background(fill, shape)
     .border(BorderStroke(d(R.dimen.sh_stroke_default), glassEdge(ring)), shape)
 
 /** 48 × 48 tap area around a smaller visual. */
@@ -196,7 +202,7 @@ fun ShProfileCard(
     showTopTags: Boolean = true,
     /** Figma property "Show photo actions". */
     showPhotoActions: Boolean = true,
-    /** Photo requested only: the soft portrait the app ships, composed with the face at its centre
+    /** Photo requested only: the soft requested portrait the app ships, shown full width and top-aligned
      *  (../../sh-user-images/assets/requested-female.jpg or requested-male.jpg). */
     requestedPortrait: Painter? = null,
     actions: ShProfileCardActions = ShProfileCardActions(),
@@ -233,18 +239,16 @@ private fun BoxScope.Photo(type: ShProfileCardType, member: ShProfileMember, req
     if (photo != null) {
         Image(
             photo, contentDescription = null, contentScale = ContentScale.Crop,
+            alignment = if (type == ShProfileCardType.PhotoRequested) Alignment.TopCenter else Alignment.Center,  // requested: top-aligned
             modifier = Modifier.fillMaxSize().then(
                 when (type) {
                     ShProfileCardType.Locked -> Modifier.blur(d(R.dimen.sh_translucent_background_blur_strong))  // image Style=Blur
-                    // Scaled from the bottom so the face sits mid photo area, above the info card (Figma crop)
-                    ShProfileCardType.PhotoRequested -> Modifier.graphicsLayer {
-                        scaleX = REQUESTED_CROP; scaleY = REQUESTED_CROP; transformOrigin = TransformOrigin(0.5f, 1f)
-                    }
                     else -> Modifier
                 }),
         )
     }
-    Box(Modifier.align(Alignment.TopCenter).fillMaxWidth().height(d(R.dimen.sh_space_24)).background(overlayFill(up = true)))
+    Box(Modifier.align(Alignment.TopCenter).fillMaxWidth().height(d(R.dimen.sh_space_24))
+        .alpha(opacity(R.dimen.sh_opacity_strong)).background(overlayFill(up = true)))
     Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth().fillMaxHeight(0.48f).background(overlayFill(up = false)))  // 260 of 542
 }
 
@@ -254,16 +258,20 @@ private fun Overlay(type: ShProfileCardType, requestedPortrait: Painter?, action
     val t = LocalShType.current
     when (type) {
         ShProfileCardType.Locked -> OverlayStack(c(R.color.sh_overlay_scrim_default), d(R.dimen.sh_space_40) * 2) {
-            ShIcon(R.drawable.sh_icon_filled_photo_locked, d(R.dimen.sh_icon_size_24))
-            Text("She has shared photos with\nPremium members", style = t.bodyMd, textAlign = TextAlign.Center)
-            ShButton(ShButtonKind.Tertiary, "Upgrade to View", R.drawable.sh_icon_line_premium, small = true, onClick = actions.onUpgradeToView)
+            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_12))) {
+                ShIcon(R.drawable.sh_icon_filled_photo_locked, d(R.dimen.sh_icon_size_24))
+                Text("She has shared Photos with\nPremium Members", style = t.bodyMd.copy(shadow = shadowDefault()), textAlign = TextAlign.Center)
+            }
+            ShButton(ShButtonKind.Tertiary, "Upgrade to View", R.drawable.sh_icon_line_premium, small = true, raised = true,
+                onClick = actions.onUpgradeToView)
         }
         ShProfileCardType.NoPhoto -> OverlayStack(c(R.color.sh_overlay_image_base), d(R.dimen.sh_space_40)) {
             Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_12))) {
                 Illustration(painterResource(R.drawable.sh_avatar_placeholder_female_1x1), "No photo")   // the "No Photo Avatar"
                 Text("No Photo added yet", style = t.bodyMd.copy(shadow = shadowDefault()))
             }
-            ShButton(ShButtonKind.Tertiary, "Request a Photo", R.drawable.sh_icon_line_help_circle, small = true, onClick = actions.onRequestPhoto)
+            ShButton(ShButtonKind.Tertiary, "Request a Photo", R.drawable.sh_icon_line_help_circle, small = true, raised = true,
+                onClick = actions.onRequestPhoto)
         }
         // No background blur: the soft portrait shows through the scrim; text carries sh-shadow/default.
         ShProfileCardType.PhotoRequested -> OverlayStack(c(R.color.sh_overlay_scrim_default), d(R.dimen.sh_space_40)) {
@@ -280,9 +288,6 @@ private fun Overlay(type: ShProfileCardType, requestedPortrait: Painter?, action
         else -> Unit
     }
 }
-
-/** Figma crop of the requested portrait on the card (face centred above the info card). */
-private const val REQUESTED_CROP = 1.36f
 
 /** 160 Icon/Illustration slot of sh-overlay. The placeholder art is drawn full width from the top, unclipped. */
 @Composable
@@ -314,7 +319,7 @@ private fun TopRow(
         verticalAlignment = Alignment.CenterVertically) {
         if (showTopTags && member.topTag != null) {
             ShTag(if (member.topTag == ShProfileTopTag.Promoted) "Promoted" else "Top Profile",
-                R.drawable.sh_icon_tag_megaphone_03, ShTagStyle.White)
+                R.drawable.sh_icon_tag_megaphone_03, ShTagStyle.White, ShIconPaint.Tint(c(R.color.sh_icon_secondary)))
         }
         Spacer(Modifier.weight(1f))
         if (showPhotoActions) {
@@ -331,7 +336,9 @@ private fun TopRow(
 private fun Info(type: ShProfileCardType, member: ShProfileMember, actions: ShProfileCardActions, modifier: Modifier) {
     ProvideOnImage {
         Column(
-            modifier.fillMaxWidth().glass(RoundedCornerShape(d(R.dimen.sh_radius_lg)))
+            // Connect: translucent/dark/soft; every other Type: dark/extra-soft (Android has no backdrop blur)
+            modifier.fillMaxWidth()
+                .glass(RoundedCornerShape(d(R.dimen.sh_radius_lg)), fill = if (type == ShProfileCardType.Connect) glassFill() else glassFillExtraSoft())
                 .padding(start = d(R.dimen.sh_space_16), end = d(R.dimen.sh_space_16),
                     top = d(R.dimen.sh_space_14), bottom = d(R.dimen.sh_space_16)),
             verticalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_10)),
@@ -343,14 +350,15 @@ private fun Info(type: ShProfileCardType, member: ShProfileMember, actions: ShPr
             if (member.tags.isNotEmpty()) {
                 Row(horizontalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_8))) {
                     member.tags.forEach {
-                        if (it == ShProfileTag.YouAndHer) ShTag("You & Her", R.drawable.sh_icon_line_link_rings, ShTagStyle.TranslucentLight)
-                        else ShTag("Astro", R.drawable.sh_icon_line_astro, ShTagStyle.TranslucentLight)
+                        if (it == ShProfileTag.YouAndHer) ShTag("You & Her", R.drawable.sh_icon_line_link_rings, ShTagStyle.TranslucentLight,
+                            ShIconPaint.Gradient(brandFill()))
+                        else ShTag("Astro", R.drawable.sh_icon_line_astro, ShTagStyle.TranslucentLight, ShIconPaint.Gradient(premiumFill()))
                     }
                 }
             }
             Box(Modifier.fillMaxWidth().height(d(R.dimen.sh_stroke_default)).alpha(opacity(R.dimen.sh_opacity_extra_soft))
-                .background(c(R.color.sh_text_on_image)))                                                   // divider
-            Column(verticalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_12))) {
+                .background(c(R.color.sh_border_soft)))                                                     // sh-divider Soft
+            Column(verticalArrangement = Arrangement.spacedBy(d(if (type == ShProfileCardType.Connected) R.dimen.sh_space_8 else R.dimen.sh_space_12))) {
                 Note(type, member, actions)
                 ActionRow(type, actions)
             }
@@ -367,7 +375,8 @@ private fun NameRow(type: ShProfileCardType, member: ShProfileMember, modifier: 
         Text(member.name, style = t.headingSm, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f, fill = false))
         Text("${member.age}", style = t.headingSm)
         if (type == ShProfileCardType.Vip) ShBadge(R.drawable.sh_icon_misc_vip_badge, "VIP")
-        if (member.isOnline) ShTag("Online", R.drawable.sh_icon_tag_online, ShTagStyle.TranslucentLight, pill = true, border = true)
+        if (member.isOnline) ShTag("Online", R.drawable.sh_icon_tag_online, ShTagStyle.TranslucentLight, ShIconPaint.Original,
+            pill = true, border = true)
         Spacer(Modifier.weight(1f))
         if (member.isVerified) ShBadge(R.drawable.sh_icon_misc_verified_badge, "Verified")
     }
@@ -397,9 +406,9 @@ private fun Note(type: ShProfileCardType, member: ShProfileMember, actions: ShPr
                 modifier = Modifier.weight(1f).alpha(opacity(R.dimen.sh_opacity_strong)))
             ShTextLink("Edit", onClick = actions.onEditMessage)
         }
-        ShProfileCardType.Connected -> Row(verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_8))) {
-            Text("To contact her directly", style = t.bodySm, modifier = Modifier.weight(1f))
+        ShProfileCardType.Connected -> Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,   // Type=Action: centred
+            horizontalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_8), Alignment.CenterHorizontally)) {
+            Text("To contact her directly", style = t.bodySm)
             ShTextLink("Upgrade Now", premium = true, onClick = actions.onUpgradeNow)
         }
         else -> Unit
@@ -477,21 +486,35 @@ private fun ShBadge(id: Int, label: String) {
 
 private enum class ShTagStyle { White, TranslucentLight }
 
-/** sh-tag: White (Medium) on the photo, Translucent light (Small) on glass. */
+/** How a tag icon is painted: a colour token, a gradient token, or its own colours. */
+private sealed interface ShIconPaint {
+    data class Tint(val color: Color) : ShIconPaint
+    data class Gradient(val brush: Brush) : ShIconPaint
+    data object Original : ShIconPaint
+}
+
+/** sh-tag: White (Medium) on the photo, Translucent light (Small) on glass. Only the Online pill has an edge. */
 @Composable
-private fun ShTag(label: String, icon: Int, style: ShTagStyle, pill: Boolean = false, border: Boolean = false) {
+private fun ShTag(label: String, icon: Int, style: ShTagStyle, paint: ShIconPaint? = null, pill: Boolean = false, border: Boolean = false) {
     val shape = RoundedCornerShape(d(if (pill) R.dimen.sh_radius_full else R.dimen.sh_radius_xs))
     val fg = c(if (style == ShTagStyle.White) R.color.sh_text_secondary else R.color.sh_text_on_image)
     val base = Modifier.clip(shape)
     val look = when {
         style == ShTagStyle.White -> base.background(c(R.color.sh_background_default), shape)
-            .border(d(R.dimen.sh_stroke_default), c(R.color.sh_border_default), shape)
         border -> base.background(lightGlassFill(), shape).border(BorderStroke(d(R.dimen.sh_stroke_thin), glassEdge()), shape)
         else -> base.background(lightGlassFill(), shape)
     }
+    val size = d(R.dimen.sh_icon_size_12)
     Row(look.padding(horizontal = d(R.dimen.sh_space_4), vertical = d(R.dimen.sh_space_2)),
         horizontalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_2)), verticalAlignment = Alignment.CenterVertically) {
-        ShIcon(icon, d(R.dimen.sh_icon_size_12), tint = fg)
+        when (paint) {
+            null -> ShIcon(icon, size, tint = fg)
+            is ShIconPaint.Tint -> ShIcon(icon, size, tint = paint.color)
+            is ShIconPaint.Gradient -> Image(painterResource(icon), contentDescription = null, modifier = Modifier.size(size)
+                .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
+                .drawWithContent { drawContent(); drawRect(paint.brush, blendMode = BlendMode.SrcIn) })   // gradient through the glyph
+            ShIconPaint.Original -> Image(painterResource(icon), contentDescription = null, modifier = Modifier.size(size))
+        }
         Text(label, style = LocalShType.current.supportLabel, color = fg, maxLines = 1)
     }
 }
@@ -516,7 +539,7 @@ private fun ShTextLink(label: String, premium: Boolean = false, onClick: () -> U
         contentAlignment = Alignment.Center) {
         Text(
             label,
-            style = (if (premium) t.buttonSm else t.bodySm).copy(textDecoration = TextDecoration.Underline),
+            style = t.buttonSm.copy(textDecoration = TextDecoration.Underline),     // sh-text-link Size Small
             color = c(if (premium) R.color.sh_premium_background_solid_default_end else R.color.sh_text_on_image),
             modifier = Modifier.alpha(if (premium) 1f else opacity(R.dimen.sh_opacity_strong)),
         )
@@ -529,7 +552,9 @@ private enum class ShButtonKind { Primary, Secondary, Tertiary, PremiumSolid }
 @Composable
 private fun ShButton(
     kind: ShButtonKind, label: String, icon: Int? = null, modifier: Modifier = Modifier,
-    sublabel: String? = null, small: Boolean = false, fill: Boolean = false, onClick: () -> Unit,
+    sublabel: String? = null, small: Boolean = false, fill: Boolean = false,
+    /** sh-shadow/default under the button (photo overlays). */
+    raised: Boolean = false, onClick: () -> Unit,
 ) {
     val t = LocalShType.current
     val shape = CircleShape
@@ -543,13 +568,14 @@ private fun ShButton(
         ShButtonKind.Primary -> Modifier.background(brandFill(), shape)
         ShButtonKind.Secondary -> Modifier.background(c(R.color.sh_button_secondary_background_default), shape)
         ShButtonKind.Tertiary -> Modifier.background(c(R.color.sh_button_tertiary_background_default), shape)
-            .border(d(R.dimen.sh_stroke_default), c(R.color.sh_border_default), shape)
         ShButtonKind.PremiumSolid -> Modifier.background(premiumFill(), shape)
     }
     Box(modifier.tapArea().clickable(role = Role.Button, onClick = onClick), contentAlignment = Alignment.Center) {
         Column(
             Modifier.then(if (small) Modifier else Modifier.defaultMinSize(minHeight = d(R.dimen.sh_space_40)))
                 .then(if (fill) Modifier.fillMaxWidth() else Modifier)
+                .then(if (raised) Modifier.shadow(d(R.dimen.sh_shadow_default_blur) / 2, shape,
+                    ambientColor = c(R.color.sh_shadow_default_color), spotColor = c(R.color.sh_shadow_default_color)) else Modifier)
                 .clip(shape).then(surface)
                 .padding(horizontal = d(R.dimen.sh_space_12), vertical = d(if (small) R.dimen.sh_space_6 else R.dimen.sh_space_10)),
             horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center,
@@ -568,7 +594,7 @@ private fun ShButton(
 private fun RowScope.ShLabelledAction(label: String, icon: Int, onClick: () -> Unit) {
     Column(Modifier.weight(1f).clickable(role = Role.Button, onClick = onClick),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(d(R.dimen.sh_space_4))) {
-        Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(d(R.dimen.sh_radius_md)))
+        Box(Modifier.fillMaxWidth().clip(CircleShape)                                  // sh-icon-button Secondary Medium
             .background(c(R.color.sh_button_secondary_background_default)).padding(d(R.dimen.sh_space_10)),
             contentAlignment = Alignment.Center) {
             ShIcon(icon, d(R.dimen.sh_icon_size_20), tint = c(R.color.sh_button_secondary_text_default))

@@ -1,6 +1,6 @@
 ---
 name: shaadi-code-connect
-description: Use when connecting the Shaadi DNA Foundation to Figma Dev Mode — setting variable code syntax so tokens show as var(--sh-...), or writing and publishing Figma Code Connect files for components. Triggers on "/shaadi-code-connect", "code connect", "set code syntax", "Dev Mode shows hex instead of tokens", "connect the button component to Figma", or a new component becoming ready to connect.
+description: Use when connecting the Shaadi DNA Foundation to Figma Dev Mode — setting variable code syntax so tokens show as var(--sh-...), or writing and publishing Figma Code Connect files for components. Triggers on "/shaadi-code-connect", "code connect", "set code syntax", "Dev Mode shows hex instead of tokens", "connect the button component to Figma", a new component becoming ready to connect, or "add / update Compose, SwiftUI and HTML/CSS code for <component>".
 ---
 
 # Connecting Shaadi DNA Foundation to Figma Dev Mode
@@ -116,6 +116,55 @@ views, no UIKit.
    once their parts are connected.
 8. **Token:** publishing needs a Figma personal access token with Code Connect
    write access. Publish from CI on merge.
+
+### Recipe: build or update one component's code
+
+Use this when asked to "add / update the code for `<sh-name>`" (first done for
+`sh-profile-card`, 2026-10-21). Work through the figma-console bridge.
+
+1. **Read Figma live.**
+   - Screenshot the set (`figma_capture_screenshot`).
+   - Run `tools/read_component_deep.js` with `SET` set to the set's node id. It
+     looks inside nested instances; the plain blueprint reader does not.
+   - Turn the result into lines with `python3 tools/deep_lines.py <file>`.
+2. **Clean Figma first** (save a version before any write).
+   - Rebind any binding to another library to the DNA token with the same name.
+     Text needs `setRangeBoundVariable`.
+   - Write the set and variant descriptions (step 1 above).
+   - Ask before changing a design decision. Fix only plain mistakes.
+3. **Regenerate the blueprint.** Rebuild only this set's `<sh-name>.md`, not
+   the index, by calling `blueprint()` from `tools/components.py`.
+4. **Write the three platforms** in `web/`, `compose/` and `swiftui/`.
+   - Use one shared model on every platform:
+     - a `type` enum, one case per variant;
+     - the content data;
+     - the Figma booleans;
+     - an actions object with one callback per tap.
+   - Go through the deep-read lines variant by variant: fill per variant, blur on
+     or off, opacity, gaps, alignment, icon paint (colour, gradient or own
+     colours), hard line breaks (U+2028), and text styles.
+   - Use tokens only:
+     - Web: `var(--sh-*)`.
+     - Compose: `colorResource` / `dimensionResource`, and
+       `ResourcesCompat.getFloat` for opacity. Build gradients as a `Brush` from
+       their start/end colours.
+     - SwiftUI: `SH.*` and `.shTextStyle`.
+   - Keep every tap target at 48.
+   - Images the code needs (placeholders, portraits) go in the owning
+     component's `assets/`, exported from Figma: SVG plus @3x PNG.
+5. **Add Code Connect files.** Keep each file self-contained: no outside helpers,
+   and declare any example values inside the file.
+6. **Verify.**
+   - SwiftUI: `xcrun --sdk iphonesimulator swiftc -typecheck -target
+     arm64-apple-ios17.0-simulator dist/ios/SHTokens.swift
+     dist/sh-typo-kit/developer/ios/ShTypography.swift <file>`.
+   - Web: render an inlined copy in headless Chrome. `file://` breaks CSS masks,
+     so inline the CSS, icons and images. Compare with the Figma screenshots.
+   - Compose: compile in an Android project. Say so if you couldn't.
+7. **Log and commit.**
+   - Add an `updates/` entry and run `python3 tools/check.py`.
+   - Commit locally. Push only when the user says so.
+   - Report the Figma inconsistencies you found but didn't change.
 
 ---
 
