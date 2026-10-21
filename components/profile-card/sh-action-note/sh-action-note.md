@@ -1,7 +1,8 @@
 # sh-action-note
 
-Purpose: one-line note above card actions. Type Pre-written message = a message the member can edit before sending (muted, + Edit); Action = a prompt to act, usually upgrade (full strength, + Upgrade Now). Style In card or Floating; put the link in Link slot.
-Keywords: note, pre-written message, personal note, edit message, upgrade prompt, action note
+**Purpose:** one-line note above card actions. Type Pre-written message = a message the member can edit before sending (muted, + Edit); Action = a prompt to act, usually upgrade (full strength, + Upgrade Now). Style In card or Floating; put the link in Link slot.
+
+**Keywords:** note, pre-written message, personal note, edit message, upgrade prompt, action note
 
 Profile card (migration, not yet core) · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16750) (node `2594:16750`)
 
@@ -40,10 +41,16 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | opacity | sh-opacity/full *(set on 2/4 variants)* |
 | Note | opacity | sh-opacity/strong *(set on 2/4 variants)* |
 | Note | fill | Style=In card → text/on-image; Style=Floating → text/secondary |
-| Note | text style | Type=Pre-written message → sh-typo/Body/SM/Italic; Type=Action → sh-typo/Body/SM/Default |
+| Note | text:lineHeight | sh-typo/body/sm/default/line-height *(set on 2/4 variants)* |
+| Note | text:letterSpacing | sh-typo/body/sm/default/letter-spacing *(set on 2/4 variants)* |
+| Note | text:paragraphSpacing | sh-typo/body/sm/default/paragraph-spacing *(set on 2/4 variants)* |
+| Note | text:fontSize | sh-typo/body/sm/default/size *(set on 2/4 variants)* |
+| Link slot | opacity | sh-opacity/strong *(set on 1/4 variants)* |
 | Link slot / sh-text-link | gap | sh-space/4 |
 | root | padding | sh-space/12 *(set on 2/4 variants)* |
+| root | radius | sh-radius/lg *(set on 2/4 variants)* |
 | root | effect | sh-shadow/floating *(set on 2/4 variants)* |
-| Surface | radius | sh-radius/lg *(set on 2/4 variants)* |
-| Surface | fill | sh-gradient/translucent/light/strong *(set on 2/4 variants)* |
+| Surface | radius | sh-radius/default *(set on 2/4 variants)* |
 | Surface | stroke | sh-gradient/translucent/border/light *(set on 2/4 variants)* |
+| Link slot / sh-text-link | opacity | sh-opacity/strong *(set on 1/4 variants)* |
+| Note | text style | sh-typo/Body/SM/Default *(set on 2/4 variants)* |

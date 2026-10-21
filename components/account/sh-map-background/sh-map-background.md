@@ -1,7 +1,8 @@
 # sh-map-background
 
-Purpose: neutral city map behind Near Me pins; place sh-map-pin instances on top.
-Keywords: map, near me, location, background, city map
+**Purpose:** neutral city map behind Near Me pins; place sh-map-pin instances on top.
+
+**Keywords:** map, near me, location, background, city map
 
 Navigation, payment, account (migration, not yet core) · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2715-10572) (node `2715:10572`)
 

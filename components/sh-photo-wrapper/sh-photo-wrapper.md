@@ -1,6 +1,6 @@
 # sh-photo-wrapper
 
-Purpose: Profile photo with optional top/bottom scrims and the shared sh-overlay (locked, no photo). Used by the profile card and the FPV hero.
+**Purpose:** Profile photo with optional top/bottom scrims and the shared sh-overlay (locked, no photo). Used by the profile card and the FPV hero.
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2530-10330) (node `2530:10330`)
 
@@ -11,7 +11,7 @@ Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGv
 | Property | Type | Values | Default |
 |---|---|---|---|
 | Show bottom scrim | boolean | — | true |
-| Show top scrim | boolean | — | false |
+| Show top scrim | boolean | — | true |
 | Show overlay | boolean | — | false |
 
 ## Anatomy
@@ -21,7 +21,7 @@ Layer tree of `sh-photo-wrapper`. Nested components are shown by name; their int
 - root — frame
   - Photo image — **sh-user-images** (Gender Female 1, Style Normal)
   - Bottom scrim — fixed × fixed
-  - Top scrim — hidden by default · fixed × fixed
+  - Top scrim — fixed × fixed
   - Overlay — **sh-overlay** (Action instance, Title No Photo added yet, Icon instance, Avatar instance, Message She has shared Photos  with Premium Members, Surface Photo, Type Message) · hidden by default
 
 ## Size
@@ -37,7 +37,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | radius | sh-radius/none |
 | Bottom scrim | fill | sh-gradient/overlay/bottom |
 | Top scrim | fill | sh-gradient/overlay/top |
-| Overlay | gap | sh-space/12 |
+| Overlay | gap | sh-space/8 |
 | Overlay | padding-x | sh-space/page/margin |
 | Overlay | fill | overlay/scrim/default |
 | Overlay | effect | sh-background-blur/uniform/strong |

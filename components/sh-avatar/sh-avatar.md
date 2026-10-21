@@ -1,6 +1,6 @@
 # sh-avatar
 
-Purpose: Represent a member identity.
+**Purpose:** Represent a member identity.
 
 Core · 9 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2486-15378) (node `2486:15378`)
 

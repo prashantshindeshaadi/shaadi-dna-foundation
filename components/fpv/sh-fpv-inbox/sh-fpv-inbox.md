@@ -1,6 +1,6 @@
 # sh-fpv-inbox
 
-Purpose: Inbox nudge row — message, reminder or photo request. Edit text and icon in Content, CTA label in Action.
+**Purpose:** Inbox nudge row — message, reminder or photo request. Edit text and icon in Content, CTA label in Action.
 
 Full profile view (migration, not yet core) · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2597-22419) (node `2597:22419`)
 

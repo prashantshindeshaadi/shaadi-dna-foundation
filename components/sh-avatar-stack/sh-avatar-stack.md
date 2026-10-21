@@ -1,7 +1,8 @@
 # sh-avatar-stack
 
-Purpose: overlapping member photos with a short social-proof line (e.g. "Chosen by 2.1L Members"). Swap images by selecting each avatar.
-Keywords: avatar group, avatar stack, social proof, members, faces
+**Purpose:** overlapping member photos with a short social-proof line (e.g. "Chosen by 2.1L Members"). Swap images by selecting each avatar.
+
+**Keywords:** avatar group, avatar stack, social proof, members, faces
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2710-24413) (node `2710:24413`)
 

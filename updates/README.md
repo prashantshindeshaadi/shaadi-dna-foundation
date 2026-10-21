@@ -6,6 +6,11 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-21 — Profile card code: Web, Compose, SwiftUI](2026-10-21-profile-card-code-web-compose-swiftui.md)
+- [2026-10-20 — Photo requested: soft portrait images](2026-10-20-photo-requested-images.md)
+- [2026-10-20 — Icon pack: cleaner icons, rounded style](2026-10-20-icon-pack-cleaner-icons.md)
+- [2026-10-20 — Component handoff: one folder per component, platform subfolders](2026-10-20-component-handoff-platform-folders.md)
+- [2026-10-20 — FPV page on DNA components](2026-10-20-fpv-on-dna-components.md)
 - [2026-10-16 — Tokens in hierarchy order](2026-10-16-tokens-in-hierarchy-order.md)
 - [2026-10-16 — Check icon: round ends, sharp joint](2026-10-16-rounded-check-icon.md)
 - [2026-10-16 — Mini card details and sh-info-detail modes](2026-10-16-mini-card-details-and-sh-info-detail-modes.md)

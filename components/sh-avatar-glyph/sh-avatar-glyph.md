@@ -1,6 +1,6 @@
 # sh-avatar-glyph
 
-Purpose: male / female silhouette used inside sh-avatar (Type=Icon). Sizes follow avatar sm/md/lg (16/24/40), not the icon pack. Built from Hugeicons Male02 / Female02 at Hugeicons stroke scale. Keywords: avatar, placeholder, gender, male, female, silhouette, profile photo missing.
+**Purpose:** male / female silhouette used inside sh-avatar (Type=Icon). Sizes follow avatar sm/md/lg (16/24/40), not the icon pack. Built from Hugeicons Male02 / Female02 at Hugeicons stroke scale. Keywords: avatar, placeholder, gender, male, female, silhouette, profile photo missing.
 
 Core · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2644-42085) (node `2644:42085`)
 

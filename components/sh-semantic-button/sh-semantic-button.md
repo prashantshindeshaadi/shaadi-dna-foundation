@@ -1,7 +1,8 @@
 # sh-semantic-button
 
-Purpose: Button for success, warning, error and information actions where colour carries meaning.
-Keywords: semantic button, success, warning, error, danger, info, destructive
+**Purpose:** Button for success, warning, error and information actions where colour carries meaning.
+
+**Keywords:** semantic button, success, warning, error, danger, info, destructive
 
 Core · 216 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=562-23918) (node `562:23918`)
 

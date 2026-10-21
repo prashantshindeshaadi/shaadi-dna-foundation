@@ -1,7 +1,8 @@
 # sh-skeleton
 
-Purpose: loading placeholders while content fetches — Line (text), Circle (avatar / icon), Block (image / card area), Card (profile card). Resize Line and Block freely.
-Keywords: skeleton, loading, placeholder, shimmer, loader
+**Purpose:** loading placeholders while content fetches — Line (text), Circle (avatar / icon), Block (image / card area), Card (profile card). Resize Line and Block freely.
+
+**Keywords:** skeleton, loading, placeholder, shimmer, loader
 
 Core · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13115) (node `2712:13115`)
 

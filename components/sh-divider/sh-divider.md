@@ -1,7 +1,8 @@
 # sh-divider
 
-Purpose: Thin separator between rows or sections; Soft, Default or Strong weight.
-Keywords: divider, separator, rule, line
+**Purpose:** Thin separator between rows or sections; Soft, Default or Strong weight.
+
+**Keywords:** divider, separator, rule, line
 
 Core · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=594-31711) (node `594:31711`)
 

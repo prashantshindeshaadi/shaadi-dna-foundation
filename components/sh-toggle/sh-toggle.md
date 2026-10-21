@@ -1,6 +1,6 @@
 # sh-toggle
 
-Purpose: Turns a single setting on or off with immediate effect.
+**Purpose:** Turns a single setting on or off with immediate effect.
 
 Core · 10 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-22571) (node `2496:22571`)
 

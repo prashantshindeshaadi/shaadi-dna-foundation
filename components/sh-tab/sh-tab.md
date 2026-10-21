@@ -1,7 +1,8 @@
 # sh-tab
 
-Purpose: one tab. Style Underline = horizontal tab rows (New · Daily · My Matches · Near Me); Segmented = segment inside sh-segmented-control; Vertical = side tab with a left indicator (desktop settings, account sections). Selected true/false; optional count and notification dot. Use sh-tabs for a ready row or column.
-Keywords: tab, tabs, secondary nav, segment, filter tab, vertical tab, side tab, count
+**Purpose:** one tab. Style Underline = horizontal tab rows (New · Daily · My Matches · Near Me); Segmented = segment inside sh-segmented-control; Vertical = side tab with a left indicator (desktop settings, account sections). Selected true/false; optional count and notification dot. Use sh-tabs for a ready row or column.
+
+**Keywords:** tab, tabs, secondary nav, segment, filter tab, vertical tab, side tab, count
 
 Core · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2711-11922) (node `2711:11922`)
 

@@ -1,7 +1,8 @@
 # sh-bottom-sheet
 
-Purpose: Modal sheet from the bottom with scrim. Size Short / Default / Full, Align Center / Left, Actions Stacked / Side by side; slots for Background, Visual, Section, Note.
-Keywords: bottom sheet, modal, drawer, dialog, sheet, overlay
+**Purpose:** Modal sheet from the bottom with scrim. Size Short / Default / Full, Align Center / Left, Actions Stacked / Side by side; slots for Background, Visual, Section, Note.
+
+**Keywords:** bottom sheet, modal, drawer, dialog, sheet, overlay
 
 Core · 12 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2638-64989) (node `2638:64989`)
 

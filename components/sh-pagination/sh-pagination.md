@@ -1,7 +1,8 @@
 # sh-pagination
 
-Purpose: move between pages of match listings and search results on desktop web. Select a page to change its number or state.
-Keywords: pagination, pager, pages, next, previous
+**Purpose:** move between pages of match listings and search results on desktop web. Select a page to change its number or state.
+
+**Keywords:** pagination, pager, pages, next, previous
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41908) (node `2718:41908`)
 

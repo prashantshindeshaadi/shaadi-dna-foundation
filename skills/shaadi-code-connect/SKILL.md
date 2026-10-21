@@ -69,6 +69,56 @@ push, then map it with the Figma MCP:
 Node ids are in `components/README.md`. Or link it by hand in Figma: Dev Mode →
 Code Connect → the component → enter the path.
 
+## Component handoff — one folder holds everything
+
+Every component is handed off through its own folder. The folder is the single
+place where its logic, data and code live; nothing about a component is kept
+anywhere else.
+
+```
+components/<group>/<sh-name>/          (<group> only for migration pages, e.g. fpv/)
+  <sh-name>.md                 blueprint: purpose, switches, rules, taps, properties,
+                               anatomy, tokens. Generated from Figma by tools/components.py;
+                               the prose comes from the Figma component + variant descriptions
+  web/                         HTML + CSS, and <sh-name>.figma.ts   (Code Connect, html parser)
+  compose/                     Jetpack Compose, and Sh<Name>.figma.kt
+  swiftui/                     SwiftUI, and Sh<Name>.figma.swift
+```
+
+Platforms are **Web (HTML/CSS), Jetpack Compose and SwiftUI only**. No XML
+views, no UIKit.
+
+### Steps
+
+1. **Logic in Figma first.** The component and every variant carry their
+   description: name line, `Purpose:`, `Built from:`, `Switches:`, `Rules:`,
+   `Taps:`; each variant starts with `When: …` (which case uses it). This is the
+   behaviour spec — write it in Figma, never only in code.
+2. **Regenerate the blueprint** (`/shaadi-dna-update`, step 1c) so the folder's
+   `<sh-name>.md` carries that logic plus properties, anatomy and tokens. Remove
+   folders for components that no longer exist in Figma.
+3. **Tokens are shared.** Platform code uses the code syntax names from Layer 1
+   (`var(--sh-…)` on web, the Android and iOS names on Compose and SwiftUI). Never
+   hard-code values.
+4. **One Code Connect config per platform**, each scoped to its own subfolders:
+   - Web — `figma.config.json` with the `html` parser, include `components/**/web/*`;
+     publish `npx figma connect publish`.
+   - Compose — Figma's Gradle plugin, `*.figma.kt` with `@FigmaConnect`;
+     publish `./gradlew figmaCodeConnectPublish`.
+   - SwiftUI — Figma's Swift package, `*.figma.swift`;
+     publish `swift run figma-connect publish`.
+5. **Map component properties, never layer names:** variant → enum, boolean →
+   Bool, text → String, instance swap → nested component.
+6. **Labels in Dev Mode:** Markdown (blueprint) stays; add Web, Compose and
+   SwiftUI next to it.
+7. **Order:** core components first (button, chip, tag, icon, app header, bottom
+   sheet), then feature components such as `sh-fpv-*`, which only map cleanly
+   once their parts are connected.
+8. **Token:** publishing needs a Figma personal access token with Code Connect
+   write access. Publish from CI on merge.
+
+---
+
 ## Layer 2 — Code Connect for components
 
 Maps a Figma component to the real code component, so Dev Mode shows the
@@ -101,9 +151,11 @@ npx figma connect publish --token $FIGMA_TOKEN
 Publish from CI on merge, not from a laptop, so the mapping always matches the
 merged code.
 
-Put `<sh-name>.figma.tsx` (and the component) in the component's own folder,
-`components/<sh-name>/`, and add a mapping with the code label (React, SwiftUI,
-Compose…) next to the Markdown one.
+Put the code and its connect file in the platform subfolder of the component's
+own folder (`web/`, `compose/`, `swiftui/` — see Component handoff above), and add
+a mapping with the code label (Web, Compose, SwiftUI) next to the Markdown one.
+The pattern below shows the mapping shape; on web the same props map to the
+HTML/CSS snippet.
 
 Pattern (Button; Figma property names come from `components/sh-button/sh-button.md`):
 

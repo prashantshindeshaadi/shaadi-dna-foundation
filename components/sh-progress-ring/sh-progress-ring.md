@@ -1,6 +1,6 @@
 # sh-progress-ring
 
-Purpose: Shows a score or progress out of a total. Drag the Progress arc end to set the amount.
+**Purpose:** Shows a score or progress out of a total. Drag the Progress arc end to set the amount.
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2613-33495) (node `2613:33495`)
 

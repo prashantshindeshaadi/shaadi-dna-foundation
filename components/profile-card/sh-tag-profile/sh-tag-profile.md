@@ -1,6 +1,6 @@
 # sh-tag-profile
 
-Purpose: Profile-card tags (online status, shared connections, astro, promoted, top profile, distance) built on sh-tag at Small size, each with its fixed mode and icon colour.
+**Purpose:** Profile-card tags (online status, shared connections, astro, promoted, top profile, distance) built on sh-tag, each with its fixed mode and icon colour.
 
 Profile card (migration, not yet core) · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2813-41954) (node `2813:41954`)
 
@@ -17,11 +17,11 @@ Profile card (migration, not yet core) · 6 variants · [Open in Figma](https://
 Layer tree of `Type=Online`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — row
-  - Tag — **sh-tag** (Trailing icon (Medium) instance, Trailing icon (Small) instance, Leading icon (Small) instance, Leading icon (Medium) instance, Label Online, Mode Translucent light, Size Small, Shape Pill)
+  - Tag — **sh-tag** (Trailing icon instance, Leading icon instance, Label Online, Mode Translucent light, Size Small, Shape Pill)
 
 ## Size
 
-57 × 18
+57 × 20
 
 ## Tokens
 
@@ -29,12 +29,13 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
+| root | radius | sh-radius/full *(set on 1/6 variants)* |
 | Tag | gap | sh-space/2 |
 | Tag | padding-x | sh-space/4 |
-| Tag | padding-y | sh-space/0 |
-| Tag | radius | Type=Online → sh-radius/full; Type=You & Her → sh-radius/xs; Type=Astro → sh-radius/xs; Type=Promoted → sh-radius/xs; Type=Top Profile → sh-radius/xs; Type=Distance → sh-radius/xs |
-| Tag | strokeTopWeight | Type=Online → sh-stroke/thin; Type=You & Her → sh-stroke/default; Type=Astro → sh-stroke/default; Type=Promoted → sh-stroke/default; Type=Top Profile → sh-stroke/default; Type=Distance → sh-stroke/default |
-| Tag | strokeBottomWeight | Type=Online → sh-stroke/thin; Type=You & Her → sh-stroke/default; Type=Astro → sh-stroke/default; Type=Promoted → sh-stroke/default; Type=Top Profile → sh-stroke/default; Type=Distance → sh-stroke/default |
-| Tag | strokeLeftWeight | Type=Online → sh-stroke/thin; Type=You & Her → sh-stroke/default; Type=Astro → sh-stroke/default; Type=Promoted → sh-stroke/default; Type=Top Profile → sh-stroke/default; Type=Distance → sh-stroke/default |
-| Tag | strokeRightWeight | Type=Online → sh-stroke/thin; Type=You & Her → sh-stroke/default; Type=Astro → sh-stroke/default; Type=Promoted → sh-stroke/default; Type=Top Profile → sh-stroke/default; Type=Distance → sh-stroke/default |
-| Tag | fill | Type=Online → sh-gradient/translucent/light/extra-soft; Type=You & Her → background/inverse; Type=Astro → background/inverse; Type=Promoted → background/default; Type=Top Profile → background/default; Type=Distance → background/default |
+| Tag | padding-y | sh-space/2 |
+| Tag | radius | Type=Online → sh-radius/button; Type=You & Her → sh-radius/xs; Type=Astro → sh-radius/xs; Type=Promoted → sh-radius/xs; Type=Top Profile → sh-radius/xs; Type=Distance → sh-radius/xs |
+| Tag | strokeTopWeight | Type=Online → sh-stroke/thin; Type=You & Her → sh-stroke/thin; Type=Astro → sh-stroke/thin; Type=Promoted → sh-stroke/default; Type=Top Profile → sh-stroke/default; Type=Distance → sh-stroke/default |
+| Tag | strokeBottomWeight | Type=Online → sh-stroke/thin; Type=You & Her → sh-stroke/thin; Type=Astro → sh-stroke/thin; Type=Promoted → sh-stroke/default; Type=Top Profile → sh-stroke/default; Type=Distance → sh-stroke/default |
+| Tag | strokeLeftWeight | Type=Online → sh-stroke/thin; Type=You & Her → sh-stroke/thin; Type=Astro → sh-stroke/thin; Type=Promoted → sh-stroke/default; Type=Top Profile → sh-stroke/default; Type=Distance → sh-stroke/default |
+| Tag | strokeRightWeight | Type=Online → sh-stroke/thin; Type=You & Her → sh-stroke/thin; Type=Astro → sh-stroke/thin; Type=Promoted → sh-stroke/default; Type=Top Profile → sh-stroke/default; Type=Distance → sh-stroke/default |
+| Tag | fill | Type=Online → sh-gradient/translucent/light/extra-soft; Type=You & Her → sh-gradient/translucent/light/extra-soft; Type=Astro → sh-gradient/translucent/light/extra-soft; Type=Promoted → background/default; Type=Top Profile → background/default; Type=Distance → background/default |

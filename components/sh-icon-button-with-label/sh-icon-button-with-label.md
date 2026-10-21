@@ -1,6 +1,6 @@
 # sh-icon-button-with-label
 
-Purpose: Icon action with a short caption, used in rows of equal actions.
+**Purpose:** Icon action with a short caption, used in rows of equal actions.
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2198-32247) (node `2198:32247`)
 

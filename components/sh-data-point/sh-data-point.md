@@ -1,6 +1,6 @@
 # sh-data-point
 
-Purpose: Display inline non-interactive profile metadata or plan benefits. State Included / Excluded (struck through).
+**Purpose:** Display inline non-interactive profile metadata or plan benefits. State Included / Excluded (struck through).
 
 Core · 12 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2470-15412) (node `2470:15412`)
 

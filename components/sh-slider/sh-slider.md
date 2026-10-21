@@ -1,6 +1,6 @@
 # sh-slider
 
-Purpose: Pick a value or a range, e.g. age or height. Choose Start / End positions; turn off Start thumb for a single value.
+**Purpose:** Pick a value or a range, e.g. age or height. Choose Start / End positions; turn off Start thumb for a single value.
 
 Core · 9 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2597-29841) (node `2597:29841`)
 

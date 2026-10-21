@@ -1,7 +1,8 @@
 # sh-navigation-item
 
-Purpose: one item of sh-navigation-bar. Layout Stacked (icon over label, mobile) or Inline (icon beside label, tablet and desktop sidebar); Active shows the filled brand icon; Show badge turns the sh-indicator on or off (select the indicator to switch Count or Dot, edit the number or set Error). Swapping Icon keeps Type, so active items stay Filled.
-Keywords: navigation item, bottom nav item, tab bar item, sidebar item, menu item, badge, indicator
+**Purpose:** one item of sh-navigation-bar. Layout Stacked (icon over label, mobile) or Inline (icon beside label, tablet and desktop sidebar); Active shows the filled brand icon; Show badge turns the sh-indicator on or off (select the indicator to switch Count or Dot, edit the number or set Error). Swapping Icon keeps Type, so active items stay Filled.
+
+**Keywords:** navigation item, bottom nav item, tab bar item, sidebar item, menu item, badge, indicator
 
 Core · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2711-12054) (node `2711:12054`)
 

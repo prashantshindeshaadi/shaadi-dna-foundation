@@ -1,7 +1,8 @@
 # sh-addon-card
 
-Purpose: premium add-on card. Type Offer = for sale (pictogram, price + discount, Benefits slot, CTA) in "Boost your plan" carousels; Type Active = owned add-on with remaining days/usage. Edit price and status text directly.
-Keywords: add-on, addon, upsell, boost, extra contacts, promote profile, offer card
+**Purpose:** premium add-on card. Type Offer = for sale (pictogram, price + discount, Benefits slot, CTA) in "Boost your plan" carousels; Type Active = owned add-on with remaining days/usage. Edit price and status text directly.
+
+**Keywords:** add-on, addon, upsell, boost, extra contacts, promote profile, offer card
 
 Navigation, payment, account (migration, not yet core) · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13683) (node `2712:13683`)
 

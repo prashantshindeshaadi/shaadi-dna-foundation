@@ -1,6 +1,6 @@
 # sh-chip
 
-Purpose: Chips. Type Choice = selectable (filters, preferences, multi-select) with states; Type Info = read-only attribute labels (religion, community, mother tongue, marital status, interests, commonalities). Keywords: chip, pill, attribute, info, filter, choice, select, facet.
+**Purpose:** Chips. Type Choice = selectable (filters, preferences, multi-select) with states; Type Info = read-only attribute labels (religion, community, mother tongue, marital status, interests, commonalities). Keywords: chip, pill, attribute, info, filter, choice, select, facet.
 
 Core · 33 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=306-3749) (node `306:3749`)
 

@@ -1,7 +1,8 @@
 # sh-stepper
 
-Purpose: vertical timeline / progress steps (refund request, verification, onboarding). Stack steps vertically; Status Done / Current / Pending; turn off the connector on the last step.
-Keywords: stepper, timeline, steps, progress, status, tracker
+**Purpose:** vertical timeline / progress steps (refund request, verification, onboarding). Stack steps vertically; Status Done / Current / Pending; turn off the connector on the last step.
+
+**Keywords:** stepper, timeline, steps, progress, status, tracker
 
 Core · 3 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13089) (node `2712:13089`)
 

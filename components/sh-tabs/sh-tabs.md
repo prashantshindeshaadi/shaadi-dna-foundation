@@ -1,7 +1,8 @@
 # sh-tabs
 
-Purpose: a ready group of tabs. Orientation Horizontal = underline tab row (match lists, inbox filters); Vertical = side tab column (desktop settings, account). Select a tab to rename it, set Selected or show a count; duplicate or hide tabs as needed.
-Keywords: tabs, tab bar, tab row, vertical tabs, side tabs, horizontal tabs, tab group
+**Purpose:** a ready group of tabs. Orientation Horizontal = underline tab row (match lists, inbox filters); Vertical = side tab column (desktop settings, account). Select a tab to rename it, set Selected or show a count; duplicate or hide tabs as needed.
+
+**Keywords:** tabs, tab bar, tab row, vertical tabs, side tabs, horizontal tabs, tab group
 
 Core · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2721-43483) (node `2721:43483`)
 

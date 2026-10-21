@@ -1,7 +1,8 @@
 # sh-photo-upload
 
-Purpose: one photo slot in the profile photo flow. State Empty (add photo) / Uploading / Error (retry) / Done (remove). Place several in a grid; swap the image fill on Done.
-Keywords: photo upload, image upload, add photo, picture, gallery, media upload
+**Purpose:** one photo slot in the profile photo flow. State Empty (add photo) / Uploading / Error (retry) / Done (remove). Place several in a grid; swap the image fill on Done.
+
+**Keywords:** photo upload, image upload, add photo, picture, gallery, media upload
 
 Core · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2719-42897) (node `2719:42897`)
 

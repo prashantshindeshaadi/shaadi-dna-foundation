@@ -1,6 +1,6 @@
 # sh-action-row
 
-Purpose: The action buttons of a card or sheet — one action with a message, two actions, or three icon actions.
+**Purpose:** The action buttons of a card or sheet — one action with a message, two actions, or three icon actions.
 
 Profile card (migration, not yet core) · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16861) (node `2594:16861`)
 
@@ -53,6 +53,6 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Secondary action | fill | button/secondary/background/default *(set on 2/6 variants)* |
 | root | padding | sh-space/12 *(set on 3/6 variants)* |
 | root | effect | sh-shadow/floating *(set on 3/6 variants)* |
-| Surface | radius | Type=Single action → sh-radius/xxl; Type=Three actions → sh-radius/lg; Type=Two actions → sh-radius/lg *(set on 3/6 variants)* |
+| Surface | radius | sh-radius/xxl *(set on 3/6 variants)* |
 | Surface | fill | sh-gradient/translucent/light/strong *(set on 3/6 variants)* |
 | Surface | stroke | sh-gradient/translucent/border/light *(set on 3/6 variants)* |

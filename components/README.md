@@ -1,8 +1,9 @@
 # Components
 
 One folder per `sh-*` component, named exactly like the Figma component. Inside: the
-blueprint `<sh-name>.md`, generated from Figma by `tools/components.py`. Code (`*.tsx`, `*.swift`,
-`*.kt`) and Code Connect files go in the same folder when they exist.
+blueprint `<sh-name>.md`, generated from Figma by `tools/components.py` (its prose, logic and rules
+come from the Figma descriptions). Code and Code Connect files go in platform subfolders of the same
+folder: `web/` (HTML/CSS), `compose/` (Jetpack Compose), `swiftui/` (SwiftUI). No XML or UIKit.
 
 Figma Code Connect links every component to its blueprint (label: Markdown), so Dev Mode and the
 Figma MCP point straight here. When a code component is built, re-link it to the code file.
@@ -69,7 +70,7 @@ work in progress and may still change.
 | `sh-stepper` | 3 | 5 | [sh-stepper/sh-stepper.md](sh-stepper/sh-stepper.md) | [`2712:13089`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13089) |
 | `sh-tab` | 6 | 6 | [sh-tab/sh-tab.md](sh-tab/sh-tab.md) | [`2711:11922`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2711-11922) |
 | `sh-tabs` | 2 | 1 | [sh-tabs/sh-tabs.md](sh-tabs/sh-tabs.md) | [`2721:43483`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2721-43483) |
-| `sh-tag` | 20 | 11 | [sh-tag/sh-tag.md](sh-tag/sh-tag.md) | [`2357:23671`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2357-23671) |
+| `sh-tag` | 20 | 10 | [sh-tag/sh-tag.md](sh-tag/sh-tag.md) | [`2357:23671`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2357-23671) |
 | `sh-text-link` | 44 | 10 | [sh-text-link/sh-text-link.md](sh-text-link/sh-text-link.md) | [`2348:22277`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2348-22277) |
 | `sh-toast` | 5 | 5 | [sh-toast/sh-toast.md](sh-toast/sh-toast.md) | [`2718:41602`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41602) |
 | `sh-toggle` | 10 | 2 | [sh-toggle/sh-toggle.md](sh-toggle/sh-toggle.md) | [`2496:22571`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-22571) |
@@ -109,13 +110,13 @@ work in progress and may still change.
 | `sh-action-island` | 2 | 2 | [profile-card/sh-action-island/sh-action-island.md](profile-card/sh-action-island/sh-action-island.md) | [`2594:16928`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16928) |
 | `sh-action-note` | 4 | 5 | [profile-card/sh-action-note/sh-action-note.md](profile-card/sh-action-note/sh-action-note.md) | [`2594:16750`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16750) |
 | `sh-action-row` | 6 | 3 | [profile-card/sh-action-row/sh-action-row.md](profile-card/sh-action-row/sh-action-row.md) | [`2594:16861`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16861) |
-| `sh-avatar-placeholder` | 4 | 2 | [profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md](profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md) | [`2239:13257`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257) |
+| `sh-avatar-placeholder` | 8 | 2 | [profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md](profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md) | [`2239:13257`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257) |
 | `sh-info-detail` | 4 | 4 | [profile-card/sh-info-detail/sh-info-detail.md](profile-card/sh-info-detail/sh-info-detail.md) | [`2825:43215`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2825-43215) |
-| `sh-mini-card` | 2 | 9 | [profile-card/sh-mini-card/sh-mini-card.md](profile-card/sh-mini-card/sh-mini-card.md) | [`2780:68360`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360) |
-| `sh-profile-card` | 8 | 3 | [profile-card/sh-profile-card/sh-profile-card.md](profile-card/sh-profile-card/sh-profile-card.md) | [`2579:25592`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2579-25592) |
-| `sh-profile-card-info` | 1 | 14 | [profile-card/sh-profile-card-info/sh-profile-card-info.md](profile-card/sh-profile-card-info/sh-profile-card-info.md) | [`2496:27797`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-27797) |
+| `sh-mini-card` | 2 | 7 | [profile-card/sh-mini-card/sh-mini-card.md](profile-card/sh-mini-card/sh-mini-card.md) | [`2780:68360`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360) |
+| `sh-profile-card` | 9 | 3 | [profile-card/sh-profile-card/sh-profile-card.md](profile-card/sh-profile-card/sh-profile-card.md) | [`2579:25592`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2579-25592) |
+| `sh-profile-card-info` | 1 | 13 | [profile-card/sh-profile-card-info/sh-profile-card-info.md](profile-card/sh-profile-card-info/sh-profile-card-info.md) | [`2496:27797`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-27797) |
 | `sh-tag-profile` | 6 | 1 | [profile-card/sh-tag-profile/sh-tag-profile.md](profile-card/sh-tag-profile/sh-tag-profile.md) | [`2813:41954`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2813-41954) |
-| `sh-user-images` | 26 | 2 | [profile-card/sh-user-images/sh-user-images.md](profile-card/sh-user-images/sh-user-images.md) | [`2248:13619`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2248-13619) |
+| `sh-user-images` | 30 | 2 | [profile-card/sh-user-images/sh-user-images.md](profile-card/sh-user-images/sh-user-images.md) | [`2248:13619`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2248-13619) |
 
 ## Utility
 

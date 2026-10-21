@@ -1,7 +1,8 @@
 # sh-indicator
 
-Purpose: small pill or dot on icons, tabs and avatars that signals new or unread items. Information (blue) by default; Error (red) only for errors. Count hugs its number.
-Keywords: indicator, notification badge, count badge, unread count, dot, counter, pill
+**Purpose:** small pill or dot on icons, tabs and avatars that signals new or unread items. Information (blue) by default; Error (red) only for errors. Count hugs its number.
+
+**Keywords:** indicator, notification badge, count badge, unread count, dot, counter, pill
 
 Core · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2717-39751) (node `2717:39751`)
 

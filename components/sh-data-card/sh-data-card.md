@@ -1,7 +1,8 @@
 # sh-data-card
 
-Purpose: card that presents one data summary. Type Score = title, text, link and a score ring; Promo = title, text, CTA (Action slot) and pictogram / image (Visual slot); Usage = title, value, progress bar and note.
-Keywords: data card, score, match, promo, banner, usage, quota, progress, summary card, stat
+**Purpose:** card that presents one data summary. Type Score = title, text, link and a score ring; Promo = title, text, CTA (Action slot) and pictogram / image (Visual slot); Usage = title, value, progress bar and note.
+
+**Keywords:** data card, score, match, promo, banner, usage, quota, progress, summary card, stat
 
 Core · 3 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2644-46398) (node `2644:46398`)
 

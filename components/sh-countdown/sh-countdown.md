@@ -1,7 +1,8 @@
 # sh-countdown
 
-Purpose: time left on an offer ("Offer ends in 02:14:30") on offer cards, plans and festival banners. Style Boxed (hours, minutes, seconds) or Inline (one line with timer icon).
-Keywords: countdown, timer, offer ends, time left, deadline, sale timer
+**Purpose:** time left on an offer ("Offer ends in 02:14:30") on offer cards, plans and festival banners. Style Boxed (hours, minutes, seconds) or Inline (one line with timer icon).
+
+**Keywords:** countdown, timer, offer ends, time left, deadline, sale timer
 
 Core · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41900) (node `2718:41900`)
 

@@ -1,6 +1,6 @@
 # sh-fpv-header
 
-Purpose: Profile header — name, key details, status tags and trust badges. Edit text via properties; tags and badges via nested instances.
+**Purpose:** Profile header — name, key details, status tags and trust badges. Edit text via properties; tags and badges via nested instances.
 
 Full profile view (migration, not yet core) · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2597-22909) (node `2597:22909`)
 

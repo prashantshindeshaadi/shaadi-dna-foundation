@@ -1,7 +1,8 @@
 # sh-navigation-bar
 
-Purpose: the app navigation — Home, Matches, Inbox, Chat, Premium. Device Mobile = floating bottom bar (stacked items), Tablet = wide bottom bar (inline items), Desktop = left sidebar. Pick Active for the current screen; edit items (label, icon, badge) by selecting them.
-Keywords: navigation bar, bottom navigation, tab bar, bottom nav, sidebar, side nav, menu, nav
+**Purpose:** the app navigation — Home, Matches, Inbox, Chat, Premium. Device Mobile = floating bottom bar (stacked items), Tablet = wide bottom bar (inline items), Desktop = left sidebar. Pick Active for the current screen; edit items (label, icon, badge) by selecting them.
+
+**Keywords:** navigation bar, bottom navigation, tab bar, bottom nav, sidebar, side nav, menu, nav
 
 Core · 15 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2711-12618) (node `2711:12618`)
 

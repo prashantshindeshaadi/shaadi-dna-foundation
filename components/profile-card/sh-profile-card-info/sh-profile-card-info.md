@@ -1,6 +1,6 @@
 # sh-profile-card-info
 
-Purpose: Profile summary on a card — name, trust badges, status, key details, optional tags and the action island.
+**Purpose:** Profile summary on a card — name, trust badges, status, key details, optional tags and the action island.
 
 Profile card (migration, not yet core) · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-27797) (node `2496:27797`)
 
@@ -13,8 +13,7 @@ Profile card (migration, not yet core) · 1 variant · [Open in Figma](https://w
 | Name | text | — | Sneha Kaul |
 | Show status | boolean | — | true |
 | Show tags | boolean | — | true |
-| Show badge 1 | boolean | — | true |
-| Badge 1 | instance swap | — | instance |
+| Verified | boolean | — | true |
 | Show badge 2 | boolean | — | true |
 | Badge 2 | instance swap | — | instance |
 | Show badge 3 | boolean | — | true |
@@ -35,11 +34,11 @@ Layer tree of `sh-profile-card-info`. Nested components are shown by name; their
       - Name group — row · hug × hug
         - Name — text "Sneha Kaul"
         - Age — text "26"
-        - Badge 2 — **sh-icon/badge/premium**
-        - Badge 3 — **sh-icon/badge/vip**
+        - Badge 2 — **sh-icon/premium-badge** (Size Medium)
+        - Badge 3 — **sh-icon/vip-badge**
         - Status — **sh-tag-profile** (Type Online)
       - Spacer — fill × fixed
-      - Badge 1 — **sh-icon/badge/verified**
+      - Verified — **sh-icon/verified-badge** (Size Medium)
     - Details — row · fill × hug
       - Info detail 1 — **sh-info-detail** (Label 5' 6", Mode On image, Size Medium)
       - Info detail 2 — **sh-info-detail** (Label Kashmiri Pandit, Mode On image, Size Medium)
@@ -54,7 +53,7 @@ Layer tree of `sh-profile-card-info`. Nested components are shown by name; their
 
 ## Size
 
-316 × 223
+316 × 225
 
 ## Tokens
 
@@ -71,13 +70,13 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | stroke | sh-gradient/translucent/border/light |
 | root | effect | sh-background-blur/uniform/strong |
 | Content box | gap | sh-space/2 |
-| Content box | padding-x | sh-space/0 |
-| Content box | padding-y | unknown VariableID:46703fb61c241c75f1244dcab872d413be6d45e1/1135:148 |
+| Content box | padding | sh-space/0 |
 | Content box / Name row | padding:bottom | sh-space/2 |
 | Content box / Name row / Name group / Name | fill | text/on-image |
 | Content box / Name row / Name group / Name | text style | sh-typo/Heading/SM |
 | Content box / Name row / Name group / Age | fill | text/on-image |
 | Content box / Name row / Name group / Age | text style | sh-typo/Heading/SM |
+| Content box / Name row / Name group / Status | radius | sh-radius/full |
 | Content box / Details | gap | sh-space/8 |
 | Content box / Details | row-gap | sh-space/2 |
 | Content box / Details / Info detail 1 | gap | sh-space/8 |
@@ -86,9 +85,8 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Content box / Details / Info detail 4 | gap | sh-space/8 |
 | Tags | gap | sh-space/8 |
 | Tags | row-gap | sh-space/8 |
-| Divider | radius | sh-radius/xxs |
+| Tags / Tag | radius | sh-radius/full |
+| Divider | radius | sh-radius/full |
 | Divider | opacity | sh-opacity/extra-soft |
 | Actions | gap | sh-space/12 |
 | Actions | padding | sh-space/0 |
-
-> Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:46703fb61c241c75f1244dcab872d413be6d45e1/1135:148

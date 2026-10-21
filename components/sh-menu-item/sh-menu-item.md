@@ -1,7 +1,8 @@
 # sh-menu-item
 
-Purpose: one row of sh-menu or of the sh-select options list. Type Default or Destructive (Block, Report); State Default / Hover / Selected (selected shows a check).
-Keywords: menu item, option, dropdown item, list option, action
+**Purpose:** one row of sh-menu or of the sh-select options list. Type Default or Destructive (Block, Report); State Default / Hover / Selected (selected shows a check).
+
+**Keywords:** menu item, option, dropdown item, list option, action
 
 Core · 5 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41739) (node `2718:41739`)
 

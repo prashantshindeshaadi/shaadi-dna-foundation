@@ -1,7 +1,8 @@
 # sh-brand-footer
 
-Purpose: Shaadi sign-off at the bottom of account, settings and help pages — success story (Story slot), "Every Story Begins Here" and "Crafted with ♥ in आमची मुंबई".
-Keywords: footer, brand footer, success story, tagline, sign-off
+**Purpose:** Shaadi sign-off at the bottom of account, settings and help pages — success story (Story slot), "Every Story Begins Here" and "Crafted with ♥ in आमची मुंबई".
+
+**Keywords:** footer, brand footer, success story, tagline, sign-off
 
 Navigation, payment, account (migration, not yet core) · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13754) (node `2712:13754`)
 

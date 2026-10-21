@@ -1,7 +1,8 @@
 # sh-tooltip
 
-Purpose: contextual hint pinned to an element. Type Simple = one line ("You'll lose your Plus benefits"); Rich = title, body and close (feature hints, onboarding coach marks). Placement is where the tooltip sits relative to its target. Label is the body text.
-Keywords: tooltip, hint, popover, coachmark, coach mark, helper, onboarding
+**Purpose:** contextual hint pinned to an element. Type Simple = one line ("You'll lose your Plus benefits"); Rich = title, body and close (feature hints, onboarding coach marks). Placement is where the tooltip sits relative to its target. Label is the body text.
+
+**Keywords:** tooltip, hint, popover, coachmark, coach mark, helper, onboarding
 
 Core · 8 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13106) (node `2712:13106`)
 

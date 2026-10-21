@@ -1,7 +1,8 @@
 # sh-membership-card
 
-Purpose: shows the member's plan on the account page — plan badge (Visual slot), plan name, Active / Expired status and validity.
-Keywords: membership, current plan, subscription, premium status, gold, active plan
+**Purpose:** shows the member's plan on the account page — plan badge (Visual slot), plan name, Active / Expired status and validity.
+
+**Keywords:** membership, current plan, subscription, premium status, gold, active plan
 
 Navigation, payment, account (migration, not yet core) · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13716) (node `2712:13716`)
 

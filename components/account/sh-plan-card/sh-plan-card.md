@@ -1,7 +1,8 @@
 # sh-plan-card
 
-Purpose: Premium plan card for the plans page. Pick Plan (Silver → Platinum Private); State Collapsed is the closed row, Expanded the open card with price, discount, benefits and CTA. Edit prices and the CTA label directly; add or remove benefit rows in Benefits slot (sh-data-point Included / Excluded).
-Keywords: plan, pricing, membership, premium, subscription, gold, diamond, platinum, upgrade, checkout
+**Purpose:** Premium plan card for the plans page. Pick Plan (Silver → Platinum Private); State Collapsed is the closed row, Expanded the open card with price, discount, benefits and CTA. Edit prices and the CTA label directly; add or remove benefit rows in Benefits slot (sh-data-point Included / Excluded).
+
+**Keywords:** plan, pricing, membership, premium, subscription, gold, diamond, platinum, upgrade, checkout
 
 Navigation, payment, account (migration, not yet core) · 14 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2710-28466) (node `2710:28466`)
 

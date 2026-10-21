@@ -92,7 +92,7 @@ for (const id of SETS) {
     for (const ch of c.children || []) await walk(ch, "", rows, tree, 1);
     let vp = {};
     try { vp = c.variantProperties || {}; } catch (e) {}
-    variants.push({ name: c.name, variant: vp, w: Math.round(c.width * 100) / 100, h: Math.round(c.height * 100) / 100, root, bindings: rows, tree });
+    variants.push({ name: c.name, description: c.description || "", variant: vp, w: Math.round(c.width * 100) / 100, h: Math.round(c.height * 100) / 100, root, bindings: rows, tree });
   }
   out.push({ id, name: s.name, page: (() => { let p = s.parent; while (p && p.type !== "PAGE") p = p.parent; return p ? p.name : null; })(), description: s.description, props, propsError, variants });
 }

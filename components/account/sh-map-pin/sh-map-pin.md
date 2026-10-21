@@ -1,7 +1,8 @@
 # sh-map-pin
 
-Purpose: a member's photo pin on the Near Me map. State Default / Selected (brand ring, larger). The map itself stays an image; drop pins on top.
-Keywords: map pin, marker, near me, location, nearby member
+**Purpose:** a member's photo pin on the Near Me map. State Default / Selected (brand ring, larger). The map itself stays an image; drop pins on top.
+
+**Keywords:** map pin, marker, near me, location, nearby member
 
 Navigation, payment, account (migration, not yet core) · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13798) (node `2712:13798`)
 

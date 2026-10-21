@@ -1,7 +1,8 @@
 # sh-alert
 
-Purpose: message that stays until resolved or dismissed. Style Inline = card inside the page ("Complete your profile"); Banner = edge-to-edge strip under the app header for app-wide status ("You are offline", "Payment failed"). Type Information / Success / Warning / Error; title, body, optional action and close.
-Keywords: alert, banner, alert banner, inline message, notice, callout, warning, error, offline
+**Purpose:** message that stays until resolved or dismissed. Style Inline = card inside the page ("Complete your profile"); Banner = edge-to-edge strip under the app header for app-wide status ("You are offline", "Payment failed"). Type Information / Success / Warning / Error; title, body, optional action and close.
+
+**Keywords:** alert, banner, alert banner, inline message, notice, callout, warning, error, offline
 
 Core · 8 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41675) (node `2718:41675`)
 

@@ -1,7 +1,8 @@
 # sh-status-bar
 
-Purpose: device status bar for mock-ups. Platform Android (punch-hole camera) or iOS (Dynamic Island notch); Theme Light for light screens, Dark for dark screens or photos. Show notch turns the camera cut-out on or off. Edit Time from the panel.
-Keywords: status bar, device, time, battery, notch, dynamic island, punch hole, android, ios, iphone
+**Purpose:** device status bar for mock-ups. Platform Android (punch-hole camera) or iOS (Dynamic Island notch); Theme Light for light screens, Dark for dark screens or photos. Show notch turns the camera cut-out on or off. Edit Time from the panel.
+
+**Keywords:** status bar, device, time, battery, notch, dynamic island, punch hole, android, ios, iphone
 
 Core · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=232-6808) (node `232:6808`)
 

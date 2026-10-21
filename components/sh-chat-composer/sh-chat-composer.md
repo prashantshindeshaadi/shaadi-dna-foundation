@@ -1,7 +1,8 @@
 # sh-chat-composer
 
-Purpose: message input at the bottom of a chat. State Empty (placeholder, send disabled) or Typing (send enabled). Attachment and sticker buttons included.
-Keywords: chat input, composer, message box, reply bar, send message
+**Purpose:** message input at the bottom of a chat. State Empty (placeholder, send disabled) or Typing (send enabled). Attachment and sticker buttons included.
+
+**Keywords:** chat input, composer, message box, reply bar, send message
 
 Core · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2719-43030) (node `2719:43030`)
 

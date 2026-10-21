@@ -1,0 +1,49 @@
+# FPV page: icons, buttons, chips and action island on DNA components
+
+**2026-10-20**
+
+## What changed
+
+- **Icons (FPV page):** every line icon now uses the `sh-icon` variant that matches its shown size (no scaled instances), with its stroke bound to `sh-icon/stroke/{size}`. 746 line icons checked. Foreign icons (old arrow, message, download, premium, expand, old lock) were swapped to `sh-icon`.
+- **Buttons:** Read more, See full match, photo-gate CTAs, Tit-for-tat CTAs, Unlock / View contact / View album, Add details, Shortlist, Share, Claimed, Claim my free unlock and the album-view Connect bar are now `sh-button`. The custom `sh-fpv-read-more-button` was removed.
+- **Action island:** all 68 of Daren's Button Island instances (another library) are now `sh-action-island` (Floating), with the note, row type, labels and states carried over.
+- **Chips:** About chips are now `sh-chip` Type=Info; `sh-fpv-info-chip` was removed.
+- **Common component change:** `sh-app-header` now includes the status bar. New boolean `Show status bar` (default off): every type has `sh-status-bar` (Android) above the header row, with white icons on Overlay, dark icons on Title and Back, and no bar fill. Existing uses are unchanged. FPV screens use `sh-app-header` Overlay with the bar on (50 headers); `sh-fpv-app-header` Default and Transparent were removed.
+- **Common component change:** new paint style `sh-gradient/translucent/border/light-ring`, a smooth 3-stop gradient on `border/light/start → middle → end`, applied to every Translucent `sh-icon-button`. The shared 5-stop `translucent/border/light` showed two bright arcs on round buttons. Tags and the info card keep the shared style.
+- **Common component change:** `sh-bottom-sheet` has a new `Show profile` boolean (default off). It shows the profile photo as `sh-avatar` Image (exposed, size picked in the panel, lg 96 by default) centred on the sheet's top edge, as in Daren's phone sheet. The sheet's close button is `sh-icon-button` Tertiary Small on every sheet. The FPV phone-number sheet uses it (name in Title, "Managed by …" in Body, visual off).
+- **Common component change:** `sh-bottom-sheet` has a new `Show grabber` boolean, on by default: a drag bar centred at the top (`border/default`, `sh-radius/full`). Every sheet shows it, except sheets with `Show profile` on.
+- **Bottom sheet audit:** every sheet now matches: top radius `sh-radius/xxl` with iOS smoothing, `background/default`, a 36 × 4 grabber (off only with `Show profile`), and close as `sh-icon-button` Tertiary Small. Fixed: `sh-bottom-sheet`'s background slot and header now clip to the rounded top, because background graphics had squared off the 12 trust-marker sheets. The Astro sheet header close now matches the other sheets.
+- **Bottom sheet height:** `sh-bottom-sheet` Size is now **Hug / Full**: Short and Default were merged into Hug, with no minimum height (12 → 8 variants). The sheet hugs its content and shrinks when spacing is tightened. Full keeps its 640 minimum. The Visual slot is auto layout and hugs its content, so a 96 × 96 graphic gives a 96-tall slot.
+- **Developers:** `Size="Short" | "Default"` becomes `Size="Hug"` at the next blueprint sync.
+- **Cleanup:** removed the `sh-fpv-sheet-trust-markers` preset. Its 8 screens in section 05 now hold a plain `sh-bottom-sheet` with their content, named "Trust marker sheet · {case}". Also deleted the copies pasted from Daren's file: four "Sheet / …" sets in G, two "Widget / Bottomsheet — Phone Number" instances and four loose "Bottom sheet" frames.
+- **Common component change:** `sh-segmented-control` and `sh-tab` (Segmented) now match Daren's toggle, in one size. The control is 40 tall with `sh-space` 2 padding and hugs its content. Each segment is 36 tall with `sh-space` 8 / 12 padding and hugs its label. The selected label uses `sh-typo/Button/MD`; the others use `sh-typo/Body/MD/Default`. All 16 uses changed: the FPV Astro sheets and the Navigation page.
+- **Icons matched to Daren:** buttons show an icon only where Daren's design has one. The arrow was removed from the tit-for-tat pills (Add Now and the rest) and from "Sent", the check was removed from Connect Now on the photo gates, and the info icon after "Compatibility details" was removed. Kept: the crown on Unlock / View Contact / View album, the arrow on Read More / See full match, and the Shortlist / Share icons. The action-island Connect Now keeps the check (house rule; Daren used a message icon).
+- **Common component change:** `sh-bottom-sheet` actions now meet the 48 × 48 tap target. The primary is `sh-button` Large; the secondary (Cancel) is `sh-button` Ghost Large instead of a bare text link. The body's top padding is `sh-space` 8 (was 24) and the Visual slot has 16 bottom padding, so sheets without a graphic start the title 24 px higher while sheets with a graphic keep the same gap.
+- **Section title:** `sh-fpv-section-title` is now one component (no Chip variants) with `Title`, `Show badge` and `Show action`. Its `Action` (`sh-button`) is exposed, so label and type are set in the panel. All 151 uses were moved over with their title, badge and button. The Default case (title only) no longer shows a stray Unlock button.
+- **Icon style audit vs Daren:** locked-text lock is now Line (12 px, gold) as in Daren's design (127 uses), "Gold lock" spots use `sh-icon/lock` Line 16, and WhatsApp in the phone sheet is Filled. Check stays Filled (house rule).
+- **Status bar:** all 54 FPV status bars are now `sh-status-bar` (Android, Theme=Dark for white icons over photos, time 9:30, background kept transparent). The duplicate `sh-fpv-status-bar-mock` and Daren's device-chrome mock were removed.
+- **Other:** carousel → `sh-carousel-dots`, Shaadi logo → `sh-logo`, app header → `sh-app-header`, hidden note → `sh-action-note`.
+- **Common component change:** `sh-chip` Type=Info, Size=Medium now hugs to 32 (padding 6 / 12 / 6 / 8 on `sh-space` tokens; was a fixed 38) and its border is `border/soft`. Used only on the FPV page; the profile card uses Info/Small and is unchanged. Logged in the FPV page's change-log table.
+- **Common component change:** `sh-tag` has a new **Mode=Strong** (Medium 22 / Small 20 × Rounded / Pill, fill `background/strong`, same props as White). Existing modes unchanged. FPV status tags (Active Now, Promoted) use Strong / Small with the border off.
+- **Common component change:** `sh-user-images` Style=Blur no longer scales the photo. The image layer is now exactly the frame size with the same crop as Normal (it was a 456 × 616 bleed with a layer blur); a new top `Blur` layer uses `sh-background-blur/uniform/strong`. Normal has no blur.
+- **Common component change:** `sh-photo-wrapper` exposes its nested `Photo image` (`sh-user-images`), so Gender and Style (Normal / Blur) appear in its property panel. `sh-fpv-photo-area` exposes its wrapper and `sh-fpv-photo-overlay`, and every example now uses an `sh-user-images` photo (no raw image fills). Panel-only change for the profile card.
+- **Sheets (new section G · Sheets):** Daren's sheets are now local sets built on `sh-bottom-sheet`: `sh-fpv-sheet-phone-number`, `-trust-markers`, `-connect-limit`, `-manage-boundaries`, the Astro parts `sh-fpv-astro-sheet-grabber`, `-header`, `-breakdown`, `-summary`, `-privacy`, `-ask-card`, `-pinned-strip`, plus `sh-fpv-astro-koota-row` (Locked / Unlocked) and `sh-fpv-screen-behind`. Inside them: Icon Button + Text → `sh-icon-button-with-label`, Shortlist / Ask / Unlock buttons → `sh-button`, language toggle → `sh-segmented-control`, all icons → `sh-icon`, koota glyphs → `sh-icon/pictogram/koota-*`.
+- **Photo area:** each gate is now `sh-photo-wrapper` (photo only; its scrims and overlay off) + a new `sh-fpv-photo-overlay` (Accept gated / Upgrade gated / Tit for tat / No photo, built from Daren's overlay, `Message` text property) + Daren's 96 px top scrim (colour sampled from the photo in the app). Each example's photo moved into the wrapper's image. `sh-overlay` is unchanged.
+- **Action bar fix:** 14 `sh-action-island` instances (the "Action bar states" row and F · Widgets) were set to Fill inside hug-width frames, so they shrank to 211 px and their labels clipped. Their frames are now a fixed 344 px wide, the same width as the islands on the FPV screens.
+- **Follow-ups:** Upgrade Now → `sh-button` Premium Soft; section-title Unlock / View contact / View album stay `sh-button` Premium Soft (Add details Tertiary) with no overrides; every `sh-action-island` fills its container.
+
+## Why
+
+The FPV must be built only from Shaadi DNA components, not copies from other libraries, and icons must keep the stroke weight set by their size token.
+
+## Who needs to do something
+
+- **Designers:** buttons on the FPV moved from Daren's 32 / 36 heights to the `sh-button` sizes (28 / 40 / 48).
+- **Developers:** nothing until the next sync.
+
+## Checks
+
+- [x] No scaled `sh-icon` line instances on the FPV page; stroke matches the size token
+- [x] No Button Island, Frame Connect or Carousel instances from other libraries are left on the FPV page
+- [x] Sheets (Sheet / …, handoff / …) moved to local G · Sheets components; no foreign parts inside
+- [x] Final icon size/stroke audit after the sheets pass: 2,831 icons, 0 off

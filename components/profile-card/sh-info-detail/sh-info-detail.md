@@ -1,6 +1,6 @@
 # sh-info-detail
 
-Purpose: One member fact (height, community, city, profession) followed by a dot separator, lined up in a wrapping row. Mode On image for dark glass and photos, Default for light surfaces; turn the separator off on the last fact.
+**Purpose:** One member fact (height, community, city, profession) followed by a dot separator, lined up in a wrapping row. Mode On image for dark glass and photos, Default for light surfaces; turn the separator off on the last fact.
 
 Profile card (migration, not yet core) · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2825-43215) (node `2825:43215`)
 

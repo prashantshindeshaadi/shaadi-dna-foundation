@@ -1,6 +1,6 @@
 # sh-section-header
 
-Purpose: Title for a content section, with an optional badge and one optional action.
+**Purpose:** Title for a content section, with an optional badge and one optional action.
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2606-29601) (node `2606:29601`)
 

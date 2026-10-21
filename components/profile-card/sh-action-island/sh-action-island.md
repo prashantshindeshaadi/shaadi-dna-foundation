@@ -1,6 +1,6 @@
 # sh-action-island
 
-Purpose: The action area of a card — an optional note line plus an action row.
+**Purpose:** The action area of a card — an optional note line plus an action row.
 
 Profile card (migration, not yet core) · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16928) (node `2594:16928`)
 
@@ -41,3 +41,4 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Surface | radius | sh-radius/xxl *(set on 1/2 variants)* |
 | Surface | fill | sh-gradient/translucent/light/strong *(set on 1/2 variants)* |
 | Surface | stroke | sh-gradient/translucent/border/light *(set on 1/2 variants)* |
+| Note | radius | sh-radius/lg *(set on 1/2 variants)* |

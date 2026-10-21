@@ -1,7 +1,8 @@
 # sh-input
 
-Purpose: Type Default (single line), Multi-line (About me, partner preferences; with counter) or Phone (country code + number). Single-line text entry with label, helper text and states.
-Keywords: input, text field, form, entry, email, phone
+**Purpose:** Type Default (single line), Multi-line (About me, partner preferences; with counter) or Phone (country code + number). Single-line text entry with label, helper text and states.
+
+**Keywords:** input, text field, form, entry, email, phone
 
 Core · 24 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=1467-17271) (node `1467:17271`)
 

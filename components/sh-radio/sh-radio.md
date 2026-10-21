@@ -1,6 +1,6 @@
 # sh-radio
 
-Purpose: Lets a member pick exactly one option from a set.
+**Purpose:** Lets a member pick exactly one option from a set.
 
 Core · 10 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-22347) (node `2496:22347`)
 

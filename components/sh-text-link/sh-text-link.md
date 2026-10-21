@@ -1,8 +1,10 @@
 # sh-text-link
 
-Purpose: Inline text action or link — Neutral, Link, Inverse on dark, Premium.
+**Purpose:** Inline text action or link — Neutral, Link, Inverse on dark, Premium.
+
 Border Dashed or Solid picks the line under the label; Show border turns it off.
-Keywords: border, underline, dashed, solid, text link, link, inline action, read more, edit
+
+**Keywords:** border, underline, dashed, solid, text link, link, inline action, read more, edit
 
 Core · 44 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2348-22277) (node `2348:22277`)
 

@@ -1,6 +1,6 @@
 # sh-card
 
-Purpose: Container that groups related content under an optional label. Drop any DNA parts into Content.
+**Purpose:** Container that groups related content under an optional label. Drop any DNA parts into Content.
 
 Core · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2613-33481) (node `2613:33481`)
 

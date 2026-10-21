@@ -1,7 +1,8 @@
 # sh-carousel-dots
 
-Purpose: Page indicator for photo and card carousels.
-Keywords: carousel, dots, pagination, indicator, pager
+**Purpose:** Page indicator for photo and card carousels.
+
+**Keywords:** carousel, dots, pagination, indicator, pager
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2225-4974) (node `2225:4974`)
 

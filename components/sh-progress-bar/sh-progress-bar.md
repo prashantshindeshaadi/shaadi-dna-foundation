@@ -1,7 +1,8 @@
 # sh-progress-bar
 
-Purpose: linear progress or usage (Contacts viewed 10 of 72, profile completion). Tone Brand / Premium / Success; set the amount by resizing the Progress layer; the bar stretches to its container.
-Keywords: progress bar, usage, meter, completion, quota, loader
+**Purpose:** linear progress or usage (Contacts viewed 10 of 72, profile completion). Tone Brand / Premium / Success; set the amount by resizing the Progress layer; the bar stretches to its container.
+
+**Keywords:** progress bar, usage, meter, completion, quota, loader
 
 Core · 3 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13063) (node `2712:13063`)
 

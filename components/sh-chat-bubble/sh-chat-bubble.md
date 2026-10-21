@@ -1,7 +1,8 @@
 # sh-chat-bubble
 
-Purpose: one chat message. Type Received (left, neutral), Sent (right, brand tint, single tick) or Read (double blue tick). Message wraps up to the bubble width.
-Keywords: chat bubble, message, conversation, speech bubble, inbox, DM
+**Purpose:** one chat message. Type Received (left, neutral), Sent (right, brand tint, single tick) or Read (double blue tick). Message wraps up to the bubble width.
+
+**Keywords:** chat bubble, message, conversation, speech bubble, inbox, DM
 
 Core · 3 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2719-42995) (node `2719:42995`)
 

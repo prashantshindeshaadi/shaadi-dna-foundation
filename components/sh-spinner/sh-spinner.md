@@ -1,7 +1,8 @@
 # sh-spinner
 
-Purpose: indeterminate loading for pages, sections and lists (buttons have their own Loading state). Size Large 24 / Medium 20 / Small 16; Tone Brand, Neutral, or Inverse on dark and brand surfaces.
-Keywords: spinner, loader, loading, progress, busy, activity indicator
+**Purpose:** indeterminate loading for pages, sections and lists (buttons have their own Loading state). Size Large 24 / Medium 20 / Small 16; Tone Brand, Neutral, or Inverse on dark and brand surfaces.
+
+**Keywords:** spinner, loader, loading, progress, busy, activity indicator
 
 Core · 9 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41521) (node `2718:41521`)
 

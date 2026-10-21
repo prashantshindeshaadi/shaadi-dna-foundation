@@ -1,6 +1,6 @@
 # sh-section
 
-Purpose: A page section: a section header and any DNA content under it.
+**Purpose:** A page section: a section header and any DNA content under it.
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2613-34398) (node `2613:34398`)
 

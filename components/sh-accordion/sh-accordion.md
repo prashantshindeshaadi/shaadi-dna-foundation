@@ -1,7 +1,8 @@
 # sh-accordion
 
-Purpose: expandable row for FAQs (Help & Support) and grouped profile details. State Collapsed / Expanded; stack rows and hide the divider on the last one.
-Keywords: accordion, expandable, collapse, FAQ, disclosure, expander
+**Purpose:** expandable row for FAQs (Help & Support) and grouped profile details. State Collapsed / Expanded; stack rows and hide the divider on the last one.
+
+**Keywords:** accordion, expandable, collapse, FAQ, disclosure, expander
 
 Core · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41883) (node `2718:41883`)
 

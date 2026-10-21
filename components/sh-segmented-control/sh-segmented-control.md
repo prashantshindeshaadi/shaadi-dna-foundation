@@ -1,7 +1,8 @@
 # sh-segmented-control
 
-Purpose: switch between 2–4 views of the same screen (Premium | VIP, Premium | Profile | Settings, Received | Accepted | Sent | Declined). Segments are sh-tab Style=Segmented; edit each segment's Label and Selected.
-Keywords: segmented control, toggle group, tabs, switcher, pill tabs
+**Purpose:** switch between 2–4 views of the same screen (Premium | VIP, Premium | Profile | Settings, Received | Accepted | Sent | Declined). Segments are sh-tab Style=Segmented; edit each segment's Label and Selected.
+
+**Keywords:** segmented control, toggle group, tabs, switcher, pill tabs
 
 Core · 3 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2711-11953) (node `2711:11953`)
 

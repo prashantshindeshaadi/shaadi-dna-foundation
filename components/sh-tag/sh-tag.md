@@ -1,7 +1,8 @@
 # sh-tag
 
-Purpose: compact label for status or promotion on cards and photos. Mode White / Translucent / Dark / Soft / Success; Size Medium / Small; Shape Rounded / Pill; Show outline toggles the border. Member facts on light screens use sh-chip Type=Info instead.
-Keywords: tag, label, status, promoted, online, pill, badge, glass, dark tag
+**Purpose:** compact label for status or promotion on cards and photos. Mode White / Translucent / Dark / Soft / Success; Size Medium / Small; Shape Rounded / Pill; Show outline toggles the border. Member facts on light screens use sh-chip Type=Info instead.
+
+**Keywords:** tag, label, status, promoted, online, pill, badge, glass, dark tag
 
 Core · 20 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2357-23671) (node `2357:23671`)
 
@@ -13,33 +14,32 @@ Core · 20 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QX
 |---|---|---|---|
 | Label | text | — | Tag |
 | Show leading icon | boolean | — | true |
-| Leading icon (Medium) | instance swap | — | instance |
+| Leading icon | instance swap | — | instance |
 | Show trailing icon | boolean | — | false |
-| Trailing icon (Medium) | instance swap | — | instance |
-| Leading icon (Small) | instance swap | — | instance |
-| Trailing icon (Small) | instance swap | — | instance |
+| Trailing icon | instance swap | — | instance |
+| Show border | boolean | — | true |
 | Show outline | boolean | — | false |
-| Mode | variant | Success, White, Translucent, Dark, Soft | Soft |
+| Mode | variant | White, Dark, Translucent light, Translucent dark, Strong | White |
 | Size | variant | Medium, Small | Medium |
 | Shape | variant | Rounded, Pill | Rounded |
 
 ## Anatomy
 
-Layer tree of `Mode=Soft, Size=Medium, Shape=Rounded`. Nested components are shown by name; their internals live in their own blueprint.
+Layer tree of `Mode=White, Size=Medium, Shape=Rounded`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — row
   - Leading icon — **sh-icon/tag** (Type Line, Size 12)
   - Content — column · hug × hug
     - Label — text "Tag"
   - Trailing icon — **sh-icon/arrow-right-01** (Type Line, Size 12) · hidden by default
-  - Outline — hidden by default · fixed × fixed
+  - Border — fixed × fixed
 
 ## Sizes
 
 | Size | Width × height | Padding | Gap |
 |---|---|---|---|
-| Medium | 40 × 20 | sh-space/2 / sh-space/4 | sh-space/2 |
-| Small | 40 × 18 | sh-space/0 / sh-space/4 | sh-space/2 |
+| Medium | 40 × 22 | sh-space/2 / sh-space/4 | sh-space/2 |
+| Small | 40 × 20 | sh-space/2 / sh-space/4 | sh-space/2 |
 
 ## Tokens
 
@@ -48,26 +48,26 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Layer | Property | Token |
 |---|---|---|
 | root | gap | sh-space/2 |
-| root | padding-x | sh-space/4 *(set on 16/20 variants)* |
-| root | padding-y | Size=Medium → sh-space/2; Size=Small → sh-space/0 |
+| root | padding-x | sh-space/4 |
+| root | padding-y | sh-space/2 |
 | root | radius | Shape=Rounded → sh-radius/xs; Shape=Pill → sh-radius/full |
-| root | strokeTopWeight | sh-stroke/default |
-| root | strokeBottomWeight | sh-stroke/default |
-| root | strokeLeftWeight | sh-stroke/default |
-| root | strokeRightWeight | sh-stroke/default |
-| root | fill | Mode=Soft → background/strong; Mode=White → background/default; Mode=Translucent → sh-gradient/translucent/light/extra-soft; Mode=Dark → background/inverse; Mode=Success → semantic/success/background/soft/default |
+| root | strokeTopWeight | Mode=White → sh-stroke/default; Mode=Dark → sh-stroke/default; Mode=Translucent light → sh-stroke/thin; Mode=Translucent dark → sh-stroke/thin; Mode=Strong → sh-stroke/default |
+| root | strokeBottomWeight | Mode=White → sh-stroke/default; Mode=Dark → sh-stroke/default; Mode=Translucent light → sh-stroke/thin; Mode=Translucent dark → sh-stroke/thin; Mode=Strong → sh-stroke/default |
+| root | strokeLeftWeight | Mode=White → sh-stroke/default; Mode=Dark → sh-stroke/default; Mode=Translucent light → sh-stroke/thin; Mode=Translucent dark → sh-stroke/thin; Mode=Strong → sh-stroke/default |
+| root | strokeRightWeight | Mode=White → sh-stroke/default; Mode=Dark → sh-stroke/default; Mode=Translucent light → sh-stroke/thin; Mode=Translucent dark → sh-stroke/thin; Mode=Strong → sh-stroke/default |
+| root | fill | Mode=White → background/default; Mode=Dark → background/inverse; Mode=Translucent light → sh-gradient/translucent/light/extra-soft; Mode=Translucent dark → sh-gradient/translucent/dark/extra-soft; Mode=Strong → background/strong |
 | Leading icon | width | sh-icon/size/12 |
 | Leading icon | height | sh-icon/size/12 |
 | Content | gap | sh-space/0 |
 | Content | padding | sh-space/0 |
 | Content | radius | sh-radius/none |
-| Content / Label | fill | Mode=Soft → text/primary; Mode=White → text/secondary; Mode=Translucent → text/inverse; Mode=Dark → text/inverse; Mode=Success → semantic/success/text/on-soft |
+| Content / Label | fill | Mode=White → text/secondary; Mode=Dark → text/inverse; Mode=Translucent light → text/on-image; Mode=Translucent dark → text/on-image; Mode=Strong → text/secondary |
 | Content / Label | text style | sh-typo/Support/Label |
 | Trailing icon | width | sh-icon/size/12 |
 | Trailing icon | height | sh-icon/size/12 |
-| Outline | radius | Shape=Rounded → sh-radius/xs; Shape=Pill → sh-radius/full |
-| Outline | stroke | Mode=Soft → border/default; Mode=White → border/default; Mode=Translucent → sh-gradient/translucent/border/light; Mode=Dark → border/strong; Mode=Success → semantic/success/border/soft |
-| Outline | strokeTopWeight | sh-stroke/default *(set on 4/20 variants)* |
-| Outline | strokeBottomWeight | sh-stroke/default *(set on 4/20 variants)* |
-| Outline | strokeLeftWeight | sh-stroke/default *(set on 4/20 variants)* |
-| Outline | strokeRightWeight | sh-stroke/default *(set on 4/20 variants)* |
+| Border | radius | Shape=Rounded → sh-radius/xs; Shape=Pill → sh-radius/full |
+| Border | strokeTopWeight | sh-stroke/thin |
+| Border | strokeBottomWeight | sh-stroke/thin |
+| Border | strokeLeftWeight | sh-stroke/thin |
+| Border | strokeRightWeight | sh-stroke/thin |
+| Border | stroke | Mode=Translucent light → sh-gradient/translucent/border/light; Mode=Translucent dark → sh-gradient/translucent/border/dark *(set on 8/20 variants)* |

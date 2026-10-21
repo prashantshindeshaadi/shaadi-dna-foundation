@@ -202,7 +202,7 @@
       "layers": [
         {
           "type": "solid",
-          "opacity": 0.6,
+          "opacity": 0.6000000238418579,
           "stops": [
             {
               "token": "sh-color-common/overlay/scrim/default"
@@ -216,7 +216,7 @@
       "layers": [
         {
           "type": "solid",
-          "opacity": 0.16,
+          "opacity": 0.1599999964237213,
           "stops": [
             {
               "token": "sh-color-common/overlay/image/wash"
@@ -833,21 +833,21 @@
       ]
     },
     "translucent/border/light": {
-      "description": "sh-gradient/translucent/border/light\nPurpose: Light glass edge, the highlight that makes a translucent surface read as glass.",
+      "description": "sh-gradient/translucent/border/light\nPurpose: soft diagonal glow border for translucent (glass) surfaces on photos and dark cards.",
       "layers": [
         {
           "type": "linear",
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
-              0
+              -0.766,
+              -0.276,
+              1.022
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              0.276,
+              -0.285,
+              0.504
             ]
           ],
           "stops": [
@@ -856,7 +856,15 @@
               "token": "sh-translucent/border/light/start"
             },
             {
-              "position": 0.5,
+              "position": 0.26,
+              "token": "sh-translucent/border/light/middle"
+            },
+            {
+              "position": 0.49,
+              "token": "sh-translucent/border/light/start"
+            },
+            {
+              "position": 0.76,
               "token": "sh-translucent/border/light/middle"
             },
             {
@@ -932,6 +940,41 @@
             {
               "position": 1,
               "token": "sh-translucent/border/brand/end"
+            }
+          ]
+        }
+      ]
+    },
+    "translucent/border/light-ring": {
+      "description": "sh-gradient/translucent/border/light-ring\nPurpose: Even light ring on round translucent icon buttons over photos.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              -0.766,
+              -0.276,
+              1.022
+            ],
+            [
+              0.276,
+              -0.285,
+              0.504
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-translucent/border/light/start"
+            },
+            {
+              "position": 0.5,
+              "token": "sh-translucent/border/light/middle"
+            },
+            {
+              "position": 1,
+              "token": "sh-translucent/border/light/end"
             }
           ]
         }

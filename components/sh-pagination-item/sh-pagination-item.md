@@ -1,7 +1,8 @@
 # sh-pagination-item
 
-Purpose: one page number inside sh-pagination. State Default / Hover / Selected (current page).
-Keywords: page number, pagination item
+**Purpose:** one page number inside sh-pagination. State Default / Hover / Selected (current page).
+
+**Keywords:** page number, pagination item
 
 Core · 3 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41907) (node `2718:41907`)
 

@@ -1,6 +1,6 @@
 # sh-fpv-photo-stack
 
-Purpose: Fanned stack of profile photos with a count of more photos.
+**Purpose:** Fanned stack of profile photos with a count of more photos.
 
 Full profile view (migration, not yet core) · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2606-30576) (node `2606:30576`)
 

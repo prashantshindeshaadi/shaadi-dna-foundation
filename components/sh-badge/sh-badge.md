@@ -1,6 +1,6 @@
 # sh-badge
 
-Purpose: Compact profile badge with an optional swappable icon and label.
+**Purpose:** Compact profile badge with an optional swappable icon and label.
 
 Core · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2364-5662) (node `2364:5662`)
 

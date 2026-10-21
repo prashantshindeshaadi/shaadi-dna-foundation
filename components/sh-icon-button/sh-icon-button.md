@@ -1,7 +1,8 @@
 # sh-icon-button
 
-Purpose: Icon-only action with a 48 touch target; optional badge count. Use when the icon alone is understood.
-Keywords: icon button, action, close, more, back, badge
+**Purpose:** Icon-only action with a 48 touch target; optional badge count. Use when the icon alone is understood.
+
+**Keywords:** icon button, action, close, more, back, badge
 
 Core · 75 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=567-26954) (node `567:26954`)
 
@@ -61,4 +62,5 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | strokeBottomWeight | sh-stroke/none *(set on 12/75 variants)* |
 | root | strokeLeftWeight | sh-stroke/none *(set on 12/75 variants)* |
 | root | strokeRightWeight | sh-stroke/none *(set on 12/75 variants)* |
-| root | stroke | Type=Tertiary, State=Default → border/default; Type=Tertiary, State=Hover → border/default; Type=Tertiary, State=Pressed → border/default; Type=Tertiary, State=Disabled → border/disabled; Type=Translucent, State=Default → sh-gradient/translucent/border/light; Type=Translucent, State=Hover → sh-gradient/translucent/border/light; Type=Translucent, State=Pressed → sh-gradient/translucent/border/light; Type=Translucent, State=Disabled → sh-gradient/translucent/border/light; Type=Translucent, State=Focus → sh-gradient/translucent/border/light *(set on 27/75 variants)* |
+| root | stroke | Type=Tertiary, State=Default → border/default; Type=Tertiary, State=Hover → border/default; Type=Tertiary, State=Pressed → border/default; Type=Tertiary, State=Disabled → border/disabled; Type=Translucent, State=Default → sh-gradient/translucent/border/light-ring; Type=Translucent, State=Hover → sh-gradient/translucent/border/light-ring; Type=Translucent, State=Pressed → sh-gradient/translucent/border/light-ring; Type=Translucent, State=Disabled → sh-gradient/translucent/border/light-ring; Type=Translucent, State=Focus → sh-gradient/translucent/border/light-ring *(set on 27/75 variants)* |
+| root | effect | sh-background-blur/uniform/default *(set on 15/75 variants)* |

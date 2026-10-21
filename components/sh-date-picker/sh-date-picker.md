@@ -1,7 +1,8 @@
 # sh-date-picker
 
-Purpose: scroll-wheel picker inside a bottom sheet. Type Date (day, month, year, e.g. date of birth) or Time (hour, minute, AM/PM, e.g. preferred call time). Edit the values by selecting the column rows.
-Keywords: date picker, time picker, wheel, scroller, calendar, date of birth, DOB
+**Purpose:** scroll-wheel picker inside a bottom sheet. Type Date (day, month, year, e.g. date of birth) or Time (hour, minute, AM/PM, e.g. preferred call time). Edit the values by selecting the column rows.
+
+**Keywords:** date picker, time picker, wheel, scroller, calendar, date of birth, DOB
 
 Core · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2719-42965) (node `2719:42965`)
 

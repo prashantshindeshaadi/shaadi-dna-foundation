@@ -1,7 +1,8 @@
 # sh-otp-input
 
-Purpose: one-time code for phone verification at sign-up and login. Length 4 or 6; State Default / Focus / Filled / Error.
-Keywords: otp, one time password, verification code, pin, code input
+**Purpose:** one-time code for phone verification at sign-up and login. Length 4 or 6; State Default / Focus / Filled / Error.
+
+**Keywords:** otp, one time password, verification code, pin, code input
 
 Core · 8 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-42875) (node `2718:42875`)
 

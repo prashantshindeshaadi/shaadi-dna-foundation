@@ -1,7 +1,8 @@
 # sh-offer-card
 
-Purpose: full-width offer or festival banner on plans and promo screens. Pick Type for a ready offer (Money back); use Custom and drop new festival artwork into Artwork slot. Add each recurring festival banner as a new Type.
-Keywords: offer, banner, promo, festival, money back, guarantee, Diwali, sale, campaign
+**Purpose:** full-width offer or festival banner on plans and promo screens. Pick Type for a ready offer (Money back); use Custom and drop new festival artwork into Artwork slot. Add each recurring festival banner as a new Type.
+
+**Keywords:** offer, banner, promo, festival, money back, guarantee, Diwali, sale, campaign
 
 Core · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-40923) (node `2718:40923`)
 

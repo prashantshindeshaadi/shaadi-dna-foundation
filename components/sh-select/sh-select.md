@@ -1,7 +1,8 @@
 # sh-select
 
-Purpose: pick one value from a list (religion, community, height, income) in forms and filters. State Default / Filled / Open (options list) / Error / Disabled. Edit options by selecting rows in the list.
-Keywords: select, dropdown, picker, combo box, options, choose
+**Purpose:** pick one value from a list (religion, community, height, income) in forms and filters. State Default / Filled / Open (options list) / Error / Disabled. Edit options by selecting rows in the list.
+
+**Keywords:** select, dropdown, picker, combo box, options, choose
 
 Core · 5 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-42776) (node `2718:42776`)
 

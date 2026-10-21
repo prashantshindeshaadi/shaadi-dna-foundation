@@ -1,7 +1,8 @@
 # sh-menu
 
-Purpose: overflow menu opened from a more button (Shortlist, Share profile, Report, Block). Select a row to change its label, icon or type; duplicate or hide rows as needed.
-Keywords: menu, overflow menu, more options, context menu, popover menu, kebab
+**Purpose:** overflow menu opened from a more button (Shortlist, Share profile, Report, Block). Select a row to change its label, icon or type; duplicate or hide rows as needed.
+
+**Keywords:** menu, overflow menu, more options, context menu, popover menu, kebab
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41740) (node `2718:41740`)
 

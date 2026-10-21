@@ -1,7 +1,8 @@
 # sh-location-bar
 
-Purpose: current search location under the Matches filters (Near Me) — pin, place, distance and a Change link that opens the location sheet.
-Keywords: location, near me, nearby, place, distance, change location
+**Purpose:** current search location under the Matches filters (Near Me) — pin, place, distance and a Change link that opens the location sheet.
+
+**Keywords:** location, near me, nearby, place, distance, change location
 
 Navigation, payment, account (migration, not yet core) · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13770) (node `2712:13770`)
 

@@ -1,7 +1,8 @@
 # sh-app-header
 
-Purpose: top bar of a screen. Type Title = top-level screens (menu, large title, actions); Back = inner screens (back, centred title, actions); Overlay = translucent bar over photos. Put sh-icon-button / badges in Actions slot.
-Keywords: app header, top bar, navigation bar, toolbar, title bar, back
+**Purpose:** top bar of a screen. Type Title = top-level screens (menu, large title, actions); Back = inner screens (back, centred title, actions); Overlay = translucent bar over photos. Put sh-icon-button / badges in Actions slot.
+
+**Keywords:** app header, top bar, navigation bar, toolbar, title bar, back
 
 Core · 3 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13153) (node `2712:13153`)
 

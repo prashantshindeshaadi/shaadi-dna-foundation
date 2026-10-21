@@ -1,7 +1,8 @@
 # sh-account-header
 
-Purpose: top of the account / My Shaadi page — photo with profile-completion ring and %, name, copyable profile ID and Edit Profile. Set the ring amount on the nested sh-progress-ring; change the photo on the nested sh-avatar.
-Keywords: account header, profile header, my profile, completion, profile id, edit profile
+**Purpose:** top of the account / My Shaadi page — photo with profile-completion ring and %, name, copyable profile ID and Edit Profile. Set the ring amount on the nested sh-progress-ring; change the photo on the nested sh-avatar.
+
+**Keywords:** account header, profile header, my profile, completion, profile id, edit profile
 
 Navigation, payment, account (migration, not yet core) · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13717) (node `2712:13717`)
 

@@ -1,6 +1,6 @@
 # sh-checkbox
 
-Purpose: Lets a member turn one or more independent options on or off.
+**Purpose:** Lets a member turn one or more independent options on or off.
 
 Core · 10 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-22479) (node `2496:22479`)
 

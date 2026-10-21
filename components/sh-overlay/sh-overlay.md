@@ -1,6 +1,6 @@
 # sh-overlay
 
-Purpose: Shared lock or empty overlay for photos and content sections (profile card and FPV). Photo overlays blur what sits behind them; No photo and Photo requested cover the photo area completely.
+**Purpose:** Shared lock or empty overlay for photos and content sections (profile card and FPV). Photo overlays blur what sits behind them; No photo and Photo requested cover the photo area completely.
 
 Core · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2314-18393) (node `2314:18393`)
 
@@ -42,28 +42,32 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
-| root | gap | sh-space/12 |
+| root | gap | Surface=Photo → sh-space/8; Surface=Content → sh-space/12 |
 | root | padding-x | sh-space/page/margin |
-| root | fill | Surface=Photo, Type=Message → overlay/scrim/default; Surface=Photo, Type=No photo → overlay/image/base; Surface=Photo, Type=Photo requested → overlay/image/base; Surface=Content, Type=Message → sh-gradient/translucent/light/strong |
-| root | effect | Surface=Photo → sh-background-blur/uniform/strong; Surface=Content → sh-background-blur/progressive/default |
+| root | fill | Surface=Photo, Type=Message → overlay/scrim/default; Surface=Photo, Type=No photo → overlay/image/base; Surface=Photo, Type=Photo requested → overlay/scrim/default; Surface=Content, Type=Message → sh-gradient/translucent/light/strong |
+| root | effect | Surface=Photo → sh-background-blur/uniform/strong; Surface=Content → sh-background-blur/progressive/default *(set on 3/4 variants)* |
 | Content | gap | sh-space/12 |
 | Content / Icon/Illustration / sh-icon/camera-off | width | sh-icon/size/24 *(set on 2/4 variants)* |
 | Content / Icon/Illustration / sh-icon/camera-off | height | sh-icon/size/24 *(set on 2/4 variants)* |
 | Content / She has shared Photos with Premium Members | fill | Surface=Photo → text/on-image; Surface=Content → text/primary *(set on 2/4 variants)* |
+| Content / She has shared Photos with Premium Members | effect | sh-shadow/default *(set on 1/4 variants)* |
 | Content / She has shared Photos with Premium Members | text style | sh-typo/Body/MD/Default *(set on 2/4 variants)* |
-| Action | gap | sh-space/2 *(set on 3/4 variants)* |
+| Action | gap | sh-space/4 *(set on 3/4 variants)* |
 | Action | padding-x | sh-space/12 *(set on 3/4 variants)* |
 | Action | radius | sh-radius/full *(set on 3/4 variants)* |
 | Action | fill | button/tertiary/background/default *(set on 3/4 variants)* |
+| Action | effect | sh-shadow/default *(set on 2/4 variants)* |
 | root | padding:top | sh-space/40 *(set on 2/4 variants)* |
 | Content / Icon/Illustration | gap | sh-space/8 *(set on 2/4 variants)* |
 | Content / Icon/Illustration / Avatar | radius | sh-radius/full *(set on 2/4 variants)* |
 | Content / Title | fill | text/on-image *(set on 2/4 variants)* |
+| Content / Title | effect | sh-shadow/default *(set on 2/4 variants)* |
 | Content / Title | text style | sh-typo/Body/MD/Default *(set on 2/4 variants)* |
 | Status | gap | sh-space/4 *(set on 1/4 variants)* |
 | Status | padding-y | sh-space/6 *(set on 1/4 variants)* |
 | Status / Icon | width | sh-icon/size/16 *(set on 1/4 variants)* |
 | Status / Icon | height | sh-icon/size/16 *(set on 1/4 variants)* |
 | Status / Label | fill | indicator/success *(set on 1/4 variants)* |
+| Status / Label | effect | sh-shadow/default *(set on 1/4 variants)* |
 | Status / Label | text style | sh-typo/Button/SM *(set on 1/4 variants)* |
 | root | padding-y | sh-space/80 *(set on 1/4 variants)* |

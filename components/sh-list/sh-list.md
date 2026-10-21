@@ -1,8 +1,10 @@
 # sh-list
 
-Purpose: One list row for settings, payment options, benefits, add-ons and summaries. Leading None/Icon/Icon circle/Pictogram/Avatar/Control; Trailing None/Chevron/Value/Tag/Toggle/Action.
+**Purpose:** One list row for settings, payment options, benefits, add-ons and summaries. Leading None/Icon/Icon circle/Pictogram/Avatar/Control; Trailing None/Chevron/Value/Tag/Toggle/Action.
+
 Trailing Meta = time plus unread sh-indicator, for inbox conversations (Leading Avatar).
-Keywords: conversation, inbox row, chat list, list, row, list item, cell, menu item, setting row, payment option, benefit, summary
+
+**Keywords:** conversation, inbox row, chat list, list, row, list item, cell, menu item, setting row, payment option, benefit, summary
 
 Core · 42 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2643-35319) (node `2643:35319`)
 

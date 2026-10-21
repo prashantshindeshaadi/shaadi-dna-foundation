@@ -1,7 +1,8 @@
 # sh-empty-state
 
-Purpose: what to show when a list or screen has nothing yet ("No matches yet", "No messages", "No results for these filters"). Pictogram, title, body and an optional action that helps the member move on.
-Keywords: empty state, no results, no data, zero state, blank slate
+**Purpose:** what to show when a list or screen has nothing yet ("No matches yet", "No messages", "No results for these filters"). Pictogram, title, body and an optional action that helps the member move on.
+
+**Keywords:** empty state, no results, no data, zero state, blank slate
 
 Core · 1 variant · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41694) (node `2718:41694`)
 

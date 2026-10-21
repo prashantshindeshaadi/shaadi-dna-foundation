@@ -1,7 +1,8 @@
 # sh-dialog
 
-Purpose: centred confirm box for desktop and critical actions. Type Default or Destructive (red primary). On mobile prefer sh-bottom-sheet.
-Keywords: dialog, modal, confirm, alert dialog, popup, prompt
+**Purpose:** centred confirm box for desktop and critical actions. Type Default or Destructive (red primary). On mobile prefer sh-bottom-sheet.
+
+**Keywords:** dialog, modal, confirm, alert dialog, popup, prompt
 
 Core · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41832) (node `2718:41832`)
 

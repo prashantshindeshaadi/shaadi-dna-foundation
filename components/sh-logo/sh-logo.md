@@ -1,7 +1,8 @@
 # sh-logo
 
-Purpose: Shaadi brand marks. Type Wordmark (shaadi.com logotype) or App icon (square tile); Theme Brand for light surfaces, White for photos, dark and brand surfaces. Resize freely; the artwork scales. New marks (partner logos, festive or sub-brand versions) join as new Types.
-Keywords: logo, shaadi logo, wordmark, brand, app icon, logotype, brand mark
+**Purpose:** Shaadi brand marks. Type Wordmark (shaadi.com logotype) or App icon (square tile); Theme Brand for light surfaces, White for photos, dark and brand surfaces. Resize freely; the artwork scales. New marks (partner logos, festive or sub-brand versions) join as new Types.
+
+**Keywords:** logo, shaadi logo, wordmark, brand, app icon, logotype, brand mark
 
 Core · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2721-43543) (node `2721:43543`)
 

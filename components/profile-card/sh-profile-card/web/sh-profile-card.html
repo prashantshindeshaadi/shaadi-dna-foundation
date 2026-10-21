@@ -1,0 +1,433 @@
+<!doctype html>
+<!--
+  sh-profile-card — web (HTML5 + CSS). Markup for all 9 types; open in a browser to preview.
+  Spec: ../sh-profile-card.md · Figma node 2579:25592
+  Run `python3 tools/build.py` once so dist/ exists. The photo is a neutral placeholder.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-profile-card</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-profile-card.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    .preview { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 340px)); gap: var(--sh-space-24); }
+    .preview figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-profile-card</h1>
+  <div class="preview">
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=Connect</figcaption>
+  <!-- Type=Connect -->
+  <article class="sh-profile-card" data-type="connect" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      <img class="sh-profile-card__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt="">
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        <button class="sh-icon-button sh-glass" type="button" aria-label="View photos"><span class="sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">10</span></button>
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        <p class="sh-action-note sh-action-note--message"><span class="sh-action-note__text sh-body-sm">Hey Sneha, I came across your profile. It felt true to me.</span><button class="sh-text-link sh-body-sm" type="button">Edit</button></p>
+        <div class="sh-action-row sh-action-row--single"><p class="sh-action-row__message sh-body-md-tight">Like this profile?</p><button class="sh-button sh-button--primary" type="button"><span class="sh-button__label"><span class="sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-button-md">Connect</span></span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=Received</figcaption>
+  <!-- Type=Received -->
+  <article class="sh-profile-card" data-type="received" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      <img class="sh-profile-card__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt="">
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        <button class="sh-icon-button sh-glass" type="button" aria-label="View photos"><span class="sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">10</span></button>
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        
+        <div class="sh-action-row sh-action-row--two"><button class="sh-button sh-button--tertiary" type="button"><span class="sh-button__label"><span class="sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span><span class="sh-button-md">Decline</span></span></button><button class="sh-button sh-button--primary" type="button"><span class="sh-button__label"><span class="sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-button-md">Accept</span></span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=Connected</figcaption>
+  <!-- Type=Connected -->
+  <article class="sh-profile-card" data-type="connected" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      <img class="sh-profile-card__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt="">
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        <button class="sh-icon-button sh-glass" type="button" aria-label="View photos"><span class="sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">10</span></button>
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          <img class="sh-profile-card__badge" src="../../../../icons/misc/verified-badge.svg" alt="Verified">
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        <p class="sh-action-note sh-action-note--action"><span class="sh-action-note__text sh-body-sm">To contact her directly</span><button class="sh-text-link sh-text-link--premium sh-button-sm" type="button">Upgrade Now</button></p>
+        <div class="sh-action-row sh-action-row--three"><button class="sh-labelled-action" type="button"><span class="sh-labelled-action__icon"><span class="sh-icon sh-icon--20" style="--icon:url(../../../../icons/line/chat.svg)" aria-hidden="true"></span></span><span class="sh-support-label">Shaadi Chat</span></button><button class="sh-labelled-action" type="button"><span class="sh-labelled-action__icon"><span class="sh-icon sh-icon--20" style="--icon:url(../../../../icons/line/whatsapp.svg)" aria-hidden="true"></span></span><span class="sh-support-label">WhatsApp</span></button><button class="sh-labelled-action" type="button"><span class="sh-labelled-action__icon"><span class="sh-icon sh-icon--20" style="--icon:url(../../../../icons/line/phone.svg)" aria-hidden="true"></span></span><span class="sh-support-label">Call</span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=Locked</figcaption>
+  <!-- Type=Locked -->
+  <article class="sh-profile-card" data-type="locked" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      <img class="sh-profile-card__image sh-profile-card__image--blur" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt="">
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      <div class="sh-overlay"><span class="sh-icon sh-icon--24" style="--icon:url(../../../../icons/filled/photo-locked.svg)" aria-hidden="true"></span><p class="sh-overlay__message sh-body-md">She has shared photos with<br>Premium members</p><button class="sh-button sh-button--tertiary sh-button--small" type="button"><span class="sh-button__label"><span class="sh-icon" style="--icon:url(../../../../icons/line/premium.svg)" aria-hidden="true"></span><span class="sh-button-md">Upgrade to View</span></span></button></div>
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        <button class="sh-icon-button sh-glass" type="button" aria-label="View photos"><span class="sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">10</span></button>
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        
+        <div class="sh-action-row sh-action-row--single"><p class="sh-action-row__message sh-body-md-tight">Like this profile?</p><button class="sh-button sh-button--premium-solid" type="button"><span class="sh-button__label"><span class="sh-button-md">Upgrade to Connect</span></span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=No photo</figcaption>
+  <!-- Type=No photo -->
+  <article class="sh-profile-card" data-type="no-photo" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      <div class="sh-overlay sh-overlay--no-photo"><span class="sh-overlay__avatar" role="img" aria-label="No photo" style="background:var(--sh-background-strong)"></span><p class="sh-overlay__message sh-body-md">No Photo added yet</p><button class="sh-button sh-button--tertiary sh-button--small" type="button"><span class="sh-button__label"><span class="sh-icon" style="--icon:url(../../../../icons/line/help-circle.svg)" aria-hidden="true"></span><span class="sh-button-md">Request a Photo</span></span></button></div>
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        <button class="sh-icon-button sh-glass" type="button" aria-label="View photos"><span class="sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">10</span></button>
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        
+        <div class="sh-action-row sh-action-row--single"><p class="sh-action-row__message sh-body-md-tight">Like this profile?</p><button class="sh-button sh-button--primary" type="button"><span class="sh-button__label"><span class="sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-button-md">Connect Now</span></span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=Photo requested</figcaption>
+  <!-- Type=Photo requested -->
+  <article class="sh-profile-card" data-type="photo-requested" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      <!-- photo + avatar = the requested soft portrait the app ships (sh-user-images / sh-avatar-placeholder … requested) -->
+      <img class="sh-profile-card__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt="">
+      
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      <div class="sh-overlay sh-overlay--photo-requested"><img class="sh-overlay__avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt=""><p class="sh-overlay__message sh-body-md">No Photo added yet</p><span class="sh-overlay__status sh-button-sm"><span class="sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>Photo Requested</span></div>
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        <button class="sh-icon-button sh-glass" type="button" aria-label="View photos"><span class="sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">10</span></button>
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        
+        <div class="sh-action-row sh-action-row--single"><p class="sh-action-row__message sh-body-md-tight">Like this profile?</p><button class="sh-button sh-button--primary" type="button"><span class="sh-button__label"><span class="sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-button-md">Connect Now</span></span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=Blocked</figcaption>
+  <!-- Type=Blocked -->
+  <article class="sh-profile-card" data-type="blocked" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      <img class="sh-profile-card__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt="">
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        
+        <div class="sh-action-row sh-action-row--single"><p class="sh-action-row__message sh-body-md-tight">You blocked her</p><button class="sh-button sh-button--tertiary" type="button"><span class="sh-button__label"><span class="sh-button-md">Unblock</span></span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=Hidden</figcaption>
+  <!-- Type=Hidden -->
+  <article class="sh-profile-card" data-type="hidden" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      <img class="sh-profile-card__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt="">
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        <button class="sh-icon-button sh-glass" type="button" aria-label="View photos"><span class="sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">10</span></button>
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        
+        <div class="sh-action-row sh-action-row--single"><p class="sh-action-row__message sh-body-md-tight">You hid her profile</p><button class="sh-button sh-button--tertiary" type="button"><span class="sh-button__label"><span class="sh-button-md">Unhide Her</span></span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  <figure style="margin:0"><figcaption class="sh-body-sm">Type=VIP</figcaption>
+  <!-- Type=VIP -->
+  <article class="sh-profile-card" data-type="vip" aria-label="Sneha Kaul, 26">
+    <div class="sh-profile-card__photo">
+      <img class="sh-profile-card__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 542'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='340' height='542' fill='url(%23g)'/%3E%3C/svg%3E" alt="">
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--top"></div>
+      <div class="sh-profile-card__scrim sh-profile-card__scrim--bottom"></div>
+      
+    </div>
+    <div class="sh-profile-card__top">
+      <div class="sh-profile-card__top-tags"><span class="sh-tag sh-tag--white sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/megaphone-03.svg)" aria-hidden="true"></span>Promoted</span></div>
+      <div class="sh-profile-card__top-actions">
+        <button class="sh-icon-button sh-glass" type="button" aria-label="View photos"><span class="sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">10</span></button>
+        <button class="sh-icon-button sh-glass" type="button" aria-label="More options"><span class="sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button>
+      </div>
+    </div>
+    <section class="sh-profile-card__info sh-glass">
+      <div class="sh-profile-card__content">
+        <div class="sh-profile-card__name-row">
+          <div class="sh-profile-card__name-group">
+            <h3 class="sh-profile-card__name sh-heading-sm">Sneha Kaul</h3>
+            <span class="sh-profile-card__age sh-heading-sm">26</span>
+            <img class="sh-profile-card__badge" src="../../../../icons/misc/vip-badge.svg" alt="VIP">
+            <span class="sh-tag sh-tag--translucent-light sh-tag--pill sh-tag--bordered sh-glass sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/tag/online.svg)" aria-hidden="true"></span>Online</span>
+          </div>
+          <span class="sh-profile-card__spacer"></span>
+          
+        </div>
+        <div class="sh-profile-card__details">
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">5′ 6″</span><span class="sh-info-detail sh-body-md">Kashmiri Pandit</span></p>
+          <p class="sh-profile-card__detail-row"><span class="sh-info-detail sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail sh-body-md">Software Developer</span></p>
+        </div>
+      </div>
+      <div class="sh-profile-card__tags">
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span>You &amp; Her</span>
+        <span class="sh-tag sh-tag--translucent-light sh-support-label"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span>Astro</span>
+      </div>
+      <hr class="sh-profile-card__divider">
+      <div class="sh-profile-card__actions">
+        <p class="sh-action-note sh-action-note--message"><span class="sh-action-note__text sh-body-sm">Hey Sneha, I came across your profile. It felt true to me.</span><button class="sh-text-link sh-body-sm" type="button">Edit</button></p>
+        <div class="sh-action-row sh-action-row--two"><button class="sh-button sh-button--secondary" type="button"><span class="sh-button__label"><span class="sh-button-md">Call Consultant</span></span><span class="sh-button__sublabel sh-support-meta">VIP Managed Profile</span></button><button class="sh-button sh-button--primary" type="button"><span class="sh-button__label"><span class="sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-button-md">Connect</span></span></button></div>
+      </div>
+    </section>
+  </article>
+  </figure>
+  </div>
+</body>
+</html>
