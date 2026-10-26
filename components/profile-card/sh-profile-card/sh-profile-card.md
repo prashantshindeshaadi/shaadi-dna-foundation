@@ -34,7 +34,7 @@ Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://
 
 **Actions:** Decline (Tertiary, close) and Accept (Primary, check). No note.
 
-### Type=Connected
+### Type=Post-Connect
 
 **When:** you are already connected.
 
@@ -42,7 +42,7 @@ Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://
 
 **Actions:** verified badge on; note "To contact her directly" with Upgrade Now; Shaadi Chat, WhatsApp and Call as labelled icon buttons.
 
-### Type=Locked
+### Type=Gated
 
 **When:** her photos are shared with Premium members only and you are not Premium.
 
@@ -74,14 +74,6 @@ Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://
 
 **Actions:** message "You blocked her"; Unblock (Tertiary). Photo count hidden. No note.
 
-### Type=Hidden
-
-**When:** you hid her profile.
-
-**Purpose:** You hid this member.
-
-**Actions:** message "You hid her profile"; Unhide Her (Tertiary). No note.
-
 ### Type=VIP
 
 **When:** the profile is managed by a Shaadi VIP consultant.
@@ -90,13 +82,21 @@ Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://
 
 **Actions:** VIP badge beside the name; pre-written message with Edit; Call Consultant (Secondary, sub-label VIP Managed Profile) and Connect (Primary, check).
 
+### Type=With Overlay
+
+**When:** a member you have not contacted yet.
+
+**Purpose:** Default card with a connect prompt.
+
+**Actions:** pre-written message with Edit; Connect (Primary, check).
+
 ## Properties
 
 | Property | Type | Values | Default |
 |---|---|---|---|
 | Show top tags | boolean | — | true |
 | Show photo actions | boolean | — | true |
-| Type | variant | Connect, Received, Connected, Locked, No photo, Blocked, Hidden, VIP, Photo requested | Connect |
+| Type | variant | Connect, Received, Post-Connect, Gated, No photo, Blocked, VIP, Photo requested, With Overlay | Connect |
 
 ## Anatomy
 
@@ -134,18 +134,19 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Info / Info | padding:top | sh-space/14 |
 | Info / Info | padding:bottom | sh-space/16 |
 | Info / Info | radius | sh-radius/lg |
-| Info / Info | fill | Type=Connect → sh-gradient/translucent/dark/soft; Type=Received → sh-translucent/background/dark/extra-soft/end; Type=Connected → sh-translucent/background/dark/extra-soft/end; Type=Locked → sh-translucent/background/dark/extra-soft/end; Type=No photo → sh-translucent/background/dark/extra-soft/end; Type=Photo requested → sh-translucent/background/dark/extra-soft/end; Type=Blocked → sh-translucent/background/dark/extra-soft/end; Type=Hidden → sh-translucent/background/dark/extra-soft/end; Type=VIP → sh-translucent/background/dark/extra-soft/end |
+| Info / Info | fill | sh-gradient/translucent/dark/extra-soft |
 | Info / Info | stroke | sh-gradient/translucent/border/light |
-| Info / Info | effect | sh-background-blur/uniform/strong *(set on 8/9 variants)* |
+| Info / Info | effect | sh-background-blur/uniform/default |
 | Top row / Tags | gap | sh-space/8 |
+| Top row / Tags / sh-tag-profile | effect | sh-shadow/soft |
 | Top row / Actions | gap | sh-space/8 |
 | Top row / Actions / Photo action | gap | sh-space/4 |
 | Top row / Actions / Photo action | padding | sh-space/8 |
-| Top row / Actions / Photo action | fill | sh-gradient/translucent/dark/soft |
 | Top row / Actions / Photo action | stroke | sh-gradient/translucent/border/light-ring |
 | Top row / Actions / Photo action | effect | sh-background-blur/uniform/default |
+| Top row / Actions / Photo action | fill | sh-gradient/translucent/dark/soft |
 | Top row / Actions / More action | gap | sh-space/4 |
 | Top row / Actions / More action | padding | sh-space/8 |
-| Top row / Actions / More action | fill | sh-gradient/translucent/dark/soft |
 | Top row / Actions / More action | stroke | sh-gradient/translucent/border/light-ring |
 | Top row / Actions / More action | effect | sh-background-blur/uniform/default |
+| Top row / Actions / More action | fill | sh-gradient/translucent/dark/soft |

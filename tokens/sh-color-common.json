@@ -1295,29 +1295,6 @@
         }
       }
     },
-    "button/secondary/text/subtext": {
-      "type": "color",
-      "description": "sh-color-common/button/secondary/text/subtext\nPurpose: Supporting sub-text under the label on the Secondary button surface.",
-      "scopes": [
-        "TEXT_FILL"
-      ],
-      "id": "VariableID:2644:46022",
-      "figmaType": null,
-      "values": {
-        "Dark": {
-          "alias": "brand/300",
-          "targetId": "VariableID:3b0d347ef6228a5f51f7d27ceef2e3ebc0df8159/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        },
-        "Light": {
-          "alias": "brand/700",
-          "targetId": "VariableID:8040ea4b5923aa5735773f306b1a512756eb5c7a/-1:-1",
-          "setId": "VariableCollectionId:d72696ab704664fe4f38fc1cd0ffc047a69093ee/-1:-1",
-          "setName": "sh-color-basic"
-        }
-      }
-    },
     "button/secondary/icon/default": {
       "type": "color",
       "description": "sh-color-common/button/secondary/icon/default\nPurpose: Icon on the Secondary button surface.",

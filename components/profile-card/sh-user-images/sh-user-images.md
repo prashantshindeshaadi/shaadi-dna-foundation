@@ -1,10 +1,10 @@
 # sh-user-images
 
-**Purpose:** member photo source. Gender picks the person (Female 1–7, Male 1–6); Style Normal shows the photo, Blur shows the same photo under a strong even blur for locked, hidden or private photos.
+**Purpose:** member photo source. Gender picks the person (Female 1–21, Male 1–6); Style Normal shows the photo, Blur shows the same photo under a strong even blur for locked, hidden or private photos.
 
 **Keywords:** photo, member photo, profile picture, image, blur, blurred photo, locked photo
 
-Profile card (migration, not yet core) · 30 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2248-13619) (node `2248:13619`)
+Profile card (migration, not yet core) · 58 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2248-13619) (node `2248:13619`)
 
 **Code:** Assets: [requested-female.jpg](assets/requested-female.jpg), [requested-male.jpg](assets/requested-male.jpg)
 
@@ -68,6 +68,118 @@ Profile card (migration, not yet core) · 30 variants · [Open in Figma](https:/
 
 **Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
 
+### Gender=Female 8, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 8, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 9, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 9, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 10, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 10, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 11, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 11, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 12, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 12, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 13, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 13, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 14, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 14, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 15, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 15, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 16, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 16, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 17, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 17, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 18, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 18, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 19, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 19, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 20, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 20, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
+### Gender=Female 21, Style=Normal
+
+**Purpose:** member photo, shown clearly.
+
+### Gender=Female 21, Style=Blur
+
+**Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
+
 ### Gender=Male 1, Style=Normal
 
 **Purpose:** member photo, shown clearly.
@@ -116,27 +228,27 @@ Profile card (migration, not yet core) · 30 variants · [Open in Figma](https:/
 
 **Purpose:** the same member photo with an even strong blur baked into the image, safe under glass buttons and other blurred layers.
 
-### Gender=Female placeholder, Style=Normal
-
-**Purpose:** female placeholder photo, already soft and blurred, shown behind the overlay when a member has no photo or a photo has been requested.
-
-### Gender=Male placeholder, Style=Normal
-
-**Purpose:** male placeholder photo, already soft and blurred, shown behind the overlay when a member has no photo or a photo has been requested.
-
 ### Gender=Female requested, Style=Normal
 
 **When:** she has no photo and you asked for one (Photo requested). Soft blurred portrait, not a real member.
+
+### Gender=Female requested, Style=Blur
+
+**When:** Photo requested state behind a lock or overlay that needs the photo blurred. Same image and crop as Normal, with the strong background blur layer.
 
 ### Gender=Male requested, Style=Normal
 
 **When:** she has no photo and you asked for one (Photo requested). Soft blurred portrait, not a real member.
 
+### Gender=Male requested, Style=Blur
+
+**When:** Photo requested state behind a lock or overlay that needs the photo blurred. Same image and crop as Normal, with the strong background blur layer.
+
 ## Properties
 
 | Property | Type | Values | Default |
 |---|---|---|---|
-| Gender | variant | Female 1, Female 2, Female 3, Female 4, Female 5, Female 6, Female 7, Male 1, Male 2, Male 3, Male 4, Male 5, Male 6, Female placeholder, Male placeholder, Female requested, Male requested | Female 1 |
+| Gender | variant | Female 1, Female 2, Female 3, Female 4, Female 5, Female 6, Female 7, Female 8, Female 9, Female 10, Female 11, Female 12, Female 13, Female 14, Female 15, Female 16, Female 17, Female 18, Female 19, Female 20, Female 21, Male 1, Male 2, Male 3, Male 4, Male 5, Male 6, Female requested, Male requested | Female 1 |
 | Style | variant | Normal, Blur | Normal |
 
 ## Anatomy
@@ -155,5 +267,5 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
-| Blur | fill | background/default *(set on 13/30 variants)* |
-| Blur | effect | sh-background-blur/uniform/strong *(set on 13/30 variants)* |
+| Blur | fill | background/default *(set on 29/58 variants)* |
+| Blur | effect | sh-background-blur/uniform/strong *(set on 29/58 variants)* |

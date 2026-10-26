@@ -22,7 +22,7 @@ Layer tree of `sh-photo-wrapper`. Nested components are shown by name; their int
   - Photo image — **sh-user-images** (Gender Female 1, Style Normal)
   - Bottom scrim — fixed × fixed
   - Top scrim — fixed × fixed
-  - Overlay — **sh-overlay** (Action instance, Title No Photo added yet, Icon instance, Avatar instance, Message She has shared Photos  with Premium Members, Surface Photo, Type Message) · hidden by default
+  - Overlay — **sh-overlay** (Action instance, Title Photo request sent, Icon instance, Avatar instance, Message She has shared Photos  with Premium Members, Surface Photo, Type Message) · hidden by default
 
 ## Size
 
@@ -37,7 +37,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | radius | sh-radius/none |
 | Bottom scrim | fill | sh-gradient/overlay/bottom |
 | Top scrim | fill | sh-gradient/overlay/top |
-| Overlay | gap | sh-space/8 |
+| Overlay | gap | sh-space/12 |
 | Overlay | padding-x | sh-space/page/margin |
 | Overlay | fill | overlay/scrim/default |
 | Overlay | effect | sh-background-blur/uniform/strong |

@@ -1,0 +1,97 @@
+<!doctype html>
+<!--
+  sh-info-detail — web (HTML5 + CSS). Every variant (Mode × Size, Show separator on / off) and the row helper.
+  Spec: ../sh-info-detail.md · Figma node 2825:43215
+  Run `python3 tools/build.py` once so dist/ exists. The "photo" is a neutral placeholder: On image is made for
+  dark glass and photos, Default for light surfaces.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-info-detail</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-info-detail.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    .preview { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--sh-space-16); max-width: 960px; }
+    .cell { margin: 0; display: flex; flex-direction: column; gap: var(--sh-space-12); padding: var(--sh-space-16); border-radius: var(--sh-radius-card); }
+    .cell.wide { grid-column: span 2; }
+    .photo { background: center / cover url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"); }
+    .photo figcaption { color: var(--sh-text-on-image); }
+    .surface { background: var(--sh-background-default); }
+    .surface figcaption { color: var(--sh-text-secondary); }
+    .pair { display: flex; gap: var(--sh-space-24); align-items: center; }
+    .rows { display: flex; flex-direction: column; gap: var(--sh-space-2); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-info-detail</h1>
+
+  <h2 class="sh-title-md">Variants · Show separator on / off</h2>
+  <div class="preview">
+    <figure class="cell photo"><figcaption class="sh-support-label">Mode=On image, Size=Medium</figcaption>
+      <div class="pair">
+        <!-- Mode=On image, Size=Medium, Show separator=true -->
+        <span class="sh-info-detail sh-info-detail--on-image sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Detail</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+        <!-- Show separator=false -->
+        <span class="sh-info-detail sh-info-detail--on-image sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Detail</span></span>
+      </div>
+    </figure>
+    <figure class="cell photo"><figcaption class="sh-support-label">Mode=On image, Size=Small</figcaption>
+      <div class="pair">
+        <!-- Mode=On image, Size=Small, Show separator=true -->
+        <span class="sh-info-detail sh-info-detail--on-image sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Detail</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+        <!-- Show separator=false -->
+        <span class="sh-info-detail sh-info-detail--on-image sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Detail</span></span>
+      </div>
+    </figure>
+    <figure class="cell surface"><figcaption class="sh-support-label">Mode=Default, Size=Medium</figcaption>
+      <div class="pair">
+        <!-- Mode=Default, Size=Medium, Show separator=true -->
+        <span class="sh-info-detail sh-info-detail--default sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Detail</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+        <!-- Show separator=false -->
+        <span class="sh-info-detail sh-info-detail--default sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Detail</span></span>
+      </div>
+    </figure>
+    <figure class="cell surface"><figcaption class="sh-support-label">Mode=Default, Size=Small</figcaption>
+      <div class="pair">
+        <!-- Mode=Default, Size=Small, Show separator=true -->
+        <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Detail</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+        <!-- Show separator=false -->
+        <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Detail</span></span>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Row helper · separator after every fact except the last of the row</h2>
+  <div class="preview">
+    <figure class="cell photo wide"><figcaption class="sh-support-label">Rows · Mode=On image, Size=Medium</figcaption>
+      <div class="rows">
+        <p class="sh-info-detail-row"><span class="sh-info-detail sh-info-detail--on-image sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">5′ 6″</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span><span class="sh-info-detail sh-info-detail--on-image sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Kashmiri Pandit</span></span></p>
+        <p class="sh-info-detail-row"><span class="sh-info-detail sh-info-detail--on-image sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span><span class="sh-info-detail sh-info-detail--on-image sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Software Developer</span></span></p>
+      </div>
+    </figure>
+    <figure class="cell photo wide"><figcaption class="sh-support-label">Rows · Mode=On image, Size=Small</figcaption>
+      <div class="rows">
+        <p class="sh-info-detail-row sh-info-detail-row--sm"><span class="sh-info-detail sh-info-detail--on-image sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5′ 6″</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span><span class="sh-info-detail sh-info-detail--on-image sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kashmiri Pandit</span></span></p>
+        <p class="sh-info-detail-row sh-info-detail-row--sm"><span class="sh-info-detail sh-info-detail--on-image sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pimpri-Chinchwad</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span><span class="sh-info-detail sh-info-detail--on-image sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Software Developer</span></span></p>
+      </div>
+    </figure>
+    <figure class="cell surface wide"><figcaption class="sh-support-label">Rows · Mode=Default, Size=Medium</figcaption>
+      <div class="rows">
+        <p class="sh-info-detail-row"><span class="sh-info-detail sh-info-detail--default sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">5′ 6″</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span><span class="sh-info-detail sh-info-detail--default sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Kashmiri Pandit</span></span></p>
+        <p class="sh-info-detail-row"><span class="sh-info-detail sh-info-detail--default sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Pimpri-Chinchwad</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span><span class="sh-info-detail sh-info-detail--default sh-info-detail--md"><span class="sh-info-detail__label sh-body-md">Software Developer</span></span></p>
+      </div>
+    </figure>
+    <figure class="cell surface wide"><figcaption class="sh-support-label">Rows · Mode=Default, Size=Small</figcaption>
+      <div class="rows">
+        <p class="sh-info-detail-row sh-info-detail-row--sm"><span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5′ 6″</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span><span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kashmiri Pandit</span></span></p>
+        <p class="sh-info-detail-row sh-info-detail-row--sm"><span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pimpri-Chinchwad</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span><span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Software Developer</span></span></p>
+      </div>
+    </figure>
+  </div>
+</body>
+</html>

@@ -25,7 +25,7 @@ Layer tree of `sh-location-bar`. Nested components are shown by name; their inte
   - Text — row · fill × hug
     - Location — text "Airoli, Navi Mumbai"
     - Distance — text "· 25 km"
-  - Change — **sh-text-link** (Trailing icon instance, Label Change, Leading icon instance, Type Neutral, Size Small, State Default, Border Solid)
+  - Change — **sh-text-link** (Trailing icon instance, Label Change, Leading icon instance, Type Neutral, Size Small, State Default)
 
 ## Size
 
@@ -47,4 +47,4 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Text / Location | text style | sh-typo/Title/SM |
 | Text / Distance | fill | text/tertiary |
 | Text / Distance | text style | sh-typo/Body/SM/Default |
-| Change | gap | sh-space/4 |
+| Change | gap | sh-space/2 |

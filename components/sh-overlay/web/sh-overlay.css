@@ -1,0 +1,148 @@
+/*
+ * sh-overlay — web (HTML5 + CSS)
+ * Spec: ../sh-overlay.md · Figma node 2314:18393
+ *
+ * Needs, loaded once per page: dist/css/tokens.css, dist/sh-typo-kit/developer/web/sh-typo.css,
+ * components/sh-icon/web/sh-icon.css, components/sh-button/web/sh-button.css,
+ * components/profile-card/sh-user-images/web/sh-user-images.css (Photo full portrait),
+ * components/profile-card/sh-avatar-placeholder/web/sh-avatar-placeholder.css (optional avatar).
+ *
+ * Covers a photo area or a content section; place it inside a positioned parent (it fills it).
+ *   Surface  .sh-overlay--photo | --photo-full | --content
+ *   Type     .sh-overlay--message | --no-photo | --photo-requested      (Content has Message only)
+ *
+ *   Message          icon (Photo, Content 24 · Photo full 40) + message + action, over a scrim:
+ *                    Photo / Photo full: overlay/scrim/default + sh-background-blur/uniform/strong
+ *                    Content: sh-gradient/translucent/light/strong + sh-background-blur/progressive/default
+ *   No photo         Photo: empty 160 slot (Figma keeps the Avatar hidden) + title + action. No fill, no blur:
+ *                    the photo under it (the requested portrait) shows. Photo full draws that portrait itself.
+ *   Photo requested  as No photo without the action. Optional status row (Figma: hidden layer).
+ *
+ * Text: Photo surfaces use .sh-body-lg in text/on-image with sh-shadow/default; Content uses .sh-body-md in
+ * text/primary, no shadow. Photo surfaces give the action sh-shadow/default too.
+ * The only raw numbers are positions Figma has no token for; each is marked.
+ */
+
+.sh-overlay, .sh-overlay * { box-sizing: border-box; }
+
+/* ---- root ---------------------------------------------------------------- */
+.sh-overlay {
+  /* Figma top / bottom padding (unbound): Photo · Message 120 / 120 */
+  --sh-overlay-top: calc(var(--sh-space-80) + var(--sh-space-40));      /* no token: 120 */
+  --sh-overlay-bottom: calc(var(--sh-space-80) + var(--sh-space-40));   /* no token: 120 */
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--sh-space-12);
+  padding: var(--sh-overlay-top) var(--sh-space-page-margin) var(--sh-overlay-bottom);
+  text-align: center;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* Photo · No photo / Photo requested: content starts at sh-space/40 */
+.sh-overlay--no-photo,
+.sh-overlay--photo-requested { --sh-overlay-top: var(--sh-space-40); }
+
+/* Photo full: Message content at 128; No photo / Photo requested text at 180 (lines up with Message's text) */
+.sh-overlay--photo-full { --sh-overlay-bottom: var(--sh-space-0); }
+.sh-overlay--photo-full.sh-overlay--message {
+  --sh-overlay-top: calc(var(--sh-space-80) + var(--sh-space-48));      /* no token: 128 */
+}
+.sh-overlay--photo-full.sh-overlay--no-photo,
+.sh-overlay--photo-full.sh-overlay--photo-requested {
+  /* no token: 180 = Message top 128 + its 40 icon + sh-space/12 gap */
+  --sh-overlay-top: calc(var(--sh-space-80) + var(--sh-space-48) + var(--sh-icon-pictogram-size-40) + var(--sh-space-12));
+}
+
+/* Content: 120 / 80 */
+.sh-overlay--content { --sh-overlay-bottom: var(--sh-space-80); }
+
+/* ---- fill + blur --------------------------------------------------------- */
+/* Photo / Photo full · Message: scrim + uniform strong background blur */
+.sh-overlay--message {
+  background: var(--sh-overlay-scrim-default);
+  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-strong));
+  backdrop-filter: blur(var(--sh-translucent-background-blur-strong));
+}
+/* Content · Message: translucent light glass + progressive blur (none at the top → default at the bottom) */
+.sh-overlay--content {
+  background: var(--sh-gradient-translucent-light-strong);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.sh-overlay--content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-default));
+  backdrop-filter: blur(var(--sh-translucent-background-blur-default));
+  -webkit-mask: linear-gradient(transparent, #000);   /* alpha ramp: Figma progressive blur, start 0 at top, end at bottom */
+  mask: linear-gradient(transparent, #000);
+}
+
+/* Photo full · No photo / Photo requested: the requested portrait (sh-user-images Female requested, Normal) */
+.sh-overlay__portrait {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+/* ---- content ------------------------------------------------------------- */
+.sh-overlay__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-12);
+  width: 100%;
+}
+
+.sh-overlay__icon { color: var(--sh-icon-on-image); }
+.sh-overlay__icon.sh-icon--40 {                     /* Photo full: Figma resizes the 24 icon to 40, unbound */
+  width: var(--sh-icon-pictogram-size-40);          /* no token for a 40 line icon: pictogram/size/40 matches */
+  height: var(--sh-icon-pictogram-size-40);
+}
+
+/* 160 slot: sh-avatar-placeholder 1:1 at its Figma size (hidden in Figma, the slot keeps the text in place) */
+.sh-overlay__illustration {
+  display: flex;
+  justify-content: center;
+  width: calc(var(--sh-space-80) * 2);              /* no token: 160 */
+  height: calc(var(--sh-space-80) * 2);             /* no token: 160 */
+}
+
+.sh-overlay__text {
+  margin: 0;
+  width: 100%;
+  color: var(--sh-text-on-image);
+  text-shadow: var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-color);
+}
+
+/* Action: sh-button Tertiary Small; on photos it carries sh-shadow/default */
+.sh-overlay--photo .sh-overlay__action,
+.sh-overlay--photo-full .sh-overlay__action {
+  box-shadow: var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-spread) var(--sh-shadow-default-color);
+}
+
+/* Status (Photo requested): check Filled 16 + Button/SM label, indicator/success, sh-shadow/default */
+.sh-overlay__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  padding-block: var(--sh-space-6);
+  color: var(--sh-indicator-success);
+  text-shadow: var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-color);
+}
+.sh-overlay__status .sh-icon {
+  filter: drop-shadow(var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-color));
+}
+
+/* Content surface: dark text and icon on the light glass, no shadows */
+.sh-overlay--content .sh-overlay__icon { color: var(--sh-icon-primary); }
+.sh-overlay--content .sh-overlay__text { color: var(--sh-text-primary); text-shadow: none; }

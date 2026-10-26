@@ -1,6 +1,6 @@
 # Icons
 
-380 icons from the Shaadi DNA library, exported by `tools/components.py`.
+400 icons from the Shaadi DNA library, exported by `tools/components.py`.
 Line and filled icons are one SVG each at 24 with `currentColor`; scale to 12–24 and pair the
 stroke with `sh-icon/stroke/<size>` (FOUNDATION §5.5). Pictograms and brand marks keep their colours;
 the ones drawn as bitmaps in Figma are 2x PNGs.
@@ -34,15 +34,12 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `ban` | line 12/14/16/20/24, filled 12/14/16/20/24 | ban, blocked, banned, not allowed, Ban | [line](../icons/line/ban.svg) [filled](../icons/filled/ban.svg) |
 | `bank` | line 12/14/16/20/24, filled 12/14/16/20/24 | bank, net banking, bank transfer, payment, Bank | [line](../icons/line/bank.svg) [filled](../icons/filled/bank.svg) |
 | `banknote` | line 12/14/16/20/24, filled 12/14/16/20/24 | banknote, cash, money, payment, Banknote | [line](../icons/line/banknote.svg) [filled](../icons/filled/banknote.svg) |
-| `basketball` | line 12/14/16/20/24, filled 12/14/16/20/24 | basketball, sports, hobby, interest, lifestyle, Basketball01 | [line](../icons/line/basketball.svg) [filled](../icons/filled/basketball.svg) |
 | `battery` | line 12/14/16/20/24, filled 12/14/16/20/24 | battery, power, battery full, BatteryFull | [line](../icons/line/battery.svg) [filled](../icons/filled/battery.svg) |
-| `bike` | line 12/14/16/20/24, filled 12/14/16/20/24 | bike, cycling, hobby, interest, lifestyle, Bike | [line](../icons/line/bike.svg) [filled](../icons/filled/bike.svg) |
 | `birthday` | line 12/14/16/20/24, filled 12/14/16/20/24 | birthday, date of birth, dob, age, cake, birthday cake, BirthdayCake | [line](../icons/line/birthday.svg) [filled](../icons/filled/birthday.svg) |
 | `block` | line 12/14/16/20/24, filled 12/14/16/20/24 | block, block member, ban, report, restrict, blocked, Blocked | [line](../icons/line/block.svg) [filled](../icons/filled/block.svg) |
 | `block-game` | line 12/14/16/20/24, filled 12/14/16/20/24 | block game, block, game, games, fun, hobby, BlockGame | [line](../icons/line/block-game.svg) [filled](../icons/filled/block-game.svg) |
 | `bluetooth` | line 12/14/16/20/24, filled 12/14/16/20/24 | bluetooth, device, Bluetooth | [line](../icons/line/bluetooth.svg) [filled](../icons/filled/bluetooth.svg) |
 | `book` | line 12/14/16/20/24, filled 12/14/16/20/24 | book, education, study, reading, bio, book03, Book03 | [line](../icons/line/book.svg) [filled](../icons/filled/book.svg) |
-| `book-open` | line 12/14/16/20/24, filled 12/14/16/20/24 | book open, reading, hobby, interest, lifestyle, BookOpen01 | [line](../icons/line/book-open.svg) [filled](../icons/filled/book-open.svg) |
 | `bookmark` | line 12/14/16/20/24, filled 12/14/16/20/24 | bookmark, bookmark01, Bookmark01 | [line](../icons/line/bookmark.svg) [filled](../icons/filled/bookmark.svg) |
 | `bookmark-check` | line 12/14/16/20/24, filled 12/14/16/20/24 | bookmark check, bookmark, check, saved, shortlisted, bookmark02, Bookmark02 | [line](../icons/line/bookmark-check.svg) [filled](../icons/filled/bookmark-check.svg) |
 | `brand/bank-axis` | brand 32 | axis bank, bank, net banking, logo, brand, social | [brand](../icons/brand/bank-axis.svg) |
@@ -77,9 +74,7 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `camera-off` | line 12/14/16/20/24, filled 12/14/16/20/24 | camera off, camera, off, no camera, photo blocked, camera off01, CameraOff01 | [line](../icons/line/camera-off.svg) [filled](../icons/filled/camera-off.svg) |
 | `cancel-circle` | line 12/14/16/20/24, filled 12/14/16/20/24 | cancel circle, cancel, circle, remove, clear, close, error, CancelCircle | [line](../icons/line/cancel-circle.svg) [filled](../icons/filled/cancel-circle.svg) |
 | `caring` | line 12/14/16/20/24, filled 12/14/16/20/24 | caring, care, support, family, Caring | [line](../icons/line/caring.svg) [filled](../icons/filled/caring.svg) |
-| `carrot` | line 12/14/16/20/24, filled 12/14/16/20/24 | carrot, vegan, hobby, interest, lifestyle, Carrot | [line](../icons/line/carrot.svg) [filled](../icons/filled/carrot.svg) |
 | `chart-bar` | line 12/14/16/20/24, filled 12/14/16/20/24 | chart bar, chart, bar, stats, analytics, insights, chart bar increasing, ChartBarIncreasing | [line](../icons/line/chart-bar.svg) [filled](../icons/filled/chart-bar.svg) |
-| `chart-candlestick` | line 12/14/16/20/24, filled 12/14/16/20/24 | chart candlestick, investments, hobby, interest, lifestyle, ChartCandlestick | [line](../icons/line/chart-candlestick.svg) [filled](../icons/filled/chart-candlestick.svg) |
 | `chart-increase` | line 12/14/16/20/24, filled 12/14/16/20/24 | chart increase, chart, increase, trend, growth, boost, stats, ChartIncrease | [line](../icons/line/chart-increase.svg) [filled](../icons/filled/chart-increase.svg) |
 | `chat` | line 12/14/16/20/24, filled 12/14/16/20/24 | chat, message, conversation, bubble chat, BubbleChat | [line](../icons/line/chat.svg) [filled](../icons/filled/chat.svg) |
 | `chat-add` | line 12/14/16/20/24, filled 12/14/16/20/24 | chat add, chat, add, new chat, start conversation, bubble chat add, BubbleChatAdd | [line](../icons/line/chat-add.svg) [filled](../icons/filled/chat-add.svg) |
@@ -102,8 +97,12 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `coins` | line 12/14/16/20/24, filled 12/14/16/20/24 | coins, credits, points, wallet, coins01, Coins01 | [line](../icons/line/coins.svg) [filled](../icons/filled/coins.svg) |
 | `collapse` | line 12/14/16/20/24, filled 12/14/16/20/24 | collapse, minimize, shrink, close, arrow shrink02, ArrowShrink02 | [line](../icons/line/collapse.svg) [filled](../icons/filled/collapse.svg) |
 | `comment` | line 12/14/16/20/24, filled 12/14/16/20/24 | comment, reply, feedback, review, comment01, Comment01 | [line](../icons/line/comment.svg) [filled](../icons/filled/comment.svg) |
+| `community` | line 12/14/16/20/24, filled 12/14/16/20/24 | community, caste, sub-caste, group, people, kayastha, users | [line](../icons/line/community.svg) [filled](../icons/filled/community.svg) |
 | `compass` | line 12/14/16/20/24, filled 12/14/16/20/24 | compass, explore, discover, nearby, compass01, Compass01 | [line](../icons/line/compass.svg) [filled](../icons/filled/compass.svg) |
+| `connect` | filled 12/14/16/20/24, line 12/14/16/20/24 | connect, tick, check, accept, send interest, connect button, Component 26 | [filled](../icons/filled/connect.svg) [line](../icons/line/connect.svg) |
 | `contact` | line 12/14/16/20/24, filled 12/14/16/20/24 | contact, contacts, phone book, address book, contact02, Contact02 | [line](../icons/line/contact.svg) [filled](../icons/filled/contact.svg) |
+| `contact-card` | line 12/14/16/20/24, filled 12/14/16/20/24 | contact card, contact, profile, details, person, card, lucide contact | [line](../icons/line/contact-card.svg) [filled](../icons/filled/contact-card.svg) |
+| `contact-card-02` | line 12/14/16/20/24, filled 12/14/16/20/24 | contact card, contact, profile, details, person, card | [line](../icons/line/contact-card-02.svg) [filled](../icons/filled/contact-card-02.svg) |
 | `cooking` | line 12/14/16/20/24, filled 12/14/16/20/24 | cooking, chef, hobby, chef hat, ChefHat | [line](../icons/line/cooking.svg) [filled](../icons/filled/cooking.svg) |
 | `copy` | line 12/14/16/20/24, filled 12/14/16/20/24 | copy, duplicate, copy id, clipboard, copy01, Copy01 | [line](../icons/line/copy.svg) [filled](../icons/filled/copy.svg) |
 | `coupon` | line 12/14/16/20/24, filled 12/14/16/20/24 | coupon, discount, offer, promo code, coupon01, Coupon01 | [line](../icons/line/coupon.svg) [filled](../icons/filled/coupon.svg) |
@@ -120,8 +119,8 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `dining` | line 12/14/16/20/24, filled 12/14/16/20/24 | dining, food, cuisine, diet, restaurant, dish01, Dish01 | [line](../icons/line/dining.svg) [filled](../icons/filled/dining.svg) |
 | `discount` | line 12/14/16/20/24, filled 12/14/16/20/24 | discount, offer, sale, percent off, Discount | [line](../icons/line/discount.svg) [filled](../icons/filled/discount.svg) |
 | `discount-tag` | line 12/14/16/20/24, filled 12/14/16/20/24 | discount tag, discount, tag, offer tag, deal, sale, discount tag01, DiscountTag01 | [line](../icons/line/discount-tag.svg) [filled](../icons/filled/discount-tag.svg) |
-| `download` | line 12/14/16/20/24, filled 12/14/16/20/24 | download, save, export, get, download04, Download04 | [line](../icons/line/download.svg) [filled](../icons/filled/download.svg) |
-| `drama` | line 12/14/16/20/24, filled 12/14/16/20/24 | drama, acting, hobby, interest, lifestyle, Drama | [line](../icons/line/drama.svg) [filled](../icons/filled/drama.svg) |
+| `document-validation` | line 12/14/16/20/24, filled 12/14/16/20/24 | document validation, verified document, visa, certificate, paper check, DocumentValidation | [line](../icons/line/document-validation.svg) [filled](../icons/filled/document-validation.svg) |
+| `download` | line 12/14/16/20/24, filled 12/14/16/20/24 | download, save, export, get | [line](../icons/line/download.svg) [filled](../icons/filled/download.svg) |
 | `drink` | line 12/14/16/20/24, filled 12/14/16/20/24 | drink, drinking, alcohol, habits, Drink | [line](../icons/line/drink.svg) [filled](../icons/filled/drink.svg) |
 | `earth` | line 12/14/16/20/24, filled 12/14/16/20/24 | earth, world, global, nri, Earth | [line](../icons/line/earth.svg) [filled](../icons/filled/earth.svg) |
 | `edit` | line 12/14/16/20/24, filled 12/14/16/20/24 | edit, pencil, modify, update, change, pencil edit01, PencilEdit01 | [line](../icons/line/edit.svg) [filled](../icons/filled/edit.svg) |
@@ -148,23 +147,18 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `flag` | line 12/14/16/20/24, filled 12/14/16/20/24 | flag, report, flag profile, abuse, flag01, Flag02 | [line](../icons/line/flag.svg) [filled](../icons/filled/flag.svg) |
 | `flash` | line 12/14/16/20/24, filled 12/14/16/20/24 | flash, instant, quick, boost, Flash | [line](../icons/line/flash.svg) [filled](../icons/filled/flash.svg) |
 | `flower` | line 12/14/16/20/24, filled 12/14/16/20/24 | flower, romance, decoration, Flower | [line](../icons/line/flower.svg) [filled](../icons/filled/flower.svg) |
-| `flying-human` | line 12/14/16/20/24, filled 12/14/16/20/24 | flying human, dancing, hobby, interest, lifestyle, FlyingHuman | [line](../icons/line/flying-human.svg) [filled](../icons/filled/flying-human.svg) |
 | `fullscreen` | line 12/14/16/20/24, filled 12/14/16/20/24 | fullscreen, full screen, expand view, FullScreen | [line](../icons/line/fullscreen.svg) [filled](../icons/filled/fullscreen.svg) |
 | `gallery` | line 12/14/16/20/24, filled 12/14/16/20/24 | gallery, photos, pictures, album, image02, Image02 | [line](../icons/line/gallery.svg) [filled](../icons/filled/gallery.svg) |
-| `gamepad` | line 12/14/16/20/24, filled 12/14/16/20/24 | gamepad, gaming, hobby, interest, lifestyle, Gamepad01 | [line](../icons/line/gamepad.svg) [filled](../icons/filled/gamepad.svg) |
 | `gaming` | line 12/14/16/20/24, filled 12/14/16/20/24 | gaming, games, hobby, game controller01, GameController01 | [line](../icons/line/gaming.svg) [filled](../icons/filled/gaming.svg) |
 | `gif` | line 12/14/16/20/24, filled 12/14/16/20/24 | gif, animation, sticker, gif01, Gif01 | [line](../icons/line/gif.svg) [filled](../icons/filled/gif.svg) |
 | `gift` | line 12/14/16/20/24, filled 12/14/16/20/24 | gift, offer, reward, present, bonus, Gift | [line](../icons/line/gift.svg) [filled](../icons/filled/gift.svg) |
 | `gift-card` | line 12/14/16/20/24, filled 12/14/16/20/24 | gift card, gift, card, voucher, reward, GiftCard | [line](../icons/line/gift-card.svg) [filled](../icons/filled/gift-card.svg) |
-| `global-editing` | line 12/14/16/20/24, filled 12/14/16/20/24 | global editing, blogging, hobby, interest, lifestyle, GlobalEditing | [line](../icons/line/global-editing.svg) [filled](../icons/filled/global-editing.svg) |
 | `globe` | line 12/14/16/20/24, filled 12/14/16/20/24 | globe, country, international, nri, world, globe02, Globe02 | [line](../icons/line/globe.svg) [filled](../icons/filled/globe.svg) |
 | `graduation` | line 12/14/16/20/24, filled 12/14/16/20/24 | graduation, degree, cap, education, mortarboard01, Mortarboard01 | [line](../icons/line/graduation.svg) [filled](../icons/filled/graduation.svg) |
 | `grid-view` | line 12/14/16/20/24, filled 12/14/16/20/24 | grid view, grid, view, tiles, gallery view, GridView | [line](../icons/line/grid-view.svg) [filled](../icons/filled/grid-view.svg) |
-| `guitar` | line 12/14/16/20/24, filled 12/14/16/20/24 | guitar, playing instruments, hobby, interest, lifestyle, Guitar | [line](../icons/line/guitar.svg) [filled](../icons/filled/guitar.svg) |
-| `hand-heart` | line 12/14/16/20/24, filled 12/14/16/20/24 | hand heart, social service, hobby, interest, lifestyle, HandHeart | [line](../icons/line/hand-heart.svg) [filled](../icons/filled/hand-heart.svg) |
+| `handset` | line 12/14/16/20/24, filled 12/14/16/20/24 | handset, call, phone, voice call, ring, dial, Icon/Chat/Call | [line](../icons/line/handset.svg) [filled](../icons/filled/handset.svg) |
 | `handshake` | line 12/14/16/20/24, filled 12/14/16/20/24 | handshake, connect, agreement, deal, partnership, Handshake | [line](../icons/line/handshake.svg) [filled](../icons/filled/handshake.svg) |
-| `hanger` | line 12/14/16/20/24, filled 12/14/16/20/24 | hanger, fashion & beauty, hobby, interest, lifestyle, Hanger | [line](../icons/line/hanger.svg) [filled](../icons/filled/hanger.svg) |
-| `hashtag` | line 12/14/16/20/24, filled 12/14/16/20/24 | hashtag, social media, hobby, interest, lifestyle, Hashtag | [line](../icons/line/hashtag.svg) [filled](../icons/filled/hashtag.svg) |
+| `heart` | line 12/14/16/20/24, filled 12/14/16/20/24 | heart, like, love, interest, favourite, shortlist, Icon/System/Heart | [line](../icons/line/heart.svg) [filled](../icons/filled/heart.svg) |
 | `heart-add` | line 12/14/16/20/24, filled 12/14/16/20/24 | heart add, heart, add, add interest, new like, HeartAdd | [line](../icons/line/heart-add.svg) [filled](../icons/filled/heart-add.svg) |
 | `heart-check` | line 12/14/16/20/24, filled 12/14/16/20/24 | heart check, heart, check, mutual interest, matched, HeartCheck | [line](../icons/line/heart-check.svg) [filled](../icons/filled/heart-check.svg) |
 | `heart-crack` | line 12/14/16/20/24, filled 12/14/16/20/24 | heart crack, heart, crack, breakup, declined, heartbreak, HeartCrack | [line](../icons/line/heart-crack.svg) [filled](../icons/filled/heart-crack.svg) |
@@ -174,7 +168,51 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `heart-remove` | line 12/14/16/20/24, filled 12/14/16/20/24 | heart remove, heart, remove, remove interest, unlike, HeartRemove | [line](../icons/line/heart-remove.svg) [filled](../icons/filled/heart-remove.svg) |
 | `height` | line 12/14/16/20/24, filled 12/14/16/20/24 | height, ruler, measure, stature, Ruler | [line](../icons/line/height.svg) [filled](../icons/filled/height.svg) |
 | `help-circle` | line 12/14/16/20/24, filled 12/14/16/20/24 | help circle, help, circle, support, faq, question, HelpCircle | [line](../icons/line/help-circle.svg) [filled](../icons/filled/help-circle.svg) |
-| `hiking` | line 12/14/16/20/24, filled 12/14/16/20/24 | hiking, trekking, hobby, interest, lifestyle, Hiking | [line](../icons/line/hiking.svg) [filled](../icons/filled/hiking.svg) |
+| `hobby-acting` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, acting | [line](../icons/line/hobby-acting.svg) [filled](../icons/filled/hobby-acting.svg) |
+| `hobby-aerobics-zumba` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, aerobics / zumba | [line](../icons/line/hobby-aerobics-zumba.svg) [filled](../icons/filled/hobby-aerobics-zumba.svg) |
+| `hobby-anime` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, anime | [line](../icons/line/hobby-anime.svg) [filled](../icons/filled/hobby-anime.svg) |
+| `hobby-biking` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, biking | [line](../icons/line/hobby-biking.svg) [filled](../icons/filled/hobby-biking.svg) |
+| `hobby-binge-watching` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, binge-watching | [line](../icons/line/hobby-binge-watching.svg) [filled](../icons/filled/hobby-binge-watching.svg) |
+| `hobby-blogging` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, blogging | [line](../icons/line/hobby-blogging.svg) [filled](../icons/filled/hobby-blogging.svg) |
+| `hobby-clubbing` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, clubbing | [line](../icons/line/hobby-clubbing.svg) [filled](../icons/filled/hobby-clubbing.svg) |
+| `hobby-content-creation` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, content creation | [line](../icons/line/hobby-content-creation.svg) [filled](../icons/filled/hobby-content-creation.svg) |
+| `hobby-cooking` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, cooking | [line](../icons/line/hobby-cooking.svg) [filled](../icons/filled/hobby-cooking.svg) |
+| `hobby-cycling` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, cycling | [line](../icons/line/hobby-cycling.svg) [filled](../icons/filled/hobby-cycling.svg) |
+| `hobby-dancing` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, dancing | [line](../icons/line/hobby-dancing.svg) [filled](../icons/filled/hobby-dancing.svg) |
+| `hobby-designing` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, designing | [line](../icons/line/hobby-designing.svg) [filled](../icons/filled/hobby-designing.svg) |
+| `hobby-diy-crafts` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, diy crafts | [line](../icons/line/hobby-diy-crafts.svg) [filled](../icons/filled/hobby-diy-crafts.svg) |
+| `hobby-doodling` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, doodling | [line](../icons/line/hobby-doodling.svg) [filled](../icons/filled/hobby-doodling.svg) |
+| `hobby-entrepreneurship` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, entrepreneurship | [line](../icons/line/hobby-entrepreneurship.svg) [filled](../icons/filled/hobby-entrepreneurship.svg) |
+| `hobby-fashion-beauty` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, fashion & beauty | [line](../icons/line/hobby-fashion-beauty.svg) [filled](../icons/filled/hobby-fashion-beauty.svg) |
+| `hobby-foodie` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, foodie | [line](../icons/line/hobby-foodie.svg) [filled](../icons/filled/hobby-foodie.svg) |
+| `hobby-gaming` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, gaming | [line](../icons/line/hobby-gaming.svg) [filled](../icons/filled/hobby-gaming.svg) |
+| `hobby-gardening` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, gardening | [line](../icons/line/hobby-gardening.svg) [filled](../icons/filled/hobby-gardening.svg) |
+| `hobby-home-decor` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, home decor | [line](../icons/line/hobby-home-decor.svg) [filled](../icons/filled/hobby-home-decor.svg) |
+| `hobby-investments` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, investments | [line](../icons/line/hobby-investments.svg) [filled](../icons/filled/hobby-investments.svg) |
+| `hobby-movies` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, acting, movies | [line](../icons/line/hobby-movies.svg) [filled](../icons/filled/hobby-movies.svg) |
+| `hobby-music` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, music | [line](../icons/line/hobby-music.svg) [filled](../icons/filled/hobby-music.svg) |
+| `hobby-news-politics` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, news & politics | [line](../icons/line/hobby-news-politics.svg) [filled](../icons/filled/hobby-news-politics.svg) |
+| `hobby-painting` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, painting | [line](../icons/line/hobby-painting.svg) [filled](../icons/filled/hobby-painting.svg) |
+| `hobby-pets` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, pets | [line](../icons/line/hobby-pets.svg) [filled](../icons/filled/hobby-pets.svg) |
+| `hobby-photography` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, photography | [line](../icons/line/hobby-photography.svg) [filled](../icons/filled/hobby-photography.svg) |
+| `hobby-playing-instruments` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, playing instruments | [line](../icons/line/hobby-playing-instruments.svg) [filled](../icons/filled/hobby-playing-instruments.svg) |
+| `hobby-poetry` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, writing, poetry | [line](../icons/line/hobby-poetry.svg) [filled](../icons/filled/hobby-poetry.svg) |
+| `hobby-reading` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, reading | [line](../icons/line/hobby-reading.svg) [filled](../icons/filled/hobby-reading.svg) |
+| `hobby-running` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, running | [line](../icons/line/hobby-running.svg) [filled](../icons/filled/hobby-running.svg) |
+| `hobby-shopping` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, shopping | [line](../icons/line/hobby-shopping.svg) [filled](../icons/filled/hobby-shopping.svg) |
+| `hobby-singing` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, singing | [line](../icons/line/hobby-singing.svg) [filled](../icons/filled/hobby-singing.svg) |
+| `hobby-social-media` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, social media | [line](../icons/line/hobby-social-media.svg) [filled](../icons/filled/hobby-social-media.svg) |
+| `hobby-social-service` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, social service | [line](../icons/line/hobby-social-service.svg) [filled](../icons/filled/hobby-social-service.svg) |
+| `hobby-sports` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, sports | [line](../icons/line/hobby-sports.svg) [filled](../icons/filled/hobby-sports.svg) |
+| `hobby-swimming` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, swimming | [line](../icons/line/hobby-swimming.svg) [filled](../icons/filled/hobby-swimming.svg) |
+| `hobby-theater-events` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, acting, theater & events | [line](../icons/line/hobby-theater-events.svg) [filled](../icons/filled/hobby-theater-events.svg) |
+| `hobby-travelling` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, travelling | [line](../icons/line/hobby-travelling.svg) [filled](../icons/filled/hobby-travelling.svg) |
+| `hobby-trekking` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, trekking | [line](../icons/line/hobby-trekking.svg) [filled](../icons/filled/hobby-trekking.svg) |
+| `hobby-vegan` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, vegan | [line](../icons/line/hobby-vegan.svg) [filled](../icons/filled/hobby-vegan.svg) |
+| `hobby-walking` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, walking | [line](../icons/line/hobby-walking.svg) [filled](../icons/filled/hobby-walking.svg) |
+| `hobby-working-out` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, working out | [line](../icons/line/hobby-working-out.svg) [filled](../icons/filled/hobby-working-out.svg) |
+| `hobby-writing` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, writing | [line](../icons/line/hobby-writing.svg) [filled](../icons/filled/hobby-writing.svg) |
+| `hobby-yoga-meditation` | line 12/14/16/20/24, filled 12/14/16/20/24 | hobby, yoga & meditation | [line](../icons/line/hobby-yoga-meditation.svg) [filled](../icons/filled/hobby-yoga-meditation.svg) |
 | `home` | line 12/14/16/20/24, filled 12/14/16/20/24 | home, hometown, house, dashboard, home09, Home09 | [line](../icons/line/home.svg) [filled](../icons/filled/home.svg) |
 | `home-outline` | line 12/14/16/20/24, filled 12/14/16/20/24 | home outline, home, outline, house, hometown, home02, Home02 | [line](../icons/line/home-outline.svg) [filled](../icons/filled/home-outline.svg) |
 | `hourglass` | line 12/14/16/20/24, filled 12/14/16/20/24 | hourglass, waiting, pending, expiry, Hourglass | [line](../icons/line/hourglass.svg) [filled](../icons/filled/hourglass.svg) |
@@ -190,15 +228,12 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `invoice` | line 12/14/16/20/24, filled 12/14/16/20/24 | invoice, bill, receipt, payment history, invoice01, Invoice01 | [line](../icons/line/invoice.svg) [filled](../icons/filled/invoice.svg) |
 | `key` | line 12/14/16/20/24, filled 12/14/16/20/24 | key, password, access, login, key01, Key01 | [line](../icons/line/key.svg) [filled](../icons/filled/key.svg) |
 | `kissing` | line 12/14/16/20/24, filled 12/14/16/20/24 | kissing, romance, couple, love, Kissing | [line](../icons/line/kissing.svg) [filled](../icons/filled/kissing.svg) |
-| `lamp` | line 12/14/16/20/24, filled 12/14/16/20/24 | lamp, home decor, hobby, interest, lifestyle, Lamp | [line](../icons/line/lamp.svg) [filled](../icons/filled/lamp.svg) |
 | `language` | line 12/14/16/20/24, filled 12/14/16/20/24 | language, mother tongue, translate, Translate | [line](../icons/line/language.svg) [filled](../icons/filled/language.svg) |
 | `license` | line 12/14/16/20/24, filled 12/14/16/20/24 | license, document, verification, certificate, License | [line](../icons/line/license.svg) [filled](../icons/filled/license.svg) |
 | `light` | line 12/14/16/20/24, filled 12/14/16/20/24 | light, light mode, day, theme, brightness, sun03, Sun03 | [line](../icons/line/light.svg) [filled](../icons/filled/light.svg) |
-| `line-squiggle` | line 12/14/16/20/24, filled 12/14/16/20/24 | line squiggle, doodling, hobby, interest, lifestyle, LineSquiggle | [line](../icons/line/line-squiggle.svg) [filled](../icons/filled/line-squiggle.svg) |
 | `link` | line 12/14/16/20/24, filled 12/14/16/20/24 | link, url, hyperlink, connect, link04, Link04 | [line](../icons/line/link.svg) [filled](../icons/filled/link.svg) |
 | `link-rings` | line 12/14/16/20/24, filled 12/14/16/20/24 | rings, match, preference match, compatibility, couple, linked | [line](../icons/line/link-rings.svg) [filled](../icons/filled/link-rings.svg) |
 | `list-view` | line 12/14/16/20/24, filled 12/14/16/20/24 | list view, list, view, rows, left to right list bullet, LeftToRightListBullet | [line](../icons/line/list-view.svg) [filled](../icons/filled/list-view.svg) |
-| `live-streaming` | line 12/14/16/20/24, filled 12/14/16/20/24 | live streaming, content creation, hobby, interest, lifestyle, LiveStreaming03 | [line](../icons/line/live-streaming.svg) [filled](../icons/filled/live-streaming.svg) |
 | `loader-circle` | line 12/14/16/20/24, filled 12/14/16/20/24 | loader, loading, spinner, progress, busy, processing, wait, loader-circle, LoaderCircle | [line](../icons/line/loader-circle.svg) [filled](../icons/filled/loader-circle.svg) |
 | `location-add` | line 12/14/16/20/24, filled 12/14/16/20/24 | location add, location, add, add location, new city, location04, Location04 | [line](../icons/line/location-add.svg) [filled](../icons/filled/location-add.svg) |
 | `location-off` | line 12/14/16/20/24, filled 12/14/16/20/24 | location off, location, off, hidden location, location05, Location05 | [line](../icons/line/location-off.svg) [filled](../icons/filled/location-off.svg) |
@@ -211,37 +246,31 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `mail-open-love` | line 12/14/16/20/24, filled 12/14/16/20/24 | mail open love, mail, open, love, interest read, opened, MailOpenLove | [line](../icons/line/mail-open-love.svg) [filled](../icons/filled/mail-open-love.svg) |
 | `male` | line 12/14/16/20/24, filled 12/14/16/20/24 | male, man, groom, him, gender, male02, Male02 | [line](../icons/line/male.svg) [filled](../icons/filled/male.svg) |
 | `map` | line 12/14/16/20/24, filled 12/14/16/20/24 | map, location, nearby, maps, Maps | [line](../icons/line/map.svg) [filled](../icons/filled/map.svg) |
+| `marital-status` | line 12/14/16/20/24, filled 12/14/16/20/24 | marital status, married, never married, divorced, rings, wedding | [line](../icons/line/marital-status.svg) [filled](../icons/filled/marital-status.svg) |
 | `medal` | line 12/14/16/20/24, filled 12/14/16/20/24 | medal, badge, achievement, rank, medal01, Medal01 | [line](../icons/line/medal.svg) [filled](../icons/filled/medal.svg) |
+| `megaphone` | line 12/14/16/20/24, filled 12/14/16/20/24 | megaphone, announcement, promote, broadcast, news, tag, Tag Icons | [line](../icons/line/megaphone.svg) [filled](../icons/filled/megaphone.svg) |
+| `megaphone-02` | line 12/14/16/20/24, filled 12/14/16/20/24 | megaphone, announcement, promote, broadcast, news, tag | [line](../icons/line/megaphone-02.svg) [filled](../icons/filled/megaphone-02.svg) |
 | `menu` | line 12/14/16/20/24, filled 12/14/16/20/24 | menu, hamburger, navigation, drawer, menu01, Menu01 | [line](../icons/line/menu.svg) [filled](../icons/filled/menu.svg) |
 | `message` | line 12/14/16/20/24, filled 12/14/16/20/24 | message, sms, text, inbox, message01, Message01 | [line](../icons/line/message.svg) [filled](../icons/filled/message.svg) |
-| `mic` | line 12/14/16/20/24, filled 12/14/16/20/24 | mic, voice, audio, microphone, speak, mic vocal, MicVocal | [line](../icons/line/mic.svg) [filled](../icons/filled/mic.svg) |
-| `mic-02` | line 12/14/16/20/24, filled 12/14/16/20/24 | mic 02, stand ups, hobby, interest, lifestyle, Mic02 | [line](../icons/line/mic-02.svg) [filled](../icons/filled/mic-02.svg) |
-| `mic-off` | line 12/14/16/20/24, filled 12/14/16/20/24 | mic off, mic, off, muted, no audio, mic off01, MicOff01 | [line](../icons/line/mic-off.svg) [filled](../icons/filled/mic-off.svg) |
+| `mic` | line 12/14/16/20/24, filled 12/14/16/20/24 | mic, microphone, voice, audio, speak, record, mic on, unmute, Mic02 | [line](../icons/line/mic.svg) [filled](../icons/filled/mic.svg) |
+| `mic-off` | line 12/14/16/20/24, filled 12/14/16/20/24 | mic off, mute mic, muted, microphone off, no audio, MicOff02 | [line](../icons/line/mic-off.svg) [filled](../icons/filled/mic-off.svg) |
 | `minus-circle` | line 12/14/16/20/24, filled 12/14/16/20/24 | minus circle, minus, circle, remove, less, minus sign circle, MinusSignCircle | [line](../icons/line/minus-circle.svg) [filled](../icons/filled/minus-circle.svg) |
 | `minus-sign` | line 12/14/16/20/24, filled 12/14/16/20/24 | minus sign, minus, sign, remove, less, subtract, collapse, MinusSign | [line](../icons/line/minus-sign.svg) [filled](../icons/filled/minus-sign.svg) |
 | `money` | line 12/14/16/20/24, filled 12/14/16/20/24 | money, cash, salary, income, payment, money03, Money03 | [line](../icons/line/money.svg) [filled](../icons/filled/money.svg) |
 | `more-horizontal` | line 12/14/16/20/24, filled 12/14/16/20/24 | more horizontal, more, horizontal, ellipsis, overflow, options, dots, MoreHorizontal | [line](../icons/line/more-horizontal.svg) [filled](../icons/filled/more-horizontal.svg) |
 | `more-vertical` | line 12/14/16/20/24, filled 12/14/16/20/24 | more vertical, more, vertical, kebab, overflow, options, dots, MoreVertical | [line](../icons/line/more-vertical.svg) [filled](../icons/filled/more-vertical.svg) |
 | `mosque` | line 12/14/16/20/24, filled 12/14/16/20/24 | mosque, muslim, religion, mosque01, Mosque01 | [line](../icons/line/mosque.svg) [filled](../icons/filled/mosque.svg) |
-| `motorbike` | line 12/14/16/20/24, filled 12/14/16/20/24 | motorbike, biking, hobby, interest, lifestyle, Motorbike02 | [line](../icons/line/motorbike.svg) [filled](../icons/filled/motorbike.svg) |
 | `movies` | line 12/14/16/20/24, filled 12/14/16/20/24 | movies, cinema, films, entertainment, clapperboard, Clapperboard | [line](../icons/line/movies.svg) [filled](../icons/filled/movies.svg) |
 | `music` | line 12/14/16/20/24, filled 12/14/16/20/24 | music, song, hobby, music note01, MusicNote01 | [line](../icons/line/music.svg) [filled](../icons/filled/music.svg) |
-| `music-note` | line 12/14/16/20/24, filled 12/14/16/20/24 | music note, music, hobby, interest, lifestyle, MusicNote03 | [line](../icons/line/music-note.svg) [filled](../icons/filled/music-note.svg) |
 | `mute` | line 12/14/16/20/24, filled 12/14/16/20/24 | mute, silent, sound off, volume mute01, VolumeMute01 | [line](../icons/line/mute.svg) [filled](../icons/filled/mute.svg) |
 | `navigation` | line 12/14/16/20/24, filled 12/14/16/20/24 | navigation, directions, nearby, locate, navigation01, Navigation01 | [line](../icons/line/navigation.svg) [filled](../icons/filled/navigation.svg) |
-| `newspaper` | line 12/14/16/20/24, filled 12/14/16/20/24 | newspaper, news & politics, hobby, interest, lifestyle, Newspaper | [line](../icons/line/newspaper.svg) [filled](../icons/filled/newspaper.svg) |
-| `note-edit` | line 12/14/16/20/24, filled 12/14/16/20/24 | note edit, writing, hobby, interest, lifestyle, NoteEdit | [line](../icons/line/note-edit.svg) [filled](../icons/filled/note-edit.svg) |
 | `notebook` | line 12/14/16/20/24, filled 12/14/16/20/24 | notebook, notes, journal, diary, Notebook | [line](../icons/line/notebook.svg) [filled](../icons/filled/notebook.svg) |
 | `notification` | line 12/14/16/20/24, filled 12/14/16/20/24 | notification, bell, alert, reminder, updates, notification02, Notification02 | [line](../icons/line/notification.svg) [filled](../icons/filled/notification.svg) |
 | `notification-off` | line 12/14/16/20/24, filled 12/14/16/20/24 | notification off, notification, off, muted, do not disturb, silent, notification off01, NotificationOff01 | [line](../icons/line/notification-off.svg) [filled](../icons/filled/notification-off.svg) |
 | `office` | line 12/14/16/20/24, filled 12/14/16/20/24 | shield, safety, trust, protection, secure, shield01, Office | [line](../icons/line/office.svg) [filled](../icons/filled/office.svg) |
 | `org-chart` | line 12/14/16/20/24, filled 12/14/16/20/24 | org chart, org, chart, family tree, hierarchy, relations, hierarchy circle01, HierarchyCircle01 | [line](../icons/line/org-chart.svg) [filled](../icons/filled/org-chart.svg) |
 | `paint-board` | line 12/14/16/20/24, filled 12/14/16/20/24 | paint board, paint, board, hobby, art, creative, PaintBoard | [line](../icons/line/paint-board.svg) [filled](../icons/filled/paint-board.svg) |
-| `pan` | line 12/14/16/20/24, filled 12/14/16/20/24 | pan, cooking, hobby, interest, lifestyle, Pan03 | [line](../icons/line/pan.svg) [filled](../icons/filled/pan.svg) |
-| `party` | line 12/14/16/20/24, filled 12/14/16/20/24 | party, clubbing, hobby, interest, lifestyle, Party | [line](../icons/line/party.svg) [filled](../icons/filled/party.svg) |
 | `pause` | line 12/14/16/20/24, filled 12/14/16/20/24 | pause, hold, stop, Pause | [line](../icons/line/pause.svg) [filled](../icons/filled/pause.svg) |
-| `paw-print` | line 12/14/16/20/24, filled 12/14/16/20/24 | paw print, pets, hobby, interest, lifestyle, PawPrint | [line](../icons/line/paw-print.svg) [filled](../icons/filled/paw-print.svg) |
-| `pencil-ruler` | line 12/14/16/20/24, filled 12/14/16/20/24 | pencil ruler, designing, hobby, interest, lifestyle, PencilRuler | [line](../icons/line/pencil-ruler.svg) [filled](../icons/filled/pencil-ruler.svg) |
 | `percent-circle` | line 12/14/16/20/24, filled 12/14/16/20/24 | percent circle, percent, circle, discount, match score, PercentCircle | [line](../icons/line/percent-circle.svg) [filled](../icons/filled/percent-circle.svg) |
 | `person` | line 12/14/16/20/24, filled 12/14/16/20/24 | person, user, profile, member, account, User | [line](../icons/line/person.svg) [filled](../icons/filled/person.svg) |
 | `phone` | line 12/14/16/20/24, filled 12/14/16/20/24 | phone, call, dial, contact number, Call | [line](../icons/line/phone.svg) [filled](../icons/filled/phone.svg) |
@@ -269,12 +298,13 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `pictogram/koota-yoni` | pictogram 28/40/64/96 | koota, porutham, astro, kundali, yoni, guna | [pictogram png](../icons/pictogram/koota-yoni@2x.png) |
 | `pictogram/locked-photo` | pictogram 28/40/64/96 | locked photo, fpv, illustration | [pictogram png](../icons/pictogram/locked-photo@2x.png) |
 | `pictogram/mask` | pictogram 28/40/64/96 | mask, temperament, drama, astro guna | [pictogram png](../icons/pictogram/mask@2x.png) |
-| `pictogram/parent` | pictogram 28/40/64/96 | parent, managed by parent, family | [pictogram png](../icons/pictogram/parent@2x.png) |
+| `pictogram/parent` | pictogram 28/40/64/96 | parent, managed, family, trust | [pictogram png](../icons/pictogram/parent@2x.png) |
 | `pictogram/passport` | pictogram 28/40/64/96 | passport, destiny, travel, nri, document | [pictogram png](../icons/pictogram/passport@2x.png) |
 | `pictogram/premium-crown` | pictogram 28/40/64/96 | premium, crown, vip, upgrade | [pictogram png](../icons/pictogram/premium-crown@2x.png) |
 | `pictogram/premium-member` | pictogram 28/40/64/96 | premium member, crown, membership | [pictogram png](../icons/pictogram/premium-member@2x.png) |
 | `pictogram/scales` | pictogram 28/40/64/96 | scales, influence, balance, justice, astro guna | [pictogram png](../icons/pictogram/scales@2x.png) |
 | `pictogram/self-female` | pictogram 28/40/64/96 | self, managed by self, female | [pictogram png](../icons/pictogram/self-female@2x.png) |
+| `pictogram/self-male` | pictogram 28/40/64/96 | self, managed, male, trust | [pictogram png](../icons/pictogram/self-male@2x.png) |
 | `pictogram/shaadi-id` | pictogram 28/40/64/96 | shaadi id, id, verified, identity | [pictogram png](../icons/pictogram/shaadi-id@2x.png) |
 | `pictogram/tit-for-tat-education` | pictogram 28/40/64/96 | tit for tat education, fpv, illustration | [pictogram png](../icons/pictogram/tit-for-tat-education@2x.png) |
 | `pictogram/tit-for-tat-family` | pictogram 28/40/64/96 | tit for tat family, fpv, illustration | [pictogram png](../icons/pictogram/tit-for-tat-family@2x.png) |
@@ -287,7 +317,6 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `pictogram/verified-super` | pictogram 28/40/64/96 | verified, super verified, badge, gold | [pictogram png](../icons/pictogram/verified-super@2x.png) |
 | `pictogram/vip-shaadi` | pictogram 28/40/64/96 | vip, shaadi, elite, membership | [pictogram png](../icons/pictogram/vip-shaadi@2x.png) |
 | `pin` | line 12/14/16/20/24, filled 12/14/16/20/24 | pin, save, bookmark, Pin | [line](../icons/line/pin.svg) [filled](../icons/filled/pin.svg) |
-| `plant` | line 12/14/16/20/24, filled 12/14/16/20/24 | plant, gardening, hobby, interest, lifestyle, Plant02 | [line](../icons/line/plant.svg) [filled](../icons/filled/plant.svg) |
 | `play` | line 12/14/16/20/24, filled 12/14/16/20/24 | play, start, video, Play | [line](../icons/line/play.svg) [filled](../icons/filled/play.svg) |
 | `plus` | line 12/14/16/20/24, filled 12/14/16/20/24 | plus, add, new, create, more, plus sign, PlusSign | [line](../icons/line/plus.svg) [filled](../icons/filled/plus.svg) |
 | `plus-circle` | line 12/14/16/20/24, filled 12/14/16/20/24 | plus circle, plus, circle, add, new, create, plus sign circle, PlusSignCircle | [line](../icons/line/plus-circle.svg) [filled](../icons/filled/plus-circle.svg) |
@@ -296,15 +325,12 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `privacy` | line 12/14/16/20/24, filled 12/14/16/20/24 | privacy, private, privacy settings, profile privacy, who can see, hide profile, protection, secure, shield, user, shield-user, ShieldUser | [line](../icons/line/privacy.svg) [filled](../icons/filled/privacy.svg) |
 | `puzzle` | line 12/14/16/20/24, filled 12/14/16/20/24 | puzzle, hobby, interests, match pieces, Puzzle | [line](../icons/line/puzzle.svg) [filled](../icons/filled/puzzle.svg) |
 | `qr-code` | line 12/14/16/20/24, filled 12/14/16/20/24 | qr code, qr, code, scan, share profile, QrCode | [line](../icons/line/qr-code.svg) [filled](../icons/filled/qr-code.svg) |
-| `quill-write` | line 12/14/16/20/24, filled 12/14/16/20/24 | quill write, poetry, hobby, interest, lifestyle, QuillWrite01 | [line](../icons/line/quill-write.svg) [filled](../icons/filled/quill-write.svg) |
 | `refresh` | line 12/14/16/20/24, filled 12/14/16/20/24 | refresh, reload, sync, retry, update, refresh03, Refresh03 | [line](../icons/line/refresh.svg) [filled](../icons/filled/refresh.svg) |
 | `religion` | line 12/14/16/20/24, filled 12/14/16/20/24 | religion, community, faith, scripture, book, book01, Book02 | [line](../icons/line/religion.svg) [filled](../icons/filled/religion.svg) |
 | `repeat` | line 12/14/16/20/24, filled 12/14/16/20/24 | repeat, renew, auto renew, Repeat | [line](../icons/line/repeat.svg) [filled](../icons/filled/repeat.svg) |
-| `restaurant` | line 12/14/16/20/24, filled 12/14/16/20/24 | restaurant, foodie, hobby, interest, lifestyle, Restaurant01 | [line](../icons/line/restaurant.svg) [filled](../icons/filled/restaurant.svg) |
 | `rocket` | line 12/14/16/20/24, filled 12/14/16/20/24 | rocket, boost, launch, fast track, rocket01, Rocket01 | [line](../icons/line/rocket.svg) [filled](../icons/filled/rocket.svg) |
 | `rose` | line 12/14/16/20/24, filled 12/14/16/20/24 | rose, flower, romance, gift, Rose | [line](../icons/line/rose.svg) [filled](../icons/filled/rose.svg) |
 | `scan` | line 12/14/16/20/24, filled 12/14/16/20/24 | scan, qr, verify, Scan | [line](../icons/line/scan.svg) [filled](../icons/filled/scan.svg) |
-| `scissors` | line 12/14/16/20/24, filled 12/14/16/20/24 | scissors, diy crafts, hobby, interest, lifestyle, ScissorsLineDashed | [line](../icons/line/scissors.svg) [filled](../icons/filled/scissors.svg) |
 | `search` | line 12/14/16/20/24, filled 12/14/16/20/24 | search, find, look up, explore, discover, search02, Search02 | [line](../icons/line/search.svg) [filled](../icons/filled/search.svg) |
 | `security-check` | line 12/14/16/20/24, filled 12/14/16/20/24 | security check, security, check, verified, safe, trust, protection, SecurityCheck | [line](../icons/line/security-check.svg) [filled](../icons/filled/security-check.svg) |
 | `send` | line 12/14/16/20/24, filled 12/14/16/20/24 | send, sent, Sent | [line](../icons/line/send.svg) [filled](../icons/filled/send.svg) |
@@ -322,20 +348,17 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `sports` | line 12/14/16/20/24, filled 12/14/16/20/24 | sports, football, fitness, Football | [line](../icons/line/sports.svg) [filled](../icons/filled/sports.svg) |
 | `star` | line 12/14/16/20/24, filled 12/14/16/20/24 | star, rating, premium, featured, favourite, Star | [line](../icons/line/star.svg) [filled](../icons/filled/star.svg) |
 | `star-circle` | line 12/14/16/20/24, filled 12/14/16/20/24 | star circle, star, circle, featured, premium, top match, StarCircle | [line](../icons/line/star-circle.svg) [filled](../icons/filled/star-circle.svg) |
-| `star-face` | line 12/14/16/20/24, filled 12/14/16/20/24 | star face, anime, hobby, interest, lifestyle, StarFace | [line](../icons/line/star-face.svg) [filled](../icons/filled/star-face.svg) |
 | `star-square` | line 12/14/16/20/24, filled 12/14/16/20/24 | star square, star, square, featured, highlight, StarSquare | [line](../icons/line/star-square.svg) [filled](../icons/filled/star-square.svg) |
-| `start-up` | line 12/14/16/20/24, filled 12/14/16/20/24 | start up, entrepreneurship, hobby, interest, lifestyle, StartUp01 | [line](../icons/line/start-up.svg) [filled](../icons/filled/start-up.svg) |
 | `sticker` | line 12/14/16/20/24, filled 12/14/16/20/24 | sticker, emoji, reaction, Sticker | [line](../icons/line/sticker.svg) [filled](../icons/filled/sticker.svg) |
-| `swimming` | line 12/14/16/20/24, filled 12/14/16/20/24 | swimming, swimming, hobby, interest, lifestyle, Swimming | [line](../icons/line/swimming.svg) [filled](../icons/filled/swimming.svg) |
 | `tag` | line 12/14/16/20/24, filled 12/14/16/20/24 | tag, label, category, tag01, Tag01 | [line](../icons/line/tag.svg) [filled](../icons/filled/tag.svg) |
 | `tag/left-wing` | tag 12/14/16/20 |  | [tag png](../icons/tag/left-wing@2x.png) |
 | `tag/megaphone-03` | tag 12/14/16/20 |  | [tag](../icons/tag/megaphone-03.svg) |
+| `tag/offline` | tag 12/14/16/20 | offline, away, inactive, status dot, presence | [tag](../icons/tag/offline.svg) |
 | `tag/online` | tag 12/14/16/20 | online, active, status dot, presence, live | [tag](../icons/tag/online.svg) |
 | `tag/pin-location-01` | tag 12/14/16/20 |  | [tag](../icons/tag/pin-location-01.svg) |
 | `tag/right-wing` | tag 12/14/16/20 |  | [tag png](../icons/tag/right-wing@2x.png) |
 | `target` | line 12/14/16/20/24, filled 12/14/16/20/24 | target, goal, preference match, focus, target01, Target01 | [line](../icons/line/target.svg) [filled](../icons/filled/target.svg) |
 | `temple` | line 12/14/16/20/24, filled 12/14/16/20/24 | temple, hindu, religion, china temple, ChinaTemple | [line](../icons/line/temple.svg) [filled](../icons/filled/temple.svg) |
-| `theater` | line 12/14/16/20/24, filled 12/14/16/20/24 | theater, theater & events, hobby, interest, lifestyle, Theater | [line](../icons/line/theater.svg) [filled](../icons/filled/theater.svg) |
 | `thumbs-down` | line 12/14/16/20/24, filled 12/14/16/20/24 | thumbs down, thumbs, down, dislike, decline, no, reject, ThumbsDown | [line](../icons/line/thumbs-down.svg) [filled](../icons/filled/thumbs-down.svg) |
 | `thumbs-up` | line 12/14/16/20/24, filled 12/14/16/20/24 | thumbs up, thumbs, up, like, approve, yes, accept, ThumbsUp | [line](../icons/line/thumbs-up.svg) [filled](../icons/filled/thumbs-up.svg) |
 | `ticket` | line 12/14/16/20/24, filled 12/14/16/20/24 | ticket, coupon, voucher, offer, pass, ticket01, Ticket01 | [line](../icons/line/ticket.svg) [filled](../icons/filled/ticket.svg) |
@@ -343,7 +366,6 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `toggle-on` | line 12/14/16/20/24, filled 12/14/16/20/24 | toggle on, toggle, on, switch, enable, ToggleOn | [line](../icons/line/toggle-on.svg) [filled](../icons/filled/toggle-on.svg) |
 | `travel-bag` | line 12/14/16/20/24, filled 12/14/16/20/24 | travel bag, travel, bag, trip, holiday, TravelBag | [line](../icons/line/travel-bag.svg) [filled](../icons/filled/travel-bag.svg) |
 | `trelation` | line 12/14/16/20/24 | relation, you and her, couple, match, rings | [line](../icons/line/trelation.svg) |
-| `tv-play` | line 12/14/16/20/24, filled 12/14/16/20/24 | tv play, binge-watching, hobby, interest, lifestyle, TvMinimalPlay | [line](../icons/line/tv-play.svg) [filled](../icons/filled/tv-play.svg) |
 | `type` | line 12/14/16/20/24, filled 12/14/16/20/24 | type, text, font, typography, Text | [line](../icons/line/type.svg) [filled](../icons/filled/type.svg) |
 | `unavailable` | line 12/14/16/20/24, filled 12/14/16/20/24 | unavailable, not available, disabled, Unavailable | [line](../icons/line/unavailable.svg) [filled](../icons/filled/unavailable.svg) |
 | `university` | line 12/14/16/20/24, filled 12/14/16/20/24 | university, college, education, degree, qualification, University | [line](../icons/line/university.svg) [filled](../icons/filled/university.svg) |
@@ -365,16 +387,14 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `vip-badge` | misc 42 |  | [misc](../icons/misc/vip-badge.svg) |
 | `voice` | line 12/14/16/20/24, filled 12/14/16/20/24 | voice, voice note, audio message, Voice | [line](../icons/line/voice.svg) [filled](../icons/filled/voice.svg) |
 | `volume` | line 12/14/16/20/24, filled 12/14/16/20/24 | volume, sound, speaker, audio, volume high, VolumeHigh | [line](../icons/line/volume.svg) [filled](../icons/filled/volume.svg) |
-| `walking` | line 12/14/16/20/24, filled 12/14/16/20/24 | walking, walking, hobby, interest, lifestyle, Walking | [line](../icons/line/walking.svg) [filled](../icons/filled/walking.svg) |
 | `wallet` | line 12/14/16/20/24, filled 12/14/16/20/24 | wallet, payment, money, balance, pay, wallet01, Wallet01 | [line](../icons/line/wallet.svg) [filled](../icons/filled/wallet.svg) |
 | `wedding` | line 12/14/16/20/24, filled 12/14/16/20/24 | wedding, marriage, shaadi, married, Wedding | [line](../icons/line/wedding.svg) [filled](../icons/filled/wedding.svg) |
 | `weight` | line 12/14/16/20/24, filled 12/14/16/20/24 | weight, body, measure, weight scale, WeightScale | [line](../icons/line/weight.svg) [filled](../icons/filled/weight.svg) |
 | `whatsapp` | line 12/14/16/20/24, filled 12/14/16/20/24 | whatsapp, chat app, Whatsapp | [line](../icons/line/whatsapp.svg) [filled](../icons/filled/whatsapp.svg) |
+| `whatsapp-02` | line 12/14/16/20/24, filled 12/14/16/20/24 | whatsapp, chat, message, share, social, la whatsapp | [line](../icons/line/whatsapp-02.svg) [filled](../icons/filled/whatsapp-02.svg) |
+| `whatsapp-03` | line 12/14/16/20/24, filled 12/14/16/20/24 | whatsapp, chat, message, share, social | [line](../icons/line/whatsapp-03.svg) [filled](../icons/filled/whatsapp-03.svg) |
 | `wifi-off` | line 12/14/16/20/24, filled 12/14/16/20/24 | wifi off, wifi, off, offline, no internet, wifi off01, WifiOff01 | [line](../icons/line/wifi-off.svg) [filled](../icons/filled/wifi-off.svg) |
 | `work` | line 12/14/16/20/24, filled 12/14/16/20/24 | shield, safety, trust, protection, secure, shield01, Work | [line](../icons/line/work.svg) [filled](../icons/filled/work.svg) |
-| `workout-run` | line 12/14/16/20/24, filled 12/14/16/20/24 | workout run, running, hobby, interest, lifestyle, WorkoutRun | [line](../icons/line/workout-run.svg) [filled](../icons/filled/workout-run.svg) |
-| `workout-stretching` | line 12/14/16/20/24, filled 12/14/16/20/24 | workout stretching, aerobics/zumba, hobby, interest, lifestyle, WorkoutStretching | [line](../icons/line/workout-stretching.svg) [filled](../icons/filled/workout-stretching.svg) |
-| `yoga` | line 12/14/16/20/24, filled 12/14/16/20/24 | yoga, yoga & meditation, hobby, interest, lifestyle, Yoga02 | [line](../icons/line/yoga.svg) [filled](../icons/filled/yoga.svg) |
 | `zodiac-aquarius` | line 12/14/16/20/24, filled 12/14/16/20/24 | zodiac aquarius, zodiac, aquarius, rashi, kumbh, horoscope, ZodiacAquarius | [line](../icons/line/zodiac-aquarius.svg) [filled](../icons/filled/zodiac-aquarius.svg) |
 | `zodiac-aries` | line 12/14/16/20/24, filled 12/14/16/20/24 | zodiac aries, zodiac, aries, rashi, mesh, horoscope, ZodiacAries | [line](../icons/line/zodiac-aries.svg) [filled](../icons/filled/zodiac-aries.svg) |
 | `zodiac-cancer` | line 12/14/16/20/24, filled 12/14/16/20/24 | zodiac cancer, zodiac, cancer, rashi, kark, horoscope, ZodiacCancer | [line](../icons/line/zodiac-cancer.svg) [filled](../icons/filled/zodiac-cancer.svg) |

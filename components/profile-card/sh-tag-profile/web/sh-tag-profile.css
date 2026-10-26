@@ -1,0 +1,42 @@
+/*
+ * sh-tag-profile — web (HTML5 + CSS)
+ * Spec: ../sh-tag-profile.md · Figma node 2813:41954 · 7 types
+ *
+ * Built on sh-tag: each type is an sh-tag with fixed classes and a fixed icon (see sh-tag-profile.html).
+ * This file only adds what the tag itself doesn't have.
+ *
+ * Needs, loaded once per page (in this order):
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-tag/web/sh-tag.css · this file
+ *
+ *   Type          sh-tag classes                                          icon (paint)
+ *   Online        sh-tag--translucent-light sh-tag--sm sh-tag--pill       tag/online        12 (own colours)
+ *   Offline       sh-tag--translucent-light sh-tag--sm sh-tag--pill       tag/offline       12 (own colours)
+ *   You & Her     sh-tag--translucent-light sh-tag--sm sh-tag--no-border  line/link-rings   12 (sh-icon--brand)
+ *   Astro         sh-tag--translucent-light sh-tag--sm sh-tag--no-border  line/astro        12 (sh-icon--premium)
+ *   Promoted      sh-tag--sm  (White)                                     filled/megaphone-02 12 (icon/secondary)
+ *   Top Profile   sh-tag--sm  (White)                                     tag/left-wing + tag/right-wing 14 (own colours)
+ *   Distance      sh-tag--sm  (White)                                     tag/pin-location-01 14 (icon/secondary)
+ *
+ * Add `sh-tag-profile sh-tag-profile--<type>` to the same element for the parts below.
+ */
+
+/* Online / Offline: Figma binds the tag's corners to the radius role token for pills here. */
+.sh-tag-profile--online,
+.sh-tag-profile--offline { border-radius: var(--sh-radius-button); }
+
+/* Promoted, Top Profile and Distance sit on photos with the soft shadow (sh-shadow/soft on the root). */
+.sh-tag-profile--promoted,
+.sh-tag-profile--top-profile,
+.sh-tag-profile--distance {
+  box-shadow: var(--sh-shadow-soft-x) var(--sh-shadow-soft-y) var(--sh-shadow-soft-blur)
+              var(--sh-shadow-soft-spread) var(--sh-shadow-soft-color);
+}
+
+/* Top Profile laurel wings: PNG art 14 tall (sh-icon/size/14), width follows the art. */
+.sh-tag-profile__wing {
+  display: block;
+  flex: none;
+  width: auto;
+  height: var(--sh-icon-size-14);
+}

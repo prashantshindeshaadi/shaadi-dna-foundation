@@ -468,14 +468,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -499,14 +499,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -530,14 +530,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -561,14 +561,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -592,14 +592,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -616,21 +616,21 @@
       ]
     },
     "translucent/dark/extra-soft": {
-      "description": "sh-gradient/translucent/dark/extra-soft\nPurpose: Lightest dark glass, when the image needs minimal separation. Pair with the matching blur and border.",
+      "description": "sh-gradient/translucent/dark/extra-soft\nPurpose: Lightest dark glass, light at the top and darker at the bottom (the profile card info box). Pair with the matching blur and border.",
       "layers": [
         {
           "type": "linear",
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -654,24 +654,26 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
             {
               "position": 0,
-              "token": "sh-translucent/background/dark/soft/start"
+              "hex": "#0F172A",
+              "alpha": 0.28
             },
             {
               "position": 1,
-              "token": "sh-translucent/background/dark/soft/end"
+              "hex": "#0F172A",
+              "alpha": 0.14
             }
           ]
         }
@@ -685,14 +687,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -716,14 +718,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -747,14 +749,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -778,14 +780,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [
@@ -809,14 +811,14 @@
           "opacity": 1,
           "transform": [
             [
-              0.5,
-              0.5,
+              0,
+              1,
               0
             ],
             [
-              -0.5,
-              0.5,
-              0.5
+              -1,
+              0,
+              1
             ]
           ],
           "stops": [

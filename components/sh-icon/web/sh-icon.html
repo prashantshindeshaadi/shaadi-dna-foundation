@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sh-icon</title>
+<link rel="stylesheet" href="../../../dist/css/tokens.css">
+<link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+<link rel="stylesheet" href="sh-icon.css">
+<style>
+  body { margin: 0; padding: var(--sh-space-40); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+  h1 { margin: 0 0 var(--sh-space-24); }
+  h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sh-space-24); }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: var(--sh-space-8); min-width: var(--sh-space-80); }
+  .cell span:last-child { color: var(--sh-text-secondary); }
+  .dark { padding: var(--sh-space-16); border-radius: var(--sh-radius-lg); background: var(--sh-overlay-image-base); color: var(--sh-text-on-image); }
+</style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-icon</h1>
+
+  <h2 class="sh-title-md">Sizes (line · close)</h2>
+  <div class="row">
+    <div class="cell"><span class="sh-icon sh-icon--12" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span><span class="sh-support-label">12</span></div>
+    <div class="cell"><span class="sh-icon sh-icon--14" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span><span class="sh-support-label">14</span></div>
+    <div class="cell"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span><span class="sh-support-label">16</span></div>
+    <div class="cell"><span class="sh-icon sh-icon--20" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span><span class="sh-support-label">20</span></div>
+    <div class="cell"><span class="sh-icon sh-icon--24" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span><span class="sh-support-label">24</span></div>
+  </div>
+
+  <h2 class="sh-title-md">Paints</h2>
+  <div class="row">
+    <div class="cell"><span class="sh-icon sh-icon--24" style="--icon:url(../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-support-label">inherit</span></div>
+    <div class="cell"><span class="sh-icon sh-icon--24" style="--icon:url(../../../icons/line/astro.svg); --sh-icon-paint: var(--sh-icon-secondary)" aria-hidden="true"></span><span class="sh-support-label">colour token</span></div>
+    <div class="cell"><span class="sh-icon sh-icon--24 sh-icon--brand" style="--icon:url(../../../icons/line/link-rings.svg)" aria-hidden="true"></span><span class="sh-support-label">brand gradient</span></div>
+    <div class="cell"><span class="sh-icon sh-icon--24 sh-icon--premium" style="--icon:url(../../../icons/line/astro.svg)" aria-hidden="true"></span><span class="sh-support-label">premium gradient</span></div>
+    <div class="cell"><img class="sh-icon sh-icon--24" src="../../../icons/tag/online.svg" alt=""><span class="sh-support-label">own colours</span></div>
+  </div>
+
+  <h2 class="sh-title-md">Badges</h2>
+  <div class="row">
+    <div class="cell"><img class="sh-badge sh-badge--20" src="../../../icons/misc/verified-badge.svg" alt="Verified"><span class="sh-support-label">verified</span></div>
+    <div class="cell"><img class="sh-badge sh-badge--20" src="../../../icons/misc/premium-badge.svg" alt="Premium"><span class="sh-support-label">premium</span></div>
+    <div class="cell"><img class="sh-badge sh-badge--20" src="../../../icons/misc/vip-badge.svg" alt="VIP"><span class="sh-support-label">vip</span></div>
+  </div>
+
+  <h2 class="sh-title-md">On a photo</h2>
+  <div class="row dark">
+    <span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/image.svg)" aria-hidden="true"></span>
+    <span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/line/more-vertical.svg)" aria-hidden="true"></span>
+    <span class="sh-icon sh-icon--24" style="--icon:url(../../../icons/filled/photo-locked.svg)" aria-hidden="true"></span>
+  </div>
+</body>
+</html>

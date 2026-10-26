@@ -1,0 +1,52 @@
+/*
+ * sh-avatar-placeholder — web (HTML5 + CSS)
+ * Spec: ../sh-avatar-placeholder.md · Figma node 2239:13257
+ *
+ * Needs, loaded once per page: dist/css/tokens.css
+ *
+ * Gender × Aspect Ratio. Artwork is in ../assets/ (exported from Figma):
+ *   Male / Female             silhouettes  <gender>-4x5.svg, <gender>-1x1.svg  (+ @3x PNG)
+ *   Female / Male requested   soft portraits  <gender>-requested-4x5@3x.jpg, -1x1@3x.jpg
+ *
+ *   <span class="sh-avatar-placeholder sh-avatar-placeholder--female sh-avatar-placeholder--1x1" role="img" aria-label="No photo">
+ *     <img class="sh-avatar-placeholder__art" src="…/assets/female-1x1.svg" alt="">
+ *   </span>
+ *
+ * The span is the Figma frame (4:5 or 1:1); size it with width. The silhouettes overflow their frame
+ * (Figma: clip off, no fill), so the art is drawn at its exported size from the frame's top-left and is not clipped.
+ * Radius: 1:1 is bound to sh-radius/full, 4:5 to sh-radius/none. Only the requested portraits have a fill,
+ * so only they show the round corner (the 1:1 JPG has square corners baked in; the radius clips them).
+ */
+
+.sh-avatar-placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;                                /* Aspect Ratio=4:5 (Figma 160 × 200) */
+  border-radius: var(--sh-radius-none);
+}
+.sh-avatar-placeholder--1x1 {
+  aspect-ratio: 1;                                    /* Aspect Ratio=1:1 (Figma 160 × 160) */
+  border-radius: var(--sh-radius-full);
+}
+
+.sh-avatar-placeholder__art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;                                        /* art box = frame width; height follows the art */
+  height: auto;
+  max-width: none;
+}
+/* Male 4:5 art starts 3 px left of the frame and is 163 wide (Figma 160 frame) — exported proportions */
+.sh-avatar-placeholder--male.sh-avatar-placeholder--4x5 .sh-avatar-placeholder__art {
+  left: calc(-3 / 160 * 100%);
+  width: calc(163 / 160 * 100%);
+}
+
+/* Requested portraits fill the frame exactly and are clipped by its radius */
+.sh-avatar-placeholder--female-requested,
+.sh-avatar-placeholder--male-requested { overflow: hidden; }
+.sh-avatar-placeholder--female-requested .sh-avatar-placeholder__art,
+.sh-avatar-placeholder--male-requested .sh-avatar-placeholder__art { height: 100%; object-fit: cover; }

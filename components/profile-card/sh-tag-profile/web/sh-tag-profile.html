@@ -1,0 +1,81 @@
+<!doctype html>
+<!--
+  sh-tag-profile — web (HTML5 + CSS). All 7 types.
+  Spec: ../sh-tag-profile.md · Figma node 2813:41954
+  Run `python3 tools/build.py` once so dist/ exists. The "photo" is a neutral placeholder.
+
+  Two ways to write it, same result:
+    1. sh-tag classes + `sh-tag-profile sh-tag-profile--<type>` (below). The helper adds the soft shadow
+       (Promoted, Top Profile, Distance), the pill radius role (Online, Offline) and the wing sizing.
+    2. Just the sh-tag classes from the table in sh-tag-profile.css, if you add those three parts yourself.
+  The label can change (Distance: "2 km"); mode, size, shape, icon and paint are fixed per type.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-tag-profile</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-tag/web/sh-tag.css">
+  <link rel="stylesheet" href="sh-tag-profile.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    .photo { display: inline-flex; flex-wrap: wrap; gap: var(--sh-space-24); padding: var(--sh-space-20); border-radius: var(--sh-radius-card);
+             background: center / cover url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"); }
+    .cell { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--sh-space-8); }
+    .cell figcaption { color: var(--sh-text-on-image); }
+    .zoom { display: flex; flex-wrap: wrap; gap: var(--sh-space-12); zoom: 3; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-tag-profile</h1>
+
+  <h2 class="sh-title-md">Types</h2>
+  <div class="photo">
+      <figure class="cell"><figcaption class="sh-support-label">Type=Online</figcaption>
+        <!-- Type=Online -->
+        <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--pill sh-tag-profile sh-tag-profile--online"><img class="sh-icon sh-icon--12 sh-tag__icon" src="../../../../icons/tag/online.svg" alt=""><span class="sh-tag__label sh-support-label">Online</span></span>
+      </figure>
+      <figure class="cell"><figcaption class="sh-support-label">Type=You &amp; Her</figcaption>
+        <!-- Type=You &amp; Her -->
+        <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--no-border sh-tag-profile sh-tag-profile--you-and-her"><span class="sh-icon sh-icon--12 sh-tag__icon sh-icon--brand" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">You &amp; Her</span></span>
+      </figure>
+      <figure class="cell"><figcaption class="sh-support-label">Type=Astro</figcaption>
+        <!-- Type=Astro -->
+        <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--no-border sh-tag-profile sh-tag-profile--astro"><span class="sh-icon sh-icon--12 sh-tag__icon sh-icon--premium" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Astro</span></span>
+      </figure>
+      <figure class="cell"><figcaption class="sh-support-label">Type=Promoted</figcaption>
+        <!-- Type=Promoted -->
+        <span class="sh-tag sh-tag--sm sh-tag-profile sh-tag-profile--promoted"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../../icons/filled/megaphone-02.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Promoted</span></span>
+      </figure>
+      <figure class="cell"><figcaption class="sh-support-label">Type=Top Profile</figcaption>
+        <!-- Type=Top Profile -->
+        <span class="sh-tag sh-tag--sm sh-tag-profile sh-tag-profile--top-profile"><img class="sh-tag-profile__wing" src="../../../../icons/tag/left-wing@2x.png" alt=""><span class="sh-tag__label sh-support-label">Top Profile</span><img class="sh-tag-profile__wing" src="../../../../icons/tag/right-wing@2x.png" alt=""></span>
+      </figure>
+      <figure class="cell"><figcaption class="sh-support-label">Type=Distance</figcaption>
+        <!-- Type=Distance -->
+        <span class="sh-tag sh-tag--sm sh-tag-profile sh-tag-profile--distance"><span class="sh-icon sh-icon--14 sh-tag__icon" style="--icon:url(../../../../icons/tag/pin-location-01.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">20 km</span></span>
+      </figure>
+      <figure class="cell"><figcaption class="sh-support-label">Type=Offline</figcaption>
+        <!-- Type=Offline -->
+        <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--pill sh-tag-profile sh-tag-profile--offline"><img class="sh-icon sh-icon--12 sh-tag__icon" src="../../../../icons/tag/offline.svg" alt=""><span class="sh-tag__label sh-support-label">Offline</span></span>
+      </figure>
+  </div>
+
+  <h2 class="sh-title-md">Detail at 3×</h2>
+  <div class="photo">
+    <div class="zoom">
+      <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--pill sh-tag-profile sh-tag-profile--online"><img class="sh-icon sh-icon--12 sh-tag__icon" src="../../../../icons/tag/online.svg" alt=""><span class="sh-tag__label sh-support-label">Online</span></span>
+      <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--no-border sh-tag-profile sh-tag-profile--you-and-her"><span class="sh-icon sh-icon--12 sh-tag__icon sh-icon--brand" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">You &amp; Her</span></span>
+      <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--no-border sh-tag-profile sh-tag-profile--astro"><span class="sh-icon sh-icon--12 sh-tag__icon sh-icon--premium" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Astro</span></span>
+      <span class="sh-tag sh-tag--sm sh-tag-profile sh-tag-profile--promoted"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../../icons/filled/megaphone-02.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Promoted</span></span>
+      <span class="sh-tag sh-tag--sm sh-tag-profile sh-tag-profile--top-profile"><img class="sh-tag-profile__wing" src="../../../../icons/tag/left-wing@2x.png" alt=""><span class="sh-tag__label sh-support-label">Top Profile</span><img class="sh-tag-profile__wing" src="../../../../icons/tag/right-wing@2x.png" alt=""></span>
+      <span class="sh-tag sh-tag--sm sh-tag-profile sh-tag-profile--distance"><span class="sh-icon sh-icon--14 sh-tag__icon" style="--icon:url(../../../../icons/tag/pin-location-01.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">20 km</span></span>
+      <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--pill sh-tag-profile sh-tag-profile--offline"><img class="sh-icon sh-icon--12 sh-tag__icon" src="../../../../icons/tag/offline.svg" alt=""><span class="sh-tag__label sh-support-label">Offline</span></span>
+    </div>
+  </div>
+</body>
+</html>

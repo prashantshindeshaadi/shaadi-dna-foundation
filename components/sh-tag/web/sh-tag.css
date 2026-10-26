@@ -1,0 +1,96 @@
+/*
+ * sh-tag — web (HTML5 + CSS)
+ * Spec: ../sh-tag.md · Figma node 2357:23671 · 20 variants (Mode × Size × Shape)
+ *
+ * Needs, loaded once per page (in this order):
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-support-label
+ *   components/sh-icon/web/sh-icon.css           .sh-icon
+ *
+ *   <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--pill">
+ *     <span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(…/icons/line/tag.svg)" aria-hidden="true"></span>
+ *     <span class="sh-tag__label sh-support-label">Tag</span>
+ *   </span>
+ *
+ * Modifiers
+ *   Mode   (none) White · --dark · --translucent-light · --translucent-dark · --strong
+ *   Size   (none) Medium · --sm Small
+ *   Shape  (none) Rounded · --pill
+ *   --no-border   Figma "Show border" off (the edge only exists on the translucent modes)
+ *   --outline     Figma "Show outline". Not wired to any layer in Figma, so it changes nothing yet.
+ *   Leading / trailing icon: put an .sh-icon.sh-tag__icon before / after the label (or leave it out).
+ *
+ * Every colour, space, radius, stroke and gradient is a DNA token. Not interactive: no states.
+ */
+
+.sh-tag {
+  position: relative;                 /* the Border layer sits on top, absolute */
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-2);
+  height: calc(var(--sh-space-20) + var(--sh-space-2));   /* no token: Medium is a fixed 22 tall in Figma */
+  /* optical padding, as in Figma: 4 on the icon side, 6 after the label */
+  padding: var(--sh-space-2) var(--sh-space-6) var(--sh-space-2) var(--sh-space-4);
+  border-radius: var(--sh-radius-xs);
+  white-space: nowrap;
+  vertical-align: middle;
+
+  /* Mode=White */
+  background: var(--sh-background-default);
+  color: var(--sh-text-secondary);                 /* Label */
+  --sh-tag-icon-color: var(--sh-icon-secondary);   /* glyph, unless the icon carries its own paint */
+}
+
+.sh-tag__label { flex: none; }
+
+/* An icon with no paint of its own takes the mode's icon colour.
+   .sh-icon--brand / --premium / --sh-icon-paint and <img> art keep theirs. */
+.sh-tag__icon { color: var(--sh-tag-icon-color); }
+
+/* ---- Mode ---------------------------------------------------------------- */
+.sh-tag--dark {
+  background: var(--sh-background-inverse);
+  color: var(--sh-text-inverse);
+  --sh-tag-icon-color: var(--sh-icon-inverse);
+}
+.sh-tag--translucent-light {
+  background: var(--sh-gradient-translucent-light-extra-soft);
+  color: var(--sh-text-on-image);
+  --sh-tag-icon-color: var(--sh-icon-on-image);
+  --sh-tag-edge: var(--sh-gradient-translucent-border-light);
+}
+.sh-tag--translucent-dark {
+  background: var(--sh-gradient-translucent-dark-extra-soft);
+  color: var(--sh-text-on-image);
+  --sh-tag-icon-color: var(--sh-icon-on-image);
+  --sh-tag-edge: var(--sh-gradient-translucent-border-dark);
+}
+.sh-tag--strong {
+  background: var(--sh-background-strong);
+  color: var(--sh-text-secondary);
+  --sh-tag-icon-color: var(--sh-icon-secondary);
+}
+
+/* ---- Size / Shape -------------------------------------------------------- */
+.sh-tag--sm   { height: var(--sh-space-20); }      /* no token: Small is a fixed 20 tall in Figma */
+.sh-tag--pill { border-radius: var(--sh-radius-full); }
+
+/* ---- Border: Figma's absolute "Border" layer, a thin gradient edge drawn INSIDE the tag.
+   Only the translucent modes paint it (White, Dark and Strong have an empty Border layer). */
+.sh-tag--translucent-light::after,
+.sh-tag--translucent-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: var(--sh-stroke-thin);
+  background: var(--sh-tag-edge);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+.sh-tag--no-border::after { content: none; }

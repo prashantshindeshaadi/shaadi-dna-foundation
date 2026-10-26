@@ -101,6 +101,11 @@ Dynamic Type.
   Side effects: next to another font on the same line (Hindi, Marathi system
   fallback) Lexend-SH sits 3% higher, and cap-height trimming (Figma vertical
   trim, CSS `text-box-trim`) is 30 units out.
+- Update 2026-10-23 (still 1.009): capital **I** and **J** (and their accented
+  forms) now use the former `ss01` alternates by default. **I** is narrower
+  (Regular 464 → 308 units), so lines with a capital I get slightly shorter.
+  Replace the font everywhere (Font Book, web, Android, iOS); the name and
+  version are unchanged, so apps keep the old file until restarted.
 
 ## Licence
 

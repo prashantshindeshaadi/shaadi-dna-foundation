@@ -63,7 +63,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Tagline / Line 1 | text style | sh-typo/Heading/LG |
 | Tagline / Line 2 | fill | text/primary |
 | Tagline / Line 2 | text style | sh-typo/Heading/LG |
-| sh-divider | radius | sh-radius/xxs |
+| sh-divider | radius | sh-radius/full |
 | Crafted | gap | sh-space/4 |
 | Crafted / Crafted label | fill | text/secondary |
 | Crafted / Crafted label | text style | sh-typo/Body/MD/Default |

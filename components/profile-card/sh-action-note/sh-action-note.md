@@ -1,8 +1,6 @@
 # sh-action-note
 
-**Purpose:** one-line note above card actions. Type Pre-written message = a message the member can edit before sending (muted, + Edit); Action = a prompt to act, usually upgrade (full strength, + Upgrade Now). Style In card or Floating; put the link in Link slot.
-
-**Keywords:** note, pre-written message, personal note, edit message, upgrade prompt, action note
+**Purpose:** One line above the actions. CTA = Edit (pre-written message) or Upgrade (premium action). Style follows the island it sits in.
 
 Profile card (migration, not yet core) · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16750) (node `2594:16750`)
 
@@ -10,21 +8,21 @@ Profile card (migration, not yet core) · 4 variants · [Open in Figma](https://
 
 ## Types
 
-### Type=Pre-written message, Style=In card
+### CTA=Edit, Style=Normal
 
-**Purpose:** pre-written message the member can edit before sending, shown muted (e.g. "Hey Sneha, I came across your profile…" + Edit), inside a card.
+**Purpose:** The pre-written message the member can edit before sending, with an Edit link. Normal: on the card photo.
 
-### Type=Pre-written message, Style=Floating
+### CTA=Edit, Style=Floating
 
-**Purpose:** pre-written message the member can edit before sending, shown muted (e.g. "Hey Sneha, I came across your profile…" + Edit), on a floating surface.
+**Purpose:** The pre-written message the member can edit before sending, with an Edit link. Floating: on a light surface.
 
-### Type=Action, Style=In card
+### CTA=Upgrade, Style=Normal
 
-**Purpose:** action prompt with a link, full strength (e.g. "To contact her directly" + Upgrade Now), inside a card.
+**Purpose:** A locked action with an Upgrade link for free members. Normal: on the card photo.
 
-### Type=Action, Style=Floating
+### CTA=Upgrade, Style=Floating
 
-**Purpose:** action prompt with a link, full strength (e.g. "To contact her directly" + Upgrade Now), on a floating surface.
+**Purpose:** A locked action with an Upgrade link for free members. Floating: on a light surface.
 
 ## Properties
 
@@ -33,17 +31,17 @@ Profile card (migration, not yet core) · 4 variants · [Open in Figma](https://
 | Link slot | slot | — |  |
 | Message | text | — | Hey Sneha, I came across your profile. It felt true to me. |
 | Action text | text | — | To contact her directly |
-| Type | variant | Pre-written message, Action | Pre-written message |
-| Style | variant | In card, Floating | In card |
+| CTA | variant | Edit, Upgrade | Edit |
+| Style | variant | Floating, Normal | Normal |
 
 ## Anatomy
 
-Layer tree of `Type=Pre-written message, Style=In card`. Nested components are shown by name; their internals live in their own blueprint.
+Layer tree of `CTA=Edit, Style=Normal`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — row
   - Note — text "Hey Sneha, I came across your profile. It felt true to me."
   - Link slot — row · hug × hug
-    - sh-text-link — **sh-text-link** (Trailing icon instance, Leading icon instance, Label Edit, Type Inverse, Size Small, State Default, Border Solid)
+    - sh-text-link — **sh-text-link** (Leading icon instance, Trailing icon instance, Label Edit, Type Inverse, Size Small, State Default)
 
 ## Size
 
@@ -58,17 +56,13 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | gap | sh-space/8 |
 | root | opacity | sh-opacity/full *(set on 2/4 variants)* |
 | Note | opacity | sh-opacity/strong *(set on 2/4 variants)* |
-| Note | fill | Style=In card → text/on-image; Style=Floating → text/secondary |
-| Note | text:lineHeight | sh-typo/body/sm/default/line-height *(set on 2/4 variants)* |
-| Note | text:letterSpacing | sh-typo/body/sm/default/letter-spacing *(set on 2/4 variants)* |
-| Note | text:paragraphSpacing | sh-typo/body/sm/default/paragraph-spacing *(set on 2/4 variants)* |
-| Note | text:fontSize | sh-typo/body/sm/default/size *(set on 2/4 variants)* |
+| Note | fill | Style=Normal → text/on-image; Style=Floating → text/secondary |
+| Note | text style | CTA=Edit → sh-typo/Body/SM/Italic; CTA=Upgrade → sh-typo/Body/SM/Default |
 | Link slot | opacity | sh-opacity/strong *(set on 1/4 variants)* |
-| Link slot / sh-text-link | gap | sh-space/4 |
+| Link slot / sh-text-link | gap | sh-space/2 |
 | root | padding | sh-space/12 *(set on 2/4 variants)* |
 | root | radius | sh-radius/lg *(set on 2/4 variants)* |
 | root | effect | sh-shadow/floating *(set on 2/4 variants)* |
 | Surface | radius | sh-radius/default *(set on 2/4 variants)* |
 | Surface | stroke | sh-gradient/translucent/border/light *(set on 2/4 variants)* |
 | Link slot / sh-text-link | opacity | sh-opacity/strong *(set on 1/4 variants)* |
-| Note | text style | sh-typo/Body/SM/Default *(set on 2/4 variants)* |

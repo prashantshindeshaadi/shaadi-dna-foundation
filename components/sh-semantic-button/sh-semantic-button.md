@@ -37,15 +37,15 @@ Layer tree of `Intent=Success, Type=Solid, Size=Large, State=Default`. Nested co
   - Trailing icon — row · hug × hug
     - Trailing icon — **sh-icon/arrow-down-01** (Type Line, Size 20)
   - Spinner — row · hidden by default · hug × hug
-    - Spinner — **sh-icon/loader** (Type Line, Size 20)
+    - Spinner — **sh-icon/loader-circle** (Type Line, Size 20)
 
 ## Sizes
 
 | Size | Width × height | Padding | Gap |
 |---|---|---|---|
-| Large | 145 × 48 | — | sh-space/6 |
-| Medium | 119 × 40 | — | sh-space/4 |
-| Small | 92 × 28 | — | sh-space/2 |
+| Large | 141 × 48 | — | sh-space/4 |
+| Medium | 115 × 40 | — | sh-space/2 |
+| Small | 100 × 28 | sh-space/16 | sh-space/2 |
 
 ## Tokens
 
@@ -53,7 +53,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
-| root | gap | Size=Large → sh-space/6; Size=Medium → sh-space/4; Size=Small → sh-space/2 |
+| root | gap | Size=Large → sh-space/4; Size=Medium → sh-space/2; Size=Small → sh-space/2 |
 | root | fill | semantic/success/background/solid/default ← Intent=Success, Type=Solid, State=Default / Intent=Success, Type=Solid, State=Focus / Intent=Success, Type=Solid, State=Loading; semantic/success/background/solid/hover ← Intent=Success, Type=Solid, State=Hover; semantic/success/background/solid/pressed ← Intent=Success, Type=Solid, State=Pressed; background/disabled ← Intent=Success, Type=Solid, State=Disabled / Intent=Success, Type=Soft, State=Disabled / Intent=Error, Type=Solid, State=Disabled / Intent=Error, Type=Soft, State=Disabled / Intent=Warning, Type=Solid, State=Disabled / Intent=Warning, Type=Soft, State=Disabled …; semantic/success/background/soft/default ← Intent=Success, Type=Soft, State=Default / Intent=Success, Type=Soft, State=Focus / Intent=Success, Type=Soft, State=Loading; semantic/success/background/soft/hover ← Intent=Success, Type=Soft, State=Hover / Intent=Success, Type=Ghost, State=Hover; semantic/success/background/soft/pressed ← Intent=Success, Type=Soft, State=Pressed / Intent=Success, Type=Ghost, State=Pressed; semantic/error/background/solid/default ← Intent=Error, Type=Solid, State=Default / Intent=Error, Type=Solid, State=Focus / Intent=Error, Type=Solid, State=Loading; semantic/error/background/solid/hover ← Intent=Error, Type=Solid, State=Hover; semantic/error/background/solid/pressed ← Intent=Error, Type=Solid, State=Pressed; semantic/error/background/soft/default ← Intent=Error, Type=Soft, State=Default / Intent=Error, Type=Soft, State=Focus / Intent=Error, Type=Soft, State=Loading; semantic/error/background/soft/hover ← Intent=Error, Type=Soft, State=Hover / Intent=Error, Type=Ghost, State=Hover; semantic/error/background/soft/pressed ← Intent=Error, Type=Soft, State=Pressed / Intent=Error, Type=Ghost, State=Pressed; semantic/warning/background/solid/default ← Intent=Warning, Type=Solid, State=Default / Intent=Warning, Type=Solid, State=Focus / Intent=Warning, Type=Solid, State=Loading; semantic/warning/background/solid/hover ← Intent=Warning, Type=Solid, State=Hover; semantic/warning/background/solid/pressed ← Intent=Warning, Type=Solid, State=Pressed; semantic/warning/background/soft/default ← Intent=Warning, Type=Soft, State=Default / Intent=Warning, Type=Soft, State=Focus / Intent=Warning, Type=Soft, State=Loading; semantic/warning/background/soft/hover ← Intent=Warning, Type=Soft, State=Hover / Intent=Warning, Type=Ghost, State=Hover; semantic/warning/background/soft/pressed ← Intent=Warning, Type=Soft, State=Pressed / Intent=Warning, Type=Ghost, State=Pressed; semantic/information/background/solid/default ← Intent=Information, Type=Solid, State=Default / Intent=Information, Type=Solid, State=Focus / Intent=Information, Type=Solid, State=Loading; semantic/information/background/solid/hover ← Intent=Information, Type=Solid, State=Hover; semantic/information/background/solid/pressed ← Intent=Information, Type=Solid, State=Pressed; semantic/information/background/soft/default ← Intent=Information, Type=Soft, State=Default / Intent=Information, Type=Soft, State=Focus / Intent=Information, Type=Soft, State=Loading; semantic/information/background/soft/hover ← Intent=Information, Type=Soft, State=Hover / Intent=Information, Type=Ghost, State=Hover; semantic/information/background/soft/pressed ← Intent=Information, Type=Soft, State=Pressed / Intent=Information, Type=Ghost, State=Pressed; background/transparent ← Intent=Success, Type=Ghost, State=Default / Intent=Success, Type=Ghost, State=Focus / Intent=Success, Type=Ghost, State=Loading / Intent=Error, Type=Ghost, State=Default / Intent=Error, Type=Ghost, State=Focus / Intent=Error, Type=Ghost, State=Loading … |
 | Leading icon / Leading icon | width | Size=Large → sh-icon/size/20; Size=Medium → sh-icon/size/16; Size=Small → sh-icon/size/12 *(set on 180/216 variants)* |
 | Leading icon / Leading icon | height | Size=Large → sh-icon/size/20; Size=Medium → sh-icon/size/16; Size=Small → sh-icon/size/12 *(set on 180/216 variants)* |
@@ -65,4 +65,5 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Spinner / Spinner | height | Size=Large → sh-icon/size/20; Size=Medium → sh-icon/size/16; Size=Small → sh-icon/size/14 |
 | .focus-ring | opacity | sh-opacity/strong *(set on 36/216 variants)* |
 | .focus-ring | stroke | border/focus *(set on 36/216 variants)* |
+| root | padding-x | sh-space/16 *(set on 72/216 variants)* |
 | root | stroke | semantic/success/border/default ← Intent=Success, State=Default / Intent=Success, State=Hover / Intent=Success, State=Pressed / Intent=Success, State=Focus / Intent=Success, State=Loading; border/disabled ← Intent=Success, State=Disabled / Intent=Error, State=Disabled / Intent=Warning, State=Disabled / Intent=Information, State=Disabled; semantic/error/border/default ← Intent=Error, State=Default / Intent=Error, State=Hover / Intent=Error, State=Pressed / Intent=Error, State=Focus / Intent=Error, State=Loading; semantic/warning/border/default ← Intent=Warning, State=Default / Intent=Warning, State=Hover / Intent=Warning, State=Pressed / Intent=Warning, State=Focus / Intent=Warning, State=Loading; semantic/information/border/default ← Intent=Information, State=Default / Intent=Information, State=Hover / Intent=Information, State=Pressed / Intent=Information, State=Focus / Intent=Information, State=Loading *(set on 72/216 variants)* |

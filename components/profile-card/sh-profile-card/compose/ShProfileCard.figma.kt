@@ -16,13 +16,13 @@ class ShProfileCardDoc {
     val type: ShProfileCardType = Figma.mapping(
         "Connect" to ShProfileCardType.Connect,
         "Received" to ShProfileCardType.Received,
-        "Connected" to ShProfileCardType.Connected,
-        "Locked" to ShProfileCardType.Locked,
+        "Post-Connect" to ShProfileCardType.PostConnect,
+        "Gated" to ShProfileCardType.Gated,
         "No photo" to ShProfileCardType.NoPhoto,
         "Photo requested" to ShProfileCardType.PhotoRequested,
         "Blocked" to ShProfileCardType.Blocked,
-        "Hidden" to ShProfileCardType.Hidden,
         "VIP" to ShProfileCardType.Vip,
+        "With Overlay" to ShProfileCardType.WithOverlay,
     )
 
     @FigmaProperty(FigmaType.Boolean, "Show top tags")
@@ -31,13 +31,17 @@ class ShProfileCardDoc {
     @FigmaProperty(FigmaType.Boolean, "Show photo actions")
     val showPhotoActions: Boolean = true
 
-    private val member = ShProfileMember(name = "Name", age = 26)
+    private val member = ShProfileMember(
+        name = "Name", age = 26, photoCount = 10, isVerified = true,
+        detailRows = listOf(listOf("Fact", "Fact")), tags = listOf(ShTagProfileType.YouAndHer, ShTagProfileType.Astro),
+        topTag = ShTagProfileType.Promoted, message = "Pre-written message",
+    )
 
     @Composable
     fun ComponentExample() {
         ShProfileCard(
             type = type,
-            member = member,                      // ShProfileMember(name, age, photo, detailRows, tags, …)
+            member = member,
             showTopTags = showTopTags,
             showPhotoActions = showPhotoActions,
             actions = ShProfileCardActions(

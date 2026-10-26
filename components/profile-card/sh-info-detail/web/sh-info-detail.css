@@ -1,0 +1,50 @@
+/*
+ * sh-info-detail — web (HTML5 + CSS)
+ * Spec: ../sh-info-detail.md · Figma node 2825:43215 · Mode On image / Default × Size Medium / Small
+ *
+ * Needs, loaded once per page: dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · this file
+ *
+ *   One fact:   <span class="sh-info-detail sh-info-detail--on-image sh-info-detail--md">
+ *                 <span class="sh-info-detail__label sh-body-md">5′ 6″</span>
+ *                 <span class="sh-info-detail__separator" aria-hidden="true"></span>   ← Show separator
+ *               </span>
+ *   A row:      <p class="sh-info-detail-row [sh-info-detail-row--sm]"> facts … </p>
+ *               Every fact has a separator except the last one of the row.
+ *
+ * Modifiers   Mode: --on-image (text/on-image) · --default (text/secondary)
+ *             Size: --md (Body/MD/Default, gap 8) · --sm (Body/SM/Tight, gap 6) — label class sh-body-md / sh-body-sm-tight
+ * Not interactive: no states.
+ */
+
+.sh-info-detail {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-8);
+  white-space: nowrap;
+  color: var(--sh-text-on-image);          /* Mode=On image: label + separator */
+}
+.sh-info-detail--default { color: var(--sh-text-secondary); }
+.sh-info-detail--md      { gap: var(--sh-space-8); }
+.sh-info-detail--sm      { gap: var(--sh-space-6); }
+
+.sh-info-detail__separator {
+  flex: none;
+  width: 3px;                               /* no token: Figma's separator dot is an unbound 3 × 3 ellipse */
+  height: 3px;
+  border-radius: var(--sh-radius-full);
+  background: currentColor;
+  opacity: var(--sh-opacity-strong);
+}
+
+/* Row helper: facts wrap; the gap between facts equals the fact's own label-to-dot gap,
+   so the dot sits centred between two facts. Lines are 2 apart (profile card "Details"). */
+.sh-info-detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--sh-space-8);
+  row-gap: var(--sh-space-2);
+  margin: 0;
+}
+.sh-info-detail-row--sm { column-gap: var(--sh-space-6); }

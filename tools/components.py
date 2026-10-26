@@ -353,7 +353,8 @@ def write_index(entries):
         for e in sorted(by_group[folder], key=lambda e: e["name"]):
             L.append(f"| `{e['name']}` | {e['variants']} | {e['props']} | [{e['file']}]({e['file']}) | [`{e['id']}`]({figma_url(e['id'])}) |")
         L.append("")
-    L += ["## Icons", "", "[icons.md](icons.md) — the icon map; SVGs in `../icons/`.", ""]
+    L += ["## Icons", "", "[icons.md](icons.md) — the icon map; SVGs in `../icons/`. Drawing them in code (web, Compose, SwiftUI):",
+          "[sh-icon/sh-icon.md](sh-icon/sh-icon.md).", ""]
     open(os.path.join(COMPONENTS, "README.md"), "w").write("\n".join(L))
 
 

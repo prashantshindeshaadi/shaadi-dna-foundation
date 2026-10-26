@@ -43,6 +43,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Title group / Badge | width | sh-icon/pictogram/size/28 |
 | Title group / Badge | height | sh-icon/pictogram/size/28 |
 | Action | gap | sh-space/2 |
-| Action | padding-x | sh-space/12 |
+| Action | padding-x | sh-space/16 |
+| Action | padding-y | sh-space/8 |
 | Action | radius | sh-radius/full |
 | Action | fill | premium/background/soft/default |

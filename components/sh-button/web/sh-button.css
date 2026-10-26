@@ -1,0 +1,207 @@
+/*
+ * sh-button — web (HTML5 + CSS)
+ * Spec: ../sh-button.md · Figma node 163:1301 (6 Types × 3 Sizes × 6 States = 108 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   Lexend-SH + .sh-button-lg/md/sm, .sh-support-meta
+ *   components/sh-icon/web/sh-icon.css           .sh-icon mask class
+ *
+ *   <button class="sh-button sh-button--primary sh-button--md" type="button">
+ *     <span class="sh-button__icon sh-icon" style="--icon:url(icons/filled/check.svg)" aria-hidden="true"></span>
+ *     <span class="sh-button__text"><span class="sh-button__label sh-button-md">Connect</span></span>
+ *     <span class="sh-button__icon sh-icon" style="--icon:url(icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+ *   </button>
+ *
+ * Type   .sh-button--primary | --secondary | --tertiary | --ghost | --premium-solid | --premium-soft
+ * Size   .sh-button--lg (48) | --md (40) | --sm (32). The size sets padding, gap and icon size (20 / 16 / 12);
+ *        put the matching text style on the label: sh-button-lg | sh-button-md | sh-button-sm.
+ * State  Hover :hover · Pressed :active · Focus :focus-visible · Disabled [disabled] or [aria-disabled="true"]
+ *        Loading .is-loading + aria-busy="true" + a spinner child (below). Hover/Pressed/Focus can be forced
+ *        for previews with .is-hover / .is-pressed / .is-focus.
+ * Sublabel  <span class="sh-button__sublabel sh-support-meta">…</span> after the label, inside __text.
+ * Loading   <span class="sh-button__spinner sh-icon" style="--icon:url(icons/line/loader-circle.svg)" aria-hidden="true"></span>
+ * Fill      .sh-button--fill stretches to the container. Lone button max 200 is the container's job.
+ *
+ * Every value is a DNA token; the only composed values are marked "no token".
+ */
+
+.sh-button {
+  /* Type (Primary by default) */
+  --_bg: var(--sh-gradient-brand-default);
+  --_bg-hover: var(--sh-gradient-brand-hover);
+  --_bg-pressed: var(--sh-gradient-brand-pressed);
+  --_fg: var(--sh-button-primary-text-default);
+  --_icon: var(--sh-button-primary-icon-default);
+  /* Size (Medium by default) */
+  --_pad-y: var(--sh-space-10);
+  --_pad-x: var(--sh-space-16);
+  --_gap: var(--sh-space-2);
+  --_icon-size: var(--sh-icon-size-16);
+  --_line: var(--sh-typo-button-md-line-height);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--_gap);
+  height: calc(var(--_line) + 2 * var(--_pad-y));          /* label line height + padding = 48 / 40 / 32 */
+  min-width: calc(var(--sh-space-48) + var(--sh-space-8)); /* no token: min width 56 (blueprint) = space-48 + space-8 */
+  margin: 0;
+  padding: var(--_pad-y) var(--_pad-x);
+  border: 0;
+  border-radius: var(--sh-radius-button);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--sh-typo-font-family-primary);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 48 × 48 tap area around the 40 / 32 tall sizes, without changing the visual size */
+.sh-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--sh-icon-target-default));
+  height: max(100%, var(--sh-icon-target-default));
+  transform: translate(-50%, -50%);
+}
+
+/* ---- Size ---------------------------------------------------------------- */
+.sh-button--lg {
+  --_pad-y: var(--sh-space-12);
+  --_pad-x: var(--sh-space-20);
+  --_gap: var(--sh-space-4);
+  --_icon-size: var(--sh-icon-size-20);
+  --_line: var(--sh-typo-button-lg-line-height);
+}
+.sh-button--md {
+  --_pad-y: var(--sh-space-10);
+  --_pad-x: var(--sh-space-16);
+  --_gap: var(--sh-space-2);
+  --_icon-size: var(--sh-icon-size-16);
+  --_line: var(--sh-typo-button-md-line-height);
+}
+.sh-button--sm {
+  --_pad-y: var(--sh-space-8);
+  --_pad-x: var(--sh-space-16);
+  --_gap: var(--sh-space-2);
+  --_icon-size: var(--sh-icon-size-12);
+  --_line: var(--sh-typo-button-sm-line-height);
+}
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-button--primary {
+  --_bg: var(--sh-gradient-brand-default);
+  --_bg-hover: var(--sh-gradient-brand-hover);
+  --_bg-pressed: var(--sh-gradient-brand-pressed);
+  --_fg: var(--sh-button-primary-text-default);
+  --_icon: var(--sh-button-primary-icon-default);
+}
+.sh-button--secondary {
+  --_bg: var(--sh-button-secondary-background-default);
+  --_bg-hover: var(--sh-button-secondary-background-hover);
+  --_bg-pressed: var(--sh-button-secondary-background-pressed);
+  --_fg: var(--sh-button-secondary-text-default);
+  --_icon: var(--sh-button-secondary-icon-default);
+}
+.sh-button--tertiary {
+  --_bg: var(--sh-button-tertiary-background-default);
+  --_bg-hover: var(--sh-button-tertiary-background-hover);
+  --_bg-pressed: var(--sh-button-tertiary-background-pressed);
+  --_fg: var(--sh-button-tertiary-text-default);
+  --_icon: var(--sh-button-tertiary-icon-default);
+}
+.sh-button--ghost {
+  --_bg: var(--sh-button-ghost-background-default);
+  --_bg-hover: var(--sh-button-ghost-background-hover);
+  --_bg-pressed: var(--sh-button-ghost-background-pressed);
+  --_fg: var(--sh-button-ghost-text-default);
+  --_icon: var(--sh-button-ghost-icon-default);
+}
+.sh-button--premium-solid {
+  --_bg: var(--sh-gradient-premium-default);
+  --_bg-hover: var(--sh-gradient-premium-hover);
+  --_bg-pressed: var(--sh-gradient-premium-pressed);
+  --_fg: var(--sh-premium-text-on-solid);
+  --_icon: var(--sh-premium-icon-on-solid);
+}
+.sh-button--premium-soft {
+  --_bg: var(--sh-premium-background-soft-default);
+  --_bg-hover: var(--sh-premium-background-soft-hover);
+  --_bg-pressed: var(--sh-premium-background-soft-pressed);
+  --_fg: var(--sh-premium-text-on-soft);
+  --_icon: var(--sh-premium-icon-on-soft);
+}
+
+/* ---- Content ------------------------------------------------------------- */
+.sh-button .sh-button__icon,
+.sh-button .sh-button__spinner {
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  --sh-icon-paint: var(--_icon);
+}
+
+/* Label wrapper keeps the label's height (24 / 20 / 16); a sublabel lifts the label without growing the button */
+.sh-button__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: var(--_line);
+}
+.sh-button__label { display: block; }
+.sh-button__sublabel {
+  display: block;
+  margin-top: calc(var(--sh-space-2) * -1);   /* Figma gap -2 between label and sublabel */
+  padding-bottom: var(--sh-space-2);          /* lifts the pair for optical centring */
+  opacity: var(--sh-opacity-extra-strong);
+  color: inherit;                             /* same colour token as the label */
+}
+.sh-button__sublabel:empty { display: none; }
+
+/* ---- State --------------------------------------------------------------- */
+.sh-button:hover,
+.sh-button.is-hover { background: var(--_bg-hover); }
+
+.sh-button:active,
+.sh-button.is-pressed { background: var(--_bg-pressed); }
+
+.sh-button:focus { outline: none; }
+.sh-button:focus-visible,
+.sh-button.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+
+/* Disabled: the type's Default look at sh-opacity/disabled. No pointer events. */
+.sh-button:disabled,
+.sh-button[aria-disabled="true"] {
+  background: var(--_bg);
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Loading: label and icons hidden, loader at the icon size in the icon colour, background stays default */
+.sh-button__spinner { display: none; }
+.sh-button.is-loading {
+  background: var(--_bg);
+  cursor: default;
+  pointer-events: none;
+}
+.sh-button.is-loading > :not(.sh-button__spinner) { display: none; }
+.sh-button.is-loading > .sh-button__spinner {
+  display: inline-block;
+  animation: sh-button-spin 1s linear infinite;   /* no token: motion duration (DNA has no motion tokens yet) */
+}
+@keyframes sh-button-spin { to { transform: rotate(1turn); } }
+
+/* Fill: stretch to the container (stacked sheet actions, action island, bottom bar) */
+.sh-button--fill { display: flex; width: 100%; }

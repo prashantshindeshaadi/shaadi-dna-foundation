@@ -158,13 +158,38 @@ Use this when asked to "add / update the code for `<sh-name>`" (first done for
    - SwiftUI: `xcrun --sdk iphonesimulator swiftc -typecheck -target
      arm64-apple-ios17.0-simulator dist/ios/SHTokens.swift
      dist/sh-typo-kit/developer/ios/ShTypography.swift <file>`.
-   - Web: render an inlined copy in headless Chrome. `file://` breaks CSS masks,
-     so inline the CSS, icons and images. Compare with the Figma screenshots.
+   - Web: `python3 tools/web_preview.py <web/*.html> <out.png>` inlines the CSS, icons
+     and images (CSS masks don't load from `file://`) and screenshots it in headless
+     Chrome. Compare with the Figma screenshots.
    - Compose: compile in an Android project. Say so if you couldn't.
 7. **Log and commit.**
    - Add an `updates/` entry and run `python3 tools/check.py`.
    - Commit locally. Push only when the user says so.
    - Report the Figma inconsistencies you found but didn't change.
+
+### Shared code every component uses
+
+- **`components/sh-icon/`** draws icons and badges: `ShIcon`, `ShIconSpec`, `ShIconPaint` (inherit,
+  colour, gradient, own colours), `ShBadge`, and the web `.sh-icon` mask class.
+- **Generated helpers** (`tools/build.py`, never hand-edited):
+  - `dist/android/compose/ShTokens.kt`: `ShGradient.<name>()` brushes, `Modifier.shGlass`,
+    `Modifier.shShadow(ShShadow.X, shape)`, `shOpacity(id)`, `shType()`.
+  - `dist/ios/SHTokens.swift`: `.shShadow(SH.ShadowStyle.x)` and `.shGlass(fill:edge:cornerRadius:blur:)`.
+- **Composites use the parts, never private copies.** The profile card calls `ShButton`, `ShTag`,
+  `ShActionIsland` and so on, so a change to a part reaches every screen.
+
+### Many components at once (a family, e.g. everything inside a card)
+
+1. **Find every set live.** Don't use a stored id list. Look for `COMPONENT_SET` and standalone `COMPONENT`
+   named `sh-*`, not `sh-icon/*`, across all pages.
+2. **Deep-read every part.** One `read_component_deep.js` call can take several set ids; keep each call
+   under 30 s with `timeout: 30000`, and run calls one at a time.
+3. **Write a contract.** List the API names per platform, enums in Figma variant order, and the callback
+   names. Builders work in parallel against it, and the composite is written against it before the parts
+   exist.
+4. **Build leaves first, then composites**, grouped so each builder owns its dependencies. Then
+   typecheck everything together. Finally re-run `tools/components.py` on the saved reads, so every
+   blueprint's **Code** line lists its new files.
 
 ---
 

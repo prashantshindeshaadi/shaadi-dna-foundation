@@ -12,13 +12,13 @@ struct ShProfileCard_doc: FigmaConnect {
     @FigmaEnum("Type", mapping: [
         "Connect": ShProfileCardType.connect,
         "Received": .received,
-        "Connected": .connected,
-        "Locked": .locked,
+        "Post-Connect": .postConnect,
+        "Gated": .gated,
         "No photo": .noPhoto,
         "Photo requested": .photoRequested,
         "Blocked": .blocked,
-        "Hidden": .hidden,
         "VIP": .vip,
+        "With Overlay": .withOverlay,
     ])
     var type: ShProfileCardType = .connect
 
@@ -28,16 +28,18 @@ struct ShProfileCard_doc: FigmaConnect {
     @FigmaBoolean("Show photo actions")
     var showPhotoActions: Bool = true
 
-    private let member = ShProfileMember(name: "Name", age: 26)
+    private let member = ShProfileMember(name: "Name", age: 26, photoCount: 10, isVerified: true,
+                                         detailRows: [["Fact", "Fact"]], tags: [.youAndHer, .astro], topTag: .promoted,
+                                         message: "Pre-written message")
     private let actions = ShProfileCardActions()
 
     var body: some View {
         ShProfileCard(
             type: type,
-            member: member,                       // ShProfileMember(name:age:photo:detailRows:tags:…)
+            member: member,
             showTopTags: showTopTags,
             showPhotoActions: showPhotoActions,
-            actions: actions                      // ShProfileCardActions: onConnect, onViewPhotos, onMore, …
+            actions: actions                      // onConnect, onViewPhotos, onMore, onEditMessage, …
         )
     }
 }

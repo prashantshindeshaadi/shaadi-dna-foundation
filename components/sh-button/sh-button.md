@@ -8,9 +8,11 @@
 
 | Size | Height | Padding (Y/X) | Gap | Icon | Text style |
 |---|---|---|---|---|---|
-| Large | 48 | `12` / `20` | `6` | 20 | `sh-typo/Button/LG` |
-| Medium | 40 | `10` / `12` | `4` | 16 | `sh-typo/Button/MD` |
-| Small | 28 | `6` / `12` | `2` | 14 | `sh-typo/Button/SM` |
+| Large | 48 | `12` / `20` | `4` | 20 | `sh-typo/Button/LG` |
+| Medium | 40 | `10` / `16` | `2` | 16 | `sh-typo/Button/MD` |
+| Small | 32 | `8` / `16` | `2` | 14 | `sh-typo/Button/SM` |
+
+Min width 56 on every size (no `sh-space` token for 56 yet).
 
 Large is for hero sections, modals and full-width containers. Medium is the everyday default. Small is for dense rows and compact toolbars. Small still needs a 48px touch target.
 
@@ -28,6 +30,7 @@ Large is for hero sections, modals and full-width containers. Medium is the ever
 **All types share these three states:**
 
 - **Disabled:** the type's Default look with `sh-opacity/disabled` on the button root. No shadow, no pointer events.
+- **Sublabel** (`Show sublabel`, off by default): `sh-typo/Support/Meta` at full opacity (`sh-opacity/full`), in the same colour token as the label (every type). The label wrapper keeps the label's height (24 / 20 / 16) with gap -2 and centred content, so turning the sublabel on lifts the label and adds the sublabel below without changing the button height. The sublabel sits in a frame with `sh-space/2` bottom padding and `sh-opacity/extra-strong` (88 %), shown with `Show sublabel`; the padding lifts the pair 1 px for optical centring.
 - **Focus:** the ring from §7.2. The resting background does not change.
 - **Loading:** label and both icons hidden; `sh-icon/line-icon/loader` shown at the size's icon size, inheriting the type's label colour; background stays default; input blocked.
 

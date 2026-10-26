@@ -69,3 +69,4 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
+| Map (image) / Group | opacity | sh-opacity/extra-strong |

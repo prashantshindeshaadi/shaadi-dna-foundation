@@ -25,15 +25,15 @@ Layer tree of `sh-account-header`. Nested components are shown by name; their in
   - Photo — row · fixed × fixed
     - sh-progress-ring — **sh-progress-ring** (Total of 36, Value 45)
     - sh-avatar — **sh-avatar** (Label SH, Icon instance, Size lg, Type Image)
-    - Completion — **sh-tag** (Leading icon (Small) instance, Trailing icon (Small) instance, Leading icon (Medium) instance, Trailing icon (Medium) instance, Label 45%, Mode Translucent, Size Small, Shape Rounded)
+    - Completion — **sh-tag** (Trailing icon instance, Leading icon instance, Label 45%, Mode Translucent light, Size Medium, Shape Rounded)
   - Name — text "Anuradha Sharma"
   - Actions — row · hug × hug
-    - Profile ID — **sh-chip** (Leading icon (Small) instance, Leading icon (Medium) instance, Trailing icon (Large) instance, Trailing icon (Small) instance, Trailing icon (Medium) instance, Leading icon (Large) instance, Supporting label Supporting, Label ID - SH 2822 6292, Type Info, Size Small, State Default, Selected false)
-    - Edit profile — **sh-chip** (Trailing icon (Small) instance, Leading icon (Small) instance, Leading icon (Medium) instance, Trailing icon (Large) instance, Trailing icon (Medium) instance, Leading icon (Large) instance, Supporting label Supporting, Label Edit Profile, Type Info, Size Small, State Default, Selected false)
+    - Profile ID — **sh-chip** (Trailing icon (Small) instance, Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Trailing icon instance, Leading icon instance, Leading icon (Small) instance, Supporting label Supporting, Leading icon (Medium) instance, Label ID - SH 2822 6292, Type Info, State Default, Selected false)
+    - Edit profile — **sh-chip** (Trailing icon (Small) instance, Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Trailing icon instance, Leading icon instance, Leading icon (Small) instance, Supporting label Supporting, Leading icon (Medium) instance, Label Edit Profile, Type Info, State Default, Selected false)
 
 ## Size
 
-320 × 192
+320 × 196
 
 ## Tokens
 
@@ -47,27 +47,30 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Photo / sh-avatar | radius | sh-radius/avatar |
 | Photo / sh-avatar | stroke | icon/on-image |
 | Photo / Completion | gap | sh-space/2 |
-| Photo / Completion | padding-x | sh-space/4 |
-| Photo / Completion | padding-y | sh-space/0 |
+| Photo / Completion | padding:left | sh-space/4 |
+| Photo / Completion | padding-y | sh-space/2 |
+| Photo / Completion | padding:right | sh-space/6 |
 | Photo / Completion | radius | sh-radius/xs |
-| Photo / Completion | strokeTopWeight | sh-stroke/default |
-| Photo / Completion | strokeBottomWeight | sh-stroke/default |
-| Photo / Completion | strokeLeftWeight | sh-stroke/default |
-| Photo / Completion | strokeRightWeight | sh-stroke/default |
+| Photo / Completion | strokeTopWeight | sh-stroke/thin |
+| Photo / Completion | strokeBottomWeight | sh-stroke/thin |
+| Photo / Completion | strokeLeftWeight | sh-stroke/thin |
+| Photo / Completion | strokeRightWeight | sh-stroke/thin |
 | Photo / Completion | fill | sh-gradient/translucent/light/extra-soft |
 | Photo / Completion | stroke | border/inverse |
 | Name | fill | text/primary |
 | Name | text style | sh-typo/Heading/SM |
 | Actions | gap | sh-space/8 |
-| Actions / Profile ID | gap | sh-space/6 |
-| Actions / Profile ID | padding-x | sh-space/8 |
-| Actions / Profile ID | padding-y | sh-space/4 |
-| Actions / Profile ID | radius | sh-radius/xs |
+| Actions / Profile ID | gap | sh-space/8 |
+| Actions / Profile ID | padding:left | sh-space/8 |
+| Actions / Profile ID | padding-y | sh-space/6 |
+| Actions / Profile ID | padding:right | sh-space/12 |
+| Actions / Profile ID | radius | sh-radius/sm |
 | Actions / Profile ID | fill | background/default |
-| Actions / Profile ID | stroke | border/default |
-| Actions / Edit profile | gap | sh-space/6 |
-| Actions / Edit profile | padding-x | sh-space/8 |
-| Actions / Edit profile | padding-y | sh-space/4 |
-| Actions / Edit profile | radius | sh-radius/xs |
+| Actions / Profile ID | stroke | border/soft |
+| Actions / Edit profile | gap | sh-space/8 |
+| Actions / Edit profile | padding:left | sh-space/8 |
+| Actions / Edit profile | padding-y | sh-space/6 |
+| Actions / Edit profile | padding:right | sh-space/12 |
+| Actions / Edit profile | radius | sh-radius/sm |
 | Actions / Edit profile | fill | background/default |
-| Actions / Edit profile | stroke | border/default |
+| Actions / Edit profile | stroke | border/soft |

@@ -1,0 +1,89 @@
+/*
+ * sh-icon-button-with-label — web (HTML5 + CSS)
+ * Spec: ../sh-icon-button-with-label.md · Figma node 2198:32247 (State: Default, Focus)
+ *
+ * Built from sh-icon-button (Type Secondary, Size Medium, filling the width) + a Support/Label caption.
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-icon-button/web/sh-icon-button.css
+ *
+ *   <button class="sh-icon-button-with-label" type="button">
+ *     <span class="sh-icon-button sh-icon-button--secondary sh-icon-button--md sh-icon-button--fill" aria-hidden="true">
+ *       <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/call.svg)"></span>
+ *     </span>
+ *     <span class="sh-icon-button-with-label__label sh-support-label">Call</span>
+ *   </button>
+ *
+ * The whole thing is one button: the caption is the accessible name. Hover / Pressed / Focus show on the icon
+ * button (Focus = the icon button's ring, as in Figma). .is-hover / .is-pressed / .is-focus force them for previews.
+ * Width: fills its share of a row of equal actions (flex: 1 1 0), as the Figma instance fills its parent;
+ * outside a flex row it hugs the wider of icon and caption.
+ * Caption colour: text/primary. Over imagery (action island) set --sh-icon-button-with-label-color: var(--sh-text-on-image).
+ */
+
+.sh-icon-button-with-label {
+  --sh-icon-button-with-label-color: var(--sh-text-primary);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-4);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-md);
+  background: none;
+  color: var(--sh-icon-button-with-label-color);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Tap area at least 48 wide (the 60 height already clears 48) */
+.sh-icon-button-with-label::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: max(100%, var(--sh-icon-target-default));
+  height: 100%;
+  transform: translateX(-50%);
+}
+.sh-icon-button-with-label > .sh-icon-button { pointer-events: none; }   /* the parent owns the tap */
+.sh-icon-button-with-label > .sh-icon-button::before { content: none; }
+
+.sh-icon-button-with-label__label {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: inherit;
+}
+
+/* ---- State (shown on the icon button) ------------------------------------ */
+.sh-icon-button-with-label:hover > .sh-icon-button,
+.sh-icon-button-with-label.is-hover > .sh-icon-button { background: var(--_bg-hover); }
+
+.sh-icon-button-with-label:active > .sh-icon-button,
+.sh-icon-button-with-label.is-pressed > .sh-icon-button { background: var(--_bg-pressed); }
+
+.sh-icon-button-with-label:focus { outline: none; }
+.sh-icon-button-with-label:focus-visible > .sh-icon-button,
+.sh-icon-button-with-label.is-focus > .sh-icon-button {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+
+/* Disabled (not a Figma variant; FOUNDATION §4.3): the Default look at sh-opacity/disabled */
+.sh-icon-button-with-label:disabled,
+.sh-icon-button-with-label[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}

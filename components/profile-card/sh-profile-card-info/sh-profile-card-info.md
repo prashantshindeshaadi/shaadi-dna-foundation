@@ -49,7 +49,7 @@ Layer tree of `sh-profile-card-info`. Nested components are shown by name; their
     - Tag — **sh-tag-profile** (Type You & Her)
     - Tag — **sh-tag-profile** (Type Astro)
   - Divider — **sh-divider** (Orientation Horizontal, Type Soft)
-  - Actions — **sh-action-island** (Style In card)
+  - Actions — **sh-action-island** (Status We’re reviewing your report, Message Like this profile?, Type Message + primary, Style Normal)
 
 ## Size
 
@@ -66,9 +66,9 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | padding:top | sh-space/14 |
 | root | padding:bottom | sh-space/16 |
 | root | radius | sh-radius/lg |
-| root | fill | sh-gradient/translucent/dark/soft |
+| root | fill | sh-gradient/translucent/dark/extra-soft |
 | root | stroke | sh-gradient/translucent/border/light |
-| root | effect | sh-background-blur/uniform/strong |
+| root | effect | sh-background-blur/uniform/default |
 | Content box | gap | sh-space/2 |
 | Content box | padding | sh-space/0 |
 | Content box / Name row | padding:bottom | sh-space/2 |

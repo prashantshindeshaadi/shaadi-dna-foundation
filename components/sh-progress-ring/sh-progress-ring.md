@@ -39,4 +39,4 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Value / Value | fill | text/primary |
 | Value / Value | text style | sh-typo/Heading/SM |
 | Value / Total | fill | text/secondary |
-| Value / Total | text style | sh-typo/Support/Helper Text |
+| Value / Total | text style | sh-typo/Support/Meta |

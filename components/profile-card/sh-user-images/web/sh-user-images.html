@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  sh-user-images — web (HTML5 + CSS). Every variant group (Gender × Style); open in a browser to preview.
+  Spec: ../sh-user-images.md · Figma node 2248:13619
+  Run `python3 tools/build.py` once so dist/ exists.
+  No member photos ship in the repo: the member columns use ../assets/requested-female.jpg as a stand-in.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-user-images</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-user-images.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    .preview { display: grid; grid-template-columns: repeat(auto-fill, 180px); gap: var(--sh-space-24); }
+    .preview figure { margin: 0; }
+    .preview figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .frame { width: 180px; aspect-ratio: 360 / 520; }   /* Figma frame 360 × 520, shown at half size */
+    .note { max-width: 760px; color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-user-images</h1>
+  <p class="note sh-body-sm">Gender Female 1–21 and Male 1–6 are the same code: <code>.sh-user-image</code> around the member's photo. The requested portraits are top-aligned (<code>.sh-user-image--top</code>). Style=Blur adds the Blur layer (background/default wash + uniform/strong background blur).</p>
+  <div class="preview">
+    <figure><figcaption class="sh-body-sm">Gender=Female 1…21 · Male 1…6<br>Style=Normal</figcaption>
+      <div class="frame"><div class="sh-user-image"><img src="../assets/requested-female.jpg" alt=""></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Gender=Female 1…21 · Male 1…6<br>Style=Blur</figcaption>
+      <div class="frame"><div class="sh-user-image sh-user-image--blur"><img src="../assets/requested-female.jpg" alt=""></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Gender=Female requested<br>Style=Normal</figcaption>
+      <div class="frame"><div class="sh-user-image sh-user-image--top"><img src="../assets/requested-female.jpg" alt=""></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Gender=Female requested<br>Style=Blur</figcaption>
+      <div class="frame"><div class="sh-user-image sh-user-image--top sh-user-image--blur"><img src="../assets/requested-female.jpg" alt=""></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Gender=Male requested<br>Style=Normal</figcaption>
+      <div class="frame"><div class="sh-user-image sh-user-image--top"><img src="../assets/requested-male.jpg" alt=""></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Gender=Male requested<br>Style=Blur</figcaption>
+      <div class="frame"><div class="sh-user-image sh-user-image--top sh-user-image--blur"><img src="../assets/requested-male.jpg" alt=""></div></div>
+    </figure>
+  </div>
+</body>
+</html>

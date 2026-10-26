@@ -1,0 +1,40 @@
+/*
+ * sh-icon — web (HTML5 + CSS)
+ * Icon map: ../../icons.md · SVGs: ../../../icons/<type>/<name>.svg
+ *
+ * Line and filled icons are single-colour SVGs drawn as a CSS mask, so they take the
+ * text colour (currentColor) or a paint set with --sh-icon-paint. Pictograms, brand marks
+ * and badges keep their own colours: use <img class="sh-icon"> for those.
+ *
+ *   <span class="sh-icon sh-icon--16" style="--icon:url(…/icons/line/close.svg)" aria-hidden="true"></span>
+ *   <span class="sh-icon sh-icon--12 sh-icon--brand" style="--icon:url(…/icons/line/link-rings.svg)"></span>
+ *   <img class="sh-icon sh-icon--12" src="…/icons/tag/online.svg" alt="">
+ *   <img class="sh-badge sh-badge--20" src="…/icons/misc/verified-badge.svg" alt="Verified">
+ */
+
+.sh-icon {
+  display: inline-block;
+  flex: none;
+  width: var(--sh-icon-size-16);
+  height: var(--sh-icon-size-16);
+  background: var(--sh-icon-paint, currentColor);
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+.sh-icon--12 { width: var(--sh-icon-size-12); height: var(--sh-icon-size-12); }
+.sh-icon--14 { width: var(--sh-icon-size-14); height: var(--sh-icon-size-14); }
+.sh-icon--16 { width: var(--sh-icon-size-16); height: var(--sh-icon-size-16); }
+.sh-icon--20 { width: var(--sh-icon-size-20); height: var(--sh-icon-size-20); }
+.sh-icon--24 { width: var(--sh-icon-size-24); height: var(--sh-icon-size-24); }
+
+/* Paints. A gradient paint fills the glyph shape, as in Figma. */
+.sh-icon--brand   { --sh-icon-paint: var(--sh-gradient-brand-default); }
+.sh-icon--premium { --sh-icon-paint: var(--sh-gradient-premium-default); }
+
+/* Multi-colour art (pictograms, brand marks, the Online dot): the image itself. */
+img.sh-icon { background: none; -webkit-mask: none; mask: none; object-fit: contain; }
+
+/* Badges (verified, premium, VIP): their own colours, sized by height. */
+.sh-badge { display: block; flex: none; height: var(--sh-icon-size-20); width: auto; }
+.sh-badge--14 { height: var(--sh-icon-size-14); }
+.sh-badge--20 { height: var(--sh-icon-size-20); }

@@ -32,10 +32,10 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
-| root | radius | sh-radius/xxs |
+| root | radius | Orientation=Horizontal, Type=Soft → sh-radius/full; Orientation=Horizontal, Type=Default → sh-radius/xxs; Orientation=Horizontal, Type=Strong → sh-radius/xxs; Orientation=Vertical, Type=Soft → sh-radius/xxs; Orientation=Vertical, Type=Default → sh-radius/xxs; Orientation=Vertical, Type=Strong → sh-radius/xxs |
 | Divider | height | sh-stroke/default *(set on 3/6 variants)* |
+| Divider | radius | sh-radius/full |
 | Divider | fill | Type=Soft → unknown VariableID:16:324; Type=Default → border/default; Type=Strong → border/strong |
-| Divider | radius | sh-radius/xxs *(set on 5/6 variants)* |
 | Divider | width | sh-stroke/default *(set on 3/6 variants)* |
 
 > Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:16:324

@@ -1,0 +1,48 @@
+/*
+ * sh-user-images — web (HTML5 + CSS)
+ * Spec: ../sh-user-images.md · Figma node 2248:13619
+ *
+ * Needs, loaded once per page: dist/css/tokens.css
+ *
+ * The member photo, cropped to fill its frame (Figma image fill "Fill").
+ *   <div class="sh-user-image"><img src="member.jpg" alt=""></div>
+ *   <div class="sh-user-image sh-user-image--blur"><img src="member.jpg" alt=""></div>
+ *
+ * Gender Female 1–21 / Male 1–6 are design-only sample photos: the app passes the member's photo.
+ * Gender Female requested / Male requested = the Photo requested portraits in ../assets/
+ * (requested-female.jpg, requested-male.jpg). Figma crops them full width, top-aligned: add .sh-user-image--top.
+ *
+ * Style=Blur is the Figma "Blur" layer over the same photo, same size (the photo is never scaled):
+ * a background/default wash + effect sh-background-blur/uniform/strong (background blur, radius
+ * sh-translucent background/blur/strong).
+ */
+
+.sh-user-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;                                  /* Figma: clip content */
+}
+
+.sh-user-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                                 /* Figma image fill: Fill (crop to the frame) */
+}
+
+/* Requested portraits: full width, top-aligned (Figma crop) */
+.sh-user-image--top > img { object-position: top; }
+
+/* Style=Blur: the Blur layer */
+.sh-user-image--blur::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* no token: Figma paints background/default at 1 % paint alpha (the minimum fill a background blur needs) */
+  background: color-mix(in srgb, var(--sh-background-default) 1%, transparent);
+  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-strong));
+  backdrop-filter: blur(var(--sh-translucent-background-blur-strong));
+}

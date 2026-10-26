@@ -38,10 +38,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Icon | width | sh-icon/size/24 |
 | Icon | height | sh-icon/size/24 |
 | Label | fill | State=Default → text/secondary; State=Hover → text/primary; State=Selected → text/brand; State=Disabled → text/disabled; State=Focus → text/secondary |
-| Label | text:lineHeight | sh-typo/support/label/line-height |
-| Label | text:letterSpacing | sh-typo/support/label/letter-spacing |
-| Label | text:fontFamily | sh-typo/support/label/font |
-| Label | text:fontSize | sh-typo/support/label/size |
+| Label | text style | sh-typo/Body/SM/Default |
 | root | fill | State=Hover → unknown VariableID:16:296; State=Selected → background/selected *(set on 2/5 variants)* |
 | .focus-ring | opacity | sh-opacity/strong *(set on 1/5 variants)* |
 | .focus-ring | stroke | border/focus *(set on 1/5 variants)* |

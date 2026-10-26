@@ -1,0 +1,110 @@
+<!doctype html>
+<!--
+  sh-tag — web (HTML5 + CSS). Every variant (Mode × Size × Shape) plus the boolean properties.
+  Spec: ../sh-tag.md · Figma node 2357:23671
+  Run `python3 tools/build.py` once so dist/ exists. The "photo" behind the tags is a neutral placeholder,
+  because the translucent modes are made for imagery.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-tag</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-tag.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 72ch; }
+    .photo { display: inline-block; padding: var(--sh-space-16) var(--sh-space-20); border-radius: var(--sh-radius-card);
+             background: center / cover url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"); }
+    .grid { display: grid; grid-template-columns: auto repeat(4, minmax(96px, auto)); align-items: center; gap: var(--sh-space-16) var(--sh-space-24); }
+    .grid__head, .grid__mode { color: var(--sh-text-on-image); }
+    .grid__mode { padding-right: var(--sh-space-8); }
+    .zoom { display: flex; gap: var(--sh-space-16); zoom: 3; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-tag</h1>
+
+  <h2 class="sh-title-md">Variants · Mode × Size × Shape</h2>
+  <div class="photo">
+    <div class="grid">
+      <div class="grid__head"></div><div class="grid__head sh-support-label">Size=Medium<br>Shape=Rounded</div><div class="grid__head sh-support-label">Size=Small<br>Shape=Rounded</div><div class="grid__head sh-support-label">Size=Medium<br>Shape=Pill</div><div class="grid__head sh-support-label">Size=Small<br>Shape=Pill</div>
+      <div class="grid__mode sh-support-label">Mode=White</div>
+        <div class="grid__cell"><!-- Mode=White, Size=Medium, Shape=Rounded --><span class="sh-tag"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=White, Size=Small, Shape=Rounded --><span class="sh-tag sh-tag--sm"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=White, Size=Medium, Shape=Pill --><span class="sh-tag sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=White, Size=Small, Shape=Pill --><span class="sh-tag sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+      <div class="grid__mode sh-support-label">Mode=Dark</div>
+        <div class="grid__cell"><!-- Mode=Dark, Size=Medium, Shape=Rounded --><span class="sh-tag sh-tag--dark"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Dark, Size=Small, Shape=Rounded --><span class="sh-tag sh-tag--dark sh-tag--sm"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Dark, Size=Medium, Shape=Pill --><span class="sh-tag sh-tag--dark sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Dark, Size=Small, Shape=Pill --><span class="sh-tag sh-tag--dark sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+      <div class="grid__mode sh-support-label">Mode=Translucent light</div>
+        <div class="grid__cell"><!-- Mode=Translucent light, Size=Medium, Shape=Rounded --><span class="sh-tag sh-tag--translucent-light"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Translucent light, Size=Small, Shape=Rounded --><span class="sh-tag sh-tag--translucent-light sh-tag--sm"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Translucent light, Size=Medium, Shape=Pill --><span class="sh-tag sh-tag--translucent-light sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Translucent light, Size=Small, Shape=Pill --><span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+      <div class="grid__mode sh-support-label">Mode=Translucent dark</div>
+        <div class="grid__cell"><!-- Mode=Translucent dark, Size=Medium, Shape=Rounded --><span class="sh-tag sh-tag--translucent-dark"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Translucent dark, Size=Small, Shape=Rounded --><span class="sh-tag sh-tag--translucent-dark sh-tag--sm"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Translucent dark, Size=Medium, Shape=Pill --><span class="sh-tag sh-tag--translucent-dark sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Translucent dark, Size=Small, Shape=Pill --><span class="sh-tag sh-tag--translucent-dark sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+      <div class="grid__mode sh-support-label">Mode=Strong</div>
+        <div class="grid__cell"><!-- Mode=Strong, Size=Medium, Shape=Rounded --><span class="sh-tag sh-tag--strong"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Strong, Size=Small, Shape=Rounded --><span class="sh-tag sh-tag--strong sh-tag--sm"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Strong, Size=Medium, Shape=Pill --><span class="sh-tag sh-tag--strong sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><!-- Mode=Strong, Size=Small, Shape=Pill --><span class="sh-tag sh-tag--strong sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+    </div>
+  </div>
+
+  <h2 class="sh-title-md">Boolean properties</h2>
+  <p class="note sh-body-sm">Show border only paints on the translucent modes (White, Dark and Strong have an empty Border layer in Figma).
+    Show outline is defined in Figma but not wired to any layer, so <code>.sh-tag--outline</code> changes nothing yet.</p>
+  <div class="photo">
+    <div class="grid">
+      <div class="grid__head"></div><div class="grid__head sh-support-label">Show leading icon<br>off</div><div class="grid__head sh-support-label">Show trailing icon<br>on</div><div class="grid__head sh-support-label">Show border<br>off</div><div class="grid__head sh-support-label">Show outline<br>on (no-op)</div>
+      <div class="grid__mode sh-support-label">Mode=White</div>
+        <div class="grid__cell"><span class="sh-tag"><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--no-border"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--outline"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+      <div class="grid__mode sh-support-label">Mode=Dark</div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--dark"><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--dark"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--dark sh-tag--no-border"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--dark sh-tag--outline"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+      <div class="grid__mode sh-support-label">Mode=Translucent light</div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--translucent-light"><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--translucent-light"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--translucent-light sh-tag--no-border"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--translucent-light sh-tag--outline"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+      <div class="grid__mode sh-support-label">Mode=Translucent dark</div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--translucent-dark"><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--translucent-dark"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--translucent-dark sh-tag--no-border"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--translucent-dark sh-tag--outline"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+      <div class="grid__mode sh-support-label">Mode=Strong</div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--strong"><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--strong"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--strong sh-tag--no-border"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+        <div class="grid__cell"><span class="sh-tag sh-tag--strong sh-tag--outline"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span></div>
+    </div>
+  </div>
+
+  <h2 class="sh-title-md">Detail at 3× · Small Pill, every mode</h2>
+  <p class="note sh-body-sm">Optical padding: 4 before the icon, 6 after the label. The 0.5 gradient edge is drawn inside the tag.</p>
+  <div class="photo">
+    <div class="zoom">
+      <span class="sh-tag sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span>
+      <span class="sh-tag sh-tag--dark sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span>
+      <span class="sh-tag sh-tag--translucent-light sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span>
+      <span class="sh-tag sh-tag--translucent-dark sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span>
+      <span class="sh-tag sh-tag--strong sh-tag--sm sh-tag--pill"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../icons/line/tag.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Tag</span></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -120,8 +120,8 @@ Layer tree of `Mode=White, Size=Medium, Shape=Rounded`. Nested components are sh
 
 | Size | Width × height | Padding | Gap |
 |---|---|---|---|
-| Medium | 40 × 22 | sh-space/2 / sh-space/4 | sh-space/2 |
-| Small | 40 × 20 | sh-space/2 / sh-space/4 | sh-space/2 |
+| Medium | 42 × 22 | sh-space/2 | sh-space/2 |
+| Small | 42 × 20 | sh-space/2 | sh-space/2 |
 
 ## Tokens
 
@@ -130,8 +130,9 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Layer | Property | Token |
 |---|---|---|
 | root | gap | sh-space/2 |
-| root | padding-x | sh-space/4 |
+| root | padding:left | sh-space/4 |
 | root | padding-y | sh-space/2 |
+| root | padding:right | sh-space/6 |
 | root | radius | Shape=Rounded → sh-radius/xs; Shape=Pill → sh-radius/full |
 | root | strokeTopWeight | Mode=White → sh-stroke/default; Mode=Dark → sh-stroke/default; Mode=Translucent light → sh-stroke/thin; Mode=Translucent dark → sh-stroke/thin; Mode=Strong → sh-stroke/default |
 | root | strokeBottomWeight | Mode=White → sh-stroke/default; Mode=Dark → sh-stroke/default; Mode=Translucent light → sh-stroke/thin; Mode=Translucent dark → sh-stroke/thin; Mode=Strong → sh-stroke/default |

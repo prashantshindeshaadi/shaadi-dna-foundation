@@ -1,0 +1,157 @@
+/*
+ * sh-icon-button — web (HTML5 + CSS)
+ * Spec: ../sh-icon-button.md · Figma node 567:26954 (5 Types × 3 Sizes × 5 States = 75 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *
+ *   <button class="sh-icon-button sh-icon-button--secondary sh-icon-button--lg" type="button" aria-label="Add">
+ *     <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/plus.svg)" aria-hidden="true"></span>
+ *   </button>
+ *
+ * Type   .sh-icon-button--primary | --secondary | --tertiary | --translucent (glass, over imagery only) | --ghost
+ * Size   .sh-icon-button--lg (48, icon 24) | --md (40, icon 20) | --sm (32, icon 16)
+ * Badge  Figma "Show badge" + "Badge": a count after the icon, text style by size:
+ *        <span class="sh-icon-button__badge sh-body-lg">2</span>  (lg → sh-body-lg, md → sh-body-md, sm → sh-body-sm)
+ * Label  Figma "Screen reader label" → aria-label (the button has no visible text).
+ * State  Hover :hover · Pressed :active · Focus :focus-visible · Disabled [disabled] / [aria-disabled="true"].
+ *        .is-hover / .is-pressed / .is-focus force a state for previews.
+ * Fill   .sh-icon-button--fill stretches the width (used by sh-icon-button-with-label).
+ */
+
+.sh-icon-button {
+  /* Type (Primary by default) */
+  --_bg: var(--sh-gradient-brand-default);
+  --_bg-hover: var(--sh-gradient-brand-hover);
+  --_bg-pressed: var(--sh-gradient-brand-pressed);
+  --_fg: var(--sh-button-primary-text-default);       /* badge */
+  --_icon: var(--sh-button-primary-icon-default);
+  /* Size (Large by default) */
+  --_pad: var(--sh-space-12);
+  --_icon-size: var(--sh-icon-size-24);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sh-space-4);
+  height: calc(var(--_icon-size) + 2 * var(--_pad));       /* 48 / 40 / 32 */
+  min-width: calc(var(--_icon-size) + 2 * var(--_pad));
+  margin: 0;
+  padding: var(--_pad);
+  border: 0;
+  border-radius: var(--sh-radius-button);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--sh-typo-font-family-primary);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 48 × 48 tap area around the 40 / 32 sizes, without changing the visual size */
+.sh-icon-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--sh-icon-target-default));
+  height: max(100%, var(--sh-icon-target-default));
+  transform: translate(-50%, -50%);
+}
+
+/* ---- Size ---------------------------------------------------------------- */
+.sh-icon-button--lg { --_pad: var(--sh-space-12); --_icon-size: var(--sh-icon-size-24); }
+.sh-icon-button--md { --_pad: var(--sh-space-10); --_icon-size: var(--sh-icon-size-20); }
+.sh-icon-button--sm { --_pad: var(--sh-space-8);  --_icon-size: var(--sh-icon-size-16); }
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-icon-button--primary {
+  --_bg: var(--sh-gradient-brand-default);
+  --_bg-hover: var(--sh-gradient-brand-hover);
+  --_bg-pressed: var(--sh-gradient-brand-pressed);
+  --_fg: var(--sh-button-primary-text-default);
+  --_icon: var(--sh-button-primary-icon-default);
+}
+.sh-icon-button--secondary {
+  --_bg: var(--sh-button-secondary-background-default);
+  --_bg-hover: var(--sh-button-secondary-background-hover);
+  --_bg-pressed: var(--sh-button-secondary-background-pressed);
+  --_fg: var(--sh-button-secondary-text-default);
+  --_icon: var(--sh-button-secondary-icon-default);
+}
+.sh-icon-button--tertiary {                 /* Figma binds a border/default stroke at sh-stroke/none: no visible edge */
+  --_bg: var(--sh-button-tertiary-background-default);
+  --_bg-hover: var(--sh-button-tertiary-background-hover);
+  --_bg-pressed: var(--sh-button-tertiary-background-pressed);
+  --_fg: var(--sh-button-tertiary-text-default);
+  --_icon: var(--sh-button-tertiary-icon-default);
+}
+.sh-icon-button--ghost {
+  --_bg: var(--sh-button-ghost-background-default);
+  --_bg-hover: var(--sh-button-ghost-background-hover);
+  --_bg-pressed: var(--sh-button-ghost-background-pressed);
+  --_fg: var(--sh-button-ghost-text-default);
+  --_icon: var(--sh-button-ghost-icon-default);
+}
+/* Translucent: dark soft glass + light ring edge + default blur. Hover keeps the Default glass (as in Figma). */
+.sh-icon-button--translucent {
+  --_bg: var(--sh-gradient-translucent-dark-soft);
+  --_bg-hover: var(--sh-gradient-translucent-dark-soft);
+  --_bg-pressed: var(--sh-gradient-translucent-dark-default);
+  --_fg: var(--sh-text-inverse);
+  --_icon: var(--sh-icon-inverse);
+  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-default));
+  backdrop-filter: blur(var(--sh-translucent-background-blur-default));
+}
+.sh-icon-button--translucent::after {         /* glass edge: sh-gradient/translucent/border/light-ring, 1 inside */
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--sh-stroke-default);
+  border-radius: inherit;
+  background: var(--sh-gradient-translucent-border-light-ring);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ---- Content ------------------------------------------------------------- */
+.sh-icon-button .sh-icon-button__icon {
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  --sh-icon-paint: var(--_icon);
+}
+.sh-icon-button__badge { color: var(--_fg); }
+.sh-icon-button__badge:empty { display: none; }
+
+/* ---- State --------------------------------------------------------------- */
+.sh-icon-button:hover,
+.sh-icon-button.is-hover { background: var(--_bg-hover); }
+
+.sh-icon-button:active,
+.sh-icon-button.is-pressed { background: var(--_bg-pressed); }
+
+.sh-icon-button:focus { outline: none; }
+.sh-icon-button:focus-visible,
+.sh-icon-button.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+
+/* Disabled: the type's Default look at sh-opacity/disabled. No pointer events. */
+.sh-icon-button:disabled,
+.sh-icon-button[aria-disabled="true"] {
+  background: var(--_bg);
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Fill: stretch the width (rows of equal actions) */
+.sh-icon-button--fill { display: flex; width: 100%; }
