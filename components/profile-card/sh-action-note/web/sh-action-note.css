@@ -1,0 +1,112 @@
+/*
+ * sh-action-note — web (HTML5 + CSS)
+ * Spec: ../sh-action-note.md · Figma node 2594:16750 (CTA Edit / Upgrade × Style Normal / Floating = 4 variants)
+ *
+ * One line above the actions: the pre-written message with an Edit link, or an action with an Upgrade Now link.
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-text-link/web/sh-text-link.css
+ *
+ *   <div class="sh-action-note sh-action-note--edit sh-action-note--normal">
+ *     <span class="sh-action-note__text sh-body-sm">Hey Sneha, I came across your profile. It felt true to me.</span>
+ *     <span class="sh-action-note__link">                                   ← Link slot
+ *       <button class="sh-text-link sh-text-link--inverse sh-text-link--sm" type="button">…Edit…</button>
+ *     </span>
+ *   </div>
+ *
+ * CTA    --edit     message (Body/SM/Italic at sh-opacity/strong, one line, cut with …) + "Edit" link (at strong)
+ *        --upgrade  action text (Body/SM/Default) + "Upgrade Now" link (Premium); the pair is centred
+ * Style  --normal   on the card photo / dark glass: text/on-image, Edit = sh-text-link Inverse
+ *        --floating on a light surface: text/secondary, Edit = sh-text-link Neutral; its own edge ring, padding
+ *                   and sh-shadow/floating. Inside sh-action-island the island owns the surface, so the ring,
+ *                   padding and shadow are dropped there (as the island's Figma instances do).
+ * Link   Edit: Normal sh-text-link--inverse · Floating sh-text-link--neutral. Upgrade: sh-text-link--premium
+ *        (Normal recolours it to premium/background/solid/default/end, readable on the photo). Size Small,
+ *        no icons, underline on. The link brings its own states and 48 tap area.
+ *
+ * Every value is a DNA token.
+ */
+
+@font-face {                       /* Body/SM/Italic: Lexend-SH VF Italic (fonts/, built by tools/make_italic.py) */
+  font-family: 'Lexend-SH VF';
+  src: url('../../../../fonts/LexendSH-VF-Italic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+.sh-action-note {
+  --_fg: var(--sh-text-on-image);                        /* Style=Normal */
+
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--sh-space-8);
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  color: var(--_fg);
+  font-family: var(--sh-typo-font-family-primary);
+  opacity: var(--sh-opacity-full);
+}
+
+/* ---- Style=Floating: edge ring (Surface), padding 12, radius lg, sh-shadow/floating ------------------ */
+.sh-action-note--floating {
+  --_fg: var(--sh-text-secondary);
+  padding: var(--sh-space-12);
+  border-radius: var(--sh-radius-lg);
+  box-shadow: var(--sh-shadow-floating-x) var(--sh-shadow-floating-y) var(--sh-shadow-floating-blur)
+              var(--sh-shadow-floating-spread) var(--sh-shadow-floating-color);
+}
+.sh-action-note--floating::after {                      /* Surface: stroke only, radius default */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--sh-radius-default);
+  padding: var(--sh-stroke-default);
+  background: var(--sh-gradient-translucent-border-light);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ---- Note text -------------------------------------------------------------------------------------- */
+.sh-action-note__text {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--_fg);
+}
+
+/* CTA=Edit: the message fills the row, one line, italic, at sh-opacity/strong */
+.sh-action-note--edit .sh-action-note__text {
+  flex: 1 1 auto;
+  font-style: italic;
+  opacity: var(--sh-opacity-strong);
+}
+
+/* CTA=Upgrade: action text hugs, text + link centred */
+.sh-action-note--upgrade { justify-content: center; }
+.sh-action-note--upgrade .sh-action-note__text { flex: 0 1 auto; }
+
+/* ---- Link slot -------------------------------------------------------------------------------------- */
+.sh-action-note__link {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+}
+.sh-action-note--edit .sh-action-note__link { opacity: var(--sh-opacity-strong); }
+
+/* Upgrade on the photo: the Premium link's label + underline take the gold end of the premium solid */
+.sh-action-note--upgrade.sh-action-note--normal .sh-text-link {
+  color: var(--sh-premium-background-solid-default-end);
+}
+
+/* ---- Inside sh-action-island: the island owns the surface ------------------------------------------- */
+.sh-action-island .sh-action-note--floating { padding: 0; box-shadow: none; }
+.sh-action-island .sh-action-note--floating::after { content: none; }

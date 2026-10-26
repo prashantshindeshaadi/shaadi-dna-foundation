@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  sh-action-note — web (HTML5 + CSS). All 4 variants (CTA Edit / Upgrade × Style Normal / Floating) + a long message.
+  Spec: ../sh-action-note.md · Figma node 2594:16750
+  Run `python3 tools/build.py` once so dist/ exists. The "photo" is a neutral placeholder: Normal sits on the card
+  photo / dark glass, Floating on a light surface.
+
+  Markup (Figma property → HTML):
+    CTA      sh-action-note--edit | sh-action-note--upgrade
+    Style    sh-action-note--normal | sh-action-note--floating
+    Message / Action text   the text of .sh-action-note__text (class sh-body-sm)
+    Link slot               .sh-action-note__link holding one sh-text-link, Size Small, no icons, underline on:
+                            Edit → --inverse (Normal) / --neutral (Floating), label "Edit"
+                            Upgrade → --premium, label "Upgrade Now"
+  Inside sh-action-island the note follows the island's Style; the island drops the Floating note's own ring,
+  padding and shadow (sh-action-note.css does it).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-action-note</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="sh-action-note.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-8); }
+    p.lead { margin: 0 0 var(--sh-space-16); max-width: 760px; color: var(--sh-text-secondary); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); gap: var(--sh-space-16); align-items: start; }
+    .cell { margin: 0; display: flex; flex-direction: column; gap: var(--sh-space-12); padding: var(--sh-space-16); border-radius: var(--sh-radius-card); }
+    .cell > figcaption { margin: 0; }
+    .photo { background: center / cover url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.5' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3CradialGradient id='a' cx='.25' cy='.35' r='.35'%3E%3Cstop offset='0' stop-color='%23C2410C' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23C2410C' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='.8' cy='.7' r='.4'%3E%3Cstop offset='0' stop-color='%23FDE68A' stop-opacity='.45'/%3E%3Cstop offset='1' stop-color='%23FDE68A' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3Crect width='400' height='300' fill='url(%23a)'/%3E%3Crect width='400' height='300' fill='url(%23b)'/%3E%3C/svg%3E"); }
+    .photo > figcaption { color: var(--sh-text-on-image); }
+    .surface { background: var(--sh-background-default); }
+    .surface > figcaption { color: var(--sh-text-secondary); }
+    .glass-demo { padding: var(--sh-space-16); border-radius: var(--sh-radius-lg); background: var(--sh-gradient-translucent-dark-extra-soft);
+                  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-default)); backdrop-filter: blur(var(--sh-translucent-background-blur-default)); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-action-note</h1>
+
+  <h2 class="sh-title-md">Variants</h2>
+  <div class="grid">
+    <figure class="cell photo"><figcaption class="sh-support-label">CTA=Edit, Style=Normal</figcaption>
+      <!-- CTA=Edit, Style=Normal -->
+      <div class="sh-action-note sh-action-note--edit sh-action-note--normal"><span class="sh-action-note__text sh-body-sm">Hey Sneha, I came across your profile. It felt true to me.</span><span class="sh-action-note__link"><button class="sh-text-link sh-text-link--inverse sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Edit</span></button></span></div>
+    </figure>
+    <figure class="cell surface"><figcaption class="sh-support-label">CTA=Edit, Style=Floating</figcaption>
+      <!-- CTA=Edit, Style=Floating -->
+      <div class="sh-action-note sh-action-note--edit sh-action-note--floating"><span class="sh-action-note__text sh-body-sm">Hey Sneha, I came across your profile. It felt true to me.</span><span class="sh-action-note__link"><button class="sh-text-link sh-text-link--neutral sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Edit</span></button></span></div>
+    </figure>
+    <figure class="cell photo"><figcaption class="sh-support-label">CTA=Upgrade, Style=Normal</figcaption>
+      <!-- CTA=Upgrade, Style=Normal -->
+      <div class="sh-action-note sh-action-note--upgrade sh-action-note--normal"><span class="sh-action-note__text sh-body-sm">To contact her directly</span><span class="sh-action-note__link"><button class="sh-text-link sh-text-link--premium sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Upgrade Now</span></button></span></div>
+    </figure>
+    <figure class="cell surface"><figcaption class="sh-support-label">CTA=Upgrade, Style=Floating</figcaption>
+      <!-- CTA=Upgrade, Style=Floating -->
+      <div class="sh-action-note sh-action-note--upgrade sh-action-note--floating"><span class="sh-action-note__text sh-body-sm">To contact her directly</span><span class="sh-action-note__link"><button class="sh-text-link sh-text-link--premium sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Upgrade Now</span></button></span></div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Long text · narrow width</h2>
+  <div class="grid">
+    <figure class="cell photo" style="max-width: 260px"><figcaption class="sh-support-label">Edit: the message is cut with …, the link stays</figcaption>
+      <div class="sh-action-note sh-action-note--edit sh-action-note--normal"><span class="sh-action-note__text sh-body-sm">Hi, I really liked your profile and would love to connect with you and your family soon.</span><span class="sh-action-note__link"><button class="sh-text-link sh-text-link--inverse sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Edit</span></button></span></div>
+    </figure>
+    <figure class="cell surface" style="max-width: 260px"><figcaption class="sh-support-label">Floating, same text</figcaption>
+      <div class="sh-action-note sh-action-note--edit sh-action-note--floating"><span class="sh-action-note__text sh-body-sm">Hi, I really liked your profile and would love to connect with you and your family soon.</span><span class="sh-action-note__link"><button class="sh-text-link sh-text-link--neutral sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Edit</span></button></span></div>
+    </figure>
+  </div>
+</body>
+</html>

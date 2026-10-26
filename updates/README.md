@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-26 — Component code: core parts used by the profile card](2026-10-26-component-code-core-parts-used-by-the-profile-card.md)
 - [2026-10-26 — Full refresh from Figma: tokens, gradients, 119 blueprints, icon pack](2026-10-26-full-refresh-from-figma-tokens-gradients-119-bluep.md)
 - [2026-10-26 — Profile tags: all 20 tall, border inside](2026-10-26-profile-tags-20.md)
 - [2026-10-26 — sh-button sublabel offset, one text colour, subtext token removed](2026-10-26-sh-button-sublabel-offset-no-subtext-token.md)

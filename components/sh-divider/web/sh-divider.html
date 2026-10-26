@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+  sh-divider — web (HTML5 + CSS). Every variant: Orientation Horizontal / Vertical × Type Soft / Default / Strong.
+  Spec: ../sh-divider.md · Figma node 594:31711
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-divider</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-divider.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .h-box { width: 160px; padding: var(--sh-space-12) 0; }          /* Figma frame width 160 */
+    .v-box { display: flex; height: 160px; padding: 0 var(--sh-space-12); }   /* Figma frame height 160 */
+    .row { display: flex; align-items: center; gap: var(--sh-space-12); height: var(--sh-space-24); }
+    .list { width: 320px; }
+    .list p { margin: 0; padding: var(--sh-space-12) 0; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-divider</h1>
+
+  <h2 class="sh-title-md">Orientation=Horizontal</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Soft</figcaption><div class="h-box"><hr class="sh-divider sh-divider--soft"></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Default</figcaption><div class="h-box"><hr class="sh-divider sh-divider--default"></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Strong</figcaption><div class="h-box"><hr class="sh-divider sh-divider--strong"></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Orientation=Vertical</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Soft</figcaption><div class="v-box"><div class="sh-divider sh-divider--soft sh-divider--vertical" role="separator" aria-orientation="vertical"></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Default</figcaption><div class="v-box"><div class="sh-divider sh-divider--default sh-divider--vertical" role="separator" aria-orientation="vertical"></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Strong</figcaption><div class="v-box"><div class="sh-divider sh-divider--strong sh-divider--vertical" role="separator" aria-orientation="vertical"></div></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">In use</h2>
+  <div class="grid">
+    <div class="list">
+      <p class="sh-body-md">Row one</p>
+      <hr class="sh-divider sh-divider--default">
+      <p class="sh-body-md">Row two</p>
+      <hr class="sh-divider sh-divider--default">
+      <p class="sh-body-md">Row three</p>
+    </div>
+    <div class="row sh-body-sm"><span>Mumbai</span><div class="sh-divider sh-divider--strong sh-divider--vertical" aria-hidden="true"></div><span>Hindu</span><div class="sh-divider sh-divider--strong sh-divider--vertical" aria-hidden="true"></div><span>5′ 6″</span></div>
+  </div>
+</body>
+</html>

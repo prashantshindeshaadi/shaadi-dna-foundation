@@ -1,0 +1,118 @@
+/*
+ * sh-text-link — web (HTML5 + CSS)
+ * Spec: ../sh-text-link.md · Figma node 2348:22277 (22 variants: Type × Size × State Default/Focus;
+ * Neutral has Small and Medium only in Figma — Neutral Large works here with the same rules)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *
+ *   <a class="sh-text-link sh-text-link--link sh-text-link--sm" href="…">            (or <button type="button">)
+ *     <span class="sh-text-link__icon sh-icon" style="--icon:url(icons/line/arrow-left-01.svg)" aria-hidden="true"></span>
+ *     <span class="sh-text-link__label sh-button-sm">Text</span>
+ *     <span class="sh-text-link__icon sh-icon" style="--icon:url(icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+ *   </a>
+ *
+ * Type   .sh-text-link--neutral | --link | --inverse (on imagery / dark surfaces) | --premium
+ * Size   .sh-text-link--sm | --md | --lg ; label text style sh-button-sm | sh-button-md | sh-button-lg ;
+ *        icons 12 / 12 / 16, gap 2 / 2 / 4
+ * Border Figma "Show border": the line under the label (on by default). .sh-text-link--no-border hides it and
+ *        keeps the height, as in Figma.
+ * Icons  Figma "Show leading icon" / "Show trailing icon": include or leave out the __icon spans.
+ * State  Focus :focus-visible (.is-focus forces it for previews). Disabled [disabled] / [aria-disabled="true"]
+ *        (FOUNDATION §4.3). Figma defines no Hover or Pressed look for this component, so none is drawn.
+ */
+
+.sh-text-link {
+  /* Type (Neutral by default) */
+  --_fg: var(--sh-text-secondary);
+  --_icon: var(--sh-icon-secondary);
+  --_ring: var(--sh-border-focus);
+  /* Size (Small by default) */
+  --_gap: var(--sh-space-2);
+  --_icon-size: var(--sh-icon-size-12);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--_gap);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-full);       /* the focus ring follows it (Figma .focus-ring radius full) */
+  background: none;
+  color: var(--_fg);
+  font-family: var(--sh-typo-font-family-primary);
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 48-tall tap area (at least 48 wide) around the 17 / 21 / 25 tall link, without changing its size */
+.sh-text-link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--sh-icon-target-default));
+  height: var(--sh-icon-target-default);
+  transform: translate(-50%, -50%);
+}
+
+/* Label + the 1-stroke line under it, in the label's colour token */
+.sh-text-link__label {
+  display: block;
+  border-bottom: var(--sh-stroke-default) solid currentColor;
+}
+.sh-text-link--no-border .sh-text-link__label { border-bottom-color: transparent; }
+
+.sh-text-link .sh-text-link__icon {
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  --sh-icon-paint: var(--_icon);
+}
+
+/* ---- Size ---------------------------------------------------------------- */
+.sh-text-link--sm { --_gap: var(--sh-space-2); --_icon-size: var(--sh-icon-size-12); }
+.sh-text-link--md { --_gap: var(--sh-space-2); --_icon-size: var(--sh-icon-size-12); }
+.sh-text-link--lg { --_gap: var(--sh-space-4); --_icon-size: var(--sh-icon-size-16); }
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-text-link--neutral {
+  --_fg: var(--sh-text-secondary);
+  --_icon: var(--sh-icon-secondary);
+  --_ring: var(--sh-border-focus);
+}
+.sh-text-link--link {
+  --_fg: var(--sh-text-inline-text);
+  --_icon: var(--sh-icon-inline-icon);
+  --_ring: var(--sh-border-focus);
+}
+.sh-text-link--inverse {
+  --_fg: var(--sh-text-on-image);
+  --_icon: var(--sh-icon-on-image);
+  --_ring: var(--sh-border-inverse);
+}
+.sh-text-link--premium {
+  --_fg: var(--sh-premium-text-on-soft);
+  --_icon: var(--sh-premium-icon-on-soft);
+  --_ring: var(--sh-border-focus);
+}
+
+/* ---- State --------------------------------------------------------------- */
+.sh-text-link:focus { outline: none; }
+.sh-text-link:focus-visible,
+.sh-text-link.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--_ring);
+  outline-offset: var(--sh-space-2);
+}
+
+.sh-text-link:disabled,
+.sh-text-link[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}

@@ -1,0 +1,141 @@
+/*
+ * sh-profile-card-info — web (HTML5 + CSS)
+ * Spec: ../sh-profile-card-info.md · Figma node 2496:27797 (1 variant; booleans and slots below)
+ *
+ * Profile summary on a card: name, age, trust badges, status, key details, optional tags and the action island,
+ * on dark glass over the photo.
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-tag/web/sh-tag.css · components/profile-card/sh-tag-profile/web/sh-tag-profile.css
+ *   components/profile-card/sh-info-detail/web/sh-info-detail.css · components/sh-divider/web/sh-divider.css
+ *   + the island's stylesheets (see sh-action-island.css)
+ *
+ *   <section class="sh-profile-card-info" aria-label="Sneha Kaul, 26">
+ *     <div class="sh-profile-card-info__content">
+ *       <div class="sh-profile-card-info__name-row">
+ *         <div class="sh-profile-card-info__name-group">
+ *           <h3 class="sh-profile-card-info__title">
+ *             <span class="sh-profile-card-info__name sh-heading-sm">Sneha Kaul</span>
+ *             <span class="sh-profile-card-info__age sh-heading-sm">26</span>
+ *           </h3>
+ *           <img class="sh-badge sh-badge--20" src="icons/misc/premium-badge.svg" alt="Premium">   ← Show badge 2
+ *           <img class="sh-badge sh-badge--20" src="icons/misc/vip-badge.svg" alt="VIP">           ← Show badge 3
+ *           <span class="sh-tag … sh-tag-profile sh-tag-profile--online">…</span>                  ← Show status
+ *         </div>
+ *         <span class="sh-profile-card-info__spacer"></span>
+ *         <img class="sh-badge sh-badge--20" src="icons/misc/verified-badge.svg" alt="Verified">    ← Verified
+ *       </div>
+ *       <div class="sh-profile-card-info__details">                                                ← Show detail 1–4
+ *         <p class="sh-info-detail-row">…facts of line 1…</p>
+ *         <p class="sh-info-detail-row">…facts of line 2…</p>
+ *       </div>
+ *     </div>
+ *     <div class="sh-profile-card-info__tags">…sh-tag-profile You & Her, Astro…</div>               ← Show tags
+ *     <hr class="sh-divider sh-divider--soft sh-profile-card-info__divider">
+ *     <div class="sh-action-island sh-action-island--normal …">…</div>                              ← Actions
+ *   </section>
+ *
+ * Long names are cut with … before the age; the age, badges, status and verified badge never shrink.
+ * Leave out what's hidden (details, tags, badges, status, verified): the gaps close up.
+ * Not interactive itself; the island's buttons and links bring their own states.
+ *
+ * Every value is a DNA token.
+ */
+
+.sh-profile-card-info {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-10);
+  width: 100%;
+  min-width: 0;
+  padding: var(--sh-space-14) var(--sh-space-16) var(--sh-space-16);
+  border-radius: var(--sh-radius-lg);
+  background: var(--sh-gradient-translucent-dark-extra-soft);
+  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-default));   /* sh-background-blur/uniform/default */
+  backdrop-filter: blur(var(--sh-translucent-background-blur-default));
+  color: var(--sh-text-on-image);
+  font-family: var(--sh-typo-font-family-primary);
+}
+.sh-profile-card-info::after {                          /* glass edge, drawn as a masked ring */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--sh-stroke-default);
+  background: var(--sh-gradient-translucent-border-light);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ---- Content box: name row + details ---------------------------------------------------------------- */
+.sh-profile-card-info__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-2);
+  min-width: 0;
+}
+
+.sh-profile-card-info__name-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-6);
+  min-width: 0;
+  padding-bottom: var(--sh-space-2);
+  overflow: hidden;
+}
+.sh-profile-card-info__name-group {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: var(--sh-space-6);
+  min-width: 0;
+}
+.sh-profile-card-info__title {                          /* Name + Age, one heading for assistive tech */
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: var(--sh-space-6);
+  min-width: 0;
+  margin: 0;
+  font: inherit;
+}
+.sh-profile-card-info__name {                           /* the name gives way first: cut with … before the age */
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--sh-text-on-image);
+}
+.sh-profile-card-info__age {
+  flex: none;
+  white-space: nowrap;
+  color: var(--sh-text-on-image);
+}
+.sh-profile-card-info__name-group > :not(.sh-profile-card-info__title) { flex: none; }
+.sh-profile-card-info__spacer { flex: 1 1 0; min-width: 0; }
+.sh-profile-card-info__name-row > .sh-badge { flex: none; }
+
+.sh-profile-card-info__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-2);
+  min-width: 0;
+}
+
+/* ---- Tags ------------------------------------------------------------------------------------------- */
+.sh-profile-card-info__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sh-space-8);
+  min-width: 0;
+}
+
+/* ---- Divider: sh-divider Soft at sh-opacity/extra-soft ---------------------------------------------- */
+.sh-profile-card-info__divider { opacity: var(--sh-opacity-extra-soft); }

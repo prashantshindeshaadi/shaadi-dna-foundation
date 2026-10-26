@@ -12,6 +12,9 @@
  *     <img class="sh-avatar-placeholder__art" src="…/assets/female-1x1.svg" alt="">
  *   </span>
  *
+ * Short form (the art alone, in its own box, overflow included):
+ *   <img class="sh-avatar-placeholder sh-avatar-placeholder--female sh-avatar-placeholder--1x1" src="…/assets/female-1x1.svg" alt="No photo">
+ *
  * The span is the Figma frame (4:5 or 1:1); size it with width. The silhouettes overflow their frame
  * (Figma: clip off, no fill), so the art is drawn at its exported size from the frame's top-left and is not clipped.
  * Radius: 1:1 is bound to sh-radius/full, 4:5 to sh-radius/none. Only the requested portraits have a fill,
@@ -50,3 +53,8 @@
 .sh-avatar-placeholder--male-requested { overflow: hidden; }
 .sh-avatar-placeholder--female-requested .sh-avatar-placeholder__art,
 .sh-avatar-placeholder--male-requested .sh-avatar-placeholder__art { height: 100%; object-fit: cover; }
+
+/* Short form: <img class="sh-avatar-placeholder …">: the art at its own proportion; only requested portraits are rounded */
+img.sh-avatar-placeholder { aspect-ratio: auto; height: auto; }
+img.sh-avatar-placeholder--male,
+img.sh-avatar-placeholder--female { border-radius: var(--sh-radius-none); }   /* silhouettes: no fill, nothing to round */

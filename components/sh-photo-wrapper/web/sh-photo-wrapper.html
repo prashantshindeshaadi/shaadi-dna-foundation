@@ -1,0 +1,77 @@
+<!doctype html>
+<!--
+  sh-photo-wrapper — web (HTML5 + CSS). The single variant with its three booleans; open in a browser to preview.
+  Spec: ../sh-photo-wrapper.md · Figma node 2530:10330
+  Run `python3 tools/build.py` once so dist/ exists.
+  The photo is a stand-in (no member photos ship in the repo): ../../profile-card/sh-user-images/assets/requested-female.jpg
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-photo-wrapper</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="../../sh-overlay/web/sh-overlay.css">
+  <link rel="stylesheet" href="sh-photo-wrapper.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    .preview { display: grid; grid-template-columns: repeat(auto-fill, 360px); gap: var(--sh-space-24); }
+    .preview figure { margin: 0; }
+    .preview figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .preview .sh-photo-wrapper { width: 360px; }   /* Figma 360 × 520 */
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-photo-wrapper</h1>
+  <div class="preview">
+
+    <figure><figcaption class="sh-body-sm">Default · Show bottom scrim, Show top scrim (Show overlay off)</figcaption>
+      <div class="sh-photo-wrapper">
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--bottom"></div>
+        <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--top"></div>
+      </div>
+    </figure>
+
+    <figure><figcaption class="sh-body-sm">Show bottom scrim off · Show top scrim off</figcaption>
+      <div class="sh-photo-wrapper">
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+      </div>
+    </figure>
+
+    <figure><figcaption class="sh-body-sm">Show overlay on (sh-overlay Surface=Photo, Type=Message)</figcaption>
+      <div class="sh-photo-wrapper">
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--bottom"></div>
+        <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--top"></div>
+        <div class="sh-overlay sh-overlay--photo sh-overlay--message">
+          <div class="sh-overlay__content">
+            <span class="sh-overlay__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/camera-off.svg)" aria-hidden="true"></span>
+            <p class="sh-overlay__text sh-body-lg">She has shared Photos<br>with Premium Members</p>
+          </div>
+          <button class="sh-button sh-button--tertiary sh-button--sm sh-overlay__action" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Button Text</span></span></button>
+        </div>
+      </div>
+    </figure>
+
+    <figure><figcaption class="sh-body-sm">Show bottom scrim only</figcaption>
+      <div class="sh-photo-wrapper">
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--bottom"></div>
+      </div>
+    </figure>
+
+    <figure><figcaption class="sh-body-sm">Show top scrim only</figcaption>
+      <div class="sh-photo-wrapper">
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--top"></div>
+      </div>
+    </figure>
+
+  </div>
+</body>
+</html>

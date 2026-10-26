@@ -1,0 +1,38 @@
+/*
+ * sh-divider — web (HTML5 + CSS)
+ * Spec: ../sh-divider.md · Figma node 594:31711 (Orientation Horizontal / Vertical × Type Soft / Default / Strong)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ *   <hr class="sh-divider sh-divider--soft">                                         Horizontal: fills the width
+ *   <div class="sh-divider sh-divider--default sh-divider--vertical" role="separator" aria-orientation="vertical"></div>
+ *                                                                                     Vertical: fills the height
+ * Type   .sh-divider--soft (border/soft) | --default (border/default) | --strong (border/strong)
+ * A sh-stroke/default line with radius full. Decorative separators can take aria-hidden="true" instead.
+ */
+
+.sh-divider {
+  --_color: var(--sh-border-soft);
+
+  box-sizing: border-box;
+  display: block;
+  flex: none;
+  align-self: stretch;
+  width: 100%;
+  height: var(--sh-stroke-default);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-full);
+  background: var(--_color);
+}
+
+.sh-divider--vertical {
+  width: var(--sh-stroke-default);
+  height: auto;
+  min-height: 100%;
+}
+
+.sh-divider--soft    { --_color: var(--sh-border-soft); }
+.sh-divider--default { --_color: var(--sh-border-default); }
+.sh-divider--strong  { --_color: var(--sh-border-strong); }

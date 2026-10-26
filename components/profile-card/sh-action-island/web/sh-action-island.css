@@ -1,0 +1,122 @@
+/*
+ * sh-action-island — web (HTML5 + CSS)
+ * Spec: ../sh-action-island.md · Figma node 2594:16928 (8 Types × Style Normal / Floating = 16 variants)
+ *
+ * The action area of a card or screen: an optional sh-action-note ("Show note") above the core actions.
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-button/web/sh-button.css · components/sh-icon-button/web/sh-icon-button.css
+ *   components/sh-icon-button-with-label/web/sh-icon-button-with-label.css
+ *   components/sh-text-link/web/sh-text-link.css · components/profile-card/sh-action-note/web/sh-action-note.css
+ *
+ *   <div class="sh-action-island sh-action-island--normal sh-action-island--message-primary">
+ *     <div class="sh-action-note sh-action-note--edit sh-action-note--normal">…</div>      ← Show note
+ *     <div class="sh-action-island__actions">
+ *       <p class="sh-action-island__message sh-body-md-tight">Like this profile?</p>
+ *       <button class="sh-button sh-button--primary sh-button--md sh-button--fill" type="button">…Connect Now…</button>
+ *     </div>
+ *   </div>
+ *
+ * Style  --normal    no surface: sits inside a card or sheet (the profile card info glass). Text text/on-image.
+ *        --floating  its own surface: sh-gradient/translucent/light/strong, edge sh-gradient/translucent/border/light,
+ *                    radius xxl, padding 16, sh-shadow/floating. Text text/primary. The note inside follows
+ *                    (use sh-action-note--floating).
+ * Type   (modifier)              Actions row
+ *   --message-primary            message + sh-button Primary         } message hugs (min 100, one line, …);
+ *   --message-premium            message + sh-button Premium Solid   } button fills the rest, 96–200; gap 16,
+ *   --message-tertiary           message + sh-button Tertiary        } row centred
+ *   --message-only               the Status text alone (fills, one line, …)
+ *   --primary-only               sh-button Primary, fills to max 200, centred
+ *   --secondary-primary          sh-button Secondary + Primary, equal widths, gap 8
+ *   --tertiary-primary           sh-button Tertiary + Primary, equal widths, gap 8
+ *   --three-actions              3 × sh-icon-button-with-label, equal widths, gap 8
+ * Buttons are Size Medium (sh-button--md). Each child brings its own states and 48 tap area.
+ *
+ * Every value is a DNA token; composed sizes with no token are marked "no token".
+ */
+
+.sh-action-island {
+  --_fg: var(--sh-text-on-image);                        /* Style=Normal */
+
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-12);
+  width: 100%;
+  min-width: 0;
+  padding: var(--sh-space-0);
+  color: var(--_fg);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Style=Floating: own translucent light surface ------------------------------------------------- */
+.sh-action-island--floating {
+  --_fg: var(--sh-text-primary);
+  padding: var(--sh-space-16);
+  border-radius: var(--sh-radius-xxl);
+  background: var(--sh-gradient-translucent-light-strong);
+  box-shadow: var(--sh-shadow-floating-x) var(--sh-shadow-floating-y) var(--sh-shadow-floating-blur)
+              var(--sh-shadow-floating-spread) var(--sh-shadow-floating-color);
+}
+.sh-action-island--floating::after {                    /* Surface edge, drawn as a masked ring */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--sh-stroke-default);
+  background: var(--sh-gradient-translucent-border-light);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ---- Actions row ------------------------------------------------------------------------------------ */
+.sh-action-island__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sh-space-16);
+  width: 100%;
+  min-width: 0;
+}
+.sh-action-island--secondary-primary .sh-action-island__actions,
+.sh-action-island--tertiary-primary .sh-action-island__actions,
+.sh-action-island--three-actions .sh-action-island__actions {
+  justify-content: flex-start;
+  gap: var(--sh-space-8);
+}
+
+/* Message (Body/MD/Tight): hugs its text, never under 100, one line cut with … */
+.sh-action-island__message {
+  flex: 0 1 auto;
+  min-width: calc(var(--sh-space-80) + var(--sh-space-20));   /* no token: min width 100 (Figma) = space-80 + space-20 */
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--_fg);
+}
+.sh-action-island--message-only .sh-action-island__message { flex: 1 1 auto; }
+
+/* Button beside a message, or alone: fills the rest of the row, 96 to 200 wide */
+.sh-action-island__actions > .sh-button {
+  flex: 1 1 0;
+  width: auto;
+  min-width: calc(var(--sh-space-80) + var(--sh-space-16));      /* no token: min width 96 (Figma) = space-80 + space-16 */
+  max-width: calc(var(--sh-space-80) * 2 + var(--sh-space-40));  /* no token: max width 200 (lone button) = 2 × space-80 + space-40 */
+}
+/* Two buttons: equal shares of the row, the button's own 56 minimum, no maximum */
+.sh-action-island--secondary-primary .sh-action-island__actions > .sh-button,
+.sh-action-island--tertiary-primary .sh-action-island__actions > .sh-button {
+  min-width: calc(var(--sh-space-48) + var(--sh-space-8));       /* no token: min width 56 (sh-button) */
+  max-width: none;
+}
+
+/* Three actions: equal shares; captions follow the island's text colour */
+.sh-action-island__actions > .sh-icon-button-with-label {
+  flex: 1 1 0;
+  --sh-icon-button-with-label-color: var(--_fg);
+}

@@ -1,0 +1,56 @@
+/*
+ * sh-photo-wrapper — web (HTML5 + CSS)
+ * Spec: ../sh-photo-wrapper.md · Figma node 2530:10330
+ *
+ * Needs, loaded once per page: dist/css/tokens.css, components/profile-card/sh-user-images/web/sh-user-images.css,
+ * and components/sh-overlay/web/sh-overlay.css when it shows an overlay.
+ *
+ * Profile photo (sh-user-images) + optional top and bottom scrims + optional sh-overlay, layered as in Figma:
+ *   <div class="sh-photo-wrapper">
+ *     <div class="sh-photo-wrapper__image sh-user-image"><img src="member.jpg" alt=""></div>
+ *     <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--bottom"></div>   Show bottom scrim
+ *     <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--top"></div>      Show top scrim
+ *     <div class="sh-overlay sh-overlay--photo sh-overlay--message">…</div>          Show overlay (off by default)
+ *   </div>
+ * Leave a part out to switch it off. Under an overlay that blurs (Message), keep the photo Style Normal:
+ * two background blurs must not stack.
+ *
+ * Fills its container; on its own it keeps the Figma proportion 360 × 520. Corners: sh-radius/none.
+ */
+
+.sh-photo-wrapper {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: 100%;
+  aspect-ratio: 360 / 520;                            /* Figma frame proportion (ignored when the parent sets the height) */
+  overflow: hidden;                                   /* Figma: clip content */
+  border-radius: var(--sh-radius-none);
+}
+
+.sh-photo-wrapper__image,
+.sh-photo-wrapper > .sh-user-image {                  /* the photo fills the wrapper */
+  position: absolute;
+  inset: 0;
+}
+
+.sh-photo-wrapper__scrim {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+/* Bottom scrim: sh-gradient/overlay/bottom, lower half (Figma 260 of 520, pinned to the bottom) */
+.sh-photo-wrapper__scrim--bottom {
+  bottom: 0;
+  height: 50%;                                        /* no token: 260 of 520 */
+  background: var(--sh-gradient-overlay-bottom);
+}
+
+/* Top scrim: sh-gradient/overlay/top, 24 tall, pinned to the top */
+.sh-photo-wrapper__scrim--top {
+  top: 0;
+  height: var(--sh-space-24);                         /* no token: Figma height 24 is unbound; sh-space/24 matches */
+  background: var(--sh-gradient-overlay-top);
+}
