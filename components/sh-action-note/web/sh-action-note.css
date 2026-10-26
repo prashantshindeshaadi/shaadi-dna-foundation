@@ -29,7 +29,7 @@
 
 @font-face {                       /* Body/SM/Italic: Lexend-SH VF Italic (fonts/, built by tools/make_italic.py) */
   font-family: 'Lexend-SH VF';
-  src: url('../../../../fonts/LexendSH-VF-Italic.woff2') format('woff2');
+  src: url('../../../fonts/LexendSH-VF-Italic.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;

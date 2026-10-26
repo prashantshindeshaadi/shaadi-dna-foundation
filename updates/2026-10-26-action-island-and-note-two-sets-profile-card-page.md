@@ -37,7 +37,7 @@
 - The old "01 Lego set" captions were removed. Some were stale, for example "sh-photo-blur-overlay", which is now `sh-overlay`.
 
 ### Docs
-- Blueprints regenerated: `components/profile-card/sh-action-island`, `sh-action-note`.
+- Blueprints regenerated: `components/sh-action-island`, `sh-action-note`.
 - `components/profile-card/sh-action-row` was removed, along with its index row.
 
 ### Page tidy-up (later the same day)

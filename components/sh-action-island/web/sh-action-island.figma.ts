@@ -54,8 +54,8 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
 <link rel="stylesheet" href="components/sh-icon-button/web/sh-icon-button.css">
 <link rel="stylesheet" href="components/sh-icon-button-with-label/web/sh-icon-button-with-label.css">
 <link rel="stylesheet" href="components/sh-text-link/web/sh-text-link.css">
-<link rel="stylesheet" href="components/profile-card/sh-action-note/web/sh-action-note.css">
-<link rel="stylesheet" href="components/profile-card/sh-action-island/web/sh-action-island.css">
+<link rel="stylesheet" href="components/sh-action-note/web/sh-action-note.css">
+<link rel="stylesheet" href="components/sh-action-island/web/sh-action-island.css">
 
 <div class="sh-action-island sh-action-island--${style} sh-action-island--${type}">
   ${note}

@@ -16,6 +16,8 @@ work in progress and may still change.
 | Component | Variants | Properties | Blueprint | Figma |
 |---|---|---|---|---|
 | `sh-accordion` | 2 | 4 | [sh-accordion/sh-accordion.md](sh-accordion/sh-accordion.md) | [`2718:41883`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41883) |
+| `sh-action-island` | 16 | 5 | [sh-action-island/sh-action-island.md](sh-action-island/sh-action-island.md) | [`2594:16928`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16928) |
+| `sh-action-note` | 4 | 5 | [sh-action-note/sh-action-note.md](sh-action-note/sh-action-note.md) | [`2594:16750`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16750) |
 | `sh-alert` | 8 | 7 | [sh-alert/sh-alert.md](sh-alert/sh-alert.md) | [`2718:41675`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41675) |
 | `sh-app-header` | 3 | 4 | [sh-app-header/sh-app-header.md](sh-app-header/sh-app-header.md) | [`2712:13153`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13153) |
 | `sh-avatar` | 9 | 4 | [sh-avatar/sh-avatar.md](sh-avatar/sh-avatar.md) | [`2486:15378`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2486-15378) |
@@ -139,8 +141,6 @@ work in progress and may still change.
 
 | Component | Variants | Properties | Blueprint | Figma |
 |---|---|---|---|---|
-| `sh-action-island` | 16 | 5 | [profile-card/sh-action-island/sh-action-island.md](profile-card/sh-action-island/sh-action-island.md) | [`2594:16928`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16928) |
-| `sh-action-note` | 4 | 5 | [profile-card/sh-action-note/sh-action-note.md](profile-card/sh-action-note/sh-action-note.md) | [`2594:16750`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16750) |
 | `sh-avatar-placeholder` | 8 | 2 | [profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md](profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md) | [`2239:13257`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257) |
 | `sh-info-detail` | 4 | 4 | [profile-card/sh-info-detail/sh-info-detail.md](profile-card/sh-info-detail/sh-info-detail.md) | [`2825:43215`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2825-43215) |
 | `sh-mini-card` | 2 | 9 | [profile-card/sh-mini-card/sh-mini-card.md](profile-card/sh-mini-card/sh-mini-card.md) | [`2780:68360`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360) |

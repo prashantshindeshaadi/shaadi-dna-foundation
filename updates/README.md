@@ -6,6 +6,8 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-26 — Profile card web page on the shared parts](2026-10-26-profile-card-web-page-on-the-shared-parts.md)
+- [2026-10-26 — Action island and note merged into Core; legacy buttons converted](2026-10-26-action-island-note-merged-into-core-buttons-converted.md)
 - [2026-10-26 — Component code: avatar, avatar glyph, mini card](2026-10-26-component-code-avatar-avatar-glyph-mini-card.md)
 - [2026-10-26 — Component code: action note, action island, info card; profile card compiles](2026-10-26-component-code-action-note-action-island-info-card.md)
 - [2026-10-26 — Buttons and text links: leading gap 4, trailing gap 2](2026-10-26-icon-text-gaps-leading-4-trailing-2.md)

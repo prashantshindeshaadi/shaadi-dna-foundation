@@ -37,7 +37,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
 <link rel="stylesheet" href="dist/sh-typo-kit/developer/web/sh-typo.css">
 <link rel="stylesheet" href="components/sh-icon/web/sh-icon.css">
 <link rel="stylesheet" href="components/sh-text-link/web/sh-text-link.css">
-<link rel="stylesheet" href="components/profile-card/sh-action-note/web/sh-action-note.css">
+<link rel="stylesheet" href="components/sh-action-note/web/sh-action-note.css">
 
 <div class="sh-action-note sh-action-note--${cta} sh-action-note--${style}">
   <span class="sh-action-note__text sh-body-sm">${text}</span>
