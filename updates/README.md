@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-26 — Component code: avatar, avatar glyph, mini card](2026-10-26-component-code-avatar-avatar-glyph-mini-card.md)
 - [2026-10-26 — Component code: action note, action island, info card; profile card compiles](2026-10-26-component-code-action-note-action-island-info-card.md)
 - [2026-10-26 — Buttons and text links: leading gap 4, trailing gap 2](2026-10-26-icon-text-gaps-leading-4-trailing-2.md)
 - [2026-10-26 — Refresh: semantic button Small 32, blueprints link their code](2026-10-26-refresh-semantic-button-small-32-blueprints-link-t.md)
