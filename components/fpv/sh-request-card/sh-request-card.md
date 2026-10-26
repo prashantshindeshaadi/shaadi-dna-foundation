@@ -1,4 +1,4 @@
-# sh-fpv-requests-card
+# sh-request-card
 
 **Purpose:** One request from her, with its action.
 
@@ -26,7 +26,7 @@ Full profile view (migration, not yet core) · 4 variants · [Open in Figma](htt
 
 ### Type=Message · free viewer
 
-**Purpose:** her message request for a free (or gamified) viewer — the message is masked after its first words; Upgrade Now opens the premium plans page.
+**When:** she sent a message and the viewer is on Free — "Meher sent you a message", "To view her message & reply", Upgrade Now (Premium Soft Small, crown) opens the premium plans.
 
 ## Properties
 
@@ -65,8 +65,8 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Icon column / Icon / sh-icon/message | height | sh-icon/size/20 *(set on 2/4 variants)* |
 | Text / Label + content / Meta (secondary) | fill | text/tertiary |
 | Text / Label + content / Meta (secondary) | text style | sh-typo/Body/SM/Tight |
-| Text / Label + content / Content (primary) | fill | text/primary *(set on 3/4 variants)* |
-| Text / Label + content / Content (primary) | text style | sh-typo/Body/MD/Default *(set on 3/4 variants)* |
+| Text / Label + content / Content (primary) | fill | text/primary |
+| Text / Label + content / Content (primary) | text style | sh-typo/Body/MD/Default |
 | Text / CTA | gap | sh-space/2 *(set on 3/4 variants)* |
 | Text / CTA | padding-x | sh-space/16 *(set on 3/4 variants)* |
 | Text / CTA | padding-y | sh-space/8 *(set on 3/4 variants)* |
@@ -76,10 +76,6 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Icon column / Icon / sh-icon/image | height | sh-icon/size/20 *(set on 1/4 variants)* |
 | Icon column / Icon / sh-icon/star | width | sh-icon/size/20 *(set on 1/4 variants)* |
 | Icon column / Icon / sh-icon/star | height | sh-icon/size/20 *(set on 1/4 variants)* |
-| Text / Label + content / Masked message · start of her message, then gold mask | gap | sh-space/2 *(set on 1/4 variants)* |
-| Text / Label + content / Masked message · start of her message, then gold mask / Message start | fill | text/primary *(set on 1/4 variants)* |
-| Text / Label + content / Masked message · start of her message, then gold mask / Message start | text style | sh-typo/Body/MD/Default *(set on 1/4 variants)* |
-| Text / Label + content / Masked message · start of her message, then gold mask / Gold mask · sh-fpv-locked-text | gap | sh-space/4 *(set on 1/4 variants)* |
 | Text / CTA · Upgrade Now (opens premium plans) | gap | sh-space/2 *(set on 1/4 variants)* |
 | Text / CTA · Upgrade Now (opens premium plans) | padding-x | sh-space/16 *(set on 1/4 variants)* |
 | Text / CTA · Upgrade Now (opens premium plans) | padding-y | sh-space/8 *(set on 1/4 variants)* |

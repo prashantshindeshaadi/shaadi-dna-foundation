@@ -6,7 +6,7 @@ Border Dashed or Solid picks the line under the label; Show border turns it off.
 
 **Keywords:** border, underline, dashed, solid, text link, link, inline action, read more, edit
 
-Core · 22 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2348-22277) (node `2348:22277`)
+Core · 44 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2348-22277) (node `2348:22277`)
 
 **Code:** Web (HTML/CSS): [sh-text-link.css](web/sh-text-link.css), [sh-text-link.figma.ts](web/sh-text-link.figma.ts), [sh-text-link.html](web/sh-text-link.html) · Jetpack Compose: [ShTextLink.figma.kt](compose/ShTextLink.figma.kt), [ShTextLink.kt](compose/ShTextLink.kt) · SwiftUI: [ShTextLink.figma.swift](swiftui/ShTextLink.figma.swift), [ShTextLink.swift](swiftui/ShTextLink.swift)
 
@@ -14,91 +14,179 @@ Core · 22 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QX
 
 ## Types
 
-### Type=Neutral, Size=Small, State=Default
+### Type=Neutral, Size=Small, State=Default, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Neutral, Size=Small, State=Focus
+### Type=Neutral, Size=Small, State=Focus, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Neutral, Size=Medium, State=Default
+### Type=Neutral, Size=Medium, State=Default, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Neutral, Size=Medium, State=Focus
+### Type=Neutral, Size=Medium, State=Focus, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Link, Size=Small, State=Default
+### Type=Link, Size=Small, State=Default, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Link, Size=Small, State=Focus
+### Type=Link, Size=Small, State=Focus, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Link, Size=Medium, State=Default
+### Type=Link, Size=Medium, State=Default, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Link, Size=Medium, State=Focus
+### Type=Link, Size=Medium, State=Focus, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Link, Size=Large, State=Default
+### Type=Link, Size=Large, State=Default, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Link, Size=Large, State=Focus
+### Type=Link, Size=Large, State=Focus, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Inverse, Size=Small, State=Default
+### Type=Inverse, Size=Small, State=Default, Underline=On
 
 **Purpose:** Inverse text link for use on dark surfaces, solid border.
 
-### Type=Inverse, Size=Small, State=Focus
+### Type=Inverse, Size=Small, State=Focus, Underline=On
 
 **Purpose:** Inverse text link for use on dark surfaces, solid border.
 
-### Type=Inverse, Size=Medium, State=Default
+### Type=Inverse, Size=Medium, State=Default, Underline=On
 
 **Purpose:** Inverse text link for use on dark surfaces, solid border.
 
-### Type=Inverse, Size=Medium, State=Focus
+### Type=Inverse, Size=Medium, State=Focus, Underline=On
 
 **Purpose:** Inverse text link for use on dark surfaces, solid border.
 
-### Type=Inverse, Size=Large, State=Default
+### Type=Inverse, Size=Large, State=Default, Underline=On
 
 **Purpose:** Inverse text link for use on dark surfaces, solid border.
 
-### Type=Inverse, Size=Large, State=Focus
+### Type=Inverse, Size=Large, State=Focus, Underline=On
 
 **Purpose:** Inverse text link for use on dark surfaces, solid border.
 
-### Type=Premium, Size=Small, State=Default
+### Type=Premium, Size=Small, State=Default, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Premium, Size=Small, State=Focus
+### Type=Premium, Size=Small, State=Focus, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Premium, Size=Medium, State=Default
+### Type=Premium, Size=Medium, State=Default, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Premium, Size=Medium, State=Focus
+### Type=Premium, Size=Medium, State=Focus, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Premium, Size=Large, State=Default
+### Type=Premium, Size=Large, State=Default, Underline=On
 
 **Purpose:** text link, solid border.
 
-### Type=Premium, Size=Large, State=Focus
+### Type=Premium, Size=Large, State=Focus, Underline=On
+
+**Purpose:** text link, solid border.
+
+### Type=Neutral, Size=Small, State=Default, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Neutral, Size=Small, State=Focus, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Neutral, Size=Medium, State=Default, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Neutral, Size=Medium, State=Focus, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Link, Size=Small, State=Default, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Link, Size=Small, State=Focus, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Link, Size=Medium, State=Default, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Link, Size=Medium, State=Focus, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Link, Size=Large, State=Default, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Link, Size=Large, State=Focus, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Inverse, Size=Small, State=Default, Underline=Off
+
+**Purpose:** Inverse text link for use on dark surfaces, solid border.
+
+### Type=Inverse, Size=Small, State=Focus, Underline=Off
+
+**Purpose:** Inverse text link for use on dark surfaces, solid border.
+
+### Type=Inverse, Size=Medium, State=Default, Underline=Off
+
+**Purpose:** Inverse text link for use on dark surfaces, solid border.
+
+### Type=Inverse, Size=Medium, State=Focus, Underline=Off
+
+**Purpose:** Inverse text link for use on dark surfaces, solid border.
+
+### Type=Inverse, Size=Large, State=Default, Underline=Off
+
+**Purpose:** Inverse text link for use on dark surfaces, solid border.
+
+### Type=Inverse, Size=Large, State=Focus, Underline=Off
+
+**Purpose:** Inverse text link for use on dark surfaces, solid border.
+
+### Type=Premium, Size=Small, State=Default, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Premium, Size=Small, State=Focus, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Premium, Size=Medium, State=Default, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Premium, Size=Medium, State=Focus, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Premium, Size=Large, State=Default, Underline=Off
+
+**Purpose:** text link, solid border.
+
+### Type=Premium, Size=Large, State=Focus, Underline=Off
 
 **Purpose:** text link, solid border.
 
@@ -111,21 +199,20 @@ Core · 22 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QX
 | Label | text | — | Text |
 | Leading icon | instance swap | — | instance |
 | Trailing icon | instance swap | — | instance |
-| Show border | boolean | — | true |
 | Type | variant | Neutral, Link, Inverse, Premium | Neutral |
 | Size | variant | Small, Medium, Large | Small |
 | State | variant | Default, Focus | Default |
+| Underline | variant | On, Off | On |
 
 ## Anatomy
 
-Layer tree of `Type=Neutral, Size=Small, State=Default`. Nested components are shown by name; their internals live in their own blueprint.
+Layer tree of `Type=Neutral, Size=Small, State=Default, Underline=On`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — row
   - Leading icon — row · hug × hug
     - Leading icon — **sh-icon/arrow-left-01** (Type Line, Size 12)
   - Content — column · hug × hug
     - Label — text "Text"
-    - Underline — fill × fixed
   - Trailing icon — row · hug × hug
     - Trailing icon — **sh-icon/arrow-right-01** (Type Line, Size 12)
 
@@ -133,9 +220,9 @@ Layer tree of `Type=Neutral, Size=Small, State=Default`. Nested components are s
 
 | Size | Width × height | Padding | Gap |
 |---|---|---|---|
-| Small | 53 × 17 | — | sh-space/2 |
-| Medium | 57 × 21 | — | sh-space/2 |
-| Large | 73 × 25 | — | sh-space/4 |
+| Small | 55 × 17 | — | sh-space/2 |
+| Medium | 55 × 21 | — | sh-space/2 |
+| Large | 67 × 25 | — | sh-space/4 |
 
 ## Tokens
 
@@ -144,13 +231,13 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Layer | Property | Token |
 |---|---|---|
 | root | gap | Size=Small → sh-space/2; Size=Medium → sh-space/2; Size=Large → sh-space/4 |
+| Leading icon | padding:right | sh-space/2 |
 | Leading icon / Leading icon | width | Size=Small → sh-icon/size/12; Size=Medium → sh-icon/size/12; Size=Large → sh-icon/size/16 |
 | Leading icon / Leading icon | height | Size=Small → sh-icon/size/12; Size=Medium → sh-icon/size/12; Size=Large → sh-icon/size/16 |
 | Content / Label | fill | Type=Neutral → text/secondary; Type=Link → text/inline-text; Type=Inverse → text/on-image; Type=Premium → premium/text/on-soft |
-| Content / Label | text style | Size=Small → sh-typo/Button/SM; Size=Medium → sh-typo/Button/MD; Size=Large → sh-typo/Button/LG |
-| Content / Underline | stroke | Type=Neutral → text/secondary; Type=Link → text/inline-text; Type=Inverse → text/on-image; Type=Premium → premium/text/on-soft |
+| Content / Label | text style | sh-typo/Button/SM |
 | Trailing icon / Trailing icon | width | Size=Small → sh-icon/size/12; Size=Medium → sh-icon/size/12; Size=Large → sh-icon/size/16 |
 | Trailing icon / Trailing icon | height | Size=Small → sh-icon/size/12; Size=Medium → sh-icon/size/12; Size=Large → sh-icon/size/16 |
-| .focus-ring | radius | sh-radius/full *(set on 11/22 variants)* |
-| .focus-ring | opacity | sh-opacity/strong *(set on 11/22 variants)* |
-| .focus-ring | stroke | Type=Neutral → border/focus; Type=Link → border/focus; Type=Inverse → border/inverse; Type=Premium → border/focus *(set on 11/22 variants)* |
+| .focus-ring | radius | sh-radius/full *(set on 22/44 variants)* |
+| .focus-ring | opacity | sh-opacity/strong *(set on 22/44 variants)* |
+| .focus-ring | stroke | Type=Neutral → border/focus; Type=Link → border/focus; Type=Inverse → border/inverse; Type=Premium → border/focus *(set on 22/44 variants)* |

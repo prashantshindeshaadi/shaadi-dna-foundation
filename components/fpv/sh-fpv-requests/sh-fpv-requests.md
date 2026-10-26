@@ -2,7 +2,7 @@
 
 **Purpose:** Her pending requests, in their own section below Compatibility and above About.
 
-**Built from:** sh-fpv-section-title + sh-fpv-requests-card.
+**Built from:** sh-fpv-section-title + sh-request-card.
 
 **Switches:** Count = number of pending requests shown (up to 3; more shows "See all N").
 
@@ -40,9 +40,9 @@ Layer tree of `Count=3`. Nested components are shown by name; their internals li
   - Header — row · hug × hug
     - sh-fpv-section-title — **sh-fpv-section-title** (Subtitle Subtitle, Title Requests from Meher)
   - Cards (stacked; show up to 3, then "See all N") — column · fill × hug
-    - sh-fpv-requests-card — **sh-fpv-requests-card** (Type Message)
-    - sh-fpv-requests-card — **sh-fpv-requests-card** (Type Photo)
-    - sh-fpv-requests-card — **sh-fpv-requests-card** (Type Birth details)
+    - sh-request-card — **sh-request-card** (Type Message)
+    - sh-request-card — **sh-request-card** (Type Photo)
+    - sh-request-card — **sh-request-card** (Type Birth details)
 
 ## Size
 
@@ -56,7 +56,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 |---|---|---|
 | root | fill | background/default |
 | Header / sh-fpv-section-title | padding-y | sh-space/8 |
-| Cards (stacked; show up to 3, then "See all N") / sh-fpv-requests-card | fill | background/default |
-| Cards (stacked; show up to 3, then "See all N") / sh-fpv-requests-card | stroke | unknown VariableID:16:324 |
+| Cards (stacked; show up to 3, then "See all N") / sh-request-card | fill | background/default |
+| Cards (stacked; show up to 3, then "See all N") / sh-request-card | stroke | unknown VariableID:16:324 |
 
 > Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:16:324
