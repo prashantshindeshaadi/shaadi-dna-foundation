@@ -157,4 +157,5 @@ work in progress and may still change.
 
 ## Icons
 
-[icons.md](icons.md) — the icon map; SVGs in `../icons/`.
+[icons.md](icons.md) — the icon map; SVGs in `../icons/`. Drawing them in code (web, Compose, SwiftUI):
+[sh-icon/sh-icon.md](sh-icon/sh-icon.md).

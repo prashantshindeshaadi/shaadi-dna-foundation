@@ -6,13 +6,13 @@
 
 ### 1 Size
 
-| Size | Height | Padding (Y/X) | Gap | Icon | Text style |
+| Size | Height | Padding (Y/X) | Gap (leading icon → text / text → trailing icon) | Icon | Text style |
 |---|---|---|---|---|---|
-| Large | 48 | `12` / `20` | `4` | 20 | `sh-typo/Button/LG` |
-| Medium | 40 | `10` / `16` | `2` | 16 | `sh-typo/Button/MD` |
-| Small | 32 | `8` / `16` | `2` | 14 | `sh-typo/Button/SM` |
+| Large | 48 | `12` / `20` | `6` / `4` | 20 | `sh-typo/Button/LG` |
+| Medium | 40 | `10` / `16` | `4` / `2` | 16 | `sh-typo/Button/MD` |
+| Small | 32 | `8` / `16` | `4` / `2` | 14 | `sh-typo/Button/SM` |
 
-Min width 56 on every size (no `sh-space` token for 56 yet).
+The leading gap is the row gap plus `sh-space/2` right padding on the Leading icon frame. Min width 56 on every size (no `sh-space` token for 56 yet).
 
 Large is for hero sections, modals and full-width containers. Medium is the everyday default. Small is for dense rows and compact toolbars. Small still needs a 48px touch target.
 

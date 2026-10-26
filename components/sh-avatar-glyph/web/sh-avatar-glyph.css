@@ -1,0 +1,41 @@
+/*
+ * sh-avatar-glyph — web (HTML5 + CSS)
+ * Spec: ../sh-avatar-glyph.md · Figma node 2644:42085 · Gender Male / Female × Size 16 / 24 / 40
+ *
+ * Needs, loaded once per page: dist/css/tokens.css · this file. Works with or without
+ * components/sh-icon/web/sh-icon.css.
+ *
+ *   Class way:    <span class="sh-avatar-glyph sh-avatar-glyph--female sh-avatar-glyph--24" aria-hidden="true"></span>
+ *   sh-icon way:  <span class="sh-icon sh-icon--24" style="--icon:url(components/sh-avatar-glyph/assets/female-24.svg)" aria-hidden="true"></span>
+ *                 (Size 40 has no sh-icon size class: set width / height to var(--sh-icon-pictogram-size-40).)
+ *
+ * Modifiers   Gender: --male (default) · --female
+ *             Size:   --16 (default, sh-icon/size/16) · --24 (sh-icon/size/24) · --40 (sh-icon/pictogram/size/40)
+ *             Each size is its own drawing (Hugeicons stroke scale), not a scaled copy.
+ * Paint       icon/primary (the Figma glyph fill). Set --sh-icon-paint to repaint; sh-avatar uses icon/secondary.
+ * Not interactive: decorative, no states.
+ */
+
+.sh-avatar-glyph {
+  display: inline-block;
+  flex: none;
+  width: var(--sh-icon-size-16);
+  height: var(--sh-icon-size-16);
+  background: var(--sh-icon-paint, var(--sh-icon-primary));   /* glyph fill: icon/primary */
+  -webkit-mask: url(../assets/male-16.svg) center / contain no-repeat;
+  mask: url(../assets/male-16.svg) center / contain no-repeat;
+}
+
+/* ---- Size ---------------------------------------------------------------- */
+.sh-avatar-glyph--16 { width: var(--sh-icon-size-16); height: var(--sh-icon-size-16); }
+.sh-avatar-glyph--24 { width: var(--sh-icon-size-24); height: var(--sh-icon-size-24); }
+.sh-avatar-glyph--40 { width: var(--sh-icon-pictogram-size-40); height: var(--sh-icon-pictogram-size-40); }
+
+/* ---- Drawing per Gender × Size ------------------------------------------- */
+.sh-avatar-glyph--24 { -webkit-mask-image: url(../assets/male-24.svg); mask-image: url(../assets/male-24.svg); }
+.sh-avatar-glyph--40 { -webkit-mask-image: url(../assets/male-40.svg); mask-image: url(../assets/male-40.svg); }
+
+.sh-avatar-glyph--female,
+.sh-avatar-glyph--female.sh-avatar-glyph--16 { -webkit-mask-image: url(../assets/female-16.svg); mask-image: url(../assets/female-16.svg); }
+.sh-avatar-glyph--female.sh-avatar-glyph--24 { -webkit-mask-image: url(../assets/female-24.svg); mask-image: url(../assets/female-24.svg); }
+.sh-avatar-glyph--female.sh-avatar-glyph--40 { -webkit-mask-image: url(../assets/female-40.svg); mask-image: url(../assets/female-40.svg); }

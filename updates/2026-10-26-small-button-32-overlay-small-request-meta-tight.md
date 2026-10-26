@@ -10,6 +10,8 @@
 - **`sh-fpv-requests-card`**: the meta line ("Meher sent you a message") is now `sh-typo/Body/SM/Tight` (12 / 16), as in Prashant's proposal card. It was Body/SM/Default (12 / 18). All 4 variants changed; no copy overrides it.
 - The `sh-button` blueprint now lists Small as 32 tall with 8 / 16 padding.
 
+- **Follow-up:** `sh-semantic-button` Size=Small is also 32 tall with `sh-space/8` top / bottom padding (72 variants). Its Small side padding was already 16, and the minimum width is 56 on all sizes.
+
 ## Why
 
 Small buttons get a more comfortable height. The overlay call to action is lighter, and the request card's meta line sits tighter to its content.
@@ -17,7 +19,7 @@ Small buttons get a more comfortable height. The overlay call to action is light
 ## Who needs to do something
 
 - **Developers:** small button height 32 with padding 8 / 16. The overlay action is the small button.
-- **Open:** `sh-semantic-button` Small is still 28 tall; should it match?
+- `sh-semantic-button` Small matches: 32 tall with `sh-space/8` top / bottom (all 72 Small variants: Solid, Soft, Ghost × every semantic colour and State; focus ring follows). No copies were pinned to 28.
 
 ## Checks
 

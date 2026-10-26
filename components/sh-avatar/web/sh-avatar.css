@@ -1,0 +1,69 @@
+/*
+ * sh-avatar — web (HTML5 + CSS)
+ * Spec: ../sh-avatar.md · Figma node 2486:15378 · Size sm / md / lg × Type Image / Initial / Icon
+ *
+ * Needs, loaded once per page, before this file: dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css ·
+ * components/profile-card/sh-user-images/web/sh-user-images.css (Image) · components/sh-avatar-glyph/web/sh-avatar-glyph.css (Icon)
+ *
+ *   Image:    <span class="sh-avatar sh-avatar--lg sh-avatar--image" role="img" aria-label="Sneha P">
+ *               <span class="sh-avatar__media"><span class="sh-user-image"><img src="member.jpg" alt=""></span></span>
+ *             </span>
+ *   Initial:  <span class="sh-avatar sh-avatar--md sh-avatar--initial">
+ *               <span class="sh-avatar__media"><span class="sh-avatar__label sh-body-md">SH</span></span>
+ *             </span>
+ *   Icon:     <span class="sh-avatar sh-avatar--sm sh-avatar--icon" role="img" aria-label="No photo">
+ *               <span class="sh-avatar__media"><span class="sh-avatar-glyph sh-avatar-glyph--male sh-avatar-glyph--16" aria-hidden="true"></span></span>
+ *             </span>
+ *
+ * Size     --sm 32 (sh-space/32) · --md 48 (sh-space/48) · --lg 96 (no token, see below)
+ *          Label text style: sm sh-support-label · md sh-body-md · lg sh-heading-sm
+ *          Glyph: sm sh-avatar-glyph--16 · md --24 · lg --40 (the avatar sizes the glyph either way)
+ * Type     --image (sh-user-images, Style Normal) · --initial (Label) · --icon (sh-avatar-glyph, Figma "Icon" swap)
+ * Ring     stroke icon/on-image, inside; the Media sits inside the ring, radius sh-radius/avatar.
+ * Not interactive: no states. Inside a card that names the member, add aria-hidden="true" to the root.
+ */
+
+.sh-avatar {
+  --_size: var(--sh-space-32);
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  width: var(--_size);
+  height: var(--_size);
+  padding: var(--sh-space-0);
+  gap: var(--sh-space-0);
+  /* Ring: stroke icon/on-image, inside. no token: Figma's ring weight is unbound (1) → sh-stroke/default */
+  border: var(--sh-stroke-default) solid var(--sh-icon-on-image);
+  border-radius: var(--sh-radius-avatar);
+}
+
+/* ---- Size ---------------------------------------------------------------- */
+.sh-avatar--sm { --_size: var(--sh-space-32); }
+.sh-avatar--md { --_size: var(--sh-space-48); }
+.sh-avatar--lg { --_size: calc(2 * var(--sh-space-48)); }   /* no token: Figma leaves lg (96) unbound = 2 × sh-space/48 */
+
+/* ---- Media --------------------------------------------------------------- */
+.sh-avatar__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--sh-radius-avatar);
+  background: var(--sh-background-strong);                  /* Initial / Icon */
+}
+.sh-avatar--image .sh-avatar__media { background: none; }   /* Image: the photo fills the Media */
+
+/* Initial */
+.sh-avatar__label {
+  color: var(--sh-text-secondary);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Icon: sh-avatar-glyph in icon/secondary at the avatar's glyph size */
+.sh-avatar__media .sh-avatar-glyph { --sh-icon-paint: var(--sh-icon-secondary); }
+.sh-avatar--sm .sh-avatar-glyph { width: var(--sh-icon-size-16); height: var(--sh-icon-size-16); }
+.sh-avatar--md .sh-avatar-glyph { width: var(--sh-icon-size-24); height: var(--sh-icon-size-24); }
+.sh-avatar--lg .sh-avatar-glyph { width: var(--sh-icon-pictogram-size-40); height: var(--sh-icon-pictogram-size-40); }

@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  sh-avatar-glyph — web (HTML5 + CSS). Every variant (Gender × Size), the sh-icon way, and a repaint.
+  Spec: ../sh-avatar-glyph.md · Figma node 2644:42085
+  Run `python3 tools/build.py` once so dist/ exists.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-avatar-glyph</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-avatar-glyph.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    .preview { display: grid; grid-template-columns: repeat(3, 160px); gap: var(--sh-space-16); }
+    .cell { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--sh-space-12); padding: var(--sh-space-16); border-radius: var(--sh-radius-card); background: var(--sh-background-default); }
+    .cell figcaption { color: var(--sh-text-secondary); }
+    .stage { display: flex; align-items: center; justify-content: center; width: 100%; height: var(--sh-space-48); }
+    .pict40 { width: var(--sh-icon-pictogram-size-40); height: var(--sh-icon-pictogram-size-40); }
+    .note { max-width: 760px; color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-avatar-glyph</h1>
+  <p class="note sh-body-sm">Male / female silhouette for sh-avatar Type=Icon. Each size is its own drawing. Glyph paint is icon/primary; sh-avatar repaints it icon/secondary.</p>
+
+  <h2 class="sh-title-md">Variants · class way</h2>
+  <div class="preview">
+    <figure class="cell"><figcaption class="sh-support-label">Gender=Male, Size=16</figcaption>
+      <div class="stage"><span class="sh-avatar-glyph sh-avatar-glyph--male sh-avatar-glyph--16" aria-hidden="true"></span></div></figure>
+    <figure class="cell"><figcaption class="sh-support-label">Gender=Male, Size=24</figcaption>
+      <div class="stage"><span class="sh-avatar-glyph sh-avatar-glyph--male sh-avatar-glyph--24" aria-hidden="true"></span></div></figure>
+    <figure class="cell"><figcaption class="sh-support-label">Gender=Male, Size=40</figcaption>
+      <div class="stage"><span class="sh-avatar-glyph sh-avatar-glyph--male sh-avatar-glyph--40" aria-hidden="true"></span></div></figure>
+    <figure class="cell"><figcaption class="sh-support-label">Gender=Female, Size=16</figcaption>
+      <div class="stage"><span class="sh-avatar-glyph sh-avatar-glyph--female sh-avatar-glyph--16" aria-hidden="true"></span></div></figure>
+    <figure class="cell"><figcaption class="sh-support-label">Gender=Female, Size=24</figcaption>
+      <div class="stage"><span class="sh-avatar-glyph sh-avatar-glyph--female sh-avatar-glyph--24" aria-hidden="true"></span></div></figure>
+    <figure class="cell"><figcaption class="sh-support-label">Gender=Female, Size=40</figcaption>
+      <div class="stage"><span class="sh-avatar-glyph sh-avatar-glyph--female sh-avatar-glyph--40" aria-hidden="true"></span></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">sh-icon way · repaint</h2>
+  <div class="preview">
+    <figure class="cell"><figcaption class="sh-support-label">sh-icon + --icon (Male 24)</figcaption>
+      <div class="stage"><span class="sh-icon sh-icon--24" style="--icon:url(../assets/male-24.svg); --sh-icon-paint: var(--sh-icon-primary)" aria-hidden="true"></span></div></figure>
+    <figure class="cell"><figcaption class="sh-support-label">sh-icon + --icon (Female 40)</figcaption>
+      <div class="stage"><span class="sh-icon pict40" style="--icon:url(../assets/female-40.svg); --sh-icon-paint: var(--sh-icon-primary)" aria-hidden="true"></span></div></figure>
+    <figure class="cell"><figcaption class="sh-support-label">--sh-icon-paint: icon/secondary</figcaption>
+      <div class="stage"><span class="sh-avatar-glyph sh-avatar-glyph--female sh-avatar-glyph--24" style="--sh-icon-paint: var(--sh-icon-secondary)" aria-hidden="true"></span></div></figure>
+  </div>
+</body>
+</html>

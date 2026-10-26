@@ -45,7 +45,7 @@ Layer tree of `Intent=Success, Type=Solid, Size=Large, State=Default`. Nested co
 |---|---|---|---|
 | Large | 141 × 48 | — | sh-space/4 |
 | Medium | 115 × 40 | — | sh-space/2 |
-| Small | 100 × 28 | sh-space/16 | sh-space/2 |
+| Small | 100 × 32 | sh-space/8 / sh-space/16 | sh-space/2 |
 
 ## Tokens
 
@@ -66,4 +66,5 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | .focus-ring | opacity | sh-opacity/strong *(set on 36/216 variants)* |
 | .focus-ring | stroke | border/focus *(set on 36/216 variants)* |
 | root | padding-x | sh-space/16 *(set on 72/216 variants)* |
+| root | padding-y | sh-space/8 *(set on 72/216 variants)* |
 | root | stroke | semantic/success/border/default ← Intent=Success, State=Default / Intent=Success, State=Hover / Intent=Success, State=Pressed / Intent=Success, State=Focus / Intent=Success, State=Loading; border/disabled ← Intent=Success, State=Disabled / Intent=Error, State=Disabled / Intent=Warning, State=Disabled / Intent=Information, State=Disabled; semantic/error/border/default ← Intent=Error, State=Default / Intent=Error, State=Hover / Intent=Error, State=Pressed / Intent=Error, State=Focus / Intent=Error, State=Loading; semantic/warning/border/default ← Intent=Warning, State=Default / Intent=Warning, State=Hover / Intent=Warning, State=Pressed / Intent=Warning, State=Focus / Intent=Warning, State=Loading; semantic/information/border/default ← Intent=Information, State=Default / Intent=Information, State=Hover / Intent=Information, State=Pressed / Intent=Information, State=Focus / Intent=Information, State=Loading *(set on 72/216 variants)* |
