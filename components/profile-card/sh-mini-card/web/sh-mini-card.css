@@ -1,0 +1,109 @@
+/*
+ * sh-mini-card — web (HTML5 + CSS)
+ * Spec: ../sh-mini-card.md · Figma node 2780:68360 · Type Default / No photo
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/profile-card/sh-user-images/web/sh-user-images.css · components/sh-avatar/web/sh-avatar.css
+ *   components/profile-card/sh-info-detail/web/sh-info-detail.css · components/sh-button/web/sh-button.css
+ *
+ *   <article class="sh-mini-card [sh-mini-card--no-photo]">
+ *     Type=Default → sh-avatar lg Image:
+ *       <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true">
+ *         <span class="sh-avatar__media"><span class="sh-user-image"><img src="member.jpg" alt=""></span></span></span>
+ *     Type=No photo → same ring + background/strong Media holding the requested portrait, cropped:
+ *       <span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true">
+ *         <span class="sh-avatar__media"><span class="sh-user-image sh-user-image--top sh-mini-card__portrait">
+ *           <img src="components/profile-card/sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+ *     <div class="sh-mini-card__info">
+ *       <p class="sh-mini-card__name-row">
+ *         <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>                  ← Name
+ *         <span class="sh-mini-card__badges">                                                ← Show badge 1 / 2
+ *           <img class="sh-badge sh-badge--14" src="icons/misc/verified-badge.svg" alt="Verified">   ← Badge 1
+ *           <img class="sh-badge sh-badge--14" src="icons/misc/premium-badge.svg" alt="Premium">     ← Badge 2
+ *         </span>
+ *       </p>
+ *       <p class="sh-mini-card__details"> sh-info-detail --default --sm facts (Show detail 1–3);
+ *          every fact has a separator except the last one shown </p>
+ *     </div>
+ *     <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+ *       filled/check icon + "Connect Now" </button>
+ *   </article>
+ *
+ * The card itself is not interactive; the action button has its own states (sh-button).
+ */
+
+.sh-mini-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-8);
+  width: calc(var(--sh-space-80) + var(--sh-space-48) + var(--sh-space-24));   /* no token: Figma fixed width 152 = 80 + 48 + 24 */
+  padding: var(--sh-space-12);
+  border: var(--sh-stroke-default) solid var(--sh-border-default);              /* stroke inside, included in layout */
+  border-radius: var(--sh-radius-md);
+  background: var(--sh-background-default);
+  box-shadow: var(--sh-shadow-soft-x) var(--sh-shadow-soft-y) var(--sh-shadow-soft-blur) var(--sh-shadow-soft-spread) var(--sh-shadow-soft-color);
+}
+
+/* ---- Avatar -------------------------------------------------------------- */
+.sh-mini-card__avatar { flex: none; }
+
+/* No photo: the requested portrait (sh-user-images Female requested) cropped in the Media.
+   Figma places it at 125 % of the Media's width, centred, its top 12.5 % above the Media. */
+.sh-mini-card .sh-avatar__media { position: relative; }
+.sh-mini-card .sh-mini-card__portrait {
+  position: absolute;
+  left: -12.5%;                 /* no token: proportion of the Media (Figma −11.75 of 94) */
+  top: -12.5%;                  /* no token: proportion of the Media (Figma −11.75 of 94) */
+  width: 125%;                  /* no token: proportion of the Media (Figma 117.5 of 94) */
+  height: 112.5%;               /* visible part only: top-aligned crop down to the Media's bottom edge */
+}
+
+/* ---- Info ---------------------------------------------------------------- */
+.sh-mini-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;          /* fill */
+  gap: var(--sh-space-4);
+  min-width: 0;
+}
+
+.sh-mini-card__name-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  max-width: 100%;
+  margin: 0;
+}
+.sh-mini-card__name {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--sh-text-primary);
+  text-overflow: ellipsis;      /* a long name truncates; the badges stay */
+  white-space: nowrap;
+}
+.sh-mini-card__badges {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-2);
+}
+.sh-mini-card__badges:empty { display: none; }
+
+.sh-mini-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;          /* fill */
+  column-gap: var(--sh-space-6);
+  row-gap: var(--sh-space-0);
+  margin: 0;
+}
+.sh-mini-card__details:empty { display: none; }
+
+/* ---- Action -------------------------------------------------------------- */
+.sh-mini-card__action { align-self: stretch; }   /* sh-button--fill */

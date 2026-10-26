@@ -48,9 +48,9 @@ fun ShAvatarGlyph(
     )
 }
 
-/** The token size of each glyph size. */
+// The token size of each glyph size.
 @Composable
-fun avatarGlyphDimension(size: ShAvatarGlyphSize): Dp = when (size) {
+private fun avatarGlyphDimension(size: ShAvatarGlyphSize): Dp = when (size) {
     ShAvatarGlyphSize.S16 -> dimensionResource(R.dimen.sh_icon_size_16)
     ShAvatarGlyphSize.S24 -> dimensionResource(R.dimen.sh_icon_size_24)
     ShAvatarGlyphSize.S40 -> dimensionResource(R.dimen.sh_icon_pictogram_size_40)

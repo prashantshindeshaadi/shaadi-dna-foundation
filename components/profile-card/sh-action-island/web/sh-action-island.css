@@ -23,7 +23,8 @@
  *                    (use sh-action-note--floating).
  * Type   (modifier)              Actions row
  *   --message-primary            message + sh-button Primary         } message hugs (min 100, one line, …);
- *   --message-premium            message + sh-button Premium Solid   } button fills the rest, 96–200; gap 16,
+ *   --message-premium            message + sh-button Premium Solid   } button fills the rest, 96–200 (never under
+ *                                                                    } its own label); gap 16,
  *   --message-tertiary           message + sh-button Tertiary        } row centred
  *   --message-only               the Status text alone (fills, one line, …)
  *   --primary-only               sh-button Primary, fills to max 200, centred
@@ -101,9 +102,10 @@
 }
 .sh-action-island--message-only .sh-action-island__message { flex: 1 1 auto; }
 
-/* Button beside a message, or alone: fills the rest of the row, 96 to 200 wide */
+/* Button beside a message, or alone: fills the rest of the row, 96 to 200 wide; never narrower than its own
+   label (the message gives way first) */
 .sh-action-island__actions > .sh-button {
-  flex: 1 1 0;
+  flex: 1 0 auto;
   width: auto;
   min-width: calc(var(--sh-space-80) + var(--sh-space-16));      /* no token: min width 96 (Figma) = space-80 + space-16 */
   max-width: calc(var(--sh-space-80) * 2 + var(--sh-space-40));  /* no token: max width 200 (lone button) = 2 × space-80 + space-40 */
@@ -111,6 +113,7 @@
 /* Two buttons: equal shares of the row, the button's own 56 minimum, no maximum */
 .sh-action-island--secondary-primary .sh-action-island__actions > .sh-button,
 .sh-action-island--tertiary-primary .sh-action-island__actions > .sh-button {
+  flex: 1 1 0;
   min-width: calc(var(--sh-space-48) + var(--sh-space-8));       /* no token: min width 56 (sh-button) */
   max-width: none;
 }

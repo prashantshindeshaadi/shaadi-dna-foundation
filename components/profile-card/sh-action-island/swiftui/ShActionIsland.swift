@@ -174,7 +174,8 @@ public struct ShActionIsland: View {
 }
 
 /// Message + button row (Figma: message hugs, min 100, one line cut with …; button fills the rest, 96–200;
-/// the pair is centred). The message gives way first, down to its minimum; the button never goes under 96.
+/// the pair is centred). The message gives way first, down to its minimum; the button never goes under its
+/// own label or 96.
 private struct ShIslandMessageRow: Layout {
     var spacing: CGFloat
     var messageMin: CGFloat
@@ -184,9 +185,11 @@ private struct ShIslandMessageRow: Layout {
     private func widths(_ total: CGFloat, _ subviews: Subviews) -> (message: CGFloat, button: CGFloat) {
         guard subviews.count == 2 else { return (total, 0) }
         let ideal = subviews[0].sizeThatFits(.unspecified).width
-        let messageMax = max(messageMin, total - spacing - buttonMin)
+        // The button never goes under its own label (nor 96), up to the 200 maximum.
+        let buttonFloor = min(max(buttonMin, subviews[1].sizeThatFits(.unspecified).width), buttonMax)
+        let messageMax = max(messageMin, total - spacing - buttonFloor)
         let message = min(max(ideal, messageMin), messageMax)
-        let button = min(max(total - spacing - message, buttonMin), buttonMax)
+        let button = min(max(total - spacing - message, buttonFloor), buttonMax)
         return (message, button)
     }
 

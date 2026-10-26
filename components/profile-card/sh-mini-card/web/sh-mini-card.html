@@ -1,0 +1,246 @@
+<!doctype html>
+<!--
+  sh-mini-card — web (HTML5 + CSS). Both Types, every boolean (Show badge 1 / 2, Show detail 1–3), the badge swaps,
+  a long name and Dark.
+  Spec: ../sh-mini-card.md · Figma node 2780:68360
+  Run `python3 tools/build.py` once so dist/ exists.
+  No member photos ship in the repo: Type=Default uses the requested portrait as a stand-in photo.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-mini-card</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="../../../sh-avatar/web/sh-avatar.css">
+  <link rel="stylesheet" href="../../sh-info-detail/web/sh-info-detail.css">
+  <link rel="stylesheet" href="../../../sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="sh-mini-card.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    .preview { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--sh-space-24); }
+    .preview figure { margin: 0; display: flex; flex-direction: column; gap: var(--sh-space-8); width: 176px; }
+    .preview figcaption { color: var(--sh-text-secondary); min-height: calc(3 * var(--sh-space-16)); }
+    .dark-surface { padding: var(--sh-space-16); border-radius: var(--sh-radius-card); background: var(--sh-background-soft); }
+    .dark-surface figcaption { color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-mini-card</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="preview">
+    <figure><figcaption class="sh-support-label">Type=Default<br>(all booleans on)</figcaption>
+      <article class="sh-mini-card">
+        <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/verified-badge.svg" alt="Verified"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/premium-badge.svg" alt="Premium"></span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’6”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kayastha</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pune, MH</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+
+    <figure><figcaption class="sh-support-label">Type=No photo<br>(all booleans on)</figcaption>
+      <article class="sh-mini-card sh-mini-card--no-photo">
+        <span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image sh-user-image--top sh-mini-card__portrait"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/verified-badge.svg" alt="Verified"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/premium-badge.svg" alt="Premium"></span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’6”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kayastha</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pune, MH</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Booleans and swaps</h2>
+  <div class="preview">
+    <figure><figcaption class="sh-support-label">Show badge 2=false</figcaption>
+      <article class="sh-mini-card">
+        <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/verified-badge.svg" alt="Verified"></span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’6”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kayastha</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pune, MH</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+
+    <figure><figcaption class="sh-support-label">Show badge 1=false<br>Show badge 2=false</figcaption>
+      <article class="sh-mini-card">
+        <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’6”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kayastha</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pune, MH</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+
+    <figure><figcaption class="sh-support-label">Badge 1=premium-badge<br>Show badge 2=false</figcaption>
+      <article class="sh-mini-card sh-mini-card--no-photo">
+        <span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image sh-user-image--top sh-mini-card__portrait"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/premium-badge.svg" alt="Premium"></span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’6”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kayastha</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pune, MH</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+
+    <figure><figcaption class="sh-support-label">Show detail 3=false</figcaption>
+      <article class="sh-mini-card">
+        <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/verified-badge.svg" alt="Verified"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/premium-badge.svg" alt="Premium"></span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’6”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kayastha</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+
+    <figure><figcaption class="sh-support-label">Show detail 1, 2, 3=false</figcaption>
+      <article class="sh-mini-card">
+        <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/verified-badge.svg" alt="Verified"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/premium-badge.svg" alt="Premium"></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+
+    <figure><figcaption class="sh-support-label">Long name<br>(truncates, badges stay)</figcaption>
+      <article class="sh-mini-card">
+        <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Shraddha Kulkarni, 27</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/verified-badge.svg" alt="Verified"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/premium-badge.svg" alt="Premium"></span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’4”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Deshastha</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Mumbai</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Dark</h2>
+  <div class="preview dark-surface" data-theme="dark">
+    <figure><figcaption class="sh-support-label">Type=Default · Dark</figcaption>
+      <article class="sh-mini-card">
+        <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/verified-badge.svg" alt="Verified"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/premium-badge.svg" alt="Premium"></span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’6”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kayastha</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pune, MH</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+    <figure><figcaption class="sh-support-label">Type=No photo · Dark</figcaption>
+      <article class="sh-mini-card sh-mini-card--no-photo">
+        <span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image sh-user-image--top sh-mini-card__portrait"><img src="../../sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+        <div class="sh-mini-card__info">
+          <p class="sh-mini-card__name-row">
+            <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>
+            <span class="sh-mini-card__badges"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/verified-badge.svg" alt="Verified"><img class="sh-badge sh-badge--14" src="../../../../icons/misc/premium-badge.svg" alt="Premium"></span>
+          </p>
+          <p class="sh-mini-card__details">
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">5’6”</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Kayastha</span><span class="sh-info-detail__separator" aria-hidden="true"></span></span>
+            <span class="sh-info-detail sh-info-detail--default sh-info-detail--sm"><span class="sh-info-detail__label sh-body-sm-tight">Pune, MH</span></span>
+          </p>
+        </div>
+        <button class="sh-button sh-button--primary sh-button--sm sh-button--fill sh-mini-card__action" type="button">
+          <span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span>
+          <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Connect Now</span></span>
+        </button>
+      </article>
+    </figure>
+  </div>
+</body>
+</html>

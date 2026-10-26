@@ -16,6 +16,10 @@
 - Applied to `sh-button` (90 variants with icons), `sh-semantic-button` (180) and `sh-text-link` (22). 0 of 1,276 copies override it.
 - The `sh-button` blueprint lists both gaps per size.
 
+### CTAs not built on sh-button
+- 6 FPV CTAs were Daren's remote "Foundation / Pill Button" (5 × "View" on the requests chips, plus "Upgrade Now" on the requests proposal card). They are now `sh-button` Premium Soft, Small, with the `sh-icon/premium` Filled 14 crown and the same label. They follow every button rule: height 32, padding 8 / 16, leading gap 4.
+- Still not on sh-button: legacy remote and detached buttons in Overview (old docs) and in Sunil's "Compare — old vs new" section on the Navigation page. They were left as they are, as reference.
+
 ## Why
 
 An icon in front of a label needs a little more air than a trailing chevron or arrow, which belongs to the label.
