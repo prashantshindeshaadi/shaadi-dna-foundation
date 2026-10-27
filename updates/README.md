@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-27 — sh-list Types: Preference, Report, Highlight, Score, Grouped](2026-10-27-sh-list-types-preference-report-highlight-score-gr.md)
 - [2026-10-27 — Button icon spacing on the button's own gap](2026-10-27-button-icon-spacing-on-the-button-s-own-gap.md)
 - [2026-10-27 — sh-icon/diet is plate, spoon and knife; leaf moves to sh-icon/veg-food](2026-10-27-sh-icon-diet-is-plate-spoon-and-knife-leaf-moves-t.md)
 - [2026-10-27 — Bottom sheets: 32 side margin everywhere](2026-10-27-bottom-sheets-32-side-margin-everywhere.md)

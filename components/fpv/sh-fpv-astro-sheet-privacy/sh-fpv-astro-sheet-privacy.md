@@ -9,23 +9,13 @@ Full profile view (migration, not yet core) · 1 variant · [Open in Figma](http
 Layer tree of `sh-fpv-astro-sheet-privacy`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — column
-  - Frame 2147224323 — column · fill × hug
-    - astro privacy · links to Settings › Astro Details — row · fill × hug
-      - Frame — column · fill × hug
-        - Predictions are based on your details — text "Predictions are based on your details"
-        - 2:00 AM · 28 Jan, 1998 · Thiruvananthapuram, Kerala, India — text "2:00 AM · 28 Jan, 1998 · Thiruvananthapuram, Kerala, India"
-      - sh-icon/edit — **sh-icon/edit** (Type Line, Size 20)
-    - astro privacy · links to Settings › Astro Details — row · fill × hug
-      - Frame — column · fill × hug
-        - Frame 2147224321 — row · fill × hug
-          - Your astro privacy — text "Your astro privacy"
-          - sh-icon/shield-check — **sh-icon/shield-check** (Type Line, Size 16)
-        - Only Premium members or members you like can see your exact date and time. — text "Only Premium members or members you like can see your exact "
-      - sh-icon/edit — **sh-icon/edit** (Type Line, Size 20)
+  - Rows — column · fill × hug
+    - sh-list — **sh-list** (Action instance, Leading icon instance, Pictogram instance, Value ₹0, Value caption Caption, Title icon instance, Control instance, Subtitle 2:00 AM · 28 Jan, 1998 · Thiruvananthapuram, Kerala, India, Trailing icon instance, Title Predictions are based on your details, Type Grouped, Leading None, Trailing Chevron, Style Start)
+    - sh-list — **sh-list** (Action instance, Value ₹0, Value caption Caption, Leading icon instance, Trailing icon instance, Subtitle Only Premium members or members you like can see your exact date and time., Pictogram instance, Title icon instance, Control instance, Title Your astro privacy, Type Grouped, Leading None, Trailing Chevron, Style End)
 
 ## Size
 
-360 × 196
+360 × 214
 
 ## Tokens
 
@@ -33,18 +23,13 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
-| Frame 2147224323 | stroke | unknown VariableID:342a2a40bae10cedc93c8002b36b3e34a4107a7b/2480:1012 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / Predictions are based on your details | fill | unknown VariableID:c157df54168dfbac2225d675e854b4f86b364d9c/1191:46 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / Predictions are based on your details | text style | sh-typo/Body/MD/Default |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / 2:00 AM · 28 Jan, 1998 · Thiruvananthapuram, Kerala, India | fill | unknown VariableID:2982e37d7c3a162a0cc3399b0c7819f6f89c4c1d/1191:50 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / 2:00 AM · 28 Jan, 1998 · Thiruvananthapuram, Kerala, India | text style | sh-typo/Body/SM/Default |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / sh-icon/edit | width | sh-icon/size/20 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / sh-icon/edit | height | sh-icon/size/20 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / Frame 2147224321 / Your astro privacy | fill | unknown VariableID:c157df54168dfbac2225d675e854b4f86b364d9c/1191:46 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / Frame 2147224321 / Your astro privacy | text style | sh-typo/Body/MD/Default |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / Frame 2147224321 / sh-icon/shield-check | width | sh-icon/size/16 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / Frame 2147224321 / sh-icon/shield-check | height | sh-icon/size/16 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / Only Premium members or members you like can see your exact date and time. | fill | unknown VariableID:2982e37d7c3a162a0cc3399b0c7819f6f89c4c1d/1191:50 |
-| Frame 2147224323 / astro privacy · links to Settings › Astro Details / Frame / Only Premium members or members you like can see your exact date and time. | text style | sh-typo/Body/SM/Default |
-
-> Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:2982e37d7c3a162a0cc3399b0c7819f6f89c4c1d/1191:50, unknown VariableID:342a2a40bae10cedc93c8002b36b3e34a4107a7b/2480:1012, unknown VariableID:c157df54168dfbac2225d675e854b4f86b364d9c/1191:46
+| root | padding-x | sh-space/32 |
+| Rows / sh-list | radius:topLeft | sh-radius/none |
+| Rows / sh-list | radius:topRight | sh-radius/none |
+| Rows / sh-list | radius:bottomLeft | sh-radius/md |
+| Rows / sh-list | radius:bottomRight | sh-radius/md |
+| Rows / sh-list | strokeTopWeight | sh-stroke/none |
+| Rows / sh-list | strokeBottomWeight | sh-stroke/default |
+| Rows / sh-list | strokeLeftWeight | sh-stroke/default |
+| Rows / sh-list | strokeRightWeight | sh-stroke/default |
+| Rows / sh-list | stroke | border/soft |
