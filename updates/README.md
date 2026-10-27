@@ -6,6 +6,8 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-27 — sh-icon/diet is plate, spoon and knife; leaf moves to sh-icon/veg-food](2026-10-27-sh-icon-diet-is-plate-spoon-and-knife-leaf-moves-t.md)
+- [2026-10-27 — Bottom sheets: 32 side margin everywhere](2026-10-27-bottom-sheets-32-side-margin-everywhere.md)
 - [2026-10-26 — Icon size 14 removed](2026-10-26-icon-size-14-removed.md)
 - [2026-10-26 — sh-request-card and sh-request-chip](2026-10-26-sh-request-card-and-chip.md)
 - [2026-10-26 — Text link: native dotted underline; FPV footer shares one top block](2026-10-26-text-link-native-dotted-underline-footer-shared-parts.md)

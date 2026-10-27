@@ -115,7 +115,7 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `delete` | line 12/16/20/24, filled 12/16/20/24 | delete, trash, bin, remove, discard, delete02, Delete02 | [line](../icons/line/delete.svg) [filled](../icons/filled/delete.svg) |
 | `delete-forever` | line 12/16/20/24, filled 12/16/20/24 | delete forever, delete, forever, delete permanently, trash, delete03, Delete03 | [line](../icons/line/delete-forever.svg) [filled](../icons/filled/delete-forever.svg) |
 | `diamond` | line 12/16/20/24, filled 12/16/20/24 | diamond line, diamond, line, premium, elite, gem, Diamond | [line](../icons/line/diamond.svg) [filled](../icons/filled/diamond.svg) |
-| `diet` | line 12/16/20/24, filled 12/16/20/24 | diet, veg, vegetarian, eating habits, food, leaf01, SpoonAndKnife | [line](../icons/line/diet.svg) [filled](../icons/filled/diet.svg) |
+| `diet` | line 12/16/20/24, filled 12/16/20/24 | diet, food, eating habits, meal, plate, spoon, knife, dining, SpoonAndKnife | [line](../icons/line/diet.svg) [filled](../icons/filled/diet.svg) |
 | `dining` | line 12/16/20/24, filled 12/16/20/24 | dining, food, cuisine, diet, restaurant, dish01, Dish01 | [line](../icons/line/dining.svg) [filled](../icons/filled/dining.svg) |
 | `discount` | line 12/16/20/24, filled 12/16/20/24 | discount, offer, sale, percent off, Discount | [line](../icons/line/discount.svg) [filled](../icons/filled/discount.svg) |
 | `discount-tag` | line 12/16/20/24, filled 12/16/20/24 | discount tag, discount, tag, offer tag, deal, sale, discount tag01, DiscountTag01 | [line](../icons/line/discount-tag.svg) [filled](../icons/filled/discount-tag.svg) |
@@ -382,6 +382,7 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `user-star` | line 12/16/20/24, filled 12/16/20/24 | user star, user, star, top match, featured member, premium member, user star02, UserStar02 | [line](../icons/line/user-star.svg) [filled](../icons/filled/user-star.svg) |
 | `users-group` | line 12/16/20/24, filled 12/16/20/24 | users group, users, group, members, community, family, people, user group, UserGroup | [line](../icons/line/users-group.svg) [filled](../icons/filled/users-group.svg) |
 | `verified-badge` | misc 14/20 |  | [misc](../icons/misc/verified-badge.svg) |
+| `veg-food` | line 12/16/20/24, filled 12/16/20/24 | veg, veg food, vegetarian, vegan, leaf, plant-based, green, leaf01 | [line](../icons/line/veg-food.svg) [filled](../icons/filled/veg-food.svg) |
 | `video` | line 12/16/20/24, filled 12/16/20/24 | video, video call, record, clip, video01, Video01 | [line](../icons/line/video.svg) [filled](../icons/filled/video.svg) |
 | `video-off` | line 12/16/20/24, filled 12/16/20/24 | video off, video, off, camera off, no video, VideoOff | [line](../icons/line/video-off.svg) [filled](../icons/filled/video-off.svg) |
 | `vip-badge` | misc 42 |  | [misc](../icons/misc/vip-badge.svg) |
