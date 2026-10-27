@@ -181,7 +181,7 @@ private struct ShButtonMetrics {
             paddingX = SH.Space.step20; paddingY = SH.Space.step12; gap = SH.Space.step4
             iconSize = SH.Icon.size20; lineHeight = SH.Typo.buttonLgLineHeight; textStyle = .buttonLg
         case .medium:
-            paddingX = SH.Space.step16; paddingY = SH.Space.step10; gap = SH.Space.step2
+            paddingX = SH.Space.step16; paddingY = SH.Space.step10; gap = SH.Space.step4
             iconSize = SH.Icon.size16; lineHeight = SH.Typo.buttonMdLineHeight; textStyle = .buttonMd
         case .small:
             paddingX = SH.Space.step16; paddingY = SH.Space.step8; gap = SH.Space.step2

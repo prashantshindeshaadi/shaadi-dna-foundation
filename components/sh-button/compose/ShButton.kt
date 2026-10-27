@@ -188,7 +188,7 @@ private fun shButtonMetrics(size: ShButtonSize): ShButtonMetrics = when (size) {
     ShButtonSize.Medium -> ShButtonMetrics(
         paddingX = dimensionResource(R.dimen.sh_space_16),
         paddingY = dimensionResource(R.dimen.sh_space_10),
-        gap = dimensionResource(R.dimen.sh_space_2),
+        gap = dimensionResource(R.dimen.sh_space_4),
         iconSize = dimensionResource(R.dimen.sh_icon_size_16),
         textStyle = shType().buttonMd,
     )

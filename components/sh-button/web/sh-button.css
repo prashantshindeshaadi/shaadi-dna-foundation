@@ -36,7 +36,7 @@
   /* Size (Medium by default) */
   --_pad-y: var(--sh-space-10);
   --_pad-x: var(--sh-space-16);
-  --_gap: var(--sh-space-2);
+  --_gap: var(--sh-space-4);
   --_icon-size: var(--sh-icon-size-16);
   --_line: var(--sh-typo-button-md-line-height);
 
@@ -84,7 +84,7 @@
 .sh-button--md {
   --_pad-y: var(--sh-space-10);
   --_pad-x: var(--sh-space-16);
-  --_gap: var(--sh-space-2);
+  --_gap: var(--sh-space-4);
   --_icon-size: var(--sh-icon-size-16);
   --_line: var(--sh-typo-button-md-line-height);
 }
