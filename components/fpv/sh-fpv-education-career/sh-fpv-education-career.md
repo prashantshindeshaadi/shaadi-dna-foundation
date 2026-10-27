@@ -45,15 +45,15 @@ Layer tree of `Plan=Free, State=Gated`. Nested components are shown by name; the
     - Education — column · fixed × fill
       - card header — row · fill × hug
         - card header — text "Education"
-      - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Text)
-      - sh-fpv-info-item — **sh-fpv-info-item** (Lines Double, Content Masked)
-      - sh-fpv-info-item — **sh-fpv-info-item** (Lines Double, Content Masked)
+      - sh-list-info — **sh-list** (Type Info)
+      - sh-list-info — **sh-list** (Type Info)
+      - sh-list-info — **sh-list** (Type Info)
     - Career — column · fixed × fill
       - card header — row · fill × hug
         - card header — text "Career"
-      - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Text)
-      - sh-fpv-info-item — **sh-fpv-info-item** (Lines Double, Content Masked)
-      - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Text)
+      - sh-list-info — **sh-list** (Type Info)
+      - sh-list-info — **sh-list** (Type Info)
+      - sh-list-info — **sh-list** (Type Info)
 
 ## Size
 
@@ -71,14 +71,10 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Basics / Education | stroke | unknown VariableID:16:324 *(set on 2/3 variants)* |
 | Basics / Education / card header / card header | fill | text/tertiary *(set on 2/3 variants)* |
 | Basics / Education / card header / card header | text style | sh-typo/Support/Micro *(set on 2/3 variants)* |
-| Basics / Education / sh-fpv-info-item | gap | sh-space/gap/form *(set on 2/3 variants)* |
-| Basics / Education / sh-fpv-info-item | padding-y | sh-space/4 *(set on 1/3 variants)* |
 | Basics / Career | fill | background/default *(set on 2/3 variants)* |
 | Basics / Career | stroke | unknown VariableID:16:324 *(set on 2/3 variants)* |
 | Basics / Career / card header / card header | fill | text/tertiary *(set on 2/3 variants)* |
 | Basics / Career / card header / card header | text style | sh-typo/Support/Micro *(set on 2/3 variants)* |
-| Basics / Career / sh-fpv-info-item | gap | sh-space/gap/form *(set on 2/3 variants)* |
-| Basics / Career / sh-fpv-info-item | padding-y | sh-space/4 *(set on 1/3 variants)* |
 | Tit-for-tat card | radius | sh-radius/lg *(set on 1/3 variants)* |
 | Tit-for-tat card | stroke | unknown VariableID:16:324 *(set on 1/3 variants)* |
 

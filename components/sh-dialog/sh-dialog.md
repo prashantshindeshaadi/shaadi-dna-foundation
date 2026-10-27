@@ -63,12 +63,12 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Text / Body | fill | text/secondary |
 | Text / Body | text style | sh-typo/Body/MD/Default |
 | Actions | gap | sh-space/12 |
-| Actions / Secondary action | gap | sh-space/2 |
+| Actions / Secondary action | gap | sh-space/4 |
 | Actions / Secondary action | padding-x | sh-space/16 |
 | Actions / Secondary action | padding-y | sh-space/10 |
 | Actions / Secondary action | radius | sh-radius/full |
 | Actions / Secondary action | fill | button/secondary/background/default |
-| Actions / Primary action | gap | sh-space/2 |
+| Actions / Primary action | gap | Type=Default → sh-space/4; Type=Destructive → sh-space/2 |
 | Actions / Primary action | padding-x | sh-space/16 *(set on 1/2 variants)* |
 | Actions / Primary action | padding-y | sh-space/10 *(set on 1/2 variants)* |
 | Actions / Primary action | radius | sh-radius/full *(set on 1/2 variants)* |

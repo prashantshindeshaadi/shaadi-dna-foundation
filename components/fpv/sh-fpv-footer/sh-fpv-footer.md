@@ -43,26 +43,11 @@ Full profile view (migration, not yet core) · 5 variants · [Open in Figma](htt
 Layer tree of `State=Default`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — frame
-  - Default · text group — column · fixed × hug
-    - Default · text group — column · hug × hug
-      - Default · text group — column · hug × hug
-        - Default · text group — column · fixed × hug
-          - Image & Nav — fixed × fixed
-            - sh-carousel-dots — **sh-carousel-dots** · hidden by default
-            - Photo Area — fixed × fixed
-          - Like Meher’s Profile? — text "Like Meher’s Profile?" · hidden by default
-        - Don’t miss out on Meher — text "Don’t miss out on Meher"
-      - Actions — row · hug × hug
-        - sh-button — **sh-button** (Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Trailing icon (Small) instance, Leading icon (Medium) instance, Leading icon (Small) instance, Label Share, Type Tertiary, Size Medium, State Default)
-        - sh-button — **sh-button** (Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Trailing icon (Small) instance, Leading icon (Medium) instance, Leading icon (Small) instance, Label Shortlist, Type Tertiary, Size Medium, State Default)
+  - Footer CTA — **sh-fpv-footer-cta**
   - Gradient — fixed × fixed
     - Eclipse — fixed × fixed
     - Planet — fixed × fixed
-  - Default · item — fixed × fixed
-    - Frame 2147224327 — column · fixed × hug
-      - Manage your boundaries — text "Manage your boundaries"
-      - Hide, Report or Block Profile — text "Hide, Report or Block Profile"
-    - sh-icon/arrow-down-01 — **sh-icon/arrow-down-01** (Type Line, Size 16) · hidden by default
+  - Manage boundaries — **sh-fpv-footer-boundaries**
   - Scroll to reveal — text "Scroll to reveal"
   - Premium Account — fixed × fixed
     - status — fixed × fixed
@@ -89,30 +74,9 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Layer | Property | Token |
 |---|---|---|
 | root | fill | unknown VariableID:3fcfd05409941201c9552dc4dcef394ca2d8269f/1135:110 |
-| Default · text group | padding:bottom | sh-space/40 *(set on 1/5 variants)* |
-| Default · text group | fill | background/default *(set on 1/5 variants)* |
-| Default · text group | effect | shadow/light-mode/sticky-bar *(set on 1/5 variants)* |
-| Default · text group / Default · text group | gap | sh-space/8 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Default · text group / Default · text group / Image & Nav / sh-carousel-dots | gap | sh-space/6 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Default · text group / Default · text group / Image & Nav / sh-carousel-dots | padding-x | sh-space/0 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Default · text group / Default · text group / Image & Nav / sh-carousel-dots | padding-y | sh-space/14 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Default · text group / Default · text group / Image & Nav / sh-carousel-dots | radius | sh-radius/none *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Default · text group / Default · text group / Like Meher’s Profile? | fill | unknown VariableID:2f7647c6708ddff074d7ccc5202185a20e841b66/1038:294 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Default · text group / Default · text group / Like Meher’s Profile? | text style | sh-typo/Body/LG/Default *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Default · text group / Don’t miss out on Meher | fill | text/secondary *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Default · text group / Don’t miss out on Meher | text style | sh-typo/Title/LG *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Actions | gap | sh-space/8 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Actions / sh-button | gap | sh-space/4 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Actions / sh-button | padding-x | sh-space/16 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Actions / sh-button | padding-y | sh-space/10 *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Actions / sh-button | radius | sh-radius/full *(set on 1/5 variants)* |
-| Default · text group / Default · text group / Actions / sh-button | fill | button/tertiary/background/default *(set on 1/5 variants)* |
-| Default · item / Frame 2147224327 / Manage your boundaries | fill | text/secondary *(set on 1/5 variants)* |
-| Default · item / Frame 2147224327 / Manage your boundaries | text style | sh-typo/Title/SM *(set on 1/5 variants)* |
-| Default · item / Frame 2147224327 / Hide, Report or Block Profile | fill | text/tertiary *(set on 1/5 variants)* |
-| Default · item / Frame 2147224327 / Hide, Report or Block Profile | text style | sh-typo/Button/SM *(set on 1/5 variants)* |
-| Default · item / sh-icon/arrow-down-01 | width | sh-icon/size/16 *(set on 1/5 variants)* |
-| Default · item / sh-icon/arrow-down-01 | height | sh-icon/size/16 *(set on 1/5 variants)* |
+| Footer CTA | padding:bottom | sh-space/40 |
+| Footer CTA | fill | background/default |
+| Footer CTA | effect | shadow/light-mode/sticky-bar |
 | Scroll to reveal | fill | text/disabled *(set on 1/5 variants)* |
 | Scroll to reveal | text style | sh-typo/Support/Label *(set on 1/5 variants)* |
 | Premium Account | fill | background/default *(set on 1/5 variants)* |
@@ -120,27 +84,6 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Premium Account / bg / Premium Account background · image 3 | fill | sh-translucent/background/light/soft/start *(set on 1/5 variants)* |
 | Premium Account / Icon / Premium Account icon · glyph 1 | stroke | icon/tertiary *(set on 1/5 variants)* |
 | Premium Account / Icon / Premium Account icon · glyph 2 | stroke | icon/tertiary *(set on 1/5 variants)* |
-| Settled · Quote reward · text group | fill | background/default *(set on 1/5 variants)* |
-| Settled · Quote reward · text group | effect | shadow/light-mode/sticky-bar *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Image & Nav / sh-carousel-dots | gap | sh-space/6 *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Image & Nav / sh-carousel-dots | padding-x | sh-space/0 *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Image & Nav / sh-carousel-dots | padding-y | sh-space/14 *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Image & Nav / sh-carousel-dots | radius | sh-radius/none *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Like Meher’s Profile? | fill | unknown VariableID:2f7647c6708ddff074d7ccc5202185a20e841b66/1038:294 *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Like Meher’s Profile? | text style | sh-typo/Body/LG/Default *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Don’t miss out on Meher | fill | text/tertiary *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Settled · Quote reward · text group / Don’t miss out on Meher | text style | sh-typo/Title/SM *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Actions / sh-button | gap | sh-space/2 *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Actions / sh-button | padding-x | sh-space/16 *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Actions / sh-button | padding-y | sh-space/10 *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Actions / sh-button | radius | sh-radius/full *(set on 1/5 variants)* |
-| Settled · Quote reward · text group / Settled · Quote reward · text group / Actions / sh-button | fill | button/tertiary/background/default *(set on 1/5 variants)* |
-| Settled · Quote reward · item / Hide, Report or Block Profile | fill | text/tertiary *(set on 1/5 variants)* |
-| Settled · Quote reward · item / Hide, Report or Block Profile | text style | sh-typo/Button/SM *(set on 1/5 variants)* |
-| Settled · Quote reward · item / Manage your boundaries | fill | text/secondary *(set on 1/5 variants)* |
-| Settled · Quote reward · item / Manage your boundaries | text style | sh-typo/Body/MD/Tight *(set on 1/5 variants)* |
-| Settled · Quote reward · item / sh-icon/arrow-down-01 | width | sh-icon/size/16 *(set on 1/5 variants)* |
-| Settled · Quote reward · item / sh-icon/arrow-down-01 | height | sh-icon/size/16 *(set on 1/5 variants)* |
 | Success story | fill | background/default *(set on 4/5 variants)* |
 | Success story | stroke | border/inverse *(set on 4/5 variants)* |
 | Success story | effect | shadow/light-mode/sheet-dialog *(set on 4/5 variants)* |
@@ -157,27 +100,6 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Success story / Icon / Icon / Success story icon · glyph 2 | stroke | icon/inverse *(set on 4/5 variants)* |
 | Success story / Icon / Icon / sh-icon/shaadi | width | sh-icon/size/20 *(set on 4/5 variants)* |
 | Success story / Icon / Icon / sh-icon/shaadi | height | sh-icon/size/20 *(set on 4/5 variants)* |
-| Settled · Success story · text group | fill | background/default *(set on 1/5 variants)* |
-| Settled · Success story · text group | effect | shadow/light-mode/sticky-bar *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Image & Nav / sh-carousel-dots | gap | sh-space/6 *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Image & Nav / sh-carousel-dots | padding-x | sh-space/0 *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Image & Nav / sh-carousel-dots | padding-y | sh-space/14 *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Image & Nav / sh-carousel-dots | radius | sh-radius/none *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Like Meher’s Profile? | fill | unknown VariableID:2f7647c6708ddff074d7ccc5202185a20e841b66/1038:294 *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Like Meher’s Profile? | text style | sh-typo/Body/LG/Default *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Don’t miss out on Meher | fill | text/tertiary *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Settled · Success story · text group / Don’t miss out on Meher | text style | sh-typo/Title/SM *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Actions / sh-button | gap | sh-space/2 *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Actions / sh-button | padding-x | sh-space/16 *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Actions / sh-button | padding-y | sh-space/10 *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Actions / sh-button | radius | sh-radius/full *(set on 1/5 variants)* |
-| Settled · Success story · text group / Settled · Success story · text group / Actions / sh-button | fill | button/tertiary/background/default *(set on 1/5 variants)* |
-| Settled · Success story · item / Hide, Report or Block Profile | fill | text/tertiary *(set on 1/5 variants)* |
-| Settled · Success story · item / Hide, Report or Block Profile | text style | sh-typo/Button/SM *(set on 1/5 variants)* |
-| Settled · Success story · item / Manage your boundaries | fill | text/secondary *(set on 1/5 variants)* |
-| Settled · Success story · item / Manage your boundaries | text style | sh-typo/Body/MD/Tight *(set on 1/5 variants)* |
-| Settled · Success story · item / sh-icon/arrow-down-01 | width | sh-icon/size/16 *(set on 1/5 variants)* |
-| Settled · Success story · item / sh-icon/arrow-down-01 | height | sh-icon/size/16 *(set on 1/5 variants)* |
 | Success story / Success story | fill | background/default *(set on 1/5 variants)* |
 | Success story / Success story | stroke | unknown VariableID:16:324 *(set on 1/5 variants)* |
 | Success story / Success story | effect | shadow/light-mode/card *(set on 1/5 variants)* |
@@ -197,28 +119,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Success story / Success story / Success story · text group / 2021 | text style | sh-typo/Support/Label *(set on 1/5 variants)* |
 | Success story / Your Match could be one scroll away. | fill | text/secondary *(set on 1/5 variants)* |
 | Success story / Your Match could be one scroll away. | text style | sh-typo/Body/SM/Default *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group | fill | background/default *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group | effect | shadow/light-mode/sticky-bar *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Image & Nav / sh-carousel-dots | gap | sh-space/6 *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Image & Nav / sh-carousel-dots | padding-x | sh-space/0 *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Image & Nav / sh-carousel-dots | padding-y | sh-space/14 *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Image & Nav / sh-carousel-dots | radius | sh-radius/none *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Like Meher’s Profile? | fill | unknown VariableID:2f7647c6708ddff074d7ccc5202185a20e841b66/1038:294 *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Like Meher’s Profile? | text style | sh-typo/Body/LG/Default *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Don’t miss out on Meher | fill | text/tertiary *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Don’t miss out on Meher | text style | sh-typo/Title/SM *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Actions / sh-button | gap | sh-space/2 *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Actions / sh-button | padding-x | sh-space/16 *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Actions / sh-button | padding-y | sh-space/10 *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Actions / sh-button | radius | sh-radius/full *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · text group / Settled · Premium (unclaimed) · text group / Actions / sh-button | fill | button/tertiary/background/default *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · item / Hide, Report or Block Profile | fill | text/tertiary *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · item / Hide, Report or Block Profile | text style | sh-typo/Button/SM *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · item / Manage your boundaries | fill | text/secondary *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · item / Manage your boundaries | text style | sh-typo/Body/MD/Tight *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · item / sh-icon/arrow-down-01 | width | sh-icon/size/16 *(set on 1/5 variants)* |
-| Settled · Premium (unclaimed) · item / sh-icon/arrow-down-01 | height | sh-icon/size/16 *(set on 1/5 variants)* |
-| Success story / sh-button | gap | sh-space/2 *(set on 2/5 variants)* |
+| Success story / sh-button | gap | sh-space/4 *(set on 2/5 variants)* |
 | Success story / sh-button | padding-x | sh-space/16 *(set on 2/5 variants)* |
 | Success story / sh-button | padding-y | sh-space/10 *(set on 2/5 variants)* |
 | Success story / sh-button | radius | sh-radius/full *(set on 2/5 variants)* |
@@ -227,26 +128,5 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Success story / Premium unlocked! One free contact reveal. | text style | sh-typo/Heading/SM *(set on 2/5 variants)* |
 | Success story / Unlock a contact for free and feel what our Premium members get every single day. | fill | text/secondary *(set on 2/5 variants)* |
 | Success story / Unlock a contact for free and feel what our Premium members get every single day. | text style | sh-typo/Body/MD/Default *(set on 2/5 variants)* |
-| Settled · Premium (claimed) · text group | fill | background/default *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group | effect | shadow/light-mode/sticky-bar *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Image & Nav / sh-carousel-dots | gap | sh-space/6 *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Image & Nav / sh-carousel-dots | padding-x | sh-space/0 *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Image & Nav / sh-carousel-dots | padding-y | sh-space/14 *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Image & Nav / sh-carousel-dots | radius | sh-radius/none *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Like Meher’s Profile? | fill | unknown VariableID:2f7647c6708ddff074d7ccc5202185a20e841b66/1038:294 *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Like Meher’s Profile? | text style | sh-typo/Body/LG/Default *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Don’t miss out on Meher | fill | text/tertiary *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Don’t miss out on Meher | text style | sh-typo/Title/SM *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Actions / sh-button | gap | sh-space/2 *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Actions / sh-button | padding-x | sh-space/16 *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Actions / sh-button | padding-y | sh-space/10 *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Actions / sh-button | radius | sh-radius/full *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · text group / Settled · Premium (claimed) · text group / Actions / sh-button | fill | button/tertiary/background/default *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · item / Hide, Report or Block Profile | fill | text/tertiary *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · item / Hide, Report or Block Profile | text style | sh-typo/Button/SM *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · item / Manage your boundaries | fill | text/secondary *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · item / Manage your boundaries | text style | sh-typo/Body/MD/Tight *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · item / sh-icon/arrow-down-01 | width | sh-icon/size/16 *(set on 1/5 variants)* |
-| Settled · Premium (claimed) · item / sh-icon/arrow-down-01 | height | sh-icon/size/16 *(set on 1/5 variants)* |
 
-> Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:16:324, unknown VariableID:2f7647c6708ddff074d7ccc5202185a20e841b66/1038:294, unknown VariableID:3fcfd05409941201c9552dc4dcef394ca2d8269f/1135:110
+> Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:16:324, unknown VariableID:3fcfd05409941201c9552dc4dcef394ca2d8269f/1135:110

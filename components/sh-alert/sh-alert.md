@@ -63,7 +63,7 @@ Layer tree of `Style=Inline, Type=Information`. Nested components are shown by n
   - Content — column · fill × hug
     - Title — text "Complete your profile"
     - Body — text "Profiles with 5 photos get 3x more responses."
-    - Action — **sh-text-link** (Trailing icon instance, Leading icon instance, Label Add photos, Type Link, Size Small, State Default)
+    - Action — **sh-text-link** (Trailing icon instance, Leading icon instance, Label Add photos, Type Link, Size Small, State Default, Underline On)
   - Close — **sh-icon/close** (Type Line, Size 16)
 
 ## Size

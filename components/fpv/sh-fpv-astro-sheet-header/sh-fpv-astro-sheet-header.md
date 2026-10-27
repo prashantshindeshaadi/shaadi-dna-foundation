@@ -55,6 +55,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
+| astro/SheetHeader | padding-x | sh-space/32 |
 | astro/SheetHeader / row / Frame 23613 / avatars / Ellipse 6 | stroke | border/inverse |
 | astro/SheetHeader / row / Frame 23613 / avatars / Ellipse 7 | stroke | border/inverse |
 | astro/SheetHeader / row / Frame 23613 / Frame 23612 / Your Compatibility with Ananya N | fill | unknown VariableID:a5a53cda8ce4425689773541b1a0a2a9323f2331/1191:48 |

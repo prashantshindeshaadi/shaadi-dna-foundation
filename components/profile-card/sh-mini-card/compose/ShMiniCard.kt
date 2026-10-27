@@ -44,7 +44,7 @@ import kotlin.math.roundToInt
 /** Figma "Type": Default (the member's photo in sh-avatar lg) or No photo (the requested portrait, cropped). */
 enum class ShMiniCardType { Default, NoPhoto }
 
-/** The badges after the name (Figma Badge 1 / Badge 2 swaps), at Size Small (14). */
+/** The badges after the name (Figma Badge 1 / Badge 2 swaps), at Size Small (16). */
 enum class ShMiniCardBadge(@DrawableRes val drawable: Int, val label: String) {
     Verified(R.drawable.sh_icon_misc_verified_badge, "Verified"),
     Premium(R.drawable.sh_icon_misc_premium_badge, "Premium"),
@@ -126,7 +126,7 @@ fun ShMiniCard(
                         horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.sh_space_2)),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        badges.forEach { ShBadge(it.drawable, it.label, dimensionResource(R.dimen.sh_icon_size_14)) }
+                        badges.forEach { ShBadge(it.drawable, it.label, dimensionResource(R.dimen.sh_icon_size_16)) }
                     }
                 }
             }

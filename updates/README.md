@@ -6,6 +6,9 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-27 — Refresh: sh-list split into parts, icon size 14 gone, badges Small 16](2026-10-27-refresh-sh-list-split-into-parts-icon-size-14-gone.md)
+- [2026-10-27 — Phone number sheet: contact buttons are sh-action-island](2026-10-27-phone-number-sheet-contact-buttons-are-sh-action-i.md)
+- [2026-10-27 — sh-list: Preference, Report and Score types used across FPV](2026-10-27-sh-list-preference-report-and-score-types-used-acr.md)
 - [2026-10-27 — sh-list Types: Preference, Report, Highlight, Score, Grouped](2026-10-27-sh-list-types-preference-report-highlight-score-gr.md)
 - [2026-10-27 — Button icon spacing on the button's own gap](2026-10-27-button-icon-spacing-on-the-button-s-own-gap.md)
 - [2026-10-27 — sh-icon/diet is plate, spoon and knife; leaf moves to sh-icon/veg-food](2026-10-27-sh-icon-diet-is-plate-spoon-and-knife-leaf-moves-t.md)

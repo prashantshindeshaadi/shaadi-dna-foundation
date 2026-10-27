@@ -29,3 +29,8 @@ One margin for every sheet, matching core `sh-bottom-sheet`, so nothing on a she
 - [x] 59 sheet bodies and parts scanned (FPV, Sunil, Core): 0 elements outside the 32 margins
 - [x] Renders checked: astro match sheet, phone number sheet
 - Not changed: the `sh-action-island` footer on the astro screens. It's a shared floating bar with its own 16 inset, used on the profile card as well.
+
+## Later: Visual slot hugs its content
+- `sh-bottom-sheet`, all 8 variants: **Visual slot** is now Hug width instead of Fill. The Sheet centres it in every variant (Align=Left still centres the visual, as before), with 16 below.
+- The trust-marker sheets' `Visual` frames went from Fill to Hug, so the slot wraps the real art (VIP 199, Premium 157, others 96). Nothing is cropped.
+- Checked: all 19 visible visual slots hug, and the Hide, VIP and Premium sheet renders are unchanged.

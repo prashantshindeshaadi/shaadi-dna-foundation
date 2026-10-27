@@ -20,7 +20,7 @@ Layer tree of `sh-fpv-astro-sheet-summary`. Nested components are shown by name;
 
 ## Size
 
-360 × 184
+360 × 208
 
 ## Tokens
 
@@ -28,6 +28,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
+| root | padding-x | sh-space/32 |
 | Frame 2147224318 / title | fill | unknown VariableID:c157df54168dfbac2225d675e854b4f86b364d9c/2480:818 |
 | Frame 2147224318 / title | text style | sh-typo/Title/LG |
 | Frame 2147224318 / sh-icon/premium | width | sh-icon/size/16 |

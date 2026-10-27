@@ -24,10 +24,11 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
+| strip · highlight | padding-x | sh-space/32 |
 | strip · highlight | fill | semantic/information/background/soft/default |
 | strip · highlight / sh-icon/unlock | width | sh-icon/size/20 |
 | strip · highlight / sh-icon/unlock | height | sh-icon/size/20 |
 | strip · highlight / message | fill | text/secondary |
 | strip · highlight / message | text style | sh-typo/Body/SM/Default |
-| strip · highlight / link | fill | text/inline-text |
+| strip · highlight / link | fill | semantic/information/text/on-soft |
 | strip · highlight / link | text style | sh-typo/Button/SM |

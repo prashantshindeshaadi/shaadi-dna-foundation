@@ -27,14 +27,14 @@ Layer tree of `sh-fpv-astro-sheet-ask-card`. Nested components are shown by name
       - sh-button — **sh-button** (Trailing icon (Large) instance, Sublabel Supporting text, Leading icon (Medium) instance, Leading icon (Large) instance, Leading icon (Small) instance, Trailing icon (Small) instance, Trailing icon (Medium) instance, Label Unlock, Type Premium Solid, Size Small, State Default) · hidden by default
     - Frame — row · hidden by default · fixed × hug
       - 28 of 36 points match between you — text "28 of 36 points match between you"
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Locked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Locked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Locked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Locked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Locked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Locked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Locked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Locked)
+    - Score · Work — **sh-list** (Type Score)
+    - Score · Influence — **sh-list** (Type Score)
+    - Score · Destiny — **sh-list** (Type Score)
+    - Score · Mentality — **sh-list** (Type Score)
+    - Score · Compatibility — **sh-list** (Type Score)
+    - Score · Temperament — **sh-list** (Type Score)
+    - Score · Love — **sh-list** (Type Score)
+    - Score · Health — **sh-list** (Type Score)
 
 ## Size
 
@@ -46,6 +46,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
+| root | padding-x | sh-space/32 |
 | Compatibility  / ask card | fill | unknown VariableID:dcadadefa2d2a96443ccd1d4bd260b3a09857686/1310:67 |
 | Compatibility  / ask card | stroke | unknown VariableID:5f5521eaf9c68aa40d34733ffaa6a713012ed4e3/1307:58 |
 | Compatibility  / ask card / Frame 2147223541 / Frame 2147223540 / Ananya hasn’t added her birth details yet | fill | unknown VariableID:c157df54168dfbac2225d675e854b4f86b364d9c/1191:46 |

@@ -46,7 +46,7 @@ Layer tree of `Type=Score`. Nested components are shown by name; their internals
       - Title — text "Excellent Match"
       - Body — text "Strong in Health, Compatibility, Destiny"
       - Action slot — row · hug × hug
-        - Link — **sh-text-link** (Leading icon instance, Trailing icon instance, Label Read More, Type Neutral, Size Medium, State Default)
+        - Link — **sh-text-link** (Leading icon instance, Trailing icon instance, Label Read More, Type Neutral, Size Medium, State Default, Underline Off)
     - Visual slot — row · hug × hug
       - Score — **sh-progress-ring** (Total of 36, Value 28)
 

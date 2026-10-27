@@ -25,7 +25,7 @@ Layer tree of `sh-location-bar`. Nested components are shown by name; their inte
   - Text — row · fill × hug
     - Location — text "Airoli, Navi Mumbai"
     - Distance — text "· 25 km"
-  - Change — **sh-text-link** (Trailing icon instance, Label Change, Leading icon instance, Type Neutral, Size Small, State Default)
+  - Change — **sh-text-link** (Leading icon instance, Trailing icon instance, Label Change, Type Neutral, Size Small, State Default, Underline Off)
 
 ## Size
 

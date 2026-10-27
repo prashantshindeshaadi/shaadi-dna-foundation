@@ -46,7 +46,7 @@ Layer tree of `Count=3`. Nested components are shown by name; their internals li
 
 ## Size
 
-360 × 512
+360 × 382
 
 ## Tokens
 

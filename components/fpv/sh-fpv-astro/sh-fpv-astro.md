@@ -76,24 +76,17 @@ Layer tree of `State=Both added · Free, Chart=North`. Nested components are sho
     - Excellent Match — text "Excellent Match"
     - Strong in Health, Mindset and De — text "Strong in Health, Mindset and Destiny"
   - Reports card — column · fill × hug
-    - Report row · her Kundali report — row · fill × hug
-      - Text — column · fill × hug
-        - Title — text "Meher’s complete Kundali report"
-        - Sub line — text "See her Nakshatra, Raashi, Doshas and more"
-      - Gold lock — **sh-icon/lock** (Type Line, Size 16)
-    - Row divider — row · fill × hug
-      - line — fill × fixed
-    - Report row · compatibility report — row · fill × hug
-      - Text — column · fill × hug
-        - Title — text "Compatibility report with Meher"
-        - Sub line — text "See how your Kundali matches with hers"
-      - Gold lock — **sh-icon/lock** (Type Line, Size 16)
+    - Report row · her Kundali report — column · fill × hug
+      - Report row · her Kundali report — **sh-list** (Type Report)
+    - Row divider — **sh-divider** (Orientation Horizontal, Type Soft)
+    - Report row · compatibility report — column · fill × hug
+      - Report row · compatibility report — **sh-list** (Type Report)
   - Button Container — column · fill × hug
     - sh-button — **sh-button** (Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Trailing icon (Small) instance, Trailing icon (Medium) instance, Leading icon (Small) instance, Label See full match, Leading icon (Medium) instance, Type Tertiary, Size Medium, State Default)
 
 ## Size
 
-360 × 419
+360 × 435
 
 ## Tokens
 
@@ -117,26 +110,12 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Verdict (toggle · default OFF) / Strong in Health, Mindset and De | fill | text/tertiary *(set on 4/8 variants)* |
 | Verdict (toggle · default OFF) / Strong in Health, Mindset and De | text style | sh-typo/Body/MD/Default *(set on 4/8 variants)* |
 | Reports card | stroke | unknown VariableID:16:324 *(set on 4/8 variants)* |
-| Reports card / Report row · her Kundali report / Text / Title | fill | State=Both added · Free → text/secondary; State=Both added · Premium → text/primary *(set on 4/8 variants)* |
-| Reports card / Report row · her Kundali report / Text / Title | text style | sh-typo/Body/LG/Tight *(set on 4/8 variants)* |
-| Reports card / Report row · her Kundali report / Text / Sub line | fill | text/tertiary *(set on 4/8 variants)* |
-| Reports card / Report row · her Kundali report / Text / Sub line | text style | sh-typo/Body/MD/Tight *(set on 4/8 variants)* |
-| Reports card / Report row · her Kundali report / Gold lock | width | sh-icon/size/16 *(set on 2/8 variants)* |
-| Reports card / Report row · her Kundali report / Gold lock | height | sh-icon/size/16 *(set on 2/8 variants)* |
-| Reports card / Row divider / line | fill | unknown VariableID:16:324 *(set on 4/8 variants)* |
-| Reports card / Report row · compatibility report / Text / Title | fill | State=Both added · Free → text/secondary; State=Both added · Premium → text/primary *(set on 4/8 variants)* |
-| Reports card / Report row · compatibility report / Text / Title | text style | sh-typo/Body/LG/Tight *(set on 4/8 variants)* |
-| Reports card / Report row · compatibility report / Text / Sub line | fill | text/tertiary *(set on 4/8 variants)* |
-| Reports card / Report row · compatibility report / Text / Sub line | text style | sh-typo/Body/MD/Tight *(set on 4/8 variants)* |
-| Reports card / Report row · compatibility report / Gold lock | width | sh-icon/size/16 *(set on 2/8 variants)* |
-| Reports card / Report row · compatibility report / Gold lock | height | sh-icon/size/16 *(set on 2/8 variants)* |
-| Button Container / sh-button | gap | sh-space/2 *(set on 4/8 variants)* |
+| Reports card / Report row · her Kundali report | padding-x | sh-space/16 *(set on 4/8 variants)* |
+| Reports card / Row divider | radius | sh-radius/full *(set on 4/8 variants)* |
+| Reports card / Report row · compatibility report | padding-x | sh-space/16 *(set on 4/8 variants)* |
+| Button Container / sh-button | gap | sh-space/4 *(set on 4/8 variants)* |
 | Button Container / sh-button | padding-y | sh-space/10 *(set on 4/8 variants)* |
 | Button Container / sh-button | radius | sh-radius/full *(set on 4/8 variants)* |
-| Reports card / Report row · her Kundali report / sh-icon/download | width | sh-icon/size/20 *(set on 2/8 variants)* |
-| Reports card / Report row · her Kundali report / sh-icon/download | height | sh-icon/size/20 *(set on 2/8 variants)* |
-| Reports card / Report row · compatibility report / sh-icon/download | width | sh-icon/size/20 *(set on 2/8 variants)* |
-| Reports card / Report row · compatibility report / sh-icon/download | height | sh-icon/size/20 *(set on 2/8 variants)* |
 | Downloads left | fill | text/secondary *(set on 2/8 variants)* |
 | Downloads left | text style | sh-typo/Body/SM/Default *(set on 2/8 variants)* |
 | Tit-for-tat card · missing birth details | radius | sh-radius/lg *(set on 4/8 variants)* |

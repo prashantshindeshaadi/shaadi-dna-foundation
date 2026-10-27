@@ -35,14 +35,14 @@ Layer tree of `Style=North`. Nested components are shown by name; their internal
       - sh-button — **sh-button** (Trailing icon (Large) instance, Sublabel Supporting text, Leading icon (Medium) instance, Leading icon (Large) instance, Leading icon (Small) instance, Trailing icon (Small) instance, Trailing icon (Medium) instance, Label Unlock, Type Premium Solid, Size Small, State Default) · hidden by default
     - Frame — row · hidden by default · fixed × hug
       - 28 of 36 points match between you — text "28 of 36 points match between you"
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Unlocked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Unlocked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Unlocked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Unlocked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Unlocked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Unlocked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Unlocked)
-    - sh-fpv-astro-koota-row — **sh-fpv-astro-koota-row** (State Unlocked)
+    - Score · Work — **sh-list** (Type Score)
+    - Score · Influence — **sh-list** (Type Score)
+    - Score · Destiny — **sh-list** (Type Score)
+    - Score · Mentality — **sh-list** (Type Score)
+    - Score · Compatibility — **sh-list** (Type Score)
+    - Score · Temperament — **sh-list** (Type Score)
+    - Score · Love — **sh-list** (Type Score)
+    - Score · Health — **sh-list** (Type Score)
 
 ## Size
 
@@ -54,6 +54,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
+| root | padding-x | sh-space/32 |
 | astro/KootaBreakdown / filters / label group / title | fill | text/secondary |
 | astro/KootaBreakdown / filters / label group / title | text style | sh-typo/Title/SM |
 | astro/KootaBreakdown / filters / sh-segmented-control | padding | sh-space/2 |

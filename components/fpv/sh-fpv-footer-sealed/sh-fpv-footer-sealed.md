@@ -20,9 +20,9 @@ Layer tree of `sh-fpv-footer-sealed`. Nested components are shown by name; their
     - section line divider — fixed × fixed
   - Share, Shortlist & Footer — fixed × fixed
     - Share, Shortlist & Footer · text group — fixed × fixed
-      - Actions — fixed × fixed
-        - sh-button — **sh-button** (Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Trailing icon (Small) instance, Leading icon (Medium) instance, Leading icon (Small) instance, Label Shortlist, Type Tertiary, Size Medium, State Default)
+      - Actions — row · hug × hug
         - sh-button — **sh-button** (Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Trailing icon (Small) instance, Leading icon (Medium) instance, Leading icon (Small) instance, Label Share, Type Tertiary, Size Medium, State Default)
+        - sh-button — **sh-button** (Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Trailing icon (Small) instance, Leading icon (Medium) instance, Leading icon (Small) instance, Label Shortlist, Type Tertiary, Size Medium, State Default)
       - Share, Shortlist & Footer · divider line — fixed × fixed
       - Like Meher’s Profile? — text "Like Meher’s Profile?"
       - Image & Nav — fixed × fixed
@@ -94,14 +94,15 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Share, Shortlist & Footer | fill | unknown VariableID:3fcfd05409941201c9552dc4dcef394ca2d8269f/1135:110 |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group | fill | background/default |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group | effect | shadow/light-mode/sticky-bar |
-| Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Actions / sh-button | gap | sh-space/2 |
+| Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Actions | gap | sh-space/16 |
+| Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Actions / sh-button | gap | sh-space/4 |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Actions / sh-button | padding-x | sh-space/16 |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Actions / sh-button | padding-y | sh-space/10 |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Actions / sh-button | radius | sh-radius/full |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Actions / sh-button | fill | button/tertiary/background/default |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Share, Shortlist & Footer · divider line | stroke | icon/inverse |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Like Meher’s Profile? | fill | text/primary |
-| Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Like Meher’s Profile? | text style | sh-typo/Body/LG/Default |
+| Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Like Meher’s Profile? | text style | sh-typo/Title/LG |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Image & Nav / sh-carousel-dots | gap | sh-space/6 |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Image & Nav / sh-carousel-dots | padding-x | sh-space/0 |
 | Share, Shortlist & Footer / Share, Shortlist & Footer · text group / Image & Nav / sh-carousel-dots | padding-y | sh-space/14 |
@@ -118,10 +119,10 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Floating Nav / Floating Nav · item / sh-button | padding-y | sh-space/12 |
 | Floating Nav / Floating Nav · item / sh-button | radius | sh-radius/full |
 | Floating Nav / Floating Nav · item / sh-button | fill | sh-gradient/brand/default |
-| Widget / Footer/Sealed · item / Hide, Report or Block Profile | fill | text/tertiary |
+| Widget / Footer/Sealed · item / Hide, Report or Block Profile | fill | text/secondary |
 | Widget / Footer/Sealed · item / Hide, Report or Block Profile | text style | sh-typo/Button/SM |
 | Widget / Footer/Sealed · item / Manage your boundaries | fill | text/secondary |
-| Widget / Footer/Sealed · item / Manage your boundaries | text style | sh-typo/Body/MD/Tight |
+| Widget / Footer/Sealed · item / Manage your boundaries | text style | sh-typo/Title/SM |
 | Widget / Footer/Sealed · item / sh-icon/arrow-down-01 | width | sh-icon/size/16 |
 | Widget / Footer/Sealed · item / sh-icon/arrow-down-01 | height | sh-icon/size/16 |
 | Swipe up to reveal | fill | text/disabled |

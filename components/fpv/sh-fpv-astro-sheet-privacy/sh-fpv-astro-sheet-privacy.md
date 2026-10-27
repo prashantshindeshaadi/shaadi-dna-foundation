@@ -10,12 +10,12 @@ Layer tree of `sh-fpv-astro-sheet-privacy`. Nested components are shown by name;
 
 - root — column
   - Rows — column · fill × hug
-    - sh-list — **sh-list** (Action instance, Leading icon instance, Pictogram instance, Value ₹0, Value caption Caption, Title icon instance, Control instance, Subtitle 2:00 AM · 28 Jan, 1998 · Thiruvananthapuram, Kerala, India, Trailing icon instance, Title Predictions are based on your details, Type Grouped, Leading None, Trailing Chevron, Style Start)
-    - sh-list — **sh-list** (Action instance, Value ₹0, Value caption Caption, Leading icon instance, Trailing icon instance, Subtitle Only Premium members or members you like can see your exact date and time., Pictogram instance, Title icon instance, Control instance, Title Your astro privacy, Type Grouped, Leading None, Trailing Chevron, Style End)
+    - sh-list-grouped — **sh-list** (Type Grouped)
+    - sh-list-grouped — **sh-list** (Type Grouped)
 
 ## Size
 
-360 × 214
+360 × 232
 
 ## Tokens
 
@@ -24,12 +24,3 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Layer | Property | Token |
 |---|---|---|
 | root | padding-x | sh-space/32 |
-| Rows / sh-list | radius:topLeft | sh-radius/none |
-| Rows / sh-list | radius:topRight | sh-radius/none |
-| Rows / sh-list | radius:bottomLeft | sh-radius/md |
-| Rows / sh-list | radius:bottomRight | sh-radius/md |
-| Rows / sh-list | strokeTopWeight | sh-stroke/none |
-| Rows / sh-list | strokeBottomWeight | sh-stroke/default |
-| Rows / sh-list | strokeLeftWeight | sh-stroke/default |
-| Rows / sh-list | strokeRightWeight | sh-stroke/default |
-| Rows / sh-list | stroke | border/soft |

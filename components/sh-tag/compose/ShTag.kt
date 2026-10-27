@@ -50,8 +50,8 @@ enum class ShTagShape { Rounded, Pill }
  * @param trailingIcon Figma "Show trailing icon" + "Trailing icon"; null hides it.
  * @param border Figma "Show border": the thin gradient edge, drawn inside. Only the translucent modes paint it.
  * @param outline Figma "Show outline". Not wired to any layer in Figma yet, so it changes nothing; kept for parity.
- * @param iconSize The swapped icon's size. sh-tag's icons are sh-icon/size/12; sh-tag-profile swaps in
- *   size/14 art (location pin, wings). Multi-colour art ([ShIconPaint.Original]) is sized by height.
+ * @param iconSize The swapped icon's size. sh-tag's icons are sh-icon/size/12, and so is the art sh-tag-profile
+ *   swaps in (location pin, wings). Multi-colour art ([ShIconPaint.Original]) is sized by height.
  */
 @Composable
 fun ShTag(

@@ -77,16 +77,16 @@ Layer tree of `Size=Hug, Align=Center, Actions=Stacked`. Nested components are s
         - Drop background graphic here — text "Drop background graphic here"
     - Header — fill × fixed
       - Grabber — fixed × fixed
-    - Visual slot — row · fill × hug
+    - Visual slot — row · hug × hug
       - Media content — **sh-avatar** (Label SH, Icon instance, Size lg, Type Image)
     - Body — column · fill × hug
       - Heading — column · fill × hug
         - Title — text "Sheet title"
         - Body — text "Supporting description copy goes here."
       - Section slot — column · hidden by default · fixed × hug
-        - sh-list — **sh-list** (Action instance, Leading icon instance, Pictogram instance, Title icon instance, Control instance, Value caption Caption, Value ₹0, Trailing icon instance, Subtitle Subtitle, Title List item one, Leading Icon circle, Trailing None, Style Default)
-        - sh-list — **sh-list** (Action instance, Leading icon instance, Pictogram instance, Title icon instance, Control instance, Value caption Caption, Value ₹0, Trailing icon instance, Subtitle Subtitle, Title List item two, Leading Icon circle, Trailing None, Style Default)
-        - sh-list — **sh-list** (Action instance, Leading icon instance, Pictogram instance, Title icon instance, Control instance, Value caption Caption, Value ₹0, Trailing icon instance, Subtitle Subtitle, Title List item three, Leading Icon circle, Trailing None, Style Default)
+        - sh-list-default — **sh-list** (Type Default)
+        - sh-list-default — **sh-list** (Type Default)
+        - sh-list-default — **sh-list** (Type Default)
       - Note slot — column · hidden by default · fixed × hug
         - Drop content here — row · fill × fixed
           - Drop note content here — text "Drop note content here"

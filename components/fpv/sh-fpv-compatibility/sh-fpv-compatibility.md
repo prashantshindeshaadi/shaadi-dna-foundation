@@ -51,10 +51,10 @@ Layer tree of `Version=v1 · Keywords`. Nested components are shown by name; the
       - Summary Text — text "Living in Mumbai · Speaks Punjabi · Enjoys hiking, travellin"
       - Cue tags — row · fill × hug
         - Preference cue — row · hug × hug
-          - sh-icon/link-rings — **sh-icon/link-rings** (Type Line, Size 14)
+          - sh-icon/link-rings — **sh-icon/link-rings** (Type Line, Size 12)
           - Preference Match — text "7/9 Preference match"
         - Astro cue — row · hug × hug
-          - sh-icon/astro — **sh-icon/astro** (Type Line, Size 14)
+          - sh-icon/astro — **sh-icon/astro** (Type Line, Size 12)
           - Astro Compatibility — text "28/36 Astro match"
 
 ## Size
@@ -80,13 +80,13 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Summary card / commonalities-row / Summary Text | text style | sh-typo/Body/MD/Default |
 | Summary card / commonalities-row / Cue tags / Preference cue / Preference Match | fill | text/primary |
 | Summary card / commonalities-row / Cue tags / Preference cue / Preference Match | text style | sh-typo/Body/SM/Default |
-| Summary card / commonalities-row / Cue tags / Astro cue / sh-icon/astro | width | sh-icon/size/14 |
-| Summary card / commonalities-row / Cue tags / Astro cue / sh-icon/astro | height | sh-icon/size/14 |
+| Summary card / commonalities-row / Cue tags / Astro cue / sh-icon/astro | width | sh-icon/size/12 |
+| Summary card / commonalities-row / Cue tags / Astro cue / sh-icon/astro | height | sh-icon/size/12 |
 | Summary card / commonalities-row / Cue tags / Astro cue / Astro Compatibility | fill | text/primary |
 | Summary card / commonalities-row / Cue tags / Astro cue / Astro Compatibility | text style | sh-typo/Body/SM/Default |
 | Summary card / commonalities-row / AI summary | fill | unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295 *(set on 1/2 variants)* |
 | Summary card / commonalities-row / AI summary | text style | sh-typo/Body/MD/Default *(set on 1/2 variants)* |
-| Summary card / Read More / sh-button | gap | sh-space/2 *(set on 1/2 variants)* |
+| Summary card / Read More / sh-button | gap | sh-space/4 *(set on 1/2 variants)* |
 | Summary card / Read More / sh-button | padding-y | sh-space/10 *(set on 1/2 variants)* |
 | Summary card / Read More / sh-button | radius | sh-radius/full *(set on 1/2 variants)* |
 

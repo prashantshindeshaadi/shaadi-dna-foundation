@@ -38,8 +38,8 @@ Layer tree of `Plan=Free, State=Visible`. Nested components are shown by name; t
   - About Info — text "Father runs a business, mother is a homemaker.
 She has 2 bro"
   - Info Section — column · fill × hug
-    - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Text)
-    - sh-fpv-info-item — **sh-fpv-info-item** (Lines Double, Content Text)
+    - sh-list-info — **sh-list** (Type Info)
+    - sh-list-info — **sh-list** (Type Info)
 
 ## Size
 
@@ -55,7 +55,6 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | sh-fpv-section-title | padding-y | sh-space/8 |
 | About Info | fill | text/secondary *(set on 1/2 variants)* |
 | About Info | text style | sh-typo/Body/LG/Default *(set on 1/2 variants)* |
-| Info Section / sh-fpv-info-item | gap | sh-space/gap/form *(set on 1/2 variants)* |
 | Tit-for-tat card | radius | sh-radius/lg *(set on 1/2 variants)* |
 | Tit-for-tat card | stroke | unknown VariableID:16:324 *(set on 1/2 variants)* |
 

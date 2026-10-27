@@ -48,10 +48,17 @@ Layer tree of `State=Truncated (Read More)`. Nested components are shown by name
       - sh-chip — **sh-chip** (Trailing icon (Small) instance, Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Trailing icon instance, Leading icon instance, Leading icon (Small) instance, Supporting label Supporting, Leading icon (Medium) instance, Label Attri Gotra, Type Info, State Default, Selected false)
       - sh-chip — **sh-chip** (Trailing icon (Small) instance, Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Trailing icon instance, Leading icon instance, Leading icon (Small) instance, Supporting label Supporting, Leading icon (Medium) instance, Label Punjabi, Type Info, State Default, Selected false)
       - sh-chip — **sh-chip** (Trailing icon (Small) instance, Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Trailing icon instance, Leading icon instance, Leading icon (Small) instance, Supporting label Supporting, Leading icon (Medium) instance, Label Never Married, Type Info, State Default, Selected false)
+      - sh-chip — row · hug × hug
+        - Leading icon — **sh-icon/calendar** (Type Line, Size 16)
+        - Content — row · hug × hug
+          - Supporting label — text "Supporting" · hidden by default
+          - Label — text "Born on"
+          - sh-fpv-locked-text — **sh-fpv-locked-text** (Property 1 Date of birth)
+        - Trailing icon — **sh-icon/arrow-right-01** (Type Line, Size 16) · hidden by default
 
 ## Size
 
-360 × 464
+360 × 504
 
 ## Tokens
 
@@ -67,7 +74,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | About truncated / card header | text style | sh-typo/Heading/SM |
 | About truncated / About truncated · text group / About truncated · text group / About Info | fill | text/secondary *(set on 1/2 variants)* |
 | About truncated / About truncated · text group / About truncated · text group / About Info | text style | sh-typo/Body/LG/Default *(set on 1/2 variants)* |
-| About truncated / About truncated · text group / Button Container / sh-button | gap | sh-space/2 *(set on 1/2 variants)* |
+| About truncated / About truncated · text group / Button Container / sh-button | gap | sh-space/4 *(set on 1/2 variants)* |
 | About truncated / About truncated · text group / Button Container / sh-button | padding-y | sh-space/10 *(set on 1/2 variants)* |
 | About truncated / About truncated · text group / Button Container / sh-button | radius | sh-radius/full *(set on 1/2 variants)* |
 | Background / Description | gap | sh-space/8 |
@@ -79,5 +86,10 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Background / Description / sh-chip | radius | sh-radius/sm |
 | Background / Description / sh-chip | fill | background/default |
 | Background / Description / sh-chip | stroke | border/soft |
+| Background / Description / sh-chip / Content / Supporting label | fill | text/secondary |
+| Background / Description / sh-chip / Content / Supporting label | text style | sh-typo/Support/Label |
+| Background / Description / sh-chip / Content / Label | fill | text/primary |
+| Background / Description / sh-chip / Content / Label | text style | sh-typo/Body/MD/Default |
+| Background / Description / sh-chip / Content / sh-fpv-locked-text | gap | sh-space/4 |
 | About truncated / About truncated · text group / About truncated · text / About Info | fill | text/secondary *(set on 1/2 variants)* |
 | About truncated / About truncated · text group / About truncated · text / About Info | text style | sh-typo/Body/LG/Default *(set on 1/2 variants)* |

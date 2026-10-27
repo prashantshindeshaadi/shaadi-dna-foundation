@@ -100,7 +100,7 @@ Layer tree of `Plan=Silver, State=Expanded`. Nested components are shown by name
     - sh-data-point — **sh-data-point** (Label Video call & chat with Matches, Value 1 of 1, Overline Overline, Trailing icon instance, Subtext Subtext, Icon instance, Size md, Icon style Plain, State Included)
     - sh-data-point — **sh-data-point** (Value 1 of 1, Overline Overline, Icon instance, Trailing icon instance, Subtext Subtext, Label Stand out from other Profiles, Size md, Icon style Plain, State Excluded)
     - sh-data-point — **sh-data-point** (Value 1 of 1, Overline Overline, Icon instance, Trailing icon instance, Subtext Subtext, Label Let Matches contact you directly, Size md, Icon style Plain, State Excluded)
-  - See all benefits — **sh-text-link** (Trailing icon instance, Leading icon instance, Label See all benefits, Type Neutral, Size Medium, State Default)
+  - See all benefits — **sh-text-link** (Trailing icon instance, Label See all benefits, Leading icon instance, Type Neutral, Size Medium, State Default, Underline On)
   - Footer — column · fill × hug
     - CTA — **sh-button** (Trailing icon (Small) instance, Leading icon (Small) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Leading icon (Medium) instance, Trailing icon (Medium) instance, Label Continue with Silver, Type Primary, Size Large, State Default)
     - Auto-renew note — text "Auto-renews on expiry. Cancel anytime"

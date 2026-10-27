@@ -15,18 +15,6 @@
         "Value": 12
       }
     },
-    "size/14": {
-      "type": "number",
-      "description": "sh-icon/size/14\nPurpose: Interface icon for compact helper text, chips and small buttons.",
-      "scopes": [
-        "WIDTH_HEIGHT"
-      ],
-      "id": "VariableID:2066:9156",
-      "figmaType": null,
-      "values": {
-        "Value": 14
-      }
-    },
     "size/16": {
       "type": "number",
       "description": "sh-icon/size/16\nPurpose: Interface icon for dense controls, list rows and medium buttons.",
@@ -73,18 +61,6 @@
       "figmaType": null,
       "values": {
         "Value": 1
-      }
-    },
-    "stroke/14": {
-      "type": "number",
-      "description": "sh-icon/stroke/14\nPurpose: Stroke weight for 14px line icons; bound to glyph strokes so the pack follows the token.",
-      "scopes": [
-        "STROKE_FLOAT"
-      ],
-      "id": "VariableID:2066:9157",
-      "figmaType": null,
-      "values": {
-        "Value": 1.2000000476837158
       }
     },
     "stroke/16": {

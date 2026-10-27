@@ -28,8 +28,8 @@ public enum ShTagShape: CaseIterable {
 ///   `.inherit` paint takes the mode's icon colour; gradient and original paints keep theirs.
 /// - `border`: Figma "Show border", the thin gradient edge drawn inside. Only the translucent modes paint it.
 /// - `outline`: Figma "Show outline". Not wired to any layer in Figma yet, so it changes nothing; kept for parity.
-/// - `iconSize`: the swapped icon's size. sh-tag's icons are sh-icon/size/12; sh-tag-profile swaps in
-///   size/14 art (location pin, wings). Multi-colour art (`.original`) is sized by height.
+/// - `iconSize`: the swapped icon's size. sh-tag's icons are sh-icon/size/12, and so is the art sh-tag-profile
+///   swaps in (location pin, wings). Multi-colour art (`.original`) is sized by height.
 public struct ShTag: View {
     public var label: String
     public var mode: ShTagMode

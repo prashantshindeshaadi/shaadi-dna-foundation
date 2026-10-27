@@ -46,15 +46,15 @@ public struct ShTagProfile: View {
                 .shShadow(SH.ShadowStyle.soft)
         case .topProfile:
             ShTag(label ?? "Top Profile", mode: .white, size: .small, shape: .rounded,
-                  leadingIcon: ShIconSpec("tag/left-wing", paint: .original),   // laurel art, 14 tall
+                  leadingIcon: ShIconSpec("tag/left-wing", paint: .original),   // laurel art, 12 tall
                   trailingIcon: ShIconSpec("tag/right-wing", paint: .original),
-                  iconSize: SH.Icon.size14)
+                  iconSize: SH.Icon.size12)
                 .compositingGroup()
                 .shShadow(SH.ShadowStyle.soft)
         case .distance:
             ShTag(label ?? "20 km", mode: .white, size: .small, shape: .rounded,
                   leadingIcon: ShIconSpec("tag/pin-location-01"),          // icon/secondary from the White mode
-                  iconSize: SH.Icon.size14)
+                  iconSize: SH.Icon.size12)
                 .compositingGroup()
                 .shShadow(SH.ShadowStyle.soft)
         }

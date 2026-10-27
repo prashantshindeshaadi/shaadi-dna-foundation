@@ -24,7 +24,7 @@ Layer tree of `sh-request-chip`. Nested components are shown by name; their inte
   - Frame — column · fill × hug
     - Title — text "3 requests from Meher"
     - Subtitle — text "Message · Photo · Birth details" · hidden by default
-  - CTA — **sh-button** (Trailing icon (Small) instance, Trailing icon (Medium) instance, Leading icon (Large) instance, Sublabel Supporting text, Trailing icon (Large) instance, Leading icon (Medium) instance, Leading icon (Small) instance, Label View, Type Premium Soft, Size Small, State Default)
+  - CTA — **sh-button** (Trailing icon (Small) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Label View, Leading icon (Small) instance, Leading icon (Medium) instance, Trailing icon (Medium) instance, Type Secondary, Size Small, State Default)
 
 ## Size
 
@@ -50,4 +50,4 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | CTA | padding-x | sh-space/16 |
 | CTA | padding-y | sh-space/8 |
 | CTA | radius | sh-radius/full |
-| CTA | fill | premium/background/soft/default |
+| CTA | fill | button/secondary/background/default |

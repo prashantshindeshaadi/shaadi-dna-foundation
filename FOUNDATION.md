@@ -170,7 +170,7 @@ Steps: `none` · `xxs` · `xs` · `sm` · `md` (= `default`) · `lg` · `xl` · 
 
 ### 5.5 Icons
 
-Sizes 12, 14, 16, 20, 24, each with its own stroke token
+Sizes 12, 16, 20, 24, each with its own stroke token
 (`sh-icon/stroke/<size>`). **Always pair a size with its stroke.** Larger is a
 pictogram (`pictogram/size/*`). Brand marks use `brand/size/*`. Touch target is
 `target/default` regardless of the visible icon.

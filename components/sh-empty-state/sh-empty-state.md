@@ -49,7 +49,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Text / Title | text style | sh-typo/Heading/SM |
 | Text / Body | fill | text/secondary |
 | Text / Body | text style | sh-typo/Body/MD/Default |
-| Action | gap | sh-space/2 |
+| Action | gap | sh-space/4 |
 | Action | padding-x | sh-space/16 |
 | Action | padding-y | sh-space/10 |
 | Action | radius | sh-radius/full |

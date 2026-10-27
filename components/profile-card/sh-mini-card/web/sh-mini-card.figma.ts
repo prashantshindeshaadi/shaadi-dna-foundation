@@ -21,11 +21,11 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
     }),
     name: figma.string("Name"),
     badge1: figma.boolean("Show badge 1", {
-      true: html`<img class="sh-badge sh-badge--14" src="icons/misc/verified-badge.svg" alt="Verified">`,
+      true: html`<img class="sh-badge sh-badge--16" src="icons/misc/verified-badge.svg" alt="Verified">`,
       false: undefined,
     }),
     badge2: figma.boolean("Show badge 2", {
-      true: html`<img class="sh-badge sh-badge--14" src="icons/misc/premium-badge.svg" alt="Premium">`,
+      true: html`<img class="sh-badge sh-badge--16" src="icons/misc/premium-badge.svg" alt="Premium">`,
       false: undefined,
     }),
     detail1: figma.boolean("Show detail 1", {

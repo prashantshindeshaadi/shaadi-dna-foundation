@@ -47,7 +47,7 @@ Layer tree of `Type=Neutral`. Nested components are shown by name; their interna
 - root — row
   - Leading icon — **sh-icon/information-circle** (Type Line, Size 20)
   - Message — text "Interest sent to Priya"
-  - Action — **sh-text-link** (Trailing icon instance, Leading icon instance, Label Undo, Type Inverse, Size Small, State Default)
+  - Action — **sh-text-link** (Leading icon instance, Trailing icon instance, Label Undo, Type Inverse, Size Small, State Default, Underline On)
   - Close — **sh-icon/close** (Type Line, Size 16) · hidden by default
 
 ## Size

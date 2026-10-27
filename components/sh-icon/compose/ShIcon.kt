@@ -37,7 +37,7 @@ sealed interface ShIconPaint {
 /** An icon plus its paint, for components that take an icon as a property (tags, buttons, links). */
 data class ShIconSpec(@DrawableRes val icon: Int, val paint: ShIconPaint = ShIconPaint.Inherit)
 
-/** sh-icon at one of the sh-icon/size tokens (12, 14, 16, 20, 24). Decorative unless a description is given. */
+/** sh-icon at one of the sh-icon/size tokens (12, 16, 20, 24). Decorative unless a description is given. */
 @Composable
 fun ShIcon(
     @DrawableRes icon: Int,

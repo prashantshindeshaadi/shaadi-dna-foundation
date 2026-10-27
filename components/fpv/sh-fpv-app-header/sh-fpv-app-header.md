@@ -32,7 +32,7 @@ Layer tree of `State=Onscroll`. Nested components are shown by name; their inter
     - Back — row · fixed × fixed
       - sh-icon/back — **sh-icon/back** (Type Line, Size 24)
     - Photo Album — row · fixed × fixed
-      - sh-icon/image — **sh-icon/image** (Type Filled, Size 14)
+      - sh-icon/image — **sh-icon/image** (Type Filled, Size 16)
       - 8 — text "8"
     - Container — column · fill × hug
       - Image & Nav — fixed × fixed
@@ -42,7 +42,7 @@ Layer tree of `State=Onscroll`. Nested components are shown by name; their inter
         - Crown icon · glyph 1 — fixed × fixed
         - Crown icon · glyph 2 — fixed × fixed
     - Photo Album — row · fixed × fixed
-      - sh-icon/image — **sh-icon/image** (Type Filled, Size 14)
+      - sh-icon/image — **sh-icon/image** (Type Filled, Size 16)
       - 8 — text "8"
     - More — row · fixed × fixed
       - sh-icon/more-vertical — **sh-icon/more-vertical** (Type Line, Size 16)
@@ -79,8 +79,8 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Appheader / Back | fill | background/strong *(set on 1/2 variants)* |
 | Appheader / Back / sh-icon/back | width | sh-icon/size/24 |
 | Appheader / Back / sh-icon/back | height | sh-icon/size/24 |
-| Appheader / Photo Album / sh-icon/image | width | sh-icon/size/14 *(set on 1/2 variants)* |
-| Appheader / Photo Album / sh-icon/image | height | sh-icon/size/14 *(set on 1/2 variants)* |
+| Appheader / Photo Album / sh-icon/image | width | sh-icon/size/16 *(set on 1/2 variants)* |
+| Appheader / Photo Album / sh-icon/image | height | sh-icon/size/16 *(set on 1/2 variants)* |
 | Appheader / Photo Album / 8 | fill | text/secondary *(set on 1/2 variants)* |
 | Appheader / Photo Album / 8 | text style | sh-typo/Button/SM *(set on 1/2 variants)* |
 | Appheader / Container / Image & Nav | radius | sh-radius/lg *(set on 1/2 variants)* |

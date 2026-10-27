@@ -82,7 +82,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Benefits slot | gap | sh-space/8 *(set on 1/2 variants)* |
 | Benefits slot / sh-data-point | gap | sh-space/6 *(set on 1/2 variants)* |
 | Benefits slot / sh-data-point | padding | sh-space/0 *(set on 1/2 variants)* |
-| CTA | gap | sh-space/2 *(set on 1/2 variants)* |
+| CTA | gap | sh-space/4 *(set on 1/2 variants)* |
 | CTA | padding-x | sh-space/16 *(set on 1/2 variants)* |
 | CTA | padding-y | sh-space/10 *(set on 1/2 variants)* |
 | CTA | radius | sh-radius/full *(set on 1/2 variants)* |

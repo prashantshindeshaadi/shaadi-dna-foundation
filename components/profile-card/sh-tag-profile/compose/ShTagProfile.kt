@@ -34,7 +34,6 @@ fun ShTagProfile(
     label: String? = null,
 ) {
     val size12 = dimensionResource(R.dimen.sh_icon_size_12)
-    val size14 = dimensionResource(R.dimen.sh_icon_size_14)
     when (type) {
         ShTagProfileType.Online, ShTagProfileType.Offline -> ShTag(
             label = label ?: if (type == ShTagProfileType.Online) "Online" else "Offline",
@@ -83,9 +82,9 @@ fun ShTagProfile(
             mode = ShTagMode.White,
             size = ShTagSize.Small,
             shape = ShTagShape.Rounded,
-            leadingIcon = ShIconSpec(R.drawable.sh_icon_tag_left_wing, ShIconPaint.Original),    // laurel art, 14 tall
+            leadingIcon = ShIconSpec(R.drawable.sh_icon_tag_left_wing, ShIconPaint.Original),    // laurel art, 12 tall
             trailingIcon = ShIconSpec(R.drawable.sh_icon_tag_right_wing, ShIconPaint.Original),
-            iconSize = size14,
+            iconSize = size12,
         )
         ShTagProfileType.Distance -> ShTag(
             label = label ?: "20 km",
@@ -94,7 +93,7 @@ fun ShTagProfile(
             size = ShTagSize.Small,
             shape = ShTagShape.Rounded,
             leadingIcon = ShIconSpec(R.drawable.sh_icon_tag_pin_location_01),   // icon/secondary from the White mode
-            iconSize = size14,
+            iconSize = size12,
         )
     }
 }

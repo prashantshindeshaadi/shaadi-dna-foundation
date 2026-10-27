@@ -19,8 +19,8 @@
  *       <p class="sh-mini-card__name-row">
  *         <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>                  ← Name
  *         <span class="sh-mini-card__badges">                                                ← Show badge 1 / 2
- *           <img class="sh-badge sh-badge--14" src="icons/misc/verified-badge.svg" alt="Verified">   ← Badge 1
- *           <img class="sh-badge sh-badge--14" src="icons/misc/premium-badge.svg" alt="Premium">     ← Badge 2
+ *           <img class="sh-badge sh-badge--16" src="icons/misc/verified-badge.svg" alt="Verified">   ← Badge 1
+ *           <img class="sh-badge sh-badge--16" src="icons/misc/premium-badge.svg" alt="Premium">     ← Badge 2
  *         </span>
  *       </p>
  *       <p class="sh-mini-card__details"> sh-info-detail --default --sm facts (Show detail 1–3);

@@ -132,7 +132,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Locked preview / Overlay / Overlay · text group / Overlay · group / Locked-photo art | height | sh-icon/pictogram/size/64 *(set on 15/20 variants)* |
 | Locked preview / Overlay / Overlay · text group / Description | fill | text/primary *(set on 15/20 variants)* |
 | Locked preview / Overlay / Overlay · text group / Description | text style | sh-typo/Body/LG/Default *(set on 15/20 variants)* |
-| Locked preview / Overlay / sh-button | gap | sh-space/2 *(set on 15/20 variants)* |
+| Locked preview / Overlay / sh-button | gap | sh-space/4 *(set on 15/20 variants)* |
 | Locked preview / Overlay / sh-button | padding-x | sh-space/16 *(set on 15/20 variants)* |
 | Locked preview / Overlay / sh-button | padding-y | sh-space/10 *(set on 15/20 variants)* |
 | Locked preview / Overlay / sh-button | radius | sh-radius/full *(set on 15/20 variants)* |

@@ -23,7 +23,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
-| root | padding-x | sh-space/20 |
+| root | padding-x | sh-space/32 |
 | root | padding-y | sh-space/gap/card |
 | root | fill | background/default |
 | Divider | radius | sh-radius/full |

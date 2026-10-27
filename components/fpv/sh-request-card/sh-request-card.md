@@ -39,18 +39,17 @@ Full profile view (migration, not yet core) · 4 variants · [Open in Figma](htt
 Layer tree of `Type=Message`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — row
-  - Icon column — row · hug × fixed
-    - Icon — row · fixed × fixed
-      - sh-icon/message — **sh-icon/message** (Type Line, Size 20)
-  - Text — column · fill × hug
+  - Text — row · fill × hug
     - Label + content — column · fill × hug
-      - Meta (secondary) — text "Meher sent you a message"
+      - Frame 2147224434 — row · fill × hug
+        - sh-icon/message — **sh-icon/message** (Type Line, Size 12)
+        - Meta (secondary) — text "She sent you a message"
       - Content (primary) — text "“Hi, we liked your profile and would like to take this forwa"
     - CTA — **sh-button** (Trailing icon (Small) instance, Leading icon (Small) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Label Reply, Sublabel Supporting text, Leading icon (Medium) instance, Trailing icon (Medium) instance, Type Secondary, Size Small, State Default)
 
 ## Size
 
-320 × 138
+320 × 94
 
 ## Tokens
 
@@ -60,11 +59,10 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 |---|---|---|
 | root | fill | background/default |
 | root | stroke | unknown VariableID:16:324 |
-| Icon column / Icon | fill | Type=Message → background/soft; Type=Photo → background/soft; Type=Birth details → background/soft; Type=Message · free viewer → unknown VariableID:16:296 |
-| Icon column / Icon / sh-icon/message | width | sh-icon/size/20 *(set on 2/4 variants)* |
-| Icon column / Icon / sh-icon/message | height | sh-icon/size/20 *(set on 2/4 variants)* |
-| Text / Label + content / Meta (secondary) | fill | text/tertiary |
-| Text / Label + content / Meta (secondary) | text style | sh-typo/Body/SM/Tight |
+| Text / Label + content / Frame 2147224434 / sh-icon/message | width | sh-icon/size/12 *(set on 2/4 variants)* |
+| Text / Label + content / Frame 2147224434 / sh-icon/message | height | sh-icon/size/12 *(set on 2/4 variants)* |
+| Text / Label + content / Frame 2147224434 / Meta (secondary) | fill | text/tertiary *(set on 2/4 variants)* |
+| Text / Label + content / Frame 2147224434 / Meta (secondary) | text style | sh-typo/Body/SM/Tight *(set on 2/4 variants)* |
 | Text / Label + content / Content (primary) | fill | text/primary |
 | Text / Label + content / Content (primary) | text style | sh-typo/Body/MD/Default |
 | Text / CTA | gap | sh-space/2 *(set on 3/4 variants)* |
@@ -72,14 +70,18 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Text / CTA | padding-y | sh-space/8 *(set on 3/4 variants)* |
 | Text / CTA | radius | sh-radius/full *(set on 3/4 variants)* |
 | Text / CTA | fill | button/secondary/background/default *(set on 3/4 variants)* |
-| Icon column / Icon / sh-icon/image | width | sh-icon/size/20 *(set on 1/4 variants)* |
-| Icon column / Icon / sh-icon/image | height | sh-icon/size/20 *(set on 1/4 variants)* |
-| Icon column / Icon / sh-icon/star | width | sh-icon/size/20 *(set on 1/4 variants)* |
-| Icon column / Icon / sh-icon/star | height | sh-icon/size/20 *(set on 1/4 variants)* |
+| Text / Label + content / Frame 2147224435 / sh-icon/image | width | sh-icon/size/12 *(set on 1/4 variants)* |
+| Text / Label + content / Frame 2147224435 / sh-icon/image | height | sh-icon/size/12 *(set on 1/4 variants)* |
+| Text / Label + content / Frame 2147224435 / Meta (secondary) | fill | text/tertiary *(set on 1/4 variants)* |
+| Text / Label + content / Frame 2147224435 / Meta (secondary) | text style | sh-typo/Body/SM/Tight *(set on 1/4 variants)* |
+| Text / Label + content / Frame 2147224436 / Leading icon | width | sh-icon/size/12 *(set on 1/4 variants)* |
+| Text / Label + content / Frame 2147224436 / Leading icon | height | sh-icon/size/12 *(set on 1/4 variants)* |
+| Text / Label + content / Frame 2147224436 / Meta (secondary) | fill | text/tertiary *(set on 1/4 variants)* |
+| Text / Label + content / Frame 2147224436 / Meta (secondary) | text style | sh-typo/Body/SM/Tight *(set on 1/4 variants)* |
 | Text / CTA · Upgrade Now (opens premium plans) | gap | sh-space/2 *(set on 1/4 variants)* |
 | Text / CTA · Upgrade Now (opens premium plans) | padding-x | sh-space/16 *(set on 1/4 variants)* |
 | Text / CTA · Upgrade Now (opens premium plans) | padding-y | sh-space/8 *(set on 1/4 variants)* |
 | Text / CTA · Upgrade Now (opens premium plans) | radius | sh-radius/full *(set on 1/4 variants)* |
 | Text / CTA · Upgrade Now (opens premium plans) | fill | premium/background/soft/default *(set on 1/4 variants)* |
 
-> Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:16:296, unknown VariableID:16:324
+> Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:16:324

@@ -46,21 +46,21 @@ Layer tree of `Plan=Free, State=Visible NRI`. Nested components are shown by nam
       - Lifestyle — column · fixed × fill
         - card header — row · fill × hug
           - card header — text "Lifestyle"
-        - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Text)
-        - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Text)
+        - sh-list-info — **sh-list** (Type Info)
+        - sh-list-info — **sh-list** (Type Info)
         - Lifestyle · text group — row · fill × hug
           - sh-icon/document-validation — **sh-icon/document-validation** (Type Line, Size 20)
           - Lifestyle · text — row · fill × hug
             - Text — text "Student Visa"
-        - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Text)
+        - sh-list-info — **sh-list** (Type Info)
       - Hobbies — column · fixed × fill
         - card header — row · fill × hug
           - card header — text "Interests"
-        - Hobbies · item 1 — **sh-list** (Action instance, Value caption Caption, Pictogram instance, Control instance, Title icon instance, Value ₹0, Leading icon instance, Subtitle Subtitle, Trailing icon instance, Title Painting, Leading Icon, Trailing None, Style Inline)
-        - Hobbies · item 2 — **sh-list** (Action instance, Value caption Caption, Pictogram instance, Control instance, Title icon instance, Value ₹0, Leading icon instance, Subtitle Subtitle, Trailing icon instance, Title Singing, Leading Icon, Trailing None, Style Inline)
-        - Hobbies · item 3 — **sh-list** (Action instance, Value caption Caption, Pictogram instance, Control instance, Title icon instance, Value ₹0, Leading icon instance, Subtitle Subtitle, Trailing icon instance, Title Movies, Leading Icon, Trailing None, Style Inline)
-        - Hobbies · item 4 — **sh-list** (Action instance, Value caption Caption, Pictogram instance, Control instance, Title icon instance, Value ₹0, Leading icon instance, Subtitle Subtitle, Trailing icon instance, Title Travelling, Leading Icon, Trailing None, Style Inline)
-        - Hobbies · item 5 — **sh-list** (Action instance, Value caption Caption, Pictogram instance, Control instance, Title icon instance, Value ₹0, Leading icon instance, Subtitle Subtitle, Trailing icon instance, Title Photography, Leading Icon, Trailing None, Style Inline)
+        - Hobbies · item 1 — **sh-list** (Type Default)
+        - Hobbies · item 2 — **sh-list** (Type Default)
+        - Hobbies · item 3 — **sh-list** (Type Default)
+        - Hobbies · item 4 — **sh-list** (Type Default)
+        - Hobbies · item 5 — **sh-list** (Type Default)
 
 ## Size
 
@@ -78,7 +78,6 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | content / Basics / Lifestyle | stroke | unknown VariableID:16:324 *(set on 2/3 variants)* |
 | content / Basics / Lifestyle / card header / card header | fill | text/tertiary *(set on 2/3 variants)* |
 | content / Basics / Lifestyle / card header / card header | text style | sh-typo/Support/Micro *(set on 2/3 variants)* |
-| content / Basics / Lifestyle / sh-fpv-info-item | gap | sh-space/gap/form *(set on 2/3 variants)* |
 | content / Basics / Lifestyle / Lifestyle · text group / sh-icon/document-validation | width | sh-icon/size/20 *(set on 1/3 variants)* |
 | content / Basics / Lifestyle / Lifestyle · text group / sh-icon/document-validation | height | sh-icon/size/20 *(set on 1/3 variants)* |
 | content / Basics / Lifestyle / Lifestyle · text group / Lifestyle · text | stroke | unknown VariableID:16:324 *(set on 1/3 variants)* |

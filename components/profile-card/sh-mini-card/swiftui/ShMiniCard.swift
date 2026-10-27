@@ -15,7 +15,7 @@ public enum ShMiniCardType: CaseIterable {
     case noPhoto
 }
 
-/// The badges after the name (Figma Badge 1 / Badge 2 swaps), at Size Small (14).
+/// The badges after the name (Figma Badge 1 / Badge 2 swaps), at Size Small (16).
 public enum ShMiniCardBadge: CaseIterable {
     case verified, premium
 
@@ -91,7 +91,7 @@ public struct ShMiniCard: View {
                     if !badges.isEmpty {
                         HStack(spacing: SH.Space.step2) {
                             ForEach(Array(badges.enumerated()), id: \.offset) { _, badge in
-                                ShBadge(badge.icon, label: badge.label, height: SH.Icon.size14)
+                                ShBadge(badge.icon, label: badge.label, height: SH.Icon.size16)
                             }
                         }
                         .fixedSize()

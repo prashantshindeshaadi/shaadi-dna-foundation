@@ -84,7 +84,7 @@ Layer tree of `Size=sm, Icon style=Plain, State=Included`. Nested components are
 
 - root — row
   - Icon container — column · hug × hug
-    - Icon — **sh-icon/trelation** (Type Line, Size 14)
+    - Icon — **sh-icon/trelation** (Type Line, Size 12)
   - Content — column · fill × hug
     - Overline — text "Overline" · hidden by default
     - Row — row · fill × hug
@@ -125,7 +125,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | gap | Size=sm → sh-space/4; Size=md → sh-space/6; Size=lg → sh-space/8 |
 | root | padding | sh-space/0 |
 | Icon container | padding:top | sh-space/2 *(set on 6/12 variants)* |
-| Icon container / Icon | height | Size=sm → sh-icon/size/14; Size=md → sh-icon/size/16; Size=lg → sh-icon/size/20 |
+| Icon container / Icon | height | Size=sm → sh-icon/size/16; Size=md → sh-icon/size/16; Size=lg → sh-icon/size/20 |
 | Content | gap | sh-space/2 |
 | Content / Overline | fill | text/tertiary |
 | Content / Overline | text style | Size=sm → sh-typo/Support/Micro; Size=md → sh-typo/Body/SM/Default; Size=lg → sh-typo/Body/SM/Default |
@@ -135,8 +135,8 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Content / Row / Label | fill | text/primary *(set on 6/12 variants)* |
 | Content / Row / Label | text style | Size=sm → sh-typo/Body/SM/Default; Size=md → sh-typo/Body/MD/Default; Size=lg → sh-typo/Body/LG/Default *(set on 6/12 variants)* |
 | Content / Row / Mask after | gap | sh-space/2 |
-| Content / Row / Lock | width | Size=sm → sh-icon/size/12; Size=md → sh-icon/size/12; Size=lg → sh-icon/size/14 |
-| Content / Row / Lock | height | Size=sm → sh-icon/size/12; Size=md → sh-icon/size/12; Size=lg → sh-icon/size/14 |
+| Content / Row / Lock | width | sh-icon/size/12 |
+| Content / Row / Lock | height | sh-icon/size/12 |
 | Content / Subtext | fill | text/tertiary |
 | Content / Subtext | text style | Size=sm → sh-typo/Body/SM/Default; Size=md → sh-typo/Body/SM/Default; Size=lg → sh-typo/Body/MD/Default |
 | Value | fill | text/secondary |

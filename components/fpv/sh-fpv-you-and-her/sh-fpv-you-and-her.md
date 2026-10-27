@@ -50,64 +50,16 @@ Layer tree of `State=Default`. Nested components are shown by name; their intern
       - Divider · shape — fill × fixed
       - Title — text "You Match"
     - Preference list · text group — column · fill × hug
-      - Preference list · text group 1 — row · fill × hug
-        - Icon — row · hug × hug
-          - sh-icon/calendar-range — **sh-icon/calendar-range** (Type Line, Size 20)
-        - Preference list · text group — row · fill × fill
-          - Preference list · text — column · fill × hug
-            - Title — text "Age"
-            - Description — text "24 to 29"
-          - Icon — row · hug × fill
-            - sh-icon/check — **sh-icon/check** (Type Filled, Size 24)
-      - Preference list · text group 2 — row · fill × hug
-        - Icon — row · hug × hug
-          - sh-icon/height — **sh-icon/height** (Type Line, Size 20)
-        - Preference list · text group — row · fill × fill
-          - Preference list · text — column · fill × hug
-            - Title — text "Height"
-            - Description — text "5’2” to 6’3”"
-          - Icon — row · hug × fill
-            - sh-icon/check — **sh-icon/check** (Type Filled, Size 24)
-      - Preference list · text group 3 — row · fill × hug
-        - Icon — row · hug × hug
-          - sh-icon/location-pin — **sh-icon/location-pin** (Type Line, Size 20)
-        - Preference list · text group — row · fill × fill
-          - Preference list · text — column · fill × hug
-            - Title — text "State Living In"
-            - Description — text "Punjab, West Bengal"
-          - Icon — row · hug × fill
-            - sh-icon/check — **sh-icon/check** (Type Filled, Size 24)
-      - Preference list · text group 4 — row · fill × hug
-        - Icon — row · hug × hug
-          - sh-icon/location-pin — **sh-icon/location-pin** (Type Line, Size 20)
-        - Preference list · text group — row · fill × fill
-          - Preference list · text — column · fill × hug
-            - Title — text "Country Living In"
-            - Description — text "India, Bahrain, Kuwait, United Arab Emirates, Canada, USA, U"
-          - Icon — row · hug × fill
-            - sh-icon/check — **sh-icon/check** (Type Filled, Size 24)
-      - Preference list · text group 5 — row · fill × hug
-        - Icon — row · hug × hug
-          - sh-icon/message — **sh-icon/message** (Type Line, Size 20)
-        - Preference list · text group — row · fill × fill
-          - Preference list · text — column · fill × hug
-            - Title — text "Mother Tongue"
-            - Description — text "Punjabi, English"
-          - Icon — row · hug × fill
-            - sh-icon/check — **sh-icon/check** (Type Filled, Size 24)
-      - Preference list · text group 6 — row · fill × hug
-        - Icon — row · hug × hug
-          - sh-icon/income — **sh-icon/income** (Type Line, Size 20)
-        - Preference list · text group — row · fill × fill
-          - Preference list · text — column · fill × hug
-            - Title — text "Annual Income"
-            - Description — text "INR 10-20 Lakh"
-          - Icon — row · hug × fill
-            - sh-icon/check — **sh-icon/check** (Type Filled, Size 24)
+      - Preference · Age — **sh-list** (Type Preference)
+      - Preference · Height — **sh-list** (Type Preference)
+      - Preference · State Living In — **sh-list** (Type Preference)
+      - Preference · Country Living In — **sh-list** (Type Preference)
+      - Preference · Mother Tongue — **sh-list** (Type Preference)
+      - Preference · Annual Income — **sh-list** (Type Preference)
 
 ## Size
 
-360 × 466
+360 × 470
 
 ## Tokens
 
@@ -135,61 +87,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Preference Match / You meet Meher’s 4/5 preferences and have 5 things in common. | fill | unknown VariableID:f648970dca912bd4fe36404a3e07c575234ee044/55:391 |
 | Preference Match / You meet Meher’s 4/5 preferences and have 5 things in common. | text style | sh-typo/Body/MD/Default |
 | Preference list / Divider / Title | fill | unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295 |
-| Preference list / Divider / Title | text style | sh-typo/Support/Meta |
+| Preference list / Divider / Title | text style | sh-typo/Support/Label |
 | Preference list / Divider / Divider · shape | stroke | unknown VariableID:8261bbcf07ba159fbd9b0b2140c6602f784f9e31/1038:307 |
-| Preference list / Preference list · text group / Preference list · text group 1 / Icon / sh-icon/calendar-range | width | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 1 / Icon / sh-icon/calendar-range | height | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 1 / Preference list · text group | stroke | unknown VariableID:d1f69c125168504b1b86f120f71da2f1a78b12d1/1135:111 |
-| Preference list / Preference list · text group / Preference list · text group 1 / Preference list · text group / Preference list · text / Title | fill | unknown VariableID:01efc0bc1d322accab54139f575610941cb78dee/1038:296 |
-| Preference list / Preference list · text group / Preference list · text group 1 / Preference list · text group / Preference list · text / Title | text style | sh-typo/Support/Label |
-| Preference list / Preference list · text group / Preference list · text group 1 / Preference list · text group / Preference list · text / Description | fill | unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295 |
-| Preference list / Preference list · text group / Preference list · text group 1 / Preference list · text group / Preference list · text / Description | text style | sh-typo/Body/LG/Tight |
-| Preference list / Preference list · text group / Preference list · text group 1 / Preference list · text group / Icon / sh-icon/check | width | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 1 / Preference list · text group / Icon / sh-icon/check | height | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 2 / Icon / sh-icon/height | width | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 2 / Icon / sh-icon/height | height | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 2 / Preference list · text group | stroke | unknown VariableID:d1f69c125168504b1b86f120f71da2f1a78b12d1/1135:111 |
-| Preference list / Preference list · text group / Preference list · text group 2 / Preference list · text group / Preference list · text / Title | fill | unknown VariableID:01efc0bc1d322accab54139f575610941cb78dee/1038:296 |
-| Preference list / Preference list · text group / Preference list · text group 2 / Preference list · text group / Preference list · text / Title | text style | sh-typo/Support/Label |
-| Preference list / Preference list · text group / Preference list · text group 2 / Preference list · text group / Preference list · text / Description | fill | unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295 |
-| Preference list / Preference list · text group / Preference list · text group 2 / Preference list · text group / Preference list · text / Description | text style | sh-typo/Body/LG/Tight |
-| Preference list / Preference list · text group / Preference list · text group 2 / Preference list · text group / Icon / sh-icon/check | width | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 2 / Preference list · text group / Icon / sh-icon/check | height | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 3 / Icon / sh-icon/location-pin | width | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 3 / Icon / sh-icon/location-pin | height | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 3 / Preference list · text group | stroke | unknown VariableID:d1f69c125168504b1b86f120f71da2f1a78b12d1/1135:111 |
-| Preference list / Preference list · text group / Preference list · text group 3 / Preference list · text group / Preference list · text / Title | fill | unknown VariableID:01efc0bc1d322accab54139f575610941cb78dee/1038:296 |
-| Preference list / Preference list · text group / Preference list · text group 3 / Preference list · text group / Preference list · text / Title | text style | sh-typo/Support/Label |
-| Preference list / Preference list · text group / Preference list · text group 3 / Preference list · text group / Preference list · text / Description | fill | unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295 |
-| Preference list / Preference list · text group / Preference list · text group 3 / Preference list · text group / Preference list · text / Description | text style | sh-typo/Body/LG/Tight |
-| Preference list / Preference list · text group / Preference list · text group 3 / Preference list · text group / Icon / sh-icon/check | width | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 3 / Preference list · text group / Icon / sh-icon/check | height | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 4 / Icon / sh-icon/location-pin | width | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 4 / Icon / sh-icon/location-pin | height | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 4 / Preference list · text group | stroke | unknown VariableID:d1f69c125168504b1b86f120f71da2f1a78b12d1/1135:111 |
-| Preference list / Preference list · text group / Preference list · text group 4 / Preference list · text group / Preference list · text / Title | fill | unknown VariableID:01efc0bc1d322accab54139f575610941cb78dee/1038:296 |
-| Preference list / Preference list · text group / Preference list · text group 4 / Preference list · text group / Preference list · text / Title | text style | sh-typo/Support/Label |
-| Preference list / Preference list · text group / Preference list · text group 4 / Preference list · text group / Preference list · text / Description | fill | unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295 |
-| Preference list / Preference list · text group / Preference list · text group 4 / Preference list · text group / Preference list · text / Description | text style | sh-typo/Body/LG/Tight |
-| Preference list / Preference list · text group / Preference list · text group 4 / Preference list · text group / Icon / sh-icon/check | width | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 4 / Preference list · text group / Icon / sh-icon/check | height | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 5 / Icon / sh-icon/message | width | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 5 / Icon / sh-icon/message | height | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 5 / Preference list · text group | stroke | unknown VariableID:d1f69c125168504b1b86f120f71da2f1a78b12d1/1135:111 |
-| Preference list / Preference list · text group / Preference list · text group 5 / Preference list · text group / Preference list · text / Title | fill | unknown VariableID:01efc0bc1d322accab54139f575610941cb78dee/1038:296 |
-| Preference list / Preference list · text group / Preference list · text group 5 / Preference list · text group / Preference list · text / Title | text style | sh-typo/Support/Label |
-| Preference list / Preference list · text group / Preference list · text group 5 / Preference list · text group / Preference list · text / Description | fill | unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295 |
-| Preference list / Preference list · text group / Preference list · text group 5 / Preference list · text group / Preference list · text / Description | text style | sh-typo/Body/LG/Tight |
-| Preference list / Preference list · text group / Preference list · text group 5 / Preference list · text group / Icon / sh-icon/check | width | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 5 / Preference list · text group / Icon / sh-icon/check | height | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 6 / Icon / sh-icon/income | width | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 6 / Icon / sh-icon/income | height | sh-icon/size/20 |
-| Preference list / Preference list · text group / Preference list · text group 6 / Preference list · text group | stroke | unknown VariableID:d1f69c125168504b1b86f120f71da2f1a78b12d1/1135:111 |
-| Preference list / Preference list · text group / Preference list · text group 6 / Preference list · text group / Preference list · text / Title | fill | unknown VariableID:01efc0bc1d322accab54139f575610941cb78dee/1038:296 |
-| Preference list / Preference list · text group / Preference list · text group 6 / Preference list · text group / Preference list · text / Title | text style | sh-typo/Support/Label |
-| Preference list / Preference list · text group / Preference list · text group 6 / Preference list · text group / Preference list · text / Description | fill | unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295 |
-| Preference list / Preference list · text group / Preference list · text group 6 / Preference list · text group / Preference list · text / Description | text style | sh-typo/Body/LG/Tight |
-| Preference list / Preference list · text group / Preference list · text group 6 / Preference list · text group / Icon / sh-icon/check | width | sh-icon/size/24 |
-| Preference list / Preference list · text group / Preference list · text group 6 / Preference list · text group / Icon / sh-icon/check | height | sh-icon/size/24 |
 
-> Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:01efc0bc1d322accab54139f575610941cb78dee/1038:296, unknown VariableID:1ad19a78d37acfd24fa6146483f9a2351c4995e9/697:1090, unknown VariableID:2938dd413e5c0ec5ebbe3da9873c1f31b3f6f444/15466:252, unknown VariableID:2f7647c6708ddff074d7ccc5202185a20e841b66/1038:294, unknown VariableID:8261bbcf07ba159fbd9b0b2140c6602f784f9e31/1038:307, unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295, unknown VariableID:cbb32bb489bf3d0e2aec7b5c746b64d4f155dbbc/1038:308, unknown VariableID:d1f69c125168504b1b86f120f71da2f1a78b12d1/1135:111, unknown VariableID:f246af73f9afc2f3edf791e7fa09dbe1bab6b387/1135:99, unknown VariableID:f648970dca912bd4fe36404a3e07c575234ee044/55:391
+> Bound to variables that aren't in `tokens/` (a shadow collection or a deleted variable): unknown VariableID:01efc0bc1d322accab54139f575610941cb78dee/1038:296, unknown VariableID:1ad19a78d37acfd24fa6146483f9a2351c4995e9/697:1090, unknown VariableID:2938dd413e5c0ec5ebbe3da9873c1f31b3f6f444/15466:252, unknown VariableID:2f7647c6708ddff074d7ccc5202185a20e841b66/1038:294, unknown VariableID:8261bbcf07ba159fbd9b0b2140c6602f784f9e31/1038:307, unknown VariableID:8b5b63032f2125e97733b30ef5bbe24943ba1212/1038:295, unknown VariableID:cbb32bb489bf3d0e2aec7b5c746b64d4f155dbbc/1038:308, unknown VariableID:f246af73f9afc2f3edf791e7fa09dbe1bab6b387/1135:99, unknown VariableID:f648970dca912bd4fe36404a3e07c575234ee044/55:391

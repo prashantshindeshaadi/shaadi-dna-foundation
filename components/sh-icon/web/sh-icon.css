@@ -22,7 +22,6 @@
   mask: var(--icon) center / contain no-repeat;
 }
 .sh-icon--12 { width: var(--sh-icon-size-12); height: var(--sh-icon-size-12); }
-.sh-icon--14 { width: var(--sh-icon-size-14); height: var(--sh-icon-size-14); }
 .sh-icon--16 { width: var(--sh-icon-size-16); height: var(--sh-icon-size-16); }
 .sh-icon--20 { width: var(--sh-icon-size-20); height: var(--sh-icon-size-20); }
 .sh-icon--24 { width: var(--sh-icon-size-24); height: var(--sh-icon-size-24); }
@@ -36,5 +35,5 @@ img.sh-icon { background: none; -webkit-mask: none; mask: none; object-fit: cont
 
 /* Badges (verified, premium, VIP): their own colours, sized by height. */
 .sh-badge { display: block; flex: none; height: var(--sh-icon-size-20); width: auto; }
-.sh-badge--14 { height: var(--sh-icon-size-14); }
+.sh-badge--16 { height: var(--sh-icon-size-16); }
 .sh-badge--20 { height: var(--sh-icon-size-20); }

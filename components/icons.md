@@ -1,6 +1,6 @@
 # Icons
 
-400 icons from the Shaadi DNA library, exported by `tools/components.py`.
+401 icons from the Shaadi DNA library, exported by `tools/components.py`.
 Line and filled icons are one SVG each at 24 with `currentColor`; scale to 12–24 and pair the
 stroke with `sh-icon/stroke/<size>` (FOUNDATION §5.5). Pictograms and brand marks keep their colours;
 the ones drawn as bitmaps in Figma are 2x PNGs.
@@ -321,7 +321,7 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `plus` | line 12/16/20/24, filled 12/16/20/24 | plus, add, new, create, more, plus sign, PlusSign | [line](../icons/line/plus.svg) [filled](../icons/filled/plus.svg) |
 | `plus-circle` | line 12/16/20/24, filled 12/16/20/24 | plus circle, plus, circle, add, new, create, plus sign circle, PlusSignCircle | [line](../icons/line/plus-circle.svg) [filled](../icons/filled/plus-circle.svg) |
 | `premium` | line 12/16/20/24, filled 12/16/20/24 | premium, crown, upgrade, gold, plan | [line](../icons/line/premium.svg) [filled](../icons/filled/premium.svg) |
-| `premium-badge` | misc 14/20 |  | [misc](../icons/misc/premium-badge.svg) |
+| `premium-badge` | misc 16/20 |  | [misc](../icons/misc/premium-badge.svg) |
 | `privacy` | line 12/16/20/24, filled 12/16/20/24 | privacy, private, privacy settings, profile privacy, who can see, hide profile, protection, secure, shield, user, shield-user, ShieldUser | [line](../icons/line/privacy.svg) [filled](../icons/filled/privacy.svg) |
 | `puzzle` | line 12/16/20/24, filled 12/16/20/24 | puzzle, hobby, interests, match pieces, Puzzle | [line](../icons/line/puzzle.svg) [filled](../icons/filled/puzzle.svg) |
 | `qr-code` | line 12/16/20/24, filled 12/16/20/24 | qr code, qr, code, scan, share profile, QrCode | [line](../icons/line/qr-code.svg) [filled](../icons/filled/qr-code.svg) |
@@ -381,8 +381,8 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `user-square` | line 12/16/20/24, filled 12/16/20/24 | user square, user, square, profile card, member card, id, UserSquare | [line](../icons/line/user-square.svg) [filled](../icons/filled/user-square.svg) |
 | `user-star` | line 12/16/20/24, filled 12/16/20/24 | user star, user, star, top match, featured member, premium member, user star02, UserStar02 | [line](../icons/line/user-star.svg) [filled](../icons/filled/user-star.svg) |
 | `users-group` | line 12/16/20/24, filled 12/16/20/24 | users group, users, group, members, community, family, people, user group, UserGroup | [line](../icons/line/users-group.svg) [filled](../icons/filled/users-group.svg) |
-| `verified-badge` | misc 14/20 |  | [misc](../icons/misc/verified-badge.svg) |
 | `veg-food` | line 12/16/20/24, filled 12/16/20/24 | veg, veg food, vegetarian, vegan, leaf, plant-based, green, leaf01 | [line](../icons/line/veg-food.svg) [filled](../icons/filled/veg-food.svg) |
+| `verified-badge` | misc 16/20 |  | [misc](../icons/misc/verified-badge.svg) |
 | `video` | line 12/16/20/24, filled 12/16/20/24 | video, video call, record, clip, video01, Video01 | [line](../icons/line/video.svg) [filled](../icons/filled/video.svg) |
 | `video-off` | line 12/16/20/24, filled 12/16/20/24 | video off, video, off, camera off, no video, VideoOff | [line](../icons/line/video-off.svg) [filled](../icons/filled/video-off.svg) |
 | `vip-badge` | misc 42 |  | [misc](../icons/misc/vip-badge.svg) |

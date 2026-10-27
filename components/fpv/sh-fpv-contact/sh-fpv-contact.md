@@ -54,8 +54,8 @@ Layer tree of `Plan=Free, State=Gated`. Nested components are shown by name; the
 - root — column
   - sh-fpv-section-title — **sh-fpv-section-title** (Subtitle Subtitle, Title Contact)
   - Info Section — column · fill × hug
-    - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Masked Phone)
-    - sh-fpv-info-item — **sh-fpv-info-item** (Lines Single, Content Masked Email)
+    - sh-list-info — **sh-list** (Type Info)
+    - sh-list-info — **sh-list** (Type Info)
 
 ## Size
 
@@ -69,7 +69,6 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 |---|---|---|
 | root | fill | background/default |
 | sh-fpv-section-title | padding-y | sh-space/8 |
-| Info Section / sh-fpv-info-item | gap | sh-space/gap/form *(set on 5/6 variants)* |
 | Tit-for-tat card · verify to view | radius | sh-radius/lg *(set on 1/6 variants)* |
 | Tit-for-tat card · verify to view | stroke | unknown VariableID:16:324 *(set on 1/6 variants)* |
 | Info Section / Meher has limited who can see her contact details. | fill | text/tertiary *(set on 1/6 variants)* |

@@ -53,7 +53,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Locked overlay · white fade + progressive blur / Text Container / Illustration circle · 96 / Art · swap per section | height | sh-icon/pictogram/size/64 |
 | Locked overlay · white fade + progressive blur / Text Container / Reason copy | fill | text/primary |
 | Locked overlay · white fade + progressive blur / Text Container / Reason copy | text style | sh-typo/Body/LG/Default |
-| Locked overlay · white fade + progressive blur / sh-button | gap | sh-space/2 |
+| Locked overlay · white fade + progressive blur / sh-button | gap | sh-space/4 |
 | Locked overlay · white fade + progressive blur / sh-button | padding-x | sh-space/16 |
 | Locked overlay · white fade + progressive blur / sh-button | padding-y | sh-space/10 |
 | Locked overlay · white fade + progressive blur / sh-button | radius | sh-radius/full |
