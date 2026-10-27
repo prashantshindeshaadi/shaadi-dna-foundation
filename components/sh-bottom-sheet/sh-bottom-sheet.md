@@ -2,9 +2,9 @@
 
 **Purpose:** Modal sheet from the bottom with scrim. Keywords: bottom sheet, modal, drawer, dialog, sheet, overlay
 
-**Show profile:** turn on for any sheet about a member (phone number, trust markers) — photo on the top edge, name in Title, "Managed by …" in Body, Show visual off, and set Body top padding to sh-space 16 so the name sits just under the photo. Profile photo = sh-avatar (pick Size in the panel; lg by default).
+**Member photo:** for any sheet about a member (phone number, trust markers), turn on Show visual and put the photo in the Visual slot — sh-avatar Type=Image (lg by default). The slot hugs the photo and centres it; name in Title, "Managed by …" in Body.
 
-**Show grabber:** on by default — the drag bar to resize or dismiss. Turn off when Show profile is on (the photo sits on the top edge).
+**Grabber:** shows only on Size=Full — the sheet whose content scrolls or runs past the screen, so it can be dragged. Size=Hug fits its content: no grabber. Content taller than the screen → use Size=Full.
 
 **Close:** always sh-icon-button Tertiary Small — one close style on every sheet.
 
@@ -59,8 +59,6 @@ Core · 8 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXG
 | Show secondary action | boolean | — | true |
 | Primary action | instance swap | — | instance |
 | Secondary action | instance swap | — | instance |
-| Show profile | boolean | — | false |
-| Show grabber | boolean | — | true |
 | Size | variant | Hug, Full | Hug |
 | Align | variant | Center, Left | Center |
 | Actions | variant | Stacked, Side by side | Stacked |
@@ -76,7 +74,7 @@ Layer tree of `Size=Hug, Align=Center, Actions=Stacked`. Nested components are s
       - Drop content here — row · fixed × fixed
         - Drop background graphic here — text "Drop background graphic here"
     - Header — fill × fixed
-      - Grabber — fixed × fixed
+      - Grabber — hidden by default · fixed × fixed
     - Visual slot — row · hug × hug
       - Media content — **sh-avatar** (Label SH, Icon instance, Size lg, Type Image)
     - Body — column · fill × hug
@@ -94,7 +92,6 @@ Layer tree of `Size=Hug, Align=Center, Actions=Stacked`. Nested components are s
         - Primary action — **sh-button** (Trailing icon (Small) instance, Leading icon (Small) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Sublabel Supporting text, Leading icon (Medium) instance, Trailing icon (Medium) instance, Label Primary action, Type Primary, Size Large, State Default)
         - Secondary action — **sh-button** (Trailing icon (Medium) instance, Leading icon (Medium) instance, Leading icon (Small) instance, Trailing icon (Large) instance, Sublabel Supporting text, Leading icon (Large) instance, Trailing icon (Small) instance, Label Cancel, Type Ghost, Size Large, State Default)
     - Close — **sh-icon-button** (Icon (Translucent Small) instance, Icon (Translucent Medium) instance, Icon (Translucent Large) instance, Screen reader label Close, Icon (Large) instance, Icon (Small) instance, Icon (Medium) instance, Badge 2, Type Tertiary, Size Small, State Default)
-    - Profile photo — **sh-avatar** (Label SH, Icon instance, Size lg, Type Image) · hidden by default
 
 ## Sizes
 
@@ -159,7 +156,3 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Sheet / Close | strokeRightWeight | sh-stroke/none |
 | Sheet / Close | fill | button/tertiary/background/default |
 | Sheet / Close | stroke | border/default |
-| Sheet / Profile photo | gap | sh-space/0 |
-| Sheet / Profile photo | padding | sh-space/0 |
-| Sheet / Profile photo | radius | sh-radius/avatar |
-| Sheet / Profile photo | stroke | icon/on-image |

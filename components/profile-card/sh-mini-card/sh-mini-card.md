@@ -79,6 +79,10 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Info / Name row / Name | fill | text/primary |
 | Info / Name row / Name | text style | sh-typo/Title/SM |
 | Info / Name row / Badges | gap | sh-space/2 |
+| Info / Name row / Badges / Badge 1 | width | sh-icon/size/16 |
+| Info / Name row / Badges / Badge 1 | height | sh-icon/size/16 |
+| Info / Name row / Badges / Badge 2 | width | sh-icon/size/16 |
+| Info / Name row / Badges / Badge 2 | height | sh-icon/size/16 |
 | Info / Details | gap | sh-space/6 |
 | Info / Details | row-gap | sh-space/0 |
 | Info / Details / Info detail 1 | gap | sh-space/6 |

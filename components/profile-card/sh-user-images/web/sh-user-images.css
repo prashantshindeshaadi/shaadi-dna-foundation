@@ -13,8 +13,8 @@
  * (requested-female.jpg, requested-male.jpg). Figma crops them full width, top-aligned: add .sh-user-image--top.
  *
  * Style=Blur is the Figma "Blur" layer over the same photo, same size (the photo is never scaled):
- * a background/default wash + effect sh-background-blur/uniform/strong (background blur, radius
- * sh-translucent background/blur/strong).
+ * a sh-gradient/translucent/dark/extra-soft wash + effect sh-background-blur/uniform/strong (background blur,
+ * radius sh-translucent background/blur/strong).
  */
 
 .sh-user-image {
@@ -41,8 +41,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  /* no token: Figma paints background/default at 1 % paint alpha (the minimum fill a background blur needs) */
-  background: color-mix(in srgb, var(--sh-background-default) 1%, transparent);
+  background: var(--sh-gradient-translucent-dark-extra-soft);
   -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-strong));
   backdrop-filter: blur(var(--sh-translucent-background-blur-strong));
 }

@@ -2,7 +2,7 @@
 // Spec: ../sh-user-images.md · Figma node 2248:13619
 //
 // The member photo, cropped to fill its frame (Figma image fill "Fill"). Style Blur is the Figma "Blur" layer over
-// the same photo, same size: a background/default wash + sh-background-blur/uniform/strong.
+// the same photo, same size: a sh-gradient/translucent/dark/extra-soft wash + sh-background-blur/uniform/strong.
 // Gender Female 1–21 / Male 1–6 are design-only sample photos: pass the member's photo.
 // Gender Female requested / Male requested: put ../assets/requested-female.jpg and requested-male.jpg in res/drawable
 // as sh_user_images_requested_female / sh_user_images_requested_male, then use ShUserImage(requested = …).
@@ -26,9 +26,9 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
+import com.shaadi.dna.tokens.ShGradient
 // import com.shaadi.app.R
 
 /** Figma property "Style". */
@@ -75,9 +75,7 @@ fun ShUserImage(
             )
         }
         if (blur) {
-            // no token: Figma paints background/default at 1 % paint alpha (the minimum fill a background blur needs)
-            val wash = colorResource(R.color.sh_background_default).let { it.copy(alpha = it.alpha * 0.01f) }
-            Box(Modifier.matchParentSize().background(wash))
+            Box(Modifier.matchParentSize().background(ShGradient.translucentDarkExtraSoft()))   // the Blur layer's wash
         }
     }
 }

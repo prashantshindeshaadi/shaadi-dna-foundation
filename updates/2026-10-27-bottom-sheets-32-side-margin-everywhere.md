@@ -34,3 +34,14 @@ One margin for every sheet, matching core `sh-bottom-sheet`, so nothing on a she
 - `sh-bottom-sheet`, all 8 variants: **Visual slot** is now Hug width instead of Fill. The Sheet centres it in every variant (Align=Left still centres the visual, as before), with 16 below.
 - The trust-marker sheets' `Visual` frames went from Fill to Hug, so the slot wraps the real art (VIP 199, Premium 157, others 96). Nothing is cropped.
 - Checked: all 19 visible visual slots hug, and the Hide, VIP and Premium sheet renders are unchanged.
+
+## Later: member photo sits in the Visual slot
+- `sh-bottom-sheet`: the **Show profile** option is gone. It floated an sh-avatar half over the sheet's top edge. A member photo now goes in the **Visual slot** (Show visual on, sh-avatar Type=Image lg), which hugs the photo and centres it, 16 below.
+- `sh-fpv-sheet-phone-number`, all 4 states, plus its 3 copies on the FPV page and the loose "Sheet / Phone number" frame: photo moved from the floating layer into the Visual slot. Each copy keeps its own photo.
+- Nothing else used Show profile (checked all 37 sheet uses).
+- **Developers:** no special "profile" mode on the sheet. Render the photo as the sheet's visual content.
+
+## Later: grabber only on scrolling sheets
+- `sh-bottom-sheet`: the grabber now follows **Size**. **Size=Full** (content scrolls or runs past the screen) always shows it; **Size=Hug** (sheet fits its content) never does. The **Show grabber** toggle is removed.
+- Effect: the one Hug sheet that had the grabber on (Trust marker · Managed by self) loses it. The Full sheet "Filter — Mother tongue" (Sunil), which scrolls, now has it.
+- **Developers:** show the drag handle only when the sheet's content is taller than the space it's given (scrollable / expandable). Fitted sheets: no handle.

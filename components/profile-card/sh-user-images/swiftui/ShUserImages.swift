@@ -2,7 +2,7 @@
 // Spec: ../sh-user-images.md · Figma node 2248:13619
 //
 // The member photo, cropped to fill its frame (Figma image fill "Fill"). Style Blur is the Figma "Blur" layer over
-// the same photo, same size: a background/default wash + sh-background-blur/uniform/strong.
+// the same photo, same size: a sh-gradient/translucent/dark/extra-soft wash + sh-background-blur/uniform/strong.
 // Gender Female 1–21 / Male 1–6 are design-only sample photos: pass the member's photo.
 // Gender Female requested / Male requested: add ../assets/requested-female.jpg and requested-male.jpg to the asset
 // catalogue as "sh-user-images/requested-female" and "sh-user-images/requested-male", then use ShUserImage(requested:).
@@ -61,7 +61,7 @@ public struct ShUserImage: View {
     }
 }
 
-/// The Figma "Blur" layer: background blur sh-background-blur/uniform/strong + a background/default wash.
+/// The Figma "Blur" layer: background blur sh-background-blur/uniform/strong + a sh-gradient/translucent/dark/extra-soft wash.
 private struct ShUserImageBlurLayer: ViewModifier {
     let isOn: Bool
 
@@ -69,8 +69,7 @@ private struct ShUserImageBlurLayer: ViewModifier {
         if isOn {
             content
                 .blur(radius: SH.Blur.backgroundBlurStrong, opaque: true)   // opaque: edges stay solid, photo not scaled
-                // no token: Figma paints background/default at 1 % paint alpha (the minimum fill a background blur needs)
-                .overlay(SH.Color.backgroundDefault.color.opacity(0.01))
+                .overlay(SH.Gradient.translucentDarkExtraSoft.view)
         } else {
             content
         }

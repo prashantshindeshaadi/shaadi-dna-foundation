@@ -267,5 +267,5 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
-| Blur | fill | background/default *(set on 29/58 variants)* |
+| Blur | fill | sh-gradient/translucent/dark/extra-soft ← Gender=Female 1 / Gender=Female 3 / Gender=Female 4 / Gender=Female 5 / Gender=Female 6 / Gender=Female 7 …; sh-gradient/translucent/dark/soft ← Gender=Female 2 *(set on 29/58 variants)* |
 | Blur | effect | sh-background-blur/uniform/strong *(set on 29/58 variants)* |

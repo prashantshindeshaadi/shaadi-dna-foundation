@@ -78,7 +78,11 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Content box / Name row / Name group / Name | text style | sh-typo/Heading/SM |
 | Content box / Name row / Name group / Age | fill | text/on-image |
 | Content box / Name row / Name group / Age | text style | sh-typo/Heading/SM |
+| Content box / Name row / Name group / Badge 2 | width | sh-icon/size/20 |
+| Content box / Name row / Name group / Badge 2 | height | sh-icon/size/20 |
 | Content box / Name row / Name group / Status | radius | sh-radius/full |
+| Content box / Name row / Verified | width | sh-icon/size/20 |
+| Content box / Name row / Verified | height | sh-icon/size/20 |
 | Content box / Details | gap | sh-space/8 |
 | Content box / Details | row-gap | sh-space/2 |
 | Content box / Details / Info detail 1 | gap | sh-space/8 |

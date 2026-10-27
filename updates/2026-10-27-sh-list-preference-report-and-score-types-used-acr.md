@@ -58,3 +58,15 @@
 - **Restored after the move:** Score, Report and Grouped text (from the koota record and version history) and three Info rows. The Temperament 0 / 6 dimmed colour was kept.
 - The 2 "You and Ananya" summary blocks in the astro sheets went from 20 to the 32 sheet margin.
 - Scripts: `scripts/list-split.js`, `scripts/list-wrap.js`, `scripts/list-wrap2.js` (override-preserving move).
+
+## Later: Score has a No match state (0 points)
+- `sh-list-score` State is now **Default · No match · Locked**:
+  - **Default**: points shown, everything active.
+  - **No match** (new): points are 0. Name, points and pictogram all dim: text `text/disabled`, pictogram opacity `sh-opacity/disabled`. Before, a 0 row greyed the text by hand while the pictogram stayed full colour, which read as "active".
+  - **Locked**: lock icon in place of points, name and pictogram dimmed (unchanged).
+- Temperament "0 / 6" in the astro breakdown (North main and its 2 copies) now uses State=No match. The hand colour override is gone.
+- **Developers:** a score of 0 → `state = noMatch`; don't recolour the text yourself.
+
+## Later: grouped title icon is tertiary
+- `sh-list-grouped`, all 4 Positions: Title icon glyph `icon/primary` → `icon/tertiary`. It's a hint (e.g. info), so it sits back from the title and the chevron.
+- Layout unchanged: the title still fills its row and wraps. Checked all 16 uses: nothing overflows.
