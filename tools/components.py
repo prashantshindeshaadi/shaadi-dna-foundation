@@ -262,7 +262,20 @@ def blueprint(c, vm, here=None):
             L.append(f"| {s} | {v['w']:g} × {v['h']:g} | {pad} | {b.get(('root', 'gap'), '—')} |")
         L.append("")
     else:
-        L += ["## Size", "", f"{first['w']:g} × {first['h']:g}", ""]
+        sizes = list(dict.fromkeys((v["w"], v["h"]) for v in variants))
+        if len(sizes) == 1:
+            line = f"{first['w']:g} × {first['h']:g}"
+        else:   # sizes differ: name the property that sets them, if one does
+            axis = next((a for a in axes if all(len({(v["w"], v["h"]) for v in variants if v["variant"].get(a) == val}) == 1
+                                               for val in {v["variant"].get(a) for v in variants})), None)
+            if axis:
+                seen = {}
+                for v in variants:
+                    seen.setdefault(v["variant"].get(axis), (v["w"], v["h"]))
+                line = " · ".join(f"{w:g} × {h:g} ({axis} {val})" for val, (w, h) in seen.items())
+            else:
+                line = " · ".join(f"{w:g} × {h:g}" for w, h in sizes)
+        L += ["## Size", "", line, ""]
 
     # tokens
     per_variant = {v["name"]: collapse(v["bindings"], vm) for v in variants}

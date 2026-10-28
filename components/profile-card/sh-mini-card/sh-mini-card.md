@@ -16,11 +16,11 @@ Profile card (migration, not yet core) · 3 variants · [Open in Figma](https://
 
 ### Type=No photo female
 
-**Purpose:** compact profile suggestion for a member with no photo; female sh-avatar-placeholder 1:1 in the avatar.
+**Purpose:** Mini card for a member with no photo, female silhouette in the avatar.
 
 ### Type=No photo male
 
-**Purpose:** compact profile suggestion for a member with no photo; male sh-avatar-placeholder 1:1 in the avatar.
+**Purpose:** Mini card for a member with no photo, male silhouette in the avatar.
 
 ## Properties
 
@@ -74,8 +74,8 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | root | fill | background/default |
 | root | stroke | border/default |
 | root | effect | sh-shadow/soft |
-| Avatar | gap | sh-space/0 *(set on 1/2 variants)* |
-| Avatar | padding | sh-space/0 *(set on 1/2 variants)* |
+| Avatar | gap | sh-space/0 *(set on 1/3 variants)* |
+| Avatar | padding | sh-space/0 *(set on 1/3 variants)* |
 | Avatar | radius | sh-radius/avatar |
 | Avatar | stroke | icon/on-image |
 | Info | gap | sh-space/4 |
@@ -97,5 +97,6 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Action | padding-y | sh-space/8 |
 | Action | radius | sh-radius/full |
 | Action | fill | sh-gradient/brand/default |
-| Avatar / Media | radius | sh-radius/avatar *(set on 1/2 variants)* |
-| Avatar / Media | fill | background/strong *(set on 1/2 variants)* |
+| Avatar / Media | radius | sh-radius/avatar *(set on 2/3 variants)* |
+| Avatar / Media | fill | background/strong *(set on 2/3 variants)* |
+| Avatar / Media / Image | radius | sh-radius/full *(set on 2/3 variants)* |

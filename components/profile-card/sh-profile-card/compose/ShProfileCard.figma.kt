@@ -23,6 +23,7 @@ class ShProfileCardDoc {
         "Blocked" to ShProfileCardType.Blocked,
         "VIP" to ShProfileCardType.Vip,
         "With Overlay" to ShProfileCardType.WithOverlay,
+        "Declined" to ShProfileCardType.Declined,
     )
 
     @FigmaProperty(FigmaType.Boolean, "Show top tags")

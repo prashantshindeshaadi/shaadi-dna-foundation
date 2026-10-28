@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-28 — Profile card: Declined in code, overlay title style, blueprints synced](2026-10-28-profile-card-declined-in-code-overlay-title-style-.md)
 - [2026-10-28 — sh-mini-card: No photo female and male, 1:1 placeholder](2026-10-28-sh-mini-card-no-photo-female-and-male-1-1-placehol.md)
 - [2026-10-28 — No-photo art: soft pink silhouettes everywhere](2026-10-28-no-photo-art-soft-pink-silhouettes-everywhere.md)
 - [2026-10-28 — sh-profile-card: Declined type](2026-10-28-sh-profile-card-declined-type.md)

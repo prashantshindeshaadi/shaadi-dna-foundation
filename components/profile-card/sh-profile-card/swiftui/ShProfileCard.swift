@@ -13,7 +13,7 @@ import SwiftUI
 
 /// Figma property "Type". Each type sets the photo state, what the info shows and the actions.
 public enum ShProfileCardType: String, CaseIterable {
-    case connect, received, postConnect, gated, noPhoto, photoRequested, blocked, vip, withOverlay
+    case connect, received, postConnect, gated, noPhoto, photoRequested, blocked, vip, withOverlay, declined
 }
 
 public struct ShProfileMember {
@@ -135,7 +135,7 @@ public struct ShProfileCard: View {
     private var showsPhotoCount: Bool { type != .blocked }
     private var showsDetails: Bool { type != .postConnect }
     private var showsTags: Bool { type != .postConnect && type != .blocked }
-    private var showsTrust: Bool { [.connect, .received, .postConnect, .vip, .withOverlay].contains(type) }
+    private var showsTrust: Bool { [.connect, .received, .postConnect, .vip, .withOverlay, .declined].contains(type) }
     private var badges: [ShProfileBadge] {
         guard showsTrust else { return [] }
         if type == .vip { return [.vip] }
@@ -216,6 +216,8 @@ public struct ShProfileCard: View {
         case .blocked:
             ShActionIsland(type: .messageTertiary, message: "You blocked her",
                            primary: ShIslandButton(label: "Unblock", action: actions.onUnblock))
+        case .declined:
+            ShActionIsland(type: .messageOnly, status: "She declined your Request to Connect")   // status only, no action
         case .vip:
             ShActionIsland(type: .secondaryPrimary, note: editNote,
                            primary: ShIslandButton(label: "Connect", icon: "filled/check", action: actions.onConnect),

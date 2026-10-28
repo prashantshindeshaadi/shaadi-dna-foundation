@@ -18,8 +18,8 @@
  *                    the photo under it (the requested portrait) shows. Photo full draws that portrait itself.
  *   Photo requested  as No photo without the action. Optional status row (Figma: hidden layer).
  *
- * Text: Photo surfaces use .sh-body-lg in text/on-image with sh-shadow/default; Content uses .sh-body-md in
- * text/primary, no shadow. Photo surfaces give the action sh-shadow/default too.
+ * Text: the Message copy uses .sh-body-lg on Photo surfaces (text/on-image, sh-shadow/default) and .sh-body-md on
+ * Content (text/primary, no shadow). The No photo / Photo requested title uses .sh-title-lg. Photo surfaces give the action sh-shadow/default too.
  * The only raw numbers are positions Figma has no token for; each is marked.
  */
 

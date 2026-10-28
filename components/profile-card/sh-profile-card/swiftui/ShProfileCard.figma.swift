@@ -19,6 +19,7 @@ struct ShProfileCard_doc: FigmaConnect {
         "Blocked": .blocked,
         "VIP": .vip,
         "With Overlay": .withOverlay,
+        "Declined": .declined,
     ])
     var type: ShProfileCardType = .connect
 

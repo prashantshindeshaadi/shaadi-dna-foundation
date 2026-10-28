@@ -10,7 +10,7 @@
 
 **Taps:** Photo count (View photos) opens her photos. More (More options) opens the member options. Every button and icon button keeps a 48 × 48 tap area.
 
-Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2579-25592) (node `2579:25592`)
+Profile card (migration, not yet core) · 10 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2579-25592) (node `2579:25592`)
 
 **Code:** Web (HTML/CSS): [sh-profile-card.css](web/sh-profile-card.css), [sh-profile-card.figma.ts](web/sh-profile-card.figma.ts), [sh-profile-card.html](web/sh-profile-card.html) · Jetpack Compose: [ShProfileCard.figma.kt](compose/ShProfileCard.figma.kt), [ShProfileCard.kt](compose/ShProfileCard.kt) · SwiftUI: [ShProfileCard.figma.swift](swiftui/ShProfileCard.figma.swift), [ShProfileCard.swift](swiftui/ShProfileCard.swift)
 
@@ -74,14 +74,6 @@ Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://
 
 **Actions:** message "You blocked her"; Unblock (Tertiary). Photo count hidden. No note.
 
-### Type=Declined
-
-**When:** she declined your Request to Connect.
-
-**Purpose:** Her photo and details stay; the action area shows the status and no action.
-
-**Actions:** status only, "She declined your Request to Connect" (sh-action-island Type=Message only). No note, no button.
-
 ### Type=VIP
 
 **When:** the profile is managed by a Shaadi VIP consultant.
@@ -97,6 +89,10 @@ Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://
 **Purpose:** Default card with a connect prompt.
 
 **Actions:** pre-written message with Edit; Connect (Primary, check).
+
+### Type=Declined
+
+**Purpose:** she declined your Request to Connect: her photo and details stay, the action area shows that status and no action.
 
 ## Properties
 

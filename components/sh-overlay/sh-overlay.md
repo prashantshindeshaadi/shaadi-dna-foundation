@@ -66,7 +66,7 @@ Layer tree of `Surface=Photo, Type=Message`. Nested components are shown by name
 
 ## Size
 
-358 × 520
+358 × 520 (Surface Photo) · 360 × 520 (Surface Photo full) · 360 × 520 (Surface Content)
 
 ## Tokens
 
@@ -94,7 +94,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Content / Icon/Illustration / Avatar | radius | sh-radius/full *(set on 2/7 variants)* |
 | Content / Title | fill | text/on-image *(set on 4/7 variants)* |
 | Content / Title | effect | sh-shadow/default *(set on 4/7 variants)* |
-| Content / Title | text style | sh-typo/Body/LG/Default *(set on 4/7 variants)* |
+| Content / Title | text style | sh-typo/Title/LG *(set on 4/7 variants)* |
 | Status | gap | sh-space/4 *(set on 2/7 variants)* |
 | Status | padding-y | sh-space/6 *(set on 2/7 variants)* |
 | Status / Icon | width | sh-icon/size/16 *(set on 2/7 variants)* |

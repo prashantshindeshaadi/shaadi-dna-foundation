@@ -130,7 +130,7 @@ public struct ShOverlay: View {
     @ViewBuilder private var text: some View {
         if let copy = isMessage ? message : title {
             Text(copy)
-                .shTextStyle(onImage ? .bodyLg : .bodyMd)
+                .shTextStyle(isMessage ? (onImage ? .bodyLg : .bodyMd) : .titleLg)   // title: sh-typo/Title/LG
                 .foregroundStyle(onImage ? SH.Color.textOnImage.color : SH.Color.textPrimary.color)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)

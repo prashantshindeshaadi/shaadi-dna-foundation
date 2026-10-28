@@ -47,7 +47,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
 <div class="sh-overlay sh-overlay--photo sh-overlay--no-photo">
   <div class="sh-overlay__content">
     ${slot}
-    <p class="sh-overlay__text sh-body-lg"${textHidden}>${text}</p>
+    <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
   </div>
   ${action}
 </div>`,
@@ -68,7 +68,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
 <div class="sh-overlay sh-overlay--photo sh-overlay--photo-requested">
   <div class="sh-overlay__content">
     ${slot}
-    <p class="sh-overlay__text sh-body-lg"${textHidden}>${text}</p>
+    <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
   </div>
   <!-- optional status (Figma: hidden layer): <span class="sh-overlay__status sh-button-sm"><span class="sh-icon sh-icon--16" style="--icon:url(icons/filled/check.svg)" aria-hidden="true"></span>Photo Requested</span> -->
 </div>`,
@@ -108,7 +108,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
 <div class="sh-overlay sh-overlay--photo-full sh-overlay--no-photo">
   <div class="sh-overlay__portrait sh-user-image sh-user-image--top"><img src="components/profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
   <div class="sh-overlay__content">
-    <p class="sh-overlay__text sh-body-lg"${textHidden}>${text}</p>
+    <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
   </div>
   ${action}
 </div>`,
@@ -125,7 +125,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
 <div class="sh-overlay sh-overlay--photo-full sh-overlay--photo-requested">
   <div class="sh-overlay__portrait sh-user-image sh-user-image--top"><img src="components/profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
   <div class="sh-overlay__content">
-    <p class="sh-overlay__text sh-body-lg"${textHidden}>${text}</p>
+    <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
   </div>
   <!-- optional status (Figma: hidden layer): <span class="sh-overlay__status sh-button-sm"><span class="sh-icon sh-icon--16" style="--icon:url(icons/filled/check.svg)" aria-hidden="true"></span>Photo Requested</span> -->
 </div>`,

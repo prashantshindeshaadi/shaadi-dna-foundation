@@ -1,5 +1,7 @@
 # sh-avatar-placeholder
 
+**Purpose:** Soft pink silhouette shown wherever a member has no photo (no photo added, or photo requested). Gender × Aspect Ratio; 1:1 for circular avatars and mini cards, 4:5 for tall slots.
+
 Profile card (migration, not yet core) · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257) (node `2239:13257`)
 
 **Code:** Web (HTML/CSS): [sh-avatar-placeholder.css](web/sh-avatar-placeholder.css), [sh-avatar-placeholder.figma.ts](web/sh-avatar-placeholder.figma.ts), [sh-avatar-placeholder.html](web/sh-avatar-placeholder.html) · Jetpack Compose: [ShAvatarPlaceholder.figma.kt](compose/ShAvatarPlaceholder.figma.kt), [ShAvatarPlaceholder.kt](compose/ShAvatarPlaceholder.kt) · SwiftUI: [ShAvatarPlaceholder.figma.swift](swiftui/ShAvatarPlaceholder.figma.swift), [ShAvatarPlaceholder.swift](swiftui/ShAvatarPlaceholder.swift) · Assets: [female-1x1@3x.jpg](assets/female-1x1@3x.jpg), [female-4x5@3x.jpg](assets/female-4x5@3x.jpg), [male-1x1@3x.jpg](assets/male-1x1@3x.jpg), [male-4x5@3x.jpg](assets/male-4x5@3x.jpg)
@@ -29,17 +31,17 @@ Profile card (migration, not yet core) · 4 variants · [Open in Figma](https://
 | Property | Type | Values | Default |
 |---|---|---|---|
 | Gender | variant | Female, Male | Female |
-| Aspect Ratio | variant | 4:5, 1:1 | 4:5 |
+| Aspect Ratio | variant | 4:5, 1:1 | 1:1 |
 
 ## Anatomy
 
-Layer tree of `Gender=Female, Aspect Ratio=1:1`.
+Layer tree of `Gender=Female, Aspect Ratio=1:1`. Nested components are shown by name; their internals live in their own blueprint.
 
-- root — frame, image fill (soft pink silhouette, crop set per variant)
+- root — frame
 
 ## Size
 
-160 × 160 (1:1) · 160 × 200 (4:5)
+160 × 160 (Aspect Ratio 1:1) · 160 × 200 (Aspect Ratio 4:5)
 
 ## Tokens
 
@@ -47,8 +49,4 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 
 | Layer | Property | Token |
 |---|---|---|
-| root | radius | Aspect Ratio=4:5 → sh-radius/none; Aspect Ratio=1:1 → sh-radius/full |
-
-## When to use
-
-Every no-photo case: No photo added (with Request a Photo) and Photo requested. Used by sh-mini-card Type=No photo and the hidden Avatar slot of sh-overlay. The old grey silhouettes were retired on 2026-10-28; a copy is kept on the Utility page (`_backup/sh-avatar-placeholder-silhouette`, not published).
+| root | radius | Aspect Ratio=1:1 → sh-radius/full; Aspect Ratio=4:5 → sh-radius/none |

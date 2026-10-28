@@ -32,7 +32,7 @@ import com.shaadi.dna.tokens.shShadow
 // region Model
 
 /** Figma property "Type". Each type sets the photo state, what the info shows and the actions. */
-enum class ShProfileCardType { Connect, Received, PostConnect, Gated, NoPhoto, PhotoRequested, Blocked, Vip, WithOverlay }
+enum class ShProfileCardType { Connect, Received, PostConnect, Gated, NoPhoto, PhotoRequested, Blocked, Vip, WithOverlay, Declined }
 
 data class ShProfileMember(
     val name: String,
@@ -110,7 +110,7 @@ fun ShProfileCard(
     val showsDetails = type != ShProfileCardType.PostConnect
     val showsTags = type != ShProfileCardType.PostConnect && type != ShProfileCardType.Blocked
     val showsTrust = type in setOf(ShProfileCardType.Connect, ShProfileCardType.Received, ShProfileCardType.PostConnect,
-        ShProfileCardType.Vip, ShProfileCardType.WithOverlay)
+        ShProfileCardType.Vip, ShProfileCardType.WithOverlay, ShProfileCardType.Declined)
     val badges = when {
         !showsTrust -> emptyList()
         type == ShProfileCardType.Vip -> listOf(ShProfileBadge.Vip)
@@ -228,6 +228,7 @@ private fun Island(type: ShProfileCardType, member: ShProfileMember, actions: Sh
             type = ShActionIslandType.MessageTertiary, message = "You blocked her",
             primary = ShIslandButton("Unblock", onClick = actions.onUnblock),
         )
+        ShProfileCardType.Declined -> ShActionIsland(type = ShActionIslandType.MessageOnly, status = "She declined your Request to Connect")   // status only, no action
         ShProfileCardType.Vip -> ShActionIsland(
             type = ShActionIslandType.SecondaryPrimary, note = editNote,
             primary = ShIslandButton("Connect", R.drawable.sh_icon_filled_check, onClick = actions.onConnect),

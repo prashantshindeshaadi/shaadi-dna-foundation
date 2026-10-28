@@ -144,7 +144,7 @@ fun ShOverlay(
                 }
                 val copy = if (isMessage) message else title
                 if (copy != null) {
-                    val base = if (onImage) shType().bodyLg else shType().bodyMd
+                    val base = if (!isMessage) shType().titleLg else if (onImage) shType().bodyLg else shType().bodyMd   // title: sh-typo/Title/LG
                     Text(
                         text = copy,
                         modifier = Modifier.fillMaxWidth(),
