@@ -12,8 +12,6 @@ struct ShAvatarPlaceholder_doc: FigmaConnect {
     @FigmaEnum("Gender", mapping: [
         "Male": ShAvatarPlaceholderGender.male,
         "Female": .female,
-        "Female requested": .femaleRequested,
-        "Male requested": .maleRequested,
     ])
     var gender: ShAvatarPlaceholderGender = .male
 

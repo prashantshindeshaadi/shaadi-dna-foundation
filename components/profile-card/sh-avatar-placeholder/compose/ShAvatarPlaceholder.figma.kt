@@ -16,8 +16,6 @@ class ShAvatarPlaceholderDoc {
     val gender: ShAvatarPlaceholderGender = Figma.mapping(
         "Male" to ShAvatarPlaceholderGender.Male,
         "Female" to ShAvatarPlaceholderGender.Female,
-        "Female requested" to ShAvatarPlaceholderGender.FemaleRequested,
-        "Male requested" to ShAvatarPlaceholderGender.MaleRequested,
     )
 
     @FigmaProperty(FigmaType.Enum, "Aspect Ratio")

@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  sh-avatar-placeholder — web (HTML5 + CSS). All 8 variants (Gender × Aspect Ratio); open in a browser to preview.
+  sh-avatar-placeholder — web (HTML5 + CSS). All 4 variants (Gender × Aspect Ratio); open in a browser to preview.
   Spec: ../sh-avatar-placeholder.md · Figma node 2239:13257
   Run `python3 tools/build.py` once so dist/ exists.
 -->
@@ -11,63 +11,37 @@
   <title>sh-avatar-placeholder</title>
   <link rel="stylesheet" href="../../../../dist/css/tokens.css">
   <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
-  <link rel="stylesheet" href="../../../sh-icon/web/sh-icon.css">
   <link rel="stylesheet" href="sh-avatar-placeholder.css">
   <style>
     body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
-    .preview { display: grid; grid-template-columns: repeat(4, 160px); gap: var(--sh-space-40) var(--sh-space-24); align-items: start; }
+    .preview { display: grid; grid-template-columns: repeat(2, 160px); gap: var(--sh-space-40) var(--sh-space-24); align-items: start; }
     .preview figure { margin: 0; }
     .preview figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
-    .frame { width: 160px; outline: var(--sh-stroke-thin) dashed var(--sh-border-default); }   /* dashed = the Figma frame */
-    .on-base { background: var(--sh-overlay-image-base); }
+    .frame { width: 160px; }
     .note { max-width: 760px; color: var(--sh-text-secondary); }
   </style>
 </head>
 <body>
   <h1 class="sh-heading-md">sh-avatar-placeholder</h1>
-  <p class="note sh-body-sm">The dashed line is the Figma frame. Silhouettes overflow it (Figma clip off); the requested portraits fill it and the 1:1 is round (sh-radius/full).</p>
+  <p class="note sh-body-sm">Soft pink silhouette for No photo and Photo requested. The 1:1 is round (sh-radius/full).</p>
   <div class="preview">
-    <figure><figcaption class="sh-body-sm">Gender=Male<br>Aspect Ratio=4:5</figcaption>
-      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--male sh-avatar-placeholder--4x5" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/male-4x5.svg" alt=""></span></div>
-    </figure>
     <figure><figcaption class="sh-body-sm">Gender=Female<br>Aspect Ratio=4:5</figcaption>
-      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--female sh-avatar-placeholder--4x5" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/female-4x5.svg" alt=""></span></div>
+      <div class="frame"><span class="sh-avatar-placeholder" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/female-4x5@3x.jpg" alt=""></span></div>
     </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Female requested<br>Aspect Ratio=4:5</figcaption>
-      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--female-requested sh-avatar-placeholder--4x5" role="img" aria-label="Photo requested"><img class="sh-avatar-placeholder__art" src="../assets/female-requested-4x5@3x.jpg" alt=""></span></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Male requested<br>Aspect Ratio=4:5</figcaption>
-      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--male-requested sh-avatar-placeholder--4x5" role="img" aria-label="Photo requested"><img class="sh-avatar-placeholder__art" src="../assets/male-requested-4x5@3x.jpg" alt=""></span></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Male<br>Aspect Ratio=1:1</figcaption>
-      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--male sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/male-1x1.svg" alt=""></span></div>
+    <figure><figcaption class="sh-body-sm">Gender=Male<br>Aspect Ratio=4:5</figcaption>
+      <div class="frame"><span class="sh-avatar-placeholder" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/male-4x5@3x.jpg" alt=""></span></div>
     </figure>
     <figure><figcaption class="sh-body-sm">Gender=Female<br>Aspect Ratio=1:1</figcaption>
-      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--female sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/female-1x1.svg" alt=""></span></div>
+      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/female-1x1@3x.jpg" alt=""></span></div>
     </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Female requested<br>Aspect Ratio=1:1</figcaption>
-      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--female-requested sh-avatar-placeholder--1x1" role="img" aria-label="Photo requested"><img class="sh-avatar-placeholder__art" src="../assets/female-requested-1x1@3x.jpg" alt=""></span></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Male requested<br>Aspect Ratio=1:1</figcaption>
-      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--male-requested sh-avatar-placeholder--1x1" role="img" aria-label="Photo requested"><img class="sh-avatar-placeholder__art" src="../assets/male-requested-1x1@3x.jpg" alt=""></span></div>
+    <figure><figcaption class="sh-body-sm">Gender=Male<br>Aspect Ratio=1:1</figcaption>
+      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/male-1x1@3x.jpg" alt=""></span></div>
     </figure>
   </div>
   <h2 class="sh-heading-sm">Short form: &lt;img class="sh-avatar-placeholder …"&gt;</h2>
   <div class="preview">
     <figure><figcaption class="sh-body-sm">Female 1:1 (img)</figcaption>
-      <div class="frame"><img class="sh-avatar-placeholder sh-avatar-placeholder--female sh-avatar-placeholder--1x1" src="../assets/female-1x1.svg" alt="No photo"></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Female requested 1:1 (img)</figcaption>
-      <div class="frame"><img class="sh-avatar-placeholder sh-avatar-placeholder--female-requested sh-avatar-placeholder--1x1" src="../assets/female-requested-1x1@3x.jpg" alt="Photo requested"></div>
-    </figure>
-  </div>
-  <h2 class="sh-heading-sm">On the dark photo overlay (overlay/image/base)</h2>
-  <div class="preview">
-    <figure><figcaption class="sh-body-sm">Female 1:1</figcaption>
-      <div class="frame on-base"><span class="sh-avatar-placeholder sh-avatar-placeholder--female sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/female-1x1.svg" alt=""></span></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Male 1:1</figcaption>
-      <div class="frame on-base"><span class="sh-avatar-placeholder sh-avatar-placeholder--male sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/male-1x1.svg" alt=""></span></div>
+      <div class="frame"><img class="sh-avatar-placeholder sh-avatar-placeholder--1x1" src="../assets/female-1x1@3x.jpg" alt="No photo"></div>
     </figure>
   </div>
 </body>

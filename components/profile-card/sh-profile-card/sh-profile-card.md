@@ -74,6 +74,14 @@ Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://
 
 **Actions:** message "You blocked her"; Unblock (Tertiary). Photo count hidden. No note.
 
+### Type=Declined
+
+**When:** she declined your Request to Connect.
+
+**Purpose:** Her photo and details stay; the action area shows the status and no action.
+
+**Actions:** status only, "She declined your Request to Connect" (sh-action-island Type=Message only). No note, no button.
+
 ### Type=VIP
 
 **When:** the profile is managed by a Shaadi VIP consultant.
@@ -96,7 +104,7 @@ Profile card (migration, not yet core) · 9 variants · [Open in Figma](https://
 |---|---|---|---|
 | Show top tags | boolean | — | true |
 | Show photo actions | boolean | — | true |
-| Type | variant | Connect, Received, Post-Connect, Gated, No photo, Blocked, VIP, Photo requested, With Overlay | Connect |
+| Type | variant | Connect, Received, Post-Connect, Gated, No photo, Blocked, VIP, Photo requested, With Overlay, Declined | Connect |
 
 ## Anatomy
 

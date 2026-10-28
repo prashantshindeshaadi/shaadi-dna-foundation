@@ -230,19 +230,19 @@ Profile card (migration, not yet core) · 58 variants · [Open in Figma](https:/
 
 ### Gender=Female requested, Style=Normal
 
-**When:** she has no photo and you asked for one (Photo requested). Soft blurred portrait, not a real member.
+**Purpose:** No photo or Photo requested: soft pink female silhouette. Not a real member photo.
 
 ### Gender=Female requested, Style=Blur
 
-**When:** Photo requested state behind a lock or overlay that needs the photo blurred. Same image and crop as Normal, with the strong background blur layer.
+**Purpose:** No photo or Photo requested: soft pink female silhouette, blurred behind a lock or overlay. Not a real member photo.
 
 ### Gender=Male requested, Style=Normal
 
-**When:** she has no photo and you asked for one (Photo requested). Soft blurred portrait, not a real member.
+**Purpose:** No photo or Photo requested: soft pink male silhouette. Not a real member photo.
 
 ### Gender=Male requested, Style=Blur
 
-**When:** Photo requested state behind a lock or overlay that needs the photo blurred. Same image and crop as Normal, with the strong background blur layer.
+**Purpose:** No photo or Photo requested: soft pink male silhouette, blurred behind a lock or overlay. Not a real member photo.
 
 ## Properties
 
