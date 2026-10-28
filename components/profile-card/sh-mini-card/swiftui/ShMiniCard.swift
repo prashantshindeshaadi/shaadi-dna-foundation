@@ -1,18 +1,19 @@
 // sh-mini-card — SwiftUI
-// Spec: ../sh-mini-card.md · Figma node 2780:68360 · Type Default / No photo
+// Spec: ../sh-mini-card.md · Figma node 2780:68360 · Type Default / No photo female / No photo male
 //
 // Compact profile suggestion: avatar, name + badges, up to three facts and one action (sh-button Primary Small).
 // Needs dist/ios/SHTokens.swift, the type kit (ShTypography.swift) and ../../../sh-icon/swiftui/ShIcon.swift ·
 // ../../../sh-avatar/swiftui/ShAvatar.swift (+ ../../../sh-avatar-glyph/swiftui/ShAvatarGlyph.swift) ·
-// ../../sh-user-images/swiftui/ShUserImages.swift · ../../sh-info-detail/swiftui/ShInfoDetail.swift ·
+// ../../sh-user-images/swiftui/ShUserImages.swift · ../../sh-avatar-placeholder/swiftui/ShAvatarPlaceholder.swift · ../../sh-info-detail/swiftui/ShInfoDetail.swift ·
 // ../../../sh-button/swiftui/ShButton.swift
 
 import SwiftUI
 
-/// Figma "Type": Default (the member's photo in sh-avatar lg) or No photo (the requested portrait, cropped).
+/// Figma "Type": Default (the member's photo in sh-avatar lg) or No photo female / male (sh-avatar-placeholder 1:1).
 public enum ShMiniCardType: CaseIterable {
     case standard          // Figma "Default"
-    case noPhoto
+    case noPhotoFemale     // Figma "No photo female"
+    case noPhotoMale       // Figma "No photo male"
 }
 
 /// The badges after the name (Figma Badge 1 / Badge 2 swaps), at Size Small (16).
@@ -50,7 +51,6 @@ public struct ShMiniCard: View {
     public var type: ShMiniCardType
     public var name: String
     public var photo: Image?
-    public var requestedPortrait: Image?
     public var badges: [ShMiniCardBadge]
     public var details: [String]
     public var action: ShMiniCardAction?
@@ -58,13 +58,12 @@ public struct ShMiniCard: View {
     /// - Parameters:
     ///   - name: Figma "Name", e.g. "Sneha P, 26". One line; a long name truncates and the badges stay.
     ///   - photo: the member's photo (Type Default).
-    ///   - requestedPortrait: Type No photo: the requested portrait. nil = sh-user-images Female requested.
     ///   - badges: Figma "Show badge 1 / 2" + "Badge 1 / 2", in order (Figma default: verified, premium).
     ///   - details: Figma "Show detail 1–3": up to three facts; every fact has a separator except the last one.
     ///   - action: the button; nil hides it.
-    public init(type: ShMiniCardType = .standard, name: String, photo: Image? = nil, requestedPortrait: Image? = nil,
+    public init(type: ShMiniCardType = .standard, name: String, photo: Image? = nil,
                 badges: [ShMiniCardBadge] = [], details: [String] = [], action: ShMiniCardAction? = nil) {
-        self.type = type; self.name = name; self.photo = photo; self.requestedPortrait = requestedPortrait
+        self.type = type; self.name = name; self.photo = photo
         self.badges = badges; self.details = details; self.action = action
     }
 
@@ -76,8 +75,10 @@ public struct ShMiniCard: View {
             switch type {
             case .standard:
                 ShAvatar(size: .lg, type: .image, image: photo)
-            case .noPhoto:
-                ShMiniCardRequestedAvatar(portrait: requestedPortrait ?? ShUserImageRequested.female.image)
+            case .noPhotoFemale:
+                ShMiniCardNoPhotoAvatar(gender: .female)
+            case .noPhotoMale:
+                ShMiniCardNoPhotoAvatar(gender: .male)
             }
 
             // Info: fill × hug, children centred
@@ -124,10 +125,10 @@ public struct ShMiniCard: View {
     }
 }
 
-/// Type No photo avatar: the sh-avatar lg ring (icon/on-image) around a background/strong Media holding the
-/// requested portrait. Figma places the portrait at 125 % of the Media's width, centred, its top 12.5 % above the Media.
-private struct ShMiniCardRequestedAvatar: View {
-    let portrait: Image
+/// Type No photo avatar: the sh-avatar lg ring (icon/on-image) around a background/strong Media holding
+/// sh-avatar-placeholder 1:1, filling the Media.
+private struct ShMiniCardNoPhotoAvatar: View {
+    let gender: ShAvatarPlaceholderGender
 
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: SH.Radius.avatar, style: .continuous)
@@ -136,11 +137,8 @@ private struct ShMiniCardRequestedAvatar: View {
         let diameter = SH.Space.step48 * 2                  // no token: Figma avatar 96 = 2 × sh-space/48
         let media = diameter - 2 * ring
 
-        // no token: crop proportions of the Media (Figma 117.5 wide, top-aligned, at −11.75, −11.75 in 94)
-        ShUserImage(portrait, alignment: .top)
-            .frame(width: media * 1.25, height: media * 1.125)
-            .offset(x: -media * 0.125, y: -media * 0.125)
-            .frame(width: media, height: media, alignment: .topLeading)
+        ShAvatarPlaceholder(gender: gender, aspect: .square)
+            .frame(width: media, height: media)
             .background(SH.Color.backgroundStrong.color)
             .clipShape(shape)
             .padding(ring)                                  // Media sits inside the ring
@@ -200,7 +198,7 @@ private struct ShMiniCardCenteredFlow: Layout {
         ShMiniCard(type: .standard, name: "Sneha P, 26", photo: ShUserImageRequested.female.image,
                    badges: [.verified, .premium], details: ["5’6”", "Kayastha", "Pune, MH"],
                    action: ShMiniCardAction(label: "Connect Now", icon: "filled/check") {})
-        ShMiniCard(type: .noPhoto, name: "Sneha P, 26",
+        ShMiniCard(type: .noPhotoFemale, name: "Sneha P, 26",
                    badges: [.verified, .premium], details: ["5’6”", "Kayastha", "Pune, MH"],
                    action: ShMiniCardAction(label: "Connect Now", icon: "filled/check") {})
     }

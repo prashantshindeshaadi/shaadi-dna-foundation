@@ -19,7 +19,8 @@ class ShMiniCardDoc {
     @FigmaProperty(FigmaType.Enum, "Type")
     val type: ShMiniCardType = Figma.mapping(
         "Default" to ShMiniCardType.Default,
-        "No photo" to ShMiniCardType.NoPhoto,
+        "No photo female" to ShMiniCardType.NoPhotoFemale,
+        "No photo male" to ShMiniCardType.NoPhotoMale,
     )
 
     @FigmaProperty(FigmaType.Text, "Name")
@@ -53,7 +54,7 @@ class ShMiniCardDoc {
         ShMiniCard(
             name = name,
             type = type,
-            photo = painterResource(memberPhoto),           // Type Default; No photo uses the requested portrait
+            photo = painterResource(memberPhoto),           // Type Default; No photo uses sh-avatar-placeholder
             badges = listOfNotNull(
                 if (showBadge1) ShMiniCardBadge.Verified else null,
                 if (showBadge2) ShMiniCardBadge.Premium else null,

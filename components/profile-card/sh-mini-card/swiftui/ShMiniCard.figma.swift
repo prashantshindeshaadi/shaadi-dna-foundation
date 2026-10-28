@@ -13,7 +13,8 @@ struct ShMiniCard_doc: FigmaConnect {
 
     @FigmaEnum("Type", mapping: [
         "Default": ShMiniCardType.standard,
-        "No photo": .noPhoto,
+        "No photo female": .noPhotoFemale,
+        "No photo male": .noPhotoMale,
     ])
     var type: ShMiniCardType = .standard
 
@@ -42,7 +43,7 @@ struct ShMiniCard_doc: FigmaConnect {
         ShMiniCard(
             type: type,
             name: name,
-            photo: memberPhoto,                    // Type Default; No photo uses the requested portrait
+            photo: memberPhoto,                    // Type Default; No photo uses sh-avatar-placeholder
             badges: [badge1, badge2].compactMap { $0 },
             details: [detail1, detail2, detail3].compactMap { $0 },
             action: ShMiniCardAction(label: "Connect Now", icon: "filled/check") {

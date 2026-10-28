@@ -1,10 +1,10 @@
 // sh-mini-card — Jetpack Compose (no XML views)
-// Spec: ../sh-mini-card.md · Figma node 2780:68360 · Type Default / No photo
+// Spec: ../sh-mini-card.md · Figma node 2780:68360 · Type Default / No photo female / No photo male
 //
 // Compact profile suggestion: avatar, name + badges, up to three facts and one action (sh-button Primary Small).
 // Needs dist/android/values*/ in res/, dist/android/compose/ShTokens.kt, the type kit (ShTypography.kt) and
 // ../../../sh-icon/compose/ShIcon.kt · ../../../sh-avatar/compose/ShAvatar.kt (+ sh-avatar-glyph) ·
-// ../../sh-user-images/compose/ShUserImages.kt · ../../sh-info-detail/compose/ShInfoDetail.kt · ../../../sh-button/compose/ShButton.kt
+// ../../sh-user-images/compose/ShUserImages.kt · ../../sh-avatar-placeholder/compose/ShAvatarPlaceholder.kt · ../../sh-info-detail/compose/ShInfoDetail.kt · ../../../sh-button/compose/ShButton.kt
 // Set `package` and the `R` import to your app's.
 
 package com.shaadi.dna.components
@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -41,8 +42,8 @@ import com.shaadi.dna.tokens.shType
 import kotlin.math.roundToInt
 // import com.shaadi.app.R
 
-/** Figma "Type": Default (the member's photo in sh-avatar lg) or No photo (the requested portrait, cropped). */
-enum class ShMiniCardType { Default, NoPhoto }
+/** Figma "Type": Default (the member's photo in sh-avatar lg) or No photo female / male (sh-avatar-placeholder 1:1). */
+enum class ShMiniCardType { Default, NoPhotoFemale, NoPhotoMale }
 
 /** The badges after the name (Figma Badge 1 / Badge 2 swaps), at Size Small (16). */
 enum class ShMiniCardBadge(@DrawableRes val drawable: Int, val label: String) {
@@ -62,7 +63,6 @@ data class ShMiniCardAction(
  *
  * @param name Figma "Name", e.g. "Sneha P, 26". One line; a long name truncates and the badges stay.
  * @param photo the member's photo (Type Default).
- * @param requestedPortrait Type No photo: the requested portrait. null = sh-user-images Female requested.
  * @param badges Figma "Show badge 1 / 2" + "Badge 1 / 2", in order (Figma default: Verified, Premium).
  * @param details Figma "Show detail 1–3": up to three facts; every fact has a separator except the last one.
  * @param action the button; null hides it.
@@ -74,7 +74,6 @@ fun ShMiniCard(
     modifier: Modifier = Modifier,
     type: ShMiniCardType = ShMiniCardType.Default,
     photo: Painter? = null,
-    requestedPortrait: Painter? = null,
     badges: List<ShMiniCardBadge> = emptyList(),
     details: List<String> = emptyList(),
     action: ShMiniCardAction? = null,
@@ -98,9 +97,8 @@ fun ShMiniCard(
     ) {
         when (type) {
             ShMiniCardType.Default -> ShAvatar(size = ShAvatarSize.Lg, type = ShAvatarType.Image, painter = photo)
-            ShMiniCardType.NoPhoto -> MiniCardRequestedAvatar(
-                portrait = requestedPortrait ?: painterResource(ShUserImageRequested.Female.drawable),
-            )
+            ShMiniCardType.NoPhotoFemale -> MiniCardNoPhotoAvatar(ShAvatarPlaceholderGender.Female)
+            ShMiniCardType.NoPhotoMale -> MiniCardNoPhotoAvatar(ShAvatarPlaceholderGender.Male)
         }
 
         // Info: fill × hug, children centred
@@ -164,11 +162,11 @@ fun ShMiniCard(
 }
 
 /**
- * Type No photo avatar: the sh-avatar lg ring (icon/on-image) around a background/strong Media holding the
- * requested portrait. Figma places the portrait at 125 % of the Media's width, centred, its top 12.5 % above the Media.
+ * Type No photo avatar: the sh-avatar lg ring (icon/on-image) around a background/strong Media holding
+ * sh-avatar-placeholder 1:1, filling the Media.
  */
 @Composable
-private fun MiniCardRequestedAvatar(portrait: Painter) {
+private fun MiniCardNoPhotoAvatar(gender: ShAvatarPlaceholderGender) {
     // no token: Figma's ring weight is unbound (1) → sh-stroke/default
     val ring = dimensionResource(R.dimen.sh_stroke_default)
     val shape = RoundedCornerShape(dimensionResource(R.dimen.sh_radius_avatar))
@@ -180,17 +178,6 @@ private fun MiniCardRequestedAvatar(portrait: Painter) {
             .clip(shape)
             .background(colorResource(R.color.sh_background_strong)),
     ) {
-        ShUserImage(
-            painter = portrait,
-            modifier = Modifier.layout { measurable, constraints ->
-                val media = constraints.maxWidth
-                // no token: crop proportions of the Media (Figma 117.5 × top-aligned at −11.75, −11.75 in 94)
-                val placeable = measurable.measure(Constraints.fixed((media * 1.25f).roundToInt(), (media * 1.125f).roundToInt()))
-                layout(media, constraints.maxHeight) {
-                    placeable.place(-(media * 0.125f).roundToInt(), -(media * 0.125f).roundToInt())
-                }
-            },
-            alignment = Alignment.TopCenter,
-        )
+        ShAvatarPlaceholder(gender = gender, aspect = ShAvatarPlaceholderAspect.Square, modifier = Modifier.fillMaxSize())
     }
 }

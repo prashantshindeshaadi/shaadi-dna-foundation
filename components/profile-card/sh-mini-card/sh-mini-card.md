@@ -2,7 +2,7 @@
 
 **Purpose:** Compact profile suggestion — avatar, name, key details and one action (sh-button: Connect Now, Shaadi Chat, Upgrade…).
 
-Profile card (migration, not yet core) · 2 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360) (node `2780:68360`)
+Profile card (migration, not yet core) · 3 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360) (node `2780:68360`)
 
 **Code:** Web (HTML/CSS): [sh-mini-card.css](web/sh-mini-card.css), [sh-mini-card.figma.ts](web/sh-mini-card.figma.ts), [sh-mini-card.html](web/sh-mini-card.html) · Jetpack Compose: [ShMiniCard.figma.kt](compose/ShMiniCard.figma.kt), [ShMiniCard.kt](compose/ShMiniCard.kt) · SwiftUI: [ShMiniCard.figma.swift](swiftui/ShMiniCard.figma.swift), [ShMiniCard.swift](swiftui/ShMiniCard.swift)
 
@@ -14,9 +14,13 @@ Profile card (migration, not yet core) · 2 variants · [Open in Figma](https://
 
 **Purpose:** compact profile suggestion with the member’s photo.
 
-### Type=No photo
+### Type=No photo female
 
-**Purpose:** compact profile suggestion for a member with no photo; shows the soft placeholder photo, cropped 1:1, in the avatar.
+**Purpose:** compact profile suggestion for a member with no photo; female sh-avatar-placeholder 1:1 in the avatar.
+
+### Type=No photo male
+
+**Purpose:** compact profile suggestion for a member with no photo; male sh-avatar-placeholder 1:1 in the avatar.
 
 ## Properties
 
@@ -30,7 +34,7 @@ Profile card (migration, not yet core) · 2 variants · [Open in Figma](https://
 | Show detail 1 | boolean | — | true |
 | Show detail 2 | boolean | — | true |
 | Show detail 3 | boolean | — | true |
-| Type | variant | Default, No photo | Default |
+| Type | variant | Default, No photo female, No photo male | Default |
 
 ## Anatomy
 

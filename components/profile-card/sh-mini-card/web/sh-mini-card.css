@@ -1,20 +1,21 @@
 /*
  * sh-mini-card — web (HTML5 + CSS)
- * Spec: ../sh-mini-card.md · Figma node 2780:68360 · Type Default / No photo
+ * Spec: ../sh-mini-card.md · Figma node 2780:68360 · Type Default / No photo female / No photo male
  *
  * Needs, loaded once per page, before this file:
  *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
  *   components/profile-card/sh-user-images/web/sh-user-images.css · components/sh-avatar/web/sh-avatar.css
+ *   components/profile-card/sh-avatar-placeholder/web/sh-avatar-placeholder.css
  *   components/profile-card/sh-info-detail/web/sh-info-detail.css · components/sh-button/web/sh-button.css
  *
  *   <article class="sh-mini-card [sh-mini-card--no-photo]">
  *     Type=Default → sh-avatar lg Image:
  *       <span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true">
  *         <span class="sh-avatar__media"><span class="sh-user-image"><img src="member.jpg" alt=""></span></span></span>
- *     Type=No photo → same ring + background/strong Media holding the requested portrait, cropped:
+ *     Type=No photo female / male → same ring + Media holding sh-avatar-placeholder 1:1 (female / male):
  *       <span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true">
- *         <span class="sh-avatar__media"><span class="sh-user-image sh-user-image--top sh-mini-card__portrait">
- *           <img src="components/profile-card/sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>
+ *         <span class="sh-avatar__media"><img class="sh-avatar-placeholder sh-avatar-placeholder--1x1"
+ *           src="components/profile-card/sh-avatar-placeholder/assets/female-1x1@3x.jpg" alt=""></span></span>
  *     <div class="sh-mini-card__info">
  *       <p class="sh-mini-card__name-row">
  *         <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>                  ← Name
@@ -50,16 +51,8 @@
 /* ---- Avatar -------------------------------------------------------------- */
 .sh-mini-card__avatar { flex: none; }
 
-/* No photo: the requested portrait (sh-user-images Female requested) cropped in the Media.
-   Figma places it at 125 % of the Media's width, centred, its top 12.5 % above the Media. */
-.sh-mini-card .sh-avatar__media { position: relative; }
-.sh-mini-card .sh-mini-card__portrait {
-  position: absolute;
-  left: -12.5%;                 /* no token: proportion of the Media (Figma −11.75 of 94) */
-  top: -12.5%;                  /* no token: proportion of the Media (Figma −11.75 of 94) */
-  width: 125%;                  /* no token: proportion of the Media (Figma 117.5 of 94) */
-  height: 112.5%;               /* visible part only: top-aligned crop down to the Media's bottom edge */
-}
+/* No photo: sh-avatar-placeholder 1:1 fills the Media (Figma: 94 placeholder in the 94 Media) */
+.sh-mini-card .sh-avatar__media > .sh-avatar-placeholder { width: 100%; height: 100%; }
 
 /* ---- Info ---------------------------------------------------------------- */
 .sh-mini-card__info {

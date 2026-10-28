@@ -1,6 +1,6 @@
 // Code Connect · sh-mini-card → HTML/CSS
 // Every variant: sh-mini-card.html · styles: sh-mini-card.css (needs tokens.css, sh-typo.css, sh-icon.css,
-// sh-user-images.css, sh-avatar.css, sh-info-detail.css, sh-button.css)
+// sh-user-images.css, sh-avatar-placeholder.css, sh-avatar.css, sh-info-detail.css, sh-button.css)
 // Publish: npx figma connect publish   (needs a Figma access token in FIGMA_ACCESS_TOKEN)
 //
 // Badge 1 / Badge 2 swaps: verified-badge ↔ premium-badge — swap the <img> src and alt.
@@ -13,11 +13,13 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   props: {
     typeClass: figma.enum("Type", {
       Default: "",
-      "No photo": " sh-mini-card--no-photo",
+      "No photo female": " sh-mini-card--no-photo",
+      "No photo male": " sh-mini-card--no-photo",
     }),
     avatar: figma.enum("Type", {
       Default: html`<span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="member.jpg" alt=""></span></span></span>`,
-      "No photo": html`<span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image sh-user-image--top sh-mini-card__portrait"><img src="components/profile-card/sh-user-images/assets/requested-female.jpg" alt=""></span></span></span>`,
+      "No photo female": html`<span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><img class="sh-avatar-placeholder sh-avatar-placeholder--1x1" src="components/profile-card/sh-avatar-placeholder/assets/female-1x1@3x.jpg" alt=""></span></span>`,
+      "No photo male": html`<span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><img class="sh-avatar-placeholder sh-avatar-placeholder--1x1" src="components/profile-card/sh-avatar-placeholder/assets/male-1x1@3x.jpg" alt=""></span></span>`,
     }),
     name: figma.string("Name"),
     badge1: figma.boolean("Show badge 1", {
@@ -46,6 +48,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
 <link rel="stylesheet" href="dist/sh-typo-kit/developer/web/sh-typo.css">
 <link rel="stylesheet" href="components/sh-icon/web/sh-icon.css">
 <link rel="stylesheet" href="components/profile-card/sh-user-images/web/sh-user-images.css">
+<link rel="stylesheet" href="components/profile-card/sh-avatar-placeholder/web/sh-avatar-placeholder.css">
 <link rel="stylesheet" href="components/sh-avatar/web/sh-avatar.css">
 <link rel="stylesheet" href="components/profile-card/sh-info-detail/web/sh-info-detail.css">
 <link rel="stylesheet" href="components/sh-button/web/sh-button.css">
