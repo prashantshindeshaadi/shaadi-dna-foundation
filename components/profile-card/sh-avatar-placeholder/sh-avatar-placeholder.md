@@ -30,7 +30,7 @@ Profile card (migration, not yet core) · 6 variants · [Open in Figma](https://
 | Aspect Ratio | variant | 1:1, 4:5, Full | 1:1 |
 | Show silhouette | boolean | on, off | on |
 
-Show silhouette off = background only, for a plain grey slot.
+Show silhouette off = background only. `sh-user-images` Photo requested and the photo behind `sh-overlay` use that; the overlay's icon slot draws the silhouette, so it is never drawn twice.
 
 ## Anatomy
 
@@ -51,7 +51,7 @@ Editable in Figma: the background and the silhouette are separate layers, so eit
 
 ## Code
 
-Code uses the flattened images in `assets/` (one JPG per Gender × Aspect Ratio, @3x), not the layers. Export them again from Figma whenever the background or the silhouette changes. `sh-user-images` (Photo requested) is the Full image, silhouette included; the overlay adds only the title and button.
+Code uses the flattened images in `assets/` (one JPG per Gender × Aspect Ratio, @3x), not the layers. Export them again from Figma whenever the background or the silhouette changes. `sh-user-images` (Photo requested) is the Full image with Show silhouette off (plain grey); the sh-overlay icon slot adds the silhouette, title and button.
 
 ## Size
 

@@ -230,19 +230,19 @@ Profile card (migration, not yet core) · 58 variants · [Open in Figma](https:/
 
 ### Gender=Female requested, Style=Normal
 
-**Purpose:** No photo or Photo requested: muted grey female silhouette (flattened from sh-avatar-placeholder Full); the sh-overlay title and button sit below it. Not a real member photo.
+**Purpose:** No photo or Photo requested: plain muted grey background (sh-avatar-placeholder Full, Show silhouette off); the sh-overlay on top draws the female silhouette, title and button. Not a real member photo.
 
 ### Gender=Female requested, Style=Blur
 
-**Purpose:** No photo or Photo requested: muted grey female silhouette (flattened from sh-avatar-placeholder Full); the sh-overlay title and button sit below it, blurred behind a lock or overlay. Not a real member photo.
+**Purpose:** No photo or Photo requested: plain muted grey background (sh-avatar-placeholder Full, Show silhouette off); the sh-overlay on top draws the female silhouette, title and button, blurred behind a lock or overlay. Not a real member photo.
 
 ### Gender=Male requested, Style=Normal
 
-**Purpose:** No photo or Photo requested: muted grey male silhouette (flattened from sh-avatar-placeholder Full); the sh-overlay title and button sit below it. Not a real member photo.
+**Purpose:** No photo or Photo requested: plain muted grey background (sh-avatar-placeholder Full, Show silhouette off); the sh-overlay on top draws the male silhouette, title and button. Not a real member photo.
 
 ### Gender=Male requested, Style=Blur
 
-**Purpose:** No photo or Photo requested: muted grey male silhouette (flattened from sh-avatar-placeholder Full); the sh-overlay title and button sit below it, blurred behind a lock or overlay. Not a real member photo.
+**Purpose:** No photo or Photo requested: plain muted grey background (sh-avatar-placeholder Full, Show silhouette off); the sh-overlay on top draws the male silhouette, title and button, blurred behind a lock or overlay. Not a real member photo.
 
 ## Properties
 
