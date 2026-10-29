@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-29 — Phone-number sheet: Shown to connections and Number hidden restored](2026-10-29-phone-number-sheet-shown-to-connections-and-number.md)
 - [2026-10-29 — Sheet and dialog padding tokens imported](2026-10-29-sheet-and-dialog-padding-tokens-imported.md)
 - [2026-10-29 — sh-avatar-silhouette saved as an asset](2026-10-29-sh-avatar-silhouette-saved-as-an-asset.md)
 - [2026-10-29 — No-photo placeholder is muted grey and editable](2026-10-29-no-photo-placeholder-is-muted-grey-and-editable.md)

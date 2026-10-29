@@ -24,11 +24,11 @@ Full profile view (migration, not yet core) · 4 variants · [Open in Figma](htt
 
 ### State=Shown to connections
 
-**When:** the viewer has contact views left. "Contacts viewed {used}/{total}".
+**When:** she shares her number only with members she’s connected to. Shaadi Chat and Send SMS, plus her email. No contact view is used ("This contact isn’t counted as viewed").
 
 ### State=Number hidden
 
-**When:** the viewer has contact views left. "Contacts viewed {used}/{total}".
+**When:** she has hidden her number. Shaadi Chat and Send SMS only. No contact view is used ("This contact isn’t counted as viewed").
 
 ## Properties
 
