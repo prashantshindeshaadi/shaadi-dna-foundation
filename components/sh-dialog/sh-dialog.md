@@ -53,7 +53,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Layer | Property | Token |
 |---|---|---|
 | root | gap | sh-space/24 |
-| root | padding | sh-space/padding/sheet-dialog |
+| root | padding | sh-space/padding/dialog |
 | root | radius | sh-radius/xl |
 | root | fill | background/default |
 | root | effect | sh-shadow/strong |

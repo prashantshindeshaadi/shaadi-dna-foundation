@@ -79,7 +79,6 @@
   - Android XML drawables skip stretched styles (Compose `ShGradient` covers them).
   - Every other gradient's output is unchanged.
 - **sh-overlay** No photo / Photo requested: Content gap −8 on all four (Prashant's change on Photo full, copied to Photo). In code: SwiftUI spacing −8, Compose spacedBy(−8), CSS −8 margin (CSS gaps can't be negative).
-- Not imported yet: the sh-space padding/sheet-* changes (they include removing `padding/sheet-dialog`); waiting for a yes on the removal.
 
 ## Why
 The pink felt off-brand. Keeping the background and the silhouette as separate layers means either can change later without redrawing the other, and designs use the editable component rather than a pasted image.

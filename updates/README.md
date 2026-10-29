@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-29 — Sheet and dialog padding tokens imported](2026-10-29-sheet-and-dialog-padding-tokens-imported.md)
 - [2026-10-29 — sh-avatar-silhouette saved as an asset](2026-10-29-sh-avatar-silhouette-saved-as-an-asset.md)
 - [2026-10-29 — No-photo placeholder is muted grey and editable](2026-10-29-no-photo-placeholder-is-muted-grey-and-editable.md)
 - [2026-10-28 — Locked sections use backdrop images instead of a live blur](2026-10-28-locked-sections-use-backdrop-images-instead-of-a-l.md)

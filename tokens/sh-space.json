@@ -328,14 +328,14 @@
         }
       }
     },
-    "padding/sheet-dialog": {
+    "padding/dialog": {
       "type": "number",
-      "description": "sh-space/padding/sheet-dialog\nPurpose: Internal padding for sheets and dialogs.",
+      "description": "sh-space/padding/dialog\nPurpose: Internal padding for dialogs.",
       "scopes": [
         "WIDTH_HEIGHT",
         "GAP"
       ],
-      "id": "VariableID:21:462",
+      "id": "VariableID:3417:34763",
       "figmaType": null,
       "values": {
         "Desktop": {
@@ -346,6 +346,48 @@
         },
         "Tablet": {
           "alias": "20"
+        }
+      }
+    },
+    "padding/sheet-compact": {
+      "type": "number",
+      "description": "sh-space/padding/sheet-compact\nPurpose: Side margin of a compact bottom sheet: left-aligned lists and long, scrolling content.",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:3417:34762",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "32"
+        },
+        "Mobile": {
+          "alias": "24"
+        },
+        "Tablet": {
+          "alias": "24"
+        }
+      }
+    },
+    "padding/sheet-relaxed": {
+      "type": "number",
+      "description": "sh-space/padding/sheet-relaxed\nPurpose: Side margin of a relaxed bottom sheet: centred content (member, confirm, contact sheets).",
+      "scopes": [
+        "WIDTH_HEIGHT",
+        "GAP"
+      ],
+      "id": "VariableID:3417:34761",
+      "figmaType": null,
+      "values": {
+        "Desktop": {
+          "alias": "40"
+        },
+        "Mobile": {
+          "alias": "32"
+        },
+        "Tablet": {
+          "alias": "32"
         }
       }
     },
