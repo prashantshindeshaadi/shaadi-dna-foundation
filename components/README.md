@@ -149,7 +149,8 @@ work in progress and may still change.
 
 | Component | Variants | Properties | Blueprint | Figma |
 |---|---|---|---|---|
-| `sh-avatar-placeholder` | 4 | 2 | [profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md](profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md) | [`2239:13257`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257) |
+| `sh-avatar-placeholder` | 6 | 3 | [profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md](profile-card/sh-avatar-placeholder/sh-avatar-placeholder.md) | [`2239:13257`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257) |
+| `sh-avatar-silhouette` | 2 | 1 | [profile-card/sh-avatar-silhouette/sh-avatar-silhouette.md](profile-card/sh-avatar-silhouette/sh-avatar-silhouette.md) | [`3598:69346`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=3598-69346) |
 | `sh-info-detail` | 4 | 4 | [profile-card/sh-info-detail/sh-info-detail.md](profile-card/sh-info-detail/sh-info-detail.md) | [`2825:43215`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2825-43215) |
 | `sh-mini-card` | 3 | 9 | [profile-card/sh-mini-card/sh-mini-card.md](profile-card/sh-mini-card/sh-mini-card.md) | [`2780:68360`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360) |
 | `sh-profile-card` | 10 | 3 | [profile-card/sh-profile-card/sh-profile-card.md](profile-card/sh-profile-card/sh-profile-card.md) | [`2579:25592`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2579-25592) |
