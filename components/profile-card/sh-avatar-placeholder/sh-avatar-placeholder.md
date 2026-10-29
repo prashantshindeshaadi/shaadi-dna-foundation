@@ -20,7 +20,7 @@ Profile card (migration, not yet core) · 6 variants · [Open in Figma](https://
 
 ### Gender=Female / Male, Aspect Ratio=Full
 
-**Purpose:** the full photo slot (profile card, FPV photo). The silhouette square sits near the top, where the sh-overlay icon slot is, leaving room below for the title and button.
+**Purpose:** the full photo slot (profile card, FPV photo). The silhouette square sits near the top, leaving room below for the sh-overlay title and button.
 
 ## Properties
 
@@ -30,7 +30,7 @@ Profile card (migration, not yet core) · 6 variants · [Open in Figma](https://
 | Aspect Ratio | variant | 1:1, 4:5, Full | 1:1 |
 | Show silhouette | boolean | on, off | on |
 
-Show silhouette off = background only. `sh-overlay` uses that: its icon slot holds the silhouette, so it isn't drawn twice.
+Show silhouette off = background only, for a plain grey slot.
 
 ## Anatomy
 
@@ -38,7 +38,7 @@ Editable in Figma: the background and the silhouette are separate layers, so eit
 
 - root: column, clips content, content centred horizontally
   - 1:1 and 4:5: content centred vertically, no padding
-  - Full: content at the top, padding top `sh-space/40` (the same spot as the sh-overlay icon slot)
+  - Full: content at the top, padding top `sh-space/40`; the sh-overlay title starts just under the square
   - **Background**: rectangle, absolute, stretches to the frame. Linear gradient, top to bottom:
     - 1:1 and 4:5: `neutral/300` → `neutral/400`
     - Full: `neutral/300` → `neutral/400` (30%) → `neutral/600` (60%) → `neutral/800`, so white overlay text stays readable
@@ -51,7 +51,7 @@ Editable in Figma: the background and the silhouette are separate layers, so eit
 
 ## Code
 
-Code uses the flattened images in `assets/` (one JPG per Gender × Aspect Ratio, @3x), not the layers. Export them again from Figma whenever the background or the silhouette changes. `sh-user-images` (Photo requested) uses Full with Show silhouette off (background only); the overlay draws the silhouette on top.
+Code uses the flattened images in `assets/` (one JPG per Gender × Aspect Ratio, @3x), not the layers. Export them again from Figma whenever the background or the silhouette changes. `sh-user-images` (Photo requested) is the Full image, silhouette included; the overlay adds only the title and button.
 
 ## Size
 

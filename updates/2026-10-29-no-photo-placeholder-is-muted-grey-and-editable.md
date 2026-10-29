@@ -31,12 +31,21 @@
   - The Avatar swap offers the silhouette Female · Male. Padding top is `sh-space/40` on all four variants.
 - **`sh-user-images`** Photo requested: background only (Full, Show silhouette off), so the silhouette is never drawn twice.
 
+## Fix: one silhouette, from the photo
+- The silhouette lives in the photo:
+  - `sh-user-images` Photo requested = the Full placeholder flattened, silhouette included.
+  - The placeholder behind Photo full keeps Show silhouette on.
+- `sh-overlay` No photo / Photo requested (Photo and Photo full) carries only the title and button:
+  - The 160 icon slot is removed, along with the now-unused Avatar swap property.
+  - The title starts at 212, just under the silhouette.
+- Profile-card "Photo request sent" in the No Photo Case showed a member photo behind the overlay; it's back on the grey requested image.
+
 ## Why
 The pink felt off-brand. Keeping the background and the silhouette as separate layers means either can change later without redrawing the other, and designs use the editable component rather than a pasted image.
 
 ## Who needs to do something
 - **Designers:** pull the library. Use `sh-avatar-placeholder` (not an image) wherever a member has no photo; pick Full for a full photo slot with an overlay.
-- **Android / iOS / Web:** replace the placeholder images with the new grey ones and add the two `*-full` assets. `ShAvatarPlaceholderAspect` / `.full` / `--full` is new. `requested-*.jpg` is now background only: draw the silhouette from the overlay (the `sh-avatar-placeholder` 1:1 art without background would be a separate asset; ask if you need it).
+- **Android / iOS / Web:** replace the placeholder images with the new grey ones and add the two `*-full` assets. `ShAvatarPlaceholderAspect` / `.full` / `--full` is new. `requested-*.jpg` includes the silhouette; the overlay draws only the title and button on top.
 
 ## Checks
 - [x] Renders checked: all 6 variants, sh-overlay Photo full No photo, a profile card No photo, FPV B · Photos
