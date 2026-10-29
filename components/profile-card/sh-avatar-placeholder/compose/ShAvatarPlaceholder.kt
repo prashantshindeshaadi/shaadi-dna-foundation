@@ -1,20 +1,28 @@
 // sh-avatar-placeholder — Jetpack Compose (no XML views)
 // Spec: ../sh-avatar-placeholder.md · Figma node 2239:13257
 //
-// Gender × Aspect Ratio. The muted grey no-photo silhouette, used for No photo and Photo requested.
-// Put the artwork in ../assets/ in res/drawable-xxhdpi as R.drawable.sh_avatar_placeholder_<file name>:
-//   sh_avatar_placeholder_female_4x5, _female_1x1, _female_full, _male_4x5, _male_1x1, _male_full   (@3x JPG, crop baked in)
-// The composable is the Figma frame (4:5, 1:1 or Full); size it with a width modifier. The art fills it and is clipped:
-// 1:1 → sh-radius/full, 4:5 and Full → sh-radius/none. Full = the whole photo slot (360 × 520): the silhouette sits
-// near the top so an overlay title and button fit below it (sh-overlay No photo / Photo requested).
-// Needs dist/android/values*/ in res/. Set `package` and the `R` import to your app's.
+// Gender × Aspect Ratio. The muted grey no-photo placeholder, used for No photo and Photo requested.
+// Two layers, as in Figma: the Background gradient (token style) and the silhouette art.
+//   1:1 / 4:5  ShGradient.placeholderAvatar() (the slice of the photo gradient behind the silhouette);
+//              silhouette square fills the width, centred.
+//   Full       ShGradient.placeholderPhoto(); silhouette 160, sh-space/40 from the top (room for an overlay below).
+// Put the silhouette art in ../../sh-avatar-silhouette/assets/ in res/drawable-xxhdpi as
+// R.drawable.sh_avatar_silhouette_female / sh_avatar_silhouette_male (@3x PNG, transparent).
+// The composable is the Figma frame; size it with a width modifier. 1:1 → sh-radius/full, 4:5 and Full → sh-radius/none.
+// Needs dist/android/values*/ in res/ and dist/android/compose/ShTokens.kt. Set `package` and the `R` import to your app's.
 
 package com.shaadi.dna.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -22,6 +30,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import com.shaadi.dna.tokens.ShGradient
 // import com.shaadi.app.R
 
 /** Figma property "Gender". */
@@ -36,33 +45,40 @@ fun ShAvatarPlaceholder(
     gender: ShAvatarPlaceholderGender = ShAvatarPlaceholderGender.Male,
     aspect: ShAvatarPlaceholderAspect = ShAvatarPlaceholderAspect.Portrait,
     modifier: Modifier = Modifier,
+    /** Figma property "Show silhouette". Off = background only. */
+    showSilhouette: Boolean = true,
 ) {
-    val square = aspect == ShAvatarPlaceholderAspect.Square
-    val drawable = when (gender) {
-        ShAvatarPlaceholderGender.Male -> when (aspect) {
-            ShAvatarPlaceholderAspect.Square -> R.drawable.sh_avatar_placeholder_male_1x1
-            ShAvatarPlaceholderAspect.Portrait -> R.drawable.sh_avatar_placeholder_male_4x5
-            ShAvatarPlaceholderAspect.Full -> R.drawable.sh_avatar_placeholder_male_full
-        }
-        ShAvatarPlaceholderGender.Female -> when (aspect) {
-            ShAvatarPlaceholderAspect.Square -> R.drawable.sh_avatar_placeholder_female_1x1
-            ShAvatarPlaceholderAspect.Portrait -> R.drawable.sh_avatar_placeholder_female_4x5
-            ShAvatarPlaceholderAspect.Full -> R.drawable.sh_avatar_placeholder_female_full
-        }
-    }
+    val full = aspect == ShAvatarPlaceholderAspect.Full
     val ratio = when (aspect) {
         ShAvatarPlaceholderAspect.Square -> 1f
         ShAvatarPlaceholderAspect.Portrait -> 4f / 5f
         ShAvatarPlaceholderAspect.Full -> 360f / 520f
     }
-    val radius = dimensionResource(if (square) R.dimen.sh_radius_full else R.dimen.sh_radius_none)
-    Image(
-        painter = painterResource(drawable),
-        contentDescription = null,
+    val radius = dimensionResource(if (aspect == ShAvatarPlaceholderAspect.Square) R.dimen.sh_radius_full else R.dimen.sh_radius_none)
+    Box(
         modifier = modifier
-            .aspectRatio(if (square) 1f else 4f / 5f)   // Figma frame 160 × 160 / 160 × 200
+            .aspectRatio(ratio)   // Figma frame 160 × 160 / 160 × 200 / 360 × 520
             .clip(RoundedCornerShape(radius))
+            .background(if (full) ShGradient.placeholderPhoto() else ShGradient.placeholderAvatar())
             .semantics { contentDescription = "No photo" },
-        contentScale = ContentScale.Crop,
-    )
+        contentAlignment = if (full) Alignment.TopCenter else Alignment.Center,
+    ) {
+        if (showSilhouette) {
+            Image(
+                painter = painterResource(
+                    if (gender == ShAvatarPlaceholderGender.Male) R.drawable.sh_avatar_silhouette_male
+                    else R.drawable.sh_avatar_silhouette_female,
+                ),
+                contentDescription = null,
+                modifier = if (full) {
+                    Modifier
+                        .padding(top = dimensionResource(R.dimen.sh_space_40))
+                        .size(dimensionResource(R.dimen.sh_space_80) * 2)   // no token: 160
+                } else {
+                    Modifier.fillMaxWidth().aspectRatio(1f)
+                },
+                contentScale = ContentScale.Fit,
+            )
+        }
+    }
 }

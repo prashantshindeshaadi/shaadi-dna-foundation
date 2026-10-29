@@ -69,8 +69,8 @@ Layer tree of `Surface=Photo, Type=Message`. Nested components are shown by name
 All four (Surface Photo and Photo full) share one structure (2026-10-29):
 
 - root: column, padding top `sh-space/40`, no fill, no effects (no scrim, no blur)
-  - **Background**: `sh-avatar-placeholder` Full with Show silhouette off, absolute, stretches to the root. A solid gradient, `neutral/400` → `neutral/black`, no opacity, no blur.
-  - **Content**
+  - **Background**: `sh-avatar-placeholder` Full with Show silhouette off, absolute, stretches to the root: `sh-gradient/placeholder/photo`, no opacity, no blur.
+  - **Content**: gap −8 (no token), so the title tucks 8 under the silhouette
     - **Icon/Illustration** (visible = Show icon) › **Avatar**: `sh-avatar-silhouette`, 160 × 160. Use the Avatar swap to pick Female or Male, matching the member.
     - **Title**: `text/on-image`
   - **Action** (No photo only): sh-button

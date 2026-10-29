@@ -28,6 +28,25 @@ def css_angle(transform):
     return round(math.degrees(math.atan2(x1 - x0, -(y1 - y0)))) % 360
 
 
+def css_positions(transform, positions):
+    """Stop positions (0..1) as CSS percentages. A vertical or horizontal gradient whose handles sit outside the box
+    (e.g. sh-gradient/placeholder/avatar, a slice of a taller gradient) keeps that stretch: positions can go below 0%
+    or above 100%. Other gradients keep their positions as they are."""
+    (x0, y0), (x1, y1) = ends(transform)
+    angle = css_angle(transform)
+    axis = {180: (y0, y1), 0: (1 - y0, 1 - y1), 90: (x0, x1), 270: (1 - x0, 1 - x1)}.get(angle)
+    if axis is None:
+        return [round(p * 100) for p in positions]
+    a, b = axis
+    return [round((a + p * (b - a)) * 100, 2) if (round(a, 4), round(b, 4)) != (0, 1) else round(p * 100) for p in positions]
+
+
+def stretched(transform):
+    """True when the handles don't run edge to edge (Android XML gradients can't express that)."""
+    (x0, y0), (x1, y1) = ends(transform)
+    return not ({round(y0, 4), round(y1, 4)} == {0, 1} or {round(x0, 4), round(x1, 4)} == {0, 1})
+
+
 def stop_color(data, stop, mode):
     """(hex, alpha) for a stop in a mode."""
     if "token" in stop:
@@ -75,7 +94,8 @@ def css(data, styles):
                 c = col(layer["stops"][0])
                 parts.append(f"linear-gradient({c}, {c})")
             else:
-                stops = ", ".join(f"{col(st)} {round(st['position'] * 100)}%" for st in layer["stops"])
+                pcts = css_positions(layer["transform"], [st["position"] for st in layer["stops"]])
+                stops = ", ".join(f"{col(st)} {pc:g}%" for st, pc in zip(layer["stops"], pcts))
                 parts.append(f"linear-gradient({css_angle(layer['transform'])}deg, {stops})")
         out.append(f"  --sh-gradient-{re.sub(r'[^a-z0-9]+', '-', name.lower())}: {', '.join(parts)};")
     return out
@@ -110,7 +130,7 @@ def _shape(data, layer, mode):
             for st in layer["stops"] for h, a in [stop_color(data, st, mode)]]
     if layer["type"] == "solid":
         return f'<shape><solid android:color="{cols[0][0]}" /></shape>'
-    if len(cols) > 3 or (len(cols) == 3 and cols[1][1] != 0.5):
+    if len(cols) > 3 or (len(cols) == 3 and cols[1][1] != 0.5) or stretched(layer["transform"]):
         return None
     attrs = f'android:type="linear" android:angle="{(90 - css_angle(layer["transform"])) % 360}" android:startColor="{cols[0][0]}"'
     if len(cols) == 3:

@@ -95,6 +95,7 @@ Only these. `tools/check.py` verifies them on every import.
 | `premium/background/solid/*` | `premium/text/on-solid` | `premium/icon/on-solid` | `premium/border/default` |
 | `sia/card/background/*` | `text/primary`, `text/secondary` | `icon/primary` | `sia/card/border/*` |
 | Image + `overlay/*` scrim | `text/on-image` | `icon/on-image` | — |
+| `sh-gradient/placeholder/*` (no photo) | `text/on-image` | `icon/on-image` | — |
 
 **Forbidden, most common first**
 
@@ -250,6 +251,15 @@ don't invent one.
 
 Every interactive element defines default, hover, pressed, focus, disabled,
 and loading where async. Pressed must differ visibly from hover.
+
+**No photo (one way, everywhere).** A member without a photo has no photo layer.
+- Avatars and mini cards use `sh-avatar-placeholder` (1:1 or 4:5).
+- A full photo slot (profile card, FPV photo) uses `sh-overlay` Type No photo or Photo requested, which brings its own background.
+- Either way it is two layers and nothing else:
+  - the `sh-gradient/placeholder/*` background;
+  - the `sh-avatar-silhouette` art (Female or Male, matching the member).
+- No JPEG, no "requested" photo, no blur, no scrim.
+- Blueprints: `sh-avatar-placeholder`, `sh-avatar-silhouette`, `sh-overlay`.
 
 ---
 

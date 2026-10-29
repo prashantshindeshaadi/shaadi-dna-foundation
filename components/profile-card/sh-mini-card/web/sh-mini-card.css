@@ -14,8 +14,9 @@
  *         <span class="sh-avatar__media"><span class="sh-user-image"><img src="member.jpg" alt=""></span></span></span>
  *     Type=No photo female / male → same ring + Media holding sh-avatar-placeholder 1:1 (female / male):
  *       <span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true">
- *         <span class="sh-avatar__media"><img class="sh-avatar-placeholder sh-avatar-placeholder--1x1"
- *           src="components/profile-card/sh-avatar-placeholder/assets/female-1x1@3x.jpg" alt=""></span></span>
+ *         <span class="sh-avatar__media"><span class="sh-avatar-placeholder sh-avatar-placeholder--1x1"><img
+ *           class="sh-avatar-placeholder__silhouette" src="components/profile-card/sh-avatar-silhouette/assets/female.svg"
+ *           alt=""></span></span></span>
  *     <div class="sh-mini-card__info">
  *       <p class="sh-mini-card__name-row">
  *         <span class="sh-mini-card__name sh-title-sm">Sneha P, 26</span>                  ← Name

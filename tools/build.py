@@ -133,7 +133,7 @@ def build_android(data):
         drawables, skipped = gradients.android(data, styles)
         files.update(drawables)
         for name in skipped:
-            print(f"  note: sh-gradient/{name} has more than 3 stops; no Android drawable")
+            print(f"  note: sh-gradient/{name} can't be an Android XML drawable (more than 3 stops, or stretched handles); use Compose ShGradient")
     return files
 
 

@@ -3379,6 +3379,54 @@
           "setName": "sh-color-basic"
         }
       }
+    },
+    "placeholder/background/start": {
+      "type": "color",
+      "description": "sh-color-common/placeholder/background/start\nPurpose: Top stop of the no-photo placeholder gradient. Use with its end stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:3628:73116",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/400",
+          "targetId": "VariableID:15:82",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/400",
+          "targetId": "VariableID:15:82",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        }
+      }
+    },
+    "placeholder/background/end": {
+      "type": "color",
+      "description": "sh-color-common/placeholder/background/end\nPurpose: Bottom stop of the no-photo placeholder gradient; pure black so white overlay text stays readable. Use with its start stop.",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "id": "VariableID:3628:73117",
+      "figmaType": null,
+      "values": {
+        "Dark": {
+          "alias": "neutral/black",
+          "targetId": "VariableID:15:88",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        },
+        "Light": {
+          "alias": "neutral/black",
+          "targetId": "VariableID:15:88",
+          "setId": "VariableCollectionId:13:64",
+          "setName": "sh-color-basic"
+        }
+      }
     }
   }
 }

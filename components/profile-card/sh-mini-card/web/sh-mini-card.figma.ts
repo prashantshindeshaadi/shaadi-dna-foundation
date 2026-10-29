@@ -18,8 +18,8 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
     }),
     avatar: figma.enum("Type", {
       Default: html`<span class="sh-avatar sh-avatar--lg sh-avatar--image sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="member.jpg" alt=""></span></span></span>`,
-      "No photo female": html`<span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><img class="sh-avatar-placeholder sh-avatar-placeholder--1x1" src="components/profile-card/sh-avatar-placeholder/assets/female-1x1@3x.jpg" alt=""></span></span>`,
-      "No photo male": html`<span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><img class="sh-avatar-placeholder sh-avatar-placeholder--1x1" src="components/profile-card/sh-avatar-placeholder/assets/male-1x1@3x.jpg" alt=""></span></span>`,
+      "No photo female": html`<span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-avatar-placeholder sh-avatar-placeholder--1x1"><img class="sh-avatar-placeholder__silhouette" src="components/profile-card/sh-avatar-silhouette/assets/female.svg" alt=""></span></span></span>`,
+      "No photo male": html`<span class="sh-avatar sh-avatar--lg sh-mini-card__avatar" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-avatar-placeholder sh-avatar-placeholder--1x1"><img class="sh-avatar-placeholder__silhouette" src="components/profile-card/sh-avatar-silhouette/assets/male.svg" alt=""></span></span></span>`,
     }),
     name: figma.string("Name"),
     badge1: figma.boolean("Show badge 1", {

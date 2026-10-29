@@ -4,7 +4,7 @@
  *
  * Needs, loaded once per page: dist/css/tokens.css, dist/sh-typo-kit/developer/web/sh-typo.css,
  * components/sh-icon/web/sh-icon.css, components/sh-button/web/sh-button.css,
- * No photo / Photo requested images: components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg and
+ * No photo / Photo requested: background --sh-gradient-placeholder-photo; silhouette
  * components/profile-card/sh-avatar-silhouette/assets/<gender>.svg.
  *
  * Covers a photo area or a content section; place it inside a positioned parent (it fills it).
@@ -14,8 +14,8 @@
  *   Message          icon (Photo, Content 24 · Photo full 40) + message + action, over a scrim:
  *                    Photo / Photo full: overlay/scrim/default + sh-background-blur/uniform/strong
  *                    Content: sh-gradient/translucent/light/strong + sh-background-blur/progressive/default
- *   No photo         Its own solid background (.sh-overlay__background: the sh-avatar-placeholder background, no
- *                    opacity, no blur) + the sh-avatar-silhouette (160) + title + action. Hide the member photo under it.
+ *   No photo         Its own solid background (.sh-overlay__background: sh-gradient/placeholder/photo, no opacity,
+ *                    no blur) + the sh-avatar-silhouette (160) + title (8 under it, gap -8) + action. Hide the member photo.
  *   Photo requested  as No photo without the action. Optional status row (Figma: hidden layer).
  *
  * Text: the Message copy uses .sh-body-lg on Photo surfaces (text/on-image, sh-shadow/default) and .sh-body-md on
@@ -82,15 +82,19 @@
   mask: linear-gradient(transparent, #000);
 }
 
-/* No photo / Photo requested: solid background, no opacity, no blur (sh-avatar-placeholder, silhouette off) */
+/* No photo / Photo requested: solid background, no opacity, no blur (sh-gradient/placeholder/photo) */
 .sh-overlay__background {
   position: absolute;
   inset: 0;
   z-index: -1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background: var(--sh-gradient-placeholder-photo);
 }
+
+/* No photo / Photo requested: the title tucks 8 under the silhouette (Figma gap -8, no token; CSS gap can't be negative) */
+.sh-overlay--no-photo .sh-overlay__content,
+.sh-overlay--photo-requested .sh-overlay__content { gap: 0; }
+.sh-overlay--no-photo .sh-overlay__illustration + .sh-overlay__text,
+.sh-overlay--photo-requested .sh-overlay__illustration + .sh-overlay__text { margin-top: calc(var(--sh-space-8) * -1); }
 
 /* ---- content ------------------------------------------------------------- */
 .sh-overlay__content {

@@ -4,42 +4,47 @@
  *
  * Needs, loaded once per page: dist/css/tokens.css
  *
- * Gender × Aspect Ratio. The muted grey no-photo silhouette, used for No photo and Photo requested.
- * Artwork is in ../assets/ (exported from Figma, crop baked in): <gender>-4x5@3x.jpg, <gender>-1x1@3x.jpg, <gender>-full@3x.jpg
+ * Gender × Aspect Ratio. The muted grey no-photo placeholder, used for No photo and Photo requested.
+ * Two layers, as in Figma: the Background gradient (token style) and the silhouette art
+ * (../../sh-avatar-silhouette/assets/<gender>.svg).
+ *   1:1 / 4:5  --sh-gradient-placeholder-avatar (the slice of the photo gradient behind the silhouette);
+ *              the silhouette square fills the width, centred.
+ *   Full       --sh-gradient-placeholder-photo; silhouette 160, sh-space/40 from the top (room for an overlay below).
  *
  *   <span class="sh-avatar-placeholder sh-avatar-placeholder--1x1" role="img" aria-label="No photo">
- *     <img class="sh-avatar-placeholder__art" src="…/assets/female-1x1@3x.jpg" alt="">
+ *     <img class="sh-avatar-placeholder__silhouette" src="…/sh-avatar-silhouette/assets/female.svg" alt="">
  *   </span>
  *
- * Short form: <img class="sh-avatar-placeholder sh-avatar-placeholder--1x1" src="…/assets/female-1x1@3x.jpg" alt="No photo">
- *
- * The span is the Figma frame (4:5 or 1:1); size it with width. The art fills it and is clipped by its radius:
- * 1:1 is bound to sh-radius/full, 4:5 and Full to sh-radius/none.
- * Full (--full) is the whole photo slot: the silhouette sits near the top, so an overlay title and button fit below.
+ * Show silhouette off: leave the <img> out (background only).
+ * The span is the Figma frame; size it with width. 1:1 is bound to sh-radius/full, 4:5 and Full to sh-radius/none.
  */
 
 .sh-avatar-placeholder {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   aspect-ratio: 4 / 5;                                /* Aspect Ratio=4:5 (Figma 160 × 200) */
   border-radius: var(--sh-radius-none);
   overflow: hidden;
+  background: var(--sh-gradient-placeholder-avatar);
 }
 .sh-avatar-placeholder--1x1 {
   aspect-ratio: 1;                                    /* Aspect Ratio=1:1 (Figma 160 × 160) */
   border-radius: var(--sh-radius-full);
 }
-
-.sh-avatar-placeholder__art {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .sh-avatar-placeholder--full {
   aspect-ratio: 360 / 520;                            /* Aspect Ratio=Full (Figma 360 × 520) */
+  align-items: flex-start;
+  padding-top: var(--sh-space-40);
+  background: var(--sh-gradient-placeholder-photo);
 }
 
-/* Short form: the <img> is the frame */
-img.sh-avatar-placeholder { object-fit: cover; }
+.sh-avatar-placeholder__silhouette {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+}
+.sh-avatar-placeholder--full .sh-avatar-placeholder__silhouette {
+  width: calc(var(--sh-space-80) * 2);                /* no token: 160 */
+}

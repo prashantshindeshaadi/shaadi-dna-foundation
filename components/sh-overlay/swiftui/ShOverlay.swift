@@ -6,11 +6,11 @@
 //   Message          icon (Photo, Content 24 · Photo full 40) + message + action, over a scrim:
 //                    Photo / Photo full: overlay/scrim/default + sh-background-blur/uniform/strong
 //                    Content: sh-gradient/translucent/light/strong + sh-background-blur/progressive/default
-//   No photo         Its own solid background (sh-avatar-placeholder background, no opacity, no blur), then the
-//                    sh-avatar-silhouette (160) + title + action. Nothing under it shows; hide the member photo.
+//   No photo         Its own solid background (sh-gradient/placeholder/photo, no opacity, no blur), then the
+//                    sh-avatar-silhouette (160), the title 8 under it (gap -8) and the action. Hide the member photo.
 //   Photo requested  as No photo without the action; optional `status` row (Figma: hidden layer).
-// Assets: "sh-avatar-placeholder/background" (../../profile-card/sh-avatar-placeholder/assets/background@3x.jpg) and
-// "sh-avatar-silhouette/female" / "male" (../../profile-card/sh-avatar-silhouette/assets/, SVG or @3x PNG).
+// Background: SH.Gradient.placeholderPhoto. Silhouette: "sh-avatar-silhouette/female" / "male" in the asset catalogue
+// (../../profile-card/sh-avatar-silhouette/assets/, SVG).
 // Blur: SwiftUI has no custom-radius backdrop blur, so the system ultra-thin material (dark) stands in for
 // sh-background-blur; the token scrim / glass is drawn on top of it exactly as in Figma.
 // Uses ShButton (sh-button), ShIcon (sh-icon), ShAvatarPlaceholderGender.
@@ -80,7 +80,8 @@ public struct ShOverlay: View {
 
     public var body: some View {
         VStack(spacing: SH.Space.step12) {
-            VStack(spacing: SH.Space.step12) {
+            // No photo / Photo requested: the title tucks 8 under the silhouette (Figma gap -8, no token)
+            VStack(spacing: isMessage ? SH.Space.step12 : -SH.Space.step8) {
                 illustration
                 text
             }
@@ -162,10 +163,8 @@ public struct ShOverlay: View {
                 SH.Color.overlayScrimDefault.color
             }
         default:
-            // No photo / Photo requested: solid background, no opacity, no blur (sh-avatar-placeholder, silhouette off)
-            Image("sh-avatar-placeholder/background")
-                .resizable()
-                .scaledToFill()
+            // No photo / Photo requested: solid background, no opacity, no blur (sh-gradient/placeholder/photo)
+            SH.Gradient.placeholderPhoto.view
         }
     }
 

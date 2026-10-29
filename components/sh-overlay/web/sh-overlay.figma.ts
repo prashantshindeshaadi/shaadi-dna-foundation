@@ -45,7 +45,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   },
   example: ({ slot, text, textHidden, action }) => html`
 <div class="sh-overlay sh-overlay--photo sh-overlay--no-photo">
-  <img class="sh-overlay__background" src="components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
+  <div class="sh-overlay__background" aria-hidden="true"></div>
   <div class="sh-overlay__content">
     ${slot}
     <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
@@ -67,7 +67,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   },
   example: ({ slot, text, textHidden }) => html`
 <div class="sh-overlay sh-overlay--photo sh-overlay--photo-requested">
-  <img class="sh-overlay__background" src="components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
+  <div class="sh-overlay__background" aria-hidden="true"></div>
   <div class="sh-overlay__content">
     ${slot}
     <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
@@ -108,7 +108,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   },
   example: ({ text, textHidden, action }) => html`
 <div class="sh-overlay sh-overlay--photo-full sh-overlay--no-photo">
-  <img class="sh-overlay__background" src="components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
+  <div class="sh-overlay__background" aria-hidden="true"></div>
   <div class="sh-overlay__content">
     <img class="sh-overlay__illustration" src="components/profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
     <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
@@ -126,7 +126,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   },
   example: ({ text, textHidden }) => html`
 <div class="sh-overlay sh-overlay--photo-full sh-overlay--photo-requested">
-  <img class="sh-overlay__background" src="components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
+  <div class="sh-overlay__background" aria-hidden="true"></div>
   <div class="sh-overlay__content">
     <img class="sh-overlay__illustration" src="components/profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
     <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>

@@ -6,11 +6,11 @@
 //   Message          icon (Photo, Content 24 · Photo full 40) + message + action, over a scrim:
 //                    Photo / Photo full: overlay/scrim/default (+ sh-background-blur/uniform/strong in Figma)
 //                    Content: sh-gradient/translucent/light/strong (+ sh-background-blur/progressive/default in Figma)
-//   No photo         Its own solid background (sh-avatar-placeholder background, no opacity, no blur), then the
-//                    sh-avatar-silhouette (160) + title + action. Nothing under it shows; hide the member photo.
+//   No photo         Its own solid background (sh-gradient/placeholder/photo, no opacity, no blur), then the
+//                    sh-avatar-silhouette (160), the title 8 under it (gap -8) and the action. Hide the member photo.
 //   Photo requested  as No photo without the action; optional `status` row (Figma: hidden layer).
-// Assets in res/drawable-xxhdpi: sh_avatar_placeholder_background (../../profile-card/sh-avatar-placeholder/assets/
-// background@3x.jpg) and sh_avatar_silhouette_female / _male (../../profile-card/sh-avatar-silhouette/assets/*@3x.png).
+// Background: ShGradient.placeholderPhoto(). Silhouette: res/drawable-xxhdpi sh_avatar_silhouette_female / _male
+// (../../profile-card/sh-avatar-silhouette/assets/*@3x.png).
 //
 // Android has no backdrop blur (see ShTokens.kt): the scrim and glass are drawn, the blur behind them is not.
 // To hide a locked photo on Android, show it with ShUserImage(style = ShUserImageStyle.Blur) under the Message overlay.
@@ -37,7 +37,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -105,13 +104,8 @@ fun ShOverlay(
 
     Box(modifier.fillMaxSize().clipToBounds().then(background)) {
         if (!isMessage) {
-            // No photo / Photo requested: solid background, no opacity, no blur (sh-avatar-placeholder, silhouette off)
-            Image(
-                painter = painterResource(R.drawable.sh_avatar_placeholder_background),
-                contentDescription = null,
-                modifier = Modifier.matchParentSize(),
-                contentScale = ContentScale.Crop,
-            )
+            // No photo / Photo requested: solid background, no opacity, no blur (sh-gradient/placeholder/photo)
+            Box(Modifier.matchParentSize().background(ShGradient.placeholderPhoto()))
         }
         Column(
             modifier = Modifier
@@ -128,7 +122,8 @@ fun ShOverlay(
             Column(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(space12),
+                // No photo / Photo requested: the title tucks 8 under the silhouette (Figma gap -8, no token)
+                verticalArrangement = Arrangement.spacedBy(if (isMessage) space12 else -dimensionResource(R.dimen.sh_space_8)),
             ) {
                 if (showIcon) {
                     if (isMessage) {

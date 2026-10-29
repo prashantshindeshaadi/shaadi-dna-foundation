@@ -4,7 +4,16 @@
 
 Profile card (migration, not yet core) · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257) (node `2239:13257`)
 
-**Code:** Web (HTML/CSS): [sh-avatar-placeholder.css](web/sh-avatar-placeholder.css), [sh-avatar-placeholder.figma.ts](web/sh-avatar-placeholder.figma.ts), [sh-avatar-placeholder.html](web/sh-avatar-placeholder.html) · Jetpack Compose: [ShAvatarPlaceholder.figma.kt](compose/ShAvatarPlaceholder.figma.kt), [ShAvatarPlaceholder.kt](compose/ShAvatarPlaceholder.kt) · SwiftUI: [ShAvatarPlaceholder.figma.swift](swiftui/ShAvatarPlaceholder.figma.swift), [ShAvatarPlaceholder.swift](swiftui/ShAvatarPlaceholder.swift) · Assets: [female-1x1@3x.jpg](assets/female-1x1@3x.jpg), [female-4x5@3x.jpg](assets/female-4x5@3x.jpg), [female-full@3x.jpg](assets/female-full@3x.jpg), [male-1x1@3x.jpg](assets/male-1x1@3x.jpg), [male-4x5@3x.jpg](assets/male-4x5@3x.jpg), [male-full@3x.jpg](assets/male-full@3x.jpg), [background@3x.jpg](assets/background@3x.jpg)
+**Code:** Web (HTML/CSS): [sh-avatar-placeholder.css](web/sh-avatar-placeholder.css), [sh-avatar-placeholder.figma.ts](web/sh-avatar-placeholder.figma.ts), [sh-avatar-placeholder.html](web/sh-avatar-placeholder.html) · Jetpack Compose: [ShAvatarPlaceholder.figma.kt](compose/ShAvatarPlaceholder.figma.kt), [ShAvatarPlaceholder.kt](compose/ShAvatarPlaceholder.kt) · SwiftUI: [ShAvatarPlaceholder.figma.swift](swiftui/ShAvatarPlaceholder.figma.swift), [ShAvatarPlaceholder.swift](swiftui/ShAvatarPlaceholder.swift) · Art: [sh-avatar-silhouette](../sh-avatar-silhouette/sh-avatar-silhouette.md)
+
+## Quick use (no photo)
+
+| Where | Use | Background | Silhouette |
+|---|---|---|---|
+| Avatar, mini card | `sh-avatar-placeholder` 1:1 (round) or 4:5 | `sh-gradient/placeholder/avatar` | `sh-avatar-silhouette`, fills the width, centred |
+| Full photo slot (profile card, FPV) | `sh-overlay` No photo / Photo requested (its Background is this component, Full, silhouette off) | `sh-gradient/placeholder/photo` | in the overlay: 160, `sh-space/40` from the top, title 8 under it (gap −8) |
+
+Pick Female or Male to match the member. There is no photo layer and no image file for the background.
 
 *Hand-written 2026-10-29 after the grey rebuild; regenerate with `tools/components.py` on the next export.*
 
@@ -40,7 +49,7 @@ Editable in Figma: the background and the silhouette are separate layers, so eit
   - 1:1 and 4:5: content centred vertically, no padding
   - Full: content at the top, padding top `sh-space/40`; the sh-overlay title starts just under the square
   - **Background**: rectangle, absolute, stretches to the frame. Linear gradient, top to bottom:
-    - Every size: two stops, `neutral/400` → `neutral/black`. Same slate hue all the way down (no dull grey band), pure black at the bottom so white overlay text stays readable.
+    - Every size: two stops, `placeholder/background/start` (`neutral/400`) → `placeholder/background/end` (`neutral/black`). Same slate hue all the way down (no dull grey band), pure black at the bottom so white overlay text stays readable.
     - 1:1 and 4:5: the same gradient, stretched so the silhouette square shows the slice of Full that sits behind its silhouette (8%–38% of the Full height). A mini card looks like the big card, made small, not darker.
   - **Silhouette** (visible = Show silhouette): square frame, clips content
     - 1:1 and 4:5: fills the width, aspect locked
@@ -51,7 +60,12 @@ Editable in Figma: the background and the silhouette are separate layers, so eit
 
 ## Code
 
-Code uses the flattened images in `assets/` (one JPG per Gender × Aspect Ratio, @3x), not the layers. `background@3x.jpg` is Full with Show silhouette off: the sh-overlay No photo / Photo requested background. Export them again from Figma whenever the background or the silhouette changes. In progress: the background colours are base tokens (`neutral/400`, `neutral/black`) that are not exported to code yet, so the code still ships these pre-flattened JPGs. Once a `sh-gradient/placeholder` style exists, the code becomes that gradient + the `sh-avatar-silhouette` SVG, with no JPG.
+No images for the background: code draws the same two layers as Figma.
+- **Background:** the token style. `sh-gradient/placeholder/photo` for Full; `sh-gradient/placeholder/avatar` for 1:1 and 4:5. The avatar style is the photo gradient stretched (handles outside the frame), so it shows the slice behind the silhouette. Web, Compose and SwiftUI all get that stretch from the build: web stop positions -25% / 300%, Compose and SwiftUI start/end points.
+- **Silhouette:** the `sh-avatar-silhouette` art (SVG on web and iOS, @3x PNG on Android), square, centred; Full: 160, `sh-space/40` from the top.
+- **Show silhouette** off: draw the background only.
+
+Change a colour or the gradient in Figma, run `/shaadi-dna-update`, and every size follows.
 
 ## Size
 
@@ -63,5 +77,5 @@ Code uses the flattened images in `assets/` (one JPG per Gender × Aspect Ratio,
 |---|---|---|
 | root | radius | Aspect Ratio=1:1 → sh-radius/full; 4:5 and Full → sh-radius/none |
 | root | padding top | Full → sh-space/40; otherwise sh-space/0 |
-| Background | fill | neutral/400 → neutral/black (every size; 1:1 and 4:5 stretched to the Full slice behind the silhouette) |
+| Background | fill | Full → sh-gradient/placeholder/photo; 1:1 and 4:5 → sh-gradient/placeholder/avatar |
 | Silhouette › Art | opacity | sh-opacity/full |

@@ -31,13 +31,13 @@ Profile card (migration, not yet core) · 2 variants · [Open in Figma](https://
 - `assets/<gender>.svg`: transparent, 492 × 492.
 - `assets/<gender>@3x.png`: transparent, 480 × 480, for a 160 slot.
 
-Both are white art on transparent, so place them on the placeholder background. In code, the silhouette is a plain image; `sh-avatar-placeholder` ships pre-flattened JPGs for the common sizes.
+Both are white art on transparent, so place them on the placeholder background. In code, the silhouette is a plain image drawn over the `sh-gradient/placeholder/*` background; no flattened JPGs.
 
 ## Changing or adding art
 
 1. In Figma, replace the vectors inside **Art** in a variant, or duplicate a variant and add a new value (for example a new Gender case).
 2. Keep the figure centred in the square, with the same margin, so it lines up everywhere it is used.
-3. Export the SVG and the @3x PNG into `assets/`, and re-export the `sh-avatar-placeholder` JPGs.
+3. Export the SVG and the @3x PNG into `assets/`.
 4. Add an `updates/` entry.
 
 ## Used in

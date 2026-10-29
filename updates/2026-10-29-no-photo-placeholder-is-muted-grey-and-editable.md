@@ -60,7 +60,26 @@
   - `ShOverlay` / `.sh-overlay` No photo / Photo requested draws `background@3x.jpg` (the placeholder background), then the `sh-avatar-silhouette` image (160, `avatar` = gender), then the title and button. Same on Photo and Photo full, top `sh-space/40`.
   - `ShProfileCard` takes `noPhotoGender` instead of `requestedPortrait`, and draws no photo for these types.
   - The previews that used the requested JPEG as a stand-in photo now use the placeholder.
-- In progress: the placeholder code still ships flattened JPGs, because its gradient uses base tokens that aren't exported to code. A `sh-gradient/placeholder` style is needed; then it becomes gradient + silhouette SVG.
+
+
+## Placeholder tokens: no JPEGs in code
+- **New colour tokens** (sh-color-common):
+  - `placeholder/background/start` → neutral/400
+  - `placeholder/background/end` → neutral/black
+- **New gradient styles:**
+  - `sh-gradient/placeholder/photo`: full height, for Full and the sh-overlay No photo / Photo requested background.
+  - `sh-gradient/placeholder/avatar`: the same gradient stretched (handles outside the frame) to the slice behind the silhouette, for 1:1 and 4:5.
+  - Both are bound in Figma.
+- **Code draws the two layers** (gradient style + `sh-avatar-silhouette` image) on web, Compose and SwiftUI:
+  - Every `sh-avatar-placeholder` JPG and `background@3x.jpg` is deleted.
+  - Mini card no-photo markup uses the placeholder + silhouette.
+  - Previews use the silhouette as a stand-in photo.
+- **Build:**
+  - `tools/gradients.py` now keeps a stretched vertical or horizontal gradient in CSS (stop positions can go below 0% or above 100%; avatar = -25% / 300%).
+  - Android XML drawables skip stretched styles (Compose `ShGradient` covers them).
+  - Every other gradient's output is unchanged.
+- **sh-overlay** No photo / Photo requested: Content gap −8 on all four (Prashant's change on Photo full, copied to Photo). In code: SwiftUI spacing −8, Compose spacedBy(−8), CSS −8 margin (CSS gaps can't be negative).
+- Not imported yet: the sh-space padding/sheet-* changes (they include removing `padding/sheet-dialog`); waiting for a yes on the removal.
 
 ## Why
 The pink felt off-brand. Keeping the background and the silhouette as separate layers means either can change later without redrawing the other, and designs use the editable component rather than a pasted image.

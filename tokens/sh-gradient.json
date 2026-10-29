@@ -981,6 +981,68 @@
           ]
         }
       ]
+    },
+    "placeholder/photo": {
+      "description": "sh-gradient/placeholder/photo\nPurpose: No-photo background for a full photo slot (profile card, FPV photo, sh-overlay No photo / Photo requested).",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/placeholder/background/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/placeholder/background/end"
+            }
+          ]
+        }
+      ]
+    },
+    "placeholder/avatar": {
+      "description": "sh-gradient/placeholder/avatar\nPurpose: No-photo background for avatars and mini cards: the slice of the photo gradient behind the silhouette, so a mini card looks like the big card made small.",
+      "layers": [
+        {
+          "type": "linear",
+          "opacity": 1,
+          "transform": [
+            [
+              0,
+              0.3077,
+              0.0769
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ],
+          "stops": [
+            {
+              "position": 0,
+              "token": "sh-color-common/placeholder/background/start"
+            },
+            {
+              "position": 1,
+              "token": "sh-color-common/placeholder/background/end"
+            }
+          ]
+        }
+      ]
     }
   }
 }

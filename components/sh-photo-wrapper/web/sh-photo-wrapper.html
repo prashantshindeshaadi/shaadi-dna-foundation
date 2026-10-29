@@ -3,7 +3,7 @@
   sh-photo-wrapper — web (HTML5 + CSS). The single variant with its three booleans; open in a browser to preview.
   Spec: ../sh-photo-wrapper.md · Figma node 2530:10330
   Run `python3 tools/build.py` once so dist/ exists.
-  The photo is a stand-in (no member photos ship in the repo): ../../profile-card/sh-avatar-placeholder/assets/female-full@3x.jpg
+  The photo is a stand-in (no member photos ship in the repo): the no-photo silhouette on its gradient
 -->
 <html lang="en">
 <head>
@@ -31,7 +31,7 @@
 
     <figure><figcaption class="sh-body-sm">Default · Show bottom scrim, Show top scrim (Show overlay off)</figcaption>
       <div class="sh-photo-wrapper">
-        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-silhouette/assets/female.svg" style="background: var(--sh-gradient-placeholder-photo)" alt=""></div>
         <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--bottom"></div>
         <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--top"></div>
       </div>
@@ -39,13 +39,13 @@
 
     <figure><figcaption class="sh-body-sm">Show bottom scrim off · Show top scrim off</figcaption>
       <div class="sh-photo-wrapper">
-        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-silhouette/assets/female.svg" style="background: var(--sh-gradient-placeholder-photo)" alt=""></div>
       </div>
     </figure>
 
     <figure><figcaption class="sh-body-sm">Show overlay on (sh-overlay Surface=Photo, Type=Message)</figcaption>
       <div class="sh-photo-wrapper">
-        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-silhouette/assets/female.svg" style="background: var(--sh-gradient-placeholder-photo)" alt=""></div>
         <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--bottom"></div>
         <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--top"></div>
         <div class="sh-overlay sh-overlay--photo sh-overlay--message">
@@ -60,14 +60,14 @@
 
     <figure><figcaption class="sh-body-sm">Show bottom scrim only</figcaption>
       <div class="sh-photo-wrapper">
-        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-silhouette/assets/female.svg" style="background: var(--sh-gradient-placeholder-photo)" alt=""></div>
         <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--bottom"></div>
       </div>
     </figure>
 
     <figure><figcaption class="sh-body-sm">Show top scrim only</figcaption>
       <div class="sh-photo-wrapper">
-        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div>
+        <div class="sh-photo-wrapper__image sh-user-image"><img src="../../profile-card/sh-avatar-silhouette/assets/female.svg" style="background: var(--sh-gradient-placeholder-photo)" alt=""></div>
         <div class="sh-photo-wrapper__scrim sh-photo-wrapper__scrim--top"></div>
       </div>
     </figure>
