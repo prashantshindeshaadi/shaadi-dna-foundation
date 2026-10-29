@@ -10,6 +10,7 @@
 - `sh-fpv-sheet-phone-number`: all four states use it in the sheet's Visual slot. The sheet's own Title/Body are hidden, so the photo and name no longer sit 32 apart.
 - `sh-fpv-sheet-phone-number`, Shown to connections and Number hidden: **Shaadi Chat** is Medium (was Large), 200 wide, centred, with the 16 chat icon. Every button in a sheet is Medium.
 - FPV page, section 04: the five phone-sheet screens were re-placed as fresh instances. The old ones kept their own slot content, so they still showed the old header and, for the two new screens, the Number shown content.
+- FPV page, section 04, Free row: removed the leftover review block "State=Number shown · Proposal on DNA sh-bottom-sheet". It was a flattened copy, not the component, and showed the same sheet as "On a Plus member's profile" beside it.
 
 ## Why
 The photo, name and who manages the profile describe one person, so they should look like one piece and be reused the same way everywhere. Sheet buttons are Medium across DNA.
