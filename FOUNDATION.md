@@ -148,7 +148,7 @@ Button LG/MD/SM.
 ### 5.3 Spacing
 
 Use the semantic token whenever one exists: `page/margin`, `padding/card`,
-`padding/sheet-dialog`, `gap/section`, `gap/card`, `gap/form`, `gap/list`.
+`padding/sheet-relaxed`, `padding/sheet-compact`, `padding/dialog`, `gap/section`, `gap/card`, `gap/form`, `gap/list`.
 Raw steps are for component internals only.
 
 Breakpoints: Mobile below 768, Tablet 768–1023, Desktop 1024 and up.

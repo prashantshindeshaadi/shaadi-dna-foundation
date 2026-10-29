@@ -2,7 +2,7 @@
 
 **Purpose:** Education & Career.
 
-**Built from:** sh-fpv-section-title + sh-fpv-info-item (+ sh-fpv-locked-text for college names) or sh-fpv-tit-for-tat-card.
+**Built from:** sh-fpv-section-title + sh-fpv-info-item (+ sh-fpv-locked-text for college names) or sh-blur-overlay.
 
 **Switches:** Plan × State.
 

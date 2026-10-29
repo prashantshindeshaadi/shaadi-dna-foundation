@@ -45,3 +45,19 @@ One margin for every sheet, matching core `sh-bottom-sheet`, so nothing on a she
 - `sh-bottom-sheet`: the grabber now follows **Size**. **Size=Full** (content scrolls or runs past the screen) always shows it; **Size=Hug** (sheet fits its content) never does. The **Show grabber** toggle is removed.
 - Effect: the one Hug sheet that had the grabber on (Trust marker · Managed by self) loses it. The Full sheet "Filter — Mother tongue" (Sunil), which scrolls, now has it.
 - **Developers:** show the drag handle only when the sheet's content is taller than the space it's given (scrollable / expandable). Fitted sheets: no handle.
+
+## Later: CTAs are Medium; left-aligned sheets put the primary on the left
+- `sh-bottom-sheet`: every CTA is now **sh-button Medium** (was Large). Stacked primary stays max 200 and centred; side-by-side pairs fill equally.
+- **Align=Left** sheets are always **side by side with the primary on the left**. The two "Left · Stacked" variants are gone (their 2 uses moved to Left · Side by side), so the set is 6 variants: Size (Hug · Full) × Center Stacked · Center Side by side · Left Side by side.
+- All 38 dependent sheets (FPV, Sunil, core) checked: 98 CTAs, all Medium now (5 were still Large).
+- **Developers:** sheet buttons = Medium (40 tall). Left-aligned sheet → horizontal pair, primary first.
+
+## Later: no grey corners behind sheets
+- `sh-fpv-screen-behind` (the profile shown behind every FPV sheet) had a 16 radius on all corners. Its screen frame is square with a white fill, so the white showed in the corners and the sheet's scrim tinted it into a grey wedge. A full-screen layer is never rounded: the radius is now 0. All 7 screens that use it are fixed (Astro match sheet, North and South).
+- Scanned every 360-wide screen for a rounded full-width layer under an overlay: no other cases.
+
+## Later: score number and total on one bottom line
+- `sh-fpv-astro-sheet-header` (North, Ask, South): the big score ("28", "7") and its total ("/36", "/10") sit on one **baseline**. Measured at 6×: every digit's bottom is within 0.3 px of the others. The "/" dips about 2 px below the line, as slashes do in Lexend.
+- Tried and dropped: centre line (looked off); Figma "Vertical trim" + bottom align (same line, but it detaches the sh-typo text styles).
+- The score frames no longer clip, so no glyph can be cut.
+- **Developers:** align the two texts on their first baseline: `Modifier.alignByBaseline()` / `HStack(alignment: .firstTextBaseline)` / `align-items: baseline`.

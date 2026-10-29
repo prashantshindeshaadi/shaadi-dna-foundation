@@ -14,7 +14,7 @@ Layer tree of `sh-fpv-lifestyle/Free/Tit for tat`. Nested components are shown b
 
 - root — column
   - sh-fpv-section-title — **sh-fpv-section-title** (Subtitle Subtitle, Title Lifestyle & Interests)
-  - Tit-for-tat card — **sh-fpv-tit-for-tat-card** (Blurred sample instance, CTA Add Now, Art instance, Reason Add your own Lifestyle & Interests to see Meher’s)
+  - Tit-for-tat card — **sh-blur-overlay** (Blurred sample instance, CTA Add Now, Art instance, Reason Add your own Lifestyle & Interests to see Meher’s)
 
 ## Size
 

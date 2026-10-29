@@ -2,7 +2,7 @@
 
 **Purpose:** Lifestyle & Interests (diet, location, hobbies).
 
-**Built from:** sh-fpv-section-title + sh-fpv-info-item + hobby sh-icons, or sh-fpv-tit-for-tat-card.
+**Built from:** sh-fpv-section-title + sh-fpv-info-item + hobby sh-icons, or sh-blur-overlay.
 
 **Switches:** State.
 

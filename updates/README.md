@@ -7,10 +7,18 @@ New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
 - [2026-10-29 — No-photo placeholder is muted grey and editable](2026-10-29-no-photo-placeholder-is-muted-grey-and-editable.md)
+- [2026-10-28 — Locked sections use backdrop images instead of a live blur](2026-10-28-locked-sections-use-backdrop-images-instead-of-a-l.md)
 - [2026-10-28 — Profile card: Declined in code, overlay title style, blueprints synced](2026-10-28-profile-card-declined-in-code-overlay-title-style-.md)
+- [2026-10-28 — FPV sections get types: section title Type, Astro by Viewer and Birth details](2026-10-28-fpv-sections-get-types-section-title-type-astro-by.md)
+- [2026-10-28 — Foundation token sheets: purple, mint, vivid; type specs show real weights](2026-10-28-foundation-token-sheets-purple-mint-vivid-type-spe.md)
 - [2026-10-28 — sh-mini-card: No photo female and male, 1:1 placeholder](2026-10-28-sh-mini-card-no-photo-female-and-male-1-1-placehol.md)
 - [2026-10-28 — No-photo art: soft pink silhouettes everywhere](2026-10-28-no-photo-art-soft-pink-silhouettes-everywhere.md)
 - [2026-10-28 — sh-profile-card: Declined type](2026-10-28-sh-profile-card-declined-type.md)
+- [2026-10-28 — Bottom sheets get Relaxed and Compact types, with their own margin tokens](2026-10-28-bottom-sheets-get-relaxed-and-compact-types-with-t.md)
+- [2026-10-27 — Koota glyphs join the pack, monochrome](2026-10-27-koota-glyphs-join-the-pack-monochrome.md)
+- [2026-10-27 — Core Component page: component list only, every variant labelled](2026-10-27-core-component-page-component-list-only-every-vari.md)
+- [2026-10-27 — sh-button Small icons back to 12 in every use](2026-10-27-sh-button-small-icons-back-to-12-in-every-use.md)
+- [2026-10-27 — sh-blur-overlay: one blur lock for every gated FPV section](2026-10-27-sh-blur-overlay-one-blur-lock-for-every-gated-fpv-.md)
 - [2026-10-27 — Refresh: FPV list states, sheet options, photo blur wash](2026-10-27-refresh-fpv-list-states-sheet-options-photo-blur-w.md)
 - [2026-10-27 — Refresh: sh-list split into parts, icon size 14 gone, badges Small 16](2026-10-27-refresh-sh-list-split-into-parts-icon-size-14-gone.md)
 - [2026-10-27 — Phone number sheet: contact buttons are sh-action-island](2026-10-27-phone-number-sheet-contact-buttons-are-sh-action-i.md)

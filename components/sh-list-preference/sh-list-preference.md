@@ -4,7 +4,7 @@
 
 **State:** Match (check) / No match (disabled text, close).
 
-**Style:** Default (short text) · Collapsed (2 lines + Read More) · Expanded (full text + Hide).
+**Expand:** Off (short text) · Collapsed (2 lines + Read more) · Expanded (full text + Hide).
 
 Core · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=3322-75525) (node `3322:75525`)
 
@@ -12,31 +12,31 @@ Core · 6 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXG
 
 ## Types
 
-### State=Match, Style=Default
+### State=Match, Expand=Off
 
 sh-list · Preference · Match
 
 **Purpose:** one partner preference she meets: label, her value and a tick (FPV You & Her).
 
-### State=No match, Style=Default
+### State=No match, Expand=Off
 
 sh-list · Preference · No match
 
 **Purpose:** a partner preference she doesn't meet: value muted, cross instead of a tick.
 
-### State=Match, Style=Collapsed
+### State=Match, Expand=Collapsed
 
-Preference row, collapsed: text cut to 2 lines with Read More (chevron down).
+Preference row, collapsed: text cut to 2 lines with Read more (chevron down).
 
-### State=No match, Style=Collapsed
+### State=No match, Expand=Collapsed
 
-Preference row, collapsed: text cut to 2 lines with Read More (chevron down).
+Preference row, collapsed: text cut to 2 lines with Read more (chevron down).
 
-### State=Match, Style=Expanded
+### State=Match, Expand=Expanded
 
 Preference row, expanded: full text with Hide (chevron up) to collapse.
 
-### State=No match, Style=Expanded
+### State=No match, Expand=Expanded
 
 Preference row, expanded: full text with Hide (chevron up) to collapse.
 
@@ -51,11 +51,11 @@ Preference row, expanded: full text with Hide (chevron up) to collapse.
 | Leading icon | instance swap | — | instance |
 | Show divider | boolean | — | false |
 | State | variant | Match, No match | Match |
-| Style | variant | Default, Collapsed, Expanded | Default |
+| Expand | variant | Off, Collapsed, Expanded | Off |
 
 ## Anatomy
 
-Layer tree of `State=Match, Style=Default`. Nested components are shown by name; their internals live in their own blueprint.
+Layer tree of `State=Match, Expand=Off`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — column
   - Row — row · fill × hug
@@ -87,7 +87,7 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Row / Leading / Leading icon | width | sh-icon/size/20 |
 | Row / Leading / Leading icon | height | sh-icon/size/20 |
 | Row / Main / Main row | gap | sh-space/16 |
-| Row / Main / Main row / Content | gap | Style=Default → sh-space/0; Style=Collapsed → sh-space/2; Style=Expanded → sh-space/2 |
+| Row / Main / Main row / Content | gap | Expand=Off → sh-space/0; Expand=Collapsed → sh-space/2; Expand=Expanded → sh-space/2 |
 | Row / Main / Main row / Content | padding-y | sh-space/8 |
 | Row / Main / Main row / Content / Title row | gap | sh-space/6 *(set on 2/6 variants)* |
 | Row / Main / Main row / Content / Title row / Title | fill | text/tertiary *(set on 2/6 variants)* |
@@ -107,9 +107,9 @@ Every bound value, by layer. Where a value changes with a property, the rule is 
 | Row / Main / Main row / Content / Text / Title row / Title icon | height | sh-icon/size/16 *(set on 4/6 variants)* |
 | Row / Main / Main row / Content / Text / Subtitle | fill | State=Match → text/secondary; State=No match → text/disabled *(set on 4/6 variants)* |
 | Row / Main / Main row / Content / Text / Subtitle | text style | sh-typo/Body/LG/Tight *(set on 4/6 variants)* |
-| Row / Main / Main row / Content / Read More | gap | sh-space/4 *(set on 2/6 variants)* |
-| Row / Main / Main row / Content / Read More | padding-y | sh-space/10 *(set on 2/6 variants)* |
-| Row / Main / Main row / Content / Read More | radius | sh-radius/full *(set on 2/6 variants)* |
+| Row / Main / Main row / Content / Read more | gap | sh-space/4 *(set on 2/6 variants)* |
+| Row / Main / Main row / Content / Read more | padding-y | sh-space/10 *(set on 2/6 variants)* |
+| Row / Main / Main row / Content / Read more | radius | sh-radius/full *(set on 2/6 variants)* |
 | Row / Main / Main row / Content / Hide | gap | sh-space/4 *(set on 2/6 variants)* |
 | Row / Main / Main row / Content / Hide | padding-y | sh-space/10 *(set on 2/6 variants)* |
 | Row / Main / Main row / Content / Hide | radius | sh-radius/full *(set on 2/6 variants)* |

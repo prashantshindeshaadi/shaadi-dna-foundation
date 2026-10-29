@@ -228,6 +228,16 @@ the ones drawn as bitmaps in Figma are 2x PNGs.
 | `invoice` | line 12/16/20/24, filled 12/16/20/24 | invoice, bill, receipt, payment history, invoice01, Invoice01 | [line](../icons/line/invoice.svg) [filled](../icons/filled/invoice.svg) |
 | `key` | line 12/16/20/24, filled 12/16/20/24 | key, password, access, login, key01, Key01 | [line](../icons/line/key.svg) [filled](../icons/filled/key.svg) |
 | `kissing` | line 12/16/20/24, filled 12/16/20/24 | kissing, romance, couple, love, Kissing | [line](../icons/line/kissing.svg) [filled](../icons/filled/kissing.svg) |
+| `koota-dina` | filled 12/16/20/24 | koota, porutham, astro, kundali, health, dina | [filled](../icons/filled/koota-dina.svg) |
+| `koota-gana` | filled 12/16/20/24 | koota, porutham, astro, kundali, temperament, gana | [filled](../icons/filled/koota-gana.svg) |
+| `koota-mahendra` | filled 12/16/20/24 | koota, porutham, astro, kundali, children, mahendra | [filled](../icons/filled/koota-mahendra.svg) |
+| `koota-rajju` | filled 12/16/20/24 | koota, porutham, astro, kundali, longevity, rajju | [filled](../icons/filled/koota-rajju.svg) |
+| `koota-rasi` | filled 12/16/20/24 | koota, porutham, astro, kundali, love, rasi | [filled](../icons/filled/koota-rasi.svg) |
+| `koota-rasi-adhipati` | filled 12/16/20/24 | koota, porutham, astro, kundali, compatibility, rasi-adhipati | [filled](../icons/filled/koota-rasi-adhipati.svg) |
+| `koota-stree-deergha` | filled 12/16/20/24 | koota, porutham, astro, kundali, wellbeing, stree-deergha | [filled](../icons/filled/koota-stree-deergha.svg) |
+| `koota-vashya` | filled 12/16/20/24 | koota, porutham, astro, kundali, influence, vashya | [filled](../icons/filled/koota-vashya.svg) |
+| `koota-vedha` | filled 12/16/20/24 | koota, porutham, astro, kundali, obstacles, vedha | [filled](../icons/filled/koota-vedha.svg) |
+| `koota-yoni` | filled 12/16/20/24 | koota, porutham, astro, kundali, intimacy, yoni | [filled](../icons/filled/koota-yoni.svg) |
 | `language` | line 12/16/20/24, filled 12/16/20/24 | language, mother tongue, translate, Translate | [line](../icons/line/language.svg) [filled](../icons/filled/language.svg) |
 | `license` | line 12/16/20/24, filled 12/16/20/24 | license, document, verification, certificate, License | [line](../icons/line/license.svg) [filled](../icons/filled/license.svg) |
 | `light` | line 12/16/20/24, filled 12/16/20/24 | light, light mode, day, theme, brightness, sun03, Sun03 | [line](../icons/line/light.svg) [filled](../icons/filled/light.svg) |
