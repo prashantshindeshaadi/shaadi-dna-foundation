@@ -22,6 +22,7 @@ class ShAvatarPlaceholderDoc {
     val aspect: ShAvatarPlaceholderAspect = Figma.mapping(
         "4:5" to ShAvatarPlaceholderAspect.Portrait,
         "1:1" to ShAvatarPlaceholderAspect.Square,
+        "Full" to ShAvatarPlaceholderAspect.Full,
     )
 
     @Composable

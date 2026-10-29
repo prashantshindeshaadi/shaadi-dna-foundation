@@ -13,10 +13,12 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
     ratio: figma.enum("Aspect Ratio", {
       "4:5": "4x5",
       "1:1": "1x1",
+      "Full": "full",
     }),
     modifier: figma.enum("Aspect Ratio", {
       "4:5": "",
       "1:1": " sh-avatar-placeholder--1x1",
+      "Full": " sh-avatar-placeholder--full",
     }),
   },
   example: ({ gender, ratio, modifier }) => html`

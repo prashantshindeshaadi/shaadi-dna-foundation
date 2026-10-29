@@ -18,6 +18,7 @@ struct ShAvatarPlaceholder_doc: FigmaConnect {
     @FigmaEnum("Aspect Ratio", mapping: [
         "4:5": ShAvatarPlaceholderAspect.portrait,
         "1:1": .square,
+        "Full": .full,
     ])
     var aspect: ShAvatarPlaceholderAspect = .portrait
 

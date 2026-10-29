@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  sh-avatar-placeholder — web (HTML5 + CSS). All 4 variants (Gender × Aspect Ratio); open in a browser to preview.
+  sh-avatar-placeholder — web (HTML5 + CSS). All 6 variants (Gender × Aspect Ratio); open in a browser to preview.
   Spec: ../sh-avatar-placeholder.md · Figma node 2239:13257
   Run `python3 tools/build.py` once so dist/ exists.
 -->
@@ -23,7 +23,7 @@
 </head>
 <body>
   <h1 class="sh-heading-md">sh-avatar-placeholder</h1>
-  <p class="note sh-body-sm">Soft pink silhouette for No photo and Photo requested. The 1:1 is round (sh-radius/full).</p>
+  <p class="note sh-body-sm">Muted grey silhouette for No photo and Photo requested. The 1:1 is round (sh-radius/full); Full is the whole photo slot.</p>
   <div class="preview">
     <figure><figcaption class="sh-body-sm">Gender=Female<br>Aspect Ratio=4:5</figcaption>
       <div class="frame"><span class="sh-avatar-placeholder" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/female-4x5@3x.jpg" alt=""></span></div>
@@ -36,6 +36,12 @@
     </figure>
     <figure><figcaption class="sh-body-sm">Gender=Male<br>Aspect Ratio=1:1</figcaption>
       <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/male-1x1@3x.jpg" alt=""></span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Gender=Female<br>Aspect Ratio=Full</figcaption>
+      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--full" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/female-full@3x.jpg" alt=""></span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Gender=Male<br>Aspect Ratio=Full</figcaption>
+      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--full" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../assets/male-full@3x.jpg" alt=""></span></div>
     </figure>
   </div>
   <h2 class="sh-heading-sm">Short form: &lt;img class="sh-avatar-placeholder …"&gt;</h2>

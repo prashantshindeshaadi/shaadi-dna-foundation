@@ -230,19 +230,19 @@ Profile card (migration, not yet core) · 58 variants · [Open in Figma](https:/
 
 ### Gender=Female requested, Style=Normal
 
-**Purpose:** No photo or Photo requested: soft pink female silhouette. Not a real member photo.
+**Purpose:** No photo or Photo requested: muted grey background (flattened from sh-avatar-placeholder Full, Show silhouette off); the sh-overlay icon slot draws the female silhouette on top. Not a real member photo.
 
 ### Gender=Female requested, Style=Blur
 
-**Purpose:** No photo or Photo requested: soft pink female silhouette, blurred behind a lock or overlay. Not a real member photo.
+**Purpose:** No photo or Photo requested: muted grey background (flattened from sh-avatar-placeholder Full, Show silhouette off); the sh-overlay icon slot draws the female silhouette on top, blurred behind a lock or overlay. Not a real member photo.
 
 ### Gender=Male requested, Style=Normal
 
-**Purpose:** No photo or Photo requested: soft pink male silhouette. Not a real member photo.
+**Purpose:** No photo or Photo requested: muted grey background (flattened from sh-avatar-placeholder Full, Show silhouette off); the sh-overlay icon slot draws the male silhouette on top. Not a real member photo.
 
 ### Gender=Male requested, Style=Blur
 
-**Purpose:** No photo or Photo requested: soft pink male silhouette, blurred behind a lock or overlay. Not a real member photo.
+**Purpose:** No photo or Photo requested: muted grey background (flattened from sh-avatar-placeholder Full, Show silhouette off); the sh-overlay icon slot draws the male silhouette on top, blurred behind a lock or overlay. Not a real member photo.
 
 ## Properties
 
