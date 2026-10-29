@@ -1,6 +1,6 @@
 # sh-overlay
 
-**Purpose:** Shared lock or empty overlay for photos and content sections (profile card and FPV). Photo overlays blur what sits behind them; No photo and Photo requested cover the photo area completely.
+**Purpose:** Shared lock or empty overlay for photos and content sections (profile card and FPV). Photo overlays blur what sits behind them; No photo and Photo requested bring their own solid background and cover the photo area completely.
 
 Core · 7 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2314-18393) (node `2314:18393`)
 
@@ -16,11 +16,11 @@ Core · 7 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXG
 
 ### Surface=Photo, Type=No photo
 
-**Purpose:** photo area for a member with no photo yet; shows a silhouette, a short message and an action to request a photo.
+**Purpose:** photo area for a member with no photo; its own solid background, the silhouette, a short message and an action to request a photo. Nothing behind it shows.
 
 ### Surface=Photo, Type=Photo requested
 
-**Purpose:** photo area after the viewer has requested a photo; the placeholder photo shows softly behind a scrim, with the silhouette and a confirmation instead of the action.
+**Purpose:** photo area after the viewer has requested a photo; its own solid background, the silhouette and a confirmation instead of the action. Nothing behind it shows.
 
 ### Surface=Photo full, Type=Message
 
@@ -28,11 +28,11 @@ Core · 7 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXG
 
 ### Surface=Photo full, Type=No photo
 
-**Purpose:** photo area for a member with no photo yet; shows a silhouette, a short message and an action to request a photo.
+**Purpose:** photo area for a member with no photo; its own solid background, the silhouette, a short message and an action to request a photo. Nothing behind it shows.
 
 ### Surface=Photo full, Type=Photo requested
 
-**Purpose:** photo area after the viewer has requested a photo; the placeholder photo shows softly behind a scrim, with the silhouette and a confirmation instead of the action.
+**Purpose:** photo area after the viewer has requested a photo; its own solid background, the silhouette and a confirmation instead of the action. Nothing behind it shows.
 
 ### Surface=Content, Type=Message
 
@@ -48,7 +48,7 @@ Core · 7 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXG
 | Message | text | — | She has shared Photos  with Premium Members |
 | Icon | instance swap | — | instance |
 | Title | text | — | Photo request sent |
-| Avatar | instance swap | — | instance |
+| Avatar | instance swap | sh-avatar-silhouette Female · Male | Female |
 | Action | instance swap | — | instance |
 | Surface | variant | Photo, Content, Photo full | Photo |
 | Type | variant | Message, No photo, Photo requested | Message |
@@ -63,6 +63,18 @@ Layer tree of `Surface=Photo, Type=Message`. Nested components are shown by name
       - sh-icon/camera-off — **sh-icon/camera-off** (Type Line, Size 24)
     - She has shared Photos  with Premium Members — text "She has shared Photos  with Premium Members"
   - Action — **sh-button** (Trailing icon (Small) instance, Leading icon (Small) instance, Leading icon (Medium) instance, Trailing icon (Medium) instance, Trailing icon (Large) instance, Leading icon (Large) instance, Label Button Text, Sublabel Supporting text, Type Tertiary, Size Small, State Default)
+
+## No photo and Photo requested
+
+All four (Surface Photo and Photo full) share one structure (2026-10-29):
+
+- root: column, padding top `sh-space/40`, no fill, no effects (no scrim, no blur)
+  - **Background**: `sh-avatar-placeholder` Full with Show silhouette off, absolute, stretches to the root. A solid gradient, `neutral/400` → `neutral/black`, no opacity, no blur.
+  - **Content**
+    - **Icon/Illustration** (visible = Show icon) › **Avatar**: `sh-avatar-silhouette`, 160 × 160. Use the Avatar swap to pick Female or Male, matching the member.
+    - **Title**: `text/on-image`
+  - **Action** (No photo only): sh-button
+- In the card, the member photo layer under the overlay is switched off: there is no photo, so nothing is drawn or exported under the overlay.
 
 ## Size
 

@@ -47,12 +47,27 @@
 - Fixed: profile-card "Photo request sent" had a hidden silhouette and a stale baked image behind it.
 - The two standalone grey `sh-user-images` tiles in "No Photo Case" were deleted (not needed; the overlay covers this case).
 
+## Clean structure: no photo means no photo
+- The no-photo card is: Photo › Overlay › Background · Content (Icon/Illustration › sh-avatar-silhouette, Title) · Action.
+  - The member photo layer is switched off in sh-profile-card No photo / Photo requested and sh-fpv-photo-area Gate=No photo / Photo requested.
+  - Dev Mode no longer shows a JPEG under the overlay.
+- **sh-user-images "requested" removed.** The 4 variants (Female and Male × Normal and Blur) are deleted in Figma; the hidden layers that used them were moved to a normal photo first.
+  - The repo drops `requested-*.jpg`, the `ShUserImageRequested` option (Compose and SwiftUI) and the web/Code Connect entries.
+  - sh-user-images is real photos only (54 variants).
+- **sh-avatar-placeholder 1:1 and 4:5** use the same two colours as Full (`neutral/400` → `neutral/black`), stretched so they show the slice of the big card behind its silhouette. Mini cards and round avatars look like the big card made small, not darker. JPGs re-exported.
+- **sh-overlay blueprint:** a "No photo and Photo requested" section with the structure; the Figma descriptions say the same.
+- **Code follows the same structure** (web, Compose, SwiftUI):
+  - `ShOverlay` / `.sh-overlay` No photo / Photo requested draws `background@3x.jpg` (the placeholder background), then the `sh-avatar-silhouette` image (160, `avatar` = gender), then the title and button. Same on Photo and Photo full, top `sh-space/40`.
+  - `ShProfileCard` takes `noPhotoGender` instead of `requestedPortrait`, and draws no photo for these types.
+  - The previews that used the requested JPEG as a stand-in photo now use the placeholder.
+- In progress: the placeholder code still ships flattened JPGs, because its gradient uses base tokens that aren't exported to code. A `sh-gradient/placeholder` style is needed; then it becomes gradient + silhouette SVG.
+
 ## Why
 The pink felt off-brand. Keeping the background and the silhouette as separate layers means either can change later without redrawing the other, and designs use the editable component rather than a pasted image.
 
 ## Who needs to do something
 - **Designers:** pull the library. Use `sh-avatar-placeholder` (not an image) wherever a member has no photo; pick Full for a full photo slot with an overlay.
-- **Android / iOS / Web:** replace the placeholder images with the new grey ones and add the two `*-full` assets. `ShAvatarPlaceholderAspect` / `.full` / `--full` is new. `requested-*.jpg` is plain grey; draw the silhouette in the overlay (sh-avatar-silhouette) above the title and button.
+- **Android / iOS / Web:** no-photo cards: hide the member photo and show sh-overlay No photo / Photo requested on top. `ShUserImage(requested:)` is gone. Replace the placeholder images with the new grey ones and add the two `*-full` assets. `ShAvatarPlaceholderAspect` / `.full` / `--full` is new. `requested-*.jpg` is plain grey; draw the silhouette in the overlay (sh-avatar-silhouette) above the title and button.
 
 ## Checks
 - [x] Renders checked: all 6 variants, sh-overlay Photo full No photo, a profile card No photo, FPV B · Photos

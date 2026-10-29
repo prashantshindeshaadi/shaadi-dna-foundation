@@ -2,7 +2,7 @@
 
 **Purpose:** The FPV photo slot: her photo (sh-photo-wrapper) with the gate overlay when it is locked, empty or requested.
 
-**Built from:** sh-photo-wrapper + overlay (photo-locked icon, message, sh-button) or the no-photo illustration / requested portrait (sh-user-images) + sh-button.
+**Built from:** sh-photo-wrapper + overlay (photo-locked icon, message, sh-button) or, for No photo / Photo requested, sh-overlay with its own background and the sh-avatar-silhouette (the photo layer is off) + sh-button.
 
 **Switches:** Gate = why the photo is not shown (Visible, Accept gated, Upgrade gated, Tit for tat, No photo, Photo requested). Message = the line above the button.
 

@@ -6,19 +6,22 @@
 //   Message          icon (Photo, Content 24 · Photo full 40) + message + action, over a scrim:
 //                    Photo / Photo full: overlay/scrim/default (+ sh-background-blur/uniform/strong in Figma)
 //                    Content: sh-gradient/translucent/light/strong (+ sh-background-blur/progressive/default in Figma)
-//   No photo         Photo: the 160 slot (Figma keeps the Avatar hidden; pass `avatar` to show one) + title + action.
-//                    No fill, no blur: the photo under it (the requested portrait) shows. Photo full draws that portrait.
+//   No photo         Its own solid background (sh-avatar-placeholder background, no opacity, no blur), then the
+//                    sh-avatar-silhouette (160) + title + action. Nothing under it shows; hide the member photo.
 //   Photo requested  as No photo without the action; optional `status` row (Figma: hidden layer).
+// Assets in res/drawable-xxhdpi: sh_avatar_placeholder_background (../../profile-card/sh-avatar-placeholder/assets/
+// background@3x.jpg) and sh_avatar_silhouette_female / _male (../../profile-card/sh-avatar-silhouette/assets/*@3x.png).
 //
 // Android has no backdrop blur (see ShTokens.kt): the scrim and glass are drawn, the blur behind them is not.
 // To hide a locked photo on Android, show it with ShUserImage(style = ShUserImageStyle.Blur) under the Message overlay.
-// Uses ShButton (sh-button), ShIcon (sh-icon), ShAvatarPlaceholder, ShUserImage.
+// Uses ShButton (sh-button), ShIcon (sh-icon), ShAvatarPlaceholderGender.
 // Needs dist/android/values*/ in res/, dist/android/compose/ShTokens.kt and the type kit (ShTypography.kt).
 // Set `package` and the `R` import to your app's.
 
 package com.shaadi.dna.components
 
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,8 +37,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import com.shaadi.dna.tokens.ShGradient
@@ -70,11 +75,10 @@ data class ShOverlayAction(
  * @param icon Message: the icon (Figma "Icon", default sh_icon_line_camera_off). null hides it.
  * @param title No photo / Photo requested text (Figma "Title"). null hides it (Show message off).
  * @param message Message text (Figma "Message"). null hides it (Show message off).
- * @param avatar Photo · No photo / Photo requested: placeholder drawn in the 160 slot (1:1). Figma keeps it hidden.
+ * @param avatar No photo / Photo requested: which sh-avatar-silhouette fills the 160 slot (Figma "Avatar"); match the member.
  * @param action Message / No photo button (Figma "Action"). null hides it (Show action off). Photo requested has none.
- * @param showIcon Figma "Show icon": the icon (Message) or the 160 slot (Photo · No photo / Photo requested)
+ * @param showIcon Figma "Show icon": the icon (Message) or the 160 silhouette slot (No photo / Photo requested)
  * @param status Photo requested: optional status row, e.g. "Photo Requested" (Figma: hidden layer)
- * @param portrait Photo full · No photo / Photo requested: which requested portrait fills the overlay
  */
 @Composable
 fun ShOverlay(
@@ -84,11 +88,10 @@ fun ShOverlay(
     @DrawableRes icon: Int? = null,
     title: String? = null,
     message: String? = null,
-    avatar: ShAvatarPlaceholderGender? = null,
+    avatar: ShAvatarPlaceholderGender = ShAvatarPlaceholderGender.Female,
     action: ShOverlayAction? = null,
     showIcon: Boolean = true,
     status: String? = null,
-    portrait: ShUserImageRequested = ShUserImageRequested.Female,
 ) {
     val onImage = surface != ShOverlaySurface.Content
     val isMessage = type == ShOverlayType.Message || surface == ShOverlaySurface.Content
@@ -101,8 +104,14 @@ fun ShOverlay(
     }
 
     Box(modifier.fillMaxSize().clipToBounds().then(background)) {
-        if (surface == ShOverlaySurface.PhotoFull && !isMessage) {
-            ShUserImage(requested = portrait, modifier = Modifier.matchParentSize())   // sh-user-images requested, Normal
+        if (!isMessage) {
+            // No photo / Photo requested: solid background, no opacity, no blur (sh-avatar-placeholder, silhouette off)
+            Image(
+                painter = painterResource(R.drawable.sh_avatar_placeholder_background),
+                contentDescription = null,
+                modifier = Modifier.matchParentSize(),
+                contentScale = ContentScale.Crop,
+            )
         }
         Column(
             modifier = Modifier
@@ -133,13 +142,15 @@ fun ShOverlay(
                                 paint = ShIconPaint.Tint(colorResource(if (onImage) R.color.sh_icon_on_image else R.color.sh_icon_primary)),
                             )
                         }
-                    } else if (surface == ShOverlaySurface.Photo) {
-                        val slot = dimensionResource(R.dimen.sh_space_80) * 2                // no token: 160 slot
-                        Box(Modifier.size(slot)) {
-                            if (avatar != null) {
-                                ShAvatarPlaceholder(gender = avatar, aspect = ShAvatarPlaceholderAspect.Square, modifier = Modifier.fillMaxWidth())
-                            }
-                        }
+                    } else {
+                        Image(
+                            painter = painterResource(
+                                if (avatar == ShAvatarPlaceholderGender.Male) R.drawable.sh_avatar_silhouette_male
+                                else R.drawable.sh_avatar_silhouette_female,
+                            ),
+                            contentDescription = null,
+                            modifier = Modifier.size(dimensionResource(R.dimen.sh_space_80) * 2),   // no token: 160 slot
+                        )
                     }
                 }
                 val copy = if (isMessage) message else title
@@ -193,10 +204,8 @@ private fun shOverlayTop(surface: ShOverlaySurface, type: ShOverlayType): Dp {
     return when {
         surface == ShOverlaySurface.Content -> s80 + s40                                  // no token: 120
         surface == ShOverlaySurface.Photo && type == ShOverlayType.Message -> s80 + s40   // no token: 120
-        surface == ShOverlaySurface.Photo -> s40
         type == ShOverlayType.Message -> s80 + s48                                        // no token: 128 (Photo full)
-        // no token: 180 = Message top 128 + its 40 icon + sh-space/12 gap (title lines up with Message's text)
-        else -> s80 + s48 + dimensionResource(R.dimen.sh_icon_pictogram_size_40) + dimensionResource(R.dimen.sh_space_12)
+        else -> s40                                                                       // No photo / Photo requested
     }
 }
 

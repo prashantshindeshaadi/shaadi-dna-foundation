@@ -35,10 +35,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
       "Male 4": "member-photo.jpg",
       "Male 5": "member-photo.jpg",
       "Male 6": "member-photo.jpg",
-      "Female requested": "components/profile-card/sh-user-images/assets/requested-female.jpg",
-      "Male requested": "components/profile-card/sh-user-images/assets/requested-male.jpg",
     }),
-    // Requested portraits are cropped full width, top-aligned
     crop: figma.enum("Gender", {
       "Female 1": "",
       "Female 2": "",
@@ -67,8 +64,6 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
       "Male 4": "",
       "Male 5": "",
       "Male 6": "",
-      "Female requested": " sh-user-image--top",
-      "Male requested": " sh-user-image--top",
     }),
     style: figma.enum("Style", {
       Normal: "",

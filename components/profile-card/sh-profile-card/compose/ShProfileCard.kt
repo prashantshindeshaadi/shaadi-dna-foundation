@@ -93,9 +93,9 @@ fun ShProfileCard(
     showTopTags: Boolean = true,
     /** Figma property "Show photo actions". */
     showPhotoActions: Boolean = true,
-    /** No photo / Photo requested: the soft requested portrait the app ships
-     *  (../../sh-user-images/assets/requested-female.jpg or requested-male.jpg), full width, top-aligned. */
-    requestedPortrait: Painter? = null,
+    /** No photo / Photo requested: the member's gender, for the overlay's silhouette. There is no photo to draw:
+     *  sh-overlay brings its own background. */
+    noPhotoGender: ShAvatarPlaceholderGender = ShAvatarPlaceholderGender.Female,
     /** With Overlay: what the overlay says and its action. */
     overlay: ShProfileCardOverlay? = null,
     actions: ShProfileCardActions = ShProfileCardActions(),
@@ -104,7 +104,7 @@ fun ShProfileCard(
     val space12 = dimensionResource(R.dimen.sh_space_12)
 
     // What each Type shows (as the Figma variants render)
-    val photo = if (type == ShProfileCardType.NoPhoto || type == ShProfileCardType.PhotoRequested) requestedPortrait else member.photo
+    val photo = if (type == ShProfileCardType.NoPhoto || type == ShProfileCardType.PhotoRequested) null else member.photo   // no photo: sh-overlay draws it
     val showsTopRow = type != ShProfileCardType.NoPhoto && type != ShProfileCardType.PhotoRequested
     val showsPhotoCount = type != ShProfileCardType.Blocked
     val showsDetails = type != ShProfileCardType.PostConnect
@@ -133,12 +133,12 @@ fun ShProfileCard(
             overlay = when (type) {
                 ShProfileCardType.NoPhoto -> ({
                     ShOverlay(
-                        surface = ShOverlaySurface.Photo, type = ShOverlayType.NoPhoto, title = "No Photo added yet",
+                        surface = ShOverlaySurface.Photo, type = ShOverlayType.NoPhoto, title = "No Photo added yet", avatar = noPhotoGender,
                         action = ShOverlayAction("Request a Photo", R.drawable.sh_icon_line_help_circle, actions.onRequestPhoto),
                     )
                 })
                 ShProfileCardType.PhotoRequested -> ({
-                    ShOverlay(surface = ShOverlaySurface.Photo, type = ShOverlayType.PhotoRequested, title = "Photo request sent")
+                    ShOverlay(surface = ShOverlaySurface.Photo, type = ShOverlayType.PhotoRequested, title = "Photo request sent", avatar = noPhotoGender)
                 })
                 ShProfileCardType.WithOverlay -> ({
                     val o = overlay ?: ShProfileCardOverlay("Upgrade to View", actionIcon = R.drawable.sh_icon_line_premium)

@@ -101,7 +101,7 @@ private enum ShAvatarMetrics {
     VStack(spacing: SH.Space.step16) {
         ForEach(ShAvatarSize.allCases, id: \.self) { size in
             HStack(spacing: SH.Space.step16) {
-                ShAvatar(size: size, type: .image, image: ShUserImageRequested.female.image)
+                ShAvatar(size: size, type: .image, image: Image("member-photo"))
                 ShAvatar(size: size, type: .initial, initials: "SH")
                 ShAvatar(size: size, type: .icon, gender: .female)
             }

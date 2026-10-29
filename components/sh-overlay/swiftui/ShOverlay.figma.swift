@@ -2,7 +2,7 @@
 // Implementation: ShOverlay.swift
 // One call shape covers every Surface × Type: parts a variant doesn't have are ignored
 // (Message uses icon + message; No photo / Photo requested use title; Photo requested has no action).
-// Figma keeps the No photo Avatar and the Photo requested Status hidden: pass avatar / status only if a screen needs them.
+// No photo / Photo requested: pass avatar (the member's gender) for the silhouette. Figma keeps the Status row hidden.
 // Publish: swift run figma-connect publish   (Code Connect Swift package, FIGMA_ACCESS_TOKEN)
 
 import Figma

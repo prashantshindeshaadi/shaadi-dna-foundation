@@ -65,13 +65,13 @@ extension ShPhotoWrapper where Overlay == EmptyView {
 #Preview("sh-photo-wrapper") {
     HStack(spacing: SH.Space.step16) {
         ShPhotoWrapper {
-            ShUserImage(requested: .female)
+            ShUserImage(Image("member-photo"))
         }
         ShPhotoWrapper(showTopScrim: false, showBottomScrim: false) {
-            ShUserImage(requested: .female)
+            ShUserImage(Image("member-photo"))
         }
         ShPhotoWrapper {
-            ShUserImage(requested: .female)
+            ShUserImage(Image("member-photo"))
         } overlay: {
             ShOverlay(surface: .photo, type: .message, icon: "line/camera-off",
                       message: "She has shared Photos\nwith Premium Members",

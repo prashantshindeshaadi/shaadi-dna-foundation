@@ -87,18 +87,18 @@ public struct ShProfileCard: View {
     public var showTopTags: Bool
     /// Figma property "Show photo actions".
     public var showPhotoActions: Bool
-    /// No photo / Photo requested: the soft requested portrait the app ships
-    /// (../../sh-user-images/assets/requested-female.jpg or requested-male.jpg), full width, top-aligned.
-    public var requestedPortrait: Image?
+    /// No photo / Photo requested: the member's gender, for the overlay's silhouette. There is no photo to draw:
+    /// sh-overlay brings its own background.
+    public var noPhotoGender: ShAvatarPlaceholderGender
     /// With Overlay: what the overlay says and its action.
     public var overlay: ShProfileCardOverlay?
     public var actions: ShProfileCardActions
 
     public init(type: ShProfileCardType, member: ShProfileMember, showTopTags: Bool = true, showPhotoActions: Bool = true,
-                requestedPortrait: Image? = nil, overlay: ShProfileCardOverlay? = nil,
+                noPhotoGender: ShAvatarPlaceholderGender = .female, overlay: ShProfileCardOverlay? = nil,
                 actions: ShProfileCardActions = ShProfileCardActions()) {
         self.type = type; self.member = member; self.showTopTags = showTopTags; self.showPhotoActions = showPhotoActions
-        self.requestedPortrait = requestedPortrait; self.overlay = overlay; self.actions = actions
+        self.noPhotoGender = noPhotoGender; self.overlay = overlay; self.actions = actions
     }
 
     public var body: some View {
@@ -127,7 +127,7 @@ public struct ShProfileCard: View {
 
     private var photo: Image? {
         switch type {
-        case .noPhoto, .photoRequested: return requestedPortrait
+        case .noPhoto, .photoRequested: return nil   // no photo: sh-overlay draws the background and silhouette
         default: return member.photo
         }
     }
@@ -147,10 +147,10 @@ public struct ShProfileCard: View {
     @ViewBuilder private var overlayView: some View {
         switch type {
         case .noPhoto:
-            ShOverlay(surface: .photo, type: .noPhoto, title: "No Photo added yet",
+            ShOverlay(surface: .photo, type: .noPhoto, title: "No Photo added yet", avatar: noPhotoGender,
                       action: ShOverlayAction(label: "Request a Photo", icon: "line/help-circle", action: actions.onRequestPhoto))
         case .photoRequested:
-            ShOverlay(surface: .photo, type: .photoRequested, title: "Photo request sent")
+            ShOverlay(surface: .photo, type: .photoRequested, title: "Photo request sent", avatar: noPhotoGender)
         case .withOverlay:
             let o = overlay ?? ShProfileCardOverlay(actionLabel: "Upgrade to View", actionIcon: "line/premium")
             ShOverlay(surface: .photo, type: .message, icon: o.icon, message: o.message,
@@ -246,7 +246,7 @@ extension ShProfileMember {
     ScrollView {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 280))], spacing: SH.Space.step24) {
             ForEach(ShProfileCardType.allCases, id: \.self) { type in
-                ShProfileCard(type: type, member: .sample, requestedPortrait: Image("sh-user-images/requested-female"))
+                ShProfileCard(type: type, member: .sample)
             }
         }
         .padding(SH.Space.step16)

@@ -4,8 +4,8 @@
  *
  * Needs, loaded once per page: dist/css/tokens.css, dist/sh-typo-kit/developer/web/sh-typo.css,
  * components/sh-icon/web/sh-icon.css, components/sh-button/web/sh-button.css,
- * components/profile-card/sh-user-images/web/sh-user-images.css (Photo full portrait),
- * components/profile-card/sh-avatar-placeholder/web/sh-avatar-placeholder.css (optional avatar).
+ * No photo / Photo requested images: components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg and
+ * components/profile-card/sh-avatar-silhouette/assets/<gender>.svg.
  *
  * Covers a photo area or a content section; place it inside a positioned parent (it fills it).
  *   Surface  .sh-overlay--photo | --photo-full | --content
@@ -14,8 +14,8 @@
  *   Message          icon (Photo, Content 24 · Photo full 40) + message + action, over a scrim:
  *                    Photo / Photo full: overlay/scrim/default + sh-background-blur/uniform/strong
  *                    Content: sh-gradient/translucent/light/strong + sh-background-blur/progressive/default
- *   No photo         Photo: empty 160 slot (Figma keeps the Avatar hidden) + title + action. No fill, no blur:
- *                    the photo under it (the requested portrait) shows. Photo full draws that portrait itself.
+ *   No photo         Its own solid background (.sh-overlay__background: the sh-avatar-placeholder background, no
+ *                    opacity, no blur) + the sh-avatar-silhouette (160) + title + action. Hide the member photo under it.
  *   Photo requested  as No photo without the action. Optional status row (Figma: hidden layer).
  *
  * Text: the Message copy uses .sh-body-lg on Photo surfaces (text/on-image, sh-shadow/default) and .sh-body-md on
@@ -44,19 +44,14 @@
   font-family: var(--sh-typo-font-family-primary);
 }
 
-/* Photo · No photo / Photo requested: content starts at sh-space/40 */
+/* No photo / Photo requested (Photo and Photo full): content starts at sh-space/40 */
 .sh-overlay--no-photo,
 .sh-overlay--photo-requested { --sh-overlay-top: var(--sh-space-40); }
 
-/* Photo full: Message content at 128; No photo / Photo requested text at 180 (lines up with Message's text) */
+/* Photo full: Message content at 128 */
 .sh-overlay--photo-full { --sh-overlay-bottom: var(--sh-space-0); }
 .sh-overlay--photo-full.sh-overlay--message {
   --sh-overlay-top: calc(var(--sh-space-80) + var(--sh-space-48));      /* no token: 128 */
-}
-.sh-overlay--photo-full.sh-overlay--no-photo,
-.sh-overlay--photo-full.sh-overlay--photo-requested {
-  /* no token: 180 = Message top 128 + its 40 icon + sh-space/12 gap */
-  --sh-overlay-top: calc(var(--sh-space-80) + var(--sh-space-48) + var(--sh-icon-pictogram-size-40) + var(--sh-space-12));
 }
 
 /* Content: 120 / 80 */
@@ -87,11 +82,14 @@
   mask: linear-gradient(transparent, #000);
 }
 
-/* Photo full · No photo / Photo requested: the requested portrait (sh-user-images Female requested, Normal) */
-.sh-overlay__portrait {
+/* No photo / Photo requested: solid background, no opacity, no blur (sh-avatar-placeholder, silhouette off) */
+.sh-overlay__background {
   position: absolute;
   inset: 0;
   z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---- content ------------------------------------------------------------- */
@@ -109,10 +107,9 @@
   height: var(--sh-icon-pictogram-size-40);
 }
 
-/* 160 slot: sh-avatar-placeholder 1:1 at its Figma size (hidden in Figma, the slot keeps the text in place) */
+/* 160 slot: the sh-avatar-silhouette (Figma "Avatar") */
 .sh-overlay__illustration {
-  display: flex;
-  justify-content: center;
+  display: block;
   width: calc(var(--sh-space-80) * 2);              /* no token: 160 */
   height: calc(var(--sh-space-80) * 2);             /* no token: 160 */
 }

@@ -156,7 +156,7 @@ work in progress and may still change.
 | `sh-profile-card` | 10 | 3 | [profile-card/sh-profile-card/sh-profile-card.md](profile-card/sh-profile-card/sh-profile-card.md) | [`2579:25592`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2579-25592) |
 | `sh-profile-card-info` | 1 | 13 | [profile-card/sh-profile-card-info/sh-profile-card-info.md](profile-card/sh-profile-card-info/sh-profile-card-info.md) | [`2496:27797`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-27797) |
 | `sh-tag-profile` | 7 | 1 | [profile-card/sh-tag-profile/sh-tag-profile.md](profile-card/sh-tag-profile/sh-tag-profile.md) | [`2813:41954`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2813-41954) |
-| `sh-user-images` | 58 | 2 | [profile-card/sh-user-images/sh-user-images.md](profile-card/sh-user-images/sh-user-images.md) | [`2248:13619`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2248-13619) |
+| `sh-user-images` | 54 | 2 | [profile-card/sh-user-images/sh-user-images.md](profile-card/sh-user-images/sh-user-images.md) | [`2248:13619`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2248-13619) |
 
 ## Utility
 

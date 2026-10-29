@@ -38,12 +38,9 @@ struct ShUserImage_doc: FigmaConnect {
         "Male 4": Image("member-photo"),
         "Male 5": Image("member-photo"),
         "Male 6": Image("member-photo"),
-        "Female requested": ShUserImageRequested.female.image,
-        "Male requested": ShUserImageRequested.male.image,
     ])
     var photo: Image = Image("member-photo")
 
-    /// Requested portraits are cropped full width, top-aligned.
     @FigmaEnum("Gender", mapping: [
         "Female 1": Alignment.center,
         "Female 2": Alignment.center,
@@ -72,8 +69,6 @@ struct ShUserImage_doc: FigmaConnect {
         "Male 4": Alignment.center,
         "Male 5": Alignment.center,
         "Male 6": Alignment.center,
-        "Female requested": Alignment.top,
-        "Male requested": Alignment.top,
     ])
     var alignment: Alignment = .center
 

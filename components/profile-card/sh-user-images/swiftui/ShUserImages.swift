@@ -4,8 +4,7 @@
 // The member photo, cropped to fill its frame (Figma image fill "Fill"). Style Blur is the Figma "Blur" layer over
 // the same photo, same size: a sh-gradient/translucent/dark/extra-soft wash + sh-background-blur/uniform/strong.
 // Gender Female 1–21 / Male 1–6 are design-only sample photos: pass the member's photo.
-// Gender Female requested / Male requested: add ../assets/requested-female.jpg and requested-male.jpg to the asset
-// catalogue as "sh-user-images/requested-female" and "sh-user-images/requested-male", then use ShUserImage(requested:).
+// No photo / Photo requested is not a photo: use sh-overlay No photo / Photo requested (it brings its own background).
 // Needs dist/ios/SHTokens.swift.
 
 import SwiftUI
@@ -14,19 +13,6 @@ import SwiftUI
 public enum ShUserImageStyle {
     case normal
     case blur
-}
-
-/// The Photo requested portraits the app ships (Figma Gender "Female requested" / "Male requested").
-public enum ShUserImageRequested {
-    case female
-    case male
-
-    public var image: Image {
-        switch self {
-        case .female: return Image("sh-user-images/requested-female")
-        case .male: return Image("sh-user-images/requested-male")
-        }
-    }
 }
 
 /// sh-user-images: a photo that fills its frame (crop), Style Normal or Blur.
@@ -43,10 +29,6 @@ public struct ShUserImage: View {
         self.image = image; self.style = style; self.alignment = alignment
     }
 
-    /// Gender Female requested / Male requested: the requested portrait, full width and top-aligned as in Figma.
-    public init(requested: ShUserImageRequested, style: ShUserImageStyle = .normal) {
-        self.init(requested.image, style: style, alignment: .top)
-    }
 
     public var body: some View {
         Color.clear
@@ -78,10 +60,8 @@ private struct ShUserImageBlurLayer: ViewModifier {
 
 #Preview("sh-user-images") {
     HStack(spacing: SH.Space.step12) {
-        ShUserImage(requested: .female)
-        ShUserImage(requested: .female, style: .blur)
-        ShUserImage(requested: .male)
-        ShUserImage(requested: .male, style: .blur)
+        ShUserImage(Image(systemName: "person.crop.rectangle"))
+        ShUserImage(Image(systemName: "person.crop.rectangle"), style: .blur)
     }
     .frame(height: SH.Space.step80 * 3)                  // preview only
     .padding(SH.Space.step16)

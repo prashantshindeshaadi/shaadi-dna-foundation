@@ -6,12 +6,14 @@
 //   Message          icon (Photo, Content 24 · Photo full 40) + message + action, over a scrim:
 //                    Photo / Photo full: overlay/scrim/default + sh-background-blur/uniform/strong
 //                    Content: sh-gradient/translucent/light/strong + sh-background-blur/progressive/default
-//   No photo         Photo: the 160 slot (Figma keeps the Avatar hidden; pass `avatar` to show one) + title + action.
-//                    No fill, no blur: the photo under it (the requested portrait) shows. Photo full draws that portrait.
+//   No photo         Its own solid background (sh-avatar-placeholder background, no opacity, no blur), then the
+//                    sh-avatar-silhouette (160) + title + action. Nothing under it shows; hide the member photo.
 //   Photo requested  as No photo without the action; optional `status` row (Figma: hidden layer).
+// Assets: "sh-avatar-placeholder/background" (../../profile-card/sh-avatar-placeholder/assets/background@3x.jpg) and
+// "sh-avatar-silhouette/female" / "male" (../../profile-card/sh-avatar-silhouette/assets/, SVG or @3x PNG).
 // Blur: SwiftUI has no custom-radius backdrop blur, so the system ultra-thin material (dark) stands in for
 // sh-background-blur; the token scrim / glass is drawn on top of it exactly as in Figma.
-// Uses ShButton (sh-button), ShIcon (sh-icon), ShAvatarPlaceholder, ShUserImage.
+// Uses ShButton (sh-button), ShIcon (sh-icon), ShAvatarPlaceholderGender.
 // Needs dist/ios/SHTokens.swift and dist/sh-typo-kit/developer/ios/ShTypography.swift.
 
 import SwiftUI
@@ -51,11 +53,10 @@ public struct ShOverlay: View {
     public var icon: String?
     public var title: String?
     public var message: String?
-    public var avatar: ShAvatarPlaceholderGender?
+    public var avatar: ShAvatarPlaceholderGender
     public var action: ShOverlayAction?
     public var showIcon: Bool
     public var status: String?
-    public var portrait: ShUserImageRequested
 
     /// - Parameters:
     ///   - surface: Photo (profile card photo), Photo full (full-width photo, FPV), Content (a section).
@@ -63,18 +64,15 @@ public struct ShOverlay: View {
     ///   - icon: Message: the icon name (Figma "Icon", default "line/camera-off"). nil hides it.
     ///   - title: No photo / Photo requested text (Figma "Title"). nil hides it (Show message off).
     ///   - message: Message text (Figma "Message"). nil hides it (Show message off).
-    ///   - avatar: Photo · No photo / Photo requested: placeholder drawn in the 160 slot (1:1). Figma keeps it hidden.
+    ///   - avatar: No photo / Photo requested: which sh-avatar-silhouette fills the 160 slot (Figma "Avatar"); match the member.
     ///   - action: Message / No photo button (Figma "Action"). nil hides it (Show action off). Photo requested has none.
-    ///   - showIcon: Figma "Show icon": the icon (Message) or the 160 slot (Photo · No photo / Photo requested).
+    ///   - showIcon: Figma "Show icon": the icon (Message) or the 160 silhouette slot (No photo / Photo requested).
     ///   - status: Photo requested: optional status row, e.g. "Photo Requested" (Figma: hidden layer).
-    ///   - portrait: Photo full · No photo / Photo requested: which requested portrait fills the overlay.
     public init(surface: ShOverlaySurface = .photo, type: ShOverlayType = .message, icon: String? = nil,
-                title: String? = nil, message: String? = nil, avatar: ShAvatarPlaceholderGender? = nil,
-                action: ShOverlayAction? = nil, showIcon: Bool = true, status: String? = nil,
-                portrait: ShUserImageRequested = .female) {
+                title: String? = nil, message: String? = nil, avatar: ShAvatarPlaceholderGender = .female,
+                action: ShOverlayAction? = nil, showIcon: Bool = true, status: String? = nil) {
         self.surface = surface; self.type = type; self.icon = icon; self.title = title; self.message = message
         self.avatar = avatar; self.action = action; self.showIcon = showIcon; self.status = status
-        self.portrait = portrait
     }
 
     private var onImage: Bool { surface != .content }
@@ -115,14 +113,12 @@ public struct ShOverlay: View {
                            size: surface == .photoFull ? SH.Icon.pictogramSize40 : SH.Icon.size24,
                            paint: .color(onImage ? SH.Color.iconOnImage.color : SH.Color.iconPrimary.color))
                 }
-            } else if surface == .photo {
-                ZStack {
-                    if let avatar {
-                        ShAvatarPlaceholder(gender: avatar, aspect: .square)
-                    }
-                }
-                .frame(width: SH.Space.step80 * 2, height: SH.Space.step80 * 2)   // no token: 160 slot
-                .accessibilityHidden(avatar == nil)
+            } else {
+                Image(avatar == .male ? "sh-avatar-silhouette/male" : "sh-avatar-silhouette/female")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: SH.Space.step80 * 2, height: SH.Space.step80 * 2)   // no token: 160 slot
+                    .accessibilityHidden(true)
             }
         }
     }
@@ -165,10 +161,11 @@ public struct ShOverlay: View {
                 Rectangle().fill(.ultraThinMaterial).environment(\.colorScheme, .dark)   // stands in for uniform/strong
                 SH.Color.overlayScrimDefault.color
             }
-        case (.photoFull, _):
-            ShUserImage(requested: portrait)
         default:
-            Color.clear                                                              // Figma: no fill, no blur
+            // No photo / Photo requested: solid background, no opacity, no blur (sh-avatar-placeholder, silhouette off)
+            Image("sh-avatar-placeholder/background")
+                .resizable()
+                .scaledToFill()
         }
     }
 
@@ -177,11 +174,8 @@ public struct ShOverlay: View {
     private var topPadding: CGFloat {
         switch (surface, type) {
         case (.content, _), (.photo, .message): return SH.Space.step80 + SH.Space.step40        // no token: 120
-        case (.photo, _): return SH.Space.step40
         case (.photoFull, .message): return SH.Space.step80 + SH.Space.step48                   // no token: 128
-        case (.photoFull, _):
-            // no token: 180 = Message top 128 + its 40 icon + sh-space/12 gap (title lines up with Message's text)
-            return SH.Space.step80 + SH.Space.step48 + SH.Icon.pictogramSize40 + SH.Space.step12
+        case (_, _): return SH.Space.step40                                                     // No photo / requested
         }
     }
 

@@ -48,11 +48,8 @@ class ShUserImagesDoc {
         "Male 4" to memberPhoto,
         "Male 5" to memberPhoto,
         "Male 6" to memberPhoto,
-        "Female requested" to ShUserImageRequested.Female.drawable,
-        "Male requested" to ShUserImageRequested.Male.drawable,
     )
 
-    /** Requested portraits are cropped full width, top-aligned. */
     @FigmaProperty(FigmaType.Enum, "Gender")
     val alignment: Alignment = Figma.mapping(
         "Female 1" to Alignment.Center,
@@ -82,8 +79,6 @@ class ShUserImagesDoc {
         "Male 4" to Alignment.Center,
         "Male 5" to Alignment.Center,
         "Male 6" to Alignment.Center,
-        "Female requested" to Alignment.TopCenter,
-        "Male requested" to Alignment.TopCenter,
     )
 
     @FigmaProperty(FigmaType.Enum, "Style")

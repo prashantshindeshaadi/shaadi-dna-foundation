@@ -4,7 +4,7 @@
 // Needs: dist/css/tokens.css, dist/sh-typo-kit/developer/web/sh-typo.css, components/sh-icon/web/sh-icon.css,
 //        components/sh-button/web/sh-button.css, components/profile-card/sh-user-images/web/sh-user-images.css,
 //        components/sh-overlay/web/sh-overlay.css
-// Figma keeps the No photo Avatar and the Photo requested Status hidden; both are optional in code (see sh-overlay.html).
+// No photo / Photo requested: own background + the silhouette (Avatar: female.svg or male.svg). Figma keeps the Status row hidden.
 // Publish: npx figma connect publish   (needs a Figma access token in FIGMA_ACCESS_TOKEN)
 
 import figma, { html } from "@figma/code-connect/html"
@@ -36,7 +36,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   variant: { Surface: "Photo", Type: "No photo" },
   props: {
     slot: figma.boolean("Show icon", {
-      true: html`<span class="sh-overlay__illustration" aria-hidden="true"></span>`,
+      true: html`<img class="sh-overlay__illustration" src="components/profile-card/sh-avatar-silhouette/assets/female.svg" alt="">`,
       false: undefined,
     }),
     text: figma.string("Title"),
@@ -45,6 +45,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   },
   example: ({ slot, text, textHidden, action }) => html`
 <div class="sh-overlay sh-overlay--photo sh-overlay--no-photo">
+  <img class="sh-overlay__background" src="components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
   <div class="sh-overlay__content">
     ${slot}
     <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
@@ -58,7 +59,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   variant: { Surface: "Photo", Type: "Photo requested" },
   props: {
     slot: figma.boolean("Show icon", {
-      true: html`<span class="sh-overlay__illustration" aria-hidden="true"></span>`,
+      true: html`<img class="sh-overlay__illustration" src="components/profile-card/sh-avatar-silhouette/assets/female.svg" alt="">`,
       false: undefined,
     }),
     text: figma.string("Title"),
@@ -66,6 +67,7 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   },
   example: ({ slot, text, textHidden }) => html`
 <div class="sh-overlay sh-overlay--photo sh-overlay--photo-requested">
+  <img class="sh-overlay__background" src="components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
   <div class="sh-overlay__content">
     ${slot}
     <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
@@ -106,8 +108,9 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   },
   example: ({ text, textHidden, action }) => html`
 <div class="sh-overlay sh-overlay--photo-full sh-overlay--no-photo">
-  <div class="sh-overlay__portrait sh-user-image sh-user-image--top"><img src="components/profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+  <img class="sh-overlay__background" src="components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
   <div class="sh-overlay__content">
+    <img class="sh-overlay__illustration" src="components/profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
     <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
   </div>
   ${action}
@@ -123,8 +126,9 @@ figma.connect("https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?no
   },
   example: ({ text, textHidden }) => html`
 <div class="sh-overlay sh-overlay--photo-full sh-overlay--photo-requested">
-  <div class="sh-overlay__portrait sh-user-image sh-user-image--top"><img src="components/profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+  <img class="sh-overlay__background" src="components/profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
   <div class="sh-overlay__content">
+    <img class="sh-overlay__illustration" src="components/profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
     <p class="sh-overlay__text sh-title-lg"${textHidden}>${text}</p>
   </div>
   <!-- optional status (Figma: hidden layer): <span class="sh-overlay__status sh-button-sm"><span class="sh-icon sh-icon--16" style="--icon:url(icons/filled/check.svg)" aria-hidden="true"></span>Photo Requested</span> -->

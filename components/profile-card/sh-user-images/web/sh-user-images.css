@@ -9,8 +9,7 @@
  *   <div class="sh-user-image sh-user-image--blur"><img src="member.jpg" alt=""></div>
  *
  * Gender Female 1–21 / Male 1–6 are design-only sample photos: the app passes the member's photo.
- * Gender Female requested / Male requested = the Photo requested portraits in ../assets/
- * (requested-female.jpg, requested-male.jpg). Figma crops them full width, top-aligned: add .sh-user-image--top.
+ * No photo / Photo requested is not a photo: use sh-overlay No photo / Photo requested (it brings its own background).
  *
  * Style=Blur is the Figma "Blur" layer over the same photo, same size (the photo is never scaled):
  * a sh-gradient/translucent/dark/extra-soft wash + effect sh-background-blur/uniform/strong (background blur,
@@ -32,7 +31,7 @@
   object-fit: cover;                                 /* Figma image fill: Fill (crop to the frame) */
 }
 
-/* Requested portraits: full width, top-aligned (Figma crop) */
+/* Optional: keep the top of a tall photo in frame */
 .sh-user-image--top > img { object-position: top; }
 
 /* Style=Blur: the Blur layer */

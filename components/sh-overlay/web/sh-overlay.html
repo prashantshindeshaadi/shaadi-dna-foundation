@@ -34,7 +34,7 @@
 
     <figure><figcaption class="sh-body-sm">Surface=Photo, Type=Message</figcaption>
       <div class="stage">
-        <div class="sh-user-image"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+        <div class="sh-user-image"><img src="../../profile-card/sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div>
         <div class="sh-overlay sh-overlay--photo sh-overlay--message">
           <div class="sh-overlay__content">
             <span class="sh-overlay__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/camera-off.svg)" aria-hidden="true"></span>
@@ -47,11 +47,11 @@
 
     <figure><figcaption class="sh-body-sm">Surface=Photo, Type=No photo</figcaption>
       <div class="stage">
-        <div class="sh-user-image sh-user-image--top"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
         <div class="sh-overlay sh-overlay--photo sh-overlay--no-photo">
+          <img class="sh-overlay__background" src="../../profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
           <div class="sh-overlay__content">
-            <span class="sh-overlay__illustration" aria-hidden="true"></span>
-            <p class="sh-overlay__text sh-title-lg">Photo request sent</p>
+            <img class="sh-overlay__illustration" src="../../profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
+            <p class="sh-overlay__text sh-title-lg">No Photo added yet</p>
           </div>
           <button class="sh-button sh-button--tertiary sh-button--sm sh-overlay__action" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Request a Photo</span></span></button>
         </div>
@@ -60,10 +60,10 @@
 
     <figure><figcaption class="sh-body-sm">Surface=Photo, Type=Photo requested</figcaption>
       <div class="stage">
-        <div class="sh-user-image sh-user-image--top"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
         <div class="sh-overlay sh-overlay--photo sh-overlay--photo-requested">
+          <img class="sh-overlay__background" src="../../profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
           <div class="sh-overlay__content">
-            <span class="sh-overlay__illustration" aria-hidden="true"></span>
+            <img class="sh-overlay__illustration" src="../../profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
             <p class="sh-overlay__text sh-title-lg">Photo request sent</p>
           </div>
         </div>
@@ -72,7 +72,7 @@
 
     <figure><figcaption class="sh-body-sm">Surface=Photo full, Type=Message</figcaption>
       <div class="stage">
-        <div class="sh-user-image"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+        <div class="sh-user-image"><img src="../../profile-card/sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div>
         <div class="sh-overlay sh-overlay--photo-full sh-overlay--message">
           <div class="sh-overlay__content">
             <span class="sh-overlay__icon sh-icon sh-icon--40" style="--icon:url(../../../icons/line/camera-off.svg)" aria-hidden="true"></span>
@@ -86,9 +86,10 @@
     <figure><figcaption class="sh-body-sm">Surface=Photo full, Type=No photo</figcaption>
       <div class="stage">
         <div class="sh-overlay sh-overlay--photo-full sh-overlay--no-photo">
-          <div class="sh-overlay__portrait sh-user-image sh-user-image--top"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+          <img class="sh-overlay__background" src="../../profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
           <div class="sh-overlay__content">
-            <p class="sh-overlay__text sh-title-lg">Photo request sent</p>
+            <img class="sh-overlay__illustration" src="../../profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
+            <p class="sh-overlay__text sh-title-lg">No Photo added yet</p>
           </div>
           <button class="sh-button sh-button--tertiary sh-button--sm sh-overlay__action" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Request a Photo</span></span></button>
         </div>
@@ -98,8 +99,9 @@
     <figure><figcaption class="sh-body-sm">Surface=Photo full, Type=Photo requested</figcaption>
       <div class="stage">
         <div class="sh-overlay sh-overlay--photo-full sh-overlay--photo-requested">
-          <div class="sh-overlay__portrait sh-user-image sh-user-image--top"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
+          <img class="sh-overlay__background" src="../../profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
           <div class="sh-overlay__content">
+            <img class="sh-overlay__illustration" src="../../profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
             <p class="sh-overlay__text sh-title-lg">Photo request sent</p>
           </div>
         </div>
@@ -126,25 +128,13 @@
       </div>
     </figure>
 
-    <figure><figcaption class="sh-body-sm">Optional · Photo, No photo + Avatar (Figma: Avatar layer hidden)</figcaption>
-      <div class="stage">
-        <div class="sh-user-image sh-user-image--top"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
-        <div class="sh-overlay sh-overlay--photo sh-overlay--no-photo">
-          <div class="sh-overlay__content">
-            <span class="sh-overlay__illustration"><span class="sh-avatar-placeholder sh-avatar-placeholder--female sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><img class="sh-avatar-placeholder__art" src="../../profile-card/sh-avatar-placeholder/assets/female-1x1@3x.jpg" alt=""></span></span>
-            <p class="sh-overlay__text sh-title-lg">No Photo added yet</p>
-          </div>
-          <button class="sh-button sh-button--tertiary sh-button--sm sh-overlay__action" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Request a Photo</span></span></button>
-        </div>
-      </div>
-    </figure>
 
     <figure><figcaption class="sh-body-sm">Optional · Photo, Photo requested + Status (Figma: Status layer hidden)</figcaption>
       <div class="stage">
-        <div class="sh-user-image sh-user-image--top"><img src="../../profile-card/sh-user-images/assets/requested-female.jpg" alt=""></div>
         <div class="sh-overlay sh-overlay--photo sh-overlay--photo-requested">
+          <img class="sh-overlay__background" src="../../profile-card/sh-avatar-placeholder/assets/background@3x.jpg" alt="">
           <div class="sh-overlay__content">
-            <span class="sh-overlay__illustration" aria-hidden="true"></span>
+            <img class="sh-overlay__illustration" src="../../profile-card/sh-avatar-silhouette/assets/female.svg" alt="">
             <p class="sh-overlay__text sh-title-lg">Photo request sent</p>
           </div>
           <span class="sh-overlay__status sh-button-sm"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/check.svg)" aria-hidden="true"></span>Photo Requested</span>

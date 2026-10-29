@@ -3,7 +3,7 @@
   sh-user-images — web (HTML5 + CSS). Every variant group (Gender × Style); open in a browser to preview.
   Spec: ../sh-user-images.md · Figma node 2248:13619
   Run `python3 tools/build.py` once so dist/ exists.
-  No member photos ship in the repo: the member columns use ../assets/requested-female.jpg as a stand-in.
+  No member photos ship in the repo: the preview uses the sh-avatar-placeholder Full image as a stand-in.
 -->
 <html lang="en">
 <head>
@@ -25,25 +25,13 @@
 </head>
 <body>
   <h1 class="sh-heading-md">sh-user-images</h1>
-  <p class="note sh-body-sm">Gender Female 1–21 and Male 1–6 are the same code: <code>.sh-user-image</code> around the member's photo. The requested portraits are top-aligned (<code>.sh-user-image--top</code>). Style=Blur adds the Blur layer (translucent/dark/extra-soft wash + uniform/strong background blur).</p>
+  <p class="note sh-body-sm">Gender Female 1–21 and Male 1–6 are the same code: <code>.sh-user-image</code> around the member's photo.  No photo / Photo requested is not a photo: use sh-overlay No photo / Photo requested. Style=Blur adds the Blur layer (translucent/dark/extra-soft wash + uniform/strong background blur).</p>
   <div class="preview">
     <figure><figcaption class="sh-body-sm">Gender=Female 1…21 · Male 1…6<br>Style=Normal</figcaption>
-      <div class="frame"><div class="sh-user-image"><img src="../assets/requested-female.jpg" alt=""></div></div>
+      <div class="frame"><div class="sh-user-image"><img src="../../sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div></div>
     </figure>
     <figure><figcaption class="sh-body-sm">Gender=Female 1…21 · Male 1…6<br>Style=Blur</figcaption>
-      <div class="frame"><div class="sh-user-image sh-user-image--blur"><img src="../assets/requested-female.jpg" alt=""></div></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Female requested<br>Style=Normal</figcaption>
-      <div class="frame"><div class="sh-user-image sh-user-image--top"><img src="../assets/requested-female.jpg" alt=""></div></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Female requested<br>Style=Blur</figcaption>
-      <div class="frame"><div class="sh-user-image sh-user-image--top sh-user-image--blur"><img src="../assets/requested-female.jpg" alt=""></div></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Male requested<br>Style=Normal</figcaption>
-      <div class="frame"><div class="sh-user-image sh-user-image--top"><img src="../assets/requested-male.jpg" alt=""></div></div>
-    </figure>
-    <figure><figcaption class="sh-body-sm">Gender=Male requested<br>Style=Blur</figcaption>
-      <div class="frame"><div class="sh-user-image sh-user-image--top sh-user-image--blur"><img src="../assets/requested-male.jpg" alt=""></div></div>
+      <div class="frame"><div class="sh-user-image sh-user-image--blur"><img src="../../sh-avatar-placeholder/assets/female-full@3x.jpg" alt=""></div></div>
     </figure>
   </div>
 </body>

@@ -195,7 +195,7 @@ private struct ShMiniCardCenteredFlow: Layout {
 
 #Preview("sh-mini-card") {
     HStack(alignment: .top, spacing: SH.Space.step16) {
-        ShMiniCard(type: .standard, name: "Sneha P, 26", photo: ShUserImageRequested.female.image,
+        ShMiniCard(type: .standard, name: "Sneha P, 26", photo: Image("member-photo"),
                    badges: [.verified, .premium], details: ["5’6”", "Kayastha", "Pune, MH"],
                    action: ShMiniCardAction(label: "Connect Now", icon: "filled/check") {})
         ShMiniCard(type: .noPhotoFemale, name: "Sneha P, 26",
