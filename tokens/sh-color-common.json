@@ -3391,14 +3391,14 @@
       "figmaType": null,
       "values": {
         "Dark": {
-          "alias": "neutral/400",
-          "targetId": "VariableID:15:82",
+          "alias": "neutral/300",
+          "targetId": "VariableID:15:81",
           "setId": "VariableCollectionId:13:64",
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "neutral/400",
-          "targetId": "VariableID:15:82",
+          "alias": "neutral/300",
+          "targetId": "VariableID:15:81",
           "setId": "VariableCollectionId:13:64",
           "setName": "sh-color-basic"
         }
@@ -3406,7 +3406,7 @@
     },
     "placeholder/background/end": {
       "type": "color",
-      "description": "sh-color-common/placeholder/background/end\nPurpose: Bottom stop of the no-photo placeholder gradient; pure black so white overlay text stays readable. Use with its start stop.",
+      "description": "sh-color-common/placeholder/background/end\nPurpose: Bottom stop of the no-photo placeholder gradient; dark enough that white overlay text stays readable. Use with its start stop.",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -3415,14 +3415,14 @@
       "figmaType": null,
       "values": {
         "Dark": {
-          "alias": "neutral/black",
-          "targetId": "VariableID:15:88",
+          "alias": "neutral/700",
+          "targetId": "VariableID:15:85",
           "setId": "VariableCollectionId:13:64",
           "setName": "sh-color-basic"
         },
         "Light": {
-          "alias": "neutral/black",
-          "targetId": "VariableID:15:88",
+          "alias": "neutral/700",
+          "targetId": "VariableID:15:85",
           "setId": "VariableCollectionId:13:64",
           "setName": "sh-color-basic"
         }

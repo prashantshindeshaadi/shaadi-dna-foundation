@@ -49,7 +49,7 @@ Editable in Figma: the background and the silhouette are separate layers, so eit
   - 1:1 and 4:5: content centred vertically, no padding
   - Full: content at the top, padding top `sh-space/40`; the sh-overlay title starts just under the square
   - **Background**: rectangle, absolute, stretches to the frame. Linear gradient, top to bottom:
-    - Every size: two stops, `placeholder/background/start` (`neutral/400`) → `placeholder/background/end` (`neutral/black`). Same slate hue all the way down (no dull grey band), pure black at the bottom so white overlay text stays readable.
+    - Every size: two stops, `placeholder/background/start` → `placeholder/background/end` (values in `tokens/sh-color-common.json`). Same slate hue all the way down (no dull grey band), darkest at the bottom so white overlay text stays readable.
     - 1:1 and 4:5: the same gradient, stretched so the silhouette square shows the slice of Full that sits behind its silhouette (8%–38% of the Full height). A mini card looks like the big card, made small, not darker.
   - **Silhouette** (visible = Show silhouette): square frame, clips content
     - 1:1 and 4:5: fills the width, aspect locked
