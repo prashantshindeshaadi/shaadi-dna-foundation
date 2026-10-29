@@ -14,6 +14,7 @@
     - Buttons: Shaadi Chat and Send SMS only, with no details.
   - Both: "Connect Request Sent" and "This contact isn't counted as viewed" (privacy states never use a contact view).
 - Each variant has its own "When:" description; the old ones were copied from Number shown by mistake. The blueprint is corrected to match.
+- FPV page, "04 · Contact and phone number" › Premium › View Contact: both states now sit over the profile next to Number shown and No tokens, and the case note says when each opens. The sections to its right moved over to make room.
 
 ## Why
 When she hides her number, or shares it only with connections, the viewer can still reach her through Shaadi Chat or SMS. These states were part of the reviewed flow.
