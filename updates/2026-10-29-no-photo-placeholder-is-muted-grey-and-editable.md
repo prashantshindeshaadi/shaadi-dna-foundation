@@ -40,6 +40,13 @@
 - Profile-card "Photo request sent" in the No Photo Case showed a member photo behind the overlay; it's back on the grey requested image.
 - A short-lived version (commit 8d8dff7) baked the silhouette into the photo; this replaces it.
 
+## Overlay brings its own background
+- `sh-overlay` No photo / Photo requested (all 4) has a solid **Background**: `sh-avatar-placeholder` Full, Show silhouette off, filling the overlay. No opacity, no blur. Then the silhouette, title and button. Whatever photo sits underneath never shows.
+- Full background is two stops: `neutral/400` → `neutral/black`. The top is darker than before, the bottom pure black, and the middle stays slate (no dull grey band).
+- The silhouette is brighter: `sh-opacity/full` (was strong).
+- Fixed: profile-card "Photo request sent" had a hidden silhouette and a stale baked image behind it.
+- The two standalone grey `sh-user-images` tiles in "No Photo Case" were deleted (not needed; the overlay covers this case).
+
 ## Why
 The pink felt off-brand. Keeping the background and the silhouette as separate layers means either can change later without redrawing the other, and designs use the editable component rather than a pasted image.
 

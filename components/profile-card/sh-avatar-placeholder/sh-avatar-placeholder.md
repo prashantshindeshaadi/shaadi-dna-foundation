@@ -30,7 +30,7 @@ Profile card (migration, not yet core) · 6 variants · [Open in Figma](https://
 | Aspect Ratio | variant | 1:1, 4:5, Full | 1:1 |
 | Show silhouette | boolean | on, off | on |
 
-Show silhouette off = background only. `sh-user-images` Photo requested and the photo behind `sh-overlay` use that; the overlay's icon slot draws the silhouette, so it is never drawn twice.
+Show silhouette off = background only. `sh-overlay` No photo / Photo requested uses it as its own solid **Background** (no opacity, no blur), then draws the silhouette in its icon slot, so it is never drawn twice and never depends on the photo underneath.
 
 ## Anatomy
 
@@ -41,11 +41,11 @@ Editable in Figma: the background and the silhouette are separate layers, so eit
   - Full: content at the top, padding top `sh-space/40`; the sh-overlay title starts just under the square
   - **Background**: rectangle, absolute, stretches to the frame. Linear gradient, top to bottom:
     - 1:1 and 4:5: `neutral/300` → `neutral/400`
-    - Full: `neutral/300` → `neutral/400` (30%) → `neutral/600` (60%) → `neutral/800`, so white overlay text stays readable
+    - Full: two stops, `neutral/400` → `neutral/black`. Same slate hue all the way down (no dull grey band), pure black at the bottom so white overlay text stays readable
   - **Silhouette** (visible = Show silhouette): square frame, clips content
     - 1:1 and 4:5: fills the width, aspect locked
     - Full: 160 × 160
-    - **Art**: `sh-avatar-silhouette` (Gender) at 1×, filling the square, opacity `sh-opacity/strong`
+    - **Art**: `sh-avatar-silhouette` (Gender) at 1×, filling the square, opacity `sh-opacity/full`
 
 `sh-avatar-silhouette` (Gender Female · Male) is the silhouette art: soft white vectors in a square. Each figure is centred, with an even margin (84% of the square), so nothing touches an edge and both genders are the same size. Change the art there and every placeholder and overlay updates.
 
@@ -63,5 +63,5 @@ Code uses the flattened images in `assets/` (one JPG per Gender × Aspect Ratio,
 |---|---|---|
 | root | radius | Aspect Ratio=1:1 → sh-radius/full; 4:5 and Full → sh-radius/none |
 | root | padding top | Full → sh-space/40; otherwise sh-space/0 |
-| Background | fill | gradient on neutral/300, neutral/400, neutral/600, neutral/800 (see Anatomy) |
-| Silhouette › Art | opacity | sh-opacity/strong |
+| Background | fill | 1:1 and 4:5: neutral/300 → neutral/400; Full: neutral/400 → neutral/black |
+| Silhouette › Art | opacity | sh-opacity/full |
