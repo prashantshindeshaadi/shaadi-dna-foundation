@@ -2,11 +2,11 @@
 
 **Purpose:** The only place her number and email show. Opening it sends her a Connect request — every state shows "Connect Request Sent".
 
-**Built from:** sh-bottom-sheet + sh-action-island (Shaadi Chat, WhatsApp, Call) + sh-button.
+**Built from:** sh-bottom-sheet + sh-profile-identity (Visual slot: photo, name, Managed by) + sh-action-island (Shaadi Chat, WhatsApp, Call) + sh-button + sh-fpv-sheet-phone-footer (Note slot: toggle Show connect status, edit Note).
 
 **Switches:** State — Number shown · No tokens · Shown to connections (she shares her number only with connections: message, Shaadi Chat, Send SMS, email) · Number hidden (message, Shaadi Chat, Send SMS).
 
-**Rules:** one contact view is used on the first open per profile; the two privacy states never use a view. Shaadi Chat, WhatsApp, Call, SMS and Email never charge.
+**Rules:** one contact view is used on the first open per profile; the two privacy states never use a view. Shaadi Chat, WhatsApp, Call, SMS and Email never charge. Every button in the sheet is Medium; a lone primary is 200 wide, centred.
 
 Full profile view (migration, not yet core) · 4 variants · [Open in Figma](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2891-55240) (node `2891:55240`)
 
@@ -41,7 +41,7 @@ Full profile view (migration, not yet core) · 4 variants · [Open in Figma](htt
 Layer tree of `State=Number shown`. Nested components are shown by name; their internals live in their own blueprint.
 
 - root — frame
-  - sh-bottom-sheet — **sh-bottom-sheet** (Secondary action instance, Primary action instance, Body Managed by Parent, Title Meher Randhawa, Size Hug, Align Center, Actions Stacked)
+  - sh-bottom-sheet — **sh-bottom-sheet** (Secondary action instance, Primary action instance, Body Managed by Parent, Title Meher Randhawa, Type Relaxed, Align Center, Actions Stacked)
 
 ## Size
 

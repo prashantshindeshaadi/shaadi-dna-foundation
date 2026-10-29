@@ -63,6 +63,7 @@ work in progress and may still change.
 | `sh-pagination-item` | 3 | 2 | [sh-pagination-item/sh-pagination-item.md](sh-pagination-item/sh-pagination-item.md) | [`2718:41907`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2718-41907) |
 | `sh-photo-upload` | 4 | 1 | [sh-photo-upload/sh-photo-upload.md](sh-photo-upload/sh-photo-upload.md) | [`2719:42897`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2719-42897) |
 | `sh-photo-wrapper` | 1 | 3 | [sh-photo-wrapper/sh-photo-wrapper.md](sh-photo-wrapper/sh-photo-wrapper.md) | [`2530:10330`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2530-10330) |
+| `sh-profile-identity` | 1 | 3 | [sh-profile-identity/sh-profile-identity.md](sh-profile-identity/sh-profile-identity.md) | [`3698:79779`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=3698-79779) |
 | `sh-progress-bar` | 3 | 1 | [sh-progress-bar/sh-progress-bar.md](sh-progress-bar/sh-progress-bar.md) | [`2712:13063`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2712-13063) |
 | `sh-progress-ring` | 1 | 3 | [sh-progress-ring/sh-progress-ring.md](sh-progress-ring/sh-progress-ring.md) | [`2613:33495`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2613-33495) |
 | `sh-radio` | 10 | 2 | [sh-radio/sh-radio.md](sh-radio/sh-radio.md) | [`2496:22347`](https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-22347) |
