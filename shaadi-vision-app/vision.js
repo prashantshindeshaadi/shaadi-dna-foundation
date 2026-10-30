@@ -72,6 +72,11 @@
   const ui = { query: "", status: "all", iconKind: "line", iconQuery: "" };
   const $main = document.getElementById("main");
   const $nav = document.getElementById("nav");
+  // ?embed = the app inside the Mobile view phone frame (an iframe at phone width).
+  const EMBED = new URLSearchParams(location.search).has("embed");
+  const MOBILE_KEY = "vn-mobile-view";
+  const TABLET = matchMedia("(min-width: 768px)");
+  const DESKTOP = matchMedia("(min-width: 1024px)");
 
   // ---------- helpers ----------
 
@@ -110,9 +115,13 @@
     return `<div class="sh-tab-group vn-tabs" role="tablist">${items.map(([href, label]) =>
       `<a class="sh-tab-item" href="${href}" role="tab" aria-selected="${href === current}"><span class="sh-tab-item__label sh-title-md">${esc(label)}</span></a>`).join("")}</div>`;
   }
-  function row({ href, iconName, title, badge = "", subtitle = "", divider = true }) {
+  // A row: leading is the component's Figma thumbnail when there is one, else a pack icon in a circle.
+  function row({ href, iconName, thumb = "", title, badge = "", subtitle = "", divider = true }) {
+    const leading = thumb
+      ? `<span class="vn-thumb"><img src="${abs(FOUNDATION + thumb)}" alt="" loading="lazy"></span>`
+      : `<span class="sh-list-default__icon-circle"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(${iconUrl(`line/${iconName}.svg`)})" aria-hidden="true"></span></span>`;
     return `<div class="sh-list-default sh-list-default--icon-circle sh-list-default--chevron"><a class="sh-list-default__row" href="${href}">
-      <span class="sh-list-default__leading"><span class="sh-list-default__icon-circle"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(${iconUrl(`line/${iconName}.svg`)})" aria-hidden="true"></span></span></span>
+      <span class="sh-list-default__leading">${leading}</span>
       <span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">${esc(title)}</span>${badge}</span>
       ${subtitle ? `<span class="sh-list-default__subtitle sh-body-sm vn-clamp">${esc(subtitle)}</span>` : ""}</span>
       <span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(${iconUrl("line/arrow-right-01.svg")})" aria-hidden="true"></span></span>
@@ -163,12 +172,15 @@
 
   // ---------- bottom navigation (sh-navigation-bar) ----------
 
+  // sh-navigation-bar Device by breakpoint: Mobile (bottom, stacked) · Tablet (wide bottom, inline) · Desktop (sidebar, inline).
   function renderNav(tab) {
+    const device = EMBED || !TABLET.matches ? "" : DESKTOP.matches ? "desktop" : "tablet";
+    $nav.className = `sh-navigation-bar vn-nav${device ? ` sh-navigation-bar--${device}` : ""}${device === "desktop" ? "" : " vn-glass"}`;
     $nav.innerHTML = TABS.map((t) => {
       const on = t.id === tab;
-      return `<a class="sh-navigation-item" href="#/${t.id}"${on ? ' aria-current="page"' : ""}>
+      return `<a class="sh-navigation-item${device ? " sh-navigation-item--inline" : ""}" href="#/${t.id}"${on ? ' aria-current="page"' : ""}>
         <span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(${iconUrl(`${on ? "filled" : "line"}/${t.icon}.svg`)})" aria-hidden="true"></span></span>
-        <span class="sh-navigation-item__label sh-body-sm">${t.label}</span></a>`;
+        <span class="sh-navigation-item__label ${device ? "sh-title-md" : "sh-body-sm"}">${t.label}</span></a>`;
     }).join("");
   }
 
@@ -210,7 +222,7 @@
     const groups = {};
     for (const c of shown) (groups[c.group.replace(/ \(migration, not yet core\)/, "")] ||= []).push(c);
     box.innerHTML = Object.keys(groups).sort().map((g) => `<h2 class="vn-group sh-support-label">${esc(g)} · ${groups[g].length}</h2>${
-      groups[g].map((c, i) => row({ href: `#/${tab}/${c.name}`, iconName: componentIcon(c.name), title: c.name, badge: statusBadge(c),
+      groups[g].map((c, i) => row({ href: `#/${tab}/${c.name}`, iconName: componentIcon(c.name), thumb: c.thumb, title: c.name, badge: statusBadge(c),
         subtitle: c.purpose || "No purpose line in the blueprint yet.", divider: i < groups[g].length - 1 })).join("")}`).join("") ||
       emptyState("heart", "No component matches", "Try another word, or clear the stage filter.");
   }
@@ -224,6 +236,7 @@
       ? `<iframe class="vn-frame" title="${esc(c.name)} web build" src="${FOUNDATION}${esc(c.demo)}" data-autosize></iframe>`
       : emptyState("dna", "No web code yet", `The blueprint is ready; the web build of ${c.name} hasn't been written.`);
     return appHeader({ title: c.name, back: `#/${tab}` }) +
+      (c.thumb ? `<div class="vn-hero"><img src="${abs(FOUNDATION + c.thumb)}" alt="${esc(c.name)} in Figma"></div>` : "") +
       `<div class="vn-block"><div class="vn-pills">${statusBadge(c)}${platforms}<span class="vn-pill sh-support-meta">${c.variants} variants</span></div>
         <p class="sh-body-md vn-intro">${esc(c.purpose)}</p><div class="vn-buttons">${links}</div></div>
        <h2 class="vn-group sh-support-label">Where it is</h2><div class="vn-block">${stepper(c)}</div>
@@ -381,7 +394,8 @@
     else if (tab === "components" && second === "stories") html = pageStories();
     else html = second ? pageComponent(tab, second) : pageList(tab);
     $main.innerHTML = html;
-    $main.scrollTop = 0;
+    $main.classList.toggle("vn-screen--narrow", Boolean(SCREENS[tab]));
+    window.scrollTo(0, 0);
     const title = $main.querySelector("h1")?.textContent?.trim();
     document.title = title && tab !== "home" ? `${title} · Shaadi` : "Shaadi";
 
@@ -415,7 +429,36 @@
     }
   });
 
+  // ---------- Mobile view (desktop / tablet): the same app at phone width, in a phone frame ----------
+
+  const $phoneView = document.getElementById("phoneView");
+  const $phoneFrame = document.getElementById("phoneFrame");
+  function setMobileView(on) {
+    try { localStorage.setItem(MOBILE_KEY, on ? "1" : ""); } catch { /* private window */ }
+    if (on) {
+      $phoneFrame.src = `index.html?embed=1${location.hash}`;
+      $phoneView.hidden = false;
+    } else {
+      try { const h = $phoneFrame.contentWindow.location.hash; if (h) location.hash = h; } catch { /* not loaded */ }
+      $phoneView.hidden = true;
+      $phoneFrame.removeAttribute("src");
+    }
+  }
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("[data-mobile-view]")) setMobileView(true);
+    if (e.target.closest("[data-desktop-view]")) setMobileView(false);
+  });
+  // The frame and the page share the theme: a change in one reaches the other.
+  addEventListener("storage", (e) => { if (e.key === THEME_KEY) applyTheme(currentTheme()); });
+  for (const mq of [TABLET, DESKTOP]) mq.addEventListener("change", () => { route(); if (!TABLET.matches && !$phoneView.hidden) setMobileView(false); });
+
   async function start() {
+    if (EMBED) {
+      document.documentElement.classList.add("vn-embed");
+      document.querySelector(".vn-mode")?.remove();
+      const bar = document.querySelector(".vn-device__status");
+      new ResizeObserver(() => document.documentElement.style.setProperty("--vn-status-h", `${bar.offsetHeight}px`)).observe(bar);
+    }
     document.querySelectorAll("[data-icon]").forEach((el) => el.style.setProperty("--icon", `url(${iconUrl(el.dataset.icon)})`));
     applyTheme(currentTheme());
     try {
@@ -433,6 +476,9 @@
     }
     addEventListener("hashchange", route);
     route();
+    let mobile = "";
+    try { mobile = localStorage.getItem(MOBILE_KEY) || ""; } catch { /* private window */ }
+    if (!EMBED && mobile && TABLET.matches) setMobileView(true);
   }
   start();
 })();

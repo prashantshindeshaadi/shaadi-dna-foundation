@@ -18,16 +18,30 @@
   <link rel="stylesheet" href="vision.css">
 </head>
 <body>
-  <div class="vn-device" id="device">
-    <div class="vn-device__status sh-status-bar" aria-hidden="true">
-      <span class="sh-status-bar__time sh-body-md">12:30</span>
-      <span class="sh-status-bar__icons">
-        <span class="sh-icon sh-icon--16" data-icon="filled/signal.svg"></span>
-        <span class="sh-icon sh-icon--16" data-icon="filled/battery.svg"></span>
-      </span>
-    </div>
-    <main class="vn-screen" id="main" tabindex="-1"></main>
+  <div class="vn-app" id="app">
     <nav class="sh-navigation-bar vn-nav vn-glass" id="nav" aria-label="Main"></nav>
+    <div class="vn-device">
+      <div class="vn-device__status sh-status-bar" aria-hidden="true">
+        <span class="sh-status-bar__time sh-body-md">12:30</span>
+        <span class="sh-status-bar__icons">
+          <span class="sh-icon sh-icon--16" data-icon="filled/signal.svg"></span>
+          <span class="sh-icon sh-icon--16" data-icon="filled/battery.svg"></span>
+        </span>
+      </div>
+      <main class="vn-screen" id="main" tabindex="-1"></main>
+    </div>
+    <button class="vn-mode sh-button sh-button--secondary sh-button--sm" type="button" data-mobile-view>
+      <span class="sh-button__icon sh-icon" data-icon="line/phone.svg" aria-hidden="true"></span>
+      <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Mobile view</span></span>
+    </button>
+  </div>
+  <!-- Mobile view: the same app at phone width in an iframe, so every breakpoint and token acts as on a phone -->
+  <div class="vn-phone-view" id="phoneView" hidden>
+    <button class="sh-button sh-button--secondary sh-button--sm" type="button" data-desktop-view>
+      <span class="sh-button__icon sh-icon" data-icon="line/dashboard.svg" aria-hidden="true"></span>
+      <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Desktop view</span></span>
+    </button>
+    <div class="vn-phone"><iframe id="phoneFrame" title="Shaadi app, mobile view"></iframe></div>
   </div>
   <script src="vision.js"></script>
 </body>

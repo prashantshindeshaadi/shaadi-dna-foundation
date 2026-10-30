@@ -92,16 +92,19 @@ Platforms are Web (HTML/CSS), Jetpack Compose and SwiftUI only. No XML views, no
    icon files (`components/sh-button/sh-button.md` is hand-written and kept). One component only:
    call `blueprint()` from `tools/components.py` instead of rebuilding the index. Remove folders of
    components that no longer exist in Figma.
-4. **Web code + Code Connect**, exactly as `components/WEB.md` says: tokens only (`var(--sh-*)`),
+4. **Thumbnails.** In the user's Terminal, with their token from their shell:
+   `python3 tools/thumbnails.py <sh-name…>` (no names = all) saves `<sh-name>.thumb.png` next to each
+   blueprint; the Vision App shows it in lists and on the component page.
+5. **Web code + Code Connect**, exactly as `components/WEB.md` says: tokens only (`var(--sh-*)`),
    every variant and state, tap area 48, composites use their parts' classes, a v2 template whose
    first lines are `// url=<Figma link>` and `// component=<sh-name>`.
-5. **Compose / SwiftUI drafts** (when asked): one shared model on every platform (a `type` enum per
+6. **Compose / SwiftUI drafts** (when asked): one shared model on every platform (a `type` enum per
    variant, the content data, the Figma booleans, one callback per tap). Tokens only: Compose
    `colorResource` / `dimensionResource` / `ResourcesCompat.getFloat`, gradients as a `Brush`;
    SwiftUI `SH.*` and `.shTextStyle`. Generated helpers: `ShGradient.<name>()`, `Modifier.shGlass`,
    `Modifier.shShadow`, `shOpacity(id)`, `shType()` (Android); `.shShadow`, `.shGlass` (iOS).
    Images the code needs go in the component's `assets/`, exported from Figma (SVG + @3x PNG).
-6. **Status** in `components/status.json` (FOUNDATION.md §8): a component synced here is `synced`
+7. **Status** in `components/status.json` (FOUNDATION.md §8): a component synced here is `synced`
    (Core-page components are by default). Section 9 moves it to `handed-off`; developers move it to
    `in-development` and `in-review`; `core` (Final) only after their release and the Figma alignment.
    Never mark something `core` yourself.

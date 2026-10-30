@@ -6,7 +6,7 @@ Build the Vision app's catalogue manifest.
 
 Reads every component blueprint (components/**/<sh-name>.md), components/status.json and the icon
 folders, and writes dist/vision/catalog.json for the Shaadi Vision App (../shaadi-vision-app): name,
-group, status, purpose, keywords, variant count, Figma link, blueprint path, which platforms have code,
+group, status, purpose, keywords, variant count, Figma thumbnail, Figma link, blueprint path, which platforms have code,
 and the web demo page if there is one. Paths are relative to shaadi-dna-foundation/.
 Also writes dist/vision/components.css: one @import per component stylesheet, parts before the components
 that use them (the order each demo page links them), so the app can use every DNA class. Standard library only.
@@ -40,6 +40,7 @@ def component(md_path):
     text = open(md_path, encoding="utf-8").read()
     head = HEADER.search(text)
     demo = os.path.join(folder, "web", name + ".html")
+    thumb = os.path.join(folder, name + ".thumb.png")   # tools/thumbnails.py, from Figma
     return {
         "name": name,
         "group": head.group("group").strip() if head else "Other",
@@ -50,6 +51,7 @@ def component(md_path):
         "blueprint": rel(md_path),
         "platforms": [label for sub, label in PLATFORMS if os.path.isdir(os.path.join(folder, sub))],
         "demo": rel(demo) if os.path.isfile(demo) else "",
+        "thumb": rel(thumb) if os.path.isfile(thumb) else "",
     }
 
 
