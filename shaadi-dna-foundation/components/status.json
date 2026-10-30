@@ -1,9 +1,10 @@
 {
  "_about": [
-  "Where each sh-* component is in its life: draft -> proposed -> in-refinement -> core (FOUNDATION.md §8).",
+  "Where each sh-* component is (FOUNDATION.md §8): draft -> synced -> handed-off -> in-development -> in-review -> core.",
+  "draft: being designed in Figma. synced: pulled from Figma into this repo (blueprint + web code). handed-off: sent to the developers' repo (mr = the merge request). in-development: a developer is building it. in-review: the designer is checking the developer's version. core: released in the developers' library and Figma aligned (final).",
   "Hand-kept: blueprints are generated from Figma, this file is not. Change a status in the same commit as the work that changed it.",
-  "Unlisted components take a default: Core page = proposed, migration pages = draft. Nothing is core until a developer release.",
-  "Each entry: status (required), mr (link to the merge request, for in-refinement and core), owner, note."
+  "Unlisted components take a default: Core page = synced, migration pages = draft. Nothing is core until a developer release.",
+  "Each entry: status (required), mr (merge request link, from handed-off on), owner, note."
  ],
  "components": {}
 }

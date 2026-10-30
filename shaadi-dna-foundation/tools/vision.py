@@ -19,7 +19,7 @@ OUT = os.path.join(ROOT, "dist", "vision", "catalog.json")
 
 HEADER = re.compile(r"^(?P<group>[^·\n]+?) · (?P<variants>\d+) variants? · \[Open in Figma\]\((?P<figma>[^)]+)\)", re.M)
 PLATFORMS = (("web", "Web"), ("compose", "Compose"), ("swiftui", "SwiftUI"))
-STATUSES = ("draft", "proposed", "in-refinement", "core")   # FOUNDATION.md §8, in order
+STATUSES = ("draft", "synced", "handed-off", "in-development", "in-review", "core")   # FOUNDATION.md §8, in order
 
 
 def field(text, label):
@@ -61,7 +61,7 @@ def components():
 
 
 def apply_status(found):
-    """Status from components/status.json; unlisted: Core page = proposed, migration pages = draft."""
+    """Status from components/status.json; unlisted: Core page = synced, migration pages = draft."""
     listed = json.load(open(STATUS, encoding="utf-8")).get("components", {}) if os.path.isfile(STATUS) else {}
     names = {c["name"] for c in found}
     for name, entry in listed.items():
@@ -74,7 +74,7 @@ def apply_status(found):
         if entry:
             c.update(status=entry["status"], statusSet=True, mr=entry.get("mr", ""), owner=entry.get("owner", ""), note=entry.get("note", ""))
         else:
-            c.update(status="proposed" if c["group"] == "Core" else "draft", statusSet=False, mr="", owner="", note="")
+            c.update(status="synced" if c["group"] == "Core" else "draft", statusSet=False, mr="", owner="", note="")
     return found
 
 

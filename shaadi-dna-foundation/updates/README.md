@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-30 — Six component stages, shown as a stepper](2026-10-30-six-component-stages-shown-as-a-stepper.md)
 - [2026-10-30 — Web code for lists, header, data card, graphic and overlays](2026-10-30-web-code-for-lists-header-data-card-graphic-and-ov.md)
 - [2026-10-30 — The Vision App looks like a Shaadi app](2026-10-30-the-vision-app-looks-like-a-shaadi-app.md)
 - [2026-10-30 — Web code for the rest of the core components](2026-10-30-web-code-for-the-rest-of-the-core-components.md)

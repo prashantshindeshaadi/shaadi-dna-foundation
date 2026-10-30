@@ -249,16 +249,20 @@ but still in progress. Icons: `components/icons.md`, SVGs in `icons/`.
 Need something that has no blueprint? Build from these rules and **flag it** —
 don't invent one.
 
-**Status: Draft → Proposed → In refinement → Core.** Every component has one,
-in `components/status.json` (unlisted: Core page = Proposed, migration pages =
-Draft). The Shaadi Vision App shows it.
+**Status: Draft → Synced → Handed to dev → In development → In review → Final.**
+Every component has one, in `components/status.json` (ids `draft`, `synced`,
+`handed-off`, `in-development`, `in-review`, `core`; unlisted: Core page =
+Synced, migration pages = Draft). The Shaadi Vision App shows it.
 - **Draft:** the designer is still designing it in Figma.
-- **Proposed:** marked Ready for dev; blueprint and draft code are in this repo.
-- **In refinement:** a developer builds the real component in the developers'
-  repo (API, every state, accessibility, tests). The designer reviews it in the
-  Vision App; changes go back to the developer.
-- **Core:** released in the developers' library **and** the Figma component
-  aligned to what shipped, then moved to the Core page. Only Core is final.
+- **Synced:** marked Ready for dev and pulled into this repo: blueprint and
+  web code.
+- **Handed to dev:** sent to the developers' repo as a merge request.
+- **In development:** a developer builds the real component there (API, every
+  state, accessibility, tests).
+- **In review:** the designer checks the developer's version in the Vision App;
+  changes go back to the developer.
+- **Final (`core`):** released in the developers' library **and** the Figma
+  component aligned to what shipped, then moved to the Core page.
 
 Every interactive element defines default, hover, pressed, focus, disabled,
 and loading where async. Pressed must differ visibly from hover.

@@ -101,9 +101,10 @@ Platforms are Web (HTML/CSS), Jetpack Compose and SwiftUI only. No XML views, no
    SwiftUI `SH.*` and `.shTextStyle`. Generated helpers: `ShGradient.<name>()`, `Modifier.shGlass`,
    `Modifier.shShadow`, `shOpacity(id)`, `shType()` (Android); `.shShadow`, `.shGlass` (iOS).
    Images the code needs go in the component's `assets/`, exported from Figma (SVG + @3x PNG).
-6. **Status.** A component synced here as Ready for dev is `proposed` in `components/status.json`
-   (Core-page components are proposed by default). Developers move it to `in-refinement` and `core`
-   (FOUNDATION.md §8). Never mark something `core` yourself.
+6. **Status** in `components/status.json` (FOUNDATION.md §8): a component synced here is `synced`
+   (Core-page components are by default). Section 9 moves it to `handed-off`; developers move it to
+   `in-development` and `in-review`; `core` (Final) only after their release and the Figma alignment.
+   Never mark something `core` yourself.
 
 **Many at once:** build leaves first, then composites, grouped so each builder owns its parts. Write
 the class/API contract first when builders run in parallel. Afterwards re-run `tools/components.py`
@@ -190,13 +191,13 @@ in Light and Dark, and give the designer the link. If a Jira story uses the comp
 
 ## 9. Hand off to developers
 
-Once a component is `proposed` and its code is on GitLab, the developers refine it in **their**
+Once a component is `synced` and its code is on GitLab, the developers refine it in **their**
 Shaadi DNA repo (FOUNDATION.md §8):
 
 1. Open a merge request in the developers' repo with the token files from `dist/` and the
    component's blueprint and draft code, titled `<sh-name>: proposed from Shaadi DNA`.
-2. Link the merge request in `components/status.json` (`mr`), leaving the status `proposed` until a
-   developer starts (`in-refinement`).
+2. Set it to `handed-off` in `components/status.json` with the merge request link (`mr`). Developers
+   move it on (`in-development`, `in-review`).
 3. Never merge it, and never mark a component `core`: developers do both after review.
 
 **Not connected yet.** The developers' repo isn't set up for this (the DS team has to agree: MG-1034

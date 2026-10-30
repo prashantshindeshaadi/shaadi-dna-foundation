@@ -65,10 +65,14 @@ a.sh-button { text-decoration: none; }
 
 /* Status badge: §4.2 soft pairs; the word itself is the non-colour cue */
 .vn-status { display: inline-flex; align-items: center; flex: none; align-self: flex-start; padding: var(--sh-space-2) var(--sh-space-8); border-radius: var(--sh-radius-tag); border: var(--sh-stroke-thin) solid; white-space: nowrap; }
-.vn-status--draft { background: var(--sh-background-strong); color: var(--sh-text-secondary); border-color: var(--sh-border-default); }
-.vn-status--proposed { background: var(--sh-semantic-information-background-soft-default); color: var(--sh-semantic-information-text-on-soft); border-color: var(--sh-semantic-information-border-soft); }
-.vn-status--in-refinement { background: var(--sh-semantic-warning-background-soft-default); color: var(--sh-semantic-warning-text-on-soft); border-color: var(--sh-semantic-warning-border-soft); }
-.vn-status--core { background: var(--sh-semantic-success-background-soft-default); color: var(--sh-semantic-success-text-on-soft); border-color: var(--sh-semantic-success-border-soft); }
+.vn-status--design { background: var(--sh-background-strong); color: var(--sh-text-secondary); border-color: var(--sh-border-default); }
+.vn-status--repo { background: var(--sh-semantic-information-background-soft-default); color: var(--sh-semantic-information-text-on-soft); border-color: var(--sh-semantic-information-border-soft); }
+.vn-status--dev { background: var(--sh-semantic-warning-background-soft-default); color: var(--sh-semantic-warning-text-on-soft); border-color: var(--sh-semantic-warning-border-soft); }
+.vn-status--final { background: var(--sh-semantic-success-background-soft-default); color: var(--sh-semantic-success-text-on-soft); border-color: var(--sh-semantic-success-border-soft); }
+
+/* Stage stepper (sh-stepper) */
+.vn-stepper { margin: 0; padding: var(--sh-space-padding-card); list-style: none; background: var(--sh-background-default); border: var(--sh-stroke-thin) solid var(--sh-border-soft); border-radius: var(--sh-radius-card); max-width: calc(var(--sh-space-80) * 6); }
+.vn-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* Pills (platforms, keywords) */
 .vn-pills { display: flex; flex-wrap: wrap; gap: var(--sh-space-4); }

@@ -31,12 +31,15 @@
     { id: "shadows", title: "Shadows" },
     { id: "icons", title: "Icons" },
   ];
-  // Component life (FOUNDATION.md §8). Colours are §4.2 soft pairs; the word itself is the non-colour cue.
+  // Component life (FOUNDATION.md §8), in order. phase picks the badge colour (§4.2 soft pairs);
+  // the word itself is the non-colour cue.
   const STATUS = {
-    "draft": { label: "Draft", hint: "Still being designed in Figma" },
-    "proposed": { label: "Proposed", hint: "Ready for dev: blueprint and draft code in the repo" },
-    "in-refinement": { label: "In refinement", hint: "A developer is building it properly" },
-    "core": { label: "Core", hint: "Released in the developers' library, Figma aligned" },
+    "draft": { label: "Draft", phase: "design", hint: "Being designed in Figma" },
+    "synced": { label: "Synced", phase: "repo", hint: "Pulled from Figma into the repo: blueprint and web code" },
+    "handed-off": { label: "Handed to dev", phase: "repo", hint: "Sent to the developers' repo as a merge request" },
+    "in-development": { label: "In development", phase: "dev", hint: "A developer is building the real component" },
+    "in-review": { label: "In review", phase: "dev", hint: "The designer is checking the developer's version" },
+    "core": { label: "Final", phase: "final", hint: "Released in the developers' library, Figma aligned" },
   };
 
   const state = { tokens: {}, catalog: { components: [], icons: {} }, stories: [], typo: [] };
@@ -63,7 +66,7 @@
   const isCore = (c) => c.group === "Core";
   const inTab = (tab) => (tab === "catalog" ? isCore : (c) => !isCore(c));
   const card = (inner, type = "elevated") => `<section class="sh-card sh-card--${type}"><div class="sh-card__content">${inner}</div></section>`;
-  const statusBadge = (c) => `<span class="vn-status vn-status--${esc(c.status)} sh-support-label" title="${esc(STATUS[c.status].hint)}${c.statusSet ? "" : " (default)"}">${esc(STATUS[c.status].label)}</span>`;
+  const statusBadge = (c) => `<span class="vn-status vn-status--${STATUS[c.status].phase} sh-support-label" title="${esc(STATUS[c.status].hint)}${c.statusSet ? "" : " (default)"}">${esc(STATUS[c.status].label)}</span>`;
   const chip = (label, attrs, pressed) => `<button class="sh-chip" type="button" aria-pressed="${pressed}" ${attrs}><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">${label}</span></span></button>`;
   const button = (href, label, iconPath, type = "secondary") => `<a class="sh-button sh-button--${type} sh-button--md" href="${esc(href)}" target="_blank" rel="noopener">${icon(iconPath, 16, "sh-button__icon")}<span class="sh-button__text"><span class="sh-button__label sh-button-md">${esc(label)}</span></span></a>`;
   const head = (title, text) => `<div class="vn-head"><h1 class="sh-heading-lg">${esc(title)}</h1>${text ? `<p class="sh-body-md">${text}</p>` : ""}</div>`;
@@ -122,9 +125,9 @@
         ${stat(nIcons, "Icons", "#/home")}
         ${stat(state.stories.length, "Stories", "#/stories")}
       </div>
-      <section class="vn-section"><h2 class="sh-heading-md">Component status</h2><p class="sh-body-md">Draft → Proposed → In refinement → Core.</p>
+      <section class="vn-section"><h2 class="sh-heading-md">Component status</h2><p class="sh-body-md">${Object.values(STATUS).map((s) => s.label).join(" → ")}</p>
         <div class="vn-stats">${Object.entries(STATUS).map(([id, s]) => card(
-          `<span class="sh-display vn-stat">${comps.filter((c) => c.status === id).length}</span><span class="vn-status vn-status--${id} sh-support-label">${s.label}</span><span class="sh-body-sm vn-muted">${s.hint}</span>`)).join("")}</div>
+          `<span class="sh-display vn-stat">${comps.filter((c) => c.status === id).length}</span><span class="vn-status vn-status--${s.phase} sh-support-label">${s.label}</span><span class="sh-body-sm vn-muted">${s.hint}</span>`)).join("")}</div>
       </section>
       <nav class="vn-sub vn-glass" aria-label="Foundation sections" id="sub">${FOUNDATION_SECTIONS.map((s, i) => chip(s.title, `data-jump="${s.id}"`, i === 0)).join("")}</nav>
       ${sections}`;
@@ -278,7 +281,24 @@
        <p class="sh-body-sm vn-muted" style="margin-top:var(--sh-space-8)">${esc(STATUS[c.status].hint)}${extra ? ` · ${extra}` : ""}</p>
        ${c.keywords.length ? `<div class="vn-pills" style="margin-top:var(--sh-space-8)">${c.keywords.map((k) => `<span class="vn-pill sh-support-meta">${esc(k)}</span>`).join("")}</div>` : ""}
        <div class="vn-links">${links}</div>
+       <section class="vn-section"><h2 class="sh-heading-md">Where it is</h2>${stepper(c)}</section>
        <section class="vn-section"><h2 class="sh-heading-md">Live web build</h2>${demo}</section>`;
+  }
+
+  // The stage as a sh-stepper: stages before this one Done, this one Current (Done when it's Final), the rest Pending.
+  function stepper(c) {
+    const ids = Object.keys(STATUS);
+    const at = ids.indexOf(c.status);
+    return `<ol class="sh-stepper-list vn-stepper">${ids.map((id, i) => {
+      const done = i < at || (i === at && id === "core");
+      const kind = done ? "" : i === at ? " sh-stepper--current" : " sh-stepper--pending";
+      const marker = done ? `<span class="sh-stepper__check sh-icon sh-icon--12" style="--icon:url(${iconUrl("filled/check.svg")})"></span>` : `<span class="sh-stepper__dot"></span>`;
+      const word = done ? "Done" : i === at ? "Now" : "Next";
+      return `<li class="sh-stepper${kind}"${i === at ? ' aria-current="step"' : ""}>
+        <span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker">${marker}</span>${i < ids.length - 1 ? '<span class="sh-stepper__connector"></span>' : ""}</span>
+        <span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">${STATUS[id].label}<span class="vn-sr"> (${word})</span></span>
+        <span class="sh-stepper__subtitle sh-body-sm">${STATUS[id].hint}</span></span></li>`;
+    }).join("")}</ol>`;
   }
 
   // ---------- Stories ----------
