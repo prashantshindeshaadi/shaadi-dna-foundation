@@ -108,8 +108,11 @@ views, no UIKit.
    (`var(--sh-…)` on web, the Android and iOS names on Compose and SwiftUI). Never
    hard-code values.
 4. **One Code Connect config per platform**, each scoped to its own subfolders:
-   - Web — `figma.config.json` with the `html` parser, include `components/**/web/*`;
-     publish `npx figma connect publish`.
+   - Web — Code Connect CLI v2 template files (`import figma from "figma"`, first line
+     `// url=<Figma node URL>`). `figma.config.json`: `language: html`, label `Web`, include
+     `components/**/web/*.figma.ts`. Check with `npx figma connect parse`; publish with
+     `npx figma connect publish` (`npm install` once; `FIGMA_ACCESS_TOKEN` in your shell).
+     CLI v2 has no parsers: never write `@figma/code-connect/html` files.
    - Compose — Figma's Gradle plugin, `*.figma.kt` with `@FigmaConnect`;
      publish `./gradlew figmaCodeConnectPublish`.
    - SwiftUI — Figma's Swift package, `*.figma.swift`;
