@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=594-31711
+// component=sh-divider
 // Code Connect template · sh-divider → HTML/CSS
 // Every variant rendered: sh-divider.html · styles: sh-divider.css (needs tokens.css)
 // Publish: npx figma connect publish   (needs a Figma access token in FIGMA_ACCESS_TOKEN)

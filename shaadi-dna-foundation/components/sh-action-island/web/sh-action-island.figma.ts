@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16928
+// component=sh-action-island
 // Code Connect template · sh-action-island → HTML/CSS
 // Every variant rendered: sh-action-island.html · styles: sh-action-island.css (needs tokens.css, sh-typo.css,
 // sh-icon.css, sh-button.css, sh-icon-button.css, sh-icon-button-with-label.css, sh-text-link.css, sh-action-note.css)

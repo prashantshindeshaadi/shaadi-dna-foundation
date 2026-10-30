@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2239-13257
+// component=sh-avatar-placeholder
 // Code Connect template · sh-avatar-placeholder → HTML/CSS
 // Markup for every variant: sh-avatar-placeholder.html · styles: sh-avatar-placeholder.css
 // Publish: npx figma connect publish   (needs a Figma access token in FIGMA_ACCESS_TOKEN)

@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=567-26954
+// component=sh-icon-button
 // Code Connect template · sh-icon-button → HTML/CSS
 // Every variant rendered: sh-icon-button.html · styles: sh-icon-button.css (needs tokens.css, sh-typo.css, sh-icon.css)
 // Publish: npx figma connect publish   (needs a Figma access token in FIGMA_ACCESS_TOKEN)

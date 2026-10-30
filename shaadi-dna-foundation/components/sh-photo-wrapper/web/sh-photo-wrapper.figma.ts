@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2530-10330
+// component=sh-photo-wrapper
 // Code Connect template · sh-photo-wrapper → HTML/CSS
 // Markup: sh-photo-wrapper.html · styles: sh-photo-wrapper.css
 // The photo and the overlay come from their own connections (sh-user-images, sh-overlay).

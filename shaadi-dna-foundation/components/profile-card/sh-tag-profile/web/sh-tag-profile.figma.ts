@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2813-41954
+// component=sh-tag-profile
 // Code Connect template · sh-tag-profile → HTML/CSS
 // All types: sh-tag-profile.html · styles: sh-tag.css + sh-tag-profile.css (needs tokens.css, sh-typo.css, sh-icon.css)
 // Publish: npx figma connect publish   (needs a Figma access token in FIGMA_ACCESS_TOKEN)

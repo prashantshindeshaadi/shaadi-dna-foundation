@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2198-32247
+// component=sh-icon-button-with-label
 // Code Connect template · sh-icon-button-with-label → HTML/CSS
 // Every variant rendered: sh-icon-button-with-label.html · styles: sh-icon-button-with-label.css
 // (needs tokens.css, sh-typo.css, sh-icon.css, sh-icon-button.css)

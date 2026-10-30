@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2780-68360
+// component=sh-mini-card
 // Code Connect template · sh-mini-card → HTML/CSS
 // Every variant: sh-mini-card.html · styles: sh-mini-card.css (needs tokens.css, sh-typo.css, sh-icon.css,
 // sh-user-images.css, sh-avatar-placeholder.css, sh-avatar.css, sh-info-detail.css, sh-button.css)

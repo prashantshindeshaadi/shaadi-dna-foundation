@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2594-16750
+// component=sh-action-note
 // Code Connect template · sh-action-note → HTML/CSS
 // Every variant rendered: sh-action-note.html · styles: sh-action-note.css
 // (needs tokens.css, sh-typo.css, sh-icon.css, sh-text-link.css)

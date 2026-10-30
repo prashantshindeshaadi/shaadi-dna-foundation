@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2496-27797
+// component=sh-profile-card-info
 // Code Connect template · sh-profile-card-info → HTML/CSS
 // Rendered combinations: sh-profile-card-info.html · styles: sh-profile-card-info.css (needs tokens.css, sh-typo.css,
 // sh-icon.css, sh-tag.css, sh-tag-profile.css, sh-info-detail.css, sh-divider.css + the island's stylesheets)

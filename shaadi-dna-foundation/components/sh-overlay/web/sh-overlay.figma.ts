@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2314-18393
+// component=sh-overlay
 // Code Connect template · sh-overlay → HTML/CSS
 // Markup for every variant: sh-overlay.html · styles: sh-overlay.css (place it inside a positioned photo area or section)
 // One connection per Surface × Type, because each variant has different parts.

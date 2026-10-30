@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2486-15378
+// component=sh-avatar
 // Code Connect template · sh-avatar → HTML/CSS
 // Every variant: sh-avatar.html · styles: sh-avatar.css (needs tokens.css, sh-typo.css, sh-user-images.css, sh-avatar-glyph.css)
 // Publish: npx figma connect publish   (needs a Figma access token in FIGMA_ACCESS_TOKEN)

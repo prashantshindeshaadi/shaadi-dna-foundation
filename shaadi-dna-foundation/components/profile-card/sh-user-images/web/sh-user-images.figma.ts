@@ -1,4 +1,5 @@
 // url=https://www.figma.com/design/l1SuD1Q1l8QXGvtomszGYW/Shaadi-DNA?node-id=2248-13619
+// component=sh-user-images
 // Code Connect template · sh-user-images → HTML/CSS
 // Markup for every variant: sh-user-images.html · styles: sh-user-images.css
 // Female 1–21 / Male 1–6 are design-only sample photos: the app passes the member's photo (member-photo.jpg below).
