@@ -11,11 +11,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Shaadi</title>
-  <link rel="stylesheet" href="../shaadi-dna-foundation/dist/css/tokens.css">
-  <link rel="stylesheet" href="../shaadi-dna-foundation/dist/sh-typo-kit/developer/web/sh-typo.css">
-  <link rel="stylesheet" href="../shaadi-dna-foundation/dist/vision/components.css">
-  <link rel="stylesheet" href="screens/screens.css">
-  <link rel="stylesheet" href="vision.css">
+  <!-- Every stylesheet and the script load with a version stamp, so a browser never mixes cached and new files. -->
+  <script>
+    window.VN_V = Date.now().toString(36);
+    for (const href of ["../shaadi-dna-foundation/dist/css/tokens.css", "../shaadi-dna-foundation/dist/sh-typo-kit/developer/web/sh-typo.css",
+                        "../shaadi-dna-foundation/dist/vision/components.css", "screens/screens.css", "vision.css"]) {
+      document.write(`<link rel="stylesheet" href="${href}?v=${window.VN_V}">`);
+    }
+  </script>
 </head>
 <body>
   <div class="vn-app" id="app">
@@ -43,6 +46,6 @@
     </button>
     <div class="vn-phone"><iframe id="phoneFrame" title="Shaadi app, mobile view"></iframe></div>
   </div>
-  <script src="vision.js"></script>
+  <script>document.write(`<script src="vision.js?v=${window.VN_V}"><\/script>`);</script>
 </body>
 </html>

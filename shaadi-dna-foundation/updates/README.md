@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-30 — Vision App never mixes cached and new files](2026-10-30-vision-app-never-mixes-cached-and-new-files.md)
 - [2026-10-30 — Vision App is responsive, with a Mobile view switch](2026-10-30-vision-app-is-responsive-with-a-mobile-view-switch.md)
 - [2026-10-30 — Web code for the last FPV components: 129 of 130 done](2026-10-30-web-code-for-the-last-fpv-components-129-of-130-do.md)
 - [2026-10-30 — Web code for the full-profile-view sections](2026-10-30-web-code-for-the-full-profile-view-sections.md)
