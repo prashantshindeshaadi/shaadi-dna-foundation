@@ -1,0 +1,34 @@
+# Shaadi Vision: check the foundation on every push; on main, publish the Vision App with GitLab Pages,
+# so its link always shows the latest components and their stages (components/status.json).
+
+image: python:3.12-slim
+
+stages: [check, deploy]
+
+check:
+  stage: check
+  script:
+    - python3 shaadi-dna-foundation/tools/check.py      # aliases, descriptions, scopes, fonts, contrast
+    - python3 shaadi-dna-foundation/tools/build.py      # dist/ and the Vision App catalog
+
+# Known gaps (values with no token yet) show here as a warning; they don't block publishing.
+web-check:
+  stage: check
+  allow_failure: true
+  script:
+    - python3 shaadi-dna-foundation/tools/web_check.py --all
+
+pages:
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  script:
+    - python3 shaadi-dna-foundation/tools/build.py
+    - mkdir -p public
+    - cp -R shaadi-vision-app public/
+    - mkdir -p public/shaadi-dna-foundation
+    - cp -R shaadi-dna-foundation/dist shaadi-dna-foundation/components shaadi-dna-foundation/icons public/shaadi-dna-foundation/
+    - rm -f public/shaadi-dna-foundation/dist/sh-typo-kit.zip
+    - printf '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=shaadi-vision-app/"><title>Shaadi DNA</title><a href="shaadi-vision-app/">Shaadi DNA</a>\n' > public/index.html
+  artifacts:
+    paths: [public]
