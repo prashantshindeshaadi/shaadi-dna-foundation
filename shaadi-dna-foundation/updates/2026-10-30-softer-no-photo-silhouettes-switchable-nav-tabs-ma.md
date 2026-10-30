@@ -7,6 +7,7 @@
 - `sh-navigation-item` has a **Tab** switch (Home, Matches, Inbox, Chat, Updates, Premium, Premium offer). The icon and label come with the Tab; the old free Label and Icon properties are gone.
 - `sh-navigation-bar` is now **Device** (Mobile, Tablet, Desktop) + **Show tab 6**. Its six slots (Tab 1–6) are exposed tabs, so any slot can be any tab and any slot can be active. The old Active switch on the bar is gone.
 - Nav web code matches Figma: glass bar (`sh-gradient/translucent/light/strong`, translucent light border, background blur), tabs that hug their content and spread evenly, tertiary inactive tabs, active icon in `sh-gradient/brand`, brand and neutral badges. Code Connect templates read the new Tab and slot properties.
+- `sh-avatar-silhouette` has Jetpack Compose (`ShAvatarSilhouette`) and SwiftUI (`ShAvatarSilhouette`) code with Code Connect, next to its web code.
 - New icon `matches` (line + filled). `inbox` now has the app's envelope. The icon list is re-exported with its search keywords; a few glyphs that had drifted from Figma are refreshed.
 
 ## Why
