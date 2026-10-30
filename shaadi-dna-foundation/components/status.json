@@ -6,5 +6,10 @@
   "Unlisted components take a default: Core page = synced, migration pages = draft. Nothing is core until a developer release.",
   "Each entry: status (required), mr (merge request link, from handed-off on), owner, note."
  ],
- "components": {}
+ "components": {
+  "sh-avatar-silhouette": {
+   "status": "synced",
+   "note": "Female + Male art matches Figma (2026-10-30); Markdown Code Connect on GitLab"
+  }
+ }
 }
