@@ -1,0 +1,75 @@
+/*
+ * sh-fpv-lifestyle — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-lifestyle.md · Figma node 2877:19613 (Plan Free × State Visible NRI / Visible RI = 2 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css · components/sh-card/web/sh-card.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-list/web/sh-list.css ·
+ *   components/sh-list-default/web/sh-list-default.css (Interests rows) · components/sh-list-info/web/sh-list-info.css ·
+ *   components/fpv/sh-fpv-locked-text/web/sh-fpv-locked-text.css
+ *
+ *   <section class="sh-fpv-lifestyle" aria-labelledby="lifestyle-title">
+ *     <div class="sh-fpv-section-title">… "Lifestyle & Interests", no action …</div>
+ *     <div class="sh-fpv-lifestyle__content">
+ *       <div class="sh-fpv-lifestyle__basics">
+ *         <section class="sh-fpv-lifestyle__card sh-card">                                 Lifestyle
+ *           <h3 class="sh-card__label sh-support-micro">Lifestyle</h3>
+ *           <div class="sh-card__content">
+ *             <div class="sh-list sh-list--info"><div class="sh-list-info">… diet …</div></div>
+ *             … Visible NRI only: the visa row (sh-list-info, icons/line/document-validation.svg) …
+ *           </div>
+ *         </section>
+ *         <section class="sh-fpv-lifestyle__card sh-card">                                 Interests
+ *           <h3 class="sh-card__label sh-support-micro">Interests</h3>
+ *           <div class="sh-card__content">
+ *             <div class="sh-list"><div class="sh-list-default sh-list-default--icon sh-list-default--inline">
+ *               <div class="sh-list-default__row">… icons/line/hobby-<hobby>.svg + title …</div>
+ *             </div></div> × 5
+ *           </div>
+ *         </section>
+ *       </div>
+ *     </div>
+ *   </section>
+ *
+ * Plan   Free only (both viewers look the same).
+ * State  (none) Visible NRI: she lives abroad, the visa row shows · --ri Visible RI: she lives in India, no visa row.
+ *        The modifier is a hook only: the variant changes content, not styles.
+ *        Tit for tat is its own component: sh-fpv-lifestyle-free-tit-for-tat.
+ * Parts  root (background/default) · sh-fpv-section-title (no badge, no action) · __content · __basics (the two cards
+ *        side by side) · __card (sh-card Outlined: label = Figma "card header", sh-typo/Support/Micro text/tertiary) ·
+ *        sh-list Info rows (Lifestyle) · sh-list Default Inline Icon rows (Interests).
+ * Not interactive: no states.
+ *
+ * Not bound in Figma (see the report): root padding and gaps (padding as sh-fpv-photo-break binds it:
+ * sh-space/20 sides, gap/section top and bottom; gaps sh-space/16), the gap between the two cards (gap/card),
+ * the card padding and radius (sh-card's own). The card edge is bound to a deleted variable (16:324): sh-card's
+ * border/soft is used.
+ */
+
+.sh-fpv-lifestyle {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-lifestyle__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sh-fpv-lifestyle__basics {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sh-space-gap-card);
+}
+
+.sh-fpv-lifestyle__card {
+  flex: 1 1 0;
+  min-width: 0;
+}

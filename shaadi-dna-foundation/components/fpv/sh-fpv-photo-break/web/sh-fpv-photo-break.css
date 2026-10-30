@@ -1,0 +1,61 @@
+/*
+ * sh-fpv-photo-break — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-photo-break.md · Figma node 2877:19691 (Gate Visible / Tit for tat / Accept gated / Upgrade gated)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css (Visible) · components/sh-button/web/sh-button.css ·
+ *   components/sh-graphic/web/sh-graphic.css · components/sh-blur-overlay/web/sh-blur-overlay.css (gated)
+ *
+ *   Visible:
+ *   <figure class="sh-fpv-photo-break">
+ *     <div class="sh-fpv-photo-break__photos">
+ *       <div class="sh-fpv-photo-break__photo sh-user-image"><img src="her-photo-3.jpg" alt="Meher, outdoors"></div>
+ *     </div>
+ *   </figure>
+ *
+ *   Gated (Tit for tat):
+ *   <figure class="sh-fpv-photo-break sh-fpv-photo-break--tit-for-tat">
+ *     <div class="sh-fpv-photo-break__photos">
+ *       <section class="sh-blur-overlay" aria-label="Photos locked">
+ *         … Backdrop + Graphic sh-graphic--photo-break · "Add your own photo to see Meher’s" · Tertiary "Upload Now" …
+ *       </section>
+ *     </div>
+ *   </figure>
+ *
+ * Gate   (none) Visible: her photo, cropped to fill.
+ *        --tit-for-tat: a Free viewer without a photo; half height: the sh-blur-overlay (3:1 visual + nudge) replaces
+ *          the photo. Unlock=Self, "Upload Now".
+ *        --accept-gated / --upgrade-gated: not used on the FPV (interspersed photos drop when the album is locked,
+ *          never blurred). Built for completeness: Unlock=Self "Connect Now" (Filled check) / Unlock=Upgrade "Upgrade Now".
+ *        The Gate modifiers are hooks only: the variant swaps content.
+ * Parts  root (sh-space/20 sides, gap/section top and bottom, background/default) · __photos (sh-radius/lg, an edge,
+ *        clips) · __photo (sh-user-image) · the gated message is sh-blur-overlay.
+ * States the button's (sh-button). Upload Now → add his photo.
+ *
+ * Not resolvable from the blueprint (see the report): the photo's height is fixed and unbound (built as a 4:5
+ * crop); the edge is bound to a deleted variable (16:324): border/soft. Figma's own locked overlay (pictogram 64,
+ * text, button; fill and edge on unknown variables) is replaced by sh-blur-overlay, the one lock for gated parts.
+ * The Photo break art is not in the repo.
+ */
+
+.sh-fpv-photo-break {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-photo-break__photos {
+  overflow: hidden;
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-lg);
+}
+
+.sh-fpv-photo-break__photo {
+  height: auto;
+  aspect-ratio: 4 / 5;   /* no token: Figma's photo height is fixed and unbound; a profile photo's 4:5 crop */
+}

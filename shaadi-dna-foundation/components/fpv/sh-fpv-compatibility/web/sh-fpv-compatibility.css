@@ -1,0 +1,122 @@
+/*
+ * sh-fpv-compatibility — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-compatibility.md · Figma node 2877:19517 (Astro cue × Version v1 · Keywords / Phase 2 · AI summary)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css · components/sh-avatar/web/sh-avatar.css ·
+ *   components/sh-text-link/web/sh-text-link.css (Phase 2 Read more)
+ *
+ *   <section class="sh-fpv-compatibility" aria-labelledby="compat-title">
+ *     <div class="sh-fpv-compatibility__card">
+ *       <div class="sh-fpv-compatibility__header">
+ *         <h2 class="sh-fpv-compatibility__title sh-heading-sm" id="compat-title">Compatibility</h2>
+ *         <span class="sh-fpv-compatibility__photos" aria-hidden="true">
+ *           <span class="sh-avatar sh-avatar--md sh-avatar--image"><span class="sh-avatar__media"><span class="sh-user-image"><img src="you.jpg" alt=""></span></span></span>
+ *           <span class="sh-avatar sh-avatar--md sh-avatar--image">… her photo …</span>
+ *         </span>
+ *       </div>
+ *       <div class="sh-fpv-compatibility__body">
+ *         <p class="sh-fpv-compatibility__summary sh-body-md">Living in Mumbai · Speaks Punjabi · Enjoys hiking, travelling</p>
+ *         <ul class="sh-fpv-compatibility__cues" role="list">
+ *           <li class="sh-fpv-compatibility__cue"><span class="sh-icon sh-icon--12" style="--icon:url(icons/line/link-rings.svg)" aria-hidden="true"></span>
+ *             <span class="sh-body-sm">7/9 Preference match</span></li>
+ *           <li class="sh-fpv-compatibility__cue">… icons/line/astro.svg · "28/36 Astro match" …</li>     Astro cue
+ *         </ul>
+ *       </div>
+ *     </div>
+ *   </section>
+ *
+ * Version   (none) v1 · Keywords: "Living in {city} · Speaks {language} · Enjoys {interests}" ·
+ *           --ai-summary Phase 2 · AI summary (off in v1): the summary is cut to 3 lines + "Read more"
+ *           (sh-text-link Neutral Medium, no border, trailing chevron; never a button).
+ * Astro cue boolean (default on): include the second __cue only when both added birth details and the score is
+ *           18/36 or more (South 6/10).
+ * Parts     root · __card (background/default, sh-shadow Default, an edge, sh-radius/card) · __header · __title
+ *           (sh-typo/Heading/SM, text/primary) · __photos (two sh-avatar Medium: viewer, her) · __body · __summary
+ *           (sh-typo/Body/MD/Default) · __cues · __cue (icon 12 + sh-typo/Body/SM/Default, text/primary).
+ * States    the link's (Phase 2). Nothing else is interactive.
+ *
+ * Not resolvable from the blueprint (see the report): the root fill, the card edge, the photo rings and the
+ * summary colour are bound to variables that aren't in tokens/ (root: none · edge: border/soft · rings: sh-avatar's
+ * own · summary: text/secondary, as the same variable reads elsewhere). The card's Bg gradient + two eclipses have
+ * no token or style and are not drawn. Card padding, radius and gaps are unbound (padding/card, radius/card, sh-space/16
+ * and sh-space/8). The photo size is unbound (sh-avatar Medium).
+ */
+
+.sh-fpv-compatibility {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sh-fpv-compatibility__card {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-padding-card);
+  overflow: hidden;
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-default);
+  box-shadow: var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-spread) var(--sh-shadow-default-color);
+}
+
+.sh-fpv-compatibility__header {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-16);
+}
+
+.sh-fpv-compatibility__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-compatibility__photos {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+.sh-fpv-compatibility__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sh-space-8);
+}
+
+.sh-fpv-compatibility__summary {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-compatibility--ai-summary .sh-fpv-compatibility__summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.sh-fpv-compatibility__cues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sh-space-8) var(--sh-space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sh-fpv-compatibility__cue {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  color: var(--sh-text-primary);
+}

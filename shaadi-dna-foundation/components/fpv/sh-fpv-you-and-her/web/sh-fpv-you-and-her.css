@@ -1,0 +1,116 @@
+/*
+ * sh-fpv-you-and-her — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-you-and-her.md · Figma node 2877:20098 (Verdict × State Default = 1 variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css · components/sh-divider/web/sh-divider.css ·
+ *   components/sh-text-link/web/sh-text-link.css · components/sh-list/web/sh-list.css ·
+ *   components/sh-list-default/web/sh-list-default.css · components/sh-list-preference/web/sh-list-preference.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css · components/sh-avatar/web/sh-avatar.css (Verdict)
+ *
+ *   <section class="sh-fpv-you-and-her" aria-labelledby="you-her-title">
+ *     <div class="sh-fpv-section-title">… "You & Her", no action …</div>
+ *     <div class="sh-fpv-you-and-her__verdict">…</div>                                         Verdict (off in v1)
+ *     <div class="sh-fpv-you-and-her__list">
+ *       <div class="sh-fpv-you-and-her__list-head" aria-hidden="true">
+ *         <span class="sh-fpv-you-and-her__list-label sh-support-label">Her Preferences</span>
+ *         <hr class="sh-divider sh-divider--soft">
+ *         <span class="sh-fpv-you-and-her__list-label sh-support-label">You Match</span>
+ *       </div>
+ *       <ul class="sh-fpv-you-and-her__rows" role="list">
+ *         <li class="sh-list sh-list--preference"><div class="sh-list-preference">… Age · 25 to 30 · Filled check …</div></li>
+ *         … Height · State Living In · Country Living In · Mother Tongue · Annual Income …
+ *       </ul>
+ *     </div>
+ *   </section>
+ *
+ * Verdict  boolean, off in v1. On: __verdict = "Meher’s Preferences" (Support/Micro) + "Strong Match" (Title/LG) +
+ *          both photos (sh-avatar Medium) + "You meet most of Meher’s preferences…" (Body/MD).
+ * State    Default only. A row's Match / No match is the sh-list-preference State (check is always Filled).
+ * Rules    different from Astro; never mix them.
+ * Parts    root · sh-fpv-section-title (Figma draws a plain "Section Title" text in Heading/SM; the part has the same
+ *          style) · __verdict · __list · __list-head (two Support/Label labels with a sh-divider Soft between) ·
+ *          __rows (sh-list Type=Preference rows). Not interactive, except a row's own Read more / Hide.
+ *
+ * Not resolvable from the blueprint (see the report): almost every colour is bound to variables that aren't in
+ * tokens/. Text read as the same variables read elsewhere (title text/primary, labels and line text/secondary,
+ * Support/Micro text/tertiary); root background/default; the line is sh-divider Soft; the photo rings are sh-avatar's.
+ * The Verdict box's fill and radius are unknown variables and its stroke is sh-color-basic/blue/400 (a raw step,
+ * not allowed): the box is drawn with no fill, edge or radius. Root padding and gaps are unbound (padding as
+ * sh-fpv-photo-break binds it; gaps sh-space/16 and sh-space/8).
+ */
+
+.sh-fpv-you-and-her {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+/* ---- Verdict (off in v1) ------------------------------------------------------------------------- */
+.sh-fpv-you-and-her__verdict {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+}
+
+.sh-fpv-you-and-her__verdict-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-16);
+}
+
+.sh-fpv-you-and-her__verdict-info {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sh-fpv-you-and-her__verdict-label { margin: 0; color: var(--sh-text-tertiary); }
+.sh-fpv-you-and-her__verdict-title { margin: 0; color: var(--sh-text-primary); }
+.sh-fpv-you-and-her__verdict-text { margin: 0; color: var(--sh-text-secondary); }
+
+.sh-fpv-you-and-her__photos {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+/* ---- Preference list ----------------------------------------------------------------------------- */
+.sh-fpv-you-and-her__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+}
+
+.sh-fpv-you-and-her__list-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-8);
+}
+
+/* the sh-divider fills the space between the two labels (Figma: fill × fixed) */
+.sh-fpv-you-and-her__list-head > .sh-divider {
+  flex: 1 1 auto;
+  align-self: center;
+  width: auto;
+}
+
+.sh-fpv-you-and-her__list-label {
+  flex: none;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-you-and-her__rows {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

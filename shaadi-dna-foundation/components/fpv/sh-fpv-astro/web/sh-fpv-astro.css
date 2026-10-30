@@ -1,0 +1,129 @@
+/*
+ * sh-fpv-astro — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-astro.md · Figma node 2877:20577 (Verdict × State × Chart = 8 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css · components/sh-progress-ring/web/sh-progress-ring.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-list/web/sh-list.css ·
+ *   components/sh-list-default/web/sh-list-default.css · components/sh-list-report/web/sh-list-report.css ·
+ *   components/sh-graphic/web/sh-graphic.css · components/sh-blur-overlay/web/sh-blur-overlay.css (missing details)
+ *
+ *   Both added:
+ *   <section class="sh-fpv-astro" aria-labelledby="astro-title">
+ *     <div class="sh-fpv-section-title">… "Astro Compatibility" + Unlock (Free) / badge + View (Premium) …</div>
+ *     <div class="sh-fpv-astro__score">
+ *       <div class="sh-fpv-astro__ring sh-progress-ring" role="meter" aria-label="Guna match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="28">
+ *         <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle>
+ *           <circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+ *         <span class="sh-progress-ring__value" aria-hidden="true">
+ *           <span class="sh-progress-ring__number sh-heading-md">28</span><span class="sh-progress-ring__total sh-body-sm-tight">of 36</span>
+ *         </span>
+ *       </div>
+ *       <div class="sh-fpv-astro__summary">
+ *         <p class="sh-fpv-astro__summary-title sh-title-lg">Guna match</p>
+ *         <p class="sh-fpv-astro__summary-text sh-body-md">Based on the birth details you and Meher shared</p>
+ *       </div>
+ *     </div>
+ *     <div class="sh-fpv-astro__verdict">…"Excellent Match" + line…</div>                        Verdict (off in v1)
+ *     <div class="sh-fpv-astro__reports">
+ *       <div class="sh-fpv-astro__report"><div class="sh-list sh-list--report"><div class="sh-list-report sh-list-report--premium-lock">…</div></div></div>
+ *       <hr class="sh-divider sh-divider--soft">
+ *       <div class="sh-fpv-astro__report">… compatibility report …</div>
+ *     </div>
+ *     <p class="sh-fpv-astro__downloads sh-body-sm">8 of 10 downloads left today</p>               Premium only
+ *     <div class="sh-fpv-astro__more"><button class="sh-button sh-button--tertiary sh-button--md" type="button">
+ *       <span class="sh-button__text"><span class="sh-button__label sh-button-md">See full match</span></span>
+ *       <span class="sh-button__icon sh-icon" style="--icon:url(icons/line/arrow-down-01.svg)" aria-hidden="true"></span></button></div>
+ *   </section>
+ *
+ * State    (none) Both added · Free: score + reports with the gold lock (sh-list-report Premium lock), Unlock in the title
+ *          --premium Both added · Premium: badge + View, reports download (sh-list-report Download), downloads left (10 a day)
+ *          --she-hasnt-added · --you-havent-added · --neither-added · --request-sent: no score; __lock (the light
+ *          "Tit-for-tat card · missing birth details": sh-blur-overlay Unlock=Self, Graphic Astro) with
+ *          "Ask Meher to add" / "Add my birth details" / "Add my birth details" / "Sent" (disabled). Title: Unlock.
+ *          The State modifiers are hooks only: the variant swaps content.
+ * Chart    (none) North: "Guna match", of 36 · --south: "Porutham match", of 10 (content only).
+ * Verdict  boolean, off in v1: include __verdict (label + line as one switch).
+ * Rules    the score shows only when both have added and it is 18/36 or more (South 6/10, to confirm).
+ *          You & Her is a different feature; never mix them.
+ * States   the buttons' and report rows' own. See full match → Astro match sheet · Ask Meher to add → Request sent ·
+ *          Add my birth details · Unlock → premium plans · Download (Premium, 10 a day).
+ *
+ * Not bound in Figma (see the report): root padding and gaps (padding as sh-fpv-photo-break binds it; gaps
+ * sh-space/16), the score row gap, the ring size, arc weight and arc colour (sh-progress-ring's own), the reports card
+ * radius (sh-radius/card). The reports card and lock edges are bound to a deleted variable (16:324): border/soft.
+ * The Astro art is not in the repo.
+ */
+
+.sh-fpv-astro {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+/* ---- Score row ----------------------------------------------------------------------------------- */
+.sh-fpv-astro__score {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-16);
+}
+
+/* The ring is sh-progress-ring; Figma binds its track and "of 36" differently here */
+.sh-fpv-astro__ring .sh-progress-ring__track { stroke: var(--sh-background-strong); }
+.sh-fpv-astro__ring .sh-progress-ring__total { color: var(--sh-text-tertiary); }
+
+.sh-fpv-astro__summary,
+.sh-fpv-astro__verdict {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sh-fpv-astro__summary-title,
+.sh-fpv-astro__verdict-title {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-astro__summary-text,
+.sh-fpv-astro__verdict-text {
+  margin: 0;
+  color: var(--sh-text-tertiary);
+}
+
+/* ---- Reports card -------------------------------------------------------------------------------- */
+.sh-fpv-astro__reports {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-astro__report { padding: var(--sh-space-0) var(--sh-space-16); }
+
+.sh-fpv-astro__downloads {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-astro__more {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ---- Missing birth details ----------------------------------------------------------------------- */
+.sh-fpv-astro__lock {
+  overflow: hidden;
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-lg);
+}

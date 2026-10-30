@@ -1,0 +1,101 @@
+/*
+ * sh-fpv-about — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-about.md · Figma node 2877:19581 (State Truncated (Read More) / Expanded / Short bio)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css · components/sh-text-link/web/sh-text-link.css ·
+ *   components/sh-chip/web/sh-chip.css · components/fpv/sh-fpv-locked-text/web/sh-fpv-locked-text.css
+ *
+ *   <section class="sh-fpv-about" aria-labelledby="about-title">
+ *     <div class="sh-fpv-about__bio">
+ *       <div class="sh-fpv-section-title">… "About", no action …</div>
+ *       <div class="sh-fpv-about__text-group">
+ *         <p class="sh-fpv-about__text sh-body-lg" id="about-bio">Books over Bollywood, ghazals over gym playlists…</p>
+ *         <button class="sh-fpv-about__more sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border"
+ *                 type="button" aria-expanded="false" aria-controls="about-bio">
+ *           <span class="sh-text-link__label sh-button-md">Read more</span>
+ *           <span class="sh-text-link__icon sh-icon" style="--icon:url(icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+ *         </button>                                                           Truncated only
+ *       </div>
+ *     </div>
+ *     <ul class="sh-fpv-about__facts" role="list">
+ *       <li><span class="sh-chip sh-chip--info">
+ *         <span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(icons/line/religion.svg)" aria-hidden="true"></span>
+ *         <span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Hindu</span></span>
+ *       </span></li>
+ *       … community (person) · gotra (org-chart) · mother tongue (message) · marital status (link-rings) …
+ *       <li><span class="sh-chip sh-chip--info">                                 Born on: one lock, always last
+ *         <span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(icons/line/calendar.svg)" aria-hidden="true"></span>
+ *         <span class="sh-chip__content sh-fpv-about__dob"><span class="sh-chip__label sh-body-md">Born on</span>
+ *           <span class="sh-fpv-locked-text sh-fpv-locked-text--date-of-birth" role="img" aria-label="Date of birth hidden">…</span></span>
+ *       </span></li>
+ *     </ul>
+ *   </section>
+ *
+ * State  (none) Truncated (Read More): the bio is cut to 4 lines and "Read more" shows.
+ *        --expanded Expanded / Short bio: the full bio, no link (after Read more, or when the bio is short).
+ * Parts  root (background/default, gap sh-space/16) · __bio (gap sh-space/16) · sh-fpv-section-title ·
+ *        __text (sh-typo/Body/LG/Default, text/secondary) · __more ("Read more": sh-text-link Neutral Medium, no
+ *        border, trailing chevron; never a button) · __facts (sh-chip Type=Info, gap sh-space/8 both ways) ·
+ *        __dob (the Born on chip's content: label then sh-fpv-locked-text Date of birth in one row).
+ * States the link's (sh-text-link: focus ring, 48 tap area). Read more → Expanded. Chips are read-only facts.
+ *
+ * Not bound in Figma (see the report): root padding (as sh-fpv-photo-break binds it: sh-space/20 sides,
+ * gap/section top and bottom), the 4-line cut, the gap between bio and link. Figma draws the link as
+ * sh-button Tertiary; the "Read more" rule makes it sh-text-link.
+ */
+
+.sh-fpv-about {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-about__bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+}
+
+.sh-fpv-about__text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sh-fpv-about__text {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: var(--sh-text-secondary);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+.sh-fpv-about--expanded .sh-fpv-about__text {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  line-clamp: none;
+}
+
+.sh-fpv-about__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sh-space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sh-fpv-about__dob {
+  flex-direction: row;
+  align-items: center;
+}

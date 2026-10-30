@@ -1,0 +1,49 @@
+<!doctype html>
+<!--
+  sh-fpv-family-details — web (HTML5 + CSS). Every variant: Plan=Free × State=Visible / Tit for tat.
+  Spec: ../sh-fpv-family-details.md
+  Art not in the repo (the premium badge, the sh-graphic Art drawings) is left out: the badge slot shows a
+  demo-only dashed outline; the overlays show their backdrop only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-family-details</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../../components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css">
+  <link rel="stylesheet" href="../../../../components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css">
+  <link rel="stylesheet" href="../../../../components/sh-list/web/sh-list.css">
+  <link rel="stylesheet" href="../../../../components/sh-list-info/web/sh-list-info.css">
+  <link rel="stylesheet" href="../../../../components/fpv/sh-fpv-locked-text/web/sh-fpv-locked-text.css">
+  <link rel="stylesheet" href="../../../../components/sh-graphic/web/sh-graphic.css">
+  <link rel="stylesheet" href="../../../../components/sh-blur-overlay/web/sh-blur-overlay.css">
+  <link rel="stylesheet" href="sh-fpv-family-details.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: section 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { padding: 0; background: var(--sh-background-default); }
+    /* demo only: marks the empty premium badge slot (art not in the repo) */
+    .art-missing { width: var(--sh-space-32); height: var(--sh-space-40); outline: var(--sh-stroke-default) dashed var(--sh-border-strong); border-radius: var(--sh-radius-xs); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-family-details</h1>
+  <h2 class="demo sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Plan=Free, State=Visible</figcaption><div class="surface">
+      <section class="sh-fpv-family-details" aria-labelledby="family-12"><div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row"><h2 class="sh-fpv-section-title__title sh-heading-sm" id="family-12">Family Details</h2></div></div></div></div><p class="sh-fpv-family-details__text sh-body-lg">Father runs a business, mother is a homemaker.<br>She has 2 brothers, both married.</p><div class="sh-fpv-family-details__rows"><div class="sh-list sh-list--info"><div class="sh-list-info"><span class="sh-list-info__icon sh-icon sh-icon--20" style="--icon:url(../../../../icons/line/family.svg)" aria-hidden="true"></span><span class="sh-list-info__content"><span class="sh-list-info__text sh-body-lg-tight">Nuclear family</span></span></div></div><div class="sh-list sh-list--info"><div class="sh-list-info"><span class="sh-list-info__icon sh-icon sh-icon--20" style="--icon:url(../../../../icons/line/location-pin.svg)" aria-hidden="true"></span><span class="sh-list-info__content"><span class="sh-list-info__text sh-body-lg-tight">Family lives in Pune</span></span></div></div></div></section>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Plan=Free, State=Tit for tat</figcaption><div class="surface">
+      <section class="sh-fpv-family-details sh-fpv-family-details--tit-for-tat" aria-labelledby="family-13"><div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row"><h2 class="sh-fpv-section-title__title sh-heading-sm" id="family-13">Family Details</h2></div></div></div></div><section class="sh-fpv-family-details__lock sh-blur-overlay" aria-label="Family Details locked"><div class="sh-blur-overlay__visual"><div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--family" aria-hidden="true"></div><div class="sh-blur-overlay__graphic sh-graphic sh-graphic--family"><!-- art not in the repo: <img class="sh-graphic__art" src="…" alt=""> --></div></div><div class="sh-blur-overlay__message"><p class="sh-blur-overlay__reason sh-body-lg">Add your own Family Details to see Meher’s</p><button class="sh-button sh-button--tertiary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Add Now</span></span></button></div></section></section>
+    </div></figure>
+  </div>
+</body>
+</html>

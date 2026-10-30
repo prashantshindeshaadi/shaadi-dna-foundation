@@ -1,0 +1,64 @@
+/*
+ * sh-fpv-contact — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-contact.md · Figma node 2877:19728 (Plan × State = 6 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css · components/sh-list/web/sh-list.css ·
+ *   components/sh-list-info/web/sh-list-info.css · components/fpv/sh-fpv-locked-text/web/sh-fpv-locked-text.css ·
+ *   components/sh-graphic/web/sh-graphic.css · components/sh-blur-overlay/web/sh-blur-overlay.css (Unverified)
+ *
+ *   <section class="sh-fpv-contact" aria-labelledby="contact-title">
+ *     <div class="sh-fpv-section-title">… "Contact" + the title action for the Plan / State …</div>
+ *     <div class="sh-fpv-contact__rows">
+ *       <div class="sh-list sh-list--info"><div class="sh-list-info sh-list-info--masked-phone">… +91 8042 ****** 🔒 …</div></div>
+ *       <div class="sh-list sh-list--info"><div class="sh-list-info sh-list-info--masked-email">… ****** @gmail.com 🔒 …</div></div>
+ *       <p class="sh-fpv-contact__note sh-body-md">3 of 5 free views left</p>              Free, Unlock · Premium, Filtered
+ *     </div>
+ *   </section>
+ *
+ * Plan × State  (title action · body)
+ *   Free, Gated        Unlock (sh-button Premium Soft Small, no badge) · masked phone + email
+ *   Free, Unlock       View Contact (Premium Soft Small, no badge) · masked rows + quota note "{n} of 5 free views left"
+ *   Premium, Unlock    badge + View Contact (Tertiary Small) · masked rows
+ *   Premium, Visible   badge · plain rows (not used on the FPV: contact is never unmasked on the profile)
+ *   Premium, Unverified badge · __lock: sh-blur-overlay Unlock=Self, Graphic Contact, "Verify Now"
+ *   Premium, Filtered  badge, no action · masked rows + note "Meher has limited who can see her contact details."
+ *   The Plan / State modifiers (--premium, --unlock, --visible, --unverified, --filtered) are hooks: they swap content.
+ * Masked values: ONE lock, always last (sh-list-info + sh-fpv-locked-text). The number only shows on the
+ * sh-fpv-sheet-phone-number sheet.
+ * Parts  root (background/default) · sh-fpv-section-title · __rows (Info Section) · __note (sh-typo/Body/MD/Default,
+ *        text/tertiary) · __lock (Tit-for-tat card · verify to view: sh-radius/lg, an edge).
+ * States the buttons' (sh-button). Unlock → premium plans · View Contact → phone-number sheet · Verify Now → verify.
+ *
+ * Not bound in Figma (see the report): root padding and gap (padding as sh-fpv-photo-break binds it: sh-space/20
+ * sides, gap/section top and bottom; gap sh-space/16), the note's spacing. The card edge is bound to a deleted
+ * variable (16:324): border/soft is used. The Contact art is not in the repo.
+ */
+
+.sh-fpv-contact {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-contact__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.sh-fpv-contact__note {
+  margin: 0;
+  color: var(--sh-text-tertiary);
+}
+
+.sh-fpv-contact__lock {
+  overflow: hidden;
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-lg);
+}

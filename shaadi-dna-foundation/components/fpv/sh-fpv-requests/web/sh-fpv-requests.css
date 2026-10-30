@@ -1,0 +1,49 @@
+/*
+ * sh-fpv-requests — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-requests.md · Figma node 2877:20558 (Count 3 / 2 / 1)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css · components/fpv/sh-request-card/web/sh-request-card.css
+ *
+ *   <section class="sh-fpv-requests" id="requests" aria-labelledby="requests-title">
+ *     <div class="sh-fpv-requests__header"><div class="sh-fpv-section-title">… "Requests from Meher", no action …</div></div>
+ *     <ul class="sh-fpv-requests__cards" role="list">
+ *       <li><article class="sh-request-card">… Message …</article></li>
+ *       <li><article class="sh-request-card sh-request-card--photo">…</article></li>
+ *       <li><article class="sh-request-card sh-request-card--birth-details">…</article></li>
+ *     </ul>
+ *   </section>
+ *
+ * Count  3 / 2 / 1: how many sh-request-card items are in __cards (up to 3; more pending adds "See all N").
+ *        Not a class: the list holds the cards. A Free viewer's message card is sh-request-card Message · free viewer.
+ * Rules  drops when there are no pending requests. A request stays until the viewer acts. A Connect invitation is not
+ *        a request (it changes the action bar). The photo chip "N requests from {name} · View" scrolls here (#requests).
+ * Parts  root (background/default) · __header · sh-fpv-section-title · __cards (stacked sh-request-card).
+ * States the cards' buttons (sh-button).
+ *
+ * Not bound in Figma (see the report): root padding and gap (padding as sh-fpv-photo-break binds it; gap
+ * sh-space/16), the gap between cards (gap/card). The "See all N" link is not drawn in any variant.
+ */
+
+.sh-fpv-requests {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-requests__header { display: flex; }
+
+.sh-fpv-requests__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-gap-card);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

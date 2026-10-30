@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  sh-fpv-compatibility — web (HTML5 + CSS). Every variant: Version × Astro cue. The card's decorative Bg gradient has no token and is not drawn.
+  Spec: ../sh-fpv-compatibility.md
+  Art not in the repo (the premium badge, the sh-graphic Art drawings) is left out: the badge slot shows a
+  demo-only dashed outline; the overlays show their backdrop only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-compatibility</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="../../../../components/sh-avatar/web/sh-avatar.css">
+  <link rel="stylesheet" href="../../../../components/sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="sh-fpv-compatibility.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: section 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { padding: 0; background: var(--sh-background-default); }
+    /* demo only: marks the empty premium badge slot (art not in the repo) */
+    .art-missing { width: var(--sh-space-32); height: var(--sh-space-40); outline: var(--sh-stroke-default) dashed var(--sh-border-strong); border-radius: var(--sh-radius-xs); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-compatibility</h1>
+  <h2 class="demo sh-title-md">Version</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Version=v1 · Keywords, Astro cue=true</figcaption><div class="surface">
+      <section class="sh-fpv-compatibility" aria-labelledby="compat-32"><div class="sh-fpv-compatibility__card"><div class="sh-fpv-compatibility__header"><h2 class="sh-fpv-compatibility__title sh-heading-sm" id="compat-32">Compatibility</h2><span class="sh-fpv-compatibility__photos" aria-hidden="true"><span class="sh-avatar sh-avatar--md sh-avatar--image" role="img" aria-label="You"><span class="sh-avatar__media"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span><span class="sh-avatar sh-avatar--md sh-avatar--image" role="img" aria-label="Meher"><span class="sh-avatar__media"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span></span></div><div class="sh-fpv-compatibility__body"><p class="sh-fpv-compatibility__summary sh-body-md">Living in Mumbai · Speaks Punjabi · Enjoys hiking, travelling</p><ul class="sh-fpv-compatibility__cues" role="list"><li class="sh-fpv-compatibility__cue"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span><span class="sh-body-sm">7/9 Preference match</span></li><li class="sh-fpv-compatibility__cue"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span><span class="sh-body-sm">28/36 Astro match</span></li></ul></div></div></section>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Version=Phase 2 · AI summary, Astro cue=true</figcaption><div class="surface">
+      <section class="sh-fpv-compatibility sh-fpv-compatibility--ai-summary" aria-labelledby="compat-33"><div class="sh-fpv-compatibility__card"><div class="sh-fpv-compatibility__header"><h2 class="sh-fpv-compatibility__title sh-heading-sm" id="compat-33">Compatibility</h2><span class="sh-fpv-compatibility__photos" aria-hidden="true"><span class="sh-avatar sh-avatar--md sh-avatar--image" role="img" aria-label="You"><span class="sh-avatar__media"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span><span class="sh-avatar sh-avatar--md sh-avatar--image" role="img" aria-label="Meher"><span class="sh-avatar__media"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span></span></div><div class="sh-fpv-compatibility__body"><p class="sh-fpv-compatibility__summary sh-body-md">You both grew up in Mumbai, speak Punjabi at home and plan weekends around the outdoors. Meher wants a partner who shares her love of travel and quiet evenings, and your profile says the same.</p><button class="sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border" type="button" aria-expanded="false"><span class="sh-text-link__label sh-button-md">Read more</span><span class="sh-text-link__icon sh-icon" style="--icon:url(../../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></button><ul class="sh-fpv-compatibility__cues" role="list"><li class="sh-fpv-compatibility__cue"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span><span class="sh-body-sm">7/9 Preference match</span></li><li class="sh-fpv-compatibility__cue"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span><span class="sh-body-sm">28/36 Astro match</span></li></ul></div></div></section>
+    </div></figure>
+  </div>
+  <h2 class="demo sh-title-md">Astro cue</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Version=v1 · Keywords, Astro cue=false</figcaption><div class="surface">
+      <section class="sh-fpv-compatibility" aria-labelledby="compat-34"><div class="sh-fpv-compatibility__card"><div class="sh-fpv-compatibility__header"><h2 class="sh-fpv-compatibility__title sh-heading-sm" id="compat-34">Compatibility</h2><span class="sh-fpv-compatibility__photos" aria-hidden="true"><span class="sh-avatar sh-avatar--md sh-avatar--image" role="img" aria-label="You"><span class="sh-avatar__media"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span><span class="sh-avatar sh-avatar--md sh-avatar--image" role="img" aria-label="Meher"><span class="sh-avatar__media"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span></span></div><div class="sh-fpv-compatibility__body"><p class="sh-fpv-compatibility__summary sh-body-md">Living in Mumbai · Speaks Punjabi · Enjoys hiking, travelling</p><ul class="sh-fpv-compatibility__cues" role="list"><li class="sh-fpv-compatibility__cue"><span class="sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/link-rings.svg)" aria-hidden="true"></span><span class="sh-body-sm">7/9 Preference match</span></li></ul></div></div></section>
+    </div></figure>
+  </div>
+</body>
+</html>

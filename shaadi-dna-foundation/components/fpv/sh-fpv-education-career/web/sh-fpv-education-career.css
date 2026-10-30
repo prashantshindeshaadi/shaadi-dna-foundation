@@ -1,0 +1,67 @@
+/*
+ * sh-fpv-education-career — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-education-career.md · Figma node 2877:19759 (Plan × State = 3 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css · components/sh-card/web/sh-card.css ·
+ *   components/sh-list/web/sh-list.css · components/sh-list-info/web/sh-list-info.css ·
+ *   components/fpv/sh-fpv-locked-text/web/sh-fpv-locked-text.css · components/sh-graphic/web/sh-graphic.css ·
+ *   components/sh-blur-overlay/web/sh-blur-overlay.css (Tit for tat)
+ *
+ *   <section class="sh-fpv-education-career" aria-labelledby="career-title">
+ *     <div class="sh-fpv-section-title">… "Education & Career" + Unlock / badge + View …</div>
+ *     <div class="sh-fpv-education-career__basics">
+ *       <section class="sh-fpv-education-career__card sh-card">
+ *         <h3 class="sh-card__label sh-support-micro">Education</h3>
+ *         <div class="sh-card__content">
+ *           <div class="sh-list sh-list--info"><div class="sh-list-info sh-list-info--double sh-list-info--masked">…degree + masked college…</div></div>
+ *           …
+ *         </div>
+ *       </section>
+ *       <section class="sh-fpv-education-career__card sh-card"> … "Career" … </section>
+ *     </div>
+ *   </section>
+ *
+ * Plan × State  (title · body)
+ *   Free, Gated        Unlock (Premium Soft, no badge) · college names masked (sh-list-info Double Masked)
+ *   Premium, Visible   badge + View (Tertiary) · everything shows (sh-list-info Double Text)
+ *   Free, Tit for tat  Unlock (Premium Soft, no badge) · __lock: sh-blur-overlay Unlock=Self, Graphic Education &
+ *                      Career, "Add Now" (a Free viewer without his own Education & Career)
+ *   One mask per section, cheapest step first. Modifiers (--premium, --visible, --tit-for-tat) are hooks only.
+ * Parts  root (background/default) · sh-fpv-section-title · __basics (the two cards side by side) · __card (sh-card
+ *        Outlined, label = "card header" sh-typo/Support/Micro text/tertiary) · sh-list Info rows · __lock.
+ * States the buttons' (sh-button). Unlock → premium plans · Add Now → add his own details.
+ *
+ * Not bound in Figma (see the report): root padding and gaps (padding as sh-fpv-photo-break binds it; gaps
+ * sh-space/16 and gap/card between the cards), the card padding and radius (sh-card's own). Card and lock edges are
+ * bound to a deleted variable (16:324): border/soft is used. The Education & Career art is not in the repo.
+ */
+
+.sh-fpv-education-career {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-education-career__basics {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sh-space-gap-card);
+}
+
+.sh-fpv-education-career__card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.sh-fpv-education-career__lock {
+  overflow: hidden;
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-lg);
+}

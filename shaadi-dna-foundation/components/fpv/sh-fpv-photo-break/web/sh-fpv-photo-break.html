@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  sh-fpv-photo-break — web (HTML5 + CSS). Every variant: Gate=Visible / Tit for tat / Accept gated / Upgrade gated (the last two are not used on the FPV).
+  Spec: ../sh-fpv-photo-break.md
+  Art not in the repo (the premium badge, the sh-graphic Art drawings) is left out: the badge slot shows a
+  demo-only dashed outline; the overlays show their backdrop only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-photo-break</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="../../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../../components/sh-graphic/web/sh-graphic.css">
+  <link rel="stylesheet" href="../../../../components/sh-blur-overlay/web/sh-blur-overlay.css">
+  <link rel="stylesheet" href="sh-fpv-photo-break.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: section 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { padding: 0; background: var(--sh-background-default); }
+    /* demo only: marks the empty premium badge slot (art not in the repo) */
+    .art-missing { width: var(--sh-space-32); height: var(--sh-space-40); outline: var(--sh-stroke-default) dashed var(--sh-border-strong); border-radius: var(--sh-radius-xs); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-photo-break</h1>
+  <h2 class="demo sh-title-md">Used on the FPV</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Gate=Visible</figcaption><div class="surface">
+      <figure class="sh-fpv-photo-break"><div class="sh-fpv-photo-break__photos"><div class="sh-fpv-photo-break__photo sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E" alt="Meher, outdoors"></div></div></figure>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Gate=Tit for tat (half height, with the nudge)</figcaption><div class="surface">
+      <figure class="sh-fpv-photo-break sh-fpv-photo-break--tit-for-tat"><div class="sh-fpv-photo-break__photos"><section class="sh-blur-overlay" aria-label="Photos locked"><div class="sh-blur-overlay__visual"><div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--photo-break" aria-hidden="true"></div><div class="sh-blur-overlay__graphic sh-graphic sh-graphic--photo-break"><!-- art not in the repo: <img class="sh-graphic__art" src="…" alt=""> --></div></div><div class="sh-blur-overlay__message"><p class="sh-blur-overlay__reason sh-body-lg">Add your own photo to see Meher’s</p><button class="sh-button sh-button--tertiary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Upload Now</span></span></button></div></section></div></figure>
+    </div></figure>
+  </div>
+  <h2 class="demo sh-title-md">Not used on the FPV (photos drop when the album is locked)</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Gate=Accept gated</figcaption><div class="surface">
+      <figure class="sh-fpv-photo-break sh-fpv-photo-break--accept-gated"><div class="sh-fpv-photo-break__photos"><section class="sh-blur-overlay" aria-label="Photos locked"><div class="sh-blur-overlay__visual"><div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--photo-break" aria-hidden="true"></div><div class="sh-blur-overlay__graphic sh-graphic sh-graphic--photo-break"><!-- art not in the repo: <img class="sh-graphic__art" src="…" alt=""> --></div></div><div class="sh-blur-overlay__message"><p class="sh-blur-overlay__reason sh-body-lg">Meher shares her photos once she accepts your request</p><button class="sh-button sh-button--tertiary sh-button--md" type="button"><span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-button__text"><span class="sh-button__label sh-button-md">Connect Now</span></span></button></div></section></div></figure>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Gate=Upgrade gated</figcaption><div class="surface">
+      <figure class="sh-fpv-photo-break sh-fpv-photo-break--upgrade-gated"><div class="sh-fpv-photo-break__photos"><section class="sh-blur-overlay" aria-label="Photos locked"><div class="sh-blur-overlay__visual"><div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--photo-break" aria-hidden="true"></div><div class="sh-blur-overlay__graphic sh-graphic sh-graphic--photo-break"><!-- art not in the repo: <img class="sh-graphic__art" src="…" alt=""> --></div></div><div class="sh-blur-overlay__message"><p class="sh-blur-overlay__reason sh-body-lg">Meher has shared her photos with Premium members</p><button class="sh-button sh-button--premium-soft sh-button--md" type="button"><span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/premium.svg)" aria-hidden="true"></span><span class="sh-button__text"><span class="sh-button__label sh-button-md">Upgrade Now</span></span></button></div></section></div></figure>
+    </div></figure>
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/*
+ * sh-fpv-family-details — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-family-details.md · Figma node 2877:19793 (Plan Free × State Visible / Tit for tat = 2 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css · components/sh-list/web/sh-list.css ·
+ *   components/sh-list-info/web/sh-list-info.css · components/fpv/sh-fpv-locked-text/web/sh-fpv-locked-text.css ·
+ *   components/sh-graphic/web/sh-graphic.css · components/sh-blur-overlay/web/sh-blur-overlay.css (Tit for tat)
+ *
+ *   Visible:
+ *   <section class="sh-fpv-family-details" aria-labelledby="family-title">
+ *     <div class="sh-fpv-section-title">… "Family Details", no action …</div>
+ *     <p class="sh-fpv-family-details__text sh-body-lg">Father runs a business, mother is a homemaker.<br>…</p>
+ *     <div class="sh-fpv-family-details__rows">
+ *       <div class="sh-list sh-list--info"><div class="sh-list-info">… icon + text …</div></div> × 2
+ *     </div>
+ *   </section>
+ *
+ *   Tit for tat: the title, then
+ *     <section class="sh-fpv-family-details__lock sh-blur-overlay" aria-label="Family Details locked">
+ *       … Backdrop + Graphic sh-graphic--family · reason · sh-button Tertiary Medium "Add Now" …
+ *     </section>
+ *
+ * Plan   Free only (both viewers look the same).
+ * State  (none) Visible · --tit-for-tat: a Free viewer without his own Family Details (no title chip). The modifier
+ *        is a hook only: the variant swaps content.
+ * Parts  root (background/default) · sh-fpv-section-title · __text (Figma "About Info": sh-typo/Body/LG/Default,
+ *        text/secondary) · __rows (Info Section: sh-list Info rows) · __lock (Tit-for-tat card: sh-blur-overlay
+ *        Unlock=Self, sh-radius/lg, an edge).
+ * States the button's (sh-button). Add Now → add his own details. Nothing else is interactive.
+ *
+ * Not bound in Figma (see the report): root padding and gap (padding as sh-fpv-photo-break binds it: sh-space/20
+ * sides, gap/section top and bottom; gap sh-space/16). The card edge is bound to a deleted variable (16:324):
+ * border/soft is used. The Family art is not in the repo.
+ */
+
+.sh-fpv-family-details {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-gap-section) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-family-details__text {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-family-details__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.sh-fpv-family-details__lock {
+  overflow: hidden;
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-lg);
+}
