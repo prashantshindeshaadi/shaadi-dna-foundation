@@ -1,0 +1,64 @@
+/*
+ * sh-indicator — web (HTML5 + CSS)
+ * Spec: ../sh-indicator.md · Figma node 2717:39751 (Type Count / Dot × Status Information / Error, plus Brand / Neutral)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-support-label
+ *
+ *   <span class="sh-indicator"><span class="sh-indicator__count sh-support-label">12</span></span>   Count, Information
+ *   <span class="sh-indicator sh-indicator--dot" aria-hidden="true"></span>                        Dot, Information
+ *
+ * Type    (none) Count (pill, 16 tall, hugs its number; the number is the __count part) · --dot (8 × 8, no __count)
+ * Status  (none) Information (blue, the default) · --error (only for errors) ·
+ *         --brand · --neutral (in Figma since the blueprint was generated; see the report)
+ * Not interactive. Place it on the corner of an icon, tab or avatar with the parent's own positioning.
+ * The number alone means little to a screen reader: give the parent a label ("Inbox, 12 unread"), or hide the
+ * indicator with aria-hidden="true" when the label already says it.
+ */
+
+.sh-indicator {
+  /* Type=Count, Status=Information */
+  --_bg: var(--sh-semantic-information-background-solid-default);
+  --_fg: var(--sh-semantic-information-text-on-solid);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--sh-typo-support-label-line-height);     /* a single digit is a circle */
+  height: var(--sh-typo-support-label-line-height);
+  padding: 0 var(--sh-space-4);
+  border-radius: var(--sh-radius-full);
+  background: var(--_bg);
+  color: var(--_fg);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Count: Figma's "Count" text layer, sh-typo/Support/Label in the status's on-solid text colour */
+.sh-indicator__count { display: block; color: var(--_fg); }
+
+/* ---- Type=Dot ------------------------------------------------------------ */
+.sh-indicator--dot {
+  width: var(--sh-space-8);
+  min-width: 0;
+  height: var(--sh-space-8);
+  padding: 0;
+}
+.sh-indicator--dot .sh-indicator__count { display: none; }
+
+/* ---- Status -------------------------------------------------------------- */
+.sh-indicator--error {
+  --_bg: var(--sh-semantic-error-background-solid-default);
+  --_fg: var(--sh-semantic-error-text-on-solid);
+}
+.sh-indicator--brand {
+  --_bg: var(--sh-background-brand);
+  --_fg: var(--sh-text-on-brand);
+}
+.sh-indicator--neutral {
+  --_bg: var(--sh-background-strong);
+  --_fg: var(--sh-text-secondary);
+}

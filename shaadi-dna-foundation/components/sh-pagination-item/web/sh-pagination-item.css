@@ -1,0 +1,84 @@
+/*
+ * sh-pagination-item — web (HTML5 + CSS)
+ * Spec: ../sh-pagination-item.md · Figma node 2718:41907 (State Default / Hover / Selected)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css (.sh-body-md)
+ *
+ *   <a class="sh-pagination-item" href="?page=2"><span class="sh-pagination-item__label sh-body-md">2</span></a>
+ *   <a class="sh-pagination-item" href="?page=1" aria-current="page"><span class="sh-pagination-item__label sh-body-md">1</span></a>
+ *   <span class="sh-pagination-item sh-pagination-item--gap" aria-hidden="true"><span class="sh-pagination-item__label sh-body-md">…</span></span>
+ *
+ * State   Default · Hover :hover (.is-hover forces it) · Selected aria-current="page" (or .is-selected)
+ *         Focus :focus-visible (.is-focus) · Disabled [aria-disabled="true"].
+ *         Figma has no Pressed look; Pressed shows Hover.
+ * --gap   the "…" between page ranges: same box, not interactive (no hover, no tap area).
+ * Size    a 40 circle that grows sideways for long numbers; an invisible 48 × 48 hit area around it.
+ */
+
+.sh-pagination-item {
+  --_bg: none;
+  --_label: var(--sh-text-secondary);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--sh-space-40);     /* Figma: 40 × 40 */
+  height: var(--sh-space-40);
+  margin: 0;
+  padding: var(--sh-space-0) var(--sh-space-8);
+  border: 0;
+  border-radius: var(--sh-radius-full);
+  background: var(--_bg);
+  color: var(--_label);
+  font-family: var(--sh-typo-font-family-primary);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 48 × 48 tap area around the 40 circle, without changing the visual size */
+.sh-pagination-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--sh-icon-target-default));
+  height: max(100%, var(--sh-icon-target-default));
+  transform: translate(-50%, -50%);
+}
+
+.sh-pagination-item__label { display: block; color: var(--_label); }
+
+/* ---- State --------------------------------------------------------------- */
+.sh-pagination-item:hover,
+.sh-pagination-item:active,
+.sh-pagination-item.is-hover { --_bg: var(--sh-background-soft); }
+
+.sh-pagination-item[aria-current="page"],
+.sh-pagination-item.is-selected {
+  --_bg: var(--sh-background-brand);
+  --_label: var(--sh-text-on-brand);
+  cursor: default;
+}
+
+.sh-pagination-item:focus { outline: none; }
+.sh-pagination-item:focus-visible,
+.sh-pagination-item.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+
+.sh-pagination-item[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* "…": not a control */
+.sh-pagination-item--gap { cursor: default; pointer-events: none; }
+.sh-pagination-item--gap::before { content: none; }

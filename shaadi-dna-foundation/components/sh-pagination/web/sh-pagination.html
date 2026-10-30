@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+  sh-pagination — web (HTML5 + CSS). The one variant, plus the middle and last page selected.
+  Spec: ../sh-pagination.md · Figma node 2718:41908 · parts: sh-icon-button, sh-pagination-item (their CSS, not copied)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-pagination</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-icon-button/web/sh-icon-button.css">
+  <link rel="stylesheet" href="../../../components/sh-pagination-item/web/sh-pagination-item.css">
+  <link rel="stylesheet" href="sh-pagination.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .stack { display: flex; flex-direction: column; gap: var(--sh-space-24); align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-pagination</h1>
+
+  <h2 class="sh-title-md">Variants</h2>
+  <div class="stack">
+    <figure><figcaption class="sh-body-sm">sh-pagination (page 1 of 10)</figcaption>
+      <nav class="sh-pagination" aria-label="Pages">
+        <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Previous" disabled><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button>
+        <a class="sh-pagination-item" href="#page-1" aria-current="page"><span class="sh-pagination-item__label sh-body-md">1</span></a>
+        <a class="sh-pagination-item" href="#page-2"><span class="sh-pagination-item__label sh-body-md">2</span></a>
+        <a class="sh-pagination-item" href="#page-3"><span class="sh-pagination-item__label sh-body-md">3</span></a>
+        <span class="sh-pagination-item sh-pagination-item--gap" aria-hidden="true"><span class="sh-pagination-item__label sh-body-md">…</span></span>
+        <a class="sh-pagination-item" href="#page-10"><span class="sh-pagination-item__label sh-body-md">10</span></a>
+        <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Next"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button>
+      </nav></figure>
+    <figure><figcaption class="sh-body-sm">Page 5 of 10, page 4 hovered</figcaption>
+      <nav class="sh-pagination" aria-label="Pages">
+        <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Previous"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button>
+        <a class="sh-pagination-item" href="#page-1"><span class="sh-pagination-item__label sh-body-md">1</span></a>
+        <span class="sh-pagination-item sh-pagination-item--gap" aria-hidden="true"><span class="sh-pagination-item__label sh-body-md">…</span></span>
+        <a class="sh-pagination-item is-hover" href="#page-4"><span class="sh-pagination-item__label sh-body-md">4</span></a>
+        <a class="sh-pagination-item" href="#page-5" aria-current="page"><span class="sh-pagination-item__label sh-body-md">5</span></a>
+        <a class="sh-pagination-item" href="#page-6"><span class="sh-pagination-item__label sh-body-md">6</span></a>
+        <span class="sh-pagination-item sh-pagination-item--gap" aria-hidden="true"><span class="sh-pagination-item__label sh-body-md">…</span></span>
+        <a class="sh-pagination-item" href="#page-10"><span class="sh-pagination-item__label sh-body-md">10</span></a>
+        <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Next"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button>
+      </nav></figure>
+    <figure><figcaption class="sh-body-sm">Last page (Next disabled)</figcaption>
+      <nav class="sh-pagination" aria-label="Pages">
+        <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Previous"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button>
+        <a class="sh-pagination-item" href="#page-1"><span class="sh-pagination-item__label sh-body-md">1</span></a>
+        <span class="sh-pagination-item sh-pagination-item--gap" aria-hidden="true"><span class="sh-pagination-item__label sh-body-md">…</span></span>
+        <a class="sh-pagination-item" href="#page-8"><span class="sh-pagination-item__label sh-body-md">8</span></a>
+        <a class="sh-pagination-item" href="#page-9"><span class="sh-pagination-item__label sh-body-md">9</span></a>
+        <a class="sh-pagination-item" href="#page-10" aria-current="page"><span class="sh-pagination-item__label sh-body-md">10</span></a>
+        <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Next" disabled><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button>
+      </nav></figure>
+  </div>
+</body>
+</html>

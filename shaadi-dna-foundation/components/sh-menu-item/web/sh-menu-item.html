@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  sh-menu-item — web (HTML5 + CSS). Every variant: Type Default / Destructive × State Default / Hover / Selected,
+  plus Show icon off, Focus and Disabled.
+  Spec: ../sh-menu-item.md · Figma node 2718:41739
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-menu-item</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-menu-item.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 240px; }   /* Figma: rows are 240 wide */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-menu-item</h1>
+
+  <h2 class="sh-title-md">Type=Default</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Default, State=Default</figcaption>
+      <button class="sh-menu-item" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/bookmark.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Shortlist</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Type=Default, State=Hover</figcaption>
+      <button class="sh-menu-item is-hover" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/bookmark.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Shortlist</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Type=Default, State=Selected</figcaption>
+      <button class="sh-menu-item" type="button" role="menuitemradio" aria-checked="true"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/bookmark.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Shortlist</span><span class="sh-menu-item__check sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/check.svg)" aria-hidden="true"></span></button></figure>
+  </div>
+
+  <h2 class="sh-title-md">Type=Destructive</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Destructive, State=Default</figcaption>
+      <button class="sh-menu-item sh-menu-item--destructive" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/flag.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Report</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Type=Destructive, State=Hover</figcaption>
+      <button class="sh-menu-item sh-menu-item--destructive is-hover" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/user-block.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Block</span></button></figure>
+  </div>
+
+  <h2 class="sh-title-md">Show icon · states</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show icon=false</figcaption>
+      <button class="sh-menu-item" type="button" role="menuitem"><span class="sh-menu-item__label sh-body-md">Hindi</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Show icon=false, State=Selected</figcaption>
+      <button class="sh-menu-item" type="button" role="option" aria-selected="true"><span class="sh-menu-item__label sh-body-md">English</span><span class="sh-menu-item__check sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/check.svg)" aria-hidden="true"></span></button></figure>
+    <figure><figcaption class="sh-body-sm">Focus</figcaption>
+      <button class="sh-menu-item is-focus" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/share.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Share profile</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Disabled</figcaption>
+      <button class="sh-menu-item" type="button" role="menuitem" disabled><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/share.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Share profile</span></button></figure>
+  </div>
+</body>
+</html>

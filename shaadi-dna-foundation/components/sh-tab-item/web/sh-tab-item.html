@@ -1,0 +1,73 @@
+<!doctype html>
+<!--
+  sh-tab-item — web (HTML5 + CSS). Every variant: Style Underline / Segmented / Vertical × Selected true / false,
+  plus Show dot, Show count and the Focus / Disabled states.
+  Spec: ../sh-tab-item.md · Figma node 2711:11922
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-tab-item</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-indicator/web/sh-indicator.css">
+  <link rel="stylesheet" href="sh-tab-item.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .track { display: inline-flex; padding: var(--sh-space-2); border-radius: var(--sh-radius-full); background: var(--sh-background-strong); }  /* segments shown on their control's fill */
+    .side { width: 240px; }   /* Figma: Vertical is 240 wide */
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-tab-item</h1>
+
+  <h2 class="sh-title-md">Style=Underline</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Style=Underline, Selected=true</figcaption>
+      <button class="sh-tab-item" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-title-md">New</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Style=Underline, Selected=false</figcaption>
+      <button class="sh-tab-item" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Daily</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Show dot=true</figcaption>
+      <button class="sh-tab-item" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Daily</span><span class="sh-tab-item__dot"><span class="sh-indicator sh-indicator--dot" aria-hidden="true"></span></span></button></figure>
+    <figure><figcaption class="sh-body-sm">Show count=true, Selected=true</figcaption>
+      <button class="sh-tab-item" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-title-md">Near Me</span><span class="sh-tab-item__count sh-support-label">64</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Show count=true, Selected=false</figcaption>
+      <button class="sh-tab-item" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Near Me</span><span class="sh-tab-item__count sh-support-label">64</span></button></figure>
+  </div>
+
+  <h2 class="sh-title-md">Style=Segmented</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Style=Segmented, Selected=true</figcaption>
+      <div class="track"><button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-button-md">Premium</span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Style=Segmented, Selected=false</figcaption>
+      <div class="track"><button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">VIP</span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Show count=true, Selected=true</figcaption>
+      <div class="track"><button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-button-md">Received</span><span class="sh-tab-item__count sh-support-label">24</span></button></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Style=Vertical</h2>
+  <div class="grid">
+    <figure class="side"><figcaption class="sh-body-sm">Style=Vertical, Selected=true</figcaption>
+      <button class="sh-tab-item sh-tab-item--vertical" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-title-md">Profile</span></button></figure>
+    <figure class="side"><figcaption class="sh-body-sm">Style=Vertical, Selected=false</figcaption>
+      <button class="sh-tab-item sh-tab-item--vertical" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Privacy</span></button></figure>
+    <figure class="side"><figcaption class="sh-body-sm">Show dot=true, Show count=true</figcaption>
+      <button class="sh-tab-item sh-tab-item--vertical" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Notifications</span><span class="sh-tab-item__dot"><span class="sh-indicator sh-indicator--dot" aria-hidden="true"></span></span><span class="sh-tab-item__count sh-support-label">3</span></button></figure>
+  </div>
+
+  <h2 class="sh-title-md">States</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Focus (Underline)</figcaption>
+      <button class="sh-tab-item is-focus" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">My Matches</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Focus (Segmented)</figcaption>
+      <div class="track"><button class="sh-tab-item sh-tab-item--segmented is-focus" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-button-md">Premium</span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Disabled (Underline)</figcaption>
+      <button class="sh-tab-item" type="button" role="tab" aria-selected="false" disabled><span class="sh-tab-item__label sh-title-md">More</span></button></figure>
+  </div>
+</body>
+</html>

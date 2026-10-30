@@ -1,0 +1,62 @@
+<!doctype html>
+<!--
+  sh-checkbox — web (HTML5 + CSS). Every variant: Value Unchecked / Checked × State Default / Hover / Pressed / Disabled / Focus.
+  Spec: ../sh-checkbox.md · Figma node 2496:22479
+  Hover, Pressed and Focus are forced with .is-hover / .is-pressed / .is-focus so they show in a still preview.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-checkbox</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-checkbox.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .cell { display: flex; align-items: center; justify-content: center; width: var(--sh-space-48); height: var(--sh-space-48); }
+    .zoom { display: flex; gap: var(--sh-space-24); zoom: 3; padding: var(--sh-space-8); }
+    .list { display: flex; flex-direction: column; width: 320px; margin: 0; padding: 0; border: 0; }
+    .list legend { padding: 0; margin-bottom: var(--sh-space-4); }
+    .opt { display: flex; align-items: center; gap: var(--sh-space-12); min-height: var(--sh-space-48); cursor: pointer; }
+    .opt--end { justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-checkbox</h1>
+
+  <h2 class="sh-title-md">Value=Unchecked</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Value=Unchecked, State=Default</figcaption><div class="cell"><label class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox" aria-label="Unchecked Default"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Unchecked, State=Hover</figcaption><div class="cell"><label class="sh-checkbox is-hover"><input class="sh-checkbox__input" type="checkbox" aria-label="Unchecked Hover"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Unchecked, State=Pressed</figcaption><div class="cell"><label class="sh-checkbox is-pressed"><input class="sh-checkbox__input" type="checkbox" aria-label="Unchecked Pressed"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Unchecked, State=Disabled</figcaption><div class="cell"><label class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox" disabled aria-label="Unchecked Disabled"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Unchecked, State=Focus</figcaption><div class="cell"><label class="sh-checkbox is-focus"><input class="sh-checkbox__input" type="checkbox" aria-label="Unchecked Focus"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+  </div>
+  <h2 class="sh-title-md">Value=Checked</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Value=Checked, State=Default</figcaption><div class="cell"><label class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox" checked aria-label="Checked Default"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Checked, State=Hover</figcaption><div class="cell"><label class="sh-checkbox is-hover"><input class="sh-checkbox__input" type="checkbox" checked aria-label="Checked Hover"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Checked, State=Pressed</figcaption><div class="cell"><label class="sh-checkbox is-pressed"><input class="sh-checkbox__input" type="checkbox" checked aria-label="Checked Pressed"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Checked, State=Disabled</figcaption><div class="cell"><label class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox" checked disabled aria-label="Checked Disabled"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Checked, State=Focus</figcaption><div class="cell"><label class="sh-checkbox is-focus"><input class="sh-checkbox__input" type="checkbox" checked aria-label="Checked Focus"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Detail at 3× · Default, Hover, Focus</h2>
+  <div class="zoom">
+    <label class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox" aria-label="z1"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label><label class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox" checked aria-label="z2"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label><label class="sh-checkbox is-hover"><input class="sh-checkbox__input" type="checkbox" checked aria-label="z3"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label><label class="sh-checkbox is-focus"><input class="sh-checkbox__input" type="checkbox" checked aria-label="z4"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></label>
+  </div>
+
+  <h2 class="sh-title-md">In use · multi-select list</h2>
+    <div class="list">
+      <label class="opt"><span class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox" checked><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span><span class="sh-body-md">Show me only verified profiles</span></label>
+      <label class="opt"><span class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox"><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span><span class="sh-body-md">Hide my profile from relatives</span></label>
+      <label class="opt"><span class="sh-checkbox"><input class="sh-checkbox__input" type="checkbox" checked><span class="sh-checkbox__box" aria-hidden="true"><span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span><span class="sh-body-md">Never smokes</span></label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+  sh-tab-group — web (HTML5 + CSS). Every variant: Orientation Horizontal / Vertical.
+  Spec: ../sh-tab-group.md · Figma node 2721:43483 · tabs are sh-tab-item (its CSS, not copied)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-tab-group</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-indicator/web/sh-indicator.css">
+  <link rel="stylesheet" href="../../../components/sh-tab-item/web/sh-tab-item.css">
+  <link rel="stylesheet" href="sh-tab-group.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .mobile { width: 360px; }   /* Figma: Horizontal is 360 wide */
+    .side { width: 240px; }     /* Figma: Vertical is 240 wide */
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-tab-group</h1>
+
+  <h2 class="sh-title-md">Orientation=Horizontal</h2>
+  <div class="grid">
+    <figure class="mobile"><figcaption class="sh-body-sm">Orientation=Horizontal</figcaption>
+      <div class="sh-tab-group" role="tablist" aria-label="Matches">
+        <button class="sh-tab-item" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-title-md">New</span></button>
+        <button class="sh-tab-item" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Daily</span><span class="sh-tab-item__dot"><span class="sh-indicator sh-indicator--dot" aria-hidden="true"></span></span></button>
+        <button class="sh-tab-item" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">My Matches</span></button>
+        <button class="sh-tab-item" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Near Me</span><span class="sh-tab-item__count sh-support-label">64</span></button>
+        <button class="sh-tab-item" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">More</span></button>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Orientation=Vertical</h2>
+  <div class="grid">
+    <figure class="side"><figcaption class="sh-body-sm">Orientation=Vertical</figcaption>
+      <div class="sh-tab-group sh-tab-group--vertical" role="tablist" aria-label="Settings" aria-orientation="vertical">
+        <button class="sh-tab-item sh-tab-item--vertical" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-title-md">Profile</span></button>
+        <button class="sh-tab-item sh-tab-item--vertical" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Partner preferences</span></button>
+        <button class="sh-tab-item sh-tab-item--vertical" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Privacy</span></button>
+        <button class="sh-tab-item sh-tab-item--vertical" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Notifications</span></button>
+        <button class="sh-tab-item sh-tab-item--vertical" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Account</span></button>
+      </div>
+    </figure>
+  </div>
+</body>
+</html>

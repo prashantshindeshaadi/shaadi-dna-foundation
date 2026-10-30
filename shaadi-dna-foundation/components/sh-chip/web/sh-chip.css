@@ -1,0 +1,143 @@
+/*
+ * sh-chip — web (HTML5 + CSS)
+ * Spec: ../sh-chip.md · Figma node 306:3749 · 11 variants (Type Choice: State × Selected · Type Info: one state)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-body-md, .sh-support-label
+ *   components/sh-icon/web/sh-icon.css           .sh-icon mask class
+ *
+ *   Choice (selectable, 32 tall):
+ *   <button class="sh-chip" type="button" aria-pressed="false">
+ *     <span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(icons/line/arrow-left-01.svg)" aria-hidden="true"></span>
+ *     <span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span>
+ *     <span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+ *   </button>
+ *
+ *   Info (read-only fact):
+ *   <span class="sh-chip sh-chip--info">
+ *     <span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(icons/line/arrow-left-01.svg)" aria-hidden="true"></span>
+ *     <span class="sh-chip__content">
+ *       <span class="sh-chip__supporting sh-support-label">Religion</span>
+ *       <span class="sh-chip__label sh-body-md">Hindu</span>
+ *     </span>
+ *   </span>
+ *
+ * Type      (none) Choice · --info Info (no states, border/soft; Show supporting label = the __supporting span)
+ * Selected  aria-pressed="true" (or .is-selected): background/selected, border/selected, text/brand, icon/brand.
+ *           aria-pressed is the non-colour cue for assistive tech.
+ * State     Hover :hover · Pressed :active · Focus :focus-visible · Disabled [disabled] or [aria-disabled="true"].
+ *           Hover / Pressed / Focus can be forced for previews with .is-hover / .is-pressed / .is-focus.
+ * Icons     16, icon/secondary (Selected = icon/brand, Disabled = icon/disabled). Leave a span out to hide that icon.
+ * The chip is 32 tall; a 48 tall tap area is added around it without changing its size.
+ */
+
+.sh-chip {
+  /* Type=Choice, State=Default, Selected=false */
+  --_bg: var(--sh-background-default);
+  --_stroke: var(--sh-border-default);
+  --_fg: var(--sh-text-primary);
+  --_icon: var(--sh-icon-secondary);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-8);
+  margin: 0;
+  padding: var(--sh-space-6) var(--sh-space-12);
+  border: var(--sh-stroke-default) solid var(--_stroke);
+  border-radius: var(--sh-radius-sm);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: start;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sh-chip__icon { --sh-icon-paint: var(--_icon); }
+
+.sh-chip__content {
+  display: flex;
+  flex-direction: column;
+}
+.sh-chip__label { display: block; color: var(--_fg); }
+.sh-chip__supporting { display: block; color: var(--sh-text-secondary); }
+
+/* ---- Type=Choice: interactive ------------------------------------------- */
+button.sh-chip,
+a.sh-chip { cursor: pointer; text-decoration: none; }
+
+/* 48 tall tap area around the 32 tall chip */
+.sh-chip:not(.sh-chip--info)::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--sh-icon-target-default));
+  height: max(100%, var(--sh-icon-target-default));
+  transform: translate(-50%, -50%);
+}
+
+/* Selected */
+.sh-chip[aria-pressed="true"],
+.sh-chip.is-selected {
+  --_bg: var(--sh-background-selected);
+  --_stroke: var(--sh-border-selected);
+  --_fg: var(--sh-text-brand);
+  --_icon: var(--sh-icon-brand);
+}
+
+/* Hover / Pressed (unselected only: Selected keeps background/selected in every state, as in Figma) */
+.sh-chip:not(.sh-chip--info):not([aria-pressed="true"]):not(.is-selected):hover,
+.sh-chip.is-hover:not([aria-pressed="true"]):not(.is-selected) { --_bg: var(--sh-background-strong); }
+
+.sh-chip:not(.sh-chip--info):not([aria-pressed="true"]):not(.is-selected):active,
+.sh-chip.is-pressed:not([aria-pressed="true"]):not(.is-selected) { --_bg: var(--sh-button-tertiary-background-pressed); }
+
+/* Focus: Figma's .focus-ring, 4 outside the chip: a 2 ring in border/focus, radius md, at sh-opacity/strong */
+.sh-chip:focus { outline: none; }
+.sh-chip::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * (var(--sh-space-4) + var(--sh-stroke-default)));   /* measured from the chip's outer edge */
+  box-sizing: border-box;
+  border: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  border-radius: var(--sh-radius-md);
+  opacity: var(--sh-opacity-hidden);
+  pointer-events: none;
+}
+.sh-chip:focus-visible::after,
+.sh-chip.is-focus::after { opacity: var(--sh-opacity-strong); }
+
+/* Disabled, unselected: the disabled colour roles (as in Figma) */
+.sh-chip:disabled,
+.sh-chip[aria-disabled="true"] {
+  --_bg: var(--sh-background-disabled);
+  --_stroke: var(--sh-border-disabled);
+  --_fg: var(--sh-text-disabled);
+  --_icon: var(--sh-icon-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+/* Disabled, selected: the Selected look at sh-opacity/disabled */
+.sh-chip[aria-pressed="true"]:disabled,
+.sh-chip[aria-pressed="true"][aria-disabled="true"],
+.sh-chip.is-selected:disabled,
+.sh-chip.is-selected[aria-disabled="true"] {
+  --_bg: var(--sh-background-selected);
+  --_stroke: var(--sh-border-selected);
+  --_fg: var(--sh-text-brand);
+  --_icon: var(--sh-icon-brand);
+  opacity: var(--sh-opacity-disabled);
+}
+
+/* ---- Type=Info: read-only fact ------------------------------------------- */
+.sh-chip--info {
+  --_stroke: var(--sh-border-soft);
+  padding-left: var(--sh-space-8);
+  padding-right: var(--sh-space-12);
+}

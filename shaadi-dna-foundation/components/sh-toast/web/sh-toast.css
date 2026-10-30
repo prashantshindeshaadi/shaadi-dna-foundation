@@ -1,0 +1,127 @@
+/*
+ * sh-toast — web (HTML5 + CSS)
+ * Spec: ../sh-toast.md · Figma node 2718:41602 (Type Neutral / Success / Information / Warning / Error)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-text-link/web/sh-text-link.css (Action)
+ *
+ *   <div class="sh-toast" role="status">
+ *     <span class="sh-toast__icon sh-icon sh-icon--20" style="--icon:url(icons/line/information-circle.svg)" aria-hidden="true"></span>
+ *     <p class="sh-toast__message sh-body-md">Interest sent to Priya</p>
+ *     <button class="sh-toast__action sh-text-link sh-text-link--inverse sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Undo</span></button>
+ *     <button class="sh-toast__close" type="button" aria-label="Close">
+ *       <span class="sh-icon sh-icon--16" style="--icon:url(icons/line/close.svg)" aria-hidden="true"></span>
+ *     </button>
+ *   </div>
+ *
+ * Type   (none) Neutral: dark surface, Action = sh-text-link Type Inverse ·
+ *        --success | --information | --warning | --error: soft status surface, Action = sh-text-link Type Link
+ *        Leading icon per Type (as in Figma): information-circle (Neutral, Information) · check-circle · alert-diamond · alert-circle
+ * Show icon / Show action / Show close: include or leave out __icon, __action, __close (Close is off by default).
+ * Close  bare close icon (16) with a 48 × 48 tap area. Figma draws no Hover or Pressed look: focus ring and disabled only.
+ * Elevation sh-shadow/floating. Placement and timing (show, auto-dismiss) are the app's job.
+ */
+
+.sh-toast {
+  --_bg: var(--sh-background-inverse);
+  --_edge: transparent;
+  --_fg: var(--sh-text-inverse);
+  --_icon: var(--sh-icon-inverse);
+  --_close: var(--sh-icon-inverse);
+  --_ring: var(--sh-border-inverse);
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-12);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-12) var(--sh-space-16);
+  border: var(--sh-stroke-default) solid var(--_edge);   /* no token: Figma's stroke weight is unbound (1) → sh-stroke/default */
+  border-radius: var(--sh-radius-md);
+  background: var(--_bg);
+  box-shadow: var(--sh-shadow-floating-x) var(--sh-shadow-floating-y) var(--sh-shadow-floating-blur) var(--sh-shadow-floating-spread) var(--sh-shadow-floating-color);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-toast--success,
+.sh-toast--information,
+.sh-toast--warning,
+.sh-toast--error {
+  --_fg: var(--sh-text-primary);
+  --_close: var(--sh-icon-secondary);
+  --_ring: var(--sh-border-focus);
+}
+.sh-toast--success {
+  --_bg: var(--sh-semantic-success-background-soft-default);
+  --_edge: var(--sh-semantic-success-border-soft);
+  --_icon: var(--sh-semantic-success-icon-on-soft);
+}
+.sh-toast--information {
+  --_bg: var(--sh-semantic-information-background-soft-default);
+  --_edge: var(--sh-semantic-information-border-soft);
+  --_icon: var(--sh-semantic-information-icon-on-soft);
+}
+.sh-toast--warning {
+  --_bg: var(--sh-semantic-warning-background-soft-default);
+  --_edge: var(--sh-semantic-warning-border-soft);
+  --_icon: var(--sh-semantic-warning-icon-on-soft);
+}
+.sh-toast--error {
+  --_bg: var(--sh-semantic-error-background-soft-default);
+  --_edge: var(--sh-semantic-error-border-soft);
+  --_icon: var(--sh-semantic-error-icon-on-soft);
+}
+
+/* ---- Parts --------------------------------------------------------------- */
+.sh-toast .sh-toast__icon {
+  width: var(--sh-icon-size-20);
+  height: var(--sh-icon-size-20);
+  --sh-icon-paint: var(--_icon);
+}
+.sh-toast__message {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  color: var(--_fg);
+}
+.sh-toast__action { gap: var(--sh-space-2); }
+
+/* Close: the bare 16 icon, 48 × 48 tap area */
+.sh-toast__close {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-full);
+  background: none;
+  color: var(--_close);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-toast__close::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sh-icon-target-default);
+  height: var(--sh-icon-target-default);
+  transform: translate(-50%, -50%);
+}
+.sh-toast__close .sh-icon { width: var(--sh-icon-size-16); height: var(--sh-icon-size-16); }
+.sh-toast__close:focus { outline: none; }
+.sh-toast__close:focus-visible,
+.sh-toast__close.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--_ring);
+  outline-offset: var(--sh-space-2);
+}
+.sh-toast__close:disabled,
+.sh-toast__close[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}

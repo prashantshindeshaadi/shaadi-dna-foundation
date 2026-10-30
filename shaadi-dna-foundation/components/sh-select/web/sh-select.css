@@ -1,0 +1,168 @@
+/*
+ * sh-select — web (HTML5 + CSS)
+ * Spec: ../sh-select.md · Figma node 2718:42776 (State Default / Filled / Open / Error / Disabled = 5 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-body-sm-loose, .sh-body-md-tight, .sh-body-sm, .sh-body-md
+ *   components/sh-icon/web/sh-icon.css           .sh-icon
+ *   components/sh-menu-item/web/sh-menu-item.css the option rows (Figma: sh-menu-item instances)
+ *
+ *   <div class="sh-select">
+ *     <button class="sh-select__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+ *       <span class="sh-select__content">
+ *         <span class="sh-select__label sh-body-sm-loose">Religion</span>
+ *         <span class="sh-select__value sh-body-md-tight">Hindu</span>          (empty → State=Default)
+ *       </span>
+ *       <span class="sh-select__chevron sh-icon sh-icon--16" style="--icon:url(icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+ *     </button>
+ *     <div class="sh-select__support">                                          (Figma "Show helper")
+ *       <span class="sh-select__status sh-icon sh-icon--12" style="--icon:url(icons/line/help-circle.svg)" aria-hidden="true"></span>
+ *       <span class="sh-select__helper sh-body-sm">Supporting text</span>
+ *     </div>
+ *     <ul class="sh-select__options" role="listbox">
+ *       <li class="sh-menu-item" role="option" aria-selected="true"><span class="sh-menu-item__label sh-body-md">Hindu</span>
+ *         <span class="sh-menu-item__check sh-icon sh-icon--16" style="--icon:url(icons/filled/check.svg)" aria-hidden="true"></span></li>
+ *       <li class="sh-menu-item" role="option" aria-selected="false"><span class="sh-menu-item__label sh-body-md">Muslim</span></li>
+ *     </ul>
+ *   </div>
+ *
+ * State  Default  .sh-select__value is empty: the label rests in the field (Body MD Loose)
+ *        Filled   a value: the label floats above it
+ *        Open     aria-expanded="true" on the control (or .is-open on the root): border/focus edge, chevron
+ *                 turned up, options list shown (floating card, sh-shadow/floating)
+ *        Error    .sh-select--error: semantic error fill, border, label and helper
+ *        Disabled [disabled] on the control: the Default look at sh-opacity/disabled, no pointer events
+ *        Hover / Pressed have no look in Figma. Focus :focus-visible draws the focus ring.
+ * Opening, closing and keyboard moves (arrow keys, Enter, Esc) are the app's job; this file only draws the states.
+ *
+ * Every value is a DNA token; the only composed values are marked "no token".
+ */
+
+.sh-select {
+  --_bg: var(--sh-background-default);
+  --_edge: var(--sh-border-default);
+  --_label: var(--sh-text-tertiary);
+  --_helper: var(--sh-text-secondary);
+  --_status: var(--sh-icon-secondary);
+
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-4);
+  width: 100%;
+  font-family: var(--sh-typo-font-family-primary);
+}
+.sh-select--error { gap: var(--sh-space-6); }     /* Figma: root gap 6 on Error only */
+
+/* ---- Control ------------------------------------------------------------- */
+.sh-select__control {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-12);
+  width: 100%;
+  height: var(--sh-space-48);                     /* Figma: fixed 48 */
+  margin: 0;
+  padding: 0 var(--sh-space-16);                  /* Figma padding is unbound (16); the 48 height centres the content */
+  border: var(--sh-stroke-default) solid var(--_edge);
+  border-radius: var(--sh-radius-input);
+  background: var(--_bg);
+  color: var(--sh-text-primary);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sh-select__content {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sh-space-0);
+  min-width: 0;
+}
+.sh-select__label,
+.sh-select__value {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.sh-select__label { color: var(--_label); }
+.sh-select__value { color: var(--sh-text-primary); }
+
+.sh-select__chevron {
+  --sh-icon-paint: var(--sh-icon-primary);
+}
+
+/* State=Default: no value. The label rests in the field (Body MD Loose). */
+.sh-select:has(.sh-select__value:empty) .sh-select__content { gap: var(--sh-space-2); }
+.sh-select:has(.sh-select__value:empty) .sh-select__value { display: none; }
+.sh-select:has(.sh-select__value:empty) .sh-select__label {
+  font-size: var(--sh-typo-body-md-default-size);
+  font-weight: var(--sh-typo-body-md-default-weight);
+  line-height: var(--sh-typo-body-md-loose-line-height);
+  letter-spacing: var(--sh-typo-body-md-default-letter-spacing);
+}
+
+/* ---- Support row --------------------------------------------------------- */
+.sh-select__support {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  padding-left: var(--sh-space-4);                /* Figma: unbound 4 before the status icon */
+}
+.sh-select__status { --sh-icon-paint: var(--_status); }
+.sh-select__helper { flex: 1 1 auto; min-width: 0; color: var(--_helper); }
+
+/* ---- Options list (State=Open) ------------------------------------------- */
+.sh-select__options {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + var(--sh-space-4));
+  left: 0;
+  right: 0;
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--sh-space-8) var(--sh-space-0);
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-default);
+  box-shadow: var(--sh-shadow-floating-x) var(--sh-shadow-floating-y) var(--sh-shadow-floating-blur) var(--sh-shadow-floating-spread) var(--sh-shadow-floating-color);
+  list-style: none;
+  overflow: hidden;
+}
+
+/* ---- State --------------------------------------------------------------- */
+.sh-select:has(.sh-select__control[aria-expanded="true"]),
+.sh-select.is-open { --_edge: var(--sh-border-focus); }   /* Figma: Focus ring layer, border/focus at sh-stroke/default */
+.sh-select:has(.sh-select__control[aria-expanded="true"]) .sh-select__options,
+.sh-select.is-open .sh-select__options { display: block; }
+.sh-select:has(.sh-select__control[aria-expanded="true"]) .sh-select__chevron,
+.sh-select.is-open .sh-select__chevron { transform: rotate(0.5turn); }
+
+.sh-select__control:focus { outline: none; }
+.sh-select__control:focus-visible,
+.sh-select.is-focus .sh-select__control {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+
+.sh-select--error {
+  --_bg: var(--sh-semantic-error-background-soft-default);
+  --_edge: var(--sh-semantic-error-border-default);
+  --_label: var(--sh-semantic-error-text-on-soft);
+  --_helper: var(--sh-semantic-error-text-on-soft);
+  --_status: var(--sh-semantic-error-icon-on-soft);
+}
+
+/* Disabled: the Default look at sh-opacity/disabled. No pointer events. */
+.sh-select:has(.sh-select__control:disabled),
+.sh-select.is-disabled {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

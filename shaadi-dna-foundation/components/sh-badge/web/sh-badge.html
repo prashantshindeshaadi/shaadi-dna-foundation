@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  sh-badge — web (HTML5 + CSS). Every variant: Layout Stacked / Inline × State Default / Hover, plus Show leading icon off.
+  Spec: ../sh-badge.md · Figma node 2364:5662
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-badge</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-badge.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .row { display: flex; gap: var(--sh-space-8); align-items: flex-start; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-badge</h1>
+  <p class="sh-body-sm" style="color: var(--sh-text-secondary); max-width: 72ch;">Class <code>.sh-badge-trust</code>: <code>.sh-badge</code> is already taken by sh-icon.css (verified / premium / VIP badge images).</p>
+
+  <h2 class="sh-title-md">Layout=Stacked</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Layout=Stacked, State=Default</figcaption><button class="sh-badge-trust" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/parent@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Layout=Stacked, State=Hover</figcaption><button class="sh-badge-trust is-hover" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/parent@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Focus</figcaption><button class="sh-badge-trust is-focus" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/parent@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Disabled</figcaption><button class="sh-badge-trust" type="button" disabled><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/parent@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+  </div>
+
+  <h2 class="sh-title-md">Layout=Inline</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Layout=Inline, State=Default</figcaption><button class="sh-badge-trust sh-badge-trust--inline" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/parent@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Layout=Inline, State=Hover</figcaption><button class="sh-badge-trust sh-badge-trust--inline is-hover" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/parent@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Focus</figcaption><button class="sh-badge-trust sh-badge-trust--inline is-focus" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/parent@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+  </div>
+
+  <h2 class="sh-title-md">Show leading icon off</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Layout=Stacked</figcaption><button class="sh-badge-trust" type="button"><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+    <figure><figcaption class="sh-body-sm">Layout=Inline</figcaption><button class="sh-badge-trust sh-badge-trust--inline" type="button"><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button></figure>
+  </div>
+
+  <h2 class="sh-title-md">In use · profile header badge row</h2>
+  <div class="row">
+    <button class="sh-badge-trust" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/shaadi-id@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">SH12345678</span></button>
+    <button class="sh-badge-trust" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/verified-basic@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">ID verified</span></button>
+    <button class="sh-badge-trust" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/parent@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Managed by Parent</span></button>
+    <button class="sh-badge-trust" type="button"><img class="sh-icon sh-badge-trust__icon" src="../../../icons/pictogram/premium-member@2x.png" alt=""><span class="sh-badge-trust__label sh-support-label">Premium member</span></button>
+  </div>
+</body>
+</html>

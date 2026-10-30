@@ -1,0 +1,99 @@
+/*
+ * sh-badge — web (HTML5 + CSS)
+ * Spec: ../sh-badge.md · Figma node 2364:5662 (Layout Stacked / Inline × State Default / Hover)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-support-label
+ *   components/sh-icon/web/sh-icon.css           .sh-icon (the pictogram is an <img class="sh-icon">)
+ *
+ *   <button class="sh-badge-trust" type="button">
+ *     <img class="sh-icon sh-badge-trust__icon" src="icons/pictogram/parent@2x.png" alt="">
+ *     <span class="sh-badge-trust__label sh-support-label">Managed by Parent</span>
+ *   </button>
+ *
+ * Class name: .sh-badge-trust, not .sh-badge, because sh-icon.css already owns .sh-badge (the verified / premium /
+ * VIP badge images); one class for both would break those images on any page that loads this file.
+ *
+ * Layout  (none) Stacked (pictogram above the label, 80 wide) · --inline (pictogram beside the label)
+ * State   Hover :hover (background/soft, radius md, label text/primary) · Focus :focus-visible ·
+ *         Disabled [disabled] or [aria-disabled="true"]. Hover / Focus can be forced with .is-hover / .is-focus.
+ *         Figma has no Pressed state: pressed shows the Hover look.
+ * Show leading icon off: leave the <img> out. Pictograms keep their own colours (sh-icon/pictogram/*, Size 28).
+ * Min height 48, so the badge is a full tap target. Use a <span> instead of a <button> when it opens nothing.
+ */
+
+.sh-badge-trust {
+  --_bg: transparent;
+  --_fg: var(--sh-text-secondary);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-8);
+  width: var(--sh-space-80);
+  min-height: var(--sh-space-48);
+  margin: 0;
+  padding: var(--sh-space-4);
+  border: 0;
+  border-radius: var(--sh-radius-md);   /* Figma: none at Default, md at Hover. Invisible without a fill; the focus ring follows it */
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: center;
+  vertical-align: top;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sh-badge-trust__icon {
+  width: var(--sh-icon-pictogram-size-28);
+  height: var(--sh-icon-pictogram-size-28);
+}
+.sh-badge-trust__label { display: block; color: var(--_fg); }
+
+/* ---- Layout -------------------------------------------------------------- */
+.sh-badge-trust--inline {
+  flex-direction: row;
+  width: auto;
+  text-align: start;
+}
+/* The label wraps at the stacked badge's inner width (80 − 2 × 4), so both layouts break "Managed by / Parent" alike */
+.sh-badge-trust--inline .sh-badge-trust__label { max-width: calc(var(--sh-space-80) - 2 * var(--sh-space-4)); }
+
+/* ---- State --------------------------------------------------------------- */
+button.sh-badge-trust,
+a.sh-badge-trust { cursor: pointer; text-decoration: none; }
+
+button.sh-badge-trust:hover,
+a.sh-badge-trust:hover,
+button.sh-badge-trust:active,
+a.sh-badge-trust:active,
+.sh-badge-trust.is-hover {
+  --_bg: var(--sh-background-soft);
+  --_fg: var(--sh-text-primary);
+}
+
+/* Focus: a 2 ring in border/focus, 4 outside, radius md, at sh-opacity/strong (FOUNDATION §7.2) */
+.sh-badge-trust:focus { outline: none; }
+.sh-badge-trust::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--sh-space-4));
+  box-sizing: border-box;
+  border: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  border-radius: var(--sh-radius-md);
+  opacity: var(--sh-opacity-hidden);
+  pointer-events: none;
+}
+.sh-badge-trust:focus-visible::after,
+.sh-badge-trust.is-focus::after { opacity: var(--sh-opacity-strong); }
+
+.sh-badge-trust:disabled,
+.sh-badge-trust[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}

@@ -1,0 +1,27 @@
+/*
+ * sh-segmented-control — web (HTML5 + CSS)
+ * Spec: ../sh-segmented-control.md · Figma node 2711:11953 (Items 2 / 3 / 4)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-tab-item/web/sh-tab-item.css
+ *
+ *   <div class="sh-segmented-control" role="tablist" aria-label="Plan">
+ *     <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-button-md">Premium</span></button>
+ *     <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">VIP</span></button>
+ *   </div>
+ *
+ * Items  2, 3 or 4 sh-tab-item Style=Segmented children; no modifier, the count of children is the variant.
+ *        Exactly one segment has aria-selected="true" (label sh-button-md); the rest sh-body-md.
+ * The segments are sh-tab-item; this file only draws the background/strong track around them.
+ */
+
+.sh-segmented-control {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0;
+  padding: var(--sh-space-2);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-strong);
+}

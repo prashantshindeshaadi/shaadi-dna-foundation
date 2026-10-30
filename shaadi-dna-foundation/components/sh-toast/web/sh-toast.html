@@ -1,0 +1,92 @@
+<!doctype html>
+<!--
+  sh-toast — web (HTML5 + CSS). Every variant: Type Neutral / Success / Information / Warning / Error,
+  plus Show icon / Show action off and Show close on.
+  Spec: ../sh-toast.md · Figma node 2718:41602
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-toast</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="sh-toast.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 328px; }   /* Figma frame width 328 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-toast</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Neutral</figcaption>
+      <div class="sh-toast" role="status">
+        <span class="sh-toast__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/information-circle.svg)" aria-hidden="true"></span>
+        <p class="sh-toast__message sh-body-md">Interest sent to Priya</p>
+        <button class="sh-toast__action sh-text-link sh-text-link--inverse sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Undo</span></button>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Success</figcaption>
+      <div class="sh-toast sh-toast--success" role="status">
+        <span class="sh-toast__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/check-circle.svg)" aria-hidden="true"></span>
+        <p class="sh-toast__message sh-body-md">Added to your shortlist</p>
+        <a class="sh-toast__action sh-text-link sh-text-link--link sh-text-link--sm" href="#"><span class="sh-text-link__label sh-button-sm">View</span></a>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Information</figcaption>
+      <div class="sh-toast sh-toast--information" role="status">
+        <span class="sh-toast__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/information-circle.svg)" aria-hidden="true"></span>
+        <p class="sh-toast__message sh-body-md">Priya viewed your profile</p>
+        <a class="sh-toast__action sh-text-link sh-text-link--link sh-text-link--sm" href="#"><span class="sh-text-link__label sh-button-sm">View</span></a>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Warning</figcaption>
+      <div class="sh-toast sh-toast--warning" role="status">
+        <span class="sh-toast__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/alert-diamond.svg)" aria-hidden="true"></span>
+        <p class="sh-toast__message sh-body-md">Only 2 contacts left this week</p>
+        <a class="sh-toast__action sh-text-link sh-text-link--link sh-text-link--sm" href="#"><span class="sh-text-link__label sh-button-sm">Upgrade</span></a>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Error</figcaption>
+      <div class="sh-toast sh-toast--error" role="alert">
+        <span class="sh-toast__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/alert-circle.svg)" aria-hidden="true"></span>
+        <p class="sh-toast__message sh-body-md">Payment failed</p>
+        <button class="sh-toast__action sh-text-link sh-text-link--link sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Retry</span></button>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Show icon / Show action / Show close</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Neutral, Show close=true</figcaption>
+      <div class="sh-toast" role="status">
+        <span class="sh-toast__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/information-circle.svg)" aria-hidden="true"></span>
+        <p class="sh-toast__message sh-body-md">Interest sent to Priya</p>
+        <button class="sh-toast__action sh-text-link sh-text-link--inverse sh-text-link--sm" type="button"><span class="sh-text-link__label sh-button-sm">Undo</span></button>
+        <button class="sh-toast__close" type="button" aria-label="Close"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Success, Show close=true</figcaption>
+      <div class="sh-toast sh-toast--success" role="status">
+        <span class="sh-toast__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/check-circle.svg)" aria-hidden="true"></span>
+        <p class="sh-toast__message sh-body-md">Added to your shortlist</p>
+        <a class="sh-toast__action sh-text-link sh-text-link--link sh-text-link--sm" href="#"><span class="sh-text-link__label sh-button-sm">View</span></a>
+        <button class="sh-toast__close" type="button" aria-label="Close"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Neutral, Show icon=false, Show action=false</figcaption>
+      <div class="sh-toast" role="status">
+        <p class="sh-toast__message sh-body-md">Profile shortlisted</p>
+      </div>
+    </figure>
+  </div>
+</body>
+</html>

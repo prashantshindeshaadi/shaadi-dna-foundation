@@ -1,0 +1,62 @@
+<!doctype html>
+<!--
+  sh-toggle — web (HTML5 + CSS). Every variant: Value Off / On × State Default / Hover / Pressed / Disabled / Focus.
+  Spec: ../sh-toggle.md · Figma node 2496:22571
+  Hover, Pressed and Focus are forced with .is-hover / .is-pressed / .is-focus so they show in a still preview.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-toggle</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-toggle.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .cell { display: flex; align-items: center; justify-content: center; width: var(--sh-space-48); height: var(--sh-space-48); }
+    .zoom { display: flex; gap: var(--sh-space-24); zoom: 3; padding: var(--sh-space-8); }
+    .list { display: flex; flex-direction: column; width: 320px; margin: 0; padding: 0; border: 0; }
+    .list legend { padding: 0; margin-bottom: var(--sh-space-4); }
+    .opt { display: flex; align-items: center; gap: var(--sh-space-12); min-height: var(--sh-space-48); cursor: pointer; }
+    .opt--end { justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-toggle</h1>
+
+  <h2 class="sh-title-md">Value=Off</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Value=Off, State=Default</figcaption><div class="cell"><label class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" aria-label="Off Default"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Off, State=Hover</figcaption><div class="cell"><label class="sh-toggle is-hover"><input class="sh-toggle__input" type="checkbox" role="switch" aria-label="Off Hover"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Off, State=Pressed</figcaption><div class="cell"><label class="sh-toggle is-pressed"><input class="sh-toggle__input" type="checkbox" role="switch" aria-label="Off Pressed"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Off, State=Disabled</figcaption><div class="cell"><label class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" disabled aria-label="Off Disabled"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=Off, State=Focus</figcaption><div class="cell"><label class="sh-toggle is-focus"><input class="sh-toggle__input" type="checkbox" role="switch" aria-label="Off Focus"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+  </div>
+  <h2 class="sh-title-md">Value=On</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Value=On, State=Default</figcaption><div class="cell"><label class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" checked aria-label="On Default"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=On, State=Hover</figcaption><div class="cell"><label class="sh-toggle is-hover"><input class="sh-toggle__input" type="checkbox" role="switch" checked aria-label="On Hover"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=On, State=Pressed</figcaption><div class="cell"><label class="sh-toggle is-pressed"><input class="sh-toggle__input" type="checkbox" role="switch" checked aria-label="On Pressed"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=On, State=Disabled</figcaption><div class="cell"><label class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" checked disabled aria-label="On Disabled"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Value=On, State=Focus</figcaption><div class="cell"><label class="sh-toggle is-focus"><input class="sh-toggle__input" type="checkbox" role="switch" checked aria-label="On Focus"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Detail at 3× · Default, Hover, Focus</h2>
+  <div class="zoom">
+    <label class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" aria-label="z1"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label><label class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" checked aria-label="z2"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label><label class="sh-toggle is-hover"><input class="sh-toggle__input" type="checkbox" role="switch" checked aria-label="z3"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label><label class="sh-toggle is-focus"><input class="sh-toggle__input" type="checkbox" role="switch" checked aria-label="z4"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></label>
+  </div>
+
+  <h2 class="sh-title-md">In use · settings rows</h2>
+    <div class="list">
+      <label class="opt opt--end"><span class="sh-body-md">Show my photo to members only</span><span class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" checked><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></span></label>
+      <label class="opt opt--end"><span class="sh-body-md">Email me new matches</span><span class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></span></label>
+      <label class="opt opt--end"><span class="sh-body-md">Hide last seen</span><span class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" checked><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../icons/filled/check.svg)"></span></span></span></span></label>
+    </div>
+</body>
+</html>

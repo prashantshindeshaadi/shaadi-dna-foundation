@@ -1,0 +1,42 @@
+/*
+ * sh-tab-group — web (HTML5 + CSS)
+ * Spec: ../sh-tab-group.md · Figma node 2721:43483 (Orientation Horizontal / Vertical)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css
+ *   components/sh-indicator/web/sh-indicator.css · components/sh-tab-item/web/sh-tab-item.css
+ *
+ *   <div class="sh-tab-group" role="tablist" aria-label="Matches">
+ *     <button class="sh-tab-item" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-title-md">New</span></button>
+ *     <button class="sh-tab-item" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-title-md">Daily</span></button>
+ *   </div>
+ *
+ * Orientation  (none) Horizontal: a row of Style=Underline tabs, 24 apart, scrolls sideways when it overflows
+ *              --vertical: a column of Style=Vertical tabs (add aria-orientation="vertical")
+ * The tabs are sh-tab-item; this file only lays them out and draws the border/soft edge
+ * (bottom for Horizontal, right for Vertical) that the selected tab's indicator sits on.
+ */
+
+.sh-tab-group {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--sh-space-24);
+  width: 100%;
+  padding: 0 var(--sh-space-16);
+  overflow-x: auto;
+  scrollbar-width: none;
+  /* edge drawn inside, so the tab indicator paints over it */
+  box-shadow: inset 0 calc(var(--sh-stroke-default) * -1) 0 var(--sh-border-soft);
+}
+.sh-tab-group::-webkit-scrollbar { display: none; }
+
+.sh-tab-group--vertical {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  overflow: visible;
+  box-shadow: inset calc(var(--sh-stroke-default) * -1) 0 0 var(--sh-border-soft);
+}

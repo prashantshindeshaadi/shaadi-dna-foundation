@@ -1,0 +1,112 @@
+/*
+ * sh-checkbox — web (HTML5 + CSS)
+ * Spec: ../sh-checkbox.md · Figma node 2496:22479 (Value Unchecked / Checked × State Default / Hover / Pressed / Disabled / Focus)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   components/sh-icon/web/sh-icon.css           .sh-icon mask class
+ *
+ *   <label class="sh-checkbox">
+ *     <input class="sh-checkbox__input" type="checkbox" aria-label="Show me only verified profiles">
+ *     <span class="sh-checkbox__box" aria-hidden="true">
+ *       <span class="sh-icon sh-icon--16 sh-checkbox__icon" style="--icon:url(icons/filled/check.svg)"></span>
+ *     </span>
+ *   </label>
+ *
+ * Value  Unchecked · Checked = the native input's :checked (no class needed)
+ * State  Hover :hover · Pressed :active · Focus :focus-visible on the input · Disabled [disabled] on the input.
+ *        Hover / Pressed / Focus can be forced for previews with .is-hover / .is-pressed / .is-focus on the root.
+ * The visible control is 24 (a 20 box inside 2 padding); the invisible input is a 48 × 48 tap area.
+ * Put a visible label next to it in a <label> or point aria-labelledby at it. The check is sh-icon/check, Filled.
+ */
+
+.sh-checkbox {
+  /* Value=Unchecked, State=Default */
+  --_fill: var(--sh-background-default);
+  --_stroke: var(--sh-border-default);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--sh-icon-size-24);
+  height: var(--sh-icon-size-24);
+  padding: var(--sh-space-2);
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The native input: invisible, centred, 48 × 48 tap target. It carries every state. */
+.sh-checkbox__input {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: var(--sh-icon-target-default);
+  height: var(--sh-icon-target-default);
+  margin: 0;
+  transform: translate(-50%, -50%);
+  opacity: var(--sh-opacity-hidden);
+  cursor: pointer;
+}
+
+.sh-checkbox__box {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sh-icon-size-20);
+  height: var(--sh-icon-size-20);
+  border: var(--sh-stroke-strong) solid var(--_stroke);   /* Figma stroke is inside the box */
+  border-radius: var(--sh-radius-xxs);
+  background: var(--_fill);
+}
+
+/* Check: sh-icon/check (Filled) in icon/on-brand, hidden until checked */
+.sh-checkbox__icon {
+  --sh-icon-paint: var(--sh-icon-on-brand);
+  visibility: hidden;
+}
+
+/* ---- Value=Checked ------------------------------------------------------- */
+.sh-checkbox:has(.sh-checkbox__input:checked) {
+  --_fill: var(--sh-button-primary-background-default-end);
+  --_stroke: var(--sh-border-selected);
+}
+.sh-checkbox__input:checked + .sh-checkbox__box .sh-checkbox__icon { visibility: visible; }
+
+/* ---- State --------------------------------------------------------------- */
+.sh-checkbox:hover,
+.sh-checkbox.is-hover { --_fill: var(--sh-background-strong); }
+.sh-checkbox:active,
+.sh-checkbox.is-pressed { --_fill: var(--sh-button-tertiary-background-pressed); }
+
+.sh-checkbox:has(.sh-checkbox__input:checked):hover,
+.sh-checkbox.is-hover:has(.sh-checkbox__input:checked) { --_fill: var(--sh-button-primary-background-hover-end); }
+.sh-checkbox:has(.sh-checkbox__input:checked):active,
+.sh-checkbox.is-pressed:has(.sh-checkbox__input:checked) { --_fill: var(--sh-button-primary-background-pressed-end); }
+
+/* Focus: Figma's .focus-ring, 4 outside the 24 root: a 2 ring in border/focus, radius sm, at sh-opacity/strong */
+.sh-checkbox::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--sh-space-4));
+  box-sizing: border-box;
+  border: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  border-radius: var(--sh-radius-sm);
+  opacity: var(--sh-opacity-hidden);
+  pointer-events: none;
+}
+.sh-checkbox:has(.sh-checkbox__input:focus-visible)::after,
+.sh-checkbox.is-focus::after { opacity: var(--sh-opacity-strong); }
+
+/* Disabled: the Default look at sh-opacity/disabled, no pointer events */
+.sh-checkbox:has(.sh-checkbox__input:disabled) {
+  --_fill: var(--sh-background-default);
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}
+.sh-checkbox:has(.sh-checkbox__input:disabled:checked) { --_fill: var(--sh-button-primary-background-default-end); }

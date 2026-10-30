@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-30 — Web code for 19 more core components](2026-10-30-web-code-for-19-more-core-components.md)
 - [2026-10-30 — One skill: /shaadi-dna-sync](2026-10-30-one-skill-shaadi-dna-sync.md)
 - [2026-10-30 — Component status: Draft, Proposed, In refinement, Core](2026-10-30-component-status-draft-proposed-in-refinement-core.md)
 - [2026-10-30 — Web Code Connect moved to CLI v2 template files](2026-10-30-web-code-connect-moved-to-cli-v2-template-files.md)

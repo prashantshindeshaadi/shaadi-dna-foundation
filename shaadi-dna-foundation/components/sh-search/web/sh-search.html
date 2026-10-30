@@ -1,0 +1,62 @@
+<!doctype html>
+<!--
+  sh-search — web (HTML5 + CSS). Every variant: State Default / Filled, plus Focus and Disabled from the shared rules.
+  Spec: ../sh-search.md · Figma node 2597:29917
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-search</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-search.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, 328px); gap: var(--sh-space-24) var(--sh-space-32); align-items: start; }   /* Figma width 328 */
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-search</h1>
+
+  <h2 class="sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Default</figcaption>
+      <label class="sh-search">
+        <span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/search.svg)" aria-hidden="true"></span>
+        <input class="sh-search__field sh-body-md" type="search" placeholder="Search Religion &amp; Community" aria-label="Search religion and community">
+        <button class="sh-search__clear" type="button" aria-label="Clear search"><span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button>
+      </label>
+    </figure>
+    <figure><figcaption class="sh-body-sm">State=Filled</figcaption>
+      <label class="sh-search">
+        <span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/search.svg)" aria-hidden="true"></span>
+        <input class="sh-search__field sh-body-md" type="search" placeholder="Search Religion &amp; Community" value="Hindu Maratha" aria-label="Search religion and community">
+        <button class="sh-search__clear" type="button" aria-label="Clear search"><span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button>
+      </label>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Interaction states (not Figma variants)</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Focus (:focus-within, forced with .is-focus)</figcaption>
+      <label class="sh-search is-focus">
+        <span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/search.svg)" aria-hidden="true"></span>
+        <input class="sh-search__field sh-body-md" type="search" placeholder="Search city" value="Pune" aria-label="Search city">
+        <button class="sh-search__clear" type="button" aria-label="Clear search"><span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button>
+      </label>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Disabled</figcaption>
+      <label class="sh-search">
+        <span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/search.svg)" aria-hidden="true"></span>
+        <input class="sh-search__field sh-body-md" type="search" placeholder="Search city" aria-label="Search city" disabled>
+        <button class="sh-search__clear" type="button" aria-label="Clear search" disabled><span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button>
+      </label>
+    </figure>
+  </div>
+</body>
+</html>

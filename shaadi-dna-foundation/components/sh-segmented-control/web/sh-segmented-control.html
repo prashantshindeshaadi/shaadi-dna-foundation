@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  sh-segmented-control — web (HTML5 + CSS). Every variant: Items 2 / 3 / 4.
+  Spec: ../sh-segmented-control.md · Figma node 2711:11953 · segments are sh-tab-item Style=Segmented (its CSS, not copied)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-segmented-control</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-tab-item/web/sh-tab-item.css">
+  <link rel="stylesheet" href="sh-segmented-control.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .stack { display: flex; flex-direction: column; gap: var(--sh-space-24); align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-segmented-control</h1>
+
+  <h2 class="sh-title-md">Items</h2>
+  <div class="stack">
+    <figure><figcaption class="sh-body-sm">Items=2</figcaption>
+      <div class="sh-segmented-control" role="tablist" aria-label="Plan">
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-button-md">Premium</span></button>
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">VIP</span></button>
+      </div></figure>
+    <figure><figcaption class="sh-body-sm">Items=3</figcaption>
+      <div class="sh-segmented-control" role="tablist" aria-label="Account">
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-button-md">Premium</span></button>
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">Profile</span></button>
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">Settings</span></button>
+      </div></figure>
+    <figure><figcaption class="sh-body-sm">Items=4</figcaption>
+      <div class="sh-segmented-control" role="tablist" aria-label="Requests">
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-button-md">Received</span></button>
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">Accepted</span></button>
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">Sent</span></button>
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">Declined</span></button>
+      </div></figure>
+    <figure><figcaption class="sh-body-sm">Items=3, second segment selected</figcaption>
+      <div class="sh-segmented-control" role="tablist" aria-label="Account">
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">Premium</span></button>
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="true"><span class="sh-tab-item__label sh-button-md">Profile</span></button>
+        <button class="sh-tab-item sh-tab-item--segmented" type="button" role="tab" aria-selected="false"><span class="sh-tab-item__label sh-body-md">Settings</span></button>
+      </div></figure>
+  </div>
+</body>
+</html>

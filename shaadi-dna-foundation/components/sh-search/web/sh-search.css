@@ -1,0 +1,100 @@
+/*
+ * sh-search — web (HTML5 + CSS)
+ * Spec: ../sh-search.md · Figma node 2597:29917 (State Default / Filled = 2 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css (.sh-body-md) · components/sh-icon/web/sh-icon.css
+ *
+ *   <label class="sh-search">
+ *     <span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(icons/line/search.svg)" aria-hidden="true"></span>
+ *     <input class="sh-search__field sh-body-md" type="search" placeholder="Search Religion &amp; Community" aria-label="Search religion and community">
+ *     <button class="sh-search__clear" type="button" aria-label="Clear search">
+ *       <span class="sh-search__icon sh-icon sh-icon--16" style="--icon:url(icons/line/close.svg)" aria-hidden="true"></span>
+ *     </button>
+ *   </label>
+ *
+ * State  Default  empty: the placeholder shows (text/tertiary), the clear button hides itself
+ *        Filled   typed text (text/primary) and the clear button (Figma "Trailing icon", sh-icon/close)
+ *        Focus    :focus-within draws the focus ring (Figma has no Focus variant)
+ *        Disabled [disabled] on the field: sh-opacity/disabled, no pointer events (Figma has no Disabled variant)
+ * The clear button has a 48 × 48 tap area; clearing the field (and refocusing it) is the app's job.
+ */
+
+.sh-search {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-8);
+  width: 100%;
+  height: var(--sh-space-40);                     /* Figma: fixed 40 */
+  padding: 0 var(--sh-space-12);
+  border: var(--sh-stroke-default) solid var(--sh-border-default);
+  border-radius: var(--sh-radius-md);
+  background: var(--sh-background-soft);
+  cursor: text;
+}
+
+.sh-search__icon { --sh-icon-paint: var(--sh-icon-primary); }
+
+.sh-search__field {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--sh-text-primary);
+  caret-color: var(--sh-background-brand);
+  -webkit-appearance: none;
+  appearance: none;
+}
+.sh-search__field::placeholder { color: var(--sh-text-tertiary); opacity: var(--sh-opacity-full); }
+.sh-search__field::-webkit-search-cancel-button,
+.sh-search__field::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }
+
+/* Clear: Figma "Trailing icon" (sh-icon/close), shown on Filled only */
+.sh-search__clear {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-search__clear::before {                       /* 48 × 48 tap area around the 16 icon */
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sh-icon-target-default);
+  height: var(--sh-icon-target-default);
+  transform: translate(-50%, -50%);
+}
+.sh-search:has(.sh-search__field:placeholder-shown) .sh-search__clear { display: none; }
+.sh-search__clear:focus { outline: none; }
+.sh-search__clear:focus-visible {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+  border-radius: var(--sh-radius-full);
+}
+
+/* ---- State --------------------------------------------------------------- */
+.sh-search:focus-within,
+.sh-search.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+.sh-search:has(.sh-search__clear:focus-visible) { outline: none; }
+
+.sh-search:has(.sh-search__field:disabled) {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

@@ -1,0 +1,110 @@
+/*
+ * sh-radio — web (HTML5 + CSS)
+ * Spec: ../sh-radio.md · Figma node 2496:22347 (Selected Inactive / Active × State Default / Hover / Pressed / Disabled / Focus)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ *   <label class="sh-radio">
+ *     <input class="sh-radio__input" type="radio" name="diet" value="veg" aria-label="Vegetarian">
+ *     <span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span>
+ *   </label>
+ *
+ * Selected  Inactive · Active = the native input's :checked (no class needed). Group radios with one name.
+ * State     Hover :hover · Pressed :active · Focus :focus-visible on the input · Disabled [disabled] on the input.
+ *           Hover / Pressed / Focus can be forced for previews with .is-hover / .is-pressed / .is-focus on the root.
+ * The visible control is 24 (a 20 circle inside 2 padding); the invisible input is a 48 × 48 tap area.
+ * Put a visible label next to it in a <label> or point aria-labelledby at it.
+ */
+
+.sh-radio {
+  /* Selected=Inactive, State=Default */
+  --_fill: var(--sh-background-default);
+  --_stroke: var(--sh-border-default);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--sh-icon-size-24);
+  height: var(--sh-icon-size-24);
+  padding: var(--sh-space-2);
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The native input: invisible, centred, 48 × 48 tap target. It carries every state. */
+.sh-radio__input {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: var(--sh-icon-target-default);
+  height: var(--sh-icon-target-default);
+  margin: 0;
+  transform: translate(-50%, -50%);
+  opacity: var(--sh-opacity-hidden);
+  cursor: pointer;
+}
+
+.sh-radio__circle {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sh-icon-size-20);
+  height: var(--sh-icon-size-20);
+  border: var(--sh-stroke-strong) solid var(--_stroke);   /* Figma stroke is inside the circle */
+  border-radius: var(--sh-radius-full);
+  background: var(--_fill);
+}
+
+/* Dot: 8, background/default, hidden until selected */
+.sh-radio__dot {
+  width: var(--sh-space-8);
+  height: var(--sh-space-8);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-default);
+  visibility: hidden;
+}
+
+/* ---- Selected=Active ----------------------------------------------------- */
+.sh-radio:has(.sh-radio__input:checked) {
+  --_fill: var(--sh-gradient-brand-default);
+  --_stroke: var(--sh-border-selected);
+}
+.sh-radio__input:checked + .sh-radio__circle .sh-radio__dot { visibility: visible; }
+
+/* ---- State --------------------------------------------------------------- */
+.sh-radio:hover,
+.sh-radio.is-hover { --_fill: var(--sh-background-strong); }
+.sh-radio:active,
+.sh-radio.is-pressed { --_fill: var(--sh-button-tertiary-background-pressed); }
+
+.sh-radio:has(.sh-radio__input:checked):hover,
+.sh-radio.is-hover:has(.sh-radio__input:checked) { --_fill: var(--sh-button-primary-background-hover-end); }
+.sh-radio:has(.sh-radio__input:checked):active,
+.sh-radio.is-pressed:has(.sh-radio__input:checked) { --_fill: var(--sh-button-primary-background-pressed-end); }
+
+/* Focus: Figma's .focus-ring, 4 outside the 24 root: a 2 ring in border/focus, radius full, at sh-opacity/strong */
+.sh-radio::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--sh-space-4));
+  box-sizing: border-box;
+  border: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  border-radius: var(--sh-radius-full);
+  opacity: var(--sh-opacity-hidden);
+  pointer-events: none;
+}
+.sh-radio:has(.sh-radio__input:focus-visible)::after,
+.sh-radio.is-focus::after { opacity: var(--sh-opacity-strong); }
+
+/* Disabled: the Default look at sh-opacity/disabled, no pointer events */
+.sh-radio:has(.sh-radio__input:disabled) {
+  --_fill: var(--sh-background-default);
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}
+.sh-radio:has(.sh-radio__input:disabled:checked) { --_fill: var(--sh-gradient-brand-default); }

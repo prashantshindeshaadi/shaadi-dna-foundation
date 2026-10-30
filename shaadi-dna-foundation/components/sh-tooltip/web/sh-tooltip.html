@@ -1,0 +1,105 @@
+<!doctype html>
+<!--
+  sh-tooltip — web (HTML5 + CSS). Every variant: Type Simple / Rich × Placement Top / Bottom / Left / Right,
+  plus Rich with Show close off.
+  Spec: ../sh-tooltip.md · Figma node 2712:13106
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-tooltip</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-tooltip.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .anchor { display: inline-flex; flex-direction: column; align-items: center; gap: var(--sh-space-4); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-tooltip</h1>
+
+  <h2 class="sh-title-md">Type=Simple</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Simple, Placement=Top</figcaption>
+      <div class="sh-tooltip" role="tooltip"><div class="sh-tooltip__bubble"><p class="sh-tooltip__label sh-body-sm">You'll lose your Plus benefits</p></div><span class="sh-tooltip__pointer" aria-hidden="true"></span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Simple, Placement=Bottom</figcaption>
+      <div class="sh-tooltip sh-tooltip--bottom" role="tooltip"><div class="sh-tooltip__bubble"><p class="sh-tooltip__label sh-body-sm">You'll lose your Plus benefits</p></div><span class="sh-tooltip__pointer" aria-hidden="true"></span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Simple, Placement=Left</figcaption>
+      <div class="sh-tooltip sh-tooltip--left" role="tooltip"><div class="sh-tooltip__bubble"><p class="sh-tooltip__label sh-body-sm">You'll lose your Plus benefits</p></div><span class="sh-tooltip__pointer" aria-hidden="true"></span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Simple, Placement=Right</figcaption>
+      <div class="sh-tooltip sh-tooltip--right" role="tooltip"><div class="sh-tooltip__bubble"><p class="sh-tooltip__label sh-body-sm">You'll lose your Plus benefits</p></div><span class="sh-tooltip__pointer" aria-hidden="true"></span></div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Type=Rich</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Rich, Placement=Top</figcaption>
+      <div class="sh-tooltip sh-tooltip--rich" role="dialog" aria-label="Shortlist tip">
+        <div class="sh-tooltip__bubble">
+          <div class="sh-tooltip__header"><p class="sh-tooltip__title sh-title-sm">Shortlist for later</p><button class="sh-tooltip__close" type="button" aria-label="Close"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button></div>
+          <p class="sh-tooltip__label sh-body-sm">Tap the star to save profiles you like.</p>
+        </div>
+        <span class="sh-tooltip__pointer" aria-hidden="true"></span>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Rich, Placement=Bottom</figcaption>
+      <div class="sh-tooltip sh-tooltip--rich sh-tooltip--bottom" role="dialog" aria-label="Shortlist tip">
+        <div class="sh-tooltip__bubble">
+          <div class="sh-tooltip__header"><p class="sh-tooltip__title sh-title-sm">Shortlist for later</p><button class="sh-tooltip__close" type="button" aria-label="Close"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button></div>
+          <p class="sh-tooltip__label sh-body-sm">Tap the star to save profiles you like.</p>
+        </div>
+        <span class="sh-tooltip__pointer" aria-hidden="true"></span>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Rich, Placement=Left</figcaption>
+      <div class="sh-tooltip sh-tooltip--rich sh-tooltip--left" role="dialog" aria-label="Shortlist tip">
+        <div class="sh-tooltip__bubble">
+          <div class="sh-tooltip__header"><p class="sh-tooltip__title sh-title-sm">Shortlist for later</p><button class="sh-tooltip__close" type="button" aria-label="Close"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button></div>
+          <p class="sh-tooltip__label sh-body-sm">Tap the star to save profiles you like.</p>
+        </div>
+        <span class="sh-tooltip__pointer" aria-hidden="true"></span>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Rich, Placement=Right</figcaption>
+      <div class="sh-tooltip sh-tooltip--rich sh-tooltip--right" role="dialog" aria-label="Shortlist tip">
+        <div class="sh-tooltip__bubble">
+          <div class="sh-tooltip__header"><p class="sh-tooltip__title sh-title-sm">Shortlist for later</p><button class="sh-tooltip__close" type="button" aria-label="Close"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button></div>
+          <p class="sh-tooltip__label sh-body-sm">Tap the star to save profiles you like.</p>
+        </div>
+        <span class="sh-tooltip__pointer" aria-hidden="true"></span>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Show close</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Rich, Placement=Top, Show close=false</figcaption>
+      <div class="sh-tooltip sh-tooltip--rich" role="dialog" aria-label="Shortlist tip">
+        <div class="sh-tooltip__bubble">
+          <div class="sh-tooltip__header"><p class="sh-tooltip__title sh-title-sm">Shortlist for later</p></div>
+          <p class="sh-tooltip__label sh-body-sm">Tap the star to save profiles you like.</p>
+        </div>
+        <span class="sh-tooltip__pointer" aria-hidden="true"></span>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">In use</h2>
+  <div class="grid">
+    <div class="anchor">
+      <div class="sh-tooltip" role="tooltip" id="tip-plus"><div class="sh-tooltip__bubble"><p class="sh-tooltip__label sh-body-sm">You'll lose your Plus benefits</p></div><span class="sh-tooltip__pointer" aria-hidden="true"></span></div>
+      <a class="sh-body-sm" href="#" aria-describedby="tip-plus">Cancel plan</a>
+    </div>
+  </div>
+</body>
+</html>

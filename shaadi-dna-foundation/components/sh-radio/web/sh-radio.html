@@ -1,0 +1,61 @@
+<!doctype html>
+<!--
+  sh-radio — web (HTML5 + CSS). Every variant: Selected Inactive / Active × State Default / Hover / Pressed / Disabled / Focus.
+  Spec: ../sh-radio.md · Figma node 2496:22347
+  Hover, Pressed and Focus are forced with .is-hover / .is-pressed / .is-focus so they show in a still preview.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-radio</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-radio.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .cell { display: flex; align-items: center; justify-content: center; width: var(--sh-space-48); height: var(--sh-space-48); }
+    .zoom { display: flex; gap: var(--sh-space-24); zoom: 3; padding: var(--sh-space-8); }
+    .list { display: flex; flex-direction: column; width: 320px; margin: 0; padding: 0; border: 0; }
+    .list legend { padding: 0; margin-bottom: var(--sh-space-4); }
+    .opt { display: flex; align-items: center; gap: var(--sh-space-12); min-height: var(--sh-space-48); cursor: pointer; }
+    .opt--end { justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-radio</h1>
+
+  <h2 class="sh-title-md">Selected=Inactive</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Selected=Inactive, State=Default</figcaption><div class="cell"><label class="sh-radio"><input class="sh-radio__input" type="radio" name="Inactive Default" aria-label="Inactive Default"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Selected=Inactive, State=Hover</figcaption><div class="cell"><label class="sh-radio is-hover"><input class="sh-radio__input" type="radio" name="Inactive Hover" aria-label="Inactive Hover"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Selected=Inactive, State=Pressed</figcaption><div class="cell"><label class="sh-radio is-pressed"><input class="sh-radio__input" type="radio" name="Inactive Pressed" aria-label="Inactive Pressed"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Selected=Inactive, State=Disabled</figcaption><div class="cell"><label class="sh-radio"><input class="sh-radio__input" type="radio" name="Inactive Disabled" disabled aria-label="Inactive Disabled"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Selected=Inactive, State=Focus</figcaption><div class="cell"><label class="sh-radio is-focus"><input class="sh-radio__input" type="radio" name="Inactive Focus" aria-label="Inactive Focus"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+  </div>
+  <h2 class="sh-title-md">Selected=Active</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Selected=Active, State=Default</figcaption><div class="cell"><label class="sh-radio"><input class="sh-radio__input" type="radio" name="Active Default" checked aria-label="Active Default"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Selected=Active, State=Hover</figcaption><div class="cell"><label class="sh-radio is-hover"><input class="sh-radio__input" type="radio" name="Active Hover" checked aria-label="Active Hover"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Selected=Active, State=Pressed</figcaption><div class="cell"><label class="sh-radio is-pressed"><input class="sh-radio__input" type="radio" name="Active Pressed" checked aria-label="Active Pressed"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Selected=Active, State=Disabled</figcaption><div class="cell"><label class="sh-radio"><input class="sh-radio__input" type="radio" name="Active Disabled" checked disabled aria-label="Active Disabled"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+    <figure><figcaption class="sh-body-sm">Selected=Active, State=Focus</figcaption><div class="cell"><label class="sh-radio is-focus"><input class="sh-radio__input" type="radio" name="Active Focus" checked aria-label="Active Focus"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Detail at 3× · Default, Hover, Focus</h2>
+  <div class="zoom">
+    <label class="sh-radio"><input class="sh-radio__input" type="radio" name="z1" aria-label="z1"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label><label class="sh-radio"><input class="sh-radio__input" type="radio" name="z2" checked aria-label="z2"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label><label class="sh-radio is-hover"><input class="sh-radio__input" type="radio" name="z3" checked aria-label="z3"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label><label class="sh-radio is-focus"><input class="sh-radio__input" type="radio" name="z4" checked aria-label="z4"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></label>
+  </div>
+
+  <h2 class="sh-title-md">In use · one choice from a set</h2>
+    <fieldset class="list"><legend class="sh-title-sm">Diet</legend>
+      <label class="opt"><span class="sh-radio"><input class="sh-radio__input" type="radio" name="diet" checked><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></span><span class="sh-body-md">Vegetarian</span></label>
+      <label class="opt"><span class="sh-radio"><input class="sh-radio__input" type="radio" name="diet"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></span><span class="sh-body-md">Non-vegetarian</span></label>
+      <label class="opt"><span class="sh-radio"><input class="sh-radio__input" type="radio" name="diet"><span class="sh-radio__circle" aria-hidden="true"><span class="sh-radio__dot"></span></span></span><span class="sh-body-md">Eggetarian</span></label>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<!--
+  sh-select — web (HTML5 + CSS). Every variant: State Default / Filled / Open / Error / Disabled, plus Show helper off
+  and a working example (the small script at the end only opens, closes and picks).
+  Spec: ../sh-select.md · Figma node 2718:42776
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-select</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-menu-item/web/sh-menu-item.css">
+  <link rel="stylesheet" href="sh-select.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, 320px); gap: var(--sh-space-24) var(--sh-space-32); align-items: start; }   /* Figma width 320 */
+    figure { margin: 0; }
+    figure.tall { min-height: 280px; }   /* room for the open list */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-select</h1>
+
+  <h2 class="sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Default</figcaption>
+      <div class="sh-select">
+        <button class="sh-select__control" type="button" aria-haspopup="listbox" aria-expanded="false" aria-describedby="s1-help">
+          <span class="sh-select__content"><span class="sh-select__label sh-body-sm-loose">Religion</span><span class="sh-select__value sh-body-md-tight"></span></span>
+          <span class="sh-select__chevron sh-icon sh-icon--16" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+        </button>
+        <div class="sh-select__support"><span class="sh-select__status sh-icon sh-icon--12" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span><span class="sh-select__helper sh-body-sm" id="s1-help">Shown on your profile</span></div>
+      </div>
+    </figure>
+
+    <figure><figcaption class="sh-body-sm">State=Filled</figcaption>
+      <div class="sh-select">
+        <button class="sh-select__control" type="button" aria-haspopup="listbox" aria-expanded="false" aria-describedby="s2-help">
+          <span class="sh-select__content"><span class="sh-select__label sh-body-sm-loose">Religion</span><span class="sh-select__value sh-body-md-tight">Hindu</span></span>
+          <span class="sh-select__chevron sh-icon sh-icon--16" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+        </button>
+        <div class="sh-select__support"><span class="sh-select__status sh-icon sh-icon--12" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span><span class="sh-select__helper sh-body-sm" id="s2-help">Shown on your profile</span></div>
+      </div>
+    </figure>
+
+    <figure class="tall"><figcaption class="sh-body-sm">State=Open</figcaption>
+      <div class="sh-select">
+        <button class="sh-select__control" type="button" aria-haspopup="listbox" aria-expanded="true" aria-controls="s3-list" aria-describedby="s3-help">
+          <span class="sh-select__content"><span class="sh-select__label sh-body-sm-loose">Religion</span><span class="sh-select__value sh-body-md-tight">Hindu</span></span>
+          <span class="sh-select__chevron sh-icon sh-icon--16" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+        </button>
+        <div class="sh-select__support"><span class="sh-select__status sh-icon sh-icon--12" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span><span class="sh-select__helper sh-body-sm" id="s3-help">Shown on your profile</span></div>
+        <ul class="sh-select__options" id="s3-list" role="listbox" aria-label="Religion">
+          <li class="sh-menu-item" role="option" aria-selected="true"><span class="sh-menu-item__label sh-body-md">Hindu</span><span class="sh-menu-item__check sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/check.svg)" aria-hidden="true"></span></li>
+          <li class="sh-menu-item" role="option" aria-selected="false"><span class="sh-menu-item__label sh-body-md">Muslim</span></li>
+          <li class="sh-menu-item" role="option" aria-selected="false"><span class="sh-menu-item__label sh-body-md">Christian</span></li>
+          <li class="sh-menu-item" role="option" aria-selected="false"><span class="sh-menu-item__label sh-body-md">Sikh</span></li>
+        </ul>
+      </div>
+    </figure>
+
+    <figure><figcaption class="sh-body-sm">State=Error</figcaption>
+      <div class="sh-select sh-select--error">
+        <button class="sh-select__control" type="button" aria-haspopup="listbox" aria-expanded="false" aria-invalid="true" aria-describedby="s4-help">
+          <span class="sh-select__content"><span class="sh-select__label sh-body-sm-loose">Religion</span><span class="sh-select__value sh-body-md-tight">Hindu</span></span>
+          <span class="sh-select__chevron sh-icon sh-icon--16" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+        </button>
+        <div class="sh-select__support"><span class="sh-select__status sh-icon sh-icon--12" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span><span class="sh-select__helper sh-body-sm" id="s4-help">Pick your religion to continue</span></div>
+      </div>
+    </figure>
+
+    <figure><figcaption class="sh-body-sm">State=Disabled</figcaption>
+      <div class="sh-select">
+        <button class="sh-select__control" type="button" aria-haspopup="listbox" aria-expanded="false" disabled aria-describedby="s5-help">
+          <span class="sh-select__content"><span class="sh-select__label sh-body-sm-loose">Religion</span><span class="sh-select__value sh-body-md-tight">Hindu</span></span>
+          <span class="sh-select__chevron sh-icon sh-icon--16" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+        </button>
+        <div class="sh-select__support"><span class="sh-select__status sh-icon sh-icon--12" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span><span class="sh-select__helper sh-body-sm" id="s5-help">Set at sign-up; contact us to change it</span></div>
+      </div>
+    </figure>
+
+    <figure><figcaption class="sh-body-sm">State=Filled, Show helper=false</figcaption>
+      <div class="sh-select">
+        <button class="sh-select__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span class="sh-select__content"><span class="sh-select__label sh-body-sm-loose">Mother tongue</span><span class="sh-select__value sh-body-md-tight">Marathi</span></span>
+          <span class="sh-select__chevron sh-icon sh-icon--16" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+        </button>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Try it</h2>
+  <div class="grid">
+    <figure class="tall"><figcaption class="sh-body-sm">Click to open, pick a community</figcaption>
+      <div class="sh-select" id="live">
+        <button class="sh-select__control" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="live-list">
+          <span class="sh-select__content"><span class="sh-select__label sh-body-sm-loose">Community</span><span class="sh-select__value sh-body-md-tight"></span></span>
+          <span class="sh-select__chevron sh-icon sh-icon--16" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+        </button>
+        <ul class="sh-select__options" id="live-list" role="listbox" aria-label="Community">
+          <li class="sh-menu-item" role="option" aria-selected="false" tabindex="-1"><span class="sh-menu-item__label sh-body-md">Brahmin</span></li>
+          <li class="sh-menu-item" role="option" aria-selected="false" tabindex="-1"><span class="sh-menu-item__label sh-body-md">Maratha</span></li>
+          <li class="sh-menu-item" role="option" aria-selected="false" tabindex="-1"><span class="sh-menu-item__label sh-body-md">Kayastha</span></li>
+          <li class="sh-menu-item" role="option" aria-selected="false" tabindex="-1"><span class="sh-menu-item__label sh-body-md">Agarwal</span></li>
+        </ul>
+      </div>
+    </figure>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.getElementById("live");
+      var control = root.querySelector(".sh-select__control");
+      var value = root.querySelector(".sh-select__value");
+      var check = '<span class="sh-menu-item__check sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/check.svg)" aria-hidden="true"></span>';
+      control.addEventListener("click", function () {
+        control.setAttribute("aria-expanded", control.getAttribute("aria-expanded") === "true" ? "false" : "true");
+      });
+      root.querySelectorAll('[role="option"]').forEach(function (option) {
+        option.addEventListener("click", function () {
+          root.querySelectorAll('[role="option"]').forEach(function (o) {
+            o.setAttribute("aria-selected", "false");
+            var c = o.querySelector(".sh-menu-item__check");
+            if (c) c.remove();
+          });
+          option.setAttribute("aria-selected", "true");
+          option.insertAdjacentHTML("beforeend", check);
+          value.textContent = option.textContent;
+          control.setAttribute("aria-expanded", "false");
+          control.focus();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

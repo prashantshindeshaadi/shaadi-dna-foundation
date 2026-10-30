@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  sh-pagination-item — web (HTML5 + CSS). Every variant: State Default / Hover / Selected, plus the "…" gap,
+  a two-digit page, Focus and Disabled.
+  Spec: ../sh-pagination-item.md · Figma node 2718:41907
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-pagination-item</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-pagination-item.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-pagination-item</h1>
+
+  <h2 class="sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Default</figcaption>
+      <a class="sh-pagination-item" href="#page-2"><span class="sh-pagination-item__label sh-body-md">2</span></a></figure>
+    <figure><figcaption class="sh-body-sm">State=Hover</figcaption>
+      <a class="sh-pagination-item is-hover" href="#page-2"><span class="sh-pagination-item__label sh-body-md">2</span></a></figure>
+    <figure><figcaption class="sh-body-sm">State=Selected</figcaption>
+      <a class="sh-pagination-item" href="#page-2" aria-current="page"><span class="sh-pagination-item__label sh-body-md">2</span></a></figure>
+  </div>
+
+  <h2 class="sh-title-md">Content · states</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Label=… (gap)</figcaption>
+      <span class="sh-pagination-item sh-pagination-item--gap" aria-hidden="true"><span class="sh-pagination-item__label sh-body-md">…</span></span></figure>
+    <figure><figcaption class="sh-body-sm">Label=10</figcaption>
+      <a class="sh-pagination-item" href="#page-10"><span class="sh-pagination-item__label sh-body-md">10</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Label=128, State=Selected</figcaption>
+      <a class="sh-pagination-item" href="#page-128" aria-current="page"><span class="sh-pagination-item__label sh-body-md">128</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Focus</figcaption>
+      <a class="sh-pagination-item is-focus" href="#page-3"><span class="sh-pagination-item__label sh-body-md">3</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Disabled</figcaption>
+      <a class="sh-pagination-item" aria-disabled="true"><span class="sh-pagination-item__label sh-body-md">4</span></a></figure>
+  </div>
+</body>
+</html>

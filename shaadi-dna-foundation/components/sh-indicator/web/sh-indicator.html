@@ -1,0 +1,62 @@
+<!doctype html>
+<!--
+  sh-indicator — web (HTML5 + CSS). Every variant: Type Count / Dot × Status Information / Error / Brand / Neutral.
+  Spec: ../sh-indicator.md · Figma node 2717:39751
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-indicator</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-indicator.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .zoom { display: flex; gap: var(--sh-space-12); align-items: center; zoom: 3; }
+    .anchor { position: relative; display: inline-flex; color: var(--sh-icon-primary); }
+    .anchor .sh-indicator { position: absolute; top: calc(-1 * var(--sh-space-4)); left: var(--sh-space-14); }
+    .anchor .sh-indicator--dot { top: 0; left: var(--sh-space-16); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-indicator</h1>
+
+  <h2 class="sh-title-md">Type=Count</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Count, Status=Information</figcaption><span class="sh-indicator"><span class="sh-indicator__count sh-support-label">12</span></span></figure>
+    <figure><figcaption class="sh-body-sm">Type=Count, Status=Error</figcaption><span class="sh-indicator sh-indicator--error"><span class="sh-indicator__count sh-support-label">12</span></span></figure>
+    <figure><figcaption class="sh-body-sm">Type=Count, Status=Brand</figcaption><span class="sh-indicator sh-indicator--brand"><span class="sh-indicator__count sh-support-label">12</span></span></figure>
+    <figure><figcaption class="sh-body-sm">Type=Count, Status=Neutral</figcaption><span class="sh-indicator sh-indicator--neutral"><span class="sh-indicator__count sh-support-label">12</span></span></figure>
+  </div>
+
+  <h2 class="sh-title-md">Type=Dot</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Dot, Status=Information</figcaption><span class="sh-indicator sh-indicator--dot" aria-hidden="true"></span></figure>
+    <figure><figcaption class="sh-body-sm">Type=Dot, Status=Error</figcaption><span class="sh-indicator sh-indicator--dot sh-indicator--error" aria-hidden="true"></span></figure>
+    <figure><figcaption class="sh-body-sm">Type=Dot, Status=Brand</figcaption><span class="sh-indicator sh-indicator--dot sh-indicator--brand" aria-hidden="true"></span></figure>
+    <figure><figcaption class="sh-body-sm">Type=Dot, Status=Neutral</figcaption><span class="sh-indicator sh-indicator--dot sh-indicator--neutral" aria-hidden="true"></span></figure>
+  </div>
+  <p class="note sh-body-sm">Brand and Neutral are in Figma but not yet in the blueprint.</p>
+
+  <h2 class="sh-title-md">Count hugs its number · detail at 3×</h2>
+  <div class="zoom">
+    <span class="sh-indicator"><span class="sh-indicator__count sh-support-label">3</span></span>
+    <span class="sh-indicator"><span class="sh-indicator__count sh-support-label">12</span></span>
+    <span class="sh-indicator"><span class="sh-indicator__count sh-support-label">99+</span></span>
+    <span class="sh-indicator sh-indicator--dot" aria-hidden="true"></span>
+  </div>
+
+  <h2 class="sh-title-md">In use · on an icon</h2>
+  <div class="grid">
+    <span class="anchor" role="img" aria-label="Inbox, 12 unread"><span class="sh-icon sh-icon--24" style="--icon:url(../../../icons/line/mail-01.svg)"></span><span class="sh-indicator" aria-hidden="true"><span class="sh-indicator__count sh-support-label">12</span></span></span>
+    <span class="anchor" role="img" aria-label="Notifications, new"><span class="sh-icon sh-icon--24" style="--icon:url(../../../icons/line/notification-01.svg)"></span><span class="sh-indicator sh-indicator--dot" aria-hidden="true"></span></span>
+  </div>
+</body>
+</html>

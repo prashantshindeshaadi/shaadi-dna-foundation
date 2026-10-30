@@ -1,0 +1,32 @@
+/*
+ * sh-pagination — web (HTML5 + CSS)
+ * Spec: ../sh-pagination.md · Figma node 2718:41908 (1 variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-icon-button/web/sh-icon-button.css · components/sh-pagination-item/web/sh-pagination-item.css
+ *
+ *   <nav class="sh-pagination" aria-label="Pages">
+ *     <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Previous">
+ *       <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/arrow-left-01.svg)" aria-hidden="true"></span>
+ *     </button>
+ *     <a class="sh-pagination-item" href="?page=1" aria-current="page"><span class="sh-pagination-item__label sh-body-md">1</span></a>
+ *     <a class="sh-pagination-item" href="?page=2"><span class="sh-pagination-item__label sh-body-md">2</span></a>
+ *     <span class="sh-pagination-item sh-pagination-item--gap" aria-hidden="true"><span class="sh-pagination-item__label sh-body-md">…</span></span>
+ *     <a class="sh-pagination-item" href="?page=10"><span class="sh-pagination-item__label sh-body-md">10</span></a>
+ *     <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Next">
+ *       <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+ *     </button>
+ *   </nav>
+ *
+ * Parts: sh-icon-button Type=Tertiary Size=Medium (Previous / Next) and sh-pagination-item (pages), each with its
+ * own CSS. On the first or last page, set disabled on Previous or Next. This file only lays the row out, 4 apart.
+ */
+
+.sh-pagination {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-4);
+}

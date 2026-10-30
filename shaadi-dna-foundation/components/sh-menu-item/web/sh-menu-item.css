@@ -1,0 +1,88 @@
+/*
+ * sh-menu-item — web (HTML5 + CSS)
+ * Spec: ../sh-menu-item.md · Figma node 2718:41739 (Type Default / Destructive × State Default / Hover / Selected = 5 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css (.sh-body-md) · components/sh-icon/web/sh-icon.css
+ *
+ *   <button class="sh-menu-item" type="button" role="menuitem">
+ *     <span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(icons/line/bookmark.svg)" aria-hidden="true"></span>
+ *     <span class="sh-menu-item__label sh-body-md">Shortlist</span>
+ *   </button>
+ *
+ * Type      (none) Default · --destructive (Block, Report: error text and icon)
+ * State     Hover :hover (.is-hover forces it) · Selected aria-checked="true" / aria-selected="true" / .is-selected,
+ *           plus the check at the end (below) · Focus :focus-visible (.is-focus) · Disabled [disabled] / [aria-disabled="true"].
+ *           Figma has no Pressed look; Pressed shows Hover.
+ * Show icon include or leave out .sh-menu-item__icon (Figma "Icon" swap = the --icon URL).
+ * Check     <span class="sh-menu-item__check sh-icon sh-icon--16" style="--icon:url(icons/filled/check.svg)" aria-hidden="true"></span>
+ *           as the last child of a selected row (always the Filled check).
+ * Tap area  the row is 44 tall; an invisible hit area brings it to 48.
+ */
+
+.sh-menu-item {
+  --_label: var(--sh-text-primary);
+  --_icon: var(--sh-icon-primary);
+
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-12);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-12) var(--sh-space-16);
+  border: 0;
+  background: none;
+  color: var(--_label);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 48 tall minimum tap area around the 44 tall row */
+.sh-menu-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: max(100%, var(--sh-icon-target-default));
+  transform: translateY(-50%);
+}
+
+.sh-menu-item__icon { --sh-icon-paint: var(--_icon); }
+.sh-menu-item__label { flex: 1 1 auto; min-width: 0; color: var(--_label); }
+.sh-menu-item__check { margin-left: auto; --sh-icon-paint: var(--sh-icon-brand); }
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-menu-item--destructive {
+  --_label: var(--sh-semantic-error-text-on-soft);
+  --_icon: var(--sh-semantic-error-icon-on-soft);
+}
+
+/* ---- State --------------------------------------------------------------- */
+.sh-menu-item:hover,
+.sh-menu-item:active,
+.sh-menu-item.is-hover { background: var(--sh-background-soft); }
+
+.sh-menu-item[aria-checked="true"],
+.sh-menu-item[aria-selected="true"],
+.sh-menu-item.is-selected { background: var(--sh-background-selected); }
+
+.sh-menu-item:focus { outline: none; }
+.sh-menu-item:focus-visible,
+.sh-menu-item.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: calc(var(--sh-stroke-strong) * -1);   /* inside the row, so it isn't clipped by the menu */
+}
+
+.sh-menu-item:disabled,
+.sh-menu-item[aria-disabled="true"] {
+  background: none;
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}

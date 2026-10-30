@@ -1,0 +1,77 @@
+<!doctype html>
+<!--
+  sh-chip — web (HTML5 + CSS). Every variant: Type=Choice (State Default / Hover / Pressed / Focus / Disabled × Selected false / true)
+  and Type=Info, plus the boolean properties. Spec: ../sh-chip.md · Figma node 306:3749
+  Hover, Pressed and Focus are forced with .is-hover / .is-pressed / .is-focus so they show in a still preview.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-chip</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-chip.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24) var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .cell { padding: var(--sh-space-8); }
+    .row { display: flex; flex-wrap: wrap; gap: var(--sh-space-8); max-width: 360px; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-chip</h1>
+
+  <h2 class="sh-title-md">Type=Choice, Selected=false</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Default, Selected=false</figcaption><div class="cell"><button class="sh-chip" type="button" aria-pressed="false"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Hover, Selected=false</figcaption><div class="cell"><button class="sh-chip is-hover" type="button" aria-pressed="false"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Pressed, Selected=false</figcaption><div class="cell"><button class="sh-chip is-pressed" type="button" aria-pressed="false"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Focus, Selected=false</figcaption><div class="cell"><button class="sh-chip is-focus" type="button" aria-pressed="false"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Disabled, Selected=false</figcaption><div class="cell"><button class="sh-chip" type="button" aria-pressed="false" disabled><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Type=Choice, Selected=true</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Default, Selected=true</figcaption><div class="cell"><button class="sh-chip" type="button" aria-pressed="true"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Hover, Selected=true</figcaption><div class="cell"><button class="sh-chip is-hover" type="button" aria-pressed="true"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Pressed, Selected=true</figcaption><div class="cell"><button class="sh-chip is-pressed" type="button" aria-pressed="true"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Focus, Selected=true</figcaption><div class="cell"><button class="sh-chip is-focus" type="button" aria-pressed="true"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Choice, State=Disabled, Selected=true</figcaption><div class="cell"><button class="sh-chip" type="button" aria-pressed="true" disabled><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Type=Info, State=Default, Selected=false</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show supporting label (default)</figcaption><div class="cell"><span class="sh-chip sh-chip--info"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__supporting sh-support-label">Supporting</span><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></div></figure>
+    <figure><figcaption class="sh-body-sm">Show supporting label off</figcaption><div class="cell"><span class="sh-chip sh-chip--info"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Boolean properties · Show leading icon / Show trailing icon</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Leading only</figcaption><div class="cell"><button class="sh-chip" type="button" aria-pressed="false"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Trailing only</figcaption><div class="cell"><button class="sh-chip" type="button" aria-pressed="false"><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">No icons</figcaption><div class="cell"><button class="sh-chip" type="button" aria-pressed="false"><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Label</span></span></button></div></figure>
+    <figure><figcaption class="sh-body-sm">Info, no icons</figcaption><div class="cell"><span class="sh-chip sh-chip--info"><span class="sh-chip__content"><span class="sh-chip__supporting sh-support-label">Religion</span><span class="sh-chip__label sh-body-md">Hindu</span></span></span></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">In use</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Filter chips (Choice)</figcaption><div class="row">
+      <button class="sh-chip" type="button" aria-pressed="true"><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Verified</span></span></button>
+      <button class="sh-chip" type="button" aria-pressed="false"><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Online now</span></span></button>
+      <button class="sh-chip" type="button" aria-pressed="true"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/location-pin.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Mumbai</span></span></button>
+      <button class="sh-chip" type="button" aria-pressed="false"><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">New members</span></span></button>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Profile facts (Info)</figcaption><div class="row">
+      <span class="sh-chip sh-chip--info"><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Hindu</span></span></span>
+      <span class="sh-chip sh-chip--info"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/location-pin.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Mumbai</span></span></span>
+      <span class="sh-chip sh-chip--info"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../icons/line/star.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">7/9 Preference match</span></span></span>
+      <span class="sh-chip sh-chip--info"><span class="sh-chip__content"><span class="sh-chip__supporting sh-support-label">Mother tongue</span><span class="sh-chip__label sh-body-md">Marathi</span></span></span>
+    </div></figure>
+  </div>
+</body>
+</html>

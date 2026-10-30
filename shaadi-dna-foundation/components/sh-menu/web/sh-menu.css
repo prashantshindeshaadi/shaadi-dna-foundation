@@ -1,0 +1,32 @@
+/*
+ * sh-menu — web (HTML5 + CSS)
+ * Spec: ../sh-menu.md · Figma node 2718:41740 (1 variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-menu-item/web/sh-menu-item.css
+ *
+ *   <div class="sh-menu" role="menu" aria-label="More options">
+ *     <button class="sh-menu-item" type="button" role="menuitem">…Shortlist…</button>
+ *     <button class="sh-menu-item sh-menu-item--destructive" type="button" role="menuitem">…Block…</button>
+ *   </div>
+ *
+ * Rows are sh-menu-item (its CSS, not copied); duplicate or leave out rows as needed.
+ * This file draws the floating panel: background/default, border/soft edge, radius card, sh-shadow/floating,
+ * 8 above and below the rows. Figma's frame is 240 wide; the width is the container's job.
+ */
+
+.sh-menu {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: var(--sh-space-8) var(--sh-space-0);
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-default);
+  box-shadow: var(--sh-shadow-floating-x) var(--sh-shadow-floating-y) var(--sh-shadow-floating-blur)
+    var(--sh-shadow-floating-spread) var(--sh-shadow-floating-color);
+  overflow: hidden;   /* row fills (hover, selected) stay inside the rounded corners */
+}

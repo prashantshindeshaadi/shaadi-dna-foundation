@@ -1,0 +1,131 @@
+/*
+ * sh-tooltip — web (HTML5 + CSS)
+ * Spec: ../sh-tooltip.md · Figma node 2712:13106 (Type Simple / Rich × Placement Top / Bottom / Left / Right)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css (Rich close)
+ *
+ *   Simple: <div class="sh-tooltip" role="tooltip" id="tip-plus">
+ *             <div class="sh-tooltip__bubble"><p class="sh-tooltip__label sh-body-sm">You'll lose your Plus benefits</p></div>
+ *             <span class="sh-tooltip__pointer" aria-hidden="true"></span>
+ *           </div>
+ *   Rich:   <div class="sh-tooltip sh-tooltip--rich" role="dialog" aria-labelledby="tip-title">
+ *             <div class="sh-tooltip__bubble">
+ *               <div class="sh-tooltip__header">
+ *                 <p class="sh-tooltip__title sh-title-sm" id="tip-title">Tip title</p>
+ *                 <button class="sh-tooltip__close" type="button" aria-label="Close">
+ *                   <span class="sh-icon sh-icon--16" style="--icon:url(icons/line/close.svg)" aria-hidden="true"></span>
+ *                 </button>
+ *               </div>
+ *               <p class="sh-tooltip__label sh-body-sm">You'll lose your Plus benefits</p>
+ *             </div>
+ *             <span class="sh-tooltip__pointer" aria-hidden="true"></span>
+ *           </div>
+ *
+ * Type       (none) Simple: one line, max width 240 · --rich: title, body and close, width 260 (coach marks)
+ * Placement  (none) Top: the tooltip sits above its target, pointer points down · --bottom · --left · --right
+ *            Positioning next to the target is the app's job; the pointer is centred on the bubble edge.
+ * Show close Rich only: include or leave out __close (bare 16 icon, 48 × 48 tap area; focus ring and disabled only,
+ *            Figma draws no Hover or Pressed look).
+ * Simple tooltips describe their target: give the target aria-describedby="<tooltip id>".
+ */
+
+.sh-tooltip {
+  display: inline-flex;
+  flex-direction: column;      /* Top: bubble, then the pointer under it */
+  align-items: center;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-tooltip__bubble {
+  box-sizing: border-box;
+  display: flex;
+  max-width: calc(3 * var(--sh-space-80));   /* no token: Figma max width 240 = 3 × sh-space/80 */
+  padding: var(--sh-space-8) var(--sh-space-12);
+  border-radius: var(--sh-radius-tooltip);
+  background: var(--sh-background-inverse);
+}
+
+.sh-tooltip__label { margin: 0; color: var(--sh-text-inverse); }
+
+/* Pointer: a 12 × 6 triangle in the bubble colour */
+.sh-tooltip__pointer {
+  display: block;
+  flex: none;
+  width: var(--sh-space-12);
+  height: var(--sh-space-6);
+  background: var(--sh-background-inverse);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);          /* points down */
+}
+
+/* ---- Placement ----------------------------------------------------------- */
+.sh-tooltip--bottom { flex-direction: column-reverse; }
+.sh-tooltip--bottom .sh-tooltip__pointer { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+.sh-tooltip--left,
+.sh-tooltip--right { flex-direction: row; }
+.sh-tooltip--right { flex-direction: row-reverse; }
+.sh-tooltip--left .sh-tooltip__pointer,
+.sh-tooltip--right .sh-tooltip__pointer {
+  width: var(--sh-space-6);
+  height: var(--sh-space-12);
+}
+.sh-tooltip--left .sh-tooltip__pointer  { clip-path: polygon(0 0, 100% 50%, 0 100%); }
+.sh-tooltip--right .sh-tooltip__pointer { clip-path: polygon(100% 0, 100% 100%, 0 50%); }
+
+/* ---- Type=Rich ----------------------------------------------------------- */
+.sh-tooltip--rich .sh-tooltip__bubble {
+  flex-direction: column;
+  gap: var(--sh-space-4);
+  width: calc(3 * var(--sh-space-80) + var(--sh-space-20));   /* no token: Figma fixed width 260 = 3 × sh-space/80 + sh-space/20 */
+  max-width: none;
+  padding: var(--sh-space-12) var(--sh-space-16);
+}
+.sh-tooltip__header {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-8);
+}
+.sh-tooltip__title {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  color: var(--sh-text-inverse);
+}
+
+/* Close: the bare 16 icon, 48 × 48 tap area */
+.sh-tooltip__close {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-full);
+  background: none;
+  color: var(--sh-icon-inverse);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-tooltip__close::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sh-icon-target-default);
+  height: var(--sh-icon-target-default);
+  transform: translate(-50%, -50%);
+}
+.sh-tooltip__close .sh-icon { width: var(--sh-icon-size-16); height: var(--sh-icon-size-16); }
+.sh-tooltip__close:focus { outline: none; }
+.sh-tooltip__close:focus-visible,
+.sh-tooltip__close.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-inverse);
+  outline-offset: var(--sh-space-2);
+}
+.sh-tooltip__close:disabled,
+.sh-tooltip__close[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}

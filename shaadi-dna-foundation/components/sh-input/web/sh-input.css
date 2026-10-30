@@ -1,0 +1,232 @@
+/*
+ * sh-input — web (HTML5 + CSS)
+ * Spec: ../sh-input.md · Figma node 1467:17271 (3 Types × 8 States = 24 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-body-md-tight, .sh-body-sm-loose, .sh-body-sm, .sh-support-meta
+ *   components/sh-icon/web/sh-icon.css           .sh-icon
+ *
+ *   <div class="sh-input">
+ *     <label class="sh-input__control">
+ *       <span class="sh-input__icon sh-icon sh-icon--16" style="--icon:url(icons/line/calendar.svg)" aria-hidden="true"></span>
+ *       <span class="sh-input__content">
+ *         <span class="sh-input__label sh-body-sm-loose">Label</span>
+ *         <input class="sh-input__field sh-body-md-tight" type="text" placeholder=" " value="">
+ *       </span>
+ *       <span class="sh-input__icon sh-icon sh-icon--16" style="--icon:url(icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+ *     </label>
+ *     <div class="sh-input__support">                                     (only when there is helper text)
+ *       <span class="sh-input__status sh-icon sh-icon--12" style="--icon:url(icons/line/help-circle.svg)" aria-hidden="true"></span>
+ *       <span class="sh-input__helper sh-body-sm">Supporting text</span>
+ *       <span class="sh-input__counter sh-support-meta">0/500</span>      (Type=Text box)
+ *     </div>
+ *   </div>
+ *
+ * Type   (none) Default · --text-box (a <textarea> as the field, counter in the support row)
+ *        · --phone (a .sh-input__country button + .sh-input__separator before the content)
+ * State  Default  the field is empty and not focused: the label rests in the field (Body MD Loose)
+ *        Filled   the field has a value: the label floats above it (Body SM Loose)
+ *        Typing   :focus-within (force with .is-typing): border/focus edge
+ *        Disabled the field is [disabled]: the Default look at sh-opacity/disabled, no pointer events
+ *        --error | --warning | --success | --info: semantic soft fill (Default and Phone), semantic border,
+ *        semantic label and helper. Text box shows the border only.
+ * The label floats by itself: give the field placeholder=" " so :placeholder-shown means "empty".
+ * Helper text is tied to the field with aria-describedby; Error also sets aria-invalid="true".
+ *
+ * Every value is a DNA token; the only composed values are marked "no token".
+ */
+
+.sh-input {
+  /* State (Default / Filled / Typing) */
+  --_bg: var(--sh-background-default);
+  --_edge: var(--sh-border-default);
+  --_label: var(--sh-text-tertiary);
+  --_helper: var(--sh-text-secondary);
+  --_status: var(--sh-icon-secondary);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-6);
+  width: 100%;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Control ------------------------------------------------------------- */
+.sh-input__control {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-12);
+  height: var(--sh-space-48);                     /* Figma: fixed 48 */
+  padding: 0 var(--sh-space-16);                  /* Figma padding is unbound (16 / 12); the 48 height centres the content */
+  border: var(--sh-stroke-default) solid var(--_edge);
+  border-radius: var(--sh-radius-input);
+  background: var(--_bg);
+  cursor: text;
+}
+
+.sh-input__icon {
+  --sh-icon-paint: var(--sh-icon-primary);
+}
+
+.sh-input__content {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sh-space-0);
+  min-width: 0;
+}
+
+.sh-input__label {
+  overflow: hidden;
+  color: var(--_label);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sh-input__field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--sh-text-primary);
+  caret-color: var(--sh-background-brand);
+  resize: none;                                   /* text style comes from .sh-body-md-tight on the field */
+}
+.sh-input__field::placeholder { color: transparent; }
+
+/* State=Default: empty and not focused. The label rests in the field (Body MD Loose), the field collapses. */
+.sh-input:not(.is-typing):not(:focus-within):has(.sh-input__field:placeholder-shown) .sh-input__content {
+  gap: var(--sh-space-2);
+}
+.sh-input:not(.is-typing):not(:focus-within):has(.sh-input__field:placeholder-shown) .sh-input__label {
+  font-size: var(--sh-typo-body-md-default-size);
+  font-weight: var(--sh-typo-body-md-default-weight);
+  line-height: var(--sh-typo-body-md-loose-line-height);
+  letter-spacing: var(--sh-typo-body-md-default-letter-spacing);
+}
+.sh-input:not(.is-typing):not(:focus-within):has(.sh-input__field:placeholder-shown) .sh-input__field {
+  height: var(--sh-space-0);
+  min-height: var(--sh-space-0);
+}
+
+/* ---- Phone: country code button + separator ------------------------------ */
+.sh-input__country {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-4);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--sh-text-primary);
+  cursor: pointer;
+}
+.sh-input__country::before {                      /* 48 × 48 tap area */
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--sh-icon-target-default));
+  height: var(--sh-icon-target-default);
+  transform: translate(-50%, -50%);
+}
+.sh-input__country .sh-icon { --sh-icon-paint: var(--sh-icon-primary); }
+.sh-input__country:focus { outline: none; }
+.sh-input__country:focus-visible {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+  border-radius: var(--sh-radius-xxs);
+}
+.sh-input__separator {
+  flex: none;
+  align-self: center;
+  width: var(--sh-stroke-default);
+  height: var(--sh-space-24);
+  background: var(--sh-border-default);
+}
+
+/* ---- Text box: multi-line, label on top -------------------------------- */
+.sh-input--text-box .sh-input__control {
+  align-items: flex-start;
+  height: auto;
+  min-height: calc(var(--sh-space-80) + var(--sh-space-40));   /* no token: Text box control is a fixed 120 in Figma */
+  padding: var(--sh-space-12) var(--sh-space-16);
+}
+.sh-input--text-box .sh-input__content { justify-content: flex-start; }
+.sh-input--text-box .sh-input__field {
+  flex: 1 1 auto;
+  min-height: calc(var(--sh-space-80) + var(--sh-space-40) - 2 * var(--sh-space-12) - 2 * var(--sh-stroke-default) - var(--sh-typo-body-sm-loose-line-height));
+}
+
+/* ---- Support row: status icon, helper text, counter ---------------------- */
+.sh-input__support {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  padding-left: var(--sh-space-4);                /* Figma: unbound 4 before the status icon */
+}
+.sh-input__status { --sh-icon-paint: var(--_status); }
+.sh-input__helper { flex: 1 1 auto; min-width: 0; color: var(--_helper); }
+.sh-input__counter { flex: none; margin-left: auto; color: var(--sh-text-tertiary); }
+
+/* ---- State --------------------------------------------------------------- */
+/* Typing: Figma's Focus ring layer, a border/focus edge at sh-stroke/default, replaces the Control stroke */
+.sh-input:focus-within,
+.sh-input.is-typing { --_edge: var(--sh-border-focus); }
+
+/* Disabled: the Default look at sh-opacity/disabled. No pointer events. */
+.sh-input:has(.sh-input__field:disabled),
+.sh-input.is-disabled {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}
+
+.sh-input--error {
+  --_bg: var(--sh-semantic-error-background-soft-default);
+  --_edge: var(--sh-semantic-error-border-default);
+  --_label: var(--sh-semantic-error-text-on-soft);
+  --_helper: var(--sh-semantic-error-text-on-soft);
+  --_status: var(--sh-semantic-error-icon-on-soft);
+}
+.sh-input--warning {
+  --_bg: var(--sh-semantic-warning-background-soft-default);
+  --_edge: var(--sh-semantic-warning-border-default);
+  --_label: var(--sh-semantic-warning-text-on-soft);
+  --_helper: var(--sh-semantic-warning-text-on-soft);
+  --_status: var(--sh-semantic-warning-icon-on-soft);
+}
+.sh-input--success {
+  --_bg: var(--sh-semantic-success-background-soft-default);
+  --_edge: var(--sh-semantic-success-border-default);
+  --_label: var(--sh-semantic-success-text-on-soft);
+  --_helper: var(--sh-semantic-success-text-on-soft);
+  --_status: var(--sh-semantic-success-icon-on-soft);
+}
+.sh-input--info {
+  --_bg: var(--sh-semantic-information-background-soft-default);
+  --_edge: var(--sh-semantic-information-border-default);
+  --_label: var(--sh-semantic-information-text-on-soft);
+  --_helper: var(--sh-semantic-information-text-on-soft);
+  --_status: var(--sh-semantic-information-icon-on-soft);
+}
+/* Text box: semantic states show the border only */
+.sh-input--text-box.sh-input--error,
+.sh-input--text-box.sh-input--warning,
+.sh-input--text-box.sh-input--success,
+.sh-input--text-box.sh-input--info { --_bg: var(--sh-background-default); }
+/* A semantic state keeps its border while typing */
+.sh-input--error:focus-within   { --_edge: var(--sh-semantic-error-border-default); }
+.sh-input--warning:focus-within { --_edge: var(--sh-semantic-warning-border-default); }
+.sh-input--success:focus-within { --_edge: var(--sh-semantic-success-border-default); }
+.sh-input--info:focus-within    { --_edge: var(--sh-semantic-information-border-default); }

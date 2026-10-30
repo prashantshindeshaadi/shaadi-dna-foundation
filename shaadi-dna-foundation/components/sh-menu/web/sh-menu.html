@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+  sh-menu — web (HTML5 + CSS). The one variant (overflow menu), plus a hovered row and an options list with a selected row.
+  Spec: ../sh-menu.md · Figma node 2718:41740 · rows are sh-menu-item (its CSS, not copied)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-menu</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-menu-item/web/sh-menu-item.css">
+  <link rel="stylesheet" href="sh-menu.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; padding-bottom: var(--sh-space-40); }
+    figure { margin: 0; width: 240px; }   /* Figma: the menu is 240 wide */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-menu</h1>
+
+  <h2 class="sh-title-md">Variants</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-menu (default rows)</figcaption>
+      <div class="sh-menu" role="menu" aria-label="More options">
+        <button class="sh-menu-item" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/bookmark.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Shortlist</span></button>
+        <button class="sh-menu-item" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/share.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Share profile</span></button>
+        <button class="sh-menu-item sh-menu-item--destructive" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/flag.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Report</span></button>
+        <button class="sh-menu-item sh-menu-item--destructive" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/user-block.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Block</span></button>
+      </div></figure>
+    <figure><figcaption class="sh-body-sm">In use · a row hovered</figcaption>
+      <div class="sh-menu" role="menu" aria-label="More options">
+        <button class="sh-menu-item" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/bookmark.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Shortlist</span></button>
+        <button class="sh-menu-item is-hover" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/share.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Share profile</span></button>
+        <button class="sh-menu-item sh-menu-item--destructive" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/flag.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Report</span></button>
+        <button class="sh-menu-item sh-menu-item--destructive" type="button" role="menuitem"><span class="sh-menu-item__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/user-block.svg)" aria-hidden="true"></span><span class="sh-menu-item__label sh-body-md">Block</span></button>
+      </div></figure>
+    <figure><figcaption class="sh-body-sm">In use · options list, one selected</figcaption>
+      <div class="sh-menu" role="listbox" aria-label="Language">
+        <button class="sh-menu-item" type="button" role="option" aria-selected="false"><span class="sh-menu-item__label sh-body-md">Hindi</span></button>
+        <button class="sh-menu-item" type="button" role="option" aria-selected="true"><span class="sh-menu-item__label sh-body-md">English</span><span class="sh-menu-item__check sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/check.svg)" aria-hidden="true"></span></button>
+        <button class="sh-menu-item" type="button" role="option" aria-selected="false"><span class="sh-menu-item__label sh-body-md">Marathi</span></button>
+      </div></figure>
+  </div>
+</body>
+</html>

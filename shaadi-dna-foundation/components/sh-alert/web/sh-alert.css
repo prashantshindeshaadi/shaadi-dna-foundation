@@ -1,0 +1,126 @@
+/*
+ * sh-alert — web (HTML5 + CSS)
+ * Spec: ../sh-alert.md · Figma node 2718:41675 (Style Inline / Banner × Type Information / Success / Warning / Error)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-text-link/web/sh-text-link.css (Action)
+ *
+ *   <div class="sh-alert sh-alert--information" role="status">
+ *     <span class="sh-alert__icon sh-icon sh-icon--20" style="--icon:url(icons/line/information-circle.svg)" aria-hidden="true"></span>
+ *     <div class="sh-alert__content">
+ *       <p class="sh-alert__title sh-title-sm">Complete your profile</p>
+ *       <p class="sh-alert__body sh-body-sm">Profiles with 5 photos get 3x more responses.</p>
+ *       <a class="sh-alert__action sh-text-link sh-text-link--link sh-text-link--sm" href="…"><span class="sh-text-link__label sh-button-sm">Add photos</span></a>
+ *     </div>
+ *     <button class="sh-alert__close" type="button" aria-label="Close">
+ *       <span class="sh-icon sh-icon--16" style="--icon:url(icons/line/close.svg)" aria-hidden="true"></span>
+ *     </button>
+ *   </div>
+ *
+ * Style  (none) Inline: card in the page, radius card · --banner: edge-to-edge strip under the app header, radius none
+ * Type   .sh-alert--information | --success | --warning | --error. Leading icon per Type (as in Figma):
+ *        information-circle · check-circle · alert-diamond · alert-circle (line, 20)
+ * Show title / Show action / Show close: include or leave out __title, __action (an sh-text-link, Type Link, Small),
+ *        __close. role="status" for information/success, role="alert" for warning/error that need attention now.
+ * Close  bare close icon (16) with a 48 × 48 tap area. Figma draws no Hover or Pressed look: focus ring and disabled only.
+ */
+
+.sh-alert {
+  --_bg: var(--sh-semantic-information-background-soft-default);
+  --_edge: var(--sh-semantic-information-border-soft);
+  --_icon: var(--sh-semantic-information-icon-on-soft);
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sh-space-12);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-12) var(--sh-space-16);
+  border: var(--sh-stroke-default) solid var(--_edge);   /* no token: Figma's stroke weight is unbound (1) → sh-stroke/default */
+  border-radius: var(--sh-radius-card);
+  background: var(--_bg);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Style --------------------------------------------------------------- */
+.sh-alert--banner { border-radius: var(--sh-radius-none); }
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-alert--information {
+  --_bg: var(--sh-semantic-information-background-soft-default);
+  --_edge: var(--sh-semantic-information-border-soft);
+  --_icon: var(--sh-semantic-information-icon-on-soft);
+}
+.sh-alert--success {
+  --_bg: var(--sh-semantic-success-background-soft-default);
+  --_edge: var(--sh-semantic-success-border-soft);
+  --_icon: var(--sh-semantic-success-icon-on-soft);
+}
+.sh-alert--warning {
+  --_bg: var(--sh-semantic-warning-background-soft-default);
+  --_edge: var(--sh-semantic-warning-border-soft);
+  --_icon: var(--sh-semantic-warning-icon-on-soft);
+}
+.sh-alert--error {
+  --_bg: var(--sh-semantic-error-background-soft-default);
+  --_edge: var(--sh-semantic-error-border-soft);
+  --_icon: var(--sh-semantic-error-icon-on-soft);
+}
+
+/* ---- Parts --------------------------------------------------------------- */
+.sh-alert .sh-alert__icon {
+  width: var(--sh-icon-size-20);
+  height: var(--sh-icon-size-20);
+  --sh-icon-paint: var(--_icon);
+}
+
+.sh-alert__content {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sh-space-4);
+  min-width: 0;
+}
+.sh-alert__title { margin: 0; color: var(--sh-text-primary); }
+.sh-alert__body  { margin: 0; color: var(--sh-text-secondary); }
+.sh-alert__action { gap: var(--sh-space-2); }
+
+/* Close: the bare 16 icon, 48 × 48 tap area */
+.sh-alert__close {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-full);
+  background: none;
+  color: var(--sh-icon-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-alert__close::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sh-icon-target-default);
+  height: var(--sh-icon-target-default);
+  transform: translate(-50%, -50%);
+}
+.sh-alert__close .sh-icon { width: var(--sh-icon-size-16); height: var(--sh-icon-size-16); }
+.sh-alert__close:focus { outline: none; }
+.sh-alert__close:focus-visible,
+.sh-alert__close.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+.sh-alert__close:disabled,
+.sh-alert__close[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
