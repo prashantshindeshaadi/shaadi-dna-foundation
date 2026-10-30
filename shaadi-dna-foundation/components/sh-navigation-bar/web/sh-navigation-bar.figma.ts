@@ -4,46 +4,32 @@
 // Every variant: sh-navigation-bar.html · styles: sh-navigation-bar.css (needs tokens.css, sh-typo.css, sh-icon.css, sh-indicator.css, sh-navigation-item.css)
 // Publish: npx figma connect publish   (needs FIGMA_ACCESS_TOKEN)
 //
-// The items are sh-navigation-item instances; the snippet shows the five default items. Edit labels, icons
-// and badges to match the design. icons/<type>/matches.svg is not in the icon pack yet.
+// Each slot (Tab 1–6) is an sh-navigation-item and renders its own snippet, so the tabs, the active one
+// and the badges follow what is picked in Figma. Tab 6 only appears with Show tab 6.
 
 import figma from "figma"
 
 const device = figma.selectedInstance.getEnum("Device", {
-  Mobile: "mobile",
-  Tablet: "tablet",
-  Desktop: "desktop",
+  Mobile: "",
+  Tablet: " sh-navigation-bar--tablet",
+  Desktop: " sh-navigation-bar--desktop",
 })
-const active = figma.selectedInstance.getEnum("Active", {
-  Home: "Home",
-  Matches: "Matches",
-  Inbox: "Inbox",
-  Chat: "Chat",
-  Premium: "Premium",
-})
-
-const inline = device !== "mobile"
-const barModifier = device === "mobile" ? "" : ` sh-navigation-bar--${device}`
-const itemModifier = inline ? " sh-navigation-item--inline" : ""
-const textStyle = inline ? "sh-title-md" : "sh-body-sm"
-const items = [
-  ["Home", "shaadi"],
-  ["Matches", "matches"],
-  ["Inbox", "inbox"],
-  ["Chat", "chat"],
-  ["Premium", "premium"],
-]
-  .map(([name, icon]) => {
-    const isActive = name === active
-    const current = isActive ? ' aria-current="page"' : ""
-    const type = isActive ? "filled" : "line"
-    return `  <a class="sh-navigation-item${itemModifier}" href="#"${current}><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(icons/${type}/${icon}.svg)" aria-hidden="true"></span></span><span class="sh-navigation-item__label ${textStyle}">${name}</span></a>`
-  })
-  .join("\n")
+const showTab6 = figma.selectedInstance.getBoolean("Show tab 6")
+const tab1 = figma.selectedInstance.findInstance("Tab 1")?.executeTemplate().example
+const tab2 = figma.selectedInstance.findInstance("Tab 2")?.executeTemplate().example
+const tab3 = figma.selectedInstance.findInstance("Tab 3")?.executeTemplate().example
+const tab4 = figma.selectedInstance.findInstance("Tab 4")?.executeTemplate().example
+const tab5 = figma.selectedInstance.findInstance("Tab 5")?.executeTemplate().example
+const tab6 = showTab6 ? figma.selectedInstance.findInstance("Tab 6")?.executeTemplate().example : ""
 
 export default {
   id: "sh-navigation-bar",
-  example: figma.code`<nav class="sh-navigation-bar${barModifier}" aria-label="Main">
-${items}
+  example: figma.code`<nav class="sh-navigation-bar${device}" aria-label="Main">
+  ${tab1}
+  ${tab2}
+  ${tab3}
+  ${tab4}
+  ${tab5}
+  ${tab6}
 </nav>`,
 }

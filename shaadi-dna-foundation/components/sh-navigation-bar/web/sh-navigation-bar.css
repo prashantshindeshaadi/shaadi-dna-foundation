@@ -1,26 +1,26 @@
 /*
  * sh-navigation-bar — web (HTML5 + CSS)
- * Spec: ../sh-navigation-bar.md · Figma node 2711:12618 (Device Mobile / Tablet / Desktop × Active Home … Premium)
+ * Spec: ../sh-navigation-bar.md · Figma node 2711:12618 (Device Mobile / Tablet / Desktop · Show tab 6)
  *
  * Needs, loaded once per page, before this file:
  *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
  *   components/sh-indicator/web/sh-indicator.css · components/sh-navigation-item/web/sh-navigation-item.css
  *
  *   <nav class="sh-navigation-bar" aria-label="Main">
- *     <a class="sh-navigation-item" href="/" aria-current="page">…Home…</a>
- *     <a class="sh-navigation-item" href="/matches">…Matches…</a>
- *     <a class="sh-navigation-item" href="/inbox">…Inbox…</a>
- *     <a class="sh-navigation-item" href="/chat">…Chat…</a>
- *     <a class="sh-navigation-item" href="/premium">…Premium…</a>
+ *     <a class="sh-navigation-item" href="/" aria-current="page">…Tab 1…</a>
+ *     <a class="sh-navigation-item" href="/matches">…Tab 2…</a>
+ *     …up to Tab 5 (Tab 6 only with Show tab 6)
  *   </nav>
  *
- * Device  (none) Mobile: floating bottom bar, pill, five Stacked items sharing the width
- *         --tablet: wide floating bottom bar, pill, five Inline items (sh-navigation-item--inline)
- *         --desktop: left sidebar, a column of Inline items as wide as the bar, no pill or float shadow
- * Active  the item for the current screen gets aria-current="page" (one only) and its Filled icon.
- * The items are sh-navigation-item; this file only lays them out and draws the bar
- * (background/default, border/soft edge, sh-shadow/floating on Mobile and Tablet).
- * Place it with the page's own positioning (fixed to the bottom, or the sidebar column).
+ * Slots   Tab 1–6 are sh-navigation-item. Each slot picks its own Tab (Home, Matches, Inbox, Chat, Updates,
+ *         Premium, Premium offer) or any other label + icon. Exactly one slot is active.
+ *         Default: Home · Matches · Inbox · Chat · Premium offer (Mobile) / Premium (Tablet, Desktop).
+ *         On Mobile keep five tabs: six do not fit a 328 bar.
+ * Device  (none) Mobile: floating glass bottom bar, Stacked items hugging their content, spread evenly
+ *         --tablet: wide floating glass bar, Inline items (sh-navigation-item--inline)
+ *         --desktop: left sidebar, a column of Inline items as wide as the bar, no glass, pill or float shadow
+ * Glass   sh-gradient/translucent/light/strong fill, translucent light border, background blur default,
+ *         sh-shadow/floating. In screens the bar fills its container (floating: 16 margins each side).
  */
 
 .sh-navigation-bar {
@@ -30,23 +30,23 @@
   align-items: center;
   width: 100%;
   margin: 0;
-  padding: var(--sh-space-4);
-  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  justify-content: space-between;
+  gap: var(--sh-space-0);
+  padding: var(--sh-space-8);
+  border: var(--sh-stroke-default) solid transparent;
   border-radius: var(--sh-radius-full);
-  background: var(--sh-background-default);
+  background:
+    var(--sh-gradient-translucent-light-strong) padding-box,
+    var(--sh-gradient-translucent-border-light) border-box;
+  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-default));
+  backdrop-filter: blur(var(--sh-translucent-background-blur-default));
   box-shadow: var(--sh-shadow-floating-x) var(--sh-shadow-floating-y) var(--sh-shadow-floating-blur) var(--sh-shadow-floating-spread) var(--sh-shadow-floating-color);
 }
 
-/* Mobile: the five Stacked items share the bar's width equally */
-.sh-navigation-bar > .sh-navigation-item {
-  flex: 1 1 0;
-  min-width: 0;
-}
+/* Mobile: Stacked items hug their content; the bar spreads them evenly */
+.sh-navigation-bar > .sh-navigation-item { flex: none; }
 
 /* ---- Device=Tablet ------------------------------------------------------- */
-.sh-navigation-bar--tablet {
-  justify-content: space-between;
-}
 .sh-navigation-bar--tablet > .sh-navigation-item { flex: none; }
 
 /* ---- Device=Desktop ------------------------------------------------------ */
@@ -56,7 +56,11 @@
   gap: var(--sh-space-4);
   height: 100%;
   padding: var(--sh-space-16);
+  border: 0;
   border-radius: 0;
+  background: var(--sh-background-default);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   box-shadow: none;
 }
 .sh-navigation-bar--desktop > .sh-navigation-item {

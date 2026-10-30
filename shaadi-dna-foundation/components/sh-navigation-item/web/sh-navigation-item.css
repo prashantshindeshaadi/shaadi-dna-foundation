@@ -1,6 +1,6 @@
 /*
  * sh-navigation-item — web (HTML5 + CSS)
- * Spec: ../sh-navigation-item.md · Figma node 2711:12054 (Layout Stacked / Inline × Active false / true)
+ * Spec: ../sh-navigation-item.md · Figma node 2711:12054 (Tab × Layout Stacked / Inline × Active false / true)
  *
  * Needs, loaded once per page, before this file:
  *   dist/css/tokens.css                              all --sh-* tokens
@@ -18,11 +18,14 @@
  *
  * Layout      (none) Stacked: icon over label, label sh-body-sm (mobile bottom bar)
  *             --inline: icon beside label, label sh-title-md (tablet bar, desktop sidebar)
- * Active      aria-current="page" (or .is-active). Label text/brand, icon icon/brand; use the icon's Filled
- *             SVG (icons/filled/…) for the active item. Stacked active = background/default pill + sh-shadow/soft;
- *             Inline active = background/selected. Inactive: label text/secondary, icon icon/secondary, no fill.
- * Show badge  include or leave out .sh-navigation-item__badge, an sh-indicator: Count (default, Information)
- *             or --dot; --error only for errors. Give the item an aria-label that says the count.
+ * Tab         Home shaadi · Matches matches · Inbox inbox · Chat chat · Updates notification · Premium premium
+ *             (icons/line/<icon>.svg inactive, icons/filled/<icon>.svg active). Premium offer = the Premium tab
+ *             showing the 70% OFF ticket when inactive. Any other tab: same markup, its own label and icon.
+ * Active      aria-current="page" (or .is-active). Label text/brand, Filled icon painted sh-gradient/brand.
+ *             Stacked active = the glass pill (translucent light fill + border) with sh-shadow/soft;
+ *             Inline active = background/selected. Inactive: label text/tertiary, Line icon icon/tertiary.
+ * Show badge  include or leave out .sh-navigation-item__badge, an sh-indicator: Count with --brand
+ *             (Matches) or --neutral (Inbox, Chat); --dot for no number. Give the item an aria-label that says the count.
  * Icon        any sh-icon, Size 24 (Line when inactive, Filled when active).
  * State       Focus :focus-visible (.is-focus forces it) · Disabled [aria-disabled="true"] / [disabled].
  *             Figma defines no Hover or Pressed look, so none is drawn here.
@@ -30,8 +33,8 @@
  */
 
 .sh-navigation-item {
-  --_label: var(--sh-text-secondary);
-  --_icon: var(--sh-icon-secondary);
+  --_label: var(--sh-text-tertiary);
+  --_icon: var(--sh-icon-tertiary);
 
   position: relative;
   box-sizing: border-box;
@@ -44,8 +47,8 @@
   min-width: var(--sh-icon-target-default);
   min-height: var(--sh-icon-target-default);
   margin: 0;
-  padding: var(--sh-space-8) var(--sh-space-16);
-  border: 0;
+  padding: var(--sh-space-8);
+  border: var(--sh-stroke-default) solid transparent;
   border-radius: var(--sh-radius-full);
   background: none;
   color: var(--_label);
@@ -86,12 +89,15 @@
 .sh-navigation-item[aria-current="page"],
 .sh-navigation-item.is-active {
   --_label: var(--sh-text-brand);
-  --_icon: var(--sh-icon-brand);
-  background: var(--sh-background-default);
+  --_icon: var(--sh-gradient-brand-default);
+  background:
+    var(--sh-gradient-translucent-light-strong) padding-box,
+    var(--sh-gradient-translucent-border-light) border-box;
   box-shadow: var(--sh-shadow-soft-x) var(--sh-shadow-soft-y) var(--sh-shadow-soft-blur) var(--sh-shadow-soft-spread) var(--sh-shadow-soft-color);
 }
 .sh-navigation-item--inline[aria-current="page"],
 .sh-navigation-item--inline.is-active {
+  border-color: transparent;
   background: var(--sh-background-selected);
   box-shadow: none;
 }
