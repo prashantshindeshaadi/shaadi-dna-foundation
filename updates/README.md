@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-30 — Repo moves to GitLab Shaadi Vision; GitHub becomes a mirror](2026-10-30-repo-moves-to-gitlab-shaadi-vision-github-becomes-.md)
 - [2026-10-29 — No-photo background is lighter: neutral 300 to 700](2026-10-29-no-photo-background-is-lighter-neutral-300-to-700.md)
 - [2026-10-29 — Sheet header is one block: sh-profile-identity](2026-10-29-sheet-header-is-one-block-sh-profile-identity.md)
 - [2026-10-29 — Phone-number sheet: Shown to connections and Number hidden restored](2026-10-29-phone-number-sheet-shown-to-connections-and-number.md)

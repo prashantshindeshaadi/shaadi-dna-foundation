@@ -64,7 +64,11 @@ push, then map it with the Figma MCP:
 
     add_code_connect_map(fileKey, nodeId = <component set id>, label = "Markdown",
       componentName = "<sh-name>",
-      source = "https://github.com/prashantshindeshaadi/shaadi-dna-foundation/blob/main/components/<path>/<sh-name>.md")
+      source = "https://gitlab.com/shaadi/shaadi-app/ai/vision/-/blob/main/components/<path>/<sh-name>.md")
+
+Links published before 2026-10-30 point to the GitHub mirror
+(`github.com/prashantshindeshaadi/shaadi-dna-foundation/blob/main/...`).
+Re-map them to GitLab before GitHub is retired.
 
 Node ids are in `components/README.md`. Or link it by hand in Figma: Dev Mode →
 Code Connect → the component → enter the path.
