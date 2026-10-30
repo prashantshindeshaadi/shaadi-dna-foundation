@@ -1,0 +1,36 @@
+<!doctype html>
+<!--
+  Shaadi Vision App — web. Catalog (tokens, icons, components) + Stories (screens per Jira story).
+  Everything it shows comes from ../shaadi-dna-foundation: tokens.css, the type kit, the icon pack and each
+  component's web/ demo. Run `python3 shaadi-dna-foundation/tools/build.py` first, then serve the repo root:
+  `python3 -m http.server 8765` → http://localhost:8765/shaadi-vision-app/
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shaadi Vision</title>
+  <link rel="stylesheet" href="../shaadi-dna-foundation/dist/css/tokens.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="vision.css">
+</head>
+<body>
+  <header class="vn-bar">
+    <a class="vn-brand" href="#/catalog">
+      <span class="sh-icon sh-icon--24 sh-icon--brand" data-icon="line/sparkles.svg" aria-hidden="true"></span>
+      <span class="sh-title-md">Shaadi Vision</span>
+    </a>
+    <div class="vn-theme" role="radiogroup" aria-label="Theme">
+      <button type="button" class="vn-seg sh-button-sm" role="radio" data-theme-choice="system">System</button>
+      <button type="button" class="vn-seg sh-button-sm" role="radio" data-theme-choice="light">Light</button>
+      <button type="button" class="vn-seg sh-button-sm" role="radio" data-theme-choice="dark">Dark</button>
+    </div>
+  </header>
+  <div class="vn-layout">
+    <nav class="vn-nav" id="nav" aria-label="Sections"></nav>
+    <main class="vn-main" id="main" tabindex="-1"></main>
+  </div>
+  <script src="vision.js"></script>
+</body>
+</html>

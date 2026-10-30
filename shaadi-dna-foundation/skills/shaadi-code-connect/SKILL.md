@@ -5,6 +5,9 @@ description: Use when connecting the Shaadi DNA Foundation to Figma Dev Mode —
 
 # Connecting Shaadi DNA Foundation to Figma Dev Mode
 
+The repo has two folders: `shaadi-dna-foundation/` (this design system) and `shaadi-vision-app/`.
+Every path and command in this skill is relative to `shaadi-dna-foundation/`: `cd` there first.
+
 Two separate layers. Work out which one is being asked for before doing anything.
 
 | Layer | Question it answers | Needs |
@@ -64,7 +67,7 @@ push, then map it with the Figma MCP:
 
     add_code_connect_map(fileKey, nodeId = <component set id>, label = "Markdown",
       componentName = "<sh-name>",
-      source = "https://gitlab.com/shaadi/shaadi-app/ai/vision/-/blob/main/components/<path>/<sh-name>.md")
+      source = "https://gitlab.com/shaadi/shaadi-app/ai/vision/-/blob/main/shaadi-dna-foundation/components/<path>/<sh-name>.md")
 
 Links published before 2026-10-30 point to the GitHub mirror
 (`github.com/prashantshindeshaadi/shaadi-dna-foundation/blob/main/...`).

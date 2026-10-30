@@ -5,6 +5,9 @@ description: Use when the user has a new Figma variables export to bring into th
 
 # Updating the Shaadi DNA Foundation
 
+The repo has two folders: `shaadi-dna-foundation/` (this design system) and `shaadi-vision-app/`.
+Every path and command in this skill is relative to `shaadi-dna-foundation/`: `cd` there first.
+
 The Figma file is the source of truth. This repo mirrors it. Never edit values in
 `tokens/*.json` by hand — change them in Figma, export, and import.
 

@@ -1,0 +1,40 @@
+[
+ {
+  "id": "MG-1034",
+  "title": "Vision pipeline",
+  "status": "In progress",
+  "summary": "Proof of the chain Figma → Shaadi DNA Foundation → Shaadi Vision App. Every screen below is assembled live from the foundation's web components, so it changes the moment the foundation does.",
+  "decisions": ["DL-2 Vision = Catalog + Stories", "DL-7 Vision App is the visual validator"],
+  "screens": [
+   {
+    "name": "Matches",
+    "note": "sh-profile-card Connect and VIP, stacked as on the feed.",
+    "blocks": [
+     { "html": "<h1 class=\"sh-heading-md\">Matches</h1>" },
+     { "from": "components/profile-card/sh-profile-card/web/sh-profile-card.html", "pick": "article[data-type='connect']" },
+     { "from": "components/profile-card/sh-profile-card/web/sh-profile-card.html", "pick": "article[data-type='vip']" }
+    ]
+   },
+   {
+    "name": "Requests",
+    "note": "sh-profile-card Received, Declined and Post-Connect.",
+    "blocks": [
+     { "html": "<h1 class=\"sh-heading-md\">Requests</h1>" },
+     { "from": "components/profile-card/sh-profile-card/web/sh-profile-card.html", "pick": "article[data-type='received']" },
+     { "from": "components/profile-card/sh-profile-card/web/sh-profile-card.html", "pick": "article[data-type='declined']" },
+     { "from": "components/profile-card/sh-profile-card/web/sh-profile-card.html", "pick": "article[data-type='post-connect']" }
+    ]
+   },
+   {
+    "name": "Privacy states",
+    "note": "No photo, Photo requested and Gated.",
+    "blocks": [
+     { "html": "<h1 class=\"sh-heading-md\">Privacy states</h1>" },
+     { "from": "components/profile-card/sh-profile-card/web/sh-profile-card.html", "pick": "article[data-type='no-photo']" },
+     { "from": "components/profile-card/sh-profile-card/web/sh-profile-card.html", "pick": "article[data-type='photo-requested']" },
+     { "from": "components/profile-card/sh-profile-card/web/sh-profile-card.html", "pick": "article[data-type='gated']" }
+    ]
+   }
+  ]
+ }
+]

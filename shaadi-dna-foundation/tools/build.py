@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib import all_collections, resolve, var_name, ROOT
 import typo_kit
 import gradients
+import vision
 
 OUT = os.path.join(ROOT, "dist")
 THEMED = {"sh-color-common", "sh-translucent", "sh-shadow"}
@@ -368,6 +369,7 @@ def main():
         write("android/" + name, content)
     write("ios/SHTokens.swift", build_swift(data))
     typo_kit.main()
+    vision.main()
     print("Done.")
 
 

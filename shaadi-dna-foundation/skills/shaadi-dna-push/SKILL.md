@@ -5,6 +5,9 @@ description: Use when the user wants the Shaadi DNA Foundation repo pushed — "
 
 # Push the Shaadi DNA Foundation to GitLab (Shaadi Vision)
 
+The repo has two folders: `shaadi-dna-foundation/` (this design system) and `shaadi-vision-app/`.
+Every path and command in this skill is relative to `shaadi-dna-foundation/`: `cd` there first.
+
 The repo is the single source of truth for tokens, blueprints, icons and component code, refreshed from Figma every time. Push each finished step promptly: partial component code is fine if the commit message says what's still in progress.
 
 Remotes, branch `main` on both:
