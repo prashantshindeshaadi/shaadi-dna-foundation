@@ -189,6 +189,9 @@ component (several: the Components page). Check the live web build renders with 
 in Light and Dark, and give the designer the link. If a Jira story uses the component, also open
 `#/stories/<JIRA-ID>`.
 
+The shared link (GitLab Pages, `.gitlab-ci.yml`) rebuilds by itself after the push in section 6. That's
+the link shown to the design VP and CEO, so it's only current once the push has landed.
+
 ## 9. Hand off to developers
 
 Once a component is `synced` and its code is on GitLab, the developers refine it in **their**
