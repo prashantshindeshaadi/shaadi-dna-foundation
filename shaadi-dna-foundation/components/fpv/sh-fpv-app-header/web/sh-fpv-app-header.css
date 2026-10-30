@@ -1,0 +1,165 @@
+/*
+ * sh-fpv-app-header — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-app-header.md · Figma node 2877:15883 (State Onscroll / Alternate = 2 variants)
+ *
+ * The sticky FPV header after scrolling past the photo (to be folded into sh-app-header). Over the photo the
+ * screen uses sh-app-header Type Overlay instead.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-status-bar/web/sh-status-bar.css (mock-ups only) · components/sh-icon-button/web/sh-icon-button.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css (Onscroll photo)
+ *
+ *   <header class="sh-fpv-app-header">                                          State=Onscroll
+ *     <div class="sh-status-bar" aria-hidden="true">…</div>                     mock-ups only
+ *     <div class="sh-fpv-app-header__bar">
+ *       <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--lg" type="button" aria-label="Go back">…back…</button>
+ *       <div class="sh-fpv-app-header__middle">
+ *         <div class="sh-fpv-app-header__photo sh-user-image"><img src="photo-1.jpg" alt=""></div>
+ *       </div>
+ *       <div class="sh-fpv-app-header__actions">
+ *         <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="View 8 photos">
+ *           …filled/image… <span class="sh-icon-button__badge sh-body-sm">8</span></button>
+ *         <button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="More options">…</button>
+ *       </div>
+ *     </div>
+ *     <nav class="sh-fpv-app-header__tabs" aria-label="Profile sections">
+ *       <a class="sh-fpv-app-header__tab sh-button-md" href="#about" aria-current="true">About</a>
+ *       <a class="sh-fpv-app-header__tab sh-body-md" href="#contact">Contact</a> …
+ *     </nav>
+ *   </header>
+ *
+ * State   (none) Onscroll: bar gap sh-space/gap/card; Back, Photo album and More are sh-icon-button Tertiary
+ *                (background/strong look, radius full); her photo (radius lg) in the middle.
+ *         --alternate: bar gap sh-space/8; the same sh-icon-button Tertiary buttons (Figma outlines them with an
+ *                unknown variable and no fill; Ghost would turn them brand-coloured, so Tertiary stays); her name
+ *                (sh-typo/Heading/SM, text/primary, one line …) with the premium crown and Shaadi ID marks.
+ * Tabs    scroll-spy for the sections: the current one is sh-typo/Button/MD text/primary + aria-current (weight is
+ *         the non-colour cue), the rest sh-typo/Body/MD text/secondary. Scrolls sideways. Each tab is 48 tall (the
+ *         tap area), so the strip is 48, not Figma's 44 (padding-y sh-space/gap/card around the label).
+ *         Focus :focus-visible ring · Disabled [aria-disabled="true"]. Figma draws no Hover or Pressed look.
+ *         Background and Lifestyle are hidden in Figma (add them when the profile has those sections).
+ * Status bar (Theme Light) is device chrome for mock-ups; a real page never draws one.
+ *
+ * Gaps (see the report): Onscroll draws two "Photo Album" layers (one right after Back): built once, on the right.
+ * Unknown variables, left out: the Alternate pill / More outline (stroke 16:324), the hidden Premium tag fill, the
+ * "Seeker" scroll indicator's size (fill overlay/image/wash) and the inactive tab colour on the hidden tabs; the
+ * crown / Shaadi ID marks' shadow (shadow/light-mode/card) has no DNA token. No token for: her photo size (here
+ * sh-space/40) and the crown / Shaadi ID mark size (here sh-icon/size/20). Figma's Photo album count is
+ * sh-typo/Button/SM; the sh-icon-button badge (sh-typo/Body/SM) is used.
+ */
+
+.sh-fpv-app-header {
+  --_bar-gap: var(--sh-space-gap-card);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  background: var(--sh-background-default);
+  color: var(--sh-text-primary);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-fpv-app-header--alternate { --_bar-gap: var(--sh-space-8); }
+
+/* ---- Bar ------------------------------------------------------------------------------------------- */
+.sh-fpv-app-header__bar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--_bar-gap);
+  padding: var(--sh-space-gap-form) var(--sh-space-20);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-app-header__middle {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Onscroll: her photo */
+.sh-fpv-app-header__photo {
+  flex: none;
+  width: var(--sh-space-40);            /* no token bound in Figma */
+  height: var(--sh-space-40);
+  border-radius: var(--sh-radius-lg);
+}
+
+/* Alternate: name + marks */
+.sh-fpv-app-header__name-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  min-width: 0;
+}
+.sh-fpv-app-header__name {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--sh-text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sh-fpv-app-header__marks {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-4);
+}
+.sh-fpv-app-header__mark {
+  display: block;
+  width: var(--sh-icon-size-20);        /* no token bound in Figma */
+  height: var(--sh-icon-size-20);
+  object-fit: contain;
+}
+
+.sh-fpv-app-header__actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-gap-card);
+}
+
+/* ---- Tabs ------------------------------------------------------------------------------------------ */
+.sh-fpv-app-header__tabs {
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--sh-space-gap-section);
+  padding: var(--sh-space-0) var(--sh-space-gap-form);
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: var(--sh-stroke-default) solid var(--sh-border-default);
+  background: var(--sh-background-default);
+}
+.sh-fpv-app-header__tabs::-webkit-scrollbar { display: none; }
+
+.sh-fpv-app-header__tab {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  min-height: var(--sh-icon-target-default);           /* 48 tap area (Figma: padding-y gap/card on the strip, 44) */
+  padding-block: var(--sh-space-gap-card);
+  color: var(--sh-text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-fpv-app-header__tab[aria-current="true"],
+.sh-fpv-app-header__tab[aria-current="location"] { color: var(--sh-text-primary); }
+
+.sh-fpv-app-header__tab:focus { outline: none; }
+.sh-fpv-app-header__tab:focus-visible,
+.sh-fpv-app-header__tab.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: calc(var(--sh-space-2) * -1);       /* inside, so the scrolling strip does not clip it */
+  border-radius: var(--sh-radius-xs);
+}
+.sh-fpv-app-header__tab[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

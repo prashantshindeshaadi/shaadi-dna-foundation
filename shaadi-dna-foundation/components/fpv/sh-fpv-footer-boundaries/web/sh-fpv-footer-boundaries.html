@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+  sh-fpv-footer-boundaries — web (HTML5 + CSS). The one variant, plus the link's focus ring.
+  Spec: ../sh-fpv-footer-boundaries.md · Figma node 3237:88209
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-footer-boundaries</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="sh-fpv-footer-boundaries.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.lead { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); max-width: 360px; }
+    .w { width: 360px; padding: var(--sh-space-24) 0; background: var(--sh-background-default); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-footer-boundaries</h1>
+
+  <h2 class="demo sh-title-md">One variant</h2>
+  <p class="lead sh-body-md">Shared by every sh-fpv-footer state. The link opens the Manage your boundaries sheet.</p>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-fpv-footer-boundaries</figcaption>
+      <div class="w"><div class="sh-fpv-footer-boundaries"><p class="sh-fpv-footer-boundaries__title sh-title-sm">Manage your boundaries</p><button class="sh-fpv-footer-boundaries__link sh-text-link sh-text-link--neutral sh-text-link--sm" type="button" aria-haspopup="dialog"><span class="sh-text-link__label sh-button-sm">Hide, Report or Block Profile</span></button></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Link State=Focus</figcaption>
+      <div class="w"><div class="sh-fpv-footer-boundaries"><p class="sh-fpv-footer-boundaries__title sh-title-sm">Manage your boundaries</p><button class="sh-fpv-footer-boundaries__link sh-text-link sh-text-link--neutral sh-text-link--sm is-focus" type="button" aria-haspopup="dialog"><span class="sh-text-link__label sh-button-sm">Hide, Report or Block Profile</span></button></div></div>
+    </figure>
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  sh-fpv-album-view — web (HTML5 + CSS). Both Cases: Fullscreen · Zoom further.
+  Spec: ../sh-fpv-album-view.md · Figma node 2877:20019
+  Photos are neutral placeholders. Each screen sits in a 360 × 800 phone frame (Figma's frame).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-album-view</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-status-bar/web/sh-status-bar.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon-button/web/sh-icon-button.css">
+  <link rel="stylesheet" href="../../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../../components/profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="../../../../components/sh-photo-wrapper/web/sh-photo-wrapper.css">
+  <link rel="stylesheet" href="sh-fpv-album-view.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.lead { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); max-width: 360px; }
+    .phone { width: 360px; height: 800px; overflow: hidden; }   /* Figma: 360 × 800 */
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-album-view</h1>
+
+  <h2 class="demo sh-title-md">Case (2 variants)</h2>
+  <p class="lead sh-body-md">Full-screen album with "3 of 10" and Connect Now. Zoom further is the same screen after a pinch; the scale comes from app code.</p>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Case=Fullscreen</figcaption>
+      <div class="phone"><section class="sh-fpv-album-view" role="dialog" aria-modal="true" aria-label="Meher's photos">
+        <div class="sh-status-bar sh-status-bar--dark" aria-hidden="true"><span class="sh-status-bar__time sh-body-md">9:30</span><span class="sh-status-bar__camera"></span><span class="sh-status-bar__icons"><span class="sh-icon sh-icon--16" style="--icon:url(../../../../icons/filled/signal.svg)"></span><span class="sh-icon sh-icon--16" style="--icon:url(../../../../icons/filled/battery.svg)"></span></span></div>
+        <header class="sh-fpv-album-view__header"><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--lg" type="button" aria-label="Close"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></button><p class="sh-fpv-album-view__counter sh-button-md" aria-live="polite">3 of 10</p><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--md" type="button" aria-label="More options"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button></header>
+        <div class="sh-fpv-album-view__stage"><div class="sh-fpv-album-view__photo sh-photo-wrapper"><div class="sh-photo-wrapper__image sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2364748B'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt="Photo 3 of 10"></div></div></div>
+        <div class="sh-fpv-album-view__thumbs" role="tablist" aria-label="Photos"><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="false" aria-label="Photo 1"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="false" aria-label="Photo 2"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="true" aria-label="Photo 3"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2364748B'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="false" aria-label="Photo 4"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23E2E8F0'/%3E%3Cstop offset='1' stop-color='%2364748B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="false" aria-label="Photo 5"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23A8B3C4'/%3E%3Cstop offset='1' stop-color='%233F4A5C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button></div>
+        <div class="sh-fpv-album-view__connect"><button class="sh-button sh-button--primary sh-button--lg" type="button"><span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Connect Now</span></span></button></div>
+      </section></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Case=Zoom further</figcaption>
+      <div class="phone"><section class="sh-fpv-album-view sh-fpv-album-view--zoom" role="dialog" aria-modal="true" aria-label="Meher's photos">
+        <div class="sh-status-bar sh-status-bar--dark" aria-hidden="true"><span class="sh-status-bar__time sh-body-md">9:30</span><span class="sh-status-bar__camera"></span><span class="sh-status-bar__icons"><span class="sh-icon sh-icon--16" style="--icon:url(../../../../icons/filled/signal.svg)"></span><span class="sh-icon sh-icon--16" style="--icon:url(../../../../icons/filled/battery.svg)"></span></span></div>
+        <header class="sh-fpv-album-view__header"><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--lg" type="button" aria-label="Close"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></button><p class="sh-fpv-album-view__counter sh-button-md" aria-live="polite">3 of 10</p><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--md" type="button" aria-label="More options"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button></header>
+        <div class="sh-fpv-album-view__stage"><div class="sh-fpv-album-view__photo sh-photo-wrapper"><div class="sh-photo-wrapper__image sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2364748B'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt="Photo 3 of 10"></div></div></div>
+        <div class="sh-fpv-album-view__thumbs" role="tablist" aria-label="Photos"><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="false" aria-label="Photo 1"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="false" aria-label="Photo 2"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="true" aria-label="Photo 3"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2364748B'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="false" aria-label="Photo 4"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23E2E8F0'/%3E%3Cstop offset='1' stop-color='%2364748B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button><button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="false" aria-label="Photo 5"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23A8B3C4'/%3E%3Cstop offset='1' stop-color='%233F4A5C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></button></div>
+        <div class="sh-fpv-album-view__connect"><button class="sh-button sh-button--primary sh-button--lg" type="button"><span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Connect Now</span></span></button></div>
+      </section></div>
+    </figure>
+  </div>
+</body>
+</html>

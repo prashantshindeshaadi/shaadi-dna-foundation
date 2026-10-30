@@ -1,0 +1,154 @@
+/*
+ * sh-fpv-album-view — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-album-view.md · Figma node 2877:20019 (Case Fullscreen / Zoom further = 2 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-status-bar/web/sh-status-bar.css (mock-ups only) · components/sh-icon-button/web/sh-icon-button.css ·
+ *   components/sh-button/web/sh-button.css · components/profile-card/sh-user-images/web/sh-user-images.css ·
+ *   components/sh-photo-wrapper/web/sh-photo-wrapper.css
+ *
+ *   <section class="sh-fpv-album-view" role="dialog" aria-modal="true" aria-label="Meher's photos">
+ *     <div class="sh-status-bar sh-status-bar--dark" aria-hidden="true">…</div>               mock-ups only
+ *     <header class="sh-fpv-album-view__header">
+ *       <button class="sh-icon-button sh-icon-button--translucent sh-icon-button--lg" type="button" aria-label="Close">…close…</button>
+ *       <p class="sh-fpv-album-view__counter sh-button-md" aria-live="polite">3 of 10</p>
+ *       <button class="sh-icon-button sh-icon-button--translucent sh-icon-button--md" type="button" aria-label="More options">…more-vertical…</button>
+ *     </header>
+ *     <div class="sh-fpv-album-view__stage">
+ *       <div class="sh-fpv-album-view__photo sh-photo-wrapper">
+ *         <div class="sh-photo-wrapper__image sh-user-image"><img src="photo-3.jpg" alt="Photo 3 of 10"></div>
+ *       </div>
+ *     </div>
+ *     <div class="sh-fpv-album-view__thumbs" role="tablist" aria-label="Photos">
+ *       <button class="sh-fpv-album-view__thumb sh-user-image" type="button" role="tab" aria-selected="true" aria-label="Photo 3"><img src="…" alt=""></button> …
+ *     </div>
+ *     <div class="sh-fpv-album-view__connect">
+ *       <button class="sh-button sh-button--primary sh-button--lg" type="button">check (Filled) · Connect Now</button>
+ *     </div>
+ *   </section>
+ *
+ * Case   (none) Fullscreen: the photo fits the width, centred in the stage.
+ *        --zoom  Zoom further: the photo is scaled by --sh-fpv-album-view-zoom (the pinch scale, set by app code;
+ *                2 in the demo) and clipped to the stage.
+ * Parts  __header (close · "{n} of {total}" sh-typo/Button/MD text/inverse · more), sh-icon-button Translucent ·
+ *        __thumbs (one per photo, the current one aria-selected with a border/inverse ring) · __connect
+ *        (sh-button Primary Large, leads with the Filled check; a lone button, max 200, centred).
+ * Taps   swipe photos · pinch to zoom (app code) · thumb · Connect Now · close · more. Thumbs: Focus :focus-visible,
+ *        Disabled [disabled]; 48 × 48 each. Icon buttons and the Connect button bring their own states.
+ *        Hidden in Figma, so left out: the "Photo album" count chip and the sh-action-note above Connect.
+ *        The Android navigation bar ("Device Notch") is device chrome, never built.
+ *
+ * No token for: the root fill on Fullscreen (Figma binds sh-color-basic/neutral/black, a primitive that is not
+ * exported; the semantic background/inverse of Zoom further is used for both, text/inverse on it); the header and
+ * thumb sizes, gaps and padding (unbound: sh-space/20 sides like the status bar, thumbs sh-space/48 = the tap target,
+ * gap sh-space/8, ring sh-stroke/strong); the thumb ring Zoom further binds to an unknown variable; the lone-button
+ * width 200 (= 2 × sh-space/80 + sh-space/40, as sh-bottom-sheet). Figma's close/more glass is
+ * sh-translucent/background/light/default/start alone; the DNA glass button (sh-icon-button Translucent) is used.
+ * The "Fullscreen icon · glyph" inside each thumb (icon/inverse) has no art in the repo, so it is left out. See the report.
+ */
+
+.sh-fpv-album-view {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--sh-background-inverse);
+  color: var(--sh-text-inverse);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Header: close · counter · more ---------------------------------------------------------------- */
+.sh-fpv-album-view__header {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: var(--sh-space-4) var(--sh-space-20);
+}
+.sh-fpv-album-view__header > :first-child { justify-self: start; }
+.sh-fpv-album-view__header > :last-child { justify-self: end; }
+
+.sh-fpv-album-view__counter {
+  margin: 0;
+  color: var(--sh-text-inverse);
+  white-space: nowrap;
+}
+
+/* ---- Stage: the photo ------------------------------------------------------------------------------ */
+.sh-fpv-album-view__stage {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sh-fpv-album-view__photo { flex: none; }
+
+/* Zoom further: pinch scale from app code */
+.sh-fpv-album-view--zoom { --sh-fpv-album-view-zoom: 2; }
+.sh-fpv-album-view--zoom .sh-fpv-album-view__photo { transform: scale(var(--sh-fpv-album-view-zoom)); }
+
+/* ---- Thumbs ---------------------------------------------------------------------------------------- */
+.sh-fpv-album-view__thumbs {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--sh-space-8);
+  padding: var(--sh-space-16) var(--sh-space-20) var(--sh-space-0);
+}
+
+.sh-fpv-album-view__thumb {
+  flex: none;
+  box-sizing: border-box;
+  width: var(--sh-icon-target-default);                /* 48 tap area */
+  height: var(--sh-icon-target-default);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-media);
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-fpv-album-view__thumb[aria-selected="true"] {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-inverse);
+  outline-offset: calc(var(--sh-stroke-strong) * -1);
+}
+.sh-fpv-album-view__thumb:focus { outline: none; }
+.sh-fpv-album-view__thumb[aria-selected="true"]:focus { outline: var(--sh-stroke-strong) solid var(--sh-border-inverse); }
+.sh-fpv-album-view__thumb:focus-visible,
+.sh-fpv-album-view__thumb.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+.sh-fpv-album-view__thumb:disabled,
+.sh-fpv-album-view__thumb[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ---- Connect ---------------------------------------------------------------------------------------- */
+.sh-fpv-album-view__connect {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  display: flex;
+  justify-content: center;
+  padding: var(--sh-space-24) var(--sh-space-20);
+}
+.sh-fpv-album-view__connect > .sh-button {
+  width: 100%;
+  max-width: calc(var(--sh-space-80) * 2 + var(--sh-space-40));   /* no token: lone button max 200 */
+}

@@ -1,0 +1,43 @@
+/*
+ * sh-fpv-sheet-connect-limit — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-sheet-connect-limit.md · Figma node 2891:58077 (one variant)
+ *
+ * Out of Connects, with the refill timer and Upgrade. Shown when the viewer taps Connect with no Connects left.
+ * An sh-bottom-sheet (Type Relaxed, Align Center, Actions Stacked) with sh-countdown in the Note slot.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/sh-icon-button/web/sh-icon-button.css ·
+ *   components/sh-bottom-sheet/web/sh-bottom-sheet.css · components/sh-countdown/web/sh-countdown.css
+ *
+ *   <div class="sh-bottom-sheet sh-fpv-sheet-connect-limit">
+ *     <div class="sh-bottom-sheet__scrim" aria-hidden="true"></div>                 the one dim
+ *     <section class="sh-bottom-sheet__sheet" role="dialog" aria-modal="true" aria-labelledby="connect-limit-title">
+ *       <div class="sh-bottom-sheet__header">…</div>
+ *       <div class="sh-bottom-sheet__body">
+ *         <div class="sh-bottom-sheet__heading">
+ *           <h2 class="sh-bottom-sheet__title sh-heading-sm" id="connect-limit-title">You’re out of Connects!</h2>
+ *           <p class="sh-bottom-sheet__text sh-body-md">Upgrade now to keep sending Connects.</p>
+ *         </div>
+ *         <div class="sh-bottom-sheet__note sh-fpv-sheet-connect-limit__timer">
+ *           <span class="sh-countdown" role="timer" aria-label="Connects refill in 5 hours 42 minutes">…</span>
+ *         </div>
+ *         <div class="sh-bottom-sheet__actions">
+ *           <button class="sh-button sh-button--premium-solid sh-button--md" type="button">…Upgrade Now…</button>
+ *           <button class="sh-button sh-button--ghost sh-button--md" type="button">…Not now…</button>
+ *         </div>
+ *       </div>
+ *       <button class="sh-bottom-sheet__close …" aria-label="Close">…</button>
+ *     </section>
+ *   </div>
+ *
+ * Parts  __timer: the Note slot, the sh-countdown (Boxed) centred; the app ticks it (aria-label once a minute).
+ * CTAs   sh-button Medium: Upgrade Now (Premium Solid: a paid action, max 200 centred) · Not now (Ghost).
+ *        The sheet, scrim, close, focus trap and states come from sh-bottom-sheet and its buttons.
+ *
+ * Blueprint gap (see the report): it lists only the sheet's title, body and two action swaps. Where the refill timer
+ * sits, the CTA types and labels, and any art are not specified; the timer is built from the rules as sh-countdown
+ * in the Note slot. The instance's "Size Hug" is the sheet's old name for Type Relaxed.
+ */
+
+.sh-fpv-sheet-connect-limit__timer { align-items: center; }

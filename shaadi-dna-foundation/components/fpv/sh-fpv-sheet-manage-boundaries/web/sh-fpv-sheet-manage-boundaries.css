@@ -1,0 +1,48 @@
+/*
+ * sh-fpv-sheet-manage-boundaries — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-sheet-manage-boundaries.md · Figma node 2891:59058 (Step × 4 = 4 variants)
+ *
+ * Hide, Block or Report her profile. Opened by the footer's "Hide, Report or Block Profile" link.
+ * An sh-bottom-sheet (Type Relaxed, Align Left: actions side by side, primary on the left).
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/sh-icon-button/web/sh-icon-button.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-radio/web/sh-radio.css · components/sh-checkbox/web/sh-checkbox.css ·
+ *   components/sh-list-default/web/sh-list-default.css · components/sh-list/web/sh-list.css ·
+ *   components/sh-bottom-sheet/web/sh-bottom-sheet.css
+ *
+ *   <div class="sh-bottom-sheet sh-bottom-sheet--left sh-fpv-sheet-manage-boundaries">
+ *     <div class="sh-bottom-sheet__scrim" aria-hidden="true"></div>
+ *     <section class="sh-bottom-sheet__sheet" role="dialog" aria-modal="true" aria-labelledby="boundaries-title">
+ *       <div class="sh-bottom-sheet__header">…</div>
+ *       <div class="sh-bottom-sheet__body">
+ *         <div class="sh-bottom-sheet__heading"> title · body </div>
+ *         <div class="sh-bottom-sheet__section sh-fpv-sheet-manage-boundaries__options" role="radiogroup" aria-labelledby="boundaries-title">
+ *           <div class="sh-list"><div class="sh-list-default sh-list-default--control sh-list-default--inline">… sh-radio + title + subtitle …</div></div> …
+ *         </div>
+ *         <div class="sh-bottom-sheet__actions"> sh-button Primary Medium · sh-button Ghost Medium "Cancel" </div>
+ *       </div>
+ *       <button class="sh-bottom-sheet__close …" aria-label="Close">…</button>
+ *     </section>
+ *   </div>
+ *
+ * Step   (no modifier: the step only changes the content)
+ *        Choose           "Manage your boundaries": Hide / Block / Report as sh-list rows with sh-radio → Continue
+ *        Hide · confirm   → Hide Profile; the profile then shows "You hid her profile", bar Unhide Her
+ *        Block · confirm  → Block; the profile then shows "You blocked her", bar Unblock Her
+ *        Report · reasons sh-list rows with sh-checkbox (one or more) → Submit Report; the profile then shows
+ *                         "You reported her", bar "We’re reviewing your report"
+ * CTAs   sh-button Medium, side by side, primary on the left; Cancel is Ghost. Each row, control and button brings its
+ *        own states and 48 tap area. Disable the primary ([disabled]) until a choice / reason is picked.
+ *
+ * Blueprint gap (see the report): only Step=Choose's title and body are in the blueprint; the option rows, the
+ * confirm and report copy, the reasons and the CTA labels are built from the rules. Figma's instance says Actions
+ * Stacked with Align Left; sh-bottom-sheet Left is always side by side, so side by side it is.
+ */
+
+.sh-fpv-sheet-manage-boundaries__options {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

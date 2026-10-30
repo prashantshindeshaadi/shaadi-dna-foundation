@@ -1,0 +1,90 @@
+/*
+ * sh-fpv-photo-album-stack — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-photo-album-stack.md · Figma node 2877:20760 (Count 1 / 2 / 3 / 4 / 4+ / Blurred = 6 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css (each photo)
+ *
+ *   <div class="sh-fpv-photo-album-stack sh-fpv-photo-album-stack--4-plus">
+ *     <div class="sh-fpv-photo-album-stack__frame">                                    Figma "Photo Frame"
+ *       <div class="sh-fpv-photo-album-stack__photo sh-user-image"><img src="photo-4.jpg" alt=""></div>   back
+ *       <div class="sh-fpv-photo-album-stack__photo sh-user-image"><img src="photo-3.jpg" alt=""></div>
+ *       <div class="sh-fpv-photo-album-stack__photo sh-user-image"><img src="photo-2.jpg" alt=""></div>
+ *       <div class="sh-fpv-photo-album-stack__photo sh-user-image"><img src="photo-1.jpg" alt="">        front (last)
+ *         <span class="sh-fpv-photo-album-stack__counter">                              4+ only
+ *           <span class="sh-fpv-photo-album-stack__count sh-heading-md">+4</span>
+ *           <span class="sh-fpv-photo-album-stack__count-label sh-title-sm">photos</span>
+ *         </span>
+ *       </div>
+ *     </div>
+ *   </div>
+ *
+ * Count   one __photo per photo, back first, front last (1 to 4). The modifier sizes the deck:
+ *         (none) 1 · --2 · --3 · --4 · --4-plus (four photos + __counter "+N", N = album count − 4) ·
+ *         --blurred (four photos, each also sh-user-image--blur; not used on any screen on this page).
+ *         Each photo behind the front one peeks out sh-space/12 higher and sh-space/12 narrower on each side.
+ * Not interactive: the parent (sh-fpv-photo-album) makes the whole stack its "View album" button.
+ *
+ * No token bound in Figma for: the frame height (kept as the Figma 360 × 454 proportion), the deck offsets and the
+ * photo radius (role token sh-radius/media). Two Figma bindings are unknown variables, so they are left out: the
+ * photo edge (stroke) and the counter text colour (here text/on-image on overlay/scrim/default, the §4.2 pair for
+ * text on a photo). Only Count=1's layer tree is in the blueprint; the deck layout for 2–4 is built from the rules.
+ * See the report.
+ */
+
+.sh-fpv-photo-album-stack {
+  --_n: 1;                                   /* photos in the deck */
+  --_step: var(--sh-space-12);               /* how far each photo behind peeks out (no token bound in Figma) */
+
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-photo-album-stack--2 { --_n: 2; }
+.sh-fpv-photo-album-stack--3 { --_n: 3; }
+.sh-fpv-photo-album-stack--4,
+.sh-fpv-photo-album-stack--4-plus,
+.sh-fpv-photo-album-stack--blurred { --_n: 4; }
+
+/* Photo Frame: fills the width, Figma proportion 360 × 454 */
+.sh-fpv-photo-album-stack__frame {
+  position: relative;
+  flex: 1 1 auto;
+  aspect-ratio: 360 / 454;
+}
+
+/* Each photo: the front one sits lowest and widest; the k-th behind it moves up k steps and in k steps */
+.sh-fpv-photo-album-stack__photo {
+  --_k: 0;
+  position: absolute;
+  top: calc((var(--_n) - 1 - var(--_k)) * var(--_step));
+  right: calc(var(--sh-space-page-margin) + var(--_k) * var(--_step));
+  bottom: calc(var(--_k) * var(--_step));
+  left: calc(var(--sh-space-page-margin) + var(--_k) * var(--_step));
+  width: auto;
+  height: auto;
+  border-radius: var(--sh-radius-media);
+}
+.sh-fpv-photo-album-stack__photo:nth-last-child(2) { --_k: 1; }
+.sh-fpv-photo-album-stack__photo:nth-last-child(3) { --_k: 2; }
+.sh-fpv-photo-album-stack__photo:nth-last-child(4) { --_k: 3; }
+
+/* Blurred: four photos, each with the sh-user-images Blur layer (sh-user-image--blur in the HTML) */
+
+/* 4+: "+N photos" on the front photo, over the image scrim */
+.sh-fpv-photo-album-stack__counter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--sh-overlay-scrim-default);
+  color: var(--sh-text-on-image);
+  text-align: center;
+}
+.sh-fpv-photo-album-stack__count,
+.sh-fpv-photo-album-stack__count-label { display: block; }

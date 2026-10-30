@@ -1,0 +1,127 @@
+/*
+ * sh-fpv-footer — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-footer.md · Figma node 2877:20188 (State × 5 = 5 variants)
+ *
+ * End of the profile: sh-fpv-footer-cta (Share, Shortlist), the settled reward card, and sh-fpv-footer-boundaries.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/sh-text-link/web/sh-text-link.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css ·
+ *   components/fpv/sh-fpv-footer-cta/web/sh-fpv-footer-cta.css · components/fpv/sh-fpv-footer-boundaries/web/sh-fpv-footer-boundaries.css
+ *
+ *   <footer class="sh-fpv-footer">
+ *     <div class="sh-fpv-footer-cta">…</div>
+ *     <section class="sh-fpv-footer__reward" aria-label="…">                       Settled states only
+ *       <span class="sh-fpv-footer__emblem sh-icon sh-icon--20 sh-icon--brand" style="--icon:url(icons/filled/shaadi.svg)" aria-hidden="true"></span>
+ *       … the state's content (below) …
+ *     </section>
+ *     <div class="sh-fpv-footer-boundaries">…</div>
+ *     <p class="sh-fpv-footer__hint sh-support-label">Scroll to reveal</p>          Default only
+ *   </footer>
+ *
+ * State  (no modifier: the state only changes the markup)
+ *        Default                     while scrolling: CTA · boundaries · "Scroll to reveal" (sh-typo/Support/Label, text/disabled)
+ *        Settled · Quote reward      __quote (sh-typo/Title/LG, text/tertiary) + __source (two __rule lines, icon/tertiary,
+ *                                    around sh-typo/Support/Micro text/tertiary)
+ *        Settled · Success story     __story: __couple (names sh-typo/Heading/SM text/primary, "&" Title/LG text/tertiary),
+ *                                    __meta ("Found love on" Support/Meta text/secondary · year Support/Label text/tertiary),
+ *                                    __caption (Body/SM, text/secondary)
+ *        Settled · Premium (unclaimed)  __heading (Heading/SM, text/primary) + __text (Body/MD, text/secondary) +
+ *                                    sh-button Premium Solid Medium "Claim My Free Unlock"
+ *        Settled · Premium (claimed)    same text + sh-button Tertiary Medium "Free Unlock Claimed" (Filled check)
+ *        Reward card: background/default, edge border/inverse, radius card, padding sh-space/padding/card.
+ * Taps   Shortlist (toggle) · Share · Hide, Report or Block Profile → sh-fpv-sheet-manage-boundaries · Claim.
+ *        Every button and link brings its own states and 48 tap area.
+ *
+ * Gaps (see the report): art not in the repo, not drawn — the "Gradient" Eclipse / Planet backdrop, the Premium Account
+ * teaser (Default), the reward card's "detail overlay" background images and the emblem ring glyphs (only the
+ * sh-icon/shaadi mark is drawn). Unknown variables: the root fill (left transparent: the page shows through) and the
+ * Success story inner card edge. Not DNA shadow tokens, so not drawn: shadow/light-mode/sheet-dialog, /card,
+ * /sticky-bar. No token bound for: the gaps between the blocks (here sh-space/gap/section), the bottom padding
+ * (sh-space/40), the source rule length (sh-space/24) and the year chip.
+ */
+
+.sh-fpv-footer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-gap-section);
+  width: 100%;
+  padding-bottom: var(--sh-space-40);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-fpv-footer > .sh-fpv-footer-cta { align-self: stretch; }
+
+/* ---- Reward card ------------------------------------------------------------------------------------ */
+.sh-fpv-footer__reward {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-12);
+  width: calc(100% - 2 * var(--sh-space-page-margin));
+  padding: var(--sh-space-padding-card);
+  border: var(--sh-stroke-default) solid var(--sh-border-inverse);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-default);
+  text-align: center;
+}
+
+.sh-fpv-footer__emblem { flex: none; }
+
+.sh-fpv-footer__quote,
+.sh-fpv-footer__heading,
+.sh-fpv-footer__text,
+.sh-fpv-footer__caption { margin: 0; }
+
+/* Quote reward */
+.sh-fpv-footer__quote { color: var(--sh-text-tertiary); }
+.sh-fpv-footer__source {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-8);
+  color: var(--sh-text-tertiary);
+}
+.sh-fpv-footer__rule {
+  display: block;
+  width: var(--sh-space-24);
+  border-top: var(--sh-stroke-default) solid var(--sh-icon-tertiary);
+}
+
+/* Success story */
+.sh-fpv-footer__story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-8);
+}
+.sh-fpv-footer__couple {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sh-space-6);
+  margin: 0;
+}
+.sh-fpv-footer__name { color: var(--sh-text-primary); }
+.sh-fpv-footer__and { color: var(--sh-text-tertiary); }
+.sh-fpv-footer__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-6);
+  margin: 0;
+}
+.sh-fpv-footer__found { color: var(--sh-text-secondary); }
+.sh-fpv-footer__year { color: var(--sh-text-tertiary); }
+.sh-fpv-footer__caption { color: var(--sh-text-secondary); }
+
+/* Premium */
+.sh-fpv-footer__heading { color: var(--sh-text-primary); }
+.sh-fpv-footer__text { color: var(--sh-text-secondary); }
+
+/* Default */
+.sh-fpv-footer__hint {
+  margin: 0;
+  color: var(--sh-text-disabled);
+}

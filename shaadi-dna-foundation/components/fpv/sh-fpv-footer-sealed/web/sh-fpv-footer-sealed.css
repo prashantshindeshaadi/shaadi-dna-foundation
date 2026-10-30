@@ -1,0 +1,92 @@
+/*
+ * sh-fpv-footer-sealed — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-footer-sealed.md · Figma node 2877:20460 (one variant)
+ *
+ * Sealed teaser footer: "Like {name}’s Profile?" with her photo, Share / Shortlist, the floating Connect Now island,
+ * Manage your boundaries and "Swipe up to reveal". Not used on the current screens.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/sh-icon-button/web/sh-icon-button.css ·
+ *   components/sh-icon-button-with-label/web/sh-icon-button-with-label.css · components/sh-text-link/web/sh-text-link.css ·
+ *   components/sh-action-note/web/sh-action-note.css · components/sh-action-island/web/sh-action-island.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css ·
+ *   components/fpv/sh-fpv-footer-boundaries/web/sh-fpv-footer-boundaries.css
+ *
+ *   <footer class="sh-fpv-footer-sealed">
+ *     <div class="sh-fpv-footer-sealed__card">
+ *       <div class="sh-fpv-footer-sealed__photo sh-user-image"><img src="photo-1.jpg" alt=""></div>
+ *       <p class="sh-fpv-footer-sealed__title sh-title-lg">Like Meher’s Profile?</p>
+ *       <div class="sh-fpv-footer-sealed__actions"> sh-button Tertiary Medium Share · Shortlist </div>
+ *     </div>
+ *     <div class="sh-fpv-footer-sealed__island sh-action-island sh-action-island--floating sh-action-island--primary-only">
+ *       <div class="sh-action-note sh-action-note--edit sh-action-note--floating">…pre-written message · Edit…</div>
+ *       <div class="sh-action-island__actions">
+ *         <button class="sh-button sh-button--primary sh-button--lg sh-button--fill" type="button">check (Filled) · Connect Now</button>
+ *       </div>
+ *     </div>
+ *     <div class="sh-fpv-footer-boundaries">…</div>
+ *     <p class="sh-fpv-footer-sealed__hint sh-support-label">Swipe up to reveal</p>
+ *   </footer>
+ *
+ * Parts  __card (background/default; title sh-typo/Title/LG text/primary; actions gap sh-space/16) ·
+ *        __island (sh-action-island Floating, Primary only: the "Floating Nav" — the pre-written message as
+ *        sh-action-note Edit Floating, sh-button Primary Large Connect Now, leading Filled check) ·
+ *        sh-fpv-footer-boundaries (Figma draws the same two lines without the underline) ·
+ *        __hint (sh-typo/Support/Label, text/disabled).
+ * Taps   Share · Shortlist (toggle, aria-pressed) · Edit · Connect Now · Hide, Report or Block Profile · swipe up (app).
+ *        Every button and link brings its own states and 48 tap area.
+ *
+ * Gaps (see the report): art not in the repo, not drawn — the Eclipse / Planet "Gradient", the Premium Account teaser
+ * and the success-story icon (hidden). The top "Photo" layer (360 wide, unknown height and purpose) and the hidden
+ * sh-app-header / status gradient are left out. Unknown variables: the card's surround fill and the section divider
+ * line. Not DNA shadow tokens: Shadow/Shadow-32 dp (root), shadow/light-mode/sticky-bar (card). Figma's message row
+ * has a chat-bubble 12 icon that sh-action-note does not carry. No token bound for: the root padding and the gaps
+ * between blocks (here sh-space/24 and sh-space/gap/section), the photo size (sh-space/80, radius sh-radius/media).
+ */
+
+.sh-fpv-footer-sealed {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-gap-section);
+  width: 100%;
+  padding: var(--sh-space-24) var(--sh-space-page-margin);
+  background: var(--sh-background-default);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-fpv-footer-sealed__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-8);
+  background: var(--sh-background-default);
+  text-align: center;
+}
+
+.sh-fpv-footer-sealed__photo {
+  flex: none;
+  width: var(--sh-space-80);
+  height: var(--sh-space-80);
+  border-radius: var(--sh-radius-media);
+}
+
+.sh-fpv-footer-sealed__title {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-footer-sealed__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--sh-space-16);
+}
+
+.sh-fpv-footer-sealed__island { align-self: stretch; }
+
+.sh-fpv-footer-sealed__hint {
+  margin: 0;
+  color: var(--sh-text-disabled);
+}

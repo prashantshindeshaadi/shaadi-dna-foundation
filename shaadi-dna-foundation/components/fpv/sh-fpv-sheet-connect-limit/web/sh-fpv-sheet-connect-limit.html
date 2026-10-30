@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  sh-fpv-sheet-connect-limit — web (HTML5 + CSS). The one variant, over a stand-in profile so the blurred scrim reads.
+  Spec: ../sh-fpv-sheet-connect-limit.md · Figma node 2891:58077
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-sheet-connect-limit</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon-button/web/sh-icon-button.css">
+  <link rel="stylesheet" href="../../../../components/sh-bottom-sheet/web/sh-bottom-sheet.css">
+  <link rel="stylesheet" href="../../../../components/sh-countdown/web/sh-countdown.css">
+  <link rel="stylesheet" href="sh-fpv-sheet-connect-limit.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.lead { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); max-width: 360px; }
+    .phone { position: relative; width: 360px; height: 800px; overflow: hidden; transform: translateZ(0); }   /* Figma 360 × 800; contains the sheet's position: fixed */
+    .page { height: 100%; background: var(--sh-background-default); }
+    .page .sh-user-image { height: 520px; }
+    .page p { margin: var(--sh-space-16) var(--sh-space-page-margin) 0; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-sheet-connect-limit</h1>
+
+  <h2 class="demo sh-title-md">One variant</h2>
+  <p class="lead sh-body-md">The viewer tapped Connect with no Connects left. sh-bottom-sheet Relaxed, Center, Stacked; the refill timer is sh-countdown in the Note slot.</p>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-fpv-sheet-connect-limit</figcaption>
+      <div class="phone"><div class="page" aria-hidden="true"><div class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></div><p class="sh-heading-md">Meher Randhawa</p><p class="sh-body-md">32 yrs · 5′6″ · Mumbai, Maharashtra</p></div><div class="sh-bottom-sheet sh-fpv-sheet-connect-limit"><div class="sh-bottom-sheet__scrim" aria-hidden="true"></div><section class="sh-bottom-sheet__sheet" role="dialog" aria-modal="true" aria-labelledby="st1"><div class="sh-bottom-sheet__header"><span class="sh-bottom-sheet__grabber" aria-hidden="true"></span></div><div class="sh-bottom-sheet__body"><div class="sh-bottom-sheet__heading"><h2 class="sh-bottom-sheet__title sh-heading-sm" id="st1">You’re out of Connects!</h2><p class="sh-bottom-sheet__text sh-body-md">Upgrade now to keep sending Connects.</p></div><div class="sh-bottom-sheet__note sh-fpv-sheet-connect-limit__timer"><span class="sh-countdown" role="timer" aria-label="Connects refill in 5 hours 42 minutes"><span class="sh-countdown__label sh-support-label">Connects refill in</span><span class="sh-countdown__time" aria-hidden="true"><span class="sh-countdown__box sh-title-sm">05</span><span class="sh-countdown__colon sh-title-sm">:</span><span class="sh-countdown__box sh-title-sm">42</span><span class="sh-countdown__colon sh-title-sm">:</span><span class="sh-countdown__box sh-title-sm">10</span></span></span></div><div class="sh-bottom-sheet__actions"><button class="sh-button sh-button--premium-solid sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Upgrade Now</span></span></button><button class="sh-button sh-button--ghost sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Not now</span></span></button></div></div><button class="sh-bottom-sheet__close sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="Close"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></button></section></div></div>
+    </figure>
+  </div>
+</body>
+</html>

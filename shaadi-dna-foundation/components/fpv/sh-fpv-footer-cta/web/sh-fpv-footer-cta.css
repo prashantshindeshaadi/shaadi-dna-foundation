@@ -1,0 +1,69 @@
+/*
+ * sh-fpv-footer-cta — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-footer-cta.md · Figma node 3237:88208 (one variant)
+ *
+ * Footer top block: her photo, "Don’t miss out on …" and the Share / Shortlist buttons. Shared by every
+ * sh-fpv-footer state.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/profile-card/sh-user-images/web/sh-user-images.css
+ *
+ *   <div class="sh-fpv-footer-cta">
+ *     <div class="sh-fpv-footer-cta__content">
+ *       <div class="sh-fpv-footer-cta__photo sh-user-image"><img src="photo-1.jpg" alt=""></div>
+ *       <p class="sh-fpv-footer-cta__title sh-title-lg">Don’t miss out on Meher</p>
+ *       <div class="sh-fpv-footer-cta__actions">
+ *         <button class="sh-button sh-button--tertiary sh-button--md" type="button">…Share…</button>
+ *         <button class="sh-button sh-button--tertiary sh-button--md" type="button" aria-pressed="false">…Shortlist…</button>
+ *       </div>
+ *     </div>
+ *   </div>
+ *
+ * Parts  __photo (her photo; Figma "Image & Nav", its carousel dots hidden) · __title (sh-typo/Title/LG,
+ *        text/secondary) · __actions (sh-button Tertiary Medium × 2, gap sh-space/8). Content gap sh-space/8,
+ *        padding-bottom sh-space/40, background/default.
+ * Taps   Share · Shortlist (a toggle: aria-pressed; when on, the label reads "Shortlisted" — the non-colour cue).
+ *        The buttons bring their own states and 48 tap area.
+ * Hidden in Figma, left out: "Like Meher’s Profile?" (its colour is an unknown variable) and the photo's dots.
+ *
+ * Gaps (see the report): the sticky-bar shadow (shadow/light-mode/sticky-bar) is not a DNA shadow token, so none is
+ * drawn. No token bound for: the top padding (here sh-space/24), the photo size (here sh-space/80) and radius
+ * (role token sh-radius/media). Figma shows no icons on the two buttons.
+ */
+
+.sh-fpv-footer-cta {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: var(--sh-space-24) var(--sh-space-page-margin) var(--sh-space-40);
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-footer-cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-8);
+  text-align: center;
+}
+
+.sh-fpv-footer-cta__photo {
+  flex: none;
+  width: var(--sh-space-80);
+  height: var(--sh-space-80);
+  border-radius: var(--sh-radius-media);
+}
+
+.sh-fpv-footer-cta__title {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-footer-cta__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--sh-space-8);
+}

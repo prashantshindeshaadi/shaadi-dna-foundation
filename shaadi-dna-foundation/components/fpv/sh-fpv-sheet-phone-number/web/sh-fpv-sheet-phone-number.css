@@ -1,0 +1,81 @@
+/*
+ * sh-fpv-sheet-phone-number — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-sheet-phone-number.md · Figma node 2891:55240 (State × 4 = 4 variants)
+ *
+ * The only place her number and email show. Opening it sends her a Connect request, so every state shows
+ * "Connect Request Sent". An sh-bottom-sheet (Type Relaxed, Align Center) with sh-profile-identity in the Visual slot.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/sh-icon-button/web/sh-icon-button.css ·
+ *   components/sh-icon-button-with-label/web/sh-icon-button-with-label.css · components/sh-text-link/web/sh-text-link.css ·
+ *   components/sh-action-note/web/sh-action-note.css · components/sh-action-island/web/sh-action-island.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css · components/sh-avatar/web/sh-avatar.css ·
+ *   components/sh-profile-identity/web/sh-profile-identity.css · components/sh-divider/web/sh-divider.css ·
+ *   components/sh-list-default/web/sh-list-default.css · components/sh-list/web/sh-list.css ·
+ *   components/sh-bottom-sheet/web/sh-bottom-sheet.css
+ *
+ *   <div class="sh-bottom-sheet sh-fpv-sheet-phone-number">
+ *     <div class="sh-bottom-sheet__scrim" aria-hidden="true"></div>
+ *     <section class="sh-bottom-sheet__sheet" role="dialog" aria-modal="true" aria-labelledby="contact-name">
+ *       <div class="sh-bottom-sheet__header">…</div>
+ *       <div class="sh-bottom-sheet__visual"><div class="sh-profile-identity">… photo · name (id="contact-name") · Managed by Parent …</div></div>
+ *       <div class="sh-bottom-sheet__body">
+ *         <div class="sh-bottom-sheet__heading">
+ *           <p class="sh-fpv-sheet-phone-number__status sh-button-sm">
+ *             <span class="sh-fpv-sheet-phone-number__status-icon sh-icon sh-icon--16" style="--icon:url(icons/filled/check.svg)" aria-hidden="true"></span>
+ *             Connect Request Sent</p>
+ *           <p class="sh-bottom-sheet__text sh-body-md">…privacy message…</p>              Shown to connections · Number hidden
+ *         </div>
+ *         <div class="sh-bottom-sheet__section">
+ *           sh-list Default rows (Leading Icon, Inline): call / email + the value; a masked value ends with ONE lock,
+ *           always last: <span class="sh-list-default__title sh-body-md">+91 8042 ******</span>
+ *                        <span class="sh-list-default__title-icon sh-icon sh-icon--16" style="--icon:url(icons/filled/lock.svg)" role="img" aria-label="Hidden"></span>
+ *           <div class="sh-fpv-sheet-phone-number__island sh-action-island sh-action-island--normal sh-action-island--three-actions">…</div>   Number shown
+ *         </div>
+ *         <div class="sh-bottom-sheet__note"><p class="sh-fpv-sheet-phone-number__count sh-body-sm">Contacts viewed 12/40</p></div>
+ *         <div class="sh-bottom-sheet__actions">…</div>
+ *       </div>
+ *       <button class="sh-bottom-sheet__close …" aria-label="Close">…</button>
+ *     </section>
+ *   </div>
+ *
+ * State  (no modifier: the state only changes the content)
+ *        Number shown          number + email; sh-action-island Three actions: Shaadi Chat · WhatsApp · Call;
+ *                              note "Contacts viewed {used}/{total}"; no other button
+ *        No tokens             number and email masked; lone sh-button Premium Solid Medium "View Plans" (max 200, centred)
+ *        Shown to connections  privacy message; number masked, email shown; Shaadi Chat (Primary) + Send SMS (Tertiary)
+ *                              side by side (sh-bottom-sheet--side-by-side); note "This contact isn’t counted as viewed"
+ *        Number hidden         privacy message; number masked; Shaadi Chat + Send SMS; same note
+ *        Shaadi Chat, WhatsApp, Call, SMS and Email never charge. Every button is Medium.
+ * Parts  __status (sh-typo/Button/SM, text/secondary; the Filled check in indicator/success beside the label) ·
+ *        __island (sh-action-island on the sheet: its captions take text/primary, as on any light surface) ·
+ *        __count (sh-typo/Body/SM, text/tertiary).
+ * States the rows are not tappable here (the island and buttons are); every button brings its own states and 48 tap area.
+ *
+ * Gaps (see the report): sh-fpv-sheet-phone-footer (the Note slot: toggle "Show connect status", edit Note) has no
+ * blueprint or web code in the repo, so the note shows only the count line. The blueprint gives no copy, rows or CTA
+ * labels per state beyond the purpose text; they are built from the rules. sh-action-island has no style for a light
+ * sheet: Normal's on-image captions are switched to text/primary through its --_fg custom property.
+ */
+
+.sh-fpv-sheet-phone-number__status {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: var(--sh-space-4);
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+.sh-bottom-sheet--left .sh-fpv-sheet-phone-number__status { align-self: flex-start; }
+
+.sh-fpv-sheet-phone-number__status-icon { color: var(--sh-indicator-success); }
+
+/* The island sits on the light sheet, not on a photo */
+.sh-fpv-sheet-phone-number__island { --_fg: var(--sh-text-primary); }
+
+.sh-fpv-sheet-phone-number__count {
+  margin: 0;
+  color: var(--sh-text-tertiary);
+  text-align: center;
+}

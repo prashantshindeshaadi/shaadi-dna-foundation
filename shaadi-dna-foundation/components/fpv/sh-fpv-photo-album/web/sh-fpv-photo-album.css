@@ -1,0 +1,104 @@
+/*
+ * sh-fpv-photo-album — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-photo-album.md · Figma node 2877:19803 (Gate 4 × Overflow 5 = 20 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css ·
+ *   components/fpv/sh-fpv-section-title/web/sh-fpv-section-title.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css ·
+ *   components/fpv/sh-fpv-photo-album-stack/web/sh-fpv-photo-album-stack.css ·
+ *   components/sh-overlay/web/sh-overlay.css (gated)
+ *
+ *   Gate=Visible
+ *   <section class="sh-fpv-photo-album" aria-labelledby="album-title">
+ *     <div class="sh-fpv-photo-album__title sh-fpv-section-title">… "Photo Album" · "Meher has added 8 more photos." …</div>
+ *     <button class="sh-fpv-photo-album__open" type="button" aria-label="View album, 8 photos">
+ *       <div class="sh-fpv-photo-album-stack sh-fpv-photo-album-stack--4-plus">…</div>
+ *     </button>
+ *   </section>
+ *
+ *   Gate=Accept gated / Upgrade gated / Tit for tat
+ *     <div class="sh-fpv-photo-album__locked">
+ *       <div class="sh-fpv-photo-album-stack sh-fpv-photo-album-stack--4-plus" aria-hidden="true">…</div>
+ *       <div class="sh-overlay sh-overlay--content sh-overlay--message">
+ *         <div class="sh-overlay__content">
+ *           <img class="sh-fpv-photo-album__art" src="icons/pictogram/locked-photo@2x.png" alt="">
+ *           <p class="sh-overlay__text sh-body-lg">Meher shows her album only to members she likes.</p>
+ *         </div>
+ *         <button class="sh-button sh-button--tertiary sh-button--md" type="button">check (Filled) · Connect Now</button>
+ *       </div>
+ *     </div>
+ *
+ * Gate      (no modifier: the gate only changes the markup)
+ *           Visible        the stack is the "View album" button → sh-fpv-album-view
+ *           Accept gated   "Only members she likes", not connected → sh-button Tertiary Medium "Connect Now" (Filled check)
+ *           Upgrade gated  "Members she likes + Premium", Free viewer → sh-button Premium Soft Medium "Upgrade Now"
+ *           Tit for tat    Free viewer without a photo → sh-button Tertiary Medium "Upload Now"
+ * Overflow  1 · 2 · 3 · 4 → the stack's Count; 4+ → Count 4+ with "+N" (N = photos not shown − 4).
+ *           The subtitle counts only photos not already shown on the profile; the section drops when that is 0.
+ * Taps      __open: Hover/Pressed come from the photos (none drawn in Figma) · Focus :focus-visible ring ·
+ *           Disabled [disabled]. The lock buttons bring their own states and 48 tap area.
+ *
+ * Gaps (see the report): the Figma lock "Overlay" fill and stroke and its art backdrop are bound to unknown variables,
+ * so the lock uses the DNA content lock, sh-overlay Surface=Content Type=Message (light glass, text/primary — the
+ * Description token Figma binds), with the 64 pictogram (sh-icon/pictogram/size/64) and Body/LG text. Root padding and
+ * the gap between title and stack are unbound: the title gets sh-space/page/margin sides, no extra gap.
+ */
+
+.sh-fpv-photo-album {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-photo-album__title { padding-inline: var(--sh-space-page-margin); }
+
+/* Visible: the whole stack opens the album */
+.sh-fpv-photo-album__open {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-fpv-photo-album__open:focus { outline: none; }
+.sh-fpv-photo-album__open:focus-visible,
+.sh-fpv-photo-album__open.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: calc(var(--sh-space-4) * -1);
+  border-radius: var(--sh-radius-media);
+}
+.sh-fpv-photo-album__open:disabled,
+.sh-fpv-photo-album__open[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Gated: the stack under the content lock */
+.sh-fpv-photo-album__locked {
+  position: relative;
+  overflow: hidden;
+}
+
+.sh-fpv-photo-album__art {
+  display: block;
+  width: var(--sh-icon-pictogram-size-64);
+  height: var(--sh-icon-pictogram-size-64);
+  object-fit: contain;
+}
+
+/* Description: Figma Body/LG, max two lines */
+.sh-fpv-photo-album__locked .sh-overlay__text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

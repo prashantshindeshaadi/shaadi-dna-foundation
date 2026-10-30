@@ -1,0 +1,91 @@
+/*
+ * sh-fpv-photo-area — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-photo-area.md · Figma node 2877:19389 (Gate × 6 = 6 variants; boolean Carousel dots)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/profile-card/sh-user-images/web/sh-user-images.css ·
+ *   components/sh-overlay/web/sh-overlay.css · components/sh-photo-wrapper/web/sh-photo-wrapper.css ·
+ *   components/sh-carousel-dots/web/sh-carousel-dots.css · components/fpv/sh-fpv-carousel-dot/web/sh-fpv-carousel-dot.css ·
+ *   components/fpv/sh-fpv-carousel-dots/web/sh-fpv-carousel-dots.css
+ *
+ *   Gate=Visible
+ *   <div class="sh-fpv-photo-area" style="--sh-fpv-photo-area-sample: <colour sampled from the top of the photo>">
+ *     <div class="sh-fpv-photo-area__photo sh-photo-wrapper">
+ *       <div class="sh-photo-wrapper__image sh-user-image"><img src="photo-1.jpg" alt="Meher, photo 1 of 6"></div>
+ *     </div>
+ *     <div class="sh-fpv-photo-area__top-scrim" aria-hidden="true"></div>
+ *     <div class="sh-fpv-photo-area__dots sh-carousel-dots sh-fpv-carousel-dots" role="img" aria-label="Photo 1 of 6">…</div>   Carousel dots
+ *   </div>
+ *
+ *   Gate=Accept gated / Upgrade gated / Tit for tat: the photo stays (Style Normal) and the sh-overlay Message covers it
+ *     <div class="sh-fpv-photo-area__photo sh-photo-wrapper">
+ *       <div class="sh-photo-wrapper__image sh-user-image" aria-hidden="true"><img src="photo-1.jpg" alt=""></div>
+ *       <div class="sh-overlay sh-overlay--photo-full sh-overlay--message">
+ *         <div class="sh-overlay__content">
+ *           <span class="sh-overlay__icon sh-icon sh-icon--40" style="--icon:url(icons/filled/photo-locked.svg)" aria-hidden="true"></span>
+ *           <p class="sh-overlay__text sh-fpv-photo-area__message sh-body-lg">…</p>
+ *         </div>
+ *         <button class="sh-overlay__action sh-button sh-button--tertiary sh-button--md" type="button">…</button>
+ *       </div>
+ *     </div>
+ *
+ *   Gate=No photo / Photo requested: no photo layer; sh-overlay No photo / Photo requested brings its own background
+ *   and the sh-avatar-silhouette (Female or Male, matching her).
+ *
+ * Gate      (no modifier: the gate only changes the markup)
+ *           Visible          her photo, top scrim, dots
+ *           Accept gated     "Only members she likes", not connected (any plan) → Connect Now (Filled check)
+ *           Upgrade gated    "Members she likes + Premium", Free viewer → Upgrade Now
+ *           Tit for tat      Free viewer with no photo of his own → Upload Now
+ *           No photo         → Request a Photo
+ *           Photo requested  → status "Photo requested" (sh-overlay's Photo requested has no action)
+ *           Every locked photo is blurred strongly (sh-overlay Message: overlay/scrim/default + blur/strong).
+ *           Icon 40 at the top, message max 2 lines centred, CTA sh-button Tertiary Medium, same place on every gate.
+ * Carousel dots  only when the album is visible and she has more than one photo: include or leave out __dots.
+ * Top scrim app UI: the colour is SAMPLED at run time from the top of the photo shown (Android Palette) and set as
+ *           --sh-fpv-photo-area-sample; it fades to transparent. No sample → no scrim.
+ * States    the photo is not interactive (swipe moves the carousel); the overlay buttons bring their own states.
+ *
+ * No token for: the top scrim height 96 (= sh-space/80 + sh-space/16) and its sampled colour (run-time data);
+ * the 302 × 48 message box (here: the overlay's page-margin sides, max 2 lines). The blueprint says No photo and
+ * Photo requested both carry an sh-button, but sh-overlay Photo requested has none: its status row is used. See the report.
+ */
+
+.sh-fpv-photo-area {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-photo-area__photo { border-radius: var(--sh-radius-none); }
+
+/* Top scrim: the sampled colour fading to transparent, behind the app header and status bar */
+.sh-fpv-photo-area__top-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--sh-space-80) + var(--sh-space-16));      /* no token: 96 */
+  background: linear-gradient(var(--sh-fpv-photo-area-sample, transparent), transparent);
+  pointer-events: none;
+}
+
+/* Carousel dots: along the bottom of the photo */
+.sh-fpv-photo-area__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Message: max two lines */
+.sh-fpv-photo-area__message {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

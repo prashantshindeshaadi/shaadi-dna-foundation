@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  sh-fpv-app-header — web (HTML5 + CSS). Both States: Onscroll · Alternate, plus the tab focus ring.
+  Spec: ../sh-fpv-app-header.md · Figma node 2877:15883
+  Her photo is a neutral placeholder. The status bar is a mock-up of device chrome.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-app-header</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-status-bar/web/sh-status-bar.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon-button/web/sh-icon-button.css">
+  <link rel="stylesheet" href="../../../../components/profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="sh-fpv-app-header.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.lead { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); max-width: 360px; }
+    .w { width: 360px; }   /* Figma: 360 × 132 */
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-app-header</h1>
+
+  <h2 class="demo sh-title-md">State (2 variants)</h2>
+  <p class="lead sh-body-md">The sticky header after scrolling past the photo. The tab strip follows the section in view; About is current.</p>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Onscroll</figcaption>
+      <div class="w"><header class="sh-fpv-app-header"><div class="sh-status-bar" aria-hidden="true"><span class="sh-status-bar__time sh-body-md">9:30</span><span class="sh-status-bar__camera"></span><span class="sh-status-bar__icons"><span class="sh-icon sh-icon--16" style="--icon:url(../../../../icons/filled/signal.svg)"></span><span class="sh-icon sh-icon--16" style="--icon:url(../../../../icons/filled/battery.svg)"></span></span></div><div class="sh-fpv-app-header__bar"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--lg" type="button" aria-label="Go back"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/back.svg)" aria-hidden="true"></span></button><div class="sh-fpv-app-header__middle"><div class="sh-fpv-app-header__photo sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='1' stop-color='%23334155'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='520' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></div></div><div class="sh-fpv-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="View 8 photos"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">8</span></button><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="More options"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button></div></div><nav class="sh-fpv-app-header__tabs" aria-label="Profile sections"><a class="sh-fpv-app-header__tab sh-button-md" href="#about" aria-current="true">About</a><a class="sh-fpv-app-header__tab sh-body-md" href="#contact">Contact</a><a class="sh-fpv-app-header__tab sh-body-md" href="#family">Family</a><a class="sh-fpv-app-header__tab sh-body-md" href="#career">Career & Edu</a><a class="sh-fpv-app-header__tab sh-body-md" href="#astro">Astro Compatibility</a></nav></header></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">State=Alternate</figcaption>
+      <div class="w"><header class="sh-fpv-app-header sh-fpv-app-header--alternate"><div class="sh-status-bar" aria-hidden="true"><span class="sh-status-bar__time sh-body-md">9:30</span><span class="sh-status-bar__camera"></span><span class="sh-status-bar__icons"><span class="sh-icon sh-icon--16" style="--icon:url(../../../../icons/filled/signal.svg)"></span><span class="sh-icon sh-icon--16" style="--icon:url(../../../../icons/filled/battery.svg)"></span></span></div><div class="sh-fpv-app-header__bar"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--lg" type="button" aria-label="Go back"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/back.svg)" aria-hidden="true"></span></button><div class="sh-fpv-app-header__middle"><div class="sh-fpv-app-header__name-row"><p class="sh-fpv-app-header__name sh-heading-sm">Meher Randhawa</p><span class="sh-fpv-app-header__marks"><img class="sh-fpv-app-header__mark" src="../../../../icons/pictogram/premium-crown@2x.png" alt="Premium member"><img class="sh-fpv-app-header__mark" src="../../../../icons/pictogram/shaadi-id@2x.png" alt="Shaadi ID verified"></span></div></div><div class="sh-fpv-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="View 8 photos"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/filled/image.svg)" aria-hidden="true"></span><span class="sh-icon-button__badge sh-body-sm">8</span></button><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="More options"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button></div></div><nav class="sh-fpv-app-header__tabs" aria-label="Profile sections"><a class="sh-fpv-app-header__tab sh-button-md" href="#about" aria-current="true">About</a><a class="sh-fpv-app-header__tab sh-body-md" href="#contact">Contact</a><a class="sh-fpv-app-header__tab sh-body-md" href="#family">Family</a><a class="sh-fpv-app-header__tab sh-body-md" href="#career">Career & Edu</a><a class="sh-fpv-app-header__tab sh-body-md" href="#astro">Astro Compatibility</a></nav></header></div>
+    </figure>
+  </div>
+
+  <h2 class="demo sh-title-md">Tab focus</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Onscroll · tab Focus (Family)</figcaption>
+      <div class="w"><header class="sh-fpv-app-header"><nav class="sh-fpv-app-header__tabs" aria-label="Profile sections"><a class="sh-fpv-app-header__tab sh-button-md" href="#about" aria-current="true">About</a><a class="sh-fpv-app-header__tab sh-body-md" href="#contact">Contact</a><a class="sh-fpv-app-header__tab is-focus sh-body-md" href="#family">Family</a><a class="sh-fpv-app-header__tab sh-body-md" href="#career">Career & Edu</a><a class="sh-fpv-app-header__tab sh-body-md" href="#astro">Astro Compatibility</a></nav></header></div>
+    </figure>
+  </div>
+</body>
+</html>
