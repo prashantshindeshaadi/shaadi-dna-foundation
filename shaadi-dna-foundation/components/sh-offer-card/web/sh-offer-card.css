@@ -1,0 +1,56 @@
+/*
+ * sh-offer-card — web (HTML5 + CSS)
+ * Spec: ../sh-offer-card.md · Figma node 2718:40923 (Type Money back / Custom)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css
+ *
+ *   <aside class="sh-offer-card sh-offer-card--custom" aria-label="Offer">
+ *     <div class="sh-offer-card__artwork">
+ *       <img class="sh-offer-card__art" src="diwali-offer.png" alt="Diwali offer: 40% off all plans">
+ *     </div>
+ *   </aside>
+ *
+ * Type  (none) Money back: the ready "30 Days · MONEY BACK GUARANTEE" artwork, as one exported image:
+ *         <img class="sh-offer-card__art" src="…/money-back.svg" alt="30 days money back guarantee">
+ *       --custom: any offer or festival banner; put its artwork in __artwork (Figma "Artwork slot").
+ *       Add each recurring festival banner as a new Type.
+ * Drop hint  .sh-offer-card__drop (text/tertiary, Body/SM) is Figma's empty-slot hint; prototypes only.
+ * Full width, padding-y sh-space/8, artwork centred. Not interactive: wrap it in a link only if the whole
+ * banner opens the offer.
+ *
+ * Open gaps (see the report): the Money back artwork is vector art drawn in Figma and is not in the repo;
+ * its "30 Days" text is bound to a variable that is not in tokens/.
+ */
+
+.sh-offer-card {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-8) var(--sh-space-0);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-offer-card__artwork {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.sh-offer-card--custom .sh-offer-card__artwork { flex: 1 1 0; }
+
+.sh-offer-card__art {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Figma's empty-slot hint */
+.sh-offer-card__drop {
+  margin: 0;
+  color: var(--sh-text-tertiary);
+  text-align: center;
+}

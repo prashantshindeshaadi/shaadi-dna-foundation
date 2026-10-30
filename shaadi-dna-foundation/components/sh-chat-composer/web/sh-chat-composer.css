@@ -1,0 +1,119 @@
+/*
+ * sh-chat-composer — web (HTML5 + CSS)
+ * Spec: ../sh-chat-composer.md · Figma node 2719:43030 (State Empty / Typing)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-icon-button/web/sh-icon-button.css (Attach, Send)
+ *
+ *   <form class="sh-chat-composer">
+ *     <button class="sh-icon-button sh-icon-button--ghost sh-icon-button--md" type="button" aria-label="Attach">
+ *       <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/attachment.svg)" aria-hidden="true"></span>
+ *     </button>
+ *     <label class="sh-chat-composer__field">
+ *       <input class="sh-chat-composer__input sh-body-md" type="text" placeholder="Type a message" aria-label="Message">
+ *       <button class="sh-chat-composer__sticker" type="button" aria-label="Stickers">
+ *         <span class="sh-icon sh-icon--20" style="--icon:url(icons/line/sticker.svg)" aria-hidden="true"></span>
+ *       </button>
+ *     </label>
+ *     <button class="sh-icon-button sh-icon-button--primary sh-icon-button--md" type="submit" aria-label="Send" disabled>
+ *       <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/send.svg)" aria-hidden="true"></span>
+ *     </button>
+ *   </form>
+ *
+ * State  Empty: the placeholder (text/tertiary) shows and Send is [disabled] (sh-icon-button's disabled look).
+ *        Typing: the input has a value (text/primary) and Send is enabled. Toggle Send's disabled from the
+ *        input's value in your code.
+ * Field  the whole pill focuses the input; :focus-within draws the focus ring around it.
+ * Sticker a bare 20 icon in the field, with a 48 × 48 tap area. Figma draws no Hover or Pressed look for it:
+ *        focus ring and disabled only.
+ * Bar    top edge border/soft at sh-stroke/default (Figma's stroke weight is unbound; 57 tall = 1 edge + 8 + 40 + 8).
+ */
+
+.sh-chat-composer {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-8);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-8) var(--sh-space-12);
+  border-top: var(--sh-stroke-default) solid var(--sh-border-soft);
+  background: var(--sh-background-default);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Field --------------------------------------------------------------- */
+.sh-chat-composer__field {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  gap: var(--sh-space-8);
+  min-width: 0;
+  padding: var(--sh-space-10) var(--sh-space-16);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-soft);
+  cursor: text;
+}
+.sh-chat-composer__field:focus-within {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+
+.sh-chat-composer__input {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--sh-text-primary);          /* State=Typing */
+  font-family: inherit;
+  outline: none;
+}
+.sh-chat-composer__input::placeholder {
+  color: var(--sh-text-tertiary);         /* State=Empty */
+  opacity: var(--sh-opacity-full);
+}
+
+/* Sticker: bare 20 icon, 48 × 48 tap area */
+.sh-chat-composer__sticker {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-full);
+  background: none;
+  color: var(--sh-icon-primary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-chat-composer__sticker::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sh-icon-target-default);
+  height: var(--sh-icon-target-default);
+  transform: translate(-50%, -50%);
+}
+.sh-chat-composer__sticker .sh-icon { width: var(--sh-icon-size-20); height: var(--sh-icon-size-20); }
+.sh-chat-composer__sticker:focus { outline: none; }
+.sh-chat-composer__sticker:focus-visible {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+.sh-chat-composer__sticker:disabled {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Whole composer disabled (e.g. the chat is blocked) */
+.sh-chat-composer[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

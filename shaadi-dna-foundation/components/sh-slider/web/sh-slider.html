@@ -1,0 +1,88 @@
+<!doctype html>
+<!--
+  sh-slider — web (HTML5 + CSS). Every variant: Start 0 / 25 / 40 % × End 60 / 75 / 100 %, plus single value,
+  focus and disabled. Age 18–58 as the sample range. Drag a thumb: the small script at the end only keeps
+  --start / --end in step with the inputs and stops the thumbs crossing.
+  Spec: ../sh-slider.md · Figma node 2597:29841
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-slider</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-slider.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, 312px); gap: var(--sh-space-32) var(--sh-space-40); align-items: start; }   /* Figma width 312 */
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-slider</h1>
+
+  <h2 class="sh-title-md">Start × End</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Start=0%, End=60%</figcaption>
+      <div class="sh-slider" style="--start:0; --end:0.6"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="18" aria-label="Minimum age" aria-valuetext="18 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="42" aria-label="Maximum age" aria-valuetext="42 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=0%, End=75%</figcaption>
+      <div class="sh-slider" style="--start:0; --end:0.75"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="18" aria-label="Minimum age" aria-valuetext="18 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="48" aria-label="Maximum age" aria-valuetext="48 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=0%, End=100%</figcaption>
+      <div class="sh-slider" style="--start:0; --end:1"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="18" aria-label="Minimum age" aria-valuetext="18 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="58" aria-label="Maximum age" aria-valuetext="58 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=25%, End=60%</figcaption>
+      <div class="sh-slider" style="--start:0.25; --end:0.6"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="28" aria-label="Minimum age" aria-valuetext="28 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="42" aria-label="Maximum age" aria-valuetext="42 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=25%, End=75%</figcaption>
+      <div class="sh-slider" style="--start:0.25; --end:0.75"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="28" aria-label="Minimum age" aria-valuetext="28 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="48" aria-label="Maximum age" aria-valuetext="48 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=25%, End=100%</figcaption>
+      <div class="sh-slider" style="--start:0.25; --end:1"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="28" aria-label="Minimum age" aria-valuetext="28 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="58" aria-label="Maximum age" aria-valuetext="58 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=40%, End=60%</figcaption>
+      <div class="sh-slider" style="--start:0.4; --end:0.6"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="34" aria-label="Minimum age" aria-valuetext="34 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="42" aria-label="Maximum age" aria-valuetext="42 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=40%, End=75%</figcaption>
+      <div class="sh-slider" style="--start:0.4; --end:0.75"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="34" aria-label="Minimum age" aria-valuetext="34 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="48" aria-label="Maximum age" aria-valuetext="48 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=40%, End=100%</figcaption>
+      <div class="sh-slider" style="--start:0.4; --end:1"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="34" aria-label="Minimum age" aria-valuetext="34 years"><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="58" aria-label="Maximum age" aria-valuetext="58 years"></div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Show start thumb · State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Start=0%, End=60%, Show start thumb=false</figcaption>
+      <div class="sh-slider" style="--start:0; --end:0.6"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="42" aria-label="Age" aria-valuetext="42 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=25%, End=75% · focus on End thumb</figcaption>
+      <div class="sh-slider" style="--start:0.25; --end:0.75"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="28" aria-label="Minimum age" aria-valuetext="28 years"><input class="sh-slider__input sh-slider__input--end is-focus" type="range" min="18" max="58" value="48" aria-label="Maximum age" aria-valuetext="48 years"></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Start=25%, End=75% · disabled</figcaption>
+      <div class="sh-slider" style="--start:0.25; --end:0.75"><span class="sh-slider__track" aria-hidden="true"></span><span class="sh-slider__fill" aria-hidden="true"></span><input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="28" aria-label="Minimum age" aria-valuetext="28 years" disabled><input class="sh-slider__input sh-slider__input--end" type="range" min="18" max="58" value="48" aria-label="Maximum age" aria-valuetext="48 years" disabled></div>
+    </figure>
+  </div>
+
+  <script>
+    document.querySelectorAll(".sh-slider").forEach(function (slider) {
+      var start = slider.querySelector(".sh-slider__input--start");
+      var end = slider.querySelector(".sh-slider__input--end");
+      function pos(input) { return (input.value - input.min) / (input.max - input.min); }
+      function update(e) {
+        if (start && +start.value > +end.value) {
+          if (e && e.target === start) start.value = end.value; else end.value = start.value;
+        }
+        if (start) { slider.style.setProperty("--start", pos(start)); start.setAttribute("aria-valuetext", start.value + " years"); }
+        slider.style.setProperty("--end", pos(end));
+        end.setAttribute("aria-valuetext", end.value + " years");
+      }
+      slider.addEventListener("input", update);
+    });
+  </script>
+</body>
+</html>

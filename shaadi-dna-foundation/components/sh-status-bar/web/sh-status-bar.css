@@ -1,0 +1,98 @@
+/*
+ * sh-status-bar — web (HTML5 + CSS)
+ * Spec: ../sh-status-bar.md · Figma node 232:6808 (Platform Android / iOS × Theme Light / Dark)
+ *
+ * A device status bar for mock-ups and prototypes only. A real web page never draws one: the browser or OS does.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *
+ *   Android  <div class="sh-status-bar" aria-hidden="true">
+ *              <span class="sh-status-bar__time sh-body-md">12:30</span>
+ *              <span class="sh-status-bar__camera"></span>
+ *              <span class="sh-status-bar__icons">
+ *                <span class="sh-icon sh-icon--16" style="--icon:url(icons/filled/signal.svg)"></span>
+ *                <span class="sh-icon sh-icon--16" style="--icon:url(icons/filled/battery.svg)"></span>
+ *              </span>
+ *            </div>
+ *   iOS      <div class="sh-status-bar sh-status-bar--ios" aria-hidden="true">  … time uses sh-title-lg …
+ *
+ * Platform (none) Android: time left, punch-hole camera centred, icons right, padding-x sh-space/20, 32 tall
+ *          --ios: Left (time) · Notch area (Dynamic Island) · Right (icons), the outer areas centred in their half
+ * Theme    (none) Light: dark content (background/inverse) for light screens
+ *          --dark: light content (background/default) for dark screens or photos
+ * Show notch  include or leave out __camera.
+ *
+ * Open gaps (see the report): the camera cut-out is bound to sh-color-basic/neutral/black, which is not exported
+ * to code, so __camera paints nothing; its size, the iOS height and the icon gap are unbound in Figma; the pack has
+ * no wifi glyph (only wifi-off), so wifi is left out.
+ */
+
+.sh-status-bar {
+  --_content: var(--sh-background-inverse);
+
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: var(--sh-space-32);
+  margin: 0;
+  padding: var(--sh-space-0) var(--sh-space-20);
+  background: var(--sh-translucent-background-light-soft-start);
+  color: var(--_content);
+  font-family: var(--sh-typo-font-family-primary);
+  user-select: none;
+}
+
+/* ---- Theme --------------------------------------------------------------- */
+.sh-status-bar--dark { --_content: var(--sh-background-default); }
+
+/* ---- Parts --------------------------------------------------------------- */
+.sh-status-bar__time {
+  flex: none;
+  color: var(--_content);
+  font-variant-numeric: tabular-nums;
+}
+
+.sh-status-bar__icons {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-4);          /* no token: Figma's gap between the glyphs is unbound */
+  color: var(--_content);
+}
+.sh-status-bar__icons .sh-icon { width: var(--sh-icon-size-16); height: var(--sh-icon-size-16); }
+
+/* Camera cut-out. Figma: sh-color-basic/neutral/black, a primitive that is not exported to code (FOUNDATION §1).
+   The variable below does not exist in tokens.css, so the cut-out stays empty until a semantic token is added. */
+.sh-status-bar__camera {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sh-icon-size-12);    /* no token: punch-hole size is unbound in Figma */
+  height: var(--sh-icon-size-12);
+  transform: translate(-50%, -50%);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-color-basic-neutral-black);
+}
+
+/* ---- Platform=iOS -------------------------------------------------------- */
+.sh-status-bar--ios {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-items: center;
+  min-height: calc(var(--sh-space-48) + var(--sh-space-6));   /* no token: iOS bar height is unbound in Figma */
+  padding: var(--sh-space-0);
+}
+.sh-status-bar--ios .sh-status-bar__time { grid-column: 1; }
+.sh-status-bar--ios .sh-status-bar__icons { grid-column: 3; }
+.sh-status-bar--ios .sh-status-bar__camera {   /* Dynamic Island */
+  position: static;
+  grid-column: 2;
+  grid-row: 1;
+  width: calc(var(--sh-space-40) * 3);         /* no token: Dynamic Island size is unbound in Figma */
+  height: var(--sh-space-32);
+  transform: none;
+}

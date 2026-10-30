@@ -1,0 +1,97 @@
+/*
+ * sh-navigation-dashboard-primary-item — web (HTML5 + CSS)
+ * Spec: ../sh-navigation-dashboard-primary-item.md · Figma node 436:6142 (Utility · State Default / Hover / Selected / Disabled / Focus)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css (.sh-body-sm) · components/sh-icon/web/sh-icon.css
+ *
+ *   <a class="sh-navigation-dashboard-primary-item" href="/" aria-current="page">
+ *     <span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(icons/line/home.svg)" aria-hidden="true"></span>
+ *     <span class="sh-navigation-dashboard-primary-item__label sh-body-sm">Home</span>
+ *   </a>
+ *
+ * Icon        any sh-icon, Size 24 (the blueprint names sh-icon/bottom-nav-home, which is not in the pack; home is used).
+ * Show label  include or leave out __label; without it, give the item an aria-label.
+ * State       Default: label text/secondary, icon icon/secondary
+ *             Hover :hover (.is-hover): label text/primary, icon icon/primary. Figma's Hover fill is bound to a
+ *               variable that isn't in tokens/ (VariableID:16:296), so no hover fill is drawn (see the report).
+ *             Selected aria-current="page" (.is-selected): background/selected, label text/brand, icon icon/brand
+ *             Disabled [aria-disabled="true"] / [disabled]: sh-opacity/disabled on the root
+ *             Focus :focus-visible (.is-focus): border/focus ring at sh-opacity/strong, outside the item
+ *             Figma defines no Pressed look, so none is drawn here.
+ * Tap area    80 × 64 (hugs a short label), above 48 × 48.
+ */
+
+.sh-navigation-dashboard-primary-item {
+  --_label: var(--sh-text-secondary);
+  --_icon: var(--sh-icon-secondary);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sh-space-8);
+  min-width: var(--sh-icon-target-default);
+  min-height: var(--sh-icon-target-default);
+  margin: 0;
+  padding: var(--sh-space-10) var(--sh-space-12);
+  border: 0;
+  border-radius: var(--sh-radius-md);
+  background: none;
+  color: var(--_label);
+  font-family: var(--sh-typo-font-family-primary);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- Parts --------------------------------------------------------------- */
+.sh-navigation-dashboard-primary-item__icon { --sh-icon-paint: var(--_icon); }
+.sh-navigation-dashboard-primary-item__label { display: block; color: var(--_label); }
+
+/* Focus ring: a separate layer, 4 outside the item, radius following it */
+.sh-navigation-dashboard-primary-item::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--sh-space-4) * -1);
+  border: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  border-radius: calc(var(--sh-radius-md) + var(--sh-space-4));
+  opacity: var(--sh-opacity-strong);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ---- State=Hover --------------------------------------------------------- */
+.sh-navigation-dashboard-primary-item:hover,
+.sh-navigation-dashboard-primary-item.is-hover {
+  --_label: var(--sh-text-primary);
+  --_icon: var(--sh-icon-primary);
+}
+
+/* ---- State=Selected ------------------------------------------------------ */
+.sh-navigation-dashboard-primary-item[aria-current="page"],
+.sh-navigation-dashboard-primary-item.is-selected {
+  --_label: var(--sh-text-brand);
+  --_icon: var(--sh-icon-brand);
+  background: var(--sh-background-selected);
+  cursor: default;
+}
+
+/* ---- State=Focus --------------------------------------------------------- */
+.sh-navigation-dashboard-primary-item:focus { outline: none; }
+.sh-navigation-dashboard-primary-item:focus-visible::after,
+.sh-navigation-dashboard-primary-item.is-focus::after { visibility: visible; }
+
+/* ---- State=Disabled ------------------------------------------------------ */
+.sh-navigation-dashboard-primary-item:disabled,
+.sh-navigation-dashboard-primary-item[aria-disabled="true"] {
+  --_label: var(--sh-text-secondary);
+  --_icon: var(--sh-icon-secondary);
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}

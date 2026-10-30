@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+  sh-offer-card — web (HTML5 + CSS). Every variant: Type Money back / Custom.
+  Spec: ../sh-offer-card.md · Figma node 2718:40923
+  No outside images: the festival banner is a neutral data-URI placeholder. The Money back artwork is not in the repo
+  (open gap), so its frame shows where the exported image goes.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-offer-card</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-offer-card.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma frame width 360 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .surface { background: var(--sh-background-default); }
+    .missing { display: flex; align-items: center; justify-content: center; width: 328px; height: var(--sh-space-40); border: var(--sh-stroke-default) dashed var(--sh-border-strong); border-radius: var(--sh-radius-sm); color: var(--sh-text-tertiary); }
+    .banner { width: 328px; height: auto; border-radius: var(--sh-radius-card); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-offer-card</h1>
+  <p class="note sh-body-sm">Type=Money back needs its artwork exported from Figma (vector art, not in the repo). The dashed frame marks where that image goes.</p>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Money back</figcaption>
+      <div class="surface"><aside class="sh-offer-card" aria-label="Offer">
+        <div class="sh-offer-card__artwork"><span class="missing sh-body-sm" role="img" aria-label="30 days money back guarantee">Money back artwork (export pending)</span></div>
+      </aside></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Custom (empty Artwork slot, as in Figma)</figcaption>
+      <div class="surface"><aside class="sh-offer-card sh-offer-card--custom" aria-label="Offer">
+        <div class="sh-offer-card__artwork"><p class="sh-offer-card__drop sh-body-sm">Drop offer or festival banner here</p></div>
+      </aside></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Custom, festival artwork in the slot</figcaption>
+      <div class="surface"><aside class="sh-offer-card sh-offer-card--custom" aria-label="Offer">
+        <div class="sh-offer-card__artwork"><img class="sh-offer-card__art banner" alt="Diwali offer: 40% off all plans" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 328 44'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='328' height='44' fill='url(%23g)'/%3E%3C/svg%3E"></div>
+      </aside></div>
+    </figure>
+  </div>
+</body>
+</html>

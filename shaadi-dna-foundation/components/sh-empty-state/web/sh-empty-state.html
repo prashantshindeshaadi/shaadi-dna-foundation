@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  sh-empty-state — web (HTML5 + CSS). The one variant, plus Show pictogram / Show action off and other pictograms.
+  Spec: ../sh-empty-state.md · Figma node 2718:41694
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-empty-state</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="sh-empty-state.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 328px; }   /* Figma frame width 328 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .surface { background: var(--sh-background-default); border-radius: var(--sh-radius-card); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-empty-state</h1>
+
+  <h2 class="demo sh-title-md">Default · Show pictogram · Show action</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-empty-state (default)</figcaption>
+      <div class="surface"><section class="sh-empty-state">
+        <img class="sh-empty-state__pictogram" src="../../../icons/pictogram/heart@2x.png" alt="">
+        <div class="sh-empty-state__text"><h3 class="sh-empty-state__title sh-heading-sm">No matches yet</h3><p class="sh-empty-state__body sh-body-md">Widen your partner preferences to see more profiles.</p></div>
+        <button class="sh-empty-state__action sh-button sh-button--primary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Edit preferences</span></span></button>
+      </section></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Show action=false</figcaption>
+      <div class="surface"><section class="sh-empty-state">
+        <img class="sh-empty-state__pictogram" src="../../../icons/pictogram/heart@2x.png" alt="">
+        <div class="sh-empty-state__text"><h3 class="sh-empty-state__title sh-heading-sm">No messages</h3><p class="sh-empty-state__body sh-body-md">When a member writes to you, the chat shows up here.</p></div>
+      </section></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Show pictogram=false</figcaption>
+      <div class="surface"><section class="sh-empty-state">
+        <div class="sh-empty-state__text"><h3 class="sh-empty-state__title sh-heading-sm">No results for these filters</h3><p class="sh-empty-state__body sh-body-md">Try removing a filter or two.</p></div>
+        <button class="sh-empty-state__action sh-button sh-button--primary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Clear filters</span></span></button>
+      </section></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Pictogram=premium-member</figcaption>
+      <div class="surface"><section class="sh-empty-state">
+        <img class="sh-empty-state__pictogram" src="../../../icons/pictogram/premium-member@2x.png" alt="">
+        <div class="sh-empty-state__text"><h3 class="sh-empty-state__title sh-heading-sm">No Premium matches yet</h3><p class="sh-empty-state__body sh-body-md">New Premium members join every day. Check back soon.</p></div>
+      </section></div>
+    </figure>
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  sh-avatar-stack — web (HTML5 + CSS). The one variant, with Show label on / off.
+  Spec: ../sh-avatar-stack.md · Figma node 2710:24413
+  No member photos ship in the repo: each face is a neutral data-URI placeholder.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-avatar-stack</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="sh-avatar-stack.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: var(--sh-space-12) 0 0; color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .soft { padding: var(--sh-space-16); border-radius: var(--sh-radius-card); background: var(--sh-background-soft); }
+    .zoom { zoom: 3; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-avatar-stack</h1>
+
+  <h2 class="sh-title-md">Show label</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Label=Chosen by 2.1L Members, Show label=true</figcaption>
+      <div class="sh-avatar-stack"><span class="sh-avatar-stack__avatars" aria-hidden="true"><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span><span class="sh-avatar-stack__label sh-body-sm">Chosen by 2.1L Members</span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Show label=false</figcaption>
+      <div class="sh-avatar-stack" role="img" aria-label="Chosen by 2.1L Members"><span class="sh-avatar-stack__avatars" aria-hidden="true"><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span></div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Label</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Label=12 members from Pune viewed you</figcaption>
+      <div class="sh-avatar-stack"><span class="sh-avatar-stack__avatars" aria-hidden="true"><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span><span class="sh-avatar-stack__label sh-body-sm">12 members from Pune viewed you</span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">On background/soft</figcaption>
+      <div class="soft"><div class="sh-avatar-stack"><span class="sh-avatar-stack__avatars" aria-hidden="true"><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span><span class="sh-avatar-stack__label sh-body-sm">Chosen by 2.1L Members</span></div></div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Detail at 3×</h2>
+  <div class="zoom"><div class="sh-avatar-stack"><span class="sh-avatar-stack__avatars" aria-hidden="true"><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span><span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23CBD5E1'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' fill='url(%23g)'/%3E%3C/svg%3E" alt=""></span></span></span><span class="sh-avatar-stack__label sh-body-sm">Chosen by 2.1L Members</span></div></div>
+  <p class="note sh-body-sm">Overlap and ring weight are unbound in Figma: built as sh-space/6 overlap and an sh-stroke/default ring in background/default.</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+  sh-section-header — web (HTML5 + CSS). The one variant with Show badge / Show action on and off.
+  Spec: ../sh-section-header.md · Figma node 2606:29601
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-section-header</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="sh-section-header.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 320px; }   /* Figma frame width 320 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .surface { background: var(--sh-background-default); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-section-header</h1>
+
+  <h2 class="demo sh-title-md">Show badge × Show action</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show badge=false, Show action=true (default)</figcaption>
+      <div class="surface"><header class="sh-section-header"><div class="sh-section-header__title-group"><h3 class="sh-section-header__title sh-heading-sm">Contact details</h3></div><button class="sh-section-header__action sh-button sh-button--premium-soft sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span></button></header></div></figure>
+    <figure><figcaption class="sh-body-sm">Show badge=true, Show action=true</figcaption>
+      <div class="surface"><header class="sh-section-header"><div class="sh-section-header__title-group"><h3 class="sh-section-header__title sh-heading-sm">Contact details</h3><img class="sh-section-header__badge" src="../../../icons/pictogram/premium-member@2x.png" alt="Premium"></div><button class="sh-section-header__action sh-button sh-button--premium-soft sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span></button></header></div></figure>
+    <figure><figcaption class="sh-body-sm">Show badge=true, Show action=false</figcaption>
+      <div class="surface"><header class="sh-section-header"><div class="sh-section-header__title-group"><h3 class="sh-section-header__title sh-heading-sm">Contact details</h3><img class="sh-section-header__badge" src="../../../icons/pictogram/premium-member@2x.png" alt="Premium"></div></header></div></figure>
+    <figure><figcaption class="sh-body-sm">Show badge=false, Show action=false</figcaption>
+      <div class="surface"><header class="sh-section-header"><div class="sh-section-header__title-group"><h3 class="sh-section-header__title sh-heading-sm">About Meher</h3></div></header></div></figure>
+  </div>
+
+  <h2 class="demo sh-title-md">Long title · another action type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Long title wraps beside the action</figcaption>
+      <div class="surface"><header class="sh-section-header"><div class="sh-section-header__title-group"><h3 class="sh-section-header__title sh-heading-sm">Family and background details</h3></div><button class="sh-section-header__action sh-button sh-button--premium-soft sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span></button></header></div></figure>
+    <figure><figcaption class="sh-body-sm">Action Type=Tertiary (Premium viewer: View)</figcaption>
+      <div class="surface"><header class="sh-section-header"><div class="sh-section-header__title-group"><h3 class="sh-section-header__title sh-heading-sm">Contact details</h3><img class="sh-section-header__badge" src="../../../icons/pictogram/premium-member@2x.png" alt="Premium"></div><button class="sh-section-header__action sh-button sh-button--tertiary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span></button></header></div></figure>
+  </div>
+</body>
+</html>

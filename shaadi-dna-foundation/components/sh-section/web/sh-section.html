@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+  sh-section — web (HTML5 + CSS). The one variant with Show header on and off, and real DNA content in the slot.
+  Spec: ../sh-section.md · Figma node 2613:34398
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-section</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../sh-section-header/web/sh-section-header.css">
+  <link rel="stylesheet" href="../../sh-data-point/web/sh-data-point.css">
+  <link rel="stylesheet" href="sh-section.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma frame width 360 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .stack { display: flex; flex-direction: column; gap: var(--sh-space-12); }
+    .drop { display: flex; align-items: center; justify-content: center; height: var(--sh-space-48); border: var(--sh-stroke-default) dashed var(--sh-border-default); border-radius: var(--sh-radius-card); color: var(--sh-text-tertiary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-section</h1>
+
+  <h2 class="demo sh-title-md">Show header</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show header=true (empty Content slot, as in Figma)</figcaption>
+      <section class="sh-section">
+        <header class="sh-section-header"><div class="sh-section-header__title-group"><h3 class="sh-section-header__title sh-heading-sm">Section title</h3></div><button class="sh-section-header__action sh-button sh-button--premium-soft sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span></button></header>
+        <div class="sh-section__content"><div class="drop sh-body-sm">Drop section content here</div></div>
+      </section>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Show header=false</figcaption>
+      <section class="sh-section" aria-label="Plan benefits">
+        <div class="sh-section__content"><div class="drop sh-body-sm">Drop section content here</div></div>
+      </section>
+    </figure>
+  </div>
+
+  <h2 class="demo sh-title-md">In use · content in the slot</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Header with badge + sh-data-point rows</figcaption>
+      <section class="sh-section" aria-labelledby="benefits">
+        <header class="sh-section-header"><div class="sh-section-header__title-group"><h3 class="sh-section-header__title sh-heading-sm" id="benefits">Premium benefits</h3><img class="sh-section-header__badge" src="../../../icons/pictogram/premium-member@2x.png" alt="Premium"></div></header>
+        <div class="sh-section__content stack">
+          <div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../icons/line/call.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 75 phone numbers</span></div></div></div>
+          <div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../icons/line/chat-bubble.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Chat with matches</span></div></div></div>
+          <div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../icons/line/shield-check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Verified badge on your profile</span></div></div></div>
+        </div>
+      </section>
+    </figure>
+  </div>
+</body>
+</html>

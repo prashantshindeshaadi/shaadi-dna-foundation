@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+  sh-navigation-dashboard-primary-item — web (HTML5 + CSS). Every variant: State Default / Hover / Selected / Disabled / Focus,
+  plus Show label.
+  Spec: ../sh-navigation-dashboard-primary-item.md · Figma node 436:6142 (Utility)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-navigation-dashboard-primary-item</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-navigation-dashboard-primary-item.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-navigation-dashboard-primary-item</h1>
+
+  <h2 class="sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Default</figcaption>
+      <a class="sh-navigation-dashboard-primary-item" href="#"><span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(../../../../icons/line/home.svg)" aria-hidden="true"></span><span class="sh-navigation-dashboard-primary-item__label sh-body-sm">Home</span></a></figure>
+    <figure><figcaption class="sh-body-sm">State=Hover</figcaption>
+      <a class="sh-navigation-dashboard-primary-item is-hover" href="#"><span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(../../../../icons/line/home.svg)" aria-hidden="true"></span><span class="sh-navigation-dashboard-primary-item__label sh-body-sm">Home</span></a></figure>
+    <figure><figcaption class="sh-body-sm">State=Selected</figcaption>
+      <a class="sh-navigation-dashboard-primary-item" href="#" aria-current="page"><span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(../../../../icons/filled/home.svg)" aria-hidden="true"></span><span class="sh-navigation-dashboard-primary-item__label sh-body-sm">Home</span></a></figure>
+    <figure><figcaption class="sh-body-sm">State=Disabled</figcaption>
+      <a class="sh-navigation-dashboard-primary-item" aria-disabled="true"><span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(../../../../icons/line/home.svg)" aria-hidden="true"></span><span class="sh-navigation-dashboard-primary-item__label sh-body-sm">Home</span></a></figure>
+    <figure><figcaption class="sh-body-sm">State=Focus</figcaption>
+      <a class="sh-navigation-dashboard-primary-item is-focus" href="#"><span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(../../../../icons/line/home.svg)" aria-hidden="true"></span><span class="sh-navigation-dashboard-primary-item__label sh-body-sm">Home</span></a></figure>
+  </div>
+  <p class="note sh-body-sm">Hover has no fill: Figma binds it to a variable that isn't in the tokens. Figma defines no Pressed look.</p>
+
+  <h2 class="sh-title-md">Show label</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show label=true</figcaption>
+      <a class="sh-navigation-dashboard-primary-item" href="#"><span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(../../../../icons/line/inbox.svg)" aria-hidden="true"></span><span class="sh-navigation-dashboard-primary-item__label sh-body-sm">Inbox</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Show label=false</figcaption>
+      <a class="sh-navigation-dashboard-primary-item" href="#" aria-label="Inbox"><span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(../../../../icons/line/inbox.svg)" aria-hidden="true"></span></a></figure>
+    <figure><figcaption class="sh-body-sm">Show label=false, State=Selected</figcaption>
+      <a class="sh-navigation-dashboard-primary-item" href="#" aria-current="page" aria-label="Inbox"><span class="sh-navigation-dashboard-primary-item__icon sh-icon sh-icon--24" style="--icon:url(../../../../icons/filled/inbox.svg)" aria-hidden="true"></span></a></figure>
+  </div>
+</body>
+</html>

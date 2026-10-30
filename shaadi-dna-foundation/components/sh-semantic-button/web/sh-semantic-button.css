@@ -1,0 +1,115 @@
+/*
+ * sh-semantic-button — web (HTML5 + CSS)
+ * Spec: ../sh-semantic-button.md · Figma node 562:23918 (4 Intents × 3 Types × 3 Sizes × 6 States = 216 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-button-lg/md/sm
+ *   components/sh-icon/web/sh-icon.css           .sh-icon mask class
+ *   components/sh-button/web/sh-button.css       the button itself: size, layout, tap area, focus, disabled, loading
+ *
+ * A semantic button IS an sh-button with the semantic colours: keep the sh-button classes for Size and the
+ * parts, and add the intent and type here. Never add an sh-button Type class (--primary …) as well.
+ *
+ *   <button class="sh-button sh-button--lg sh-semantic-button sh-semantic-button--success" type="button">
+ *     <span class="sh-button__icon sh-icon" style="--icon:url(icons/filled/check.svg)" aria-hidden="true"></span>
+ *     <span class="sh-button__text"><span class="sh-button__label sh-button-lg">Accept</span></span>
+ *     <span class="sh-button__icon sh-icon" style="--icon:url(icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+ *   </button>
+ *
+ * Intent .sh-semantic-button--success | --error | --warning | --information
+ * Type   (none) Solid: semantic/<intent>/background/solid/*, text + icon on-solid
+ *        --soft:  semantic/<intent>/background/soft/*, text + icon on-soft
+ *        --ghost: background/transparent; hover and pressed take the soft hover / pressed fill; text + icon on-soft
+ * Size   sh-button--lg (48, icons 20) | --md (40, icons 16, gap 2) | --sm (32, icons 12, spinner 16)
+ * State  from sh-button: Hover :hover · Pressed :active · Focus :focus-visible · Disabled [disabled] (the Default look at
+ *        sh-opacity/disabled) · Loading .is-loading + aria-busy="true" + the sh-button__spinner child.
+ *        .is-hover / .is-pressed / .is-focus force a state for previews.
+ * Colour carries meaning here: always say the meaning in the label too ("Delete photo", not just a red button).
+ */
+
+/* ---- Intent × Type (Success Solid by default) ---------------------------- */
+.sh-semantic-button {
+  --_intent-solid: var(--sh-semantic-success-background-solid-default);
+  --_intent-solid-hover: var(--sh-semantic-success-background-solid-hover);
+  --_intent-solid-pressed: var(--sh-semantic-success-background-solid-pressed);
+  --_intent-soft: var(--sh-semantic-success-background-soft-default);
+  --_intent-soft-hover: var(--sh-semantic-success-background-soft-hover);
+  --_intent-soft-pressed: var(--sh-semantic-success-background-soft-pressed);
+  --_intent-on-solid: var(--sh-semantic-success-text-on-solid);
+  --_intent-icon-on-solid: var(--sh-semantic-success-icon-on-solid);
+  --_intent-on-soft: var(--sh-semantic-success-text-on-soft);
+  --_intent-icon-on-soft: var(--sh-semantic-success-icon-on-soft);
+
+  /* sh-button's colour slots: Type=Solid */
+  --_bg: var(--_intent-solid);
+  --_bg-hover: var(--_intent-solid-hover);
+  --_bg-pressed: var(--_intent-solid-pressed);
+  --_fg: var(--_intent-on-solid);
+  --_icon: var(--_intent-icon-on-solid);
+}
+
+.sh-semantic-button--soft {
+  --_bg: var(--_intent-soft);
+  --_bg-hover: var(--_intent-soft-hover);
+  --_bg-pressed: var(--_intent-soft-pressed);
+  --_fg: var(--_intent-on-soft);
+  --_icon: var(--_intent-icon-on-soft);
+}
+.sh-semantic-button--ghost {
+  --_bg: var(--sh-background-transparent);
+  --_bg-hover: var(--_intent-soft-hover);
+  --_bg-pressed: var(--_intent-soft-pressed);
+  --_fg: var(--_intent-on-soft);
+  --_icon: var(--_intent-icon-on-soft);
+}
+
+.sh-semantic-button--error {
+  --_intent-solid: var(--sh-semantic-error-background-solid-default);
+  --_intent-solid-hover: var(--sh-semantic-error-background-solid-hover);
+  --_intent-solid-pressed: var(--sh-semantic-error-background-solid-pressed);
+  --_intent-soft: var(--sh-semantic-error-background-soft-default);
+  --_intent-soft-hover: var(--sh-semantic-error-background-soft-hover);
+  --_intent-soft-pressed: var(--sh-semantic-error-background-soft-pressed);
+  --_intent-on-solid: var(--sh-semantic-error-text-on-solid);
+  --_intent-icon-on-solid: var(--sh-semantic-error-icon-on-solid);
+  --_intent-on-soft: var(--sh-semantic-error-text-on-soft);
+  --_intent-icon-on-soft: var(--sh-semantic-error-icon-on-soft);
+}
+.sh-semantic-button--warning {
+  --_intent-solid: var(--sh-semantic-warning-background-solid-default);
+  --_intent-solid-hover: var(--sh-semantic-warning-background-solid-hover);
+  --_intent-solid-pressed: var(--sh-semantic-warning-background-solid-pressed);
+  --_intent-soft: var(--sh-semantic-warning-background-soft-default);
+  --_intent-soft-hover: var(--sh-semantic-warning-background-soft-hover);
+  --_intent-soft-pressed: var(--sh-semantic-warning-background-soft-pressed);
+  --_intent-on-solid: var(--sh-semantic-warning-text-on-solid);
+  --_intent-icon-on-solid: var(--sh-semantic-warning-icon-on-solid);
+  --_intent-on-soft: var(--sh-semantic-warning-text-on-soft);
+  --_intent-icon-on-soft: var(--sh-semantic-warning-icon-on-soft);
+}
+.sh-semantic-button--information {
+  --_intent-solid: var(--sh-semantic-information-background-solid-default);
+  --_intent-solid-hover: var(--sh-semantic-information-background-solid-hover);
+  --_intent-solid-pressed: var(--sh-semantic-information-background-solid-pressed);
+  --_intent-soft: var(--sh-semantic-information-background-soft-default);
+  --_intent-soft-hover: var(--sh-semantic-information-background-soft-hover);
+  --_intent-soft-pressed: var(--sh-semantic-information-background-soft-pressed);
+  --_intent-on-solid: var(--sh-semantic-information-text-on-solid);
+  --_intent-icon-on-solid: var(--sh-semantic-information-icon-on-solid);
+  --_intent-on-soft: var(--sh-semantic-information-text-on-soft);
+  --_intent-icon-on-soft: var(--sh-semantic-information-icon-on-soft);
+}
+
+/* ---- Where it differs from sh-button ------------------------------------- */
+/* Size=Medium: gap sh-space/2 (sh-button Medium uses 4) */
+.sh-semantic-button.sh-button--md { --_gap: var(--sh-space-2); }
+
+/* Leading icon wrapper: padding-right sh-space/2 */
+.sh-semantic-button > .sh-button__icon:first-child { margin-right: var(--sh-space-2); }
+
+/* Size=Small: the loader is 16 (the icons stay 12) */
+.sh-semantic-button.sh-button--sm .sh-button__spinner {
+  width: var(--sh-icon-size-16);
+  height: var(--sh-icon-size-16);
+}

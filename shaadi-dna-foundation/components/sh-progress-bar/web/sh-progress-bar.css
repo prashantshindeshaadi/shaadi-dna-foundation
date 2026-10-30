@@ -1,0 +1,43 @@
+/*
+ * sh-progress-bar — web (HTML5 + CSS)
+ * Spec: ../sh-progress-bar.md · Figma node 2712:13063 (Tone Brand / Premium / Success)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ *   <div class="sh-progress-bar" role="progressbar" aria-label="Contacts viewed"
+ *        aria-valuemin="0" aria-valuemax="72" aria-valuenow="10">
+ *     <span class="sh-progress-bar__progress" style="width: 14%"></span>
+ *   </div>
+ *
+ * Tone  (none) Brand (sh-gradient/brand/default) · --premium (sh-gradient/premium/default) ·
+ *       --success (semantic/success/background/solid/default)
+ * The bar stretches to its container (sh-space/6 tall, track background/strong). Set the amount with the
+ * Progress part's width (value ÷ max as a %) and keep aria-valuenow in step. Not interactive.
+ */
+
+.sh-progress-bar {
+  --_fill: var(--sh-gradient-brand-default);
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: var(--sh-space-6);
+  overflow: hidden;
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-strong);
+}
+
+/* Progress: Figma's "Progress" layer, fixed width × fill height */
+.sh-progress-bar__progress {
+  display: block;
+  flex: none;
+  width: 0;
+  max-width: 100%;
+  border-radius: var(--sh-radius-full);
+  background: var(--_fill);
+}
+
+/* ---- Tone ---------------------------------------------------------------- */
+.sh-progress-bar--premium { --_fill: var(--sh-gradient-premium-default); }
+.sh-progress-bar--success { --_fill: var(--sh-semantic-success-background-solid-default); }

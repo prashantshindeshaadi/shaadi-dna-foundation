@@ -1,0 +1,56 @@
+/*
+ * sh-section-header — web (HTML5 + CSS)
+ * Spec: ../sh-section-header.md · Figma node 2606:29601 (one variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css (Action)
+ *
+ *   <header class="sh-section-header">
+ *     <div class="sh-section-header__title-group">
+ *       <h2 class="sh-section-header__title sh-heading-sm">Section title</h2>
+ *       <img class="sh-section-header__badge" src="icons/pictogram/premium-member@2x.png" alt="Premium">
+ *     </div>
+ *     <button class="sh-section-header__action sh-button sh-button--premium-soft sh-button--sm" type="button">
+ *       <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span>
+ *     </button>
+ *   </header>
+ *
+ * Show badge   include or leave out the badge: Figma "Badge" swap (default sh-icon/pictogram/premium-member) at
+ *              pictogram size 28. Pictograms keep their own colours (an <img>).
+ * Show action  include or leave out the one action, an sh-button Size Small (default Type Premium Soft, "Unlock").
+ * Not interactive itself: the Action carries the states (sh-button).
+ */
+
+.sh-section-header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-16);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-8) var(--sh-space-0);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-section-header__title-group {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  gap: var(--sh-space-8);
+  min-width: 0;
+}
+.sh-section-header__title {
+  margin: 0;
+  min-width: 0;
+  color: var(--sh-text-primary);
+}
+.sh-section-header__badge {
+  display: block;
+  flex: none;
+  width: var(--sh-icon-pictogram-size-28);
+  height: var(--sh-icon-pictogram-size-28);
+  object-fit: contain;
+}
+
+.sh-section-header__action { flex: none; }

@@ -1,0 +1,47 @@
+/*
+ * sh-carousel-dots — web (HTML5 + CSS)
+ * Spec: ../sh-carousel-dots.md · Figma node 2225:4974 (one variant)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ *   <div class="sh-carousel-dots" role="img" aria-label="Photo 2 of 6">
+ *     <span class="sh-carousel-dots__dot"></span>
+ *     <span class="sh-carousel-dots__dot sh-carousel-dots__dot--selected"></span>
+ *     <span class="sh-carousel-dots__dot"></span> …
+ *   </div>
+ *
+ * Parts  __dot (Figma "Indicator n": a round sh-space/6 dot, sh-gradient/translucent/dark/default)
+ *        __dot--selected (Figma "Selection": sh-space/12 × sh-space/6, radius xxs, icon/inverse, sh-shadow/strong)
+ * One dot per page, the current page's dot is --selected. Sits over a photo; the row fills its container's width,
+ * dots centred, 14 above and below. Not interactive (swipe moves the carousel): one label says where you are.
+ */
+
+.sh-carousel-dots {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sh-space-6);
+  width: 100%;
+  padding: var(--sh-space-14) var(--sh-space-0);
+  border-radius: var(--sh-radius-none);
+}
+
+/* Indicator: width unbound in Figma; a round dot as tall as it is wide (sh-space/6) */
+.sh-carousel-dots__dot {
+  display: block;
+  flex: none;
+  width: var(--sh-space-6);
+  height: var(--sh-space-6);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-gradient-translucent-dark-default);
+  opacity: var(--sh-opacity-full);
+}
+
+/* Selection */
+.sh-carousel-dots__dot--selected {
+  width: var(--sh-space-12);
+  border-radius: var(--sh-radius-xxs);
+  background: var(--sh-icon-inverse);
+  box-shadow: var(--sh-shadow-strong-x) var(--sh-shadow-strong-y) var(--sh-shadow-strong-blur) var(--sh-shadow-strong-spread) var(--sh-shadow-strong-color);
+}

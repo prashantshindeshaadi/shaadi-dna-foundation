@@ -1,0 +1,52 @@
+/*
+ * sh-spinner — web (HTML5 + CSS)
+ * Spec: ../sh-spinner.md · Figma node 2718:41521 (Size Large / Medium / Small × Tone Brand / Neutral / Inverse)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   components/sh-icon/web/sh-icon.css           .sh-icon mask class
+ *
+ *   <span class="sh-spinner" role="status" aria-label="Loading matches">
+ *     <span class="sh-icon sh-spinner__icon" style="--icon:url(icons/line/loader-circle.svg)" aria-hidden="true"></span>
+ *   </span>
+ *
+ * Size  (none) Large 24 · --md Medium 20 · --sm Small 16 (sh-icon/size/*)
+ * Tone  (none) Brand (icon/brand) · --neutral (icon/secondary) · --inverse (icon/inverse, on background/inverse)
+ *       The blueprint binds no colour for Tone; these are the icon roles the tone names. On background/brand use
+ *       Inverse only once Figma confirms it: §4.2 allows only icon/on-brand there (see the report).
+ * Indeterminate. Buttons have their own Loading state (sh-button .is-loading): don't put a spinner in a button.
+ * Turns once a second; stops turning (stays visible) for prefers-reduced-motion.
+ */
+
+.sh-spinner {
+  --_size: var(--sh-icon-size-24);
+  --_color: var(--sh-icon-brand);
+
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--_size);
+  height: var(--_size);
+  vertical-align: middle;
+}
+
+.sh-spinner__icon {
+  width: var(--_size);
+  height: var(--_size);
+  --sh-icon-paint: var(--_color);
+  animation: sh-spinner-spin 1s linear infinite;   /* no token: motion duration (DNA has no motion tokens yet) */
+}
+@keyframes sh-spinner-spin { to { transform: rotate(1turn); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sh-spinner__icon { animation: none; }
+}
+
+/* ---- Size ---------------------------------------------------------------- */
+.sh-spinner--md { --_size: var(--sh-icon-size-20); }
+.sh-spinner--sm { --_size: var(--sh-icon-size-16); }
+
+/* ---- Tone ---------------------------------------------------------------- */
+.sh-spinner--neutral { --_color: var(--sh-icon-secondary); }
+.sh-spinner--inverse { --_color: var(--sh-icon-inverse); }

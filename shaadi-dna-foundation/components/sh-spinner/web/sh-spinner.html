@@ -1,0 +1,59 @@
+<!doctype html>
+<!--
+  sh-spinner — web (HTML5 + CSS). Every variant: Size Large / Medium / Small × Tone Brand / Neutral / Inverse.
+  Spec: ../sh-spinner.md · Figma node 2718:41521
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-spinner</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-spinner.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: var(--sh-space-12) 0 0; color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; padding: var(--sh-space-16); border-radius: var(--sh-radius-card); }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .inverse { background: var(--sh-background-inverse); }
+    .inverse figcaption { color: var(--sh-text-inverse); }
+    .zoom { display: flex; gap: var(--sh-space-16); align-items: center; zoom: 3; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-spinner</h1>
+
+  <h2 class="sh-title-md">Tone=Brand</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Size=Large, Tone=Brand</figcaption><span class="sh-spinner" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+    <figure><figcaption class="sh-body-sm">Size=Medium, Tone=Brand</figcaption><span class="sh-spinner sh-spinner--md" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+    <figure><figcaption class="sh-body-sm">Size=Small, Tone=Brand</figcaption><span class="sh-spinner sh-spinner--sm" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+  </div>
+
+  <h2 class="sh-title-md">Tone=Neutral</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Size=Large, Tone=Neutral</figcaption><span class="sh-spinner sh-spinner--neutral" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+    <figure><figcaption class="sh-body-sm">Size=Medium, Tone=Neutral</figcaption><span class="sh-spinner sh-spinner--md sh-spinner--neutral" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+    <figure><figcaption class="sh-body-sm">Size=Small, Tone=Neutral</figcaption><span class="sh-spinner sh-spinner--sm sh-spinner--neutral" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+  </div>
+
+  <h2 class="sh-title-md">Tone=Inverse · on background/inverse</h2>
+  <div class="grid">
+    <figure class="inverse"><figcaption class="sh-body-sm">Size=Large, Tone=Inverse</figcaption><span class="sh-spinner sh-spinner--inverse" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+    <figure class="inverse"><figcaption class="sh-body-sm">Size=Medium, Tone=Inverse</figcaption><span class="sh-spinner sh-spinner--md sh-spinner--inverse" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+    <figure class="inverse"><figcaption class="sh-body-sm">Size=Small, Tone=Inverse</figcaption><span class="sh-spinner sh-spinner--sm sh-spinner--inverse" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span></figure>
+  </div>
+  <p class="note sh-body-sm">The blueprint binds no colour per Tone. Brand = icon/brand, Neutral = icon/secondary, Inverse = icon/inverse. Not shown on background/brand: §4.2 allows only icon/on-brand there.</p>
+
+  <h2 class="sh-title-md">Detail at 3×</h2>
+  <div class="zoom">
+    <span class="sh-spinner" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span>
+    <span class="sh-spinner sh-spinner--md sh-spinner--neutral" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span>
+    <span class="sh-spinner sh-spinner--sm" role="status" aria-label="Loading"><span class="sh-icon sh-spinner__icon" style="--icon:url(../../../icons/line/loader-circle.svg)" aria-hidden="true"></span></span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/*
+ * sh-otp-input — web (HTML5 + CSS)
+ * Spec: ../sh-otp-input.md · Figma node 2718:42875 (Length 4 / 6 × State Default / Focus / Filled / Error)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-heading-sm (digits), .sh-support-label (helper)
+ *   components/sh-icon/web/sh-icon.css           .sh-icon (Error helper icon)
+ *
+ *   <fieldset class="sh-otp-input" aria-describedby="otp-help">
+ *     <legend class="sh-otp-input__legend">Verification code</legend>        (screen readers only)
+ *     <div class="sh-otp-input__boxes">
+ *       <label class="sh-otp-input__box"><input class="sh-otp-input__field sh-heading-sm" type="text" inputmode="numeric"
+ *         autocomplete="one-time-code" maxlength="1" pattern="[0-9]" aria-label="Digit 1 of 4" value=""></label>
+ *       … one box per digit (Length 4 or 6); only the first box has autocomplete="one-time-code"
+ *     </div>
+ *     <p class="sh-otp-input__helper" id="otp-help">
+ *       <span class="sh-otp-input__status sh-icon sh-icon--12" style="--icon:url(icons/line/alert-circle.svg)" aria-hidden="true"></span>  (Error only)
+ *       <span class="sh-support-label">Resend code in 00:30</span>
+ *     </p>
+ *   </fieldset>
+ *
+ * Length  4 or 6 boxes (the markup decides; boxes keep their size)
+ * State   Default  every box border/default
+ *         Focus    the focused box takes border/focus and shows the background/brand caret (:focus-within; force
+ *                  with .is-focus on a box for previews)
+ *         Filled   digits in text/primary, Heading SM
+ *         Error    .sh-otp-input--error: every box semantic/error/border/default, helper semantic/error/text/on-soft
+ *                  with the 12 status icon; set aria-invalid="true" on the fields
+ *         Disabled [disabled] on the fieldset: the Default look at sh-opacity/disabled (no Figma variant)
+ *         Hover / Pressed have no look in Figma.
+ * Moving to the next box, paste and backspace are the app's job; this file only draws the states.
+ */
+
+.sh-otp-input {
+  --_edge: var(--sh-border-default);
+  --_helper: var(--sh-text-secondary);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sh-space-12);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* Screen-reader-only legend (the group's name) */
+.sh-otp-input__legend {
+  position: absolute;
+  width: var(--sh-stroke-default);
+  height: var(--sh-stroke-default);
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.sh-otp-input__boxes {
+  display: flex;
+  gap: var(--sh-space-8);
+}
+
+/* ---- Box ------------------------------------------------------------------ */
+.sh-otp-input__box {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--sh-space-48);                      /* Figma: fixed 48 × 48, unbound */
+  height: var(--sh-space-48);
+  border: var(--sh-stroke-default) solid var(--_edge);
+  border-radius: var(--sh-radius-input);
+  background: var(--sh-background-default);
+  cursor: text;
+}
+
+.sh-otp-input__field {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--sh-text-primary);
+  caret-color: var(--sh-background-brand);
+  text-align: center;                             /* text style comes from .sh-heading-sm on the field */
+}
+
+/* Caret drawn for the forced preview state (.is-focus); a real focus shows the field's own caret */
+.sh-otp-input__box.is-focus::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sh-stroke-strong);                 /* no token: Figma Caret size is unbound */
+  height: var(--sh-space-24);
+  transform: translate(-50%, -50%);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-brand);
+}
+
+/* ---- Helper --------------------------------------------------------------- */
+.sh-otp-input__helper {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  margin: 0;
+  color: var(--_helper);
+}
+.sh-otp-input__status { --sh-icon-paint: var(--sh-semantic-error-icon-on-soft); }
+
+/* ---- State ---------------------------------------------------------------- */
+.sh-otp-input__box:focus-within,
+.sh-otp-input__box.is-focus { border-color: var(--sh-border-focus); }
+
+.sh-otp-input--error {
+  --_edge: var(--sh-semantic-error-border-default);
+  --_helper: var(--sh-semantic-error-text-on-soft);
+}
+.sh-otp-input--error .sh-otp-input__box:focus-within { border-color: var(--_edge); }
+
+/* Disabled: the Default look at sh-opacity/disabled. No pointer events. */
+.sh-otp-input:disabled,
+.sh-otp-input.is-disabled {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

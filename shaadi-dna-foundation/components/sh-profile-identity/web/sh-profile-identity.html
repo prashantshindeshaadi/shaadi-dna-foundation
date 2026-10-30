@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+  sh-profile-identity — web (HTML5 + CSS). The one variant with Show subtitle on and off, and inside a sheet.
+  Spec: ../sh-profile-identity.md · Figma node 3698:79779
+  No member photos ship in the repo: the avatar uses the no-photo silhouette as a stand-in photo (as sh-avatar.html does).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-profile-identity</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="../../sh-avatar/web/sh-avatar.css">
+  <link rel="stylesheet" href="sh-profile-identity.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 296px; }   /* Figma frame width 296 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .surface { padding: var(--sh-space-24) 0; background: var(--sh-background-default); border-radius: var(--sh-radius-card); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-profile-identity</h1>
+
+  <h2 class="sh-title-md">Show subtitle</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show subtitle=true (default)</figcaption>
+      <div class="surface"><div class="sh-profile-identity"><span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../profile-card/sh-avatar-silhouette/assets/female.svg" style="background: var(--sh-gradient-placeholder-avatar)" alt=""></span></span></span><div class="sh-profile-identity__text"><p class="sh-profile-identity__name sh-heading-sm">Meher Randhawa</p><p class="sh-profile-identity__subtitle sh-body-md">Managed by Parent</p></div></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Show subtitle=false</figcaption>
+      <div class="surface"><div class="sh-profile-identity"><span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../profile-card/sh-avatar-silhouette/assets/female.svg" style="background: var(--sh-gradient-placeholder-avatar)" alt=""></span></span></span><div class="sh-profile-identity__text"><p class="sh-profile-identity__name sh-heading-sm">Meher Randhawa</p></div></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Other subtitle · long name</figcaption>
+      <div class="surface"><div class="sh-profile-identity"><span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img src="../../profile-card/sh-avatar-silhouette/assets/male.svg" style="background: var(--sh-gradient-placeholder-avatar)" alt=""></span></span></span><div class="sh-profile-identity__text"><p class="sh-profile-identity__name sh-heading-sm">Arjun Venkataraman Iyer</p><p class="sh-profile-identity__subtitle sh-body-md">Managed by Self</p></div></div></div>
+    </figure>
+  </div>
+</body>
+</html>

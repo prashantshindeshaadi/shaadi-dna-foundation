@@ -1,0 +1,45 @@
+<!doctype html>
+<!--
+  sh-chat-composer — web (HTML5 + CSS). Every variant: State Empty / Typing.
+  Spec: ../sh-chat-composer.md · Figma node 2719:43030
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-chat-composer</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../sh-icon-button/web/sh-icon-button.css">
+  <link rel="stylesheet" href="sh-chat-composer.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma frame width 360 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-chat-composer</h1>
+
+  <h2 class="sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Empty</figcaption>
+      <form class="sh-chat-composer" onsubmit="return false">
+        <button class="sh-icon-button sh-icon-button--ghost sh-icon-button--md" type="button" aria-label="Attach"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/attachment.svg)" aria-hidden="true"></span></button>
+        <label class="sh-chat-composer__field"><input class="sh-chat-composer__input sh-body-md" type="text" placeholder="Type a message" aria-label="Message"><button class="sh-chat-composer__sticker" type="button" aria-label="Stickers"><span class="sh-icon sh-icon--20" style="--icon:url(../../../icons/line/sticker.svg)" aria-hidden="true"></span></button></label>
+        <button class="sh-icon-button sh-icon-button--primary sh-icon-button--md" type="submit" aria-label="Send" disabled><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/send.svg)" aria-hidden="true"></span></button>
+      </form>
+    </figure>
+    <figure><figcaption class="sh-body-sm">State=Typing</figcaption>
+      <form class="sh-chat-composer" onsubmit="return false">
+        <button class="sh-icon-button sh-icon-button--ghost sh-icon-button--md" type="button" aria-label="Attach"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/attachment.svg)" aria-hidden="true"></span></button>
+        <label class="sh-chat-composer__field"><input class="sh-chat-composer__input sh-body-md" type="text" placeholder="Type a message" aria-label="Message" value="Sunday works for us"><button class="sh-chat-composer__sticker" type="button" aria-label="Stickers"><span class="sh-icon sh-icon--20" style="--icon:url(../../../icons/line/sticker.svg)" aria-hidden="true"></span></button></label>
+        <button class="sh-icon-button sh-icon-button--primary sh-icon-button--md" type="submit" aria-label="Send"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/send.svg)" aria-hidden="true"></span></button>
+      </form>
+    </figure>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/*
+ * sh-countdown — web (HTML5 + CSS)
+ * Spec: ../sh-countdown.md · Figma node 2718:41900 (Style Boxed / Inline = 2 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-support-label, .sh-body-sm, .sh-title-sm
+ *   components/sh-icon/web/sh-icon.css           .sh-icon (Inline only)
+ *
+ *   Style=Boxed
+ *   <span class="sh-countdown" role="timer" aria-label="Offer ends in 2 hours 14 minutes 30 seconds">
+ *     <span class="sh-countdown__label sh-support-label">Offer ends in</span>
+ *     <span class="sh-countdown__time" aria-hidden="true">
+ *       <span class="sh-countdown__box sh-title-sm">02</span><span class="sh-countdown__colon sh-title-sm">:</span>
+ *       <span class="sh-countdown__box sh-title-sm">14</span><span class="sh-countdown__colon sh-title-sm">:</span>
+ *       <span class="sh-countdown__box sh-title-sm">30</span>
+ *     </span>
+ *   </span>
+ *
+ *   Style=Inline
+ *   <span class="sh-countdown sh-countdown--inline" role="timer" aria-label="Offer ends in 2 hours 14 minutes 30 seconds">
+ *     <span class="sh-countdown__icon sh-icon sh-icon--16" style="--icon:url(icons/line/timer.svg)" aria-hidden="true"></span>
+ *     <span class="sh-countdown__label sh-body-sm">Offer ends in</span>
+ *     <span class="sh-countdown__time sh-title-sm" aria-hidden="true">02:14:30</span>
+ *   </span>
+ *
+ * Style  (none) Boxed: label text/secondary (Support Label), hours / minutes / seconds in background/inverse boxes
+ *        (text/inverse, Title SM), colons text/primary · --inline: timer icon 16, label and time text/brand
+ *        (Body SM / Title SM) on one line.
+ * Not interactive. role="timer" keeps screen readers quiet; update aria-label every minute, not every second.
+ * Ticking is the app's job; this file only draws it.
+ */
+
+.sh-countdown {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-8);
+  font-family: var(--sh-typo-font-family-primary);
+  white-space: nowrap;
+}
+
+.sh-countdown__label { color: var(--sh-text-secondary); }
+
+.sh-countdown__time {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+}
+
+.sh-countdown__box {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--sh-space-2) var(--sh-space-6);
+  border-radius: var(--sh-radius-xs);
+  background: var(--sh-background-inverse);
+  color: var(--sh-text-inverse);
+}
+
+.sh-countdown__colon { color: var(--sh-text-primary); }
+
+/* ---- Style=Inline -------------------------------------------------------- */
+.sh-countdown--inline { gap: var(--sh-space-4); }
+.sh-countdown--inline .sh-countdown__label,
+.sh-countdown--inline .sh-countdown__time { color: var(--sh-text-brand); }
+.sh-countdown__icon { --sh-icon-paint: var(--sh-icon-brand); }   /* Figma leaves the icon colour unbound; icon/brand matches text/brand */

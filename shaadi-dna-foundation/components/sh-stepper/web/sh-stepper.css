@@ -1,0 +1,125 @@
+/*
+ * sh-stepper — web (HTML5 + CSS)
+ * Spec: ../sh-stepper.md · Figma node 2712:13089 (Status Done / Current / Pending = 3 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-title-sm, .sh-body-sm
+ *   components/sh-icon/web/sh-icon.css           .sh-icon (Done check)
+ *
+ * One step. Stack steps in an ordered list; the last step drops its connector.
+ *   <ol class="sh-stepper-list">                                   (any <ol> with list-style none works)
+ *     <li class="sh-stepper">                                       Status=Done
+ *       <span class="sh-stepper__rail" aria-hidden="true">
+ *         <span class="sh-stepper__marker"><span class="sh-stepper__check sh-icon sh-icon--12" style="--icon:url(icons/filled/check.svg)"></span></span>
+ *         <span class="sh-stepper__connector"></span>               (Show connector; leave out on the last step)
+ *       </span>
+ *       <span class="sh-stepper__content">
+ *         <span class="sh-stepper__title sh-title-sm">Request received</span>
+ *         <span class="sh-stepper__subtitle sh-body-sm">12 Oct, 10:30 am</span>   (Show subtitle)
+ *       </span>
+ *     </li>
+ *     <li class="sh-stepper sh-stepper--current" aria-current="step">…marker holds <span class="sh-stepper__dot"></span>…</li>
+ *     <li class="sh-stepper sh-stepper--pending">…marker holds <span class="sh-stepper__dot"></span>…</li>
+ *   </ol>
+ *
+ * Status  (none) Done: semantic/success solid marker with the Filled check, success connector
+ *         --current: background/default marker, success ring and dot, border/default connector; aria-current="step"
+ *         --pending: border/default dot, border/default dashed connector, title text/secondary
+ * Say the status in words for screen readers when the subtitle doesn't (e.g. a visually hidden "Done").
+ * Not interactive.
+ */
+
+.sh-stepper-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sh-stepper {
+  --_marker-bg: var(--sh-semantic-success-background-solid-default);
+  --_marker-edge: var(--sh-background-transparent);
+  --_dot: var(--sh-semantic-success-background-solid-default);
+  --_line: var(--sh-semantic-success-background-solid-default);
+  --_title: var(--sh-text-primary);
+
+  display: flex;
+  align-items: stretch;
+  gap: var(--sh-space-12);
+  margin: 0;
+  padding: 0;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Rail ----------------------------------------------------------------- */
+.sh-stepper__rail {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-4);
+  width: var(--sh-space-20);                      /* no token: Figma Rail / Marker size is unbound */
+}
+
+.sh-stepper__marker {
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--sh-space-20);                      /* no token: Figma Marker size is unbound */
+  height: var(--sh-space-20);
+  border: var(--sh-stroke-strong) solid var(--_marker-edge);   /* no token bound for the ring weight in Figma */
+  border-radius: var(--sh-radius-full);
+  background: var(--_marker-bg);
+}
+.sh-stepper__check { --sh-icon-paint: var(--sh-semantic-success-icon-on-solid); }
+
+.sh-stepper__dot {
+  flex: none;
+  width: var(--sh-space-8);                       /* no token: Figma Ellipse size is unbound */
+  height: var(--sh-space-8);
+  border-radius: var(--sh-radius-full);
+  background: var(--_dot);
+}
+
+.sh-stepper__connector {
+  flex: 1 1 auto;
+  width: var(--sh-stroke-strong);                 /* no token: Figma Connector width is unbound */
+  border-radius: var(--sh-radius-full);
+  background: var(--_line);
+}
+
+/* ---- Content -------------------------------------------------------------- */
+.sh-stepper__content {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--sh-space-2);
+  min-width: 0;
+  padding-bottom: var(--sh-space-20);
+}
+.sh-stepper__title { color: var(--_title); }
+.sh-stepper__subtitle { color: var(--sh-text-tertiary); }
+
+/* ---- Status --------------------------------------------------------------- */
+.sh-stepper--current {
+  --_marker-bg: var(--sh-background-default);
+  --_marker-edge: var(--sh-semantic-success-background-solid-default);
+  --_dot: var(--sh-semantic-success-background-solid-default);
+  --_line: var(--sh-border-default);
+}
+.sh-stepper--pending {
+  --_marker-bg: var(--sh-background-transparent);
+  --_dot: var(--sh-border-default);
+  --_title: var(--sh-text-secondary);
+}
+/* Pending connector: a border/default stroke instead of a fill (dash pattern not in the blueprint) */
+.sh-stepper--pending .sh-stepper__connector {
+  box-sizing: border-box;
+  border-left: var(--sh-stroke-strong) dashed var(--sh-border-default);
+  border-radius: var(--sh-radius-none);
+  background: var(--sh-background-transparent);
+}

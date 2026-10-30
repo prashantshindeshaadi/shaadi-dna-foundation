@@ -1,0 +1,113 @@
+/*
+ * sh-navigation-item — web (HTML5 + CSS)
+ * Spec: ../sh-navigation-item.md · Figma node 2711:12054 (Layout Stacked / Inline × Active false / true)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                              all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css       .sh-body-sm, .sh-title-md, .sh-support-label
+ *   components/sh-icon/web/sh-icon.css               the Icon
+ *   components/sh-indicator/web/sh-indicator.css     the badge (sh-indicator)
+ *
+ *   <a class="sh-navigation-item" href="/inbox" aria-label="Inbox, 12 new">
+ *     <span class="sh-navigation-item__icon-wrap">
+ *       <span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(icons/line/inbox.svg)" aria-hidden="true"></span>
+ *       <span class="sh-navigation-item__badge sh-indicator" aria-hidden="true"><span class="sh-indicator__count sh-support-label">12</span></span>
+ *     </span>
+ *     <span class="sh-navigation-item__label sh-body-sm">Inbox</span>
+ *   </a>
+ *
+ * Layout      (none) Stacked: icon over label, label sh-body-sm (mobile bottom bar)
+ *             --inline: icon beside label, label sh-title-md (tablet bar, desktop sidebar)
+ * Active      aria-current="page" (or .is-active). Label text/brand, icon icon/brand; use the icon's Filled
+ *             SVG (icons/filled/…) for the active item. Stacked active = background/default pill + sh-shadow/soft;
+ *             Inline active = background/selected. Inactive: label text/secondary, icon icon/secondary, no fill.
+ * Show badge  include or leave out .sh-navigation-item__badge, an sh-indicator: Count (default, Information)
+ *             or --dot; --error only for errors. Give the item an aria-label that says the count.
+ * Icon        any sh-icon, Size 24 (Line when inactive, Filled when active).
+ * State       Focus :focus-visible (.is-focus forces it) · Disabled [aria-disabled="true"] / [disabled].
+ *             Figma defines no Hover or Pressed look, so none is drawn here.
+ * Tap area    Stacked is 60 tall and at least 48 wide; Inline is 48 tall.
+ */
+
+.sh-navigation-item {
+  --_label: var(--sh-text-secondary);
+  --_icon: var(--sh-icon-secondary);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sh-space-2);
+  min-width: var(--sh-icon-target-default);
+  min-height: var(--sh-icon-target-default);
+  margin: 0;
+  padding: var(--sh-space-8) var(--sh-space-16);
+  border: 0;
+  border-radius: var(--sh-radius-full);
+  background: none;
+  color: var(--_label);
+  font-family: var(--sh-typo-font-family-primary);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- Parts --------------------------------------------------------------- */
+.sh-navigation-item__icon-wrap {
+  position: relative;            /* the badge sits on the icon's top-right corner, outside the flow */
+  display: flex;
+  flex: none;
+}
+.sh-navigation-item__icon { --sh-icon-paint: var(--_icon); }
+.sh-navigation-item__label { display: block; color: var(--_label); }
+
+.sh-navigation-item__badge {
+  position: absolute;
+  top: calc(var(--sh-space-4) * -1);
+  left: var(--sh-space-14);
+}
+.sh-navigation-item__badge.sh-indicator--dot {
+  top: 0;
+  left: var(--sh-space-16);
+}
+
+/* ---- Layout=Inline ------------------------------------------------------- */
+.sh-navigation-item--inline {
+  flex-direction: row;
+  gap: var(--sh-space-12);
+  padding: var(--sh-space-12) var(--sh-space-16);
+}
+
+/* ---- Active=true --------------------------------------------------------- */
+.sh-navigation-item[aria-current="page"],
+.sh-navigation-item.is-active {
+  --_label: var(--sh-text-brand);
+  --_icon: var(--sh-icon-brand);
+  background: var(--sh-background-default);
+  box-shadow: var(--sh-shadow-soft-x) var(--sh-shadow-soft-y) var(--sh-shadow-soft-blur) var(--sh-shadow-soft-spread) var(--sh-shadow-soft-color);
+}
+.sh-navigation-item--inline[aria-current="page"],
+.sh-navigation-item--inline.is-active {
+  background: var(--sh-background-selected);
+  box-shadow: none;
+}
+
+/* ---- State --------------------------------------------------------------- */
+.sh-navigation-item:focus { outline: none; }
+.sh-navigation-item:focus-visible,
+.sh-navigation-item.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+
+.sh-navigation-item:disabled,
+.sh-navigation-item[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+}

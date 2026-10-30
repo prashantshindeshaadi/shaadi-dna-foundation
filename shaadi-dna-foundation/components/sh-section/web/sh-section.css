@@ -1,0 +1,42 @@
+/*
+ * sh-section — web (HTML5 + CSS)
+ * Spec: ../sh-section.md · Figma node 2613:34398 (one variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/sh-section-header/web/sh-section-header.css (Header),
+ *   plus the CSS of whatever DNA content goes in the slot.
+ *
+ *   <section class="sh-section" aria-labelledby="contact-title">
+ *     <header class="sh-section-header">
+ *       <div class="sh-section-header__title-group"><h2 class="sh-section-header__title sh-heading-sm" id="contact-title">Contact details</h2></div>
+ *       <button class="sh-section-header__action sh-button sh-button--premium-soft sh-button--sm" type="button">…Unlock…</button>
+ *     </header>
+ *     <div class="sh-section__content">
+ *       …any DNA content: sh-data-point, sh-list, sh-chip rows…
+ *     </div>
+ *   </section>
+ *
+ * Show header   include or leave out the sh-section-header (its own Show badge / Show action apply).
+ * Content slot  .sh-section__content: a column that fills the width; put any DNA content in it.
+ * Not interactive itself.
+ */
+
+.sh-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-16) var(--sh-space-20);
+  background: var(--sh-background-default);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-section__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}

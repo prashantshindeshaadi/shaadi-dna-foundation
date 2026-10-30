@@ -1,0 +1,136 @@
+/*
+ * sh-slider — web (HTML5 + CSS)
+ * Spec: ../sh-slider.md · Figma node 2597:29841 (Start 0% / 25% / 40% × End 60% / 75% / 100% = 9 variants)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ * Range: two native range inputs over one track. --start / --end (0 … 1) place the brand fill between the thumbs;
+ * keep them in step with the inputs' values (the app sets them on input).
+ *   <div class="sh-slider" style="--start:.25; --end:.75">
+ *     <span class="sh-slider__track" aria-hidden="true"></span>
+ *     <span class="sh-slider__fill" aria-hidden="true"></span>
+ *     <input class="sh-slider__input sh-slider__input--start" type="range" min="18" max="58" value="28" aria-label="Minimum age" aria-valuetext="28 years">
+ *     <input class="sh-slider__input sh-slider__input--end"   type="range" min="18" max="58" value="48" aria-label="Maximum age" aria-valuetext="48 years">
+ *   </div>
+ * Single value (Show start thumb off): leave out the start input; the fill runs from the left edge (--start: 0).
+ *
+ * Start / End  any position: Figma's 0 / 25 / 40 % and 60 / 75 / 100 % are samples of --start / --end.
+ * Parts        Track border/default, radius full · Fill sh-gradient/brand/default, radius full ·
+ *              Thumbs background/default, sh-gradient/brand/default edge, sh-shadow/soft.
+ * State        Focus :focus-visible draws the focus ring on the thumb · Disabled [disabled] on the inputs (or
+ *              .is-disabled on the root): sh-opacity/disabled. Hover / Pressed have no look in Figma.
+ *              .is-focus on an input forces the ring for previews.
+ * Each thumb has a 48 × 48 tap area (transparent border around the 24 thumb).
+ */
+
+.sh-slider {
+  --start: 0;
+  --end: 1;
+  --_thumb: var(--sh-space-24);                   /* Figma: thumb fixed 24 (unbound); also the slider height */
+  --_target: var(--sh-icon-target-default);
+  --_track: var(--sh-space-4);                    /* no token: Figma Track height is unbound */
+  --_ring: var(--sh-stroke-strong);               /* no token: Figma thumb stroke weight is unbound */
+
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: var(--_thumb);
+}
+
+/* Track and fill sit centred; the fill runs from the start thumb's centre to the end thumb's centre */
+.sh-slider__track,
+.sh-slider__fill {
+  position: absolute;
+  top: 50%;
+  height: var(--_track);
+  border-radius: var(--sh-radius-full);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.sh-slider__track {
+  left: 0;
+  right: 0;
+  background: var(--sh-border-default);
+}
+.sh-slider__fill {
+  left: calc(var(--_thumb) / 2 + var(--start) * (100% - var(--_thumb)));
+  width: calc((var(--end) - var(--start)) * (100% - var(--_thumb)));
+  background: var(--sh-gradient-brand-default);
+}
+/* Single value: no start thumb, the fill starts at the left edge */
+.sh-slider:not(:has(.sh-slider__input--start)) .sh-slider__fill {
+  left: 0;
+  width: calc(var(--_thumb) / 2 + var(--end) * (100% - var(--_thumb)));
+}
+
+/* ---- Inputs: transparent native ranges; only the thumbs take pointer input -------------------------------- */
+.sh-slider__input {
+  position: absolute;
+  left: calc((var(--_target) - var(--_thumb)) / -2);
+  top: 50%;
+  width: calc(100% + var(--_target) - var(--_thumb));
+  height: var(--_target);
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  transform: translateY(-50%);
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: none;
+}
+.sh-slider__input:focus { outline: none; }
+.sh-slider__input::-webkit-slider-runnable-track { height: var(--_target); background: transparent; }
+.sh-slider__input::-moz-range-track { height: var(--_target); background: transparent; }
+
+/* Thumb: 24 visible inside a 48 tap area (transparent border); the gradient edge is the padding ring.
+   sh-shadow/soft as a drop-shadow so it follows the 24 circle, not the tap area (drop-shadow has no spread). */
+.sh-slider__input::-webkit-slider-thumb {
+  box-sizing: border-box;
+  width: var(--_target);
+  height: var(--_target);
+  padding: var(--_ring);
+  border: calc((var(--_target) - var(--_thumb)) / 2) solid transparent;
+  border-radius: var(--sh-radius-full);
+  background:
+    linear-gradient(var(--sh-background-default), var(--sh-background-default)) content-box,
+    var(--sh-gradient-brand-default) padding-box;
+  filter: drop-shadow(var(--sh-shadow-soft-x) var(--sh-shadow-soft-y) var(--sh-shadow-soft-blur) var(--sh-shadow-soft-color));
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  cursor: grab;
+}
+.sh-slider__input::-moz-range-thumb {
+  box-sizing: border-box;
+  width: var(--_target);
+  height: var(--_target);
+  padding: var(--_ring);
+  border: calc((var(--_target) - var(--_thumb)) / 2) solid transparent;
+  border-radius: var(--sh-radius-full);
+  background:
+    linear-gradient(var(--sh-background-default), var(--sh-background-default)) content-box,
+    var(--sh-gradient-brand-default) padding-box;
+  filter: drop-shadow(var(--sh-shadow-soft-x) var(--sh-shadow-soft-y) var(--sh-shadow-soft-blur) var(--sh-shadow-soft-color));
+  pointer-events: auto;
+  cursor: grab;
+}
+
+/* ---- State ---------------------------------------------------------------- */
+/* Focus: border/focus ring at sh-stroke/strong, sh-space/2 outside the 24 thumb (inside its 48 tap area) */
+.sh-slider__input:focus-visible::-webkit-slider-thumb,
+.sh-slider__input.is-focus::-webkit-slider-thumb {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: calc((var(--_thumb) - var(--_target)) / 2 + var(--sh-space-2));
+}
+.sh-slider__input:focus-visible::-moz-range-thumb,
+.sh-slider__input.is-focus::-moz-range-thumb {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: calc((var(--_thumb) - var(--_target)) / 2 + var(--sh-space-2));
+}
+
+.sh-slider:has(.sh-slider__input:disabled),
+.sh-slider.is-disabled {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

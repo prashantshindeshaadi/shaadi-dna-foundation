@@ -1,0 +1,67 @@
+/*
+ * sh-card — web (HTML5 + CSS)
+ * Spec: ../sh-card.md · Figma node 2613:33481 (Type Outlined / Filled / Elevated × Size Medium / Small)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-support-micro (Label)
+ *
+ *   <section class="sh-card sh-card--elevated" aria-labelledby="card-1">
+ *     <h3 class="sh-card__label sh-support-micro" id="card-1">Contacts viewed</h3>   Show label; leave it out to hide
+ *     <div class="sh-card__content">…any DNA parts…</div>                           Content slot
+ *   </section>
+ *
+ * Type  (none) Outlined (background/default, border/soft) · --filled (background/soft, no border) ·
+ *       --elevated (background/default, border/soft, sh-shadow/soft)
+ * Size  (none) Medium (padding sh-space/16, gap 8, radius card) · --sm Small (padding 8 / 12, gap 4, radius sm)
+ * The card fills its container's width; its height hugs the content. Not interactive: put buttons or links
+ * inside it, never make the whole card a click target here.
+ */
+
+.sh-card {
+  /* Type=Outlined, Size=Medium */
+  --_bg: var(--sh-background-default);
+  --_stroke: var(--sh-border-soft);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-16);
+  border: var(--sh-stroke-default) solid var(--_stroke);
+  border-radius: var(--sh-radius-card);
+  background: var(--_bg);
+  color: var(--sh-text-primary);
+}
+
+.sh-card__label {
+  margin: 0;
+  color: var(--sh-text-tertiary);
+}
+
+/* Content slot: fills the width, hugs its content */
+.sh-card__content {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-width: 0;
+}
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-card--filled {
+  --_bg: var(--sh-background-soft);
+  --_stroke: transparent;
+  border-width: var(--sh-stroke-none);
+}
+.sh-card--elevated {
+  box-shadow: var(--sh-shadow-soft-x) var(--sh-shadow-soft-y) var(--sh-shadow-soft-blur) var(--sh-shadow-soft-spread) var(--sh-shadow-soft-color);
+}
+
+/* ---- Size ---------------------------------------------------------------- */
+.sh-card--sm {
+  gap: var(--sh-space-4);
+  padding: var(--sh-space-8) var(--sh-space-12);
+  border-radius: var(--sh-radius-sm);
+}

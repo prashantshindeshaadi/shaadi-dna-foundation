@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+  sh-stepper — web (HTML5 + CSS). Every variant: Status Done / Current / Pending, Show subtitle and Show connector
+  off, and a full refund timeline.
+  Spec: ../sh-stepper.md · Figma node 2712:13089
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-stepper</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-stepper.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, 320px); gap: var(--sh-space-24) var(--sh-space-32); align-items: start; }   /* Figma width 320 */
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-stepper</h1>
+
+  <h2 class="sh-title-md">Status</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Status=Done</figcaption>
+      <ol class="sh-stepper-list">
+        <li class="sh-stepper"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__check sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span></span><span class="sh-stepper__connector"></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">Request received</span><span class="sh-stepper__subtitle sh-body-sm">12 Oct, 10:30 am</span></span></li>
+      </ol>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Status=Current</figcaption>
+      <ol class="sh-stepper-list">
+        <li class="sh-stepper sh-stepper--current" aria-current="step"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__dot"></span></span><span class="sh-stepper__connector"></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">Refund in progress</span><span class="sh-stepper__subtitle sh-body-sm">Expected by 18 Oct</span></span></li>
+      </ol>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Status=Pending</figcaption>
+      <ol class="sh-stepper-list">
+        <li class="sh-stepper sh-stepper--pending"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__dot"></span></span><span class="sh-stepper__connector"></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">Money in your account</span><span class="sh-stepper__subtitle sh-body-sm">3–5 working days</span></span></li>
+      </ol>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Show subtitle · Show connector</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Status=Done, Show subtitle=false</figcaption>
+      <ol class="sh-stepper-list">
+        <li class="sh-stepper"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__check sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span></span><span class="sh-stepper__connector"></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">Photo verified</span></span></li>
+      </ol>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Status=Pending, Show connector=false</figcaption>
+      <ol class="sh-stepper-list">
+        <li class="sh-stepper sh-stepper--pending"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__dot"></span></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">ID verified</span><span class="sh-stepper__subtitle sh-body-sm">Upload Aadhaar or PAN</span></span></li>
+      </ol>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">In use: refund timeline</h2>
+  <div class="grid">
+    <ol class="sh-stepper-list" aria-label="Refund status">
+      <li class="sh-stepper"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__check sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span></span><span class="sh-stepper__connector"></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">Request received</span><span class="sh-stepper__subtitle sh-body-sm">12 Oct, 10:30 am</span></span></li>
+      <li class="sh-stepper"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__check sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span></span><span class="sh-stepper__connector"></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">Refund approved</span><span class="sh-stepper__subtitle sh-body-sm">13 Oct, 4:15 pm</span></span></li>
+      <li class="sh-stepper sh-stepper--current" aria-current="step"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__dot"></span></span><span class="sh-stepper__connector"></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">Refund in progress</span><span class="sh-stepper__subtitle sh-body-sm">Expected by 18 Oct</span></span></li>
+      <li class="sh-stepper sh-stepper--pending"><span class="sh-stepper__rail" aria-hidden="true"><span class="sh-stepper__marker"><span class="sh-stepper__dot"></span></span></span><span class="sh-stepper__content"><span class="sh-stepper__title sh-title-sm">Money in your account</span><span class="sh-stepper__subtitle sh-body-sm">3–5 working days</span></span></li>
+    </ol>
+  </div>
+</body>
+</html>

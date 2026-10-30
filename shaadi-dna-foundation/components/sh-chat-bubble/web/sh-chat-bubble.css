@@ -1,0 +1,80 @@
+/*
+ * sh-chat-bubble — web (HTML5 + CSS)
+ * Spec: ../sh-chat-bubble.md · Figma node 2719:42995 (Type Received / Sent / Read)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *
+ *   <div class="sh-chat-bubble sh-chat-bubble--sent">
+ *     <p class="sh-chat-bubble__message sh-body-md">Hi! Would you like to talk to our families this weekend?</p>
+ *     <p class="sh-chat-bubble__meta">
+ *       <time class="sh-chat-bubble__time sh-support-meta" datetime="10:24">10:24 AM</time>
+ *       <span class="sh-chat-bubble__status" role="img" aria-label="Sent">
+ *         <span class="sh-icon sh-icon--12" style="--icon:url(icons/filled/check.svg)"></span>
+ *       </span>
+ *     </p>
+ *   </div>
+ *
+ * Type   (none) Received: left, background/soft, tail corner bottom-left (radius xs), no status
+ *        --sent: right, background/selected, tail corner bottom-right, one Filled check
+ *        --read: as Sent, two Filled checks (aria-label "Read")
+ * Width  the bubble hugs its message and wraps at the container width (Figma frame 264); Received sits at the
+ *        start of a thread column, Sent / Read at the end.
+ * Status tick colour: the blueprint binds none, so the check keeps the icon's own colour (icon/primary).
+ *        Read is "blue" in the purpose text but no token is bound for it: open gap, see the report.
+ * Not interactive: no states.
+ */
+
+.sh-chat-bubble {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-2);
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: var(--sh-space-8) var(--sh-space-12);
+  border-radius: var(--sh-radius-card) var(--sh-radius-card) var(--sh-radius-card) var(--sh-radius-xs);
+  background: var(--sh-background-soft);
+  font-family: var(--sh-typo-font-family-primary);
+  align-self: flex-start;
+}
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-chat-bubble--sent,
+.sh-chat-bubble--read {
+  border-radius: var(--sh-radius-card) var(--sh-radius-card) var(--sh-radius-xs) var(--sh-radius-card);
+  background: var(--sh-background-selected);
+  align-self: flex-end;
+}
+
+/* ---- Parts --------------------------------------------------------------- */
+.sh-chat-bubble__message {
+  margin: 0;
+  color: var(--sh-text-primary);
+  overflow-wrap: anywhere;
+}
+
+.sh-chat-bubble__meta {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  gap: var(--sh-space-4);
+  margin: 0;
+}
+.sh-chat-bubble__time { color: var(--sh-text-tertiary); }
+
+.sh-chat-bubble__status {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  color: var(--sh-icon-primary);
+}
+.sh-chat-bubble__status .sh-icon {
+  width: var(--sh-icon-size-12);
+  height: var(--sh-icon-size-12);
+}
+/* Read: the second check overlaps the first by half, as a double tick */
+.sh-chat-bubble__status .sh-icon + .sh-icon {
+  margin-left: calc(var(--sh-icon-size-12) / -2);   /* no token: overlap of the double tick = half the icon */
+}

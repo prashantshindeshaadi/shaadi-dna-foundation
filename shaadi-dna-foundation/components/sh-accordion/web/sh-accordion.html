@@ -1,0 +1,118 @@
+<!doctype html>
+<!--
+  sh-accordion — web (HTML5 + CSS). Every variant: State Collapsed / Expanded, plus Show divider off and a stacked FAQ.
+  Spec: ../sh-accordion.md · Figma node 2718:41883
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-accordion</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../sh-divider/web/sh-divider.css">
+  <link rel="stylesheet" href="sh-accordion.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma frame width 360 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .surface { background: var(--sh-background-default); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-accordion</h1>
+
+  <h2 class="sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Collapsed</figcaption>
+      <div class="surface">
+        <div class="sh-accordion">
+          <details class="sh-accordion__details">
+          <summary class="sh-accordion__header"><span class="sh-accordion__title sh-title-md">How do I get a refund?</span><span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></summary>
+          <div class="sh-accordion__content"><p class="sh-accordion__body sh-body-md">Raise a refund request within 30 days of purchase from Help &amp; Support. We review it in 5 to 7 working days.</p></div>
+        </details>
+          <hr class="sh-accordion__divider sh-divider sh-divider--soft">
+        </div>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">State=Expanded</figcaption>
+      <div class="surface">
+        <div class="sh-accordion">
+          <details class="sh-accordion__details" open>
+          <summary class="sh-accordion__header"><span class="sh-accordion__title sh-title-md">How do I get a refund?</span><span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></summary>
+          <div class="sh-accordion__content"><p class="sh-accordion__body sh-body-md">Raise a refund request within 30 days of purchase from Help &amp; Support. We review it in 5 to 7 working days.</p></div>
+        </details>
+          <hr class="sh-accordion__divider sh-divider sh-divider--soft">
+        </div>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Show divider=false · Focus · Disabled</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Collapsed, Show divider=false</figcaption>
+      <div class="surface">
+        <div class="sh-accordion">
+          <details class="sh-accordion__details">
+          <summary class="sh-accordion__header"><span class="sh-accordion__title sh-title-md">Can I pause my membership?</span><span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></summary>
+          <div class="sh-accordion__content"><p class="sh-accordion__body sh-body-md">Yes. Hide your profile from Settings; your plan keeps running.</p></div>
+        </details>
+        </div>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Focus (keyboard)</figcaption>
+      <div class="surface">
+        <div class="sh-accordion">
+          <details class="sh-accordion__details">
+          <summary class="sh-accordion__header is-focus"><span class="sh-accordion__title sh-title-md">How do I get a refund?</span><span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></summary>
+          <div class="sh-accordion__content"><p class="sh-accordion__body sh-body-md">Raise a refund request within 30 days of purchase from Help &amp; Support.</p></div>
+        </details>
+          <hr class="sh-accordion__divider sh-divider sh-divider--soft">
+        </div>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Disabled</figcaption>
+      <div class="surface">
+        <div class="sh-accordion" aria-disabled="true">
+          <details class="sh-accordion__details">
+          <summary class="sh-accordion__header" tabindex="-1"><span class="sh-accordion__title sh-title-md">How do I get a refund?</span><span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></summary>
+          <div class="sh-accordion__content"><p class="sh-accordion__body sh-body-md">Raise a refund request within 30 days of purchase from Help &amp; Support.</p></div>
+        </details>
+          <hr class="sh-accordion__divider sh-divider sh-divider--soft">
+        </div>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">In use · Help &amp; Support FAQ (no divider on the last row)</h2>
+  <div class="grid">
+    <figure>
+      <div class="surface">
+        <div class="sh-accordion">
+          <details class="sh-accordion__details" open>
+          <summary class="sh-accordion__header"><span class="sh-accordion__title sh-title-md">How do I get a refund?</span><span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></summary>
+          <div class="sh-accordion__content"><p class="sh-accordion__body sh-body-md">Raise a refund request within 30 days of purchase from Help &amp; Support. We review it in 5 to 7 working days.</p></div>
+        </details>
+          <hr class="sh-accordion__divider sh-divider sh-divider--soft">
+        </div>
+        <div class="sh-accordion">
+          <details class="sh-accordion__details">
+          <summary class="sh-accordion__header"><span class="sh-accordion__title sh-title-md">Who can see my phone number?</span><span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></summary>
+          <div class="sh-accordion__content"><p class="sh-accordion__body sh-body-md">Only Premium members you have connected with.</p></div>
+        </details>
+          <hr class="sh-accordion__divider sh-divider sh-divider--soft">
+        </div>
+        <div class="sh-accordion">
+          <details class="sh-accordion__details">
+          <summary class="sh-accordion__header"><span class="sh-accordion__title sh-title-md">How do I verify my profile?</span><span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></summary>
+          <div class="sh-accordion__content"><p class="sh-accordion__body sh-body-md">Upload a government ID from Trust &amp; Safety. It takes about a day.</p></div>
+        </details>
+        </div>
+      </div>
+    </figure>
+  </div>
+</body>
+</html>

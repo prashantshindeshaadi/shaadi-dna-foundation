@@ -1,0 +1,58 @@
+/*
+ * sh-empty-state — web (HTML5 + CSS)
+ * Spec: ../sh-empty-state.md · Figma node 2718:41694 (one variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css (Action)
+ *
+ *   <section class="sh-empty-state">
+ *     <img class="sh-empty-state__pictogram" src="icons/pictogram/heart@2x.png" alt="">
+ *     <div class="sh-empty-state__text">
+ *       <h2 class="sh-empty-state__title sh-heading-sm">No matches yet</h2>
+ *       <p class="sh-empty-state__body sh-body-md">Widen your partner preferences to see more profiles.</p>
+ *     </div>
+ *     <button class="sh-empty-state__action sh-button sh-button--primary sh-button--md" type="button">
+ *       <span class="sh-button__text"><span class="sh-button__label sh-button-md">Edit preferences</span></span>
+ *     </button>
+ *   </section>
+ *
+ * Pictogram   Figma "Pictogram" swap (default sh-icon/pictogram/heart) at pictogram size 64. Pictograms keep
+ *             their own colours (an <img>). Show pictogram: include or leave out the <img>.
+ * Show action include or leave out the sh-button (Type Primary, Size Medium). A lone button: centred, max 200.
+ * Content is centred. Not interactive itself: the Action carries the states (sh-button).
+ */
+
+.sh-empty-state {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-16);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-24) var(--sh-space-16);
+  text-align: center;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-empty-state__pictogram {
+  display: block;
+  flex: none;
+  width: var(--sh-icon-pictogram-size-64);
+  height: var(--sh-icon-pictogram-size-64);
+  object-fit: contain;
+}
+
+.sh-empty-state__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-8);
+  width: 100%;
+}
+.sh-empty-state__title { margin: 0; color: var(--sh-text-primary); }
+.sh-empty-state__body  { margin: 0; color: var(--sh-text-secondary); }
+
+/* Lone button: never full width, max 200 (no token: 200 = sh-space/80 × 2.5) */
+.sh-empty-state__action { max-width: calc(var(--sh-space-80) * 2.5); }

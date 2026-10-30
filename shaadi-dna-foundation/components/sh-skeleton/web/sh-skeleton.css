@@ -1,0 +1,72 @@
+/*
+ * sh-skeleton — web (HTML5 + CSS)
+ * Spec: ../sh-skeleton.md · Figma node 2712:13115 (Type Line / Circle / Block / Card)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ *   <span class="sh-skeleton" aria-hidden="true"></span>                                  Line: fills the width, 12 tall
+ *   <span class="sh-skeleton sh-skeleton--circle" aria-hidden="true"></span>              Circle: avatar / icon
+ *   <span class="sh-skeleton sh-skeleton--block" style="height:…" aria-hidden="true"></span>   Block: image / card area
+ *   <div class="sh-skeleton sh-skeleton--card" aria-hidden="true">                       Card: profile card
+ *     <span class="sh-skeleton__media"></span>
+ *     <span class="sh-skeleton__line"></span>
+ *     <span class="sh-skeleton__line"></span>
+ *   </div>
+ *
+ * Type  (none) Line · --circle · --block · --card
+ * Line and Block resize freely: they fill their container's width; set a Block's height (or aspect-ratio) where it is used.
+ * Not interactive. Hide skeletons from assistive tech (aria-hidden) and mark the loading region aria-busy="true".
+ * Static: DNA has no motion tokens, so there is no shimmer yet (see the report).
+ */
+
+.sh-skeleton {
+  /* Type=Line */
+  box-sizing: border-box;
+  display: block;
+  flex: none;
+  width: 100%;
+  height: var(--sh-space-12);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-strong);
+}
+
+/* ---- Type=Circle --------------------------------------------------------- */
+/* no token in the blueprint for its size: sh-avatar Medium (sh-space/48) until Figma binds one. Resize with width/height. */
+.sh-skeleton--circle {
+  width: var(--sh-space-48);
+  height: var(--sh-space-48);
+}
+
+/* ---- Type=Block ---------------------------------------------------------- */
+.sh-skeleton--block {
+  height: auto;
+  min-height: var(--sh-space-48);
+  border-radius: var(--sh-radius-card);
+}
+
+/* ---- Type=Card: Media + Lines inside a bordered card --------------------- */
+.sh-skeleton--card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-12);
+  height: auto;
+  padding: var(--sh-space-16);
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-default);
+}
+.sh-skeleton__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;                        /* no token: a profile photo's 4:5 crop; the blueprint leaves Media's size unbound */
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-strong);
+}
+.sh-skeleton__line {
+  display: block;
+  width: 100%;
+  height: var(--sh-space-12);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-strong);
+}
+.sh-skeleton__line:last-child:not(:first-child) { width: 60%; }   /* a shorter last line reads as text */

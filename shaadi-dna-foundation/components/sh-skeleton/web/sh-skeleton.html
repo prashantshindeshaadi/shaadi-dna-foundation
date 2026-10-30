@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  sh-skeleton — web (HTML5 + CSS). Every variant: Type Line / Circle / Block / Card.
+  Spec: ../sh-skeleton.md · Figma node 2712:13115
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-skeleton</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-skeleton.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: var(--sh-space-12) 0 0; color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .w160 { width: calc(2 * var(--sh-space-80)); }
+    .w240 { width: calc(3 * var(--sh-space-80)); }
+    .stack { display: flex; flex-direction: column; gap: var(--sh-space-8); }
+    .row { display: flex; gap: var(--sh-space-12); align-items: center; }
+    .row .stack { flex: 1; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-skeleton</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid" aria-busy="true">
+    <figure class="w160"><figcaption class="sh-body-sm">Type=Line</figcaption><span class="sh-skeleton" aria-hidden="true"></span></figure>
+    <figure><figcaption class="sh-body-sm">Type=Circle</figcaption><span class="sh-skeleton sh-skeleton--circle" aria-hidden="true"></span></figure>
+    <figure class="w160"><figcaption class="sh-body-sm">Type=Block</figcaption><span class="sh-skeleton sh-skeleton--block" style="height: var(--sh-space-80)" aria-hidden="true"></span></figure>
+    <figure class="w240"><figcaption class="sh-body-sm">Type=Card</figcaption>
+      <div class="sh-skeleton sh-skeleton--card" aria-hidden="true">
+        <span class="sh-skeleton__media"></span>
+        <span class="sh-skeleton__line"></span>
+        <span class="sh-skeleton__line"></span>
+      </div>
+    </figure>
+  </div>
+  <p class="note sh-body-sm">Circle size, Card Media size and line count are not in the blueprint: Circle uses sh-space/48, Media a 4:5 photo crop, two Lines.</p>
+
+  <h2 class="sh-title-md">In use · a list row loading</h2>
+  <div class="w240" aria-busy="true" aria-label="Loading matches">
+    <div class="row">
+      <span class="sh-skeleton sh-skeleton--circle" aria-hidden="true"></span>
+      <div class="stack"><span class="sh-skeleton" aria-hidden="true"></span><span class="sh-skeleton" style="width: 60%" aria-hidden="true"></span></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<!--
+  sh-progress-ring — web (HTML5 + CSS + inline SVG). The one variant, Show total on / off, and a few amounts.
+  Spec: ../sh-progress-ring.md · Figma node 2613:33495
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-progress-ring</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-progress-ring.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: var(--sh-space-12) 0 0; color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .zoom { zoom: 3; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-progress-ring</h1>
+
+  <h2 class="sh-title-md">Show total</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Value=28, Total=of 36, Show total=true</figcaption>
+      <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="28">
+        <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+        <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">28</span><span class="sh-progress-ring__total sh-support-meta">of 36</span></span>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Value=28, Show total=false</figcaption>
+      <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="28">
+        <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+        <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">28</span></span>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Amount</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Value=9, Total=of 36</figcaption>
+      <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="9">
+        <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="25 100"></circle></svg>
+        <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">9</span><span class="sh-progress-ring__total sh-support-meta">of 36</span></span>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Value=7, Total=of 9</figcaption>
+      <div class="sh-progress-ring" role="meter" aria-label="Preference match" aria-valuemin="0" aria-valuemax="9" aria-valuenow="7">
+        <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+        <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">7</span><span class="sh-progress-ring__total sh-support-meta">of 9</span></span>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Value=36, Total=of 36</figcaption>
+      <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="36">
+        <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="100 100"></circle></svg>
+        <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">36</span><span class="sh-progress-ring__total sh-support-meta">of 36</span></span>
+      </div>
+    </figure>
+  </div>
+  <p class="note sh-body-sm">The Progress arc's colour and weight are unbound in the blueprint: built as border/brand at sh-space/4.</p>
+
+  <h2 class="sh-title-md">Detail at 3×</h2>
+  <div class="zoom">
+    <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="28">
+      <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+      <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">28</span><span class="sh-progress-ring__total sh-support-meta">of 36</span></span>
+    </div>
+  </div>
+</body>
+</html>

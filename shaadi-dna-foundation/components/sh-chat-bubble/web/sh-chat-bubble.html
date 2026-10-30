@@ -1,0 +1,58 @@
+<!doctype html>
+<!--
+  sh-chat-bubble — web (HTML5 + CSS). Every variant: Type Received / Sent / Read, plus a short thread.
+  Spec: ../sh-chat-bubble.md · Figma node 2719:42995
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-chat-bubble</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-chat-bubble.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 264px; display: flex; flex-direction: column; }   /* Figma bubble width 264 */
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .thread { display: flex; flex-direction: column; gap: var(--sh-space-8); width: 360px; padding: var(--sh-space-16); box-sizing: border-box; }
+    .thread .sh-chat-bubble { max-width: 264px; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-chat-bubble</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Received</figcaption>
+      <div class="sh-chat-bubble">
+        <p class="sh-chat-bubble__message sh-body-md">Hi! Would you like to talk to our families this weekend?</p>
+        <p class="sh-chat-bubble__meta"><time class="sh-chat-bubble__time sh-support-meta" datetime="10:24">10:24 AM</time></p>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Sent</figcaption>
+      <div class="sh-chat-bubble sh-chat-bubble--sent">
+        <p class="sh-chat-bubble__message sh-body-md">Hi! Would you like to talk to our families this weekend?</p>
+        <p class="sh-chat-bubble__meta"><time class="sh-chat-bubble__time sh-support-meta" datetime="10:24">10:24 AM</time><span class="sh-chat-bubble__status" role="img" aria-label="Sent"><span class="sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span></span></p>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Read</figcaption>
+      <div class="sh-chat-bubble sh-chat-bubble--read">
+        <p class="sh-chat-bubble__message sh-body-md">Hi! Would you like to talk to our families this weekend?</p>
+        <p class="sh-chat-bubble__meta"><time class="sh-chat-bubble__time sh-support-meta" datetime="10:24">10:24 AM</time><span class="sh-chat-bubble__status" role="img" aria-label="Read"><span class="sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span><span class="sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span></span></p>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">In use · a thread (short messages hug)</h2>
+  <div class="thread">
+    <div class="sh-chat-bubble"><p class="sh-chat-bubble__message sh-body-md">Namaste! I liked your profile.</p><p class="sh-chat-bubble__meta"><time class="sh-chat-bubble__time sh-support-meta" datetime="10:20">10:20 AM</time></p></div>
+    <div class="sh-chat-bubble sh-chat-bubble--read"><p class="sh-chat-bubble__message sh-body-md">Thank you! Happy to connect.</p><p class="sh-chat-bubble__meta"><time class="sh-chat-bubble__time sh-support-meta" datetime="10:22">10:22 AM</time><span class="sh-chat-bubble__status" role="img" aria-label="Read"><span class="sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span><span class="sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span></span></p></div>
+    <div class="sh-chat-bubble"><p class="sh-chat-bubble__message sh-body-md">Hi! Would you like to talk to our families this weekend?</p><p class="sh-chat-bubble__meta"><time class="sh-chat-bubble__time sh-support-meta" datetime="10:24">10:24 AM</time></p></div>
+    <div class="sh-chat-bubble sh-chat-bubble--sent"><p class="sh-chat-bubble__message sh-body-md">Sunday works for us.</p><p class="sh-chat-bubble__meta"><time class="sh-chat-bubble__time sh-support-meta" datetime="10:25">10:25 AM</time><span class="sh-chat-bubble__status" role="img" aria-label="Sent"><span class="sh-icon sh-icon--12" style="--icon:url(../../../icons/filled/check.svg)"></span></span></p></div>
+  </div>
+</body>
+</html>

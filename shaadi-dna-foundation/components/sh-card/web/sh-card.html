@@ -1,0 +1,67 @@
+<!doctype html>
+<!--
+  sh-card — web (HTML5 + CSS). Every variant: Type Outlined / Filled / Elevated × Size Medium / Small, plus Show label off.
+  Spec: ../sh-card.md · Figma node 2613:33481
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-card</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-card.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p { margin: 0; }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .w240 { width: calc(3 * var(--sh-space-80)); }
+    .w160 { width: calc(2 * var(--sh-space-80)); }
+    .placeholder { color: var(--sh-text-tertiary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-card</h1>
+
+  <h2 class="sh-title-md">Type=Outlined</h2>
+  <div class="grid">
+    <figure class="w240"><figcaption class="sh-body-sm">Type=Outlined, Size=Medium</figcaption>
+      <section class="sh-card" aria-labelledby="c1"><h3 class="sh-card__label sh-support-micro" id="c1">Contacts viewed</h3><div class="sh-card__content"><p class="sh-body-md">10 of 72 contacts viewed this month.</p></div></section>
+    </figure>
+    <figure class="w160"><figcaption class="sh-body-sm">Type=Outlined, Size=Small</figcaption>
+      <section class="sh-card sh-card--sm" aria-labelledby="c2"><h3 class="sh-card__label sh-support-micro" id="c2">Lives in</h3><div class="sh-card__content"><p class="sh-body-sm">Mumbai, Maharashtra</p></div></section>
+    </figure>
+  </div>
+  <h2 class="sh-title-md">Type=Filled</h2>
+  <div class="grid">
+    <figure class="w240"><figcaption class="sh-body-sm">Type=Filled, Size=Medium</figcaption>
+      <section class="sh-card sh-card--filled" aria-labelledby="c3"><h3 class="sh-card__label sh-support-micro" id="c3">Contacts viewed</h3><div class="sh-card__content"><p class="sh-body-md">10 of 72 contacts viewed this month.</p></div></section>
+    </figure>
+    <figure class="w160"><figcaption class="sh-body-sm">Type=Filled, Size=Small</figcaption>
+      <section class="sh-card sh-card--filled sh-card--sm" aria-labelledby="c4"><h3 class="sh-card__label sh-support-micro" id="c4">Lives in</h3><div class="sh-card__content"><p class="sh-body-sm">Mumbai, Maharashtra</p></div></section>
+    </figure>
+  </div>
+  <h2 class="sh-title-md">Type=Elevated</h2>
+  <div class="grid">
+    <figure class="w240"><figcaption class="sh-body-sm">Type=Elevated, Size=Medium</figcaption>
+      <section class="sh-card sh-card--elevated" aria-labelledby="c5"><h3 class="sh-card__label sh-support-micro" id="c5">Contacts viewed</h3><div class="sh-card__content"><p class="sh-body-md">10 of 72 contacts viewed this month.</p></div></section>
+    </figure>
+    <figure class="w160"><figcaption class="sh-body-sm">Type=Elevated, Size=Small</figcaption>
+      <section class="sh-card sh-card--elevated sh-card--sm" aria-labelledby="c6"><h3 class="sh-card__label sh-support-micro" id="c6">Lives in</h3><div class="sh-card__content"><p class="sh-body-sm">Mumbai, Maharashtra</p></div></section>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Show label=false · empty Content slot</h2>
+  <div class="grid">
+    <figure class="w240"><figcaption class="sh-body-sm">Type=Outlined, Size=Medium, Show label=false</figcaption>
+      <div class="sh-card"><div class="sh-card__content"><p class="sh-body-md">Your profile is 80% complete.</p></div></div>
+    </figure>
+    <figure class="w240"><figcaption class="sh-body-sm">Content slot as in Figma ("Drop content here")</figcaption>
+      <section class="sh-card" aria-labelledby="c99"><h3 class="sh-card__label sh-support-micro" id="c99">Label</h3><div class="sh-card__content"><p class="sh-body-sm placeholder">Drop content here</p></div></section>
+    </figure>
+  </div>
+</body>
+</html>

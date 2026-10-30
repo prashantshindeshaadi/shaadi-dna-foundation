@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  sh-date-picker — web (HTML5 + CSS). Every variant: Type Date / Time, plus a disabled column.
+  Each column is a real radio group: click a row to pick it. Scrolling a long column to the band is the app's job.
+  Spec: ../sh-date-picker.md · Figma node 2719:42965
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-date-picker</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-date-picker.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, 328px); gap: var(--sh-space-24) var(--sh-space-40); align-items: start; }   /* Figma width 328 */
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-date-picker</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Date</figcaption>
+      <div class="sh-date-picker" role="group" aria-label="Date of birth"><span class="sh-date-picker__band" aria-hidden="true"></span><fieldset class="sh-date-picker__column" aria-label="Day"><label class="sh-date-picker__option"><input type="radio" name="dob-day" value="12"><span class="sh-body-md">12</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-day" value="13"><span class="sh-body-md">13</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-day" value="14" checked><span class="sh-body-md">14</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-day" value="15"><span class="sh-body-md">15</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-day" value="16"><span class="sh-body-md">16</span></label></fieldset><fieldset class="sh-date-picker__column" aria-label="Month"><label class="sh-date-picker__option"><input type="radio" name="dob-month" value="Jun"><span class="sh-body-md">Jun</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-month" value="Jul"><span class="sh-body-md">Jul</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-month" value="Aug" checked><span class="sh-body-md">Aug</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-month" value="Sep"><span class="sh-body-md">Sep</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-month" value="Oct"><span class="sh-body-md">Oct</span></label></fieldset><fieldset class="sh-date-picker__column" aria-label="Year"><label class="sh-date-picker__option"><input type="radio" name="dob-year" value="1994"><span class="sh-body-md">1994</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-year" value="1995"><span class="sh-body-md">1995</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-year" value="1996" checked><span class="sh-body-md">1996</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-year" value="1997"><span class="sh-body-md">1997</span></label><label class="sh-date-picker__option"><input type="radio" name="dob-year" value="1998"><span class="sh-body-md">1998</span></label></fieldset></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Time</figcaption>
+      <div class="sh-date-picker" role="group" aria-label="Preferred call time"><span class="sh-date-picker__band" aria-hidden="true"></span><fieldset class="sh-date-picker__column" aria-label="Hour"><label class="sh-date-picker__option"><input type="radio" name="call-hour" value="08"><span class="sh-body-md">08</span></label><label class="sh-date-picker__option"><input type="radio" name="call-hour" value="09"><span class="sh-body-md">09</span></label><label class="sh-date-picker__option"><input type="radio" name="call-hour" value="10" checked><span class="sh-body-md">10</span></label><label class="sh-date-picker__option"><input type="radio" name="call-hour" value="11"><span class="sh-body-md">11</span></label><label class="sh-date-picker__option"><input type="radio" name="call-hour" value="12"><span class="sh-body-md">12</span></label></fieldset><fieldset class="sh-date-picker__column" aria-label="Minute"><label class="sh-date-picker__option"><input type="radio" name="call-minute" value="20"><span class="sh-body-md">20</span></label><label class="sh-date-picker__option"><input type="radio" name="call-minute" value="25"><span class="sh-body-md">25</span></label><label class="sh-date-picker__option"><input type="radio" name="call-minute" value="30" checked><span class="sh-body-md">30</span></label><label class="sh-date-picker__option"><input type="radio" name="call-minute" value="35"><span class="sh-body-md">35</span></label><label class="sh-date-picker__option"><input type="radio" name="call-minute" value="40"><span class="sh-body-md">40</span></label></fieldset><fieldset class="sh-date-picker__column sh-date-picker__column--period" aria-label="AM or PM"><span class="sh-date-picker__spacer" aria-hidden="true"></span><span class="sh-date-picker__spacer" aria-hidden="true"></span><label class="sh-date-picker__option"><input type="radio" name="call-period" value="AM" checked><span class="sh-body-md">AM</span></label><label class="sh-date-picker__option"><input type="radio" name="call-period" value="PM"><span class="sh-body-md">PM</span></label></fieldset></div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Disabled (no Figma variant)</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Date · disabled</figcaption>
+      <div class="sh-date-picker" role="group" aria-label="Date of birth"><span class="sh-date-picker__band" aria-hidden="true"></span><fieldset class="sh-date-picker__column" aria-label="Day" disabled><label class="sh-date-picker__option"><input type="radio" name="dob2-day" value="12"><span class="sh-body-md">12</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-day" value="13"><span class="sh-body-md">13</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-day" value="14" checked><span class="sh-body-md">14</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-day" value="15"><span class="sh-body-md">15</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-day" value="16"><span class="sh-body-md">16</span></label></fieldset><fieldset class="sh-date-picker__column" aria-label="Month" disabled><label class="sh-date-picker__option"><input type="radio" name="dob2-month" value="Jun"><span class="sh-body-md">Jun</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-month" value="Jul"><span class="sh-body-md">Jul</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-month" value="Aug" checked><span class="sh-body-md">Aug</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-month" value="Sep"><span class="sh-body-md">Sep</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-month" value="Oct"><span class="sh-body-md">Oct</span></label></fieldset><fieldset class="sh-date-picker__column" aria-label="Year" disabled><label class="sh-date-picker__option"><input type="radio" name="dob2-year" value="1994"><span class="sh-body-md">1994</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-year" value="1995"><span class="sh-body-md">1995</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-year" value="1996" checked><span class="sh-body-md">1996</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-year" value="1997"><span class="sh-body-md">1997</span></label><label class="sh-date-picker__option"><input type="radio" name="dob2-year" value="1998"><span class="sh-body-md">1998</span></label></fieldset></div>
+    </figure>
+  </div>
+</body>
+</html>

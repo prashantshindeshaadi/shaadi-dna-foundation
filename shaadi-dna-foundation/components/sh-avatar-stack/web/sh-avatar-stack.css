@@ -1,0 +1,58 @@
+/*
+ * sh-avatar-stack — web (HTML5 + CSS)
+ * Spec: ../sh-avatar-stack.md · Figma node 2710:24413 (one variant; Label, Show label)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                                       all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css                .sh-body-sm
+ *   components/profile-card/sh-user-images/web/sh-user-images.css   .sh-user-image (each photo)
+ *
+ *   <div class="sh-avatar-stack">
+ *     <span class="sh-avatar-stack__avatars" aria-hidden="true">
+ *       <span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="member-1.jpg" alt=""></span></span>
+ *       <span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="member-2.jpg" alt=""></span></span>
+ *       <span class="sh-avatar-stack__avatar"><span class="sh-user-image"><img src="member-3.jpg" alt=""></span></span>
+ *     </span>
+ *     <span class="sh-avatar-stack__label sh-body-sm">Chosen by 2.1L Members</span>   Show label; leave it out to hide
+ *   </div>
+ *
+ * Parts  __avatars (row of three overlapping photos) · __avatar (sh-space/20 circle, ring background/default)
+ *        __label (sh-typo/Body/SM/Default, text/secondary)
+ * Not interactive. The faces are decorative: the label carries the meaning. With the label hidden, give the
+ * root role="img" and an aria-label instead.
+ */
+
+.sh-avatar-stack {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sh-space-6);
+  vertical-align: middle;
+}
+
+.sh-avatar-stack__avatars {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+}
+
+/* Avatar n: Figma's 20 × 20 photo frame. Its ring separates the overlapping faces. */
+.sh-avatar-stack__avatar {
+  box-sizing: border-box;
+  display: block;
+  flex: none;
+  width: var(--sh-space-20);
+  height: var(--sh-space-20);
+  overflow: hidden;
+  /* no token: the ring weight is unbound in Figma → sh-stroke/default (as sh-avatar) */
+  border: var(--sh-stroke-default) solid var(--sh-background-default);
+  border-radius: var(--sh-radius-avatar);
+  background: var(--sh-background-strong);   /* shows only while the photo loads */
+}
+/* no token: the overlap (the Avatars row's negative gap) is unbound in Figma → sh-space/6 */
+.sh-avatar-stack__avatar + .sh-avatar-stack__avatar { margin-inline-start: calc(-1 * var(--sh-space-6)); }
+
+.sh-avatar-stack__label {
+  color: var(--sh-text-secondary);
+  white-space: nowrap;
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+  sh-progress-bar — web (HTML5 + CSS). Every variant: Tone Brand / Premium / Success, at a few amounts.
+  Spec: ../sh-progress-bar.md · Figma node 2712:13063
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-progress-bar</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-progress-bar.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: calc(3 * var(--sh-space-80)); }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .usage { display: flex; flex-direction: column; gap: var(--sh-space-8); width: calc(4 * var(--sh-space-80)); }
+    .usage__head { display: flex; justify-content: space-between; }
+    .usage__value { color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-progress-bar</h1>
+
+  <h2 class="sh-title-md">Tone</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Tone=Brand</figcaption><div class="sh-progress-bar" role="progressbar" aria-label="Profile completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><span class="sh-progress-bar__progress" style="width: 60%"></span></div></figure>
+    <figure><figcaption class="sh-body-sm">Tone=Premium</figcaption><div class="sh-progress-bar sh-progress-bar--premium" role="progressbar" aria-label="Contacts viewed" aria-valuemin="0" aria-valuemax="72" aria-valuenow="10"><span class="sh-progress-bar__progress" style="width: 14%"></span></div></figure>
+    <figure><figcaption class="sh-body-sm">Tone=Success</figcaption><div class="sh-progress-bar sh-progress-bar--success" role="progressbar" aria-label="Verification" aria-valuemin="0" aria-valuemax="4" aria-valuenow="3"><span class="sh-progress-bar__progress" style="width: 75%"></span></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Amount · Tone=Brand at 0, 25, 100%</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">0%</figcaption><div class="sh-progress-bar" role="progressbar" aria-label="Profile completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="sh-progress-bar__progress" style="width: 0%"></span></div></figure>
+    <figure><figcaption class="sh-body-sm">25%</figcaption><div class="sh-progress-bar" role="progressbar" aria-label="Profile completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25"><span class="sh-progress-bar__progress" style="width: 25%"></span></div></figure>
+    <figure><figcaption class="sh-body-sm">100%</figcaption><div class="sh-progress-bar" role="progressbar" aria-label="Profile completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span class="sh-progress-bar__progress" style="width: 100%"></span></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">In use · usage</h2>
+  <div class="usage">
+    <div class="usage__head"><span class="sh-title-sm">Contacts viewed</span><span class="sh-body-sm usage__value">10 of 72</span></div>
+    <div class="sh-progress-bar sh-progress-bar--premium" role="progressbar" aria-label="Contacts viewed" aria-valuemin="0" aria-valuemax="72" aria-valuenow="10"><span class="sh-progress-bar__progress" style="width: 14%"></span></div>
+  </div>
+</body>
+</html>

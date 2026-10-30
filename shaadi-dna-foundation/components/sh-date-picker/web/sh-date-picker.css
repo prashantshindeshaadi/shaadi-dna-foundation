@@ -1,0 +1,122 @@
+/*
+ * sh-date-picker — web (HTML5 + CSS)
+ * Spec: ../sh-date-picker.md · Figma node 2719:42965 (Type Date / Time = 2 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                          all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css   .sh-body-md (options), .sh-title-md (selected)
+ *
+ * Scroll-wheel picker for a bottom sheet. Each column is a radio group; the checked row is the selection and sits
+ * on the selection band (the middle of five rows).
+ *   <div class="sh-date-picker" role="group" aria-label="Date of birth">
+ *     <span class="sh-date-picker__band" aria-hidden="true"></span>
+ *     <fieldset class="sh-date-picker__column" aria-label="Day">
+ *       <label class="sh-date-picker__option"><input type="radio" name="dob-day" value="13"><span class="sh-body-md">13</span></label>
+ *       <label class="sh-date-picker__option"><input type="radio" name="dob-day" value="14" checked><span class="sh-body-md">14</span></label>
+ *       …
+ *     </fieldset>
+ *     <fieldset class="sh-date-picker__column" aria-label="Month">…</fieldset>
+ *     <fieldset class="sh-date-picker__column" aria-label="Year">…</fieldset>
+ *   </div>
+ *
+ * Type    Date: Day · Month · Year columns · Time: Hour · Minute · Period (.sh-date-picker__column--period: AM / PM,
+ *         its other option text/tertiary instead of text/disabled; two <span class="sh-date-picker__spacer"> rows
+ *         before AM put it on the band)
+ * Rows    option: Body MD Default, text/disabled · checked: Title MD, text/primary (the checked radio is the
+ *         non-colour cue). Columns scroll and snap rows to the band when they hold more than five.
+ * State   Focus :focus-visible on a row's radio draws the focus ring on the row · Disabled [disabled] on a column
+ *         (or the group with .is-disabled): sh-opacity/disabled. Hover / Pressed have no look in Figma.
+ * Scrolling the checked row to the band and checking the row that lands on it are the app's job.
+ */
+
+.sh-date-picker {
+  --_row: var(--sh-space-40);                     /* no token: Figma Option rows are a fixed, unbound 40 */
+
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--sh-space-8);
+  width: 100%;
+  background: var(--sh-background-default);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* Selection band: behind the middle row, full width */
+.sh-date-picker__band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(2 * var(--_row));
+  height: var(--_row);
+  border-radius: var(--sh-radius-md);
+  background: var(--sh-background-soft);
+  pointer-events: none;
+}
+
+/* ---- Column --------------------------------------------------------------- */
+.sh-date-picker__column {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-width: 0;
+  max-height: calc(5 * var(--_row));
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+.sh-date-picker__column::-webkit-scrollbar { display: none; }
+
+/* ---- Row ------------------------------------------------------------------ */
+.sh-date-picker__option {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  height: var(--_row);
+  border-radius: var(--sh-radius-md);
+  color: var(--sh-text-disabled);
+  scroll-snap-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-date-picker__column--period .sh-date-picker__option { color: var(--sh-text-tertiary); }
+
+/* Empty rows that let a short column (AM / PM) rest its first option on the band */
+.sh-date-picker__spacer { flex: none; height: var(--_row); }
+
+.sh-date-picker__option input {                   /* the real radio: invisible, the row is its label */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: var(--sh-opacity-hidden);
+  cursor: inherit;
+}
+
+/* Selected: Title MD, text/primary */
+.sh-date-picker__option:has(input:checked) { color: var(--sh-text-primary); }
+.sh-date-picker__option:has(input:checked) > span {
+  font-size: var(--sh-typo-title-md-size);
+  font-weight: var(--sh-typo-title-md-weight);
+  line-height: var(--sh-typo-title-md-line-height);
+  letter-spacing: var(--sh-typo-title-md-letter-spacing);
+}
+
+/* ---- State ---------------------------------------------------------------- */
+.sh-date-picker__option:has(input:focus-visible),
+.sh-date-picker__option.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: calc(var(--sh-stroke-strong) * -1);
+}
+
+.sh-date-picker__column:disabled,
+.sh-date-picker.is-disabled {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

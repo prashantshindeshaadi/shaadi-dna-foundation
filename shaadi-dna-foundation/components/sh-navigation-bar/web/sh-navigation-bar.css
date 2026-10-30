@@ -1,0 +1,66 @@
+/*
+ * sh-navigation-bar — web (HTML5 + CSS)
+ * Spec: ../sh-navigation-bar.md · Figma node 2711:12618 (Device Mobile / Tablet / Desktop × Active Home … Premium)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-indicator/web/sh-indicator.css · components/sh-navigation-item/web/sh-navigation-item.css
+ *
+ *   <nav class="sh-navigation-bar" aria-label="Main">
+ *     <a class="sh-navigation-item" href="/" aria-current="page">…Home…</a>
+ *     <a class="sh-navigation-item" href="/matches">…Matches…</a>
+ *     <a class="sh-navigation-item" href="/inbox">…Inbox…</a>
+ *     <a class="sh-navigation-item" href="/chat">…Chat…</a>
+ *     <a class="sh-navigation-item" href="/premium">…Premium…</a>
+ *   </nav>
+ *
+ * Device  (none) Mobile: floating bottom bar, pill, five Stacked items sharing the width
+ *         --tablet: wide floating bottom bar, pill, five Inline items (sh-navigation-item--inline)
+ *         --desktop: left sidebar, a column of Inline items as wide as the bar, no pill or float shadow
+ * Active  the item for the current screen gets aria-current="page" (one only) and its Filled icon.
+ * The items are sh-navigation-item; this file only lays them out and draws the bar
+ * (background/default, border/soft edge, sh-shadow/floating on Mobile and Tablet).
+ * Place it with the page's own positioning (fixed to the bottom, or the sidebar column).
+ */
+
+.sh-navigation-bar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-4);
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-default);
+  box-shadow: var(--sh-shadow-floating-x) var(--sh-shadow-floating-y) var(--sh-shadow-floating-blur) var(--sh-shadow-floating-spread) var(--sh-shadow-floating-color);
+}
+
+/* Mobile: the five Stacked items share the bar's width equally */
+.sh-navigation-bar > .sh-navigation-item {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ---- Device=Tablet ------------------------------------------------------- */
+.sh-navigation-bar--tablet {
+  justify-content: space-between;
+}
+.sh-navigation-bar--tablet > .sh-navigation-item { flex: none; }
+
+/* ---- Device=Desktop ------------------------------------------------------ */
+.sh-navigation-bar--desktop {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--sh-space-4);
+  height: 100%;
+  padding: var(--sh-space-16);
+  border-radius: 0;
+  box-shadow: none;
+}
+.sh-navigation-bar--desktop > .sh-navigation-item {
+  display: flex;
+  flex: none;
+  justify-content: flex-start;
+}

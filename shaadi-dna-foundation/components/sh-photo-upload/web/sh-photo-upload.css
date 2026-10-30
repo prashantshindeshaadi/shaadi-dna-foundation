@@ -1,0 +1,146 @@
+/*
+ * sh-photo-upload — web (HTML5 + CSS)
+ * Spec: ../sh-photo-upload.md · Figma node 2719:42897 (State Empty / Uploading / Error / Done = 4 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css                              all --sh-* tokens
+ *   dist/sh-typo-kit/developer/web/sh-typo.css       .sh-support-label
+ *   components/sh-icon/web/sh-icon.css               .sh-icon
+ *   components/sh-spinner/web/sh-spinner.css         Uploading loader
+ *   components/sh-icon-button/web/sh-icon-button.css Done: the Remove photo button (Translucent, Small)
+ *
+ * One photo slot (4:5, fills its grid cell). Place several in a grid.
+ *   Empty      <label class="sh-photo-upload">
+ *                <input class="sh-photo-upload__input" type="file" accept="image/*">
+ *                <span class="sh-photo-upload__icon sh-icon sh-icon--24" style="--icon:url(icons/line/plus-circle.svg)" aria-hidden="true"></span>
+ *                <span class="sh-photo-upload__label sh-support-label">Add photo</span>
+ *              </label>
+ *   Uploading  <div class="sh-photo-upload sh-photo-upload--uploading" role="status" aria-busy="true">
+ *                <img class="sh-photo-upload__image" src="…" alt="">
+ *                <span class="sh-spinner sh-spinner--inverse" aria-hidden="true"><span class="sh-icon sh-spinner__icon" style="--icon:url(icons/line/loader-circle.svg)"></span></span>
+ *                <span class="sh-photo-upload__label sh-support-label">Uploading</span>
+ *              </div>
+ *   Error      <button class="sh-photo-upload sh-photo-upload--error" type="button">
+ *                <span class="sh-photo-upload__icon sh-icon sh-icon--24" style="--icon:url(icons/line/refresh.svg)" aria-hidden="true"></span>
+ *                <span class="sh-photo-upload__label sh-support-label">Retry</span>
+ *              </button>
+ *   Done       <div class="sh-photo-upload sh-photo-upload--done">
+ *                <img class="sh-photo-upload__image" src="…" alt="Your photo 1">
+ *                <button class="sh-photo-upload__remove sh-icon-button sh-icon-button--translucent sh-icon-button--sm" type="button" aria-label="Remove photo">
+ *                  <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/close.svg)" aria-hidden="true"></span>
+ *                </button>
+ *              </div>
+ *
+ * State  (none) Empty: background/soft, border/strong edge, icon + label brand
+ *        --uploading: the photo under overlay/scrim/default, loader and label text/on-image
+ *        --error: semantic/error soft fill, border and on-soft label / icon
+ *        --done: the photo; Remove photo is sh-icon-button Translucent Small (glass over the photo)
+ *        Empty and Error are tappable: Focus :focus-visible (.is-focus forces it), Disabled [disabled] on the
+ *        button / file input (sh-opacity/disabled). Hover / Pressed have no look in Figma.
+ * Corners sh-radius/media on every state.
+ */
+
+.sh-photo-upload {
+  --_bg: var(--sh-background-soft);
+  --_edge: var(--sh-border-strong);
+  --_fg: var(--sh-text-brand);
+  --_icon: var(--sh-icon-brand);
+
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sh-space-4);
+  width: 100%;
+  aspect-ratio: 4 / 5;                            /* Figma: 104 × 130 */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: var(--sh-stroke-default) solid var(--_edge);   /* Figma: stroke weight not in the blueprint */
+  border-radius: var(--sh-radius-media);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sh-photo-upload__icon { --sh-icon-paint: var(--_icon); }
+.sh-photo-upload__label { color: var(--_fg); }
+
+/* Empty: the real file input covers the slot, invisible */
+.sh-photo-upload__input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: var(--sh-opacity-hidden);
+  cursor: pointer;
+}
+
+/* The photo (Uploading, Done) fills the slot */
+.sh-photo-upload__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Uploading ------------------------------------------------------------ */
+.sh-photo-upload--uploading,
+.sh-photo-upload--done {
+  --_bg: var(--sh-background-transparent);
+  --_edge: var(--sh-background-transparent);
+  border-width: 0;
+  cursor: default;
+}
+.sh-photo-upload--uploading {
+  --_fg: var(--sh-text-on-image);
+}
+.sh-photo-upload--uploading::before {          /* Scrim: overlay/scrim/default over the photo */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--sh-overlay-scrim-default);
+}
+/* The loader over the scrim takes icon/on-image (sh-spinner has no On image tone; see the report) */
+.sh-photo-upload--uploading .sh-spinner { --_color: var(--sh-icon-on-image); }
+
+/* ---- Error ---------------------------------------------------------------- */
+.sh-photo-upload--error {
+  --_bg: var(--sh-semantic-error-background-soft-default);
+  --_edge: var(--sh-semantic-error-border-default);
+  --_fg: var(--sh-semantic-error-text-on-soft);
+  --_icon: var(--sh-semantic-error-icon-on-soft);
+}
+
+/* ---- Done: Remove photo in the top-right corner --------------------------- */
+.sh-photo-upload__remove {
+  position: absolute;
+  top: var(--sh-space-4);                         /* no token in the blueprint for the button's inset */
+  right: var(--sh-space-4);
+}
+
+/* ---- State ---------------------------------------------------------------- */
+.sh-photo-upload:focus { outline: none; }
+.sh-photo-upload:focus-visible,
+.sh-photo-upload:has(.sh-photo-upload__input:focus-visible),
+.sh-photo-upload.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+
+.sh-photo-upload:disabled,
+.sh-photo-upload:has(.sh-photo-upload__input:disabled) {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

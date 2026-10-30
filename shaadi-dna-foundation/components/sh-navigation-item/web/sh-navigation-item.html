@@ -1,0 +1,67 @@
+<!doctype html>
+<!--
+  sh-navigation-item — web (HTML5 + CSS). Every variant: Layout Stacked / Inline × Active false / true,
+  plus Show badge (Count, Dot, Error) and the Focus / Disabled states.
+  Spec: ../sh-navigation-item.md · Figma node 2711:12054
+  icons/line/matches.svg and icons/filled/matches.svg are not in the icon pack yet; that icon is blank until they are added.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-navigation-item</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-indicator/web/sh-indicator.css">
+  <link rel="stylesheet" href="sh-navigation-item.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-navigation-item</h1>
+
+  <h2 class="sh-title-md">Layout=Stacked</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Layout=Stacked, Active=false</figcaption>
+      <a class="sh-navigation-item" href="#" aria-label="Inbox, 12 new"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/inbox.svg)" aria-hidden="true"></span><span class="sh-navigation-item__badge sh-indicator" aria-hidden="true"><span class="sh-indicator__count sh-support-label">12</span></span></span><span class="sh-navigation-item__label sh-body-sm">Inbox</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Layout=Stacked, Active=true</figcaption>
+      <a class="sh-navigation-item" href="#" aria-current="page" aria-label="Home, 12 new"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/filled/shaadi.svg)" aria-hidden="true"></span><span class="sh-navigation-item__badge sh-indicator" aria-hidden="true"><span class="sh-indicator__count sh-support-label">12</span></span></span><span class="sh-navigation-item__label sh-body-sm">Home</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Show badge=false</figcaption>
+      <a class="sh-navigation-item" href="#"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/chat.svg)" aria-hidden="true"></span></span><span class="sh-navigation-item__label sh-body-sm">Chat</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Show badge=true · Dot</figcaption>
+      <a class="sh-navigation-item" href="#" aria-label="Premium, new"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/premium.svg)" aria-hidden="true"></span><span class="sh-navigation-item__badge sh-indicator sh-indicator--dot" aria-hidden="true"></span></span><span class="sh-navigation-item__label sh-body-sm">Premium</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Show badge=true · Error</figcaption>
+      <a class="sh-navigation-item" href="#" aria-label="Chat, 3 failed"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/chat.svg)" aria-hidden="true"></span><span class="sh-navigation-item__badge sh-indicator sh-indicator--error" aria-hidden="true"><span class="sh-indicator__count sh-support-label">3</span></span></span><span class="sh-navigation-item__label sh-body-sm">Chat</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Icon=matches (not in pack yet)</figcaption>
+      <a class="sh-navigation-item" href="#"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/matches.svg)" aria-hidden="true"></span></span><span class="sh-navigation-item__label sh-body-sm">Matches</span></a></figure>
+  </div>
+
+  <h2 class="sh-title-md">Layout=Inline</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Layout=Inline, Active=false</figcaption>
+      <a class="sh-navigation-item sh-navigation-item--inline" href="#" aria-label="Inbox, 12 new"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/inbox.svg)" aria-hidden="true"></span><span class="sh-navigation-item__badge sh-indicator" aria-hidden="true"><span class="sh-indicator__count sh-support-label">12</span></span></span><span class="sh-navigation-item__label sh-title-md">Inbox</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Layout=Inline, Active=true</figcaption>
+      <a class="sh-navigation-item sh-navigation-item--inline" href="#" aria-current="page" aria-label="Home, 12 new"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/filled/shaadi.svg)" aria-hidden="true"></span><span class="sh-navigation-item__badge sh-indicator" aria-hidden="true"><span class="sh-indicator__count sh-support-label">12</span></span></span><span class="sh-navigation-item__label sh-title-md">Home</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Show badge=false</figcaption>
+      <a class="sh-navigation-item sh-navigation-item--inline" href="#"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/premium.svg)" aria-hidden="true"></span></span><span class="sh-navigation-item__label sh-title-md">Premium</span></a></figure>
+  </div>
+
+  <h2 class="sh-title-md">States</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Focus (Stacked)</figcaption>
+      <a class="sh-navigation-item is-focus" href="#"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/chat.svg)" aria-hidden="true"></span></span><span class="sh-navigation-item__label sh-body-sm">Chat</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Focus (Inline, Active)</figcaption>
+      <a class="sh-navigation-item sh-navigation-item--inline is-focus" href="#" aria-current="page"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/filled/inbox.svg)" aria-hidden="true"></span></span><span class="sh-navigation-item__label sh-title-md">Inbox</span></a></figure>
+    <figure><figcaption class="sh-body-sm">Disabled (Stacked)</figcaption>
+      <a class="sh-navigation-item" aria-disabled="true"><span class="sh-navigation-item__icon-wrap"><span class="sh-navigation-item__icon sh-icon sh-icon--24" style="--icon:url(../../../icons/line/premium.svg)" aria-hidden="true"></span></span><span class="sh-navigation-item__label sh-body-sm">Premium</span></a></figure>
+  </div>
+  <p class="note sh-body-sm">Figma defines no Hover or Pressed look for navigation items.</p>
+</body>
+</html>

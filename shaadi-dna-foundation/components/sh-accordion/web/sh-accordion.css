@@ -1,0 +1,91 @@
+/*
+ * sh-accordion — web (HTML5 + CSS)
+ * Spec: ../sh-accordion.md · Figma node 2718:41883 (State Collapsed / Expanded)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-divider/web/sh-divider.css (Divider)
+ *
+ *   <div class="sh-accordion">
+ *     <details class="sh-accordion__details">                     add the open attribute for State=Expanded
+ *       <summary class="sh-accordion__header">
+ *         <span class="sh-accordion__title sh-title-md">How do I get a refund?</span>
+ *         <span class="sh-accordion__chevron sh-icon sh-icon--20" style="--icon:url(icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+ *       </summary>
+ *       <div class="sh-accordion__content">
+ *         <p class="sh-accordion__body sh-body-md">Raise a refund request within 30 days of purchase …</p>
+ *       </div>
+ *     </details>
+ *     <hr class="sh-accordion__divider sh-divider sh-divider--soft">
+ *   </div>
+ *
+ * State     Collapsed (no open attribute) · Expanded (<details open>). The browser toggles it; the chevron turns
+ *           to point up. The divider sits outside <details> so it also shows while collapsed.
+ * Show divider  include or leave out the sh-divider (Type Soft). Stack rows and leave it off the last one.
+ * Header    is the whole tap area (≥ 48 tall: Title/MD line + 16 padding each side).
+ *           Focus :focus-visible ring; disabled [aria-disabled="true"] on the root.
+ *           Figma draws no Hover or Pressed look for this component, so none is drawn here.
+ */
+
+.sh-accordion {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-accordion__details { display: block; }
+
+/* ---- Header -------------------------------------------------------------- */
+.sh-accordion__header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-12);
+  padding: var(--sh-space-16);
+  border-radius: var(--sh-radius-none);   /* square row: the focus ring follows it */
+  color: var(--sh-text-primary);
+  list-style: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sh-accordion__header::-webkit-details-marker { display: none; }
+.sh-accordion__header::marker { content: ""; }
+
+.sh-accordion__title {
+  flex: 1 1 0;
+  min-width: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-accordion .sh-accordion__chevron {
+  width: var(--sh-icon-size-20);
+  height: var(--sh-icon-size-20);
+  color: var(--sh-icon-primary);
+}
+.sh-accordion__details[open] .sh-accordion__chevron { transform: rotate(180deg); }
+
+/* ---- Content (State=Expanded) -------------------------------------------- */
+.sh-accordion__content {
+  padding: var(--sh-space-0) var(--sh-space-16) var(--sh-space-16);
+}
+.sh-accordion__body {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-accordion__divider { flex: none; }
+
+/* ---- State --------------------------------------------------------------- */
+.sh-accordion__header:focus { outline: none; }
+.sh-accordion__header:focus-visible,
+.sh-accordion__header.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}
+.sh-accordion[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  pointer-events: none;
+}

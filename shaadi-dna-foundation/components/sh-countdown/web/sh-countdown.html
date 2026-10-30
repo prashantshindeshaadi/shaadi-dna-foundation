@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+  sh-countdown — web (HTML5 + CSS). Every variant: Style Boxed / Inline, plus both in use on a card row.
+  Spec: ../sh-countdown.md · Figma node 2718:41900
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-countdown</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-countdown.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-countdown</h1>
+
+  <h2 class="sh-title-md">Style</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Style=Boxed</figcaption>
+      <span class="sh-countdown" role="timer" aria-label="Offer ends in 2 hours 14 minutes 30 seconds">
+        <span class="sh-countdown__label sh-support-label">Offer ends in</span>
+        <span class="sh-countdown__time" aria-hidden="true">
+          <span class="sh-countdown__box sh-title-sm">02</span><span class="sh-countdown__colon sh-title-sm">:</span>
+          <span class="sh-countdown__box sh-title-sm">14</span><span class="sh-countdown__colon sh-title-sm">:</span>
+          <span class="sh-countdown__box sh-title-sm">30</span>
+        </span>
+      </span>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Style=Inline</figcaption>
+      <span class="sh-countdown sh-countdown--inline" role="timer" aria-label="Offer ends in 2 hours 14 minutes 30 seconds">
+        <span class="sh-countdown__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/timer.svg)" aria-hidden="true"></span>
+        <span class="sh-countdown__label sh-body-sm">Offer ends in</span>
+        <span class="sh-countdown__time sh-title-sm" aria-hidden="true">02:14:30</span>
+      </span>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Other content</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Style=Boxed · Diwali sale</figcaption>
+      <span class="sh-countdown" role="timer" aria-label="Sale ends in 9 hours 5 minutes">
+        <span class="sh-countdown__label sh-support-label">Sale ends in</span>
+        <span class="sh-countdown__time" aria-hidden="true">
+          <span class="sh-countdown__box sh-title-sm">09</span><span class="sh-countdown__colon sh-title-sm">:</span>
+          <span class="sh-countdown__box sh-title-sm">05</span><span class="sh-countdown__colon sh-title-sm">:</span>
+          <span class="sh-countdown__box sh-title-sm">48</span>
+        </span>
+      </span>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Style=Inline · Gold plan</figcaption>
+      <span class="sh-countdown sh-countdown--inline" role="timer" aria-label="40% off ends in 23 minutes">
+        <span class="sh-countdown__icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/timer.svg)" aria-hidden="true"></span>
+        <span class="sh-countdown__label sh-body-sm">40% off ends in</span>
+        <span class="sh-countdown__time sh-title-sm" aria-hidden="true">00:23:10</span>
+      </span>
+    </figure>
+  </div>
+</body>
+</html>

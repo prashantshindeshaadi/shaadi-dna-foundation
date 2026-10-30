@@ -1,0 +1,45 @@
+/*
+ * sh-profile-identity — web (HTML5 + CSS)
+ * Spec: ../sh-profile-identity.md · Figma node 3698:79779 (one variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css ·
+ *   components/profile-card/sh-user-images/web/sh-user-images.css · components/sh-avatar/web/sh-avatar.css (photo)
+ *
+ *   <div class="sh-profile-identity">
+ *     <span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true">
+ *       <span class="sh-avatar__media"><span class="sh-user-image"><img src="member.jpg" alt=""></span></span>
+ *     </span>
+ *     <div class="sh-profile-identity__text">
+ *       <p class="sh-profile-identity__name sh-heading-sm">Meher Randhawa</p>
+ *       <p class="sh-profile-identity__subtitle sh-body-md">Managed by Parent</p>
+ *     </div>
+ *   </div>
+ *
+ * Photo       the nested sh-avatar, Size lg, Type Image (the member's photo). A member with no photo: sh-avatar
+ *             with the no-photo art (see sh-avatar). The name names her, so the avatar is aria-hidden.
+ * Show subtitle  include or leave out __subtitle ("Managed by …" or another one-line subtitle).
+ * Centred, for the Visual area of member sheets and pages. Not interactive: no states.
+ */
+
+.sh-profile-identity {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-12);
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-profile-identity__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-0);
+  width: 100%;
+  min-width: 0;
+}
+.sh-profile-identity__name     { margin: 0; color: var(--sh-text-primary); }
+.sh-profile-identity__subtitle { margin: 0; color: var(--sh-text-tertiary); }
