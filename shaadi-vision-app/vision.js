@@ -27,7 +27,15 @@
   ];
 
   const state = { tokens: {}, catalog: { components: [], icons: {} }, stories: [], typo: [] };
-  const ui = { compQuery: "", compWebOnly: false, iconKind: "line", iconQuery: "" };
+  const ui = { compQuery: "", compWebOnly: false, compStatus: "all", iconKind: "line", iconQuery: "" };
+
+  // Component life (FOUNDATION.md §8). Colours are §4.2 soft pairs; the word itself is the non-colour cue.
+  const STATUS = {
+    "draft": { label: "Draft", hint: "Still being designed in Figma" },
+    "proposed": { label: "Proposed", hint: "Ready for dev: blueprint and draft code in this repo" },
+    "in-refinement": { label: "In refinement", hint: "A developer is building it properly" },
+    "core": { label: "Core", hint: "Released in the developers' library, Figma aligned" },
+  };
 
   const $main = document.getElementById("main");
   const $nav = document.getElementById("nav");
@@ -111,7 +119,12 @@
         ${stat("#/catalog/components", comps.filter((c) => c.demo).length, "With web code")}
         ${stat("#/catalog/icons", nIcons, "Icons")}
         ${stat(state.stories[0] ? `#/stories/${state.stories[0].id}` : "#/catalog", state.stories.length, "Stories")}
-      </div>`;
+      </div>
+      <section class="vn-section"><h2 class="sh-title-lg">Component status</h2><div class="vn-stats">${
+        Object.entries(STATUS).map(([id, s]) => `<a class="vn-card" href="#/catalog/components" data-go-status="${id}">
+          <span class="sh-display vn-stat">${comps.filter((c) => c.status === id).length}</span>
+          <span class="vn-status vn-status--${id} sh-support-label">${s.label}</span>
+          <span class="sh-body-sm vn-muted">${s.hint}</span></a>`).join("")}</div></section>`;
   }
 
   // ---------- catalog: tokens ----------
@@ -214,6 +227,8 @@
 
   // ---------- catalog: components ----------
 
+  const statusBadge = (c) => `<span class="vn-status vn-status--${esc(c.status)} sh-support-label" title="${esc(STATUS[c.status].hint)}${c.statusSet ? "" : " (default)"}">${esc(STATUS[c.status].label)}</span>`;
+
   function platformPills(c) {
     return ["Web", "Compose", "SwiftUI"].map((p) => {
       const on = c.platforms.includes(p);
@@ -222,23 +237,28 @@
   }
 
   function pageComponents() {
-    return head("Components", "Every sh-* component in the foundation, grouped as in Figma. Core is in the system; migration groups are still moving in.") +
+    return head("Components", "Every sh-* component in the foundation, grouped as in Figma. The badge is where each one is: Draft → Proposed → In refinement → Core.") +
       `<div class="vn-tools">
         <input class="vn-search sh-body-md" type="search" placeholder="Search name, purpose or keyword" aria-label="Search components" value="${esc(ui.compQuery)}" data-comp-search>
         <label class="vn-check sh-body-md"><input type="checkbox" data-comp-web${ui.compWebOnly ? " checked" : ""}> Has web code</label>
-      </div><div data-comp-list></div>`;
+      </div><div class="vn-tabs" role="tablist" aria-label="Status" data-status-tabs></div><div data-comp-list></div>`;
   }
   function renderComponentList() {
     const box = document.querySelector("[data-comp-list]");
     if (!box) return;
     const q = ui.compQuery.trim().toLowerCase();
-    const hit = (c) => (!ui.compWebOnly || c.demo) && (!q || [c.name, c.purpose, ...c.keywords].join(" ").toLowerCase().includes(q));
+    const match = (c) => (!ui.compWebOnly || c.demo) && (!q || [c.name, c.purpose, ...c.keywords].join(" ").toLowerCase().includes(q));
+    const hit = (c) => match(c) && (ui.compStatus === "all" || c.status === ui.compStatus);
+    const tabs = document.querySelector("[data-status-tabs]");
+    const counted = state.catalog.components.filter(match);
+    tabs.innerHTML = [["all", "All"], ...Object.entries(STATUS).map(([id, s]) => [id, s.label])].map(([id, label]) =>
+      `<button type="button" class="vn-tab sh-button-sm" role="tab" aria-selected="${ui.compStatus === id}" data-status="${id}">${label} · ${id === "all" ? counted.length : counted.filter((c) => c.status === id).length}</button>`).join("");
     const groups = {};
     for (const c of state.catalog.components.filter(hit)) (groups[c.group] ||= []).push(c);
     const order = Object.keys(groups).sort((a, b) => (a === "Core" ? -1 : b === "Core" ? 1 : a.localeCompare(b)));
     box.innerHTML = order.map((g) => `<section class="vn-section"><h2 class="sh-title-lg">${esc(g)} · ${groups[g].length}</h2><div class="vn-grid">${
       groups[g].map((c) => `<a class="vn-card vn-comp" href="#/catalog/components/${esc(c.name)}">
-        <div class="vn-comp__top"><span class="sh-title-md">${esc(c.name)}</span><span class="sh-support-meta vn-muted">${c.variants} var.</span></div>
+        <div class="vn-comp__top"><span class="sh-title-md">${esc(c.name)}</span>${statusBadge(c)}</div>
         <p class="sh-body-sm">${esc(c.purpose || "No purpose line in the blueprint yet.")}</p>
         <div class="vn-pills">${platformPills(c)}</div></a>`).join("")}</div></section>`).join("") ||
       `<p class="vn-muted sh-body-md">No component matches.</p>`;
@@ -257,7 +277,8 @@
       : `<div class="vn-empty"><span class="sh-title-md">No web code yet</span><span class="sh-body-md">The blueprint is ready; the web build of ${esc(c.name)} hasn't been written. Platforms with code: ${esc(c.platforms.join(", ") || "none")}.</span></div>`;
     return `<p class="sh-support-label vn-muted"><a href="#/catalog/components">Components</a> / ${esc(c.group)}</p>` +
       head(c.name, esc(c.purpose)) +
-      `<div class="vn-pills">${platformPills(c)}<span class="vn-pill sh-support-meta">${c.variants} variants</span></div>
+      `<div class="vn-pills">${statusBadge(c)}${platformPills(c)}<span class="vn-pill sh-support-meta">${c.variants} variants</span></div>
+       <p class="sh-body-sm vn-muted" style="margin-top:var(--sh-space-8)">${esc(STATUS[c.status].hint)}${c.statusSet ? "" : " · default for its Figma page, not set in components/status.json"}${c.owner ? ` · owner ${esc(c.owner)}` : ""}${c.note ? ` · ${esc(c.note)}` : ""}${c.mr ? ` · <a href="${esc(c.mr)}" target="_blank" rel="noopener">merge request</a>` : ""}</p>
        ${c.keywords.length ? `<div class="vn-pills" style="margin-top:var(--sh-space-8)">${c.keywords.map((k) => `<span class="vn-pill sh-support-meta">${esc(k)}</span>`).join("")}</div>` : ""}
        <div class="vn-links">${links}</div>
        <section class="vn-section"><h2 class="sh-title-lg">Live web build</h2>${demo}</section>`;
@@ -352,6 +373,10 @@
     if (e.target.matches("[data-comp-web]")) { ui.compWebOnly = e.target.checked; renderComponentList(); }
   });
   $main.addEventListener("click", (e) => {
+    const go = e.target.closest("[data-go-status]");
+    if (go) ui.compStatus = go.dataset.goStatus;
+    const st = e.target.closest("[data-status]");
+    if (st) { ui.compStatus = st.dataset.status; renderComponentList(); return; }
     const tab = e.target.closest("[data-icon-kind]");
     if (tab) { ui.iconKind = tab.dataset.iconKind; document.querySelectorAll("[data-icon-kind]").forEach((t) => t.setAttribute("aria-selected", String(t === tab))); renderIconGrid(); }
   });

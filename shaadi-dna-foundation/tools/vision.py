@@ -4,20 +4,22 @@ Build the Vision app's catalogue manifest.
 
     python3 tools/vision.py        (build.py runs it too)
 
-Reads every component blueprint (components/**/<sh-name>.md) and the icon folders, and writes
-dist/vision/catalog.json for vision/index.html: name, group, purpose, keywords, variant count,
-Figma link, blueprint path, which platforms have code, and the web demo page if there is one.
-Paths are relative to the repo root. Standard library only.
+Reads every component blueprint (components/**/<sh-name>.md), components/status.json and the icon
+folders, and writes dist/vision/catalog.json for the Shaadi Vision App (../shaadi-vision-app): name,
+group, status, purpose, keywords, variant count, Figma link, blueprint path, which platforms have code,
+and the web demo page if there is one. Paths are relative to shaadi-dna-foundation/. Standard library only.
 """
 import json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COMPONENTS = os.path.join(ROOT, "components")
 ICONS = os.path.join(ROOT, "icons")
+STATUS = os.path.join(COMPONENTS, "status.json")
 OUT = os.path.join(ROOT, "dist", "vision", "catalog.json")
 
 HEADER = re.compile(r"^(?P<group>[^·\n]+?) · (?P<variants>\d+) variants? · \[Open in Figma\]\((?P<figma>[^)]+)\)", re.M)
 PLATFORMS = (("web", "Web"), ("compose", "Compose"), ("swiftui", "SwiftUI"))
+STATUSES = ("draft", "proposed", "in-refinement", "core")   # FOUNDATION.md §8, in order
 
 
 def field(text, label):
@@ -58,6 +60,24 @@ def components():
     return sorted(found, key=lambda c: c["name"])
 
 
+def apply_status(found):
+    """Status from components/status.json; unlisted: Core page = proposed, migration pages = draft."""
+    listed = json.load(open(STATUS, encoding="utf-8")).get("components", {}) if os.path.isfile(STATUS) else {}
+    names = {c["name"] for c in found}
+    for name, entry in listed.items():
+        if name not in names:
+            print(f"  WARN  components/status.json: no component named {name}")
+        if entry.get("status") not in STATUSES:
+            raise SystemExit(f"components/status.json: {name} has status {entry.get('status')!r}, use one of {', '.join(STATUSES)}")
+    for c in found:
+        entry = listed.get(c["name"])
+        if entry:
+            c.update(status=entry["status"], statusSet=True, mr=entry.get("mr", ""), owner=entry.get("owner", ""), note=entry.get("note", ""))
+        else:
+            c.update(status="proposed" if c["group"] == "Core" else "draft", statusSet=False, mr="", owner="", note="")
+    return found
+
+
 def icons():
     out = {}
     for kind in sorted(os.listdir(ICONS)):
@@ -68,7 +88,7 @@ def icons():
 
 
 def main():
-    data = {"components": components(), "icons": icons()}
+    data = {"statuses": list(STATUSES), "components": apply_status(components()), "icons": icons()}
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     content = json.dumps(data, indent=1, ensure_ascii=False)
     open(OUT, "w", encoding="utf-8").write(content)

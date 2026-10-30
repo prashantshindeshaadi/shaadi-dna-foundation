@@ -1,0 +1,9 @@
+{
+ "_about": [
+  "Where each sh-* component is in its life: draft -> proposed -> in-refinement -> core (FOUNDATION.md §8).",
+  "Hand-kept: blueprints are generated from Figma, this file is not. Change a status in the same commit as the work that changed it.",
+  "Unlisted components take a default: Core page = proposed, migration pages = draft. Nothing is core until a developer release.",
+  "Each entry: status (required), mr (link to the merge request, for in-refinement and core), owner, note."
+ ],
+ "components": {}
+}
