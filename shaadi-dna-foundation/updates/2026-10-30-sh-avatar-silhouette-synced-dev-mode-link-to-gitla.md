@@ -8,6 +8,8 @@
   update stand unchanged.
 - Status: Draft → Synced in `components/status.json`.
 - Figma Dev Mode: the set now has a Markdown Code Connect link to its blueprint on GitLab (it had none).
+- Blueprint regenerated from a fresh Figma read: its **Code** line now lists the Compose and SwiftUI
+  files (ShAvatarSilhouette) added in the same day's Compose/SwiftUI commit. Nothing else differed.
 
 ## Why
 The designer asked to push both silhouettes. They were already in the repo; what was missing was the
