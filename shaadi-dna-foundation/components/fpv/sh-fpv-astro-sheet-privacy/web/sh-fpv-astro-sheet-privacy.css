@@ -1,0 +1,38 @@
+/*
+ * sh-fpv-astro-sheet-privacy — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-astro-sheet-privacy.md · Figma node 2891:65417 (one variant)
+ *
+ * Two sh-list Type=Grouped rows (Position Start + End) inside the Astro match sheet's side margins.
+ * All the row look is sh-list-grouped / sh-list-default; this file only places them.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-list-default/web/sh-list-default.css ·
+ *   components/sh-list-grouped/web/sh-list-grouped.css · components/sh-list/web/sh-list.css
+ *
+ *   <section class="sh-fpv-astro-sheet-privacy" aria-label="Privacy">
+ *     <div class="sh-fpv-astro-sheet-privacy__rows">
+ *       <div class="sh-list sh-list--grouped"><div class="sh-list-grouped sh-list-grouped--start"> …row… </div></div>
+ *       <div class="sh-list sh-list--grouped"><div class="sh-list-grouped sh-list-grouped--end"> …row… </div></div>
+ *     </div>
+ *   </section>
+ *
+ * Parts  root (sh-space/32 at the sides) · __rows (the stacked sh-list rows).
+ * States are the rows' (sh-list-default: focus ring, disabled; Figma draws no hover / pressed).
+ * The blueprint names no row content, no vertical padding and no gap between rows (see the report): the rows
+ * stack edge to edge as one group, sh-space/16 above and below.
+ */
+
+.sh-fpv-astro-sheet-privacy {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--sh-space-16) var(--sh-space-32);
+}
+
+.sh-fpv-astro-sheet-privacy__rows {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

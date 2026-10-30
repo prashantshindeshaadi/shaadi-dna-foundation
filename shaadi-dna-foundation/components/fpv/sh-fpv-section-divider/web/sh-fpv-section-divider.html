@@ -1,0 +1,37 @@
+<!doctype html>
+<!--
+  sh-fpv-section-divider — web (HTML5 + CSS). The one variant, alone and between two sections.
+  Spec: ../sh-fpv-section-divider.md · Figma node 2877:15706
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-section-divider</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-divider/web/sh-divider.css">
+  <link rel="stylesheet" href="sh-fpv-section-divider.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .section { padding: var(--sh-space-16) var(--sh-space-32); background: var(--sh-background-default); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-section-divider</h1>
+
+  <h2 class="sh-title-md">Default</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-fpv-section-divider</figcaption>
+      <div class="sh-fpv-section-divider"><hr class="sh-divider sh-divider--soft"></div></figure>
+    <figure><figcaption class="sh-body-sm">Between two sections</figcaption>
+      <div class="section sh-body-md">About Meher</div>
+      <div class="sh-fpv-section-divider"><hr class="sh-divider sh-divider--soft"></div>
+      <div class="section sh-body-md">Family details</div></figure>
+  </div>
+</body>
+</html>

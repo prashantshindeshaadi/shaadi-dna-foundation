@@ -1,0 +1,24 @@
+/*
+ * sh-fpv-section-divider — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-section-divider.md · Figma node 2877:15706 (one variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · components/sh-divider/web/sh-divider.css
+ *
+ *   <div class="sh-fpv-section-divider">
+ *     <hr class="sh-divider sh-divider--soft">
+ *   </div>
+ *
+ * Parts  root (background/default; sh-space/32 at the sides, sh-space/gap/card above and below) ·
+ *        the sh-divider Horizontal Soft rule inside (its look is sh-divider's).
+ * Sits between two FPV sections and fills the width. Not interactive.
+ */
+
+.sh-fpv-section-divider {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--sh-space-gap-card) var(--sh-space-32);
+  background: var(--sh-background-default);
+}

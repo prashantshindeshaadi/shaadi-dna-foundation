@@ -1,0 +1,77 @@
+/*
+ * sh-fpv-section-title — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-section-title.md · Figma node 2898:66490 (one variant; Title, Show badge, Show action,
+ * Show subtitle, Subtitle)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css
+ *
+ *   <div class="sh-fpv-section-title">
+ *     <div class="sh-fpv-section-title__top">
+ *       <div class="sh-fpv-section-title__title-group">
+ *         <div class="sh-fpv-section-title__title-row">
+ *           <h2 class="sh-fpv-section-title__title sh-heading-sm">Astro</h2>
+ *           <span class="sh-fpv-section-title__badge sh-fpv-asset-premium-badge">…art…</span>     Show badge
+ *         </div>
+ *       </div>
+ *       <button class="sh-fpv-section-title__action sh-button sh-button--premium-soft sh-button--sm" type="button">
+ *         <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span>
+ *       </button>                                                                                  Show action
+ *     </div>
+ *     <p class="sh-fpv-section-title__subtitle sh-body-md">Subtitle</p>                            Show subtitle
+ *   </div>
+ *
+ * Parts   __top (row, gap sh-space/gap/form) · __title-group · __title-row · __title (sh-typo/Heading/SM, text/primary) ·
+ *         __badge (sh-fpv-asset/premium-badge) · __action (sh-button Small; its type and label are picked per use) ·
+ *         __subtitle (sh-typo/Body/MD/Default, text/secondary)
+ * Switches  Show badge / Show action / Show subtitle: include or leave out the part.
+ * Viewer rule (premium sections: Astro, Contact, Education & Career, Photo Album):
+ *         Free viewer    → no badge + Unlock (sh-button--premium-soft); Unlock opens the premium plans page.
+ *         Premium viewer → badge + View (sh-button--tertiary).
+ *         Other actions (e.g. Add details) are sh-button--tertiary with no badge. Tit-for-tat states: no button
+ *         unless the section is a premium feature.
+ * States  belong to the sh-button (hover, pressed, focus, disabled, 48 tap area). The title itself is not interactive.
+ */
+
+.sh-fpv-section-title {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--sh-space-8) var(--sh-space-0);
+}
+
+.sh-fpv-section-title__top {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-gap-form);
+  min-width: 0;
+}
+
+.sh-fpv-section-title__title-group {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sh-fpv-section-title__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);   /* no token bound in Figma for the title-to-badge gap → sh-space/4 (see the report) */
+  min-width: 0;
+}
+
+.sh-fpv-section-title__title {
+  min-width: 0;
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-section-title__action { flex: none; }
+
+.sh-fpv-section-title__subtitle {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}

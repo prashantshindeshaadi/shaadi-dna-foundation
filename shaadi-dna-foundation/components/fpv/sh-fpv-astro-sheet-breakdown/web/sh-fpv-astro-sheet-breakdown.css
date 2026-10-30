@@ -1,0 +1,98 @@
+/*
+ * sh-fpv-astro-sheet-breakdown — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-astro-sheet-breakdown.md · Figma node 2891:64631 (Style North / South)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-tab-item/web/sh-tab-item.css · components/sh-segmented-control/web/sh-segmented-control.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-list-default/web/sh-list-default.css ·
+ *   components/sh-list-score/web/sh-list-score.css · components/sh-list/web/sh-list.css ·
+ *   components/sh-button/web/sh-button.css (only with the hidden section header)
+ *
+ *   <section class="sh-fpv-astro-sheet-breakdown">
+ *     <div class="sh-fpv-astro-sheet-breakdown__koota">
+ *       <div class="sh-fpv-astro-sheet-breakdown__filters">
+ *         <h3 class="sh-fpv-astro-sheet-breakdown__filters-title sh-title-sm">Compatibility details</h3>
+ *         <div class="sh-segmented-control" role="tablist" aria-label="Chart"> two sh-tab-item--segmented </div>
+ *       </div>
+ *       <div class="sh-fpv-astro-sheet-breakdown__section-header">                     hidden in Figma
+ *         <h4 class="sh-fpv-astro-sheet-breakdown__section-title sh-heading-sm">Guna Milan</h4>
+ *         <button class="sh-button sh-button--premium-solid sh-button--sm" type="button">…Unlock…</button>
+ *       </div>
+ *       <p class="sh-fpv-astro-sheet-breakdown__summary sh-body-md">28 of 36 points match between you</p>   hidden in Figma
+ *       <ul class="sh-fpv-astro-sheet-breakdown__rows" role="list">
+ *         <li class="sh-list sh-list--score"><div class="sh-list-score"> …score row… </div></li> …
+ *       </ul>
+ *     </div>
+ *   </section>
+ *
+ * Style  (none) North: 8 kootas, points of 36 (Work · Influence · Destiny · Mentality · Compatibility ·
+ *        Temperament · Love · Health) · --south: 10 poruthams, each of 1. The modifier is a hook: the style
+ *        changes the rows and the selected segment, not the look.
+ * Parts  __filters (title Title/SM text/secondary + sh-segmented-control Items 2) · __section-header (hidden: Heading/SM
+ *        title + sh-button Premium Solid Small "Unlock") · __summary (hidden: Body/MD) · __rows (sh-list Type=Score).
+ * States are the parts' (segments: sh-tab-item; Unlock: sh-button). Score rows are not tappable.
+ * Reused by sh-fpv-astro-sheet-ask-card, which shows the same breakdown under its ask card.
+ *
+ * Not resolvable from the blueprint (see the report): the section-title and summary colours are bound to variables
+ * that aren't in tokens/ → text/primary and text/secondary; gaps and vertical padding are unbound.
+ */
+
+.sh-fpv-astro-sheet-breakdown {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--sh-space-16) var(--sh-space-32);
+}
+
+.sh-fpv-astro-sheet-breakdown__koota {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-12);
+  width: 100%;
+}
+
+.sh-fpv-astro-sheet-breakdown__filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sh-space-12);
+}
+
+.sh-fpv-astro-sheet-breakdown__filters-title {
+  min-width: 0;
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-astro-sheet-breakdown__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sh-space-12);
+}
+
+.sh-fpv-astro-sheet-breakdown__section-title {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-astro-sheet-breakdown__summary {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-astro-sheet-breakdown__rows {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A score row with no pictogram in the repo (South "Rasi"): keep the pictogram's space so the rows line up */
+.sh-fpv-astro-sheet-breakdown__no-art {
+  display: block;
+  flex: none;
+}

@@ -1,0 +1,118 @@
+<!doctype html>
+<!--
+  sh-fpv-section-title — web (HTML5 + CSS). The booleans (Show badge, Show action, Show subtitle) and the
+  viewer rule: Free = Unlock (Premium Soft, no badge), Premium = badge + View (Tertiary), Action = Tertiary.
+  Spec: ../sh-fpv-section-title.md · Figma node 2898:66490
+  The gold badge art is not in the repo: its slot shows a demo-only dashed outline.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-section-title</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../../components/fpv/sh-fpv-asset-premium-badge/web/sh-fpv-asset-premium-badge.css">
+  <link rel="stylesheet" href="sh-fpv-section-title.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: section 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { padding: 0 var(--sh-space-32); background: var(--sh-background-default); }
+    /* demo only: marks the empty badge slot (art not in the repo) */
+    .art-missing { width: var(--sh-space-32); height: var(--sh-space-40); outline: var(--sh-stroke-default) dashed var(--sh-border-strong); border-radius: var(--sh-radius-xs); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-section-title</h1>
+
+  <h2 class="demo sh-title-md">Show badge × Show action</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show badge=false, Show action=false</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Family details</h2>
+      </div></div></div></div>
+    </div></figure>
+
+    <figure><figcaption class="sh-body-sm">Show badge=false, Show action=true (default: Unlock, Premium Soft)</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Section title</h2>
+      </div></div>
+        <button class="sh-fpv-section-title__action sh-button sh-button--premium-soft sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span></button>
+      </div></div>
+    </div></figure>
+
+    <figure><figcaption class="sh-body-sm">Show badge=true, Show action=false</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Contact</h2>
+        <span class="sh-fpv-section-title__badge sh-fpv-asset-premium-badge art-missing" role="img" aria-label="Premium feature"></span>
+      </div></div></div></div>
+    </div></figure>
+
+    <figure><figcaption class="sh-body-sm">Show badge=true, Show action=true (View, Tertiary)</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Photo album</h2>
+        <span class="sh-fpv-section-title__badge sh-fpv-asset-premium-badge art-missing" role="img" aria-label="Premium feature"></span>
+      </div></div>
+        <button class="sh-fpv-section-title__action sh-button sh-button--tertiary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span></button>
+      </div></div>
+    </div></figure>
+  </div>
+
+  <h2 class="demo sh-title-md">Viewer rule on a premium section (Astro)</h2>
+  <p class="note sh-body-sm">Free viewer: no badge, Unlock (Premium Soft) opens the premium plans. Premium viewer: badge + View (Tertiary).
+    Other actions, e.g. Add details, are Tertiary with no badge.</p>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Free viewer · Show badge=false, Show action=true (Unlock)</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Astro</h2>
+      </div></div>
+        <button class="sh-fpv-section-title__action sh-button sh-button--premium-soft sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span></button>
+      </div></div>
+    </div></figure>
+
+    <figure><figcaption class="sh-body-sm">Premium viewer · Show badge=true, Show action=true (View)</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Astro</h2>
+        <span class="sh-fpv-section-title__badge sh-fpv-asset-premium-badge art-missing" role="img" aria-label="Premium feature"></span>
+      </div></div>
+        <button class="sh-fpv-section-title__action sh-button sh-button--tertiary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span></button>
+      </div></div>
+    </div></figure>
+
+    <figure><figcaption class="sh-body-sm">Action · Show badge=false, Show action=true (Add details, Tertiary)</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Astro</h2>
+      </div></div>
+        <button class="sh-fpv-section-title__action sh-button sh-button--tertiary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Add details</span></span></button>
+      </div></div>
+    </div></figure>
+  </div>
+
+  <h2 class="demo sh-title-md">Show subtitle</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show subtitle=true, Show action=false</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Requests</h2>
+      </div></div></div>
+        <p class="sh-fpv-section-title__subtitle sh-body-md">Meher is waiting for your reply</p>
+      </div>
+    </div></figure>
+
+    <figure><figcaption class="sh-body-sm">Show subtitle=true, Show action=true</figcaption><div class="surface">
+      <div class="sh-fpv-section-title"><div class="sh-fpv-section-title__top"><div class="sh-fpv-section-title__title-group"><div class="sh-fpv-section-title__title-row">
+        <h2 class="sh-fpv-section-title__title sh-heading-sm">Education &amp; career</h2>
+      </div></div>
+        <button class="sh-fpv-section-title__action sh-button sh-button--premium-soft sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Unlock</span></span></button>
+      </div>
+        <p class="sh-fpv-section-title__subtitle sh-body-md">Her college and company</p>
+      </div>
+    </div></figure>
+  </div>
+</body>
+</html>

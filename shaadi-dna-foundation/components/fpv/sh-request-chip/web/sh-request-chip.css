@@ -1,0 +1,75 @@
+/*
+ * sh-request-chip — web (HTML5 + CSS)
+ * Spec: ../sh-request-chip.md · Figma node 3238:90068 (one variant; Title, Subtitle, Show subtitle, Show icon)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css
+ *
+ *   <div class="sh-request-chip">
+ *     <span class="sh-request-chip__icon sh-icon sh-icon--16" style="--icon:url(icons/line/message.svg)" aria-hidden="true"></span>   Show icon
+ *     <span class="sh-request-chip__text">
+ *       <span class="sh-request-chip__title sh-body-md">3 requests from Meher</span>
+ *       <span class="sh-request-chip__subtitle sh-body-sm">Message · Photo · Birth details</span>                                   Show subtitle
+ *     </span>
+ *     <a class="sh-request-chip__cta sh-button sh-button--secondary sh-button--sm" href="#requests">
+ *       <span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span>
+ *     </a>
+ *   </div>
+ *
+ * Parts  root (glass over her photo: sh-gradient/translucent/dark/extra-soft fill, sh-gradient/translucent/border/light
+ *        edge drawn inside, sh-translucent/background/blur/default backdrop blur, radius sh-radius/lg) ·
+ *        __icon (sh-icon/message Line 16) · __title (Body/MD) · __subtitle (Body/SM) · __cta (sh-button Small).
+ * Text and icon are text/on-image and icon/on-image (FOUNDATION §4.2: content over imagery). The blueprint binds
+ * text/inverse, which turns dark in Dark mode; see the report.
+ * Taps   View scrolls to the requests section (sh-fpv-requests). States are the sh-button's. Over imagery only.
+ */
+
+.sh-request-chip {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-12);                              /* not bound in Figma */
+  width: 100%;
+  padding: var(--sh-space-8) var(--sh-space-8) var(--sh-space-8) var(--sh-space-16);   /* not bound in Figma */
+  border-radius: var(--sh-radius-lg);
+  background: var(--sh-gradient-translucent-dark-extra-soft);
+  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-default));
+  backdrop-filter: blur(var(--sh-translucent-background-blur-default));
+  color: var(--sh-text-on-image);
+}
+
+/* Glass edge: the light border gradient, 1 stroke inside the chip */
+.sh-request-chip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: var(--sh-stroke-default);
+  background: var(--sh-gradient-translucent-border-light);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.sh-request-chip__icon { --sh-icon-paint: var(--sh-icon-on-image); }
+
+.sh-request-chip__text {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sh-request-chip__title,
+.sh-request-chip__subtitle {
+  overflow: hidden;
+  color: var(--sh-text-on-image);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sh-request-chip__cta { position: relative; z-index: 1; }   /* above the glass edge */

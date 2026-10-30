@@ -6,6 +6,7 @@ Newest first.
 New entry: `python3 tools/new_update.py "Short title"`
 
 <!-- entries -->
+- [2026-10-30 — Web code for 16 full-profile-view parts](2026-10-30-web-code-for-16-full-profile-view-parts.md)
 - [2026-10-30 — Web code for sheet, dialog and account components](2026-10-30-web-code-for-sheet-dialog-and-account-components.md)
 - [2026-10-30 — The Vision App gets a live link (GitLab Pages)](2026-10-30-the-vision-app-gets-a-live-link-gitlab-pages.md)
 - [2026-10-30 — Six component stages, shown as a stepper](2026-10-30-six-component-stages-shown-as-a-stepper.md)

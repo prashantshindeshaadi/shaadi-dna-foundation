@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  sh-tag-fpv — web (HTML5 + CSS). Both types: Active Now, Promoted.
+  Spec: ../sh-tag-fpv.md · Figma node 2814:41977
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-tag-fpv</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-tag/web/sh-tag.css">
+  <link rel="stylesheet" href="sh-tag-fpv.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { display: flex; gap: var(--sh-space-6); padding: var(--sh-space-16); background: var(--sh-background-default); }
+    .zoom { zoom: 3; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-tag-fpv</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Active Now</figcaption>
+      <div class="surface"><span class="sh-tag sh-tag--strong sh-tag--sm sh-tag-fpv sh-tag-fpv--active-now"><img class="sh-icon sh-icon--12 sh-tag__icon" src="../../../../icons/tag/online.svg" alt=""><span class="sh-tag__label sh-support-label">Active Now</span></span></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Promoted</figcaption>
+      <div class="surface"><span class="sh-tag sh-tag--strong sh-tag--sm sh-tag-fpv sh-tag-fpv--promoted"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../../icons/filled/megaphone-02.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Promoted</span></span></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Zoomed ×3</h2>
+  <div class="surface zoom">
+    <span class="sh-tag sh-tag--strong sh-tag--sm sh-tag-fpv sh-tag-fpv--active-now"><img class="sh-icon sh-icon--12 sh-tag__icon" src="../../../../icons/tag/online.svg" alt=""><span class="sh-tag__label sh-support-label">Active Now</span></span>
+    <span class="sh-tag sh-tag--strong sh-tag--sm sh-tag-fpv sh-tag-fpv--promoted"><span class="sh-icon sh-icon--12 sh-tag__icon" style="--icon:url(../../../../icons/filled/megaphone-02.svg)" aria-hidden="true"></span><span class="sh-tag__label sh-support-label">Promoted</span></span>
+  </div>
+</body>
+</html>

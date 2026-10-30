@@ -1,0 +1,65 @@
+<!doctype html>
+<!--
+  sh-fpv-carousel-dots — web (HTML5 + CSS). The one variant (6 photos, the 2nd shown) plus other photo counts.
+  Spec: ../sh-fpv-carousel-dots.md · Figma node 2877:15734
+  The row sits on her photo; the "photo" is a neutral placeholder.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-carousel-dots</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-carousel-dots/web/sh-carousel-dots.css">
+  <link rel="stylesheet" href="../../../../components/fpv/sh-fpv-carousel-dot/web/sh-fpv-carousel-dot.css">
+  <link rel="stylesheet" href="sh-fpv-carousel-dots.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .photo { display: flex; align-items: flex-end; height: var(--sh-space-80);
+             background: center / cover url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-carousel-dots</h1>
+
+  <h2 class="sh-title-md">Default</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-fpv-carousel-dots (6 photos, 2nd shown)</figcaption>
+      <div class="photo">
+        <div class="sh-carousel-dots sh-fpv-carousel-dots" role="img" aria-label="Photo 2 of 6">
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-carousel-dots__dot--selected sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+        </div>
+      </div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Other photo counts (one dot per photo)</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">2 photos, 1st shown</figcaption>
+      <div class="photo">
+        <div class="sh-carousel-dots sh-fpv-carousel-dots" role="img" aria-label="Photo 1 of 2">
+          <span class="sh-carousel-dots__dot sh-carousel-dots__dot--selected sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+        </div>
+      </div></figure>
+    <figure><figcaption class="sh-body-sm">4 photos, last shown</figcaption>
+      <div class="photo">
+        <div class="sh-carousel-dots sh-fpv-carousel-dots" role="img" aria-label="Photo 4 of 4">
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+          <span class="sh-carousel-dots__dot sh-carousel-dots__dot--selected sh-fpv-carousel-dot"></span>
+        </div>
+      </div></figure>
+  </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/*
+ * sh-fpv-astro-sheet-grabber — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-astro-sheet-grabber.md · Figma node 2891:63992 (one variant)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ *   <div class="sh-fpv-astro-sheet-grabber" aria-hidden="true">
+ *     <span class="sh-fpv-astro-sheet-grabber__grabber"></span>
+ *   </div>
+ *
+ * Parts  root (full width, 26 tall, grabber centred) · __grabber (the drag handle bar).
+ * The top of the Astro match sheet. Decorative: the sheet itself handles drag / close, so it is aria-hidden.
+ *
+ * Not resolvable from the blueprint (see the report):
+ *   - the grabber fill is bound to a variable that isn't in tokens/; border/default + radius full are used,
+ *     as sh-bottom-sheet's Grabber binds;
+ *   - the grabber size and the space around it are unbound: sh-space/40 × sh-space/4 bar, sh-space/12 above and
+ *     sh-space/10 below (26 tall, as in Figma).
+ */
+
+.sh-fpv-astro-sheet-grabber {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: var(--sh-space-12) var(--sh-space-0) var(--sh-space-10);
+}
+
+.sh-fpv-astro-sheet-grabber__grabber {
+  display: block;
+  flex: none;
+  width: var(--sh-space-40);
+  height: var(--sh-space-4);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-border-default);
+}

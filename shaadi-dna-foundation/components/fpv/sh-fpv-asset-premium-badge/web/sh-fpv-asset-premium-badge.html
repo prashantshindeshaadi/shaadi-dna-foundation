@@ -1,0 +1,35 @@
+<!doctype html>
+<!--
+  sh-fpv-asset-premium-badge (Figma: sh-fpv-asset/premium-badge) — web (HTML5 + CSS). The one variant.
+  Spec: ../sh-fpv-asset-premium-badge.md · Figma node 2877:19334
+  The gold badge art is not in the repo, so the slot is shown empty with a demo-only dashed outline.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-asset-premium-badge</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-fpv-asset-premium-badge.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-24) 0 var(--sh-space-8); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 72ch; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { display: inline-flex; padding: var(--sh-space-16); background: var(--sh-background-default); }
+    /* demo only: marks the empty Image slot (Figma 33.13 × 38.13) while the art is missing */
+    .art-missing { width: var(--sh-space-32); height: var(--sh-space-40); outline: var(--sh-stroke-default) dashed var(--sh-border-strong); border-radius: var(--sh-radius-xs); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-asset-premium-badge</h1>
+
+  <h2 class="sh-title-md">Default</h2>
+  <p class="note sh-body-sm">Art missing: the gold premium badge is not in the repo. Put the final art in the slot as
+    <code>&lt;img class="sh-fpv-asset-premium-badge__art" src="…" alt="Premium feature"&gt;</code>.</p>
+  <figure><figcaption class="sh-body-sm">sh-fpv-asset/premium-badge (empty Image slot)</figcaption>
+    <div class="surface"><span class="sh-fpv-asset-premium-badge art-missing" role="img" aria-label="Premium feature"></span></div></figure>
+</body>
+</html>

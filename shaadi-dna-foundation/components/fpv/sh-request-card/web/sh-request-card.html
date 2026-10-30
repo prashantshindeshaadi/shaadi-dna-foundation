@@ -1,0 +1,41 @@
+<!doctype html>
+<!--
+  sh-request-card — web (HTML5 + CSS). Every Type: Message, Photo, Birth details, Message · free viewer,
+  and a focused CTA.
+  Spec: ../sh-request-card.md · Figma node 2877:20530
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-request-card</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="sh-request-card.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 320px; }   /* Figma: 320 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-request-card</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Message</figcaption><article class="sh-request-card"><div class="sh-request-card__content"><p class="sh-request-card__meta"><span class="sh-request-card__meta-icon sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/message.svg)" aria-hidden="true"></span><span class="sh-request-card__meta-text sh-body-sm-tight">She sent you a message</span></p><p class="sh-request-card__message sh-body-md">“Hi, we liked your profile and would like to take this forward. Do let us know a good time to talk.”</p></div><button class="sh-request-card__cta sh-button sh-button--secondary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Reply</span></span></button></article></figure>
+    <figure><figcaption class="sh-body-sm">Type=Photo</figcaption><article class="sh-request-card sh-request-card--photo"><div class="sh-request-card__content"><p class="sh-request-card__meta"><span class="sh-request-card__meta-icon sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/image.svg)" aria-hidden="true"></span><span class="sh-request-card__meta-text sh-body-sm-tight">She asked for your photo</span></p><p class="sh-request-card__message sh-body-md">Add a photo so Meher can see you</p></div><button class="sh-request-card__cta sh-button sh-button--secondary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Add photo</span></span></button></article></figure>
+    <figure><figcaption class="sh-body-sm">Type=Birth details</figcaption><article class="sh-request-card sh-request-card--birth-details"><div class="sh-request-card__content"><p class="sh-request-card__meta"><span class="sh-request-card__meta-icon sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/astro.svg)" aria-hidden="true"></span><span class="sh-request-card__meta-text sh-body-sm-tight">She asked for birth details</span></p><p class="sh-request-card__message sh-body-md">Add yours to see your Kundali match</p></div><button class="sh-request-card__cta sh-button sh-button--secondary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Add details</span></span></button></article></figure>
+    <figure><figcaption class="sh-body-sm">Type=Message · free viewer</figcaption><article class="sh-request-card sh-request-card--message-free-viewer"><div class="sh-request-card__content"><p class="sh-request-card__meta"><span class="sh-request-card__meta-icon sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/message.svg)" aria-hidden="true"></span><span class="sh-request-card__meta-text sh-body-sm-tight">Meher sent you a message</span></p><p class="sh-request-card__message sh-body-md">To view her message &amp; reply</p></div><button class="sh-request-card__cta sh-button sh-button--premium-soft sh-button--sm" type="button"><span class="sh-button__icon sh-icon" style="--icon:url(../../../../icons/filled/premium.svg)" aria-hidden="true"></span><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Upgrade Now</span></span></button></article></figure>
+  </div>
+
+  <h2 class="sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Message, CTA focused (sh-button Focus)</figcaption><article class="sh-request-card"><div class="sh-request-card__content"><p class="sh-request-card__meta"><span class="sh-request-card__meta-icon sh-icon sh-icon--12" style="--icon:url(../../../../icons/line/message.svg)" aria-hidden="true"></span><span class="sh-request-card__meta-text sh-body-sm-tight">She sent you a message</span></p><p class="sh-request-card__message sh-body-md">“Hi, we liked your profile and would like to take this forward.”</p></div><button class="sh-request-card__cta sh-button sh-button--secondary sh-button--sm is-focus" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Reply</span></span></button></article></figure>
+  </div>
+</body>
+</html>

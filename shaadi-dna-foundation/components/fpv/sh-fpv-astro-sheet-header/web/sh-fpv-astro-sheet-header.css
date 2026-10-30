@@ -1,0 +1,113 @@
+/*
+ * sh-fpv-astro-sheet-header — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-astro-sheet-header.md · Figma node 2891:64071 (State North / Ask / South)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-icon-button/web/sh-icon-button.css ·
+ *   components/profile-card/sh-avatar-placeholder/web/sh-avatar-placeholder.css (a member with no photo)
+ *
+ *   <header class="sh-fpv-astro-sheet-header">
+ *     <div class="sh-fpv-astro-sheet-header__row">
+ *       <div class="sh-fpv-astro-sheet-header__lead">
+ *         <span class="sh-fpv-astro-sheet-header__avatars" aria-hidden="true">
+ *           <span class="sh-fpv-astro-sheet-header__avatar"><img src="viewer.jpg" alt=""></span>
+ *           <span class="sh-fpv-astro-sheet-header__avatar"><img src="her.jpg" alt=""></span>
+ *         </span>
+ *         <h2 class="sh-fpv-astro-sheet-header__title sh-title-lg">Your Compatibility with Ananya N</h2>
+ *       </div>
+ *       <button class="sh-fpv-astro-sheet-header__close sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="Close">
+ *         <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/close.svg)" aria-hidden="true"></span>
+ *       </button>
+ *     </div>
+ *     <p class="sh-fpv-astro-sheet-header__score">
+ *       <span class="sh-fpv-astro-sheet-header__points sh-heading-md">28</span><span class="sh-fpv-astro-sheet-header__total sh-title-lg">/36</span>
+ *     </p>                                                                     North 28/36 (Guna) · South 7/10 (Porutham) · Ask: none
+ *     <p class="sh-fpv-astro-sheet-header__disclaimer sh-body-sm">Based on the birth details you and Ananya shared</p>
+ *   </header>
+ *
+ * State  (none) North: score of 36 · --south: score of 10 · --ask: she hasn't added her birth details, so no score
+ *        and no disclaimer (the sheet shows sh-fpv-astro-sheet-pinned-strip / -ask-card instead).
+ *        The modifier is a hook; the state only changes the content.
+ * Parts  __avatars (viewer + her, overlapping, border/inverse ring) · __title (Title/LG) · __close (sh-icon-button
+ *        Tertiary Small, "Close") · __score (__points Heading/MD text/primary + __total Title/LG text/tertiary) ·
+ *        __verdict ("Good match", Heading/SM; hidden in Figma) · __disclaimer (Body/SM, text/tertiary).
+ * States Close is sh-icon-button (hover, pressed, focus, disabled, 48 tap area). The rest is not interactive.
+ *
+ * Not resolvable from the blueprint (see the report): the title and "Good match" colours are bound to a variable
+ * that isn't in tokens/ → text/primary; avatar size, ring weight, overlap, gaps and vertical padding are unbound.
+ */
+
+.sh-fpv-astro-sheet-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-12);
+  width: 100%;
+  padding: var(--sh-space-8) var(--sh-space-32) var(--sh-space-16);
+}
+
+.sh-fpv-astro-sheet-header__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sh-space-12);
+}
+
+.sh-fpv-astro-sheet-header__lead {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--sh-space-12);
+  min-width: 0;
+}
+
+.sh-fpv-astro-sheet-header__avatars {
+  display: flex;
+  align-items: center;
+}
+
+.sh-fpv-astro-sheet-header__avatar {
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  width: var(--sh-space-40);
+  height: var(--sh-space-40);
+  overflow: hidden;
+  border: var(--sh-stroke-medium) solid var(--sh-border-inverse);
+  border-radius: var(--sh-radius-avatar);
+}
+.sh-fpv-astro-sheet-header__avatar + .sh-fpv-astro-sheet-header__avatar { margin-left: calc(var(--sh-space-8) * -1); }
+
+.sh-fpv-astro-sheet-header__avatar > img,
+.sh-fpv-astro-sheet-header__avatar > .sh-avatar-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sh-fpv-astro-sheet-header__title {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-astro-sheet-header__close { flex: none; }
+
+.sh-fpv-astro-sheet-header__score {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+}
+
+.sh-fpv-astro-sheet-header__points { color: var(--sh-text-primary); }
+.sh-fpv-astro-sheet-header__total  { color: var(--sh-text-tertiary); }
+
+.sh-fpv-astro-sheet-header__verdict {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-astro-sheet-header__disclaimer {
+  margin: 0;
+  color: var(--sh-text-tertiary);
+}

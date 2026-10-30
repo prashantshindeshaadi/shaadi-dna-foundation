@@ -1,0 +1,23 @@
+/*
+ * sh-fpv-carousel-dots — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-carousel-dots.md · Figma node 2877:15734 (one variant)
+ *
+ * Built on sh-carousel-dots (the row: full width, dots centred, sh-space/14 above and below = 32 tall with
+ * 4 dots) holding sh-fpv-carousel-dot dots. This file adds nothing visual of its own.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · components/sh-carousel-dots/web/sh-carousel-dots.css ·
+ *   components/fpv/sh-fpv-carousel-dot/web/sh-fpv-carousel-dot.css
+ *
+ *   <div class="sh-carousel-dots sh-fpv-carousel-dots" role="img" aria-label="Photo 2 of 6">
+ *     <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>
+ *     <span class="sh-carousel-dots__dot sh-carousel-dots__dot--selected sh-fpv-carousel-dot"></span>
+ *     <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span> … one per photo
+ *   </div>
+ *
+ * Rule   Only on the first photo (sh-fpv-photo-area, Visible) when the album is visible and she has more than
+ *        one photo. One dot per photo; the current one is Selected. Keep aria-label in step with the carousel.
+ * Not interactive (swipe moves the carousel). The blueprint binds no token: gap and padding are sh-carousel-dots'.
+ */
+
+.sh-fpv-carousel-dots { box-sizing: border-box; }

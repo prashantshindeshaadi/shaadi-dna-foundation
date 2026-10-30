@@ -1,0 +1,96 @@
+/*
+ * sh-fpv-astro-sheet-ask-card — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-astro-sheet-ask-card.md · Figma node 2891:65645 (one variant)
+ *
+ * The Astro match sheet when she hasn't added her birth details: an ask card, then the same koota breakdown as
+ * sh-fpv-astro-sheet-breakdown (its __koota block and classes are reused, not copied).
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css · and everything sh-fpv-astro-sheet-breakdown.css needs, then
+ *   components/fpv/sh-fpv-astro-sheet-breakdown/web/sh-fpv-astro-sheet-breakdown.css
+ *
+ *   <section class="sh-fpv-astro-sheet-ask-card">
+ *     <div class="sh-fpv-astro-sheet-ask-card__compat">
+ *       <div class="sh-fpv-astro-sheet-ask-card__card">
+ *         <div class="sh-fpv-astro-sheet-ask-card__text">
+ *           <div class="sh-fpv-astro-sheet-ask-card__title-row">
+ *             <h3 class="sh-fpv-astro-sheet-ask-card__title sh-button-lg">Ananya hasn’t added her birth details yet</h3>
+ *             <span class="sh-fpv-astro-sheet-ask-card__lottie" aria-hidden="true"> Lottie animation </span>
+ *           </div>
+ *           <p class="sh-fpv-astro-sheet-ask-card__body sh-body-md">Your Kundali match will appear here as soon as she does.</p>
+ *         </div>
+ *         <button class="sh-fpv-astro-sheet-ask-card__cta sh-button sh-button--secondary sh-button--sm" type="button">
+ *           <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Ask Ananya to add</span></span>
+ *         </button>
+ *       </div>
+ *     </div>
+ *     <div class="sh-fpv-astro-sheet-breakdown__koota"> … as sh-fpv-astro-sheet-breakdown … </div>
+ *   </section>
+ *
+ * Parts  root (sh-space/32 at the sides) · __card (the light ask card) · __title (Button/LG) · __lottie (animation slot) ·
+ *        __body (Body/MD) · __cta (sh-button Secondary Small: sends the request; its states are the button's).
+ *
+ * Not resolvable from the blueprint (see the report): the card fill and edge, title and body colours are bound to
+ * variables that aren't in tokens/ → background/soft, border/soft, text/primary, text/secondary; the card padding,
+ * radius and the gaps are unbound → padding/card, radius/card. The Lottie animation is not in the repo: leave the
+ * slot out until it is.
+ */
+
+.sh-fpv-astro-sheet-ask-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-24);
+  width: 100%;
+  padding: var(--sh-space-16) var(--sh-space-32);
+}
+
+.sh-fpv-astro-sheet-ask-card__compat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sh-fpv-astro-sheet-ask-card__card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sh-space-12);
+  width: 100%;
+  padding: var(--sh-space-padding-card);
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-soft);
+}
+
+.sh-fpv-astro-sheet-ask-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-4);
+  width: 100%;
+}
+
+.sh-fpv-astro-sheet-ask-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-8);
+}
+
+.sh-fpv-astro-sheet-ask-card__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-astro-sheet-ask-card__lottie {
+  display: block;
+  flex: none;
+}
+
+.sh-fpv-astro-sheet-ask-card__body {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}

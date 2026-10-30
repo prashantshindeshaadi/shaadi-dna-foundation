@@ -1,0 +1,35 @@
+<!doctype html>
+<!--
+  sh-fpv-astro-sheet-summary — web (HTML5 + CSS). The one variant, with the hidden "Read more" link shown, and focused.
+  Spec: ../sh-fpv-astro-sheet-summary.md · Figma node 2891:65357
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-astro-sheet-summary</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="sh-fpv-astro-sheet-summary.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { background: var(--sh-background-default); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-astro-sheet-summary</h1>
+
+  <h2 class="sh-title-md">Default · Read more</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Default (Read more hidden)</figcaption><div class="surface"><section class="sh-fpv-astro-sheet-summary"><div class="sh-fpv-astro-sheet-summary__title-row"><h3 class="sh-fpv-astro-sheet-summary__title sh-title-lg">You and Ananya</h3><span class="sh-fpv-astro-sheet-summary__icon sh-icon sh-icon--16 sh-icon--premium" style="--icon:url(../../../../icons/filled/premium.svg)" role="img" aria-label="Premium"></span></div><div class="sh-fpv-astro-sheet-summary__body"><p class="sh-fpv-astro-sheet-summary__value sh-body-lg">You steady each other. Her Moon in Kanya and yours in Vrisha make a calm, practical pair: you both value routine, plan ahead and show care through small daily acts. Talk early about money and family time, and the rest falls into place.</p></div></section></div></figure>
+    <figure><figcaption class="sh-body-sm">Read more shown (text cut to 4 lines)</figcaption><div class="surface"><section class="sh-fpv-astro-sheet-summary sh-fpv-astro-sheet-summary--clamped"><div class="sh-fpv-astro-sheet-summary__title-row"><h3 class="sh-fpv-astro-sheet-summary__title sh-title-lg">You and Ananya</h3><span class="sh-fpv-astro-sheet-summary__icon sh-icon sh-icon--16 sh-icon--premium" style="--icon:url(../../../../icons/filled/premium.svg)" role="img" aria-label="Premium"></span></div><div class="sh-fpv-astro-sheet-summary__body"><p class="sh-fpv-astro-sheet-summary__value sh-body-lg">You steady each other. Her Moon in Kanya and yours in Vrisha make a calm, practical pair: you both value routine, plan ahead and show care through small daily acts. Talk early about money and family time, and the rest falls into place.</p><button class="sh-fpv-astro-sheet-summary__more sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border" type="button" aria-expanded="false"><span class="sh-text-link__label sh-button-md">Read more</span><span class="sh-text-link__icon sh-icon" style="--icon:url(../../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></button></div></section></div></figure>
+    <figure><figcaption class="sh-body-sm">Read more · Focus</figcaption><div class="surface"><section class="sh-fpv-astro-sheet-summary sh-fpv-astro-sheet-summary--clamped"><div class="sh-fpv-astro-sheet-summary__title-row"><h3 class="sh-fpv-astro-sheet-summary__title sh-title-lg">You and Ananya</h3><span class="sh-fpv-astro-sheet-summary__icon sh-icon sh-icon--16 sh-icon--premium" style="--icon:url(../../../../icons/filled/premium.svg)" role="img" aria-label="Premium"></span></div><div class="sh-fpv-astro-sheet-summary__body"><p class="sh-fpv-astro-sheet-summary__value sh-body-lg">You steady each other. Her Moon in Kanya and yours in Vrisha make a calm, practical pair: you both value routine, plan ahead and show care through small daily acts. Talk early about money and family time, and the rest falls into place.</p><button class="sh-fpv-astro-sheet-summary__more sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border is-focus" type="button" aria-expanded="false"><span class="sh-text-link__label sh-button-md">Read more</span><span class="sh-text-link__icon sh-icon" style="--icon:url(../../../../icons/line/arrow-down-01.svg)" aria-hidden="true"></span></button></div></section></div></figure>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/*
+ * sh-request-card — web (HTML5 + CSS)
+ * Spec: ../sh-request-card.md · Figma node 2877:20530 (Type Message / Photo / Birth details / Message · free viewer)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css
+ *
+ *   <article class="sh-request-card">
+ *     <div class="sh-request-card__content">
+ *       <p class="sh-request-card__meta">
+ *         <span class="sh-request-card__meta-icon sh-icon sh-icon--12" style="--icon:url(icons/line/message.svg)" aria-hidden="true"></span>
+ *         <span class="sh-request-card__meta-text sh-body-sm-tight">She sent you a message</span>
+ *       </p>
+ *       <p class="sh-request-card__message sh-body-md">“Hi, we liked your profile and would like to take this forward…”</p>
+ *     </div>
+ *     <button class="sh-request-card__cta sh-button sh-button--secondary sh-button--sm" type="button">
+ *       <span class="sh-button__text"><span class="sh-button__label sh-button-sm">Reply</span></span>
+ *     </button>
+ *   </article>
+ *
+ * Type   (none) Message: message icon, her message (2 lines max), Reply (sh-button Secondary Small)
+ *        --photo: image icon, Add photo (Secondary Small)
+ *        --birth-details: astro icon, Add details (Secondary Small). Only for a viewer who hasn't added his.
+ *        --message-free-viewer: "Meher sent you a message", "To view her message & reply",
+ *          Upgrade Now (sh-button Premium Soft Small, leading Filled sh-icon/premium crown) → premium plans.
+ *        The Type only changes content and the CTA; the modifier is a hook, it draws nothing.
+ * Parts  root (background/default, border/soft edge, sh-radius/card) · __content · __meta (icon 12 + Body/SM/Tight,
+ *        text/tertiary) · __message (Body/MD, text/primary) · __cta (sh-button Small; its states are the button's).
+ *
+ * Not bound in Figma (see the report): padding, radius, gaps, the meta icon colour (icon/tertiary, matching the
+ * meta text). The edge is bound to a deleted variable (16:324); border/soft is used, as sh-divider Soft does.
+ */
+
+.sh-request-card {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-12);
+  width: 100%;
+  padding: var(--sh-space-padding-card);
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-default);
+}
+
+.sh-request-card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--sh-space-4);
+  min-width: 0;
+}
+
+.sh-request-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-4);
+  margin: 0;
+  color: var(--sh-text-tertiary);
+}
+
+.sh-request-card__meta-icon { --sh-icon-paint: var(--sh-icon-tertiary); }
+
+.sh-request-card__message {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: var(--sh-text-primary);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.sh-request-card__cta { flex: none; }

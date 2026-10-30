@@ -1,0 +1,26 @@
+/*
+ * sh-tag-fpv — web (HTML5 + CSS)
+ * Spec: ../sh-tag-fpv.md · Figma node 2814:41977 (Type Active Now / Promoted)
+ *
+ * Built on sh-tag: each type is an sh-tag Mode=Strong, Size=Small, Shape=Rounded (the FPV status-tag rule)
+ * with a fixed icon and label. Padding, gap, radius, fill and text all come from sh-tag.css.
+ *
+ * Needs, loaded once per page (in this order):
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-tag/web/sh-tag.css · this file
+ *
+ *   Type         sh-tag classes                 icon (paint)
+ *   Active Now   sh-tag--strong sh-tag--sm      tag/online 12 (the green status dot, own colours)
+ *   Promoted     sh-tag--strong sh-tag--sm      filled/megaphone-02 12 (icon/secondary, from sh-tag Strong)
+ *
+ *   <span class="sh-tag sh-tag--strong sh-tag--sm sh-tag-fpv sh-tag-fpv--active-now">
+ *     <img class="sh-icon sh-icon--12 sh-tag__icon" src="icons/tag/online.svg" alt="">
+ *     <span class="sh-tag__label sh-support-label">Active Now</span>
+ *   </span>
+ *
+ * Used in sh-fpv-header (Status tags). Not interactive: no states.
+ * The blueprint also lists a sh-stroke/default stroke weight on the Tag but binds no stroke colour, and sh-tag
+ * Strong draws no edge, so no edge is drawn here (see the report).
+ */
+
+.sh-tag-fpv { flex: none; }

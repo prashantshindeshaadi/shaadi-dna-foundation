@@ -1,0 +1,60 @@
+/*
+ * sh-fpv-astro-sheet-pinned-strip — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-astro-sheet-pinned-strip.md · Figma node 2891:65943 (one variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-text-link/web/sh-text-link.css
+ *
+ *   <div class="sh-fpv-astro-sheet-pinned-strip">
+ *     <p class="sh-fpv-astro-sheet-pinned-strip__strip">
+ *       <span class="sh-fpv-astro-sheet-pinned-strip__icon sh-icon sh-icon--20" style="--icon:url(icons/line/unlock.svg)" aria-hidden="true"></span>
+ *       <span class="sh-fpv-astro-sheet-pinned-strip__message sh-body-sm">Ananya hasn’t added her birth details yet.</span>
+ *       <button class="sh-fpv-astro-sheet-pinned-strip__link sh-text-link sh-text-link--sm sh-text-link--no-border" type="button">
+ *         <span class="sh-text-link__label sh-button-sm">Ask her</span>
+ *       </button>
+ *     </p>
+ *   </div>
+ *
+ * Parts  __strip (row, semantic/information/background/soft/default, sh-space/32 at the sides) ·
+ *        __icon (sh-icon/unlock Line 20, semantic/information/icon/on-soft) · __message (Body/SM, text/secondary) ·
+ *        __link (sh-text-link Small, no underline, label Button/SM in semantic/information/text/on-soft).
+ * Taps   "Ask her" sends the birth-details request. The link is sh-text-link: 48 tap area, focus ring, disabled.
+ *
+ * Not bound in Figma (see the report): the strip's vertical padding and gaps, the icon colour.
+ * §4.2: the blueprint puts text/secondary on an information soft background; the pairing list only allows
+ * semantic/information/text/on-soft there.
+ */
+
+.sh-fpv-astro-sheet-pinned-strip {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sh-fpv-astro-sheet-pinned-strip__strip {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-8);
+  width: 100%;
+  min-height: calc(var(--sh-space-32) * 2);                 /* no token: Figma's strip is 64 tall */
+  margin: 0;
+  padding: var(--sh-space-12) var(--sh-space-32);
+  background: var(--sh-semantic-information-background-soft-default);
+}
+
+.sh-fpv-astro-sheet-pinned-strip__icon { --sh-icon-paint: var(--sh-semantic-information-icon-on-soft); }
+
+.sh-fpv-astro-sheet-pinned-strip__message {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--sh-text-secondary);
+}
+
+/* sh-text-link with the information colour in place of its type colour */
+.sh-fpv-astro-sheet-pinned-strip__link.sh-text-link {
+  --_fg: var(--sh-semantic-information-text-on-soft);
+  --_icon: var(--sh-semantic-information-icon-on-soft);
+}

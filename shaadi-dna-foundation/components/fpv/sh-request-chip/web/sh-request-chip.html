@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  sh-request-chip — web (HTML5 + CSS). Show icon × Show subtitle, and the View button focused.
+  Spec: ../sh-request-chip.md · Figma node 3238:90068
+  The chip sits on her photo; the "photo" is a neutral placeholder.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-request-chip</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="sh-request-chip.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: the chip is 328 wide inside a 360 photo */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .photo { padding: var(--sh-space-40) var(--sh-space-16) var(--sh-space-16);
+             background: center / cover url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-request-chip</h1>
+
+  <h2 class="sh-title-md">Show icon × Show subtitle</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show icon=false, Show subtitle=false</figcaption><div class="photo"><div class="sh-request-chip"><span class="sh-request-chip__text"><span class="sh-request-chip__title sh-body-md">3 requests from Meher</span></span><a class="sh-request-chip__cta sh-button sh-button--secondary sh-button--sm" href="#requests"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Show icon=true, Show subtitle=false</figcaption><div class="photo"><div class="sh-request-chip"><span class="sh-request-chip__icon sh-icon sh-icon--16" style="--icon:url(../../../../icons/line/message.svg)" aria-hidden="true"></span><span class="sh-request-chip__text"><span class="sh-request-chip__title sh-body-md">3 requests from Meher</span></span><a class="sh-request-chip__cta sh-button sh-button--secondary sh-button--sm" href="#requests"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Show icon=false, Show subtitle=true</figcaption><div class="photo"><div class="sh-request-chip"><span class="sh-request-chip__text"><span class="sh-request-chip__title sh-body-md">3 requests from Meher</span><span class="sh-request-chip__subtitle sh-body-sm">Message · Photo · Birth details</span></span><a class="sh-request-chip__cta sh-button sh-button--secondary sh-button--sm" href="#requests"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Show icon=true, Show subtitle=true</figcaption><div class="photo"><div class="sh-request-chip"><span class="sh-request-chip__icon sh-icon sh-icon--16" style="--icon:url(../../../../icons/line/message.svg)" aria-hidden="true"></span><span class="sh-request-chip__text"><span class="sh-request-chip__title sh-body-md">3 requests from Meher</span><span class="sh-request-chip__subtitle sh-body-sm">Message · Photo · Birth details</span></span><a class="sh-request-chip__cta sh-button sh-button--secondary sh-button--sm" href="#requests"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span></a></div></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">State</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">View focused (sh-button Focus)</figcaption><div class="photo"><div class="sh-request-chip"><span class="sh-request-chip__text"><span class="sh-request-chip__title sh-body-md">3 requests from Meher</span></span><a class="sh-request-chip__cta sh-button sh-button--secondary sh-button--sm is-focus" href="#requests"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">View</span></span></a></div></div></figure>
+  </div>
+</body>
+</html>

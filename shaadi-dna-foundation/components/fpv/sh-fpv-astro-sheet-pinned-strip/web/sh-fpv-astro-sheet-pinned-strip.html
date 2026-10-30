@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+  sh-fpv-astro-sheet-pinned-strip — web (HTML5 + CSS). The one variant, plus the link focused and disabled.
+  Spec: ../sh-fpv-astro-sheet-pinned-strip.md · Figma node 2891:65943
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-astro-sheet-pinned-strip</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="sh-fpv-astro-sheet-pinned-strip.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-astro-sheet-pinned-strip</h1>
+
+  <h2 class="sh-title-md">Default</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-fpv-astro-sheet-pinned-strip</figcaption>
+      <div class="sh-fpv-astro-sheet-pinned-strip"><p class="sh-fpv-astro-sheet-pinned-strip__strip">
+        <span class="sh-fpv-astro-sheet-pinned-strip__icon sh-icon sh-icon--20" style="--icon:url(../../../../icons/line/unlock.svg)" aria-hidden="true"></span>
+        <span class="sh-fpv-astro-sheet-pinned-strip__message sh-body-sm">Ananya hasn’t added her birth details yet.</span>
+        <button class="sh-fpv-astro-sheet-pinned-strip__link sh-text-link sh-text-link--sm sh-text-link--no-border" type="button"><span class="sh-text-link__label sh-button-sm">Ask her</span></button>
+      </p></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Link state</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Ask her · Focus</figcaption>
+      <div class="sh-fpv-astro-sheet-pinned-strip"><p class="sh-fpv-astro-sheet-pinned-strip__strip">
+        <span class="sh-fpv-astro-sheet-pinned-strip__icon sh-icon sh-icon--20" style="--icon:url(../../../../icons/line/unlock.svg)" aria-hidden="true"></span>
+        <span class="sh-fpv-astro-sheet-pinned-strip__message sh-body-sm">Ananya hasn’t added her birth details yet.</span>
+        <button class="sh-fpv-astro-sheet-pinned-strip__link sh-text-link sh-text-link--sm sh-text-link--no-border is-focus" type="button"><span class="sh-text-link__label sh-button-sm">Ask her</span></button>
+      </p></div></figure>
+    <figure><figcaption class="sh-body-sm">Ask her · Disabled (request already sent)</figcaption>
+      <div class="sh-fpv-astro-sheet-pinned-strip"><p class="sh-fpv-astro-sheet-pinned-strip__strip">
+        <span class="sh-fpv-astro-sheet-pinned-strip__icon sh-icon sh-icon--20" style="--icon:url(../../../../icons/line/unlock.svg)" aria-hidden="true"></span>
+        <span class="sh-fpv-astro-sheet-pinned-strip__message sh-body-sm">Ananya hasn’t added her birth details yet.</span>
+        <button class="sh-fpv-astro-sheet-pinned-strip__link sh-text-link sh-text-link--sm sh-text-link--no-border" type="button" disabled><span class="sh-text-link__label sh-button-sm">Ask her</span></button>
+      </p></div></figure>
+  </div>
+</body>
+</html>

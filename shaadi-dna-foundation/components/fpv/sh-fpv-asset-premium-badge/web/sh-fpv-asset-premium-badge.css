@@ -1,0 +1,30 @@
+/*
+ * sh-fpv-asset-premium-badge — web (HTML5 + CSS)   (Figma name: sh-fpv-asset/premium-badge)
+ * Spec: ../sh-fpv-asset-premium-badge.md · Figma node 2877:19334 (one variant)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ *   <span class="sh-fpv-asset-premium-badge">
+ *     <img class="sh-fpv-asset-premium-badge__art" src="<final premium badge art>" alt="Premium feature">
+ *   </span>
+ *
+ * Parts  root (the Image slot) · __art (Figma "Art": the gold premium badge, multi-colour, keeps its own colours).
+ * Used by sh-fpv-section-title (Show badge) on premium features: Astro, Contact, Education & Career, Photo Album.
+ *
+ * ART MISSING: the gold badge art is not in the repo (icons/ has no FPV premium badge; icons/misc/premium-badge.svg
+ * is the red 20 × 20 round badge, a different mark). Figma sizes the art 33.13 × 38.13, which has no token, so
+ * the slot hugs the art's own size. See the report. Not interactive.
+ */
+
+.sh-fpv-asset-premium-badge {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.sh-fpv-asset-premium-badge__art {
+  display: block;
+  flex: none;
+}

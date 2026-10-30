@@ -1,0 +1,136 @@
+/*
+ * sh-fpv-header — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-header.md · Figma node 2877:19432 (Case Lives in India / Lives abroad / Lives abroad · long community name)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-tag/web/sh-tag.css · components/fpv/sh-tag-fpv/web/sh-tag-fpv.css
+ *
+ *   <header class="sh-fpv-header">
+ *     <h1 class="sh-fpv-header__name sh-heading-md">Meher Randhawa</h1>
+ *     <div class="sh-fpv-header__attributes">
+ *       <p class="sh-fpv-header__line sh-body-md">
+ *         <span>32 yrs</span><span class="sh-fpv-header__dot" aria-hidden="true"></span><span>5′6″</span> …
+ *       </p>
+ *       <p class="sh-fpv-header__line sh-body-md"><span>Mumbai, Maharashtra</span><span class="sh-fpv-header__dot" aria-hidden="true"></span><span>Teacher</span></p>
+ *     </div>
+ *     <div class="sh-fpv-header__tags"> sh-tag-fpv Active Now · sh-tag-fpv Promoted </div>
+ *     <div class="sh-fpv-header__badges">
+ *       <button class="sh-fpv-header__badge" type="button">
+ *         <img class="sh-fpv-header__badge-art" src="icons/pictogram/premium-member@2x.png" alt="">
+ *         <span class="sh-fpv-header__badge-label sh-support-label">Premium Member</span>
+ *       </button> … four badges
+ *     </div>
+ *   </header>
+ *
+ * Case   No modifier: the Case only changes the content of the two attribute lines.
+ *        Lives in India    line 1 age · height · community   line 2 city, state · job
+ *        Lives abroad      line 1 age · height · community · job   line 2 city, country
+ *        Long community    as India; the long community name wraps inside line 1.
+ * Parts  __name (Heading/MD, text/primary) · __line (Body/MD, text/secondary) · __dot (separator, icon/disabled) ·
+ *        __tags (sh-tag-fpv, gap sh-space/6) · __badge (trust badge: pictogram + Support/Label, text/secondary).
+ * Rule   The manager badge reads "Managed by {Self / Parent / Sibling / Relative / Friend}", never "Created by".
+ * Taps   A trust badge opens sh-fpv-sheet-trust-markers with the matching Case: each badge is a <button>.
+ *        Focus :focus-visible ring · Disabled [disabled]. Figma draws no Hover or Pressed look, so none is drawn.
+ *
+ * No token bound in Figma for: root padding, the gaps between rows, the dot size, the badge art size
+ * (Figma draws grey icon/disabled placeholder circles; the matching repo pictograms are used at
+ * sh-icon/pictogram/size/28). See the report.
+ */
+
+.sh-fpv-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-12);                                     /* not bound in Figma */
+  width: 100%;
+  padding: var(--sh-space-24) var(--sh-space-page-margin);    /* not bound in Figma */
+  background: var(--sh-background-default);
+}
+
+.sh-fpv-header__name {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-header__attributes {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sh-fpv-header__line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--sh-space-6);                              /* not bound in Figma */
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-header__dot {
+  display: block;
+  flex: none;
+  width: var(--sh-space-4);                                   /* not bound in Figma */
+  height: var(--sh-space-4);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-icon-disabled);
+}
+
+.sh-fpv-header__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sh-space-6);
+}
+
+.sh-fpv-header__badges {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sh-space-8);                                     /* not bound in Figma */
+}
+
+.sh-fpv-header__badge {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-6);                                     /* not bound in Figma */
+  min-width: 0;
+  min-height: var(--sh-icon-target-default);                  /* 48 tap area */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sh-radius-xs);
+  background: none;
+  color: var(--sh-text-secondary);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sh-fpv-header__badge:focus { outline: none; }
+.sh-fpv-header__badge:focus-visible,
+.sh-fpv-header__badge.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-4);
+}
+
+.sh-fpv-header__badge:disabled,
+.sh-fpv-header__badge[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+.sh-fpv-header__badge-art {
+  display: block;
+  flex: none;
+  width: var(--sh-icon-pictogram-size-28);
+  height: var(--sh-icon-pictogram-size-28);
+  object-fit: contain;
+}
+
+.sh-fpv-header__badge-label { max-width: 100%; }

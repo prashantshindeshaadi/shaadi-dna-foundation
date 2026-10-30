@@ -1,0 +1,73 @@
+/*
+ * sh-fpv-astro-sheet-summary — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-astro-sheet-summary.md · Figma node 2891:65357 (one variant)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-text-link/web/sh-text-link.css
+ *
+ *   <section class="sh-fpv-astro-sheet-summary">
+ *     <div class="sh-fpv-astro-sheet-summary__title-row">
+ *       <h3 class="sh-fpv-astro-sheet-summary__title sh-title-lg">You and Ananya</h3>
+ *       <span class="sh-fpv-astro-sheet-summary__icon sh-icon sh-icon--16 sh-icon--premium" style="--icon:url(icons/filled/premium.svg)" role="img" aria-label="Premium"></span>
+ *     </div>
+ *     <div class="sh-fpv-astro-sheet-summary__body">
+ *       <p class="sh-fpv-astro-sheet-summary__value sh-body-lg">You steady each other. …</p>
+ *       <button class="sh-fpv-astro-sheet-summary__more sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border" type="button" aria-expanded="false">
+ *         <span class="sh-text-link__label sh-button-md">Read more</span>
+ *         <span class="sh-text-link__icon sh-icon" style="--icon:url(icons/line/arrow-down-01.svg)" aria-hidden="true"></span>
+ *       </button>                                                        hidden by default: add only when the text is cut
+ *     </div>
+ *   </section>
+ *
+ * Parts  root (sh-space/32 at the sides) · __title-row · __title (Title/LG) · __icon (sh-icon/premium Filled 16) ·
+ *        __body · __value (Body/LG) · __more ("Read more": sh-text-link Neutral Medium, no underline, trailing chevron).
+ *        .sh-fpv-astro-sheet-summary--clamped cuts the value to 4 lines while "Read more" is shown.
+ * States The link's (sh-text-link): focus ring, 48 tap area, disabled. The rest is not interactive.
+ *
+ * Not resolvable from the blueprint (see the report): title, value and "Read more" colours are bound to variables
+ * that aren't in tokens/ → text/primary, text/secondary and sh-text-link Neutral; the crown colour is unbound →
+ * sh-icon--premium; gaps and vertical padding are unbound.
+ */
+
+.sh-fpv-astro-sheet-summary {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+  width: 100%;
+  padding: var(--sh-space-16) var(--sh-space-32);
+}
+
+.sh-fpv-astro-sheet-summary__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-6);
+  min-width: 0;
+}
+
+.sh-fpv-astro-sheet-summary__title {
+  min-width: 0;
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+.sh-fpv-astro-sheet-summary__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sh-space-8);
+}
+
+.sh-fpv-astro-sheet-summary__value {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+
+.sh-fpv-astro-sheet-summary--clamped .sh-fpv-astro-sheet-summary__value {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}

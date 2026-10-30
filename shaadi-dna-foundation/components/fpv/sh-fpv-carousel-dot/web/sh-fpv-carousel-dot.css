@@ -1,0 +1,23 @@
+/*
+ * sh-fpv-carousel-dot — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-carousel-dot.md · Figma node 2877:16276 (Selected False / True)
+ *
+ * Built on sh-carousel-dots: the dot IS an sh-carousel-dots__dot (colour, round shape, selection look and shadow
+ * come from there). This file only makes it the FPV size: 4 × 4.
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · components/sh-carousel-dots/web/sh-carousel-dots.css
+ *
+ *   <span class="sh-carousel-dots__dot sh-fpv-carousel-dot"></span>                                      Selected=False
+ *   <span class="sh-carousel-dots__dot sh-carousel-dots__dot--selected sh-fpv-carousel-dot"></span>      Selected=True
+ *
+ * Selected  (none) False · sh-carousel-dots__dot--selected True (the photo shown now)
+ * Not interactive: the row (sh-fpv-carousel-dots) carries the "Photo n of N" label.
+ *
+ * The blueprint binds no token at all (size 4 × 4 is raw in Figma): 4 = sh-space/4; colours and the selected
+ * width are sh-carousel-dots' own. See the report.
+ */
+
+/* Selected keeps sh-carousel-dots' selection width; only the height is the FPV 4 */
+.sh-fpv-carousel-dot { height: var(--sh-space-4); }
+.sh-fpv-carousel-dot:not(.sh-carousel-dots__dot--selected) { width: var(--sh-space-4); }
