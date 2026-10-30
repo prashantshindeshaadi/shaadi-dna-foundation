@@ -1,18 +1,19 @@
 # Shaadi Vision App (web)
 
-Catalog + Stories for the Shaadi DNA Foundation. It holds no tokens or component code:
-everything comes from `../shaadi-dna-foundation/`, so what you see here is what the repo ships.
+A phone-sized Shaadi app built only from Shaadi DNA components: full screen on a phone, a centred phone on a
+desktop. It holds no tokens or component code: styles come from `../shaadi-dna-foundation/` (every component
+stylesheet, via `dist/vision/components.css`), so what you see is what the repo ships. "Shaadi Vision" is only our
+internal name; the app shows "Shaadi".
 
-It looks like a Shaadi app: a glass top bar (sh-translucent tokens + blur) with DNA tabs, and every
-control on the page is a DNA component (sh-tab-group, sh-segmented-control, sh-chip, sh-search, sh-card,
-sh-button). "Shaadi Vision" is only our internal name; the app shows "Shaadi DNA".
-
-| Tab | Shows | Source |
+| Tab (sh-navigation-bar) | Shows | Source |
 |---|---|---|
-| Home | The whole foundation: colours (Light + Dark), gradients, text styles, spacing, radius, stroke, opacity, shadows, icons, plus component counts by status | `dist/json/tokens.json`, `dist/css/tokens.css`, the sh-typo kit, `icons/` |
-| Catalog | The Core components: status, platforms with code, Figma and GitLab links, live web build | `dist/vision/catalog.json` (`tools/vision.py`), `components/*/web/` |
-| Components | Everything else (full profile view, profile card, account, utility), same layout | same |
-| Stories | One card per Jira story; open one for its header, decisions, phone screens and the components it uses | `stories.json` |
+| Home | The My Shaadi screen (Figma "Account — Premium") | `screens/home.html` |
+| Matches | Matches — Near Me | `screens/matches.html` |
+| Catalog | Core components (stage, icon, purpose → detail with stage stepper and live build) and the Foundation (tokens, type, icons) | `dist/vision/catalog.json`, `dist/json/tokens.json` |
+| Components | Every other component, and the Jira stories with their screens | `dist/vision/catalog.json`, `stories.json` |
+| Premium | Premium plans | `screens/premium.html` |
+
+The shared link (GitLab Pages) rebuilds on every push to `main`.
 
 ## Run
 

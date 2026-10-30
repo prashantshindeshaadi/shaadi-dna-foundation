@@ -1,0 +1,58 @@
+/*
+ * Shaadi Vision App: screen layout glue.
+ * Only the gaps and margins between DNA components on the three screens (home, matches, premium).
+ * Components bring their own look; nothing here restyles one. Tokens only.
+ */
+
+.scr-screen {
+  display: flex;
+  flex-direction: column;
+  background: var(--sh-background-default);
+  color: var(--sh-text-primary);
+}
+
+/* A vertical stack of blocks, inset by a page margin */
+.scr-stack {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.scr-stack--center { align-items: center; }
+
+.scr-pad-page { padding: var(--sh-space-16) var(--sh-space-page-margin); }   /* Home Body: 16 × page margin */
+.scr-pad-top   { padding: var(--sh-space-8) var(--sh-space-page-margin); }  /* Home Account: 8 × page margin */
+.scr-pad-16    { padding: var(--sh-space-8) var(--sh-space-16); }           /* Matches / Premium rows: 8 × 16 */
+.scr-pad-x-16  { padding-inline: var(--sh-space-16); }                      /* Matches card */
+
+.scr-gap-8       { gap: var(--sh-space-8); }
+.scr-gap-16      { gap: var(--sh-space-16); }
+.scr-gap-section { gap: var(--sh-space-gap-section); }
+
+/* Section label above a group ("YOUR FIRST WEEK ON PREMIUM") */
+.scr-label {
+  margin: 0;
+  color: var(--sh-text-tertiary);
+}
+
+/* Two cards side by side, equal widths */
+.scr-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sh-space-gap-list);
+}
+
+/* A row of chips that scrolls sideways */
+.scr-scroll-row {
+  display: flex;
+  gap: var(--sh-space-8);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.scr-scroll-row::-webkit-scrollbar { display: none; }
+.scr-scroll-row > * { flex: none; }
+
+/* A single block centred in its row */
+.scr-center {
+  display: flex;
+  justify-content: center;
+}

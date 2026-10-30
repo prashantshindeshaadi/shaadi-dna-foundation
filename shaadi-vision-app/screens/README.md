@@ -1,0 +1,3 @@
+- `home.html`, `matches.html`, `premium.html`: screen fragments (no status bar or navigation bar; the app shell draws those) built only from DNA web components. They copy Figma frames `2712:29643` "Account — Premium", `2712:26598` "Matches — Near Me" and `2712:28638` "Premium plans" (file l1SuD1Q1l8QXGvtomszGYW).
+- Icon URLs use the literal `ICON/` prefix and repo images `ASSET/` (relative to `shaadi-dna-foundation/`); the app replaces both. Member photos are neutral placeholders. `<!-- gap: … -->` marks what no component covers yet.
+- `screens.css`: layout glue only (page margins, gaps between components), tokens only, every class prefixed `.scr-`.
