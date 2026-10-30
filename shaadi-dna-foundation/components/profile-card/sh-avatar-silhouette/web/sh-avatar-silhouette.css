@@ -1,0 +1,32 @@
+/*
+ * sh-avatar-silhouette — web (HTML5 + CSS)
+ * Spec: ../sh-avatar-silhouette.md · Figma node 3598:69346 (Gender Female / Male)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file.
+ *
+ * The no-photo silhouette art: white, soft edges, transparent, in a square (the figure fills 84%, centred).
+ * An asset: draw it over the sh-gradient/placeholder/* background (sh-avatar-placeholder, sh-overlay No photo).
+ *
+ *   <span class="sh-avatar-silhouette" role="img" aria-label="No photo"></span>             Female
+ *   <span class="sh-avatar-silhouette sh-avatar-silhouette--male" aria-hidden="true"></span>  Male
+ *
+ * Gender  (none) Female (../assets/female.svg) | --male (../assets/male.svg)
+ * The square fills its container's width; size it with width. Art opacity sh-opacity/full.
+ * As a plain <img>, use ../assets/<gender>.svg (web, iOS) or <gender>@3x.png (Android, 160 slot) directly.
+ */
+
+.sh-avatar-silhouette {
+  --_art: url("../assets/female.svg");
+
+  box-sizing: border-box;
+  display: block;
+  flex: none;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--_art) center / contain no-repeat;
+  opacity: var(--sh-opacity-full);
+}
+
+/* ---- Gender -------------------------------------------------------------- */
+.sh-avatar-silhouette--male { --_art: url("../assets/male.svg"); }

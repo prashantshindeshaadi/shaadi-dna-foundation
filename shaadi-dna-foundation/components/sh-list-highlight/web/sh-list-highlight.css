@@ -1,0 +1,46 @@
+/*
+ * sh-list-highlight — web (HTML5 + CSS)
+ * Spec: ../sh-list-highlight.md · Figma node 3322:75524 (Style Default)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-text-link/web/sh-text-link.css (Action) ·
+ *   components/sh-list-default/web/sh-list-default.css (the shared row parts)
+ *
+ *   <div class="sh-list-highlight">
+ *     <div class="sh-list-default__row">
+ *       <span class="sh-list-default__leading">
+ *         <span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(icons/line/contact.svg)" aria-hidden="true"></span>
+ *       </span>
+ *       <span class="sh-list-default__content">
+ *         <span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-sm">She viewed your contact details</span></span>
+ *       </span>
+ *       <span class="sh-list-default__trailing">
+ *         <a class="sh-text-link sh-text-link--link sh-text-link--sm sh-text-link--no-border" href="…"><span class="sh-text-link__label sh-button-sm">View</span></a>
+ *       </span>
+ *     </div>
+ *   </div>
+ *
+ * Style     (none) Default — the only value: a pinned, tinted band (semantic/information/background/soft/default),
+ *           padding 14 × 32, gap 12. Title sh-body-sm in text/secondary; subtitle (Show subtitle) sh-body-sm text/tertiary.
+ * Action    sh-text-link Link Small, Underline Off (--no-border); it is the only tap target and brings its own 48 area.
+ * Leading icon colour isn't bound in Figma; on the information soft band §4.2 allows only
+ * semantic/information/icon/on-soft, so that is used. Title text/secondary on this band is outside §4.2 (report).
+ * Not interactive itself: no row states.
+ */
+
+.sh-list-highlight {
+  --_list-pad-x: var(--sh-space-32);
+  --_list-pad-y: var(--sh-space-14);
+  --_list-gap: var(--sh-space-12);
+  --_list-bg: var(--sh-semantic-information-background-soft-default);
+  --_list-title: var(--sh-text-secondary);
+  --_list-icon: var(--sh-semantic-information-icon-on-soft);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sh-list-highlight .sh-list-default__trailing { gap: var(--sh-space-2); }

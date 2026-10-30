@@ -1,0 +1,95 @@
+/*
+ * sh-list-preference — web (HTML5 + CSS)
+ * Spec: ../sh-list-preference.md · Figma node 3322:75525 (State Match / No match × Expand Off / Collapsed / Expanded)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-text-link/web/sh-text-link.css (Read more / Hide) ·
+ *   components/sh-list-default/web/sh-list-default.css (the shared row parts)
+ *
+ *   <div class="sh-list-preference">
+ *     <div class="sh-list-default__row">
+ *       <span class="sh-list-default__leading">
+ *         <span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(icons/line/religion.svg)" aria-hidden="true"></span>
+ *       </span>
+ *       <span class="sh-list-preference__main">
+ *         <span class="sh-list-preference__main-row">
+ *           <span class="sh-list-default__content">
+ *             <span class="sh-list-default__title-row"><span class="sh-list-default__title sh-support-label">Religion</span></span>
+ *             <span class="sh-list-default__subtitle sh-body-lg-tight">Hindu</span>
+ *           </span>
+ *           <span class="sh-list-default__trailing">
+ *             <span class="sh-list-preference__mark sh-icon sh-icon--24" style="--icon:url(icons/filled/check.svg)" role="img" aria-label="Matches"></span>
+ *           </span>
+ *         </span>
+ *         <hr class="sh-list-default__divider sh-divider sh-divider--soft">       Show divider (under the text, not the icon)
+ *       </span>
+ *     </div>
+ *   </div>
+ *
+ * State   (none) Match: value text/secondary, sh-icon/check Filled 24 · --no-match: value text/disabled, close 24
+ * Expand  (none) Off · --collapsed: value cut to 2 lines + "Read more" (chevron down) · --expanded: full value + "Hide"
+ *         (chevron up). The toggle is sh-text-link Neutral Medium, no border, inside .sh-list-preference__more
+ *         (padding-y 10): <button class="sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border"
+ *         type="button" aria-expanded="false">…</button>. It brings its own 48 tap area and focus ring.
+ * Text    title (the preference) sh-support-label text/tertiary · value (Subtitle) sh-body-lg-tight.
+ * Row     no padding, gap 16; the text block has padding-y 8. Not tappable itself: no row states.
+ * Colours not bound in Figma: the tick and cross. Tick = icon/primary (sh-icon's default), cross = icon/disabled
+ * (it sits with the disabled value). See the report.
+ */
+
+.sh-list-preference {
+  --_list-pad-x: var(--sh-space-0);
+  --_list-pad-y: var(--sh-space-0);
+  --_list-gap: var(--sh-space-16);
+  --_list-min-h: var(--sh-space-0);
+  --_list-content-gap: var(--sh-space-0);
+  --_list-title: var(--sh-text-tertiary);
+  --_list-subtitle: var(--sh-text-secondary);
+  --_mark: var(--sh-icon-primary);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sh-list-preference__main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sh-list-preference__main-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-16);
+}
+
+.sh-list-preference .sh-list-default__content { padding: var(--sh-space-8) var(--sh-space-0); }
+
+.sh-list-preference__mark { --sh-icon-paint: var(--_mark); }
+
+.sh-list-preference__more {
+  display: flex;
+  padding: var(--sh-space-10) var(--sh-space-0);
+}
+
+/* ---- State ---------------------------------------------------------------------------------------- */
+.sh-list-preference--no-match {
+  --_list-subtitle: var(--sh-text-disabled);
+  --_mark: var(--sh-icon-disabled);
+}
+
+/* ---- Expand --------------------------------------------------------------------------------------- */
+.sh-list-preference--collapsed,
+.sh-list-preference--expanded { --_list-content-gap: var(--sh-space-2); }
+
+.sh-list-preference--collapsed .sh-list-default__subtitle {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}

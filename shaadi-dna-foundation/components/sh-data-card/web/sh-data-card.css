@@ -1,0 +1,113 @@
+/*
+ * sh-data-card — web (HTML5 + CSS)
+ * Spec: ../sh-data-card.md · Figma node 2644:46398 (Type Score / Promo / Usage)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   + the parts it holds: sh-text-link.css, sh-progress-ring.css (Score) · sh-button.css (Promo) · sh-progress-bar.css (Usage)
+ *
+ * Score  <article class="sh-data-card">
+ *          <div class="sh-data-card__row">
+ *            <div class="sh-data-card__text">
+ *              <h3 class="sh-data-card__title sh-title-lg">Excellent Match</h3>
+ *              <p class="sh-data-card__body sh-body-md">Strong in Health, Compatibility, Destiny</p>      Show body
+ *              <div class="sh-data-card__action"><a class="sh-text-link sh-text-link--neutral …">…</a></div>  Action slot
+ *            </div>
+ *            <div class="sh-data-card__visual"><div class="sh-progress-ring" …>…</div></div>                 Visual slot
+ *          </div>
+ *        </article>
+ * Promo  .sh-data-card--promo: same tree; Action = sh-button Primary Small, Visual = a 64 pictogram
+ *        (<img class="sh-data-card__pictogram" src="icons/pictogram/…@2x.png" alt="">).
+ * Usage  .sh-data-card--usage: __row = __title (sh-title-md) + __value (sh-body-sm) + __chevron (16);
+ *        then an sh-progress-bar; then __body as the note (sh-body-sm, text/tertiary).
+ *        The chevron says the card opens something: use <a class="sh-data-card sh-data-card--usage" href="…">.
+ *
+ * Type      (none) Score | --promo | --usage
+ * Booleans  Show body / Show action / Show visual: include or leave out __body / __action / __visual.
+ * State     a linked card (Usage) has a focus ring. Figma defines no hover or pressed look (see the report).
+ */
+
+.sh-data-card {
+  --_row-gap: var(--sh-space-16);
+  --_text-gap: var(--sh-space-4);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-16);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-soft);
+  color: var(--sh-text-primary);
+  font-family: var(--sh-typo-font-family-primary);
+  text-decoration: none;
+}
+
+/* ---- Type ---------------------------------------------------------------- */
+.sh-data-card--promo { --_row-gap: var(--sh-space-12); --_text-gap: var(--sh-space-8); }
+.sh-data-card--usage { --_row-gap: var(--sh-space-8); }
+
+/* ---- Parts --------------------------------------------------------------- */
+.sh-data-card__row {
+  display: flex;
+  align-items: center;
+  gap: var(--_row-gap);
+  min-width: 0;
+}
+.sh-data-card__text {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--_text-gap);
+  min-width: 0;
+}
+.sh-data-card__title {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+.sh-data-card__body {
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+.sh-data-card__action {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+.sh-data-card__visual {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+.sh-data-card__pictogram {
+  display: block;
+  width: var(--sh-icon-pictogram-size-64);
+  height: var(--sh-icon-pictogram-size-64);
+  object-fit: contain;
+}
+
+/* ---- Type=Usage ---------------------------------------------------------- */
+.sh-data-card--usage .sh-data-card__title { flex: 1 1 0; min-width: 0; }
+.sh-data-card__value {
+  flex: none;
+  color: var(--sh-text-secondary);
+}
+.sh-data-card__chevron {
+  width: var(--sh-icon-size-16);
+  height: var(--sh-icon-size-16);
+  --sh-icon-paint: var(--sh-icon-secondary);    /* Figma binds no colour on Chevron; icon/secondary chosen (report) */
+}
+.sh-data-card--usage .sh-data-card__body { color: var(--sh-text-tertiary); }
+
+/* ---- Linked card (Usage): focus ring like the other DNA parts ------------ */
+a.sh-data-card { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+a.sh-data-card:focus { outline: none; }
+a.sh-data-card:focus-visible,
+a.sh-data-card.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  outline-offset: var(--sh-space-2);
+}

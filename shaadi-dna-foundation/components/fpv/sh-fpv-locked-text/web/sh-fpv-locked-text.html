@@ -1,0 +1,44 @@
+<!doctype html>
+<!--
+  sh-fpv-locked-text — web (HTML5 + CSS). Every variant: Property 1 Default / Date of birth,
+  plus text between the mask and the lock (one lock, always last).
+  Spec: ../sh-fpv-locked-text.md · Figma node 3313:31645
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-fpv-locked-text</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="sh-fpv-locked-text.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .zoom { display: flex; gap: var(--sh-space-24); align-items: center; zoom: 3; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-fpv-locked-text</h1>
+
+  <h2 class="sh-title-md">Property 1</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Property 1=Default</figcaption><span class="sh-fpv-locked-text" role="img" aria-label="Hidden. Upgrade to view"><span class="sh-fpv-locked-text__mask" style="--icon:url(../../../../icons/filled/asterisk.svg)" aria-hidden="true"><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span></span><span class="sh-fpv-locked-text__lock sh-icon sh-icon--12" style="--icon:url(../../../../icons/filled/lock.svg)" aria-hidden="true"></span></span></figure>
+    <figure><figcaption class="sh-body-sm">Property 1=Date of birth</figcaption><span class="sh-fpv-locked-text sh-fpv-locked-text--date-of-birth" role="img" aria-label="Date of birth hidden. Upgrade to view"><span class="sh-fpv-locked-text__mask" style="--icon:url(../../../../icons/filled/asterisk.svg)" aria-hidden="true"><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__separator"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__separator"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span></span><span class="sh-fpv-locked-text__lock sh-icon sh-icon--12" style="--icon:url(../../../../icons/filled/lock.svg)" aria-hidden="true"></span></span></figure>
+  </div>
+
+  <h2 class="sh-title-md">Text after the mask · one lock, always last</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Masked email</figcaption><span class="sh-fpv-locked-text" role="img" aria-label="Email hidden, at gmail.com. Upgrade to view"><span class="sh-fpv-locked-text__mask" style="--icon:url(../../../../icons/filled/asterisk.svg)" aria-hidden="true"><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span></span><span class="sh-body-lg-tight" style="color:var(--sh-text-secondary)">@gmail.com</span><span class="sh-fpv-locked-text__lock sh-icon sh-icon--12" style="--icon:url(../../../../icons/filled/lock.svg)" aria-hidden="true"></span></span></figure>
+  </div>
+
+  <h2 class="sh-title-md">Detail at 3×</h2>
+  <div class="zoom"><span class="sh-fpv-locked-text" role="img" aria-label="Hidden. Upgrade to view"><span class="sh-fpv-locked-text__mask" style="--icon:url(../../../../icons/filled/asterisk.svg)" aria-hidden="true"><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span></span><span class="sh-fpv-locked-text__lock sh-icon sh-icon--12" style="--icon:url(../../../../icons/filled/lock.svg)" aria-hidden="true"></span></span><span class="sh-fpv-locked-text sh-fpv-locked-text--date-of-birth" role="img" aria-label="Date of birth hidden. Upgrade to view"><span class="sh-fpv-locked-text__mask" style="--icon:url(../../../../icons/filled/asterisk.svg)" aria-hidden="true"><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__separator"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__separator"></span><span class="sh-fpv-locked-text__dot sh-icon"></span><span class="sh-fpv-locked-text__dot sh-icon"></span></span><span class="sh-fpv-locked-text__lock sh-icon sh-icon--12" style="--icon:url(../../../../icons/filled/lock.svg)" aria-hidden="true"></span></span></div>
+  <p class="note sh-body-sm">Gold is premium/border/default (Figma binds the raw sh-color-basic/premium/500 step). Date of birth split: 2 · 2 · 2 asterisks (assumed; the blueprint lists only the Default layer tree).</p>
+</body>
+</html>

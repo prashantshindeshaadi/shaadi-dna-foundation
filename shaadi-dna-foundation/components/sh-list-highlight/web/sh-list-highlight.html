@@ -1,0 +1,41 @@
+<!doctype html>
+<!--
+  sh-list-highlight — web (HTML5 + CSS). Every variant: Style Default, plus the booleans (subtitle, title icon, divider).
+  Spec: ../sh-list-highlight.md · Figma node 3322:75524
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-list-highlight</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-divider/web/sh-divider.css">
+  <link rel="stylesheet" href="../../../components/sh-list-default/web/sh-list-default.css">
+  <link rel="stylesheet" href="../../../components/sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="../../../components/sh-list-highlight/web/sh-list-highlight.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: rows are 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { background: var(--sh-background-default); }
+    .card { background: var(--sh-background-default); padding: 0 var(--sh-space-padding-card); border-radius: var(--sh-radius-card); }
+
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-list-highlight</h1>
+
+  <h2 class="sh-title-md">Style=Default</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Style=Default</figcaption><div class="surface"><div class="sh-list-highlight"><div class="sh-list-default__row"><span class="sh-list-default__leading"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/contact.svg)" aria-hidden="true"></span></span><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-sm">She viewed your contact details</span></span></span><span class="sh-list-default__trailing"><a class="sh-text-link sh-text-link--link sh-text-link--sm sh-text-link--no-border" href="#"><span class="sh-text-link__label sh-button-sm">View</span></a></span></div></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Show subtitle=true</figcaption><div class="surface"><div class="sh-list-highlight"><div class="sh-list-default__row"><span class="sh-list-default__leading"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/user-love.svg)" aria-hidden="true"></span></span><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-sm">3 new matches today</span></span><span class="sh-list-default__subtitle sh-body-sm">Based on your partner preferences</span></span><span class="sh-list-default__trailing"><a class="sh-text-link sh-text-link--link sh-text-link--sm sh-text-link--no-border" href="#"><span class="sh-text-link__label sh-button-sm">See all</span></a></span></div></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Show title icon=true</figcaption><div class="surface"><div class="sh-list-highlight"><div class="sh-list-default__row"><span class="sh-list-default__leading"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/user-edit.svg)" aria-hidden="true"></span></span><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-sm">Your profile is 80% complete</span><span class="sh-list-default__title-icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/information-circle.svg)" aria-hidden="true"></span></span></span><span class="sh-list-default__trailing"><a class="sh-text-link sh-text-link--link sh-text-link--sm sh-text-link--no-border" href="#"><span class="sh-text-link__label sh-button-sm">Complete</span></a></span></div></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Show divider=true</figcaption><div class="surface"><div class="sh-list-highlight"><div class="sh-list-default__row"><span class="sh-list-default__leading"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/contact.svg)" aria-hidden="true"></span></span><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-sm">She viewed your contact details</span></span></span><span class="sh-list-default__trailing"><a class="sh-text-link sh-text-link--link sh-text-link--sm sh-text-link--no-border" href="#"><span class="sh-text-link__label sh-button-sm">View</span></a></span></div><hr class="sh-list-default__divider sh-divider sh-divider--soft"></div></div></figure>
+  </div>
+</body>
+</html>

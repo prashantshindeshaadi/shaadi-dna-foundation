@@ -1,0 +1,58 @@
+/*
+ * sh-list-score — web (HTML5 + CSS)
+ * Spec: ../sh-list-score.md · Figma node 3322:75527 (State Default / No match / Locked)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-list-default/web/sh-list-default.css (the shared row parts)
+ *
+ *   <div class="sh-list-score">
+ *     <div class="sh-list-default__row">
+ *       <span class="sh-list-default__leading">
+ *         <img class="sh-list-default__pictogram sh-icon" src="icons/pictogram/koota-rajju@2x.png" alt="">
+ *       </span>
+ *       <span class="sh-list-default__content">
+ *         <span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-lg">Rajju</span></span>
+ *       </span>
+ *       <span class="sh-list-default__trailing">
+ *         <span class="sh-list-default__value sh-body-lg">1/1</span>
+ *       </span>
+ *     </div>
+ *   </div>
+ *
+ * State     (none) Default · --no-match (0 points: name, caption and points text/disabled, pictogram at
+ *           sh-opacity/disabled) · --locked (name text/disabled; a 12 lock in place of the value, __lock)
+ * Row       40 tall, no side padding, padding-y 6, gap 12; pictogram sh-icon/pictogram/size/28; title sh-body-lg;
+ *           Show subtitle sh-body-sm; Show value caption __value-caption sh-body-sm; value sh-body-lg.
+ * Lock      <span class="sh-list-score__lock sh-icon sh-icon--12" style="--icon:url(icons/filled/lock.svg)" aria-label="Locked" role="img"></span>
+ *           Its colour isn't bound in Figma: icon/disabled, matching the greyed name (see the report).
+ * Not tappable: no states.
+ */
+
+.sh-list-score {
+  --_list-pad-x: var(--sh-space-0);
+  --_list-pad-y: var(--sh-space-6);
+  --_list-gap: var(--sh-space-12);
+  --_list-min-h: var(--sh-space-0);
+  --_list-title: var(--sh-text-secondary);
+  --_list-subtitle: var(--sh-text-tertiary);
+  --_list-caption: var(--sh-text-tertiary);
+  --_list-value: var(--sh-text-primary);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sh-list-score--no-match {
+  --_list-title: var(--sh-text-disabled);
+  --_list-subtitle: var(--sh-text-disabled);
+  --_list-caption: var(--sh-text-disabled);
+  --_list-value: var(--sh-text-disabled);
+}
+.sh-list-score--no-match .sh-list-default__leading { opacity: var(--sh-opacity-disabled); }
+
+.sh-list-score--locked { --_list-title: var(--sh-text-disabled); }
+
+.sh-list-score__lock { --sh-icon-paint: var(--sh-icon-disabled); }

@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+  sh-list-report — web (HTML5 + CSS). Every variant: State Open / Download / Premium lock / Locked / Upgrade,
+  plus the booleans (subtitle, title icon, divider) and Focus / Disabled.
+  Spec: ../sh-list-report.md · Figma node 3322:75526
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-list-report</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-divider/web/sh-divider.css">
+  <link rel="stylesheet" href="../../../components/sh-list-default/web/sh-list-default.css">
+  <link rel="stylesheet" href="../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../components/sh-list-report/web/sh-list-report.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: rows are 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { background: var(--sh-background-default); }
+    .card { background: var(--sh-background-default); padding: 0 var(--sh-space-padding-card); border-radius: var(--sh-radius-card); }
+
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-list-report</h1>
+
+  <h2 class="sh-title-md">State (inside a card, which insets the rows)</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">State=Open</figcaption><div class="card"><div class="sh-list-report"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-lg">Kundali match report</span></span><span class="sh-list-default__subtitle sh-body-md">28 of 36 gunas match</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">State=Download</figcaption><div class="card"><div class="sh-list-report sh-list-report--download"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-lg">Horoscope</span></span><span class="sh-list-default__subtitle sh-body-md">PDF · 2 pages</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/download.svg)" role="img" aria-label="Download"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">State=Premium lock</figcaption><div class="card"><div class="sh-list-report sh-list-report--premium-lock"><div class="sh-list-default__row"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-lg">Manglik dosha report</span></span><span class="sh-list-default__subtitle sh-body-md">Know if she is Manglik</span></span><span class="sh-list-default__trailing"><span class="sh-list-report__lock sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/lock.svg)" role="img" aria-label="Locked"></span></span></div></div></div></figure>
+    <figure><figcaption class="sh-body-sm">State=Locked</figcaption><div class="card"><div class="sh-list-report sh-list-report--locked"><div class="sh-list-default__row"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Detailed compatibility</span></span><span class="sh-list-default__subtitle sh-body-md">Opens after you connect</span></span><span class="sh-list-default__trailing"><span class="sh-list-report__lock sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/lock.svg)" role="img" aria-label="Locked"></span></span></div></div></div></figure>
+    <figure><figcaption class="sh-body-sm">State=Upgrade (keeps its own 16 padding, edge to edge)</figcaption><div class="surface"><div class="sh-list-report sh-list-report--upgrade"><div class="sh-list-default__row"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-sm-tight">Unlock all 4 reports</span></span><span class="sh-list-default__subtitle sh-body-sm">With any Premium plan</span></span><span class="sh-list-default__trailing"><button class="sh-button sh-button--premium-solid sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Upgrade</span></span></button></span></div></div></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">A locked group led by Upgrade · Show divider · Show title icon</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Upgrade + Locked × 2 (Show divider=true)</figcaption><div class="surface"><div class="sh-list-report sh-list-report--upgrade"><div class="sh-list-default__row"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-sm-tight">Unlock all 4 reports</span></span><span class="sh-list-default__subtitle sh-body-sm">With any Premium plan</span></span><span class="sh-list-default__trailing"><button class="sh-button sh-button--premium-solid sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Upgrade</span></span></button></span></div></div><div class="card"><div class="sh-list-report sh-list-report--locked"><div class="sh-list-default__row"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Detailed compatibility</span></span><span class="sh-list-default__subtitle sh-body-md">Opens after you connect</span></span><span class="sh-list-default__trailing"><span class="sh-list-report__lock sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/lock.svg)" role="img" aria-label="Locked"></span></span></div><hr class="sh-list-default__divider sh-divider sh-divider--soft"></div><div class="sh-list-report sh-list-report--locked"><div class="sh-list-default__row"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Family background</span></span><span class="sh-list-default__subtitle sh-body-md">Opens after you connect</span></span><span class="sh-list-default__trailing"><span class="sh-list-report__lock sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/lock.svg)" role="img" aria-label="Locked"></span></span></div></div></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Show title icon=true</figcaption><div class="card"><div class="sh-list-report"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-lg">Kundali match report</span><span class="sh-list-default__title-icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/information-circle.svg)" aria-hidden="true"></span></span><span class="sh-list-default__subtitle sh-body-md">28 of 36 gunas match</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Focus · Disabled</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Focus (:focus-visible)</figcaption><div class="card"><div class="sh-list-report"><a class="sh-list-default__row is-focus" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-lg">Kundali match report</span></span><span class="sh-list-default__subtitle sh-body-md">28 of 36 gunas match</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Disabled</figcaption><div class="card"><div class="sh-list-report sh-list-report--download"><a class="sh-list-default__row" href="#" aria-disabled="true"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-lg">Horoscope</span></span><span class="sh-list-default__subtitle sh-body-md">PDF · 2 pages</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/download.svg)" role="img" aria-label="Download"></span></span></a></div></div></figure>
+  </div>
+  <p class="note sh-body-sm">Lock colours are not bound in Figma: gold = premium/border/default (as sh-fpv-locked-text), grey = icon/disabled. Figma draws no Hover or Pressed look.</p>
+</body>
+</html>

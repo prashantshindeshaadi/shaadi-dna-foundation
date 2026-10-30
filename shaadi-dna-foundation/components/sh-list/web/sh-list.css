@@ -1,0 +1,30 @@
+/*
+ * sh-list — web (HTML5 + CSS)
+ * Spec: ../sh-list.md · Figma node 3322:75631 (Type Default / Preference / Report / Score / Highlight / Grouped / Info)
+ *
+ * One list row for every list in the app: a Type switch around ONE row part. All the look lives in the row
+ * parts; this file only holds the wrapper.
+ *
+ * Needs, loaded once per page, before this file: dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css ·
+ *   components/sh-icon/web/sh-icon.css · components/sh-divider/web/sh-divider.css ·
+ *   components/sh-list-default/web/sh-list-default.css (the shared row parts, every Type except Info) ·
+ *   the CSS of the Type you use: sh-list-preference · sh-list-report · sh-list-score · sh-list-highlight ·
+ *   sh-list-grouped · sh-list-info (+ fpv/sh-fpv-locked-text) — and their slot parts (sh-text-link, sh-button…).
+ *
+ *   <div class="sh-list sh-list--grouped">
+ *     <div class="sh-list-grouped sh-list-grouped--start"> … the row part's own markup … </div>
+ *   </div>
+ *
+ * Type  (none) Default → sh-list-default · --preference → sh-list-preference · --report → sh-list-report ·
+ *       --score → sh-list-score · --highlight → sh-list-highlight · --grouped → sh-list-grouped · --info → sh-list-info.
+ *       Put exactly one row part inside (Figma "Row"); its options are that part's modifiers.
+ * Stack rows by placing several sh-list elements in a list container (<ul role="list"> or a card).
+ * Not interactive itself: states belong to the row.
+ */
+
+.sh-list {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

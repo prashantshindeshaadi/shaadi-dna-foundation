@@ -1,0 +1,69 @@
+<!doctype html>
+<!--
+  sh-avatar-silhouette — web (HTML5 + CSS). Both variants (Gender Female / Male), on the placeholder background
+  and where they are used (sh-avatar-placeholder, sh-overlay No photo).
+  Spec: ../sh-avatar-silhouette.md · Figma node 3598:69346
+  Run `python3 tools/build.py` once so dist/ exists.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-avatar-silhouette</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../sh-avatar-placeholder/web/sh-avatar-placeholder.css">
+  <link rel="stylesheet" href="../../../../components/sh-overlay/web/sh-overlay.css">
+  <link rel="stylesheet" href="sh-avatar-silhouette.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 72ch; }
+    .grid { display: flex; flex-wrap: wrap; gap: var(--sh-space-24); align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .square { width: 160px; background: var(--sh-gradient-placeholder-avatar); }       /* Figma 492 square, shown at 160 */
+    .frame { width: 160px; }
+    .stage { position: relative; width: 240px; aspect-ratio: 360 / 520; overflow: hidden; border-radius: var(--sh-radius-card); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-avatar-silhouette</h1>
+  <p class="note sh-body-sm">White art on transparent: always drawn over the sh-gradient/placeholder background. Replace the art in
+    <code>assets/</code> and every placeholder and overlay follows.</p>
+
+  <h2 class="sh-title-md">Gender</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Gender=Female</figcaption>
+      <div class="square"><span class="sh-avatar-silhouette" role="img" aria-label="No photo"></span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Gender=Male</figcaption>
+      <div class="square"><span class="sh-avatar-silhouette sh-avatar-silhouette--male" role="img" aria-label="No photo"></span></div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Used in</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-avatar-placeholder<br>Gender=Female, Aspect Ratio=1:1</figcaption>
+      <div class="frame"><span class="sh-avatar-placeholder sh-avatar-placeholder--1x1" role="img" aria-label="No photo"><span class="sh-avatar-silhouette" aria-hidden="true"></span></span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">sh-avatar-placeholder<br>Gender=Male, Aspect Ratio=4:5</figcaption>
+      <div class="frame"><span class="sh-avatar-placeholder" role="img" aria-label="No photo"><span class="sh-avatar-silhouette sh-avatar-silhouette--male" aria-hidden="true"></span></span></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">sh-overlay<br>Surface=Photo, Type=No photo (Male)</figcaption>
+      <div class="stage">
+        <div class="sh-overlay sh-overlay--photo sh-overlay--no-photo">
+          <div class="sh-overlay__background" aria-hidden="true"></div>
+          <div class="sh-overlay__content">
+            <img class="sh-overlay__illustration" src="../assets/male.svg" alt="">
+            <p class="sh-overlay__text sh-title-lg">No Photo added yet</p>
+          </div>
+          <button class="sh-button sh-button--tertiary sh-button--sm sh-overlay__action" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Request a Photo</span></span></button>
+        </div>
+      </div>
+    </figure>
+  </div>
+</body>
+</html>

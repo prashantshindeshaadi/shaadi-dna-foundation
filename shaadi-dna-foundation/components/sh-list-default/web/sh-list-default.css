@@ -1,0 +1,170 @@
+/*
+ * sh-list-default — web (HTML5 + CSS)
+ * Spec: ../sh-list-default.md · Figma node 2643:35319 (Leading 6 × Trailing 7 × Style Default, + 2 Inline = 44 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-divider/web/sh-divider.css (Show divider) · and, for the slot you use:
+ *   sh-checkbox / sh-radio (Leading Control) · sh-avatar (+ sh-user-images) (Leading Avatar) ·
+ *   sh-tag (Trailing Tag) · sh-toggle (Trailing Toggle) · sh-button (Trailing Action) · sh-indicator (Trailing Meta)
+ *
+ *   <div class="sh-list-default sh-list-default--icon sh-list-default--chevron">
+ *     <a class="sh-list-default__row" href="…">                          (or <button type="button">, or <div> when not tappable)
+ *       <span class="sh-list-default__leading">
+ *         <span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(icons/line/settings.svg)" aria-hidden="true"></span>
+ *       </span>
+ *       <span class="sh-list-default__content">
+ *         <span class="sh-list-default__title-row">
+ *           <span class="sh-list-default__title sh-body-md">Account settings</span>
+ *           <span class="sh-list-default__title-icon sh-icon sh-icon--16" style="--icon:url(icons/line/information-circle.svg)" aria-hidden="true"></span>
+ *         </span>
+ *         <span class="sh-list-default__subtitle sh-body-sm">Email, phone, password</span>
+ *       </span>
+ *       <span class="sh-list-default__trailing">
+ *         <span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+ *       </span>
+ *     </a>
+ *     <hr class="sh-list-default__divider sh-divider sh-divider--soft">
+ *   </div>
+ *
+ * Leading   (none) None · --icon (__icon 20) · --icon-circle (__icon-circle > __icon) · --pictogram (img.__pictogram) ·
+ *           --avatar (sh-avatar md) · --control (sh-checkbox or sh-radio; label it with aria-labelledby → the title)
+ * Trailing  (none) None · --chevron (__icon 20, arrow-right-01) · --value (__value-caption sh-body-sm + __value sh-title-md) ·
+ *           --tag (sh-tag Small) · --toggle (sh-toggle) · --action (sh-button Ghost Small) ·
+ *           --meta (__value-caption time + sh-indicator count, stacked; inbox rows)
+ * Style     (none) Default: 16 side padding · --inline: no side padding (inside a card / sheet).
+ *           Inline + Icon: 40 tall, gap 16, padding-y 8, title sh-body-lg in text/secondary. Inline + Control: 48 tall.
+ * Text      title sh-body-md (Inline + Icon: sh-body-lg) · subtitle sh-body-sm · Show subtitle / Show title icon /
+ *           Show value caption / Show divider: include or leave out the span / <hr>.
+ * State     the row is the tap target (≥ 48 tall). Focus :focus-visible (.is-focus forces it) · Disabled [disabled] /
+ *           [aria-disabled="true"]. Figma draws no Hover or Pressed look for list rows, so none is drawn here.
+ *
+ * SHARED ROW: sh-list-grouped, -highlight, -preference, -report and -score are built from these same
+ * __row / __leading / __content / __title-row / __title / __title-icon / __subtitle / __trailing /
+ * __value-caption / __value / __icon parts. Each type tunes them with private custom properties on its root:
+ *   --_list-pad-x · --_list-pad-y · --_list-gap · --_list-min-h · --_list-bg · --_list-content-gap ·
+ *   --_list-title · --_list-subtitle · --_list-caption · --_list-value · --_list-icon · --_list-trailing-gap ·
+ *   --_list-ring-offset
+ */
+
+.sh-list-default {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ---- Shared row ------------------------------------------------------------------------------------- */
+.sh-list-default__row {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--_list-gap, var(--sh-space-12));
+  width: 100%;
+  min-height: var(--_list-min-h, var(--sh-icon-target-default));   /* 48 tap area */
+  margin: 0;
+  padding: var(--_list-pad-y, var(--sh-space-12)) var(--_list-pad-x, var(--sh-space-16));
+  border: 0;
+  background: var(--_list-bg, none);
+  color: var(--sh-text-primary);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: left;
+  text-decoration: none;
+}
+
+a.sh-list-default__row,
+button.sh-list-default__row {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sh-list-default__row:focus { outline: none; }
+.sh-list-default__row:focus-visible,
+.sh-list-default__row.is-focus {
+  outline: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  /* inside the row, so a card or outline doesn't clip it; rows with no side padding move it outside (--_list-ring-offset) */
+  outline-offset: var(--_list-ring-offset, calc(var(--sh-stroke-strong) * -1));
+}
+
+.sh-list-default__row:disabled,
+.sh-list-default__row[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}
+
+.sh-list-default__leading {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+/* Any glyph in a row (leading icon, chevron, download…). The icon's own default colour unless a type says otherwise. */
+.sh-list-default__icon { --sh-icon-paint: var(--_list-icon, var(--sh-icon-primary)); }
+
+.sh-list-default__icon-circle {
+  display: flex;
+  flex: none;
+  padding: var(--sh-space-8);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-background-strong);
+}
+
+/* Pictogram: multi-colour art, <img class="sh-icon …">. no token bound in Default; uses the smallest
+   pictogram size, as sh-list-score binds (sh-icon/pictogram/size/28). */
+.sh-list-default__pictogram {
+  width: var(--sh-icon-pictogram-size-28);
+  height: var(--sh-icon-pictogram-size-28);
+}
+
+.sh-list-default__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--_list-content-gap, var(--sh-space-2));
+  min-width: 0;
+}
+
+.sh-list-default__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-6);
+  min-width: 0;
+}
+
+.sh-list-default__title {
+  min-width: 0;
+  color: var(--_list-title, var(--sh-text-primary));
+}
+
+.sh-list-default__title-icon { --sh-icon-paint: var(--sh-icon-tertiary); }   /* a hint (sh-list-grouped) */
+
+.sh-list-default__subtitle { color: var(--_list-subtitle, var(--sh-text-tertiary)); }
+
+.sh-list-default__trailing {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--_list-trailing-gap, var(--sh-space-6));
+}
+
+.sh-list-default__value-caption { color: var(--_list-caption, var(--sh-text-tertiary)); }
+.sh-list-default__value { color: var(--_list-value, var(--sh-text-primary)); white-space: nowrap; }
+
+/* ---- Trailing=Meta: time over the unread count ------------------------------------------------------ */
+.sh-list-default--meta .sh-list-default__trailing {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--sh-space-4);
+}
+
+/* ---- Style=Inline ----------------------------------------------------------------------------------- */
+.sh-list-default--inline { --_list-pad-x: var(--sh-space-0); }
+
+.sh-list-default--inline.sh-list-default--icon {
+  --_list-gap: var(--sh-space-16);
+  --_list-pad-y: var(--sh-space-8);
+  --_list-min-h: var(--sh-space-0);         /* 40 tall, not a tap target */
+  --_list-title: var(--sh-text-secondary);
+}

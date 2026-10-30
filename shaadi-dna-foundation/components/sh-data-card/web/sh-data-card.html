@@ -1,0 +1,189 @@
+<!doctype html>
+<!--
+  sh-data-card — web (HTML5 + CSS). Every variant (Type Score / Promo / Usage), the booleans, and Dark.
+  Spec: ../sh-data-card.md · Figma node 2644:46398
+  Run `python3 tools/build.py` once so dist/ exists.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-data-card</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../components/sh-progress-ring/web/sh-progress-ring.css">
+  <link rel="stylesheet" href="../../../components/sh-progress-bar/web/sh-progress-bar.css">
+  <link rel="stylesheet" href="sh-data-card.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; flex-wrap: wrap; gap: var(--sh-space-24); align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .frame { width: 320px; }                                   /* Figma 320 wide */
+    .dark { padding: var(--sh-space-24); background: var(--sh-background-default); color: var(--sh-text-primary); border-radius: var(--sh-radius-card); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-data-card</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Score</figcaption><div class="frame">
+  <article class="sh-data-card">
+    <div class="sh-data-card__row">
+      <div class="sh-data-card__text">
+        <h3 class="sh-data-card__title sh-title-lg">Excellent Match</h3>
+        <p class="sh-data-card__body sh-body-md">Strong in Health, Compatibility, Destiny</p>
+        <div class="sh-data-card__action"><button class="sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border" type="button"><span class="sh-text-link__label sh-button-md">Read More</span><span class="sh-text-link__icon sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div>
+      </div>
+      <div class="sh-data-card__visual">
+        <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="28">
+          <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+          <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">28</span><span class="sh-progress-ring__total sh-support-meta">of 36</span></span>
+        </div>
+      </div>
+    </div>
+  </article>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Promo</figcaption><div class="frame">
+  <article class="sh-data-card sh-data-card--promo">
+    <div class="sh-data-card__row">
+      <div class="sh-data-card__text">
+        <h3 class="sh-data-card__title sh-title-lg">Get a Gold Badge</h3>
+        <p class="sh-data-card__body sh-body-md">Verify your ID and get up to 3× more responses</p>
+        <div class="sh-data-card__action"><button class="sh-button sh-button--primary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Get verified</span></span></button></div>
+      </div>
+      <div class="sh-data-card__visual"><img class="sh-data-card__pictogram" src="../../../icons/pictogram/verified-super@2x.png" alt=""></div>
+    </div>
+  </article>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Usage</figcaption><div class="frame">
+  <a class="sh-data-card sh-data-card--usage" href="#contacts-viewed">
+    <div class="sh-data-card__row">
+      <span class="sh-data-card__title sh-title-md">Contacts Viewed</span>
+      <span class="sh-data-card__value sh-body-sm">10 of 72 used</span>
+      <span class="sh-data-card__chevron sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+    </div>
+    <div class="sh-progress-bar" role="progressbar" aria-label="Contacts viewed" aria-valuemin="0" aria-valuemax="72" aria-valuenow="10"><span class="sh-progress-bar__progress" style="width: 14%"></span></div>
+    <p class="sh-data-card__body sh-body-sm">Resets on 12 Nov with your plan</p>
+  </a>
+    </div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Show body / Show action / Show visual</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Score, Show body=false</figcaption><div class="frame">
+  <article class="sh-data-card">
+    <div class="sh-data-card__row">
+      <div class="sh-data-card__text">
+        <h3 class="sh-data-card__title sh-title-lg">Excellent Match</h3>
+        <div class="sh-data-card__action"><button class="sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border" type="button"><span class="sh-text-link__label sh-button-md">Read More</span><span class="sh-text-link__icon sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div>
+      </div>
+      <div class="sh-data-card__visual">
+        <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="28">
+          <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+          <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">28</span><span class="sh-progress-ring__total sh-support-meta">of 36</span></span>
+        </div>
+      </div>
+    </div>
+  </article>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Score, Show action=false</figcaption><div class="frame">
+  <article class="sh-data-card">
+    <div class="sh-data-card__row">
+      <div class="sh-data-card__text">
+        <h3 class="sh-data-card__title sh-title-lg">Excellent Match</h3>
+        <p class="sh-data-card__body sh-body-md">Strong in Health, Compatibility, Destiny</p>
+      </div>
+      <div class="sh-data-card__visual">
+        <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="28">
+          <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+          <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">28</span><span class="sh-progress-ring__total sh-support-meta">of 36</span></span>
+        </div>
+      </div>
+    </div>
+  </article>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Score, Show visual=false</figcaption><div class="frame">
+  <article class="sh-data-card">
+    <div class="sh-data-card__row">
+      <div class="sh-data-card__text">
+        <h3 class="sh-data-card__title sh-title-lg">Excellent Match</h3>
+        <p class="sh-data-card__body sh-body-md">Strong in Health, Compatibility, Destiny</p>
+        <div class="sh-data-card__action"><button class="sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border" type="button"><span class="sh-text-link__label sh-button-md">Read More</span><span class="sh-text-link__icon sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </div>
+  </article>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Promo, Show visual=false</figcaption><div class="frame">
+  <article class="sh-data-card sh-data-card--promo">
+    <div class="sh-data-card__row">
+      <div class="sh-data-card__text">
+        <h3 class="sh-data-card__title sh-title-lg">Get a Gold Badge</h3>
+        <p class="sh-data-card__body sh-body-md">Verify your ID and get up to 3× more responses</p>
+        <div class="sh-data-card__action"><button class="sh-button sh-button--primary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Get verified</span></span></button></div>
+      </div>
+    </div>
+  </article>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Usage, Show body=false</figcaption><div class="frame">
+  <a class="sh-data-card sh-data-card--usage" href="#contacts-viewed">
+    <div class="sh-data-card__row">
+      <span class="sh-data-card__title sh-title-md">Contacts Viewed</span>
+      <span class="sh-data-card__value sh-body-sm">10 of 72 used</span>
+      <span class="sh-data-card__chevron sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+    </div>
+    <div class="sh-progress-bar" role="progressbar" aria-label="Contacts viewed" aria-valuemin="0" aria-valuemax="72" aria-valuenow="10"><span class="sh-progress-bar__progress" style="width: 14%"></span></div>
+  </a>
+    </div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Dark</h2>
+  <div class="grid dark" data-theme="dark">
+    <figure><figcaption class="sh-body-sm">Type=Score</figcaption><div class="frame">
+  <article class="sh-data-card">
+    <div class="sh-data-card__row">
+      <div class="sh-data-card__text">
+        <h3 class="sh-data-card__title sh-title-lg">Excellent Match</h3>
+        <p class="sh-data-card__body sh-body-md">Strong in Health, Compatibility, Destiny</p>
+        <div class="sh-data-card__action"><button class="sh-text-link sh-text-link--neutral sh-text-link--md sh-text-link--no-border" type="button"><span class="sh-text-link__label sh-button-md">Read More</span><span class="sh-text-link__icon sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></button></div>
+      </div>
+      <div class="sh-data-card__visual">
+        <div class="sh-progress-ring" role="meter" aria-label="Astro match" aria-valuemin="0" aria-valuemax="36" aria-valuenow="28">
+          <svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="78 100"></circle></svg>
+          <span class="sh-progress-ring__value" aria-hidden="true"><span class="sh-progress-ring__number sh-heading-sm">28</span><span class="sh-progress-ring__total sh-support-meta">of 36</span></span>
+        </div>
+      </div>
+    </div>
+  </article>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Promo</figcaption><div class="frame">
+  <article class="sh-data-card sh-data-card--promo">
+    <div class="sh-data-card__row">
+      <div class="sh-data-card__text">
+        <h3 class="sh-data-card__title sh-title-lg">Get a Gold Badge</h3>
+        <p class="sh-data-card__body sh-body-md">Verify your ID and get up to 3× more responses</p>
+        <div class="sh-data-card__action"><button class="sh-button sh-button--primary sh-button--sm" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-sm">Get verified</span></span></button></div>
+      </div>
+      <div class="sh-data-card__visual"><img class="sh-data-card__pictogram" src="../../../icons/pictogram/verified-super@2x.png" alt=""></div>
+    </div>
+  </article>
+    </div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Usage</figcaption><div class="frame">
+  <a class="sh-data-card sh-data-card--usage" href="#contacts-viewed">
+    <div class="sh-data-card__row">
+      <span class="sh-data-card__title sh-title-md">Contacts Viewed</span>
+      <span class="sh-data-card__value sh-body-sm">10 of 72 used</span>
+      <span class="sh-data-card__chevron sh-icon" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+    </div>
+    <div class="sh-progress-bar" role="progressbar" aria-label="Contacts viewed" aria-valuemin="0" aria-valuemax="72" aria-valuenow="10"><span class="sh-progress-bar__progress" style="width: 14%"></span></div>
+    <p class="sh-data-card__body sh-body-sm">Resets on 12 Nov with your plan</p>
+  </a>
+    </div></figure>
+  </div>
+</body>
+</html>

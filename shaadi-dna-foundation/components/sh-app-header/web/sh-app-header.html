@@ -1,0 +1,159 @@
+<!doctype html>
+<!--
+  sh-app-header — web (HTML5 + CSS). Every variant (Type Overlay / Title / Back), Show status bar, long titles, Dark.
+  Spec: ../sh-app-header.md · Figma node 2712:13153
+  Run `python3 tools/build.py` once so dist/ exists. The photo behind Overlay is a neutral placeholder.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-app-header</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-icon-button/web/sh-icon-button.css">
+  <link rel="stylesheet" href="../../../components/sh-status-bar/web/sh-status-bar.css">
+  <link rel="stylesheet" href="sh-app-header.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; flex-wrap: wrap; gap: var(--sh-space-24); align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .screen { width: 360px; overflow: hidden; border-radius: var(--sh-radius-md); background: var(--sh-background-default); }   /* Figma 360 wide */
+    .screen--photo { min-height: 160px; background: center / cover url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='200' fill='url(%23g)'/%3E%3C/svg%3E"); }
+    .dark { padding: var(--sh-space-24); background: var(--sh-background-soft); border-radius: var(--sh-radius-card); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-app-header</h1>
+
+  <h2 class="sh-title-md">Type</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Overlay</figcaption>
+      <div class="screen screen--photo">
+    <header class="sh-app-header">
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--sm" type="button" aria-label="Go back"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button></div>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--sm" type="button" aria-label="View photos"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/image.svg)" aria-hidden="true"></span></button><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--sm" type="button" aria-label="More options"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Title</figcaption>
+      <div class="screen">
+    <header class="sh-app-header sh-app-header--title">
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Open menu"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/menu.svg)" aria-hidden="true"></span></button></div>
+        <h1 class="sh-app-header__title sh-heading-sm">Matches</h1>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Search"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/search.svg)" aria-hidden="true"></span></button><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Notifications"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/notification.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Back</figcaption>
+      <div class="screen">
+    <header class="sh-app-header sh-app-header--back">
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Go back"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button></div>
+        <h1 class="sh-app-header__title sh-title-lg">Account settings</h1>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Help"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Show status bar</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Overlay, Show status bar=true</figcaption>
+      <div class="screen screen--photo">
+    <header class="sh-app-header">
+      <div class="sh-status-bar sh-status-bar--dark" aria-hidden="true"><span class="sh-status-bar__time sh-body-md">12:30</span><span class="sh-status-bar__camera"></span><span class="sh-status-bar__icons"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/signal.svg)"></span><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/battery.svg)"></span></span></div>
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--sm" type="button" aria-label="Go back"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button></div>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--sm" type="button" aria-label="View photos"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/image.svg)" aria-hidden="true"></span></button><button class="sh-icon-button sh-icon-button--translucent sh-icon-button--sm" type="button" aria-label="More options"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/more-vertical.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Title, Show status bar=true</figcaption>
+      <div class="screen">
+    <header class="sh-app-header sh-app-header--title">
+      <div class="sh-status-bar" aria-hidden="true"><span class="sh-status-bar__time sh-body-md">12:30</span><span class="sh-status-bar__camera"></span><span class="sh-status-bar__icons"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/signal.svg)"></span><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/battery.svg)"></span></span></div>
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Open menu"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/menu.svg)" aria-hidden="true"></span></button></div>
+        <h1 class="sh-app-header__title sh-heading-sm">Matches</h1>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Search"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/search.svg)" aria-hidden="true"></span></button><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Notifications"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/notification.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Back, Show status bar=true</figcaption>
+      <div class="screen">
+    <header class="sh-app-header sh-app-header--back">
+      <div class="sh-status-bar" aria-hidden="true"><span class="sh-status-bar__time sh-body-md">12:30</span><span class="sh-status-bar__camera"></span><span class="sh-status-bar__icons"><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/signal.svg)"></span><span class="sh-icon sh-icon--16" style="--icon:url(../../../icons/filled/battery.svg)"></span></span></div>
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Go back"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button></div>
+        <h1 class="sh-app-header__title sh-title-lg">Account settings</h1>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Help"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Long title (truncates)</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Title, long title</figcaption>
+      <div class="screen">
+    <header class="sh-app-header sh-app-header--title">
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Open menu"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/menu.svg)" aria-hidden="true"></span></button></div>
+        <h1 class="sh-app-header__title sh-heading-sm">Recently viewed profiles near you</h1>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Search"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/search.svg)" aria-hidden="true"></span></button><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Notifications"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/notification.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Back, long title</figcaption>
+      <div class="screen">
+    <header class="sh-app-header sh-app-header--back">
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Go back"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button></div>
+        <h1 class="sh-app-header__title sh-title-lg">Privacy and contact settings</h1>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Help"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Dark</h2>
+  <div class="grid dark" data-theme="dark">
+    <figure><figcaption class="sh-body-sm">Type=Title</figcaption>
+      <div class="screen">
+    <header class="sh-app-header sh-app-header--title">
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Open menu"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/menu.svg)" aria-hidden="true"></span></button></div>
+        <h1 class="sh-app-header__title sh-heading-sm">Matches</h1>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Search"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/search.svg)" aria-hidden="true"></span></button><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Notifications"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/notification.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">Type=Back</figcaption>
+      <div class="screen">
+    <header class="sh-app-header sh-app-header--back">
+      <div class="sh-app-header__bar">
+        <div class="sh-app-header__navigation"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Go back"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/arrow-left-01.svg)" aria-hidden="true"></span></button></div>
+        <h1 class="sh-app-header__title sh-title-lg">Account settings</h1>
+        <div class="sh-app-header__actions"><button class="sh-icon-button sh-icon-button--tertiary sh-icon-button--md" type="button" aria-label="Help"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/help-circle.svg)" aria-hidden="true"></span></button></div>
+      </div>
+    </header>
+      </div>
+    </figure>
+  </div>
+</body>
+</html>

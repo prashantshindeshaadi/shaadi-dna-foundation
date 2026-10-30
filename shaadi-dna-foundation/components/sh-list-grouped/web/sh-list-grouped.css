@@ -1,0 +1,57 @@
+/*
+ * sh-list-grouped — web (HTML5 + CSS)
+ * Spec: ../sh-list-grouped.md · Figma node 3322:75528 (Position Single / Start / Middle / End)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-list-default/web/sh-list-default.css (the shared row parts)
+ *
+ *   <div class="sh-list-grouped sh-list-grouped--start">
+ *     <a class="sh-list-default__row" href="…">
+ *       <span class="sh-list-default__content">
+ *         <span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Email</span></span>
+ *       </span>
+ *       <span class="sh-list-default__trailing">
+ *         <span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+ *       </span>
+ *     </a>
+ *     <hr class="sh-list-default__divider sh-divider sh-divider--soft">          Show divider (between rows)
+ *   </div>
+ *
+ * Position  (none) Single: outline all round, radius md · --start: top + sides, top corners round ·
+ *           --middle: sides only, square · --end: sides + bottom, bottom corners round.
+ * Row       the shared sh-list-default row with padding 12 on every side; title sh-body-md, subtitle sh-body-sm,
+ *           title icon (Show title icon) in icon/tertiary, trailing icon 20 (Figma "Trailing icon" swap).
+ * State     as sh-list-default: Focus :focus-visible (.is-focus) · Disabled [disabled] / [aria-disabled="true"].
+ *           Figma draws no Hover or Pressed look. Corner smoothing (60 % in Figma) has no CSS equivalent.
+ */
+
+.sh-list-grouped {
+  --_list-pad-x: var(--sh-space-12);
+  --_list-pad-y: var(--sh-space-12);
+  --_list-gap: var(--sh-space-12);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;   /* keeps the row's focus ring and divider inside the round corners */
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-md);
+}
+
+.sh-list-grouped--start {
+  border-bottom-width: var(--sh-stroke-none);
+  border-radius: var(--sh-radius-md) var(--sh-radius-md) var(--sh-radius-none) var(--sh-radius-none);
+}
+
+.sh-list-grouped--middle {
+  border-top-width: var(--sh-stroke-none);
+  border-bottom-width: var(--sh-stroke-none);
+  border-radius: var(--sh-radius-none);
+}
+
+.sh-list-grouped--end {
+  border-top-width: var(--sh-stroke-none);
+  border-radius: var(--sh-radius-none) var(--sh-radius-none) var(--sh-radius-md) var(--sh-radius-md);
+}

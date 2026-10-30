@@ -1,0 +1,145 @@
+<!doctype html>
+<!--
+  sh-blur-overlay — web (HTML5 + CSS). Both variants (Unlock Self / Upgrade), Light and Dark, plus Backdrop swaps.
+  Spec: ../sh-blur-overlay.md · Figma node 3363:74823
+  Run `python3 tools/build.py` once so dist/ exists. Shown under a neutral placeholder section (the FPV sections
+  it locks have no web code yet). The section Art drawings are not in the repo, so real backdrops show without art.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-blur-overlay</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../components/sh-graphic/web/sh-graphic.css">
+  <link rel="stylesheet" href="sh-blur-overlay.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; flex-wrap: wrap; gap: var(--sh-space-24); align-items: flex-start; }
+    .screen { margin: 0; width: 360px; }                               /* Figma frame width 360 */
+    .screen figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .page { background: var(--sh-background-default); color: var(--sh-text-primary); border-radius: var(--sh-radius-md); overflow: hidden; }
+    .placeholder-section { padding: var(--sh-space-16) var(--sh-space-20) var(--sh-space-8); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-blur-overlay</h1>
+
+  <h2 class="sh-title-md">Unlock</h2>
+  <div class="grid">
+    <figure class="screen"><figcaption class="sh-support-meta">Unlock=Self, Graphic=Placeholder, Mode=Light</figcaption>
+      <div class="page">
+        <div class="placeholder-section sh-title-md">Section</div>
+        <section class="sh-blur-overlay" aria-label="Section locked">
+          <div class="sh-blur-overlay__visual">
+            <div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--placeholder" aria-hidden="true"></div>
+            <div class="sh-blur-overlay__graphic sh-graphic sh-graphic--placeholder"><span class="sh-graphic__label sh-body-sm">Graphic · 3:1 · add the final art as a new variant</span></div>
+          </div>
+          <div class="sh-blur-overlay__message">
+            <p class="sh-blur-overlay__reason sh-body-lg">Add your own details to see Meher's</p>
+            <button class="sh-button sh-button--tertiary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Add my details</span></span></button>
+          </div>
+        </section>
+      </div>
+    </figure>
+    <figure class="screen"><figcaption class="sh-support-meta">Unlock=Upgrade, Graphic=Placeholder, Mode=Light</figcaption>
+      <div class="page">
+        <div class="placeholder-section sh-title-md">Section</div>
+        <section class="sh-blur-overlay" aria-label="Section locked">
+          <div class="sh-blur-overlay__visual">
+            <div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--placeholder" aria-hidden="true"></div>
+            <div class="sh-blur-overlay__graphic sh-graphic sh-graphic--placeholder"><span class="sh-graphic__label sh-body-sm">Graphic · 3:1 · add the final art as a new variant</span></div>
+          </div>
+          <div class="sh-blur-overlay__message">
+            <p class="sh-blur-overlay__reason sh-body-lg">Upgrade to see Meher's details</p>
+            <button class="sh-button sh-button--premium-soft sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Upgrade now</span></span></button>
+          </div>
+        </section>
+      </div>
+    </figure>
+    <figure class="screen"><figcaption class="sh-support-meta">Unlock=Self, Graphic=Placeholder, Mode=Dark</figcaption>
+      <div class="page" data-theme="dark">
+        <div class="placeholder-section sh-title-md">Section</div>
+        <section class="sh-blur-overlay" aria-label="Section locked">
+          <div class="sh-blur-overlay__visual">
+            <div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--placeholder" aria-hidden="true"></div>
+            <div class="sh-blur-overlay__graphic sh-graphic sh-graphic--placeholder"><span class="sh-graphic__label sh-body-sm">Graphic · 3:1 · add the final art as a new variant</span></div>
+          </div>
+          <div class="sh-blur-overlay__message">
+            <p class="sh-blur-overlay__reason sh-body-lg">Add your own details to see Meher's</p>
+            <button class="sh-button sh-button--tertiary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Add my details</span></span></button>
+          </div>
+        </section>
+      </div>
+    </figure>
+    <figure class="screen"><figcaption class="sh-support-meta">Unlock=Upgrade, Graphic=Placeholder, Mode=Dark</figcaption>
+      <div class="page" data-theme="dark">
+        <div class="placeholder-section sh-title-md">Section</div>
+        <section class="sh-blur-overlay" aria-label="Section locked">
+          <div class="sh-blur-overlay__visual">
+            <div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--placeholder" aria-hidden="true"></div>
+            <div class="sh-blur-overlay__graphic sh-graphic sh-graphic--placeholder"><span class="sh-graphic__label sh-body-sm">Graphic · 3:1 · add the final art as a new variant</span></div>
+          </div>
+          <div class="sh-blur-overlay__message">
+            <p class="sh-blur-overlay__reason sh-body-lg">Upgrade to see Meher's details</p>
+            <button class="sh-button sh-button--premium-soft sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Upgrade now</span></span></button>
+          </div>
+        </section>
+      </div>
+    </figure>
+  </div>
+
+  <h2 class="sh-title-md">Backdrop (instance swap)</h2>
+  <div class="grid">
+    <figure class="screen"><figcaption class="sh-support-meta">Backdrop=Astro (art not in repo)</figcaption>
+      <div class="page">
+        <div class="placeholder-section sh-title-md">Section</div>
+        <section class="sh-blur-overlay" aria-label="Section locked">
+          <div class="sh-blur-overlay__visual">
+            <div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop" aria-hidden="true"></div>
+            <div class="sh-blur-overlay__graphic sh-graphic"></div><!-- Graphic slot: the section art goes here (not in the repo yet) -->
+          </div>
+          <div class="sh-blur-overlay__message">
+            <p class="sh-blur-overlay__reason sh-body-lg">Add your birth details to see your Guna match</p>
+            <button class="sh-button sh-button--tertiary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Add birth details</span></span></button>
+          </div>
+        </section>
+      </div>
+    </figure>
+    <figure class="screen"><figcaption class="sh-support-meta">Backdrop=Contact (art not in repo)</figcaption>
+      <div class="page">
+        <div class="placeholder-section sh-title-md">Section</div>
+        <section class="sh-blur-overlay" aria-label="Section locked">
+          <div class="sh-blur-overlay__visual">
+            <div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--contact" aria-hidden="true"></div>
+            <div class="sh-blur-overlay__graphic sh-graphic sh-graphic--contact"></div><!-- Graphic slot: the section art goes here (not in the repo yet) -->
+          </div>
+          <div class="sh-blur-overlay__message">
+            <p class="sh-blur-overlay__reason sh-body-lg">Upgrade to see Meher's phone and email</p>
+            <button class="sh-button sh-button--premium-soft sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Upgrade now</span></span></button>
+          </div>
+        </section>
+      </div>
+    </figure>
+    <figure class="screen"><figcaption class="sh-support-meta">Backdrop=Photos (art not in repo), Mode=Dark</figcaption>
+      <div class="page" data-theme="dark">
+        <div class="placeholder-section sh-title-md">Section</div>
+        <section class="sh-blur-overlay" aria-label="Section locked">
+          <div class="sh-blur-overlay__visual">
+            <div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop sh-graphic--photos" aria-hidden="true"></div>
+            <div class="sh-blur-overlay__graphic sh-graphic sh-graphic--photos"></div><!-- Graphic slot: the section art goes here (not in the repo yet) -->
+          </div>
+          <div class="sh-blur-overlay__message">
+            <p class="sh-blur-overlay__reason sh-body-lg">Connect to see Meher's photos</p>
+            <button class="sh-button sh-button--tertiary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Connect</span></span></button>
+          </div>
+        </section>
+      </div>
+    </figure>
+  </div>
+</body>
+</html>

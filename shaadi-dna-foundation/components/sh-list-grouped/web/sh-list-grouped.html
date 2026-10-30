@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+  sh-list-grouped — web (HTML5 + CSS). Every variant: Position Single / Start / Middle / End, the booleans
+  (subtitle, title icon, divider) and Focus / Disabled.
+  Spec: ../sh-list-grouped.md · Figma node 3322:75528
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-list-grouped</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-divider/web/sh-divider.css">
+  <link rel="stylesheet" href="../../../components/sh-list-default/web/sh-list-default.css">
+  <link rel="stylesheet" href="../../../components/sh-list-grouped/web/sh-list-grouped.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.note { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-24); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; width: 360px; }   /* Figma: rows are 360 wide */
+    figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .surface { background: var(--sh-background-default); }
+    .card { background: var(--sh-background-default); padding: 0 var(--sh-space-padding-card); border-radius: var(--sh-radius-card); }
+
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-list-grouped</h1>
+
+  <h2 class="sh-title-md">Position</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Position=Single</figcaption><div class="surface"><div class="sh-list-grouped"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Delete profile</span></span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Position=Start</figcaption><div class="surface"><div class="sh-list-grouped sh-list-grouped--start"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Email</span></span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Position=Middle</figcaption><div class="surface"><div class="sh-list-grouped sh-list-grouped--middle"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Phone number</span></span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Position=End</figcaption><div class="surface"><div class="sh-list-grouped sh-list-grouped--end"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Password</span></span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">A group: Start + Middle + End (Show divider on the first two)</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Start · Middle · End</figcaption><div class="surface"><div class="sh-list-grouped sh-list-grouped--start"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Email</span></span><span class="sh-list-default__subtitle sh-body-sm">s****@gmail.com</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a><hr class="sh-list-default__divider sh-divider sh-divider--soft"></div><div class="sh-list-grouped sh-list-grouped--middle"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Phone number</span></span><span class="sh-list-default__subtitle sh-body-sm">+91 98•• •••• 21</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a><hr class="sh-list-default__divider sh-divider sh-divider--soft"></div><div class="sh-list-grouped sh-list-grouped--end"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Password</span></span><span class="sh-list-default__subtitle sh-body-sm">Changed 3 months ago</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Show subtitle · Show title icon · Focus · Disabled</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Show subtitle=true</figcaption><div class="surface"><div class="sh-list-grouped"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Profile visibility</span></span><span class="sh-list-default__subtitle sh-body-sm">Visible to all members</span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Show title icon=true</figcaption><div class="surface"><div class="sh-list-grouped"><a class="sh-list-default__row" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Contact filters</span><span class="sh-list-default__title-icon sh-icon sh-icon--16" style="--icon:url(../../../icons/line/information-circle.svg)" aria-hidden="true"></span></span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Focus (:focus-visible)</figcaption><div class="surface"><div class="sh-list-grouped"><a class="sh-list-default__row is-focus" href="#"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Delete profile</span></span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Disabled</figcaption><div class="surface"><div class="sh-list-grouped"><a class="sh-list-default__row" href="#" aria-disabled="true"><span class="sh-list-default__content"><span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-md">Delete profile</span></span></span><span class="sh-list-default__trailing"><span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(../../../icons/line/arrow-right-01.svg)" aria-hidden="true"></span></span></a></div></div></figure>
+  </div>
+  <p class="note sh-body-sm">Figma draws no Hover or Pressed look for list rows, so none is drawn. Corner smoothing (60 %) has no CSS equivalent.</p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+/*
+ * sh-list-report — web (HTML5 + CSS)
+ * Spec: ../sh-list-report.md · Figma node 3322:75526 (State Open / Download / Premium lock / Locked / Upgrade)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-divider/web/sh-divider.css · components/sh-button/web/sh-button.css (Upgrade) ·
+ *   components/sh-list-default/web/sh-list-default.css (the shared row parts)
+ *
+ *   <div class="sh-list-report">
+ *     <a class="sh-list-default__row" href="…">
+ *       <span class="sh-list-default__content">
+ *         <span class="sh-list-default__title-row"><span class="sh-list-default__title sh-body-lg">Kundali match report</span></span>
+ *         <span class="sh-list-default__subtitle sh-body-md">28 of 36 gunas match</span>
+ *       </span>
+ *       <span class="sh-list-default__trailing">
+ *         <span class="sh-list-default__icon sh-icon sh-icon--20" style="--icon:url(icons/line/arrow-right-01.svg)" aria-hidden="true"></span>
+ *       </span>
+ *     </a>
+ *   </div>
+ *
+ * State   (none) Open: chevron 20 · --download: download 20 (Premium viewer) ·
+ *         --premium-lock: readable, gold lock 16 (free viewer) · --locked: title text/disabled sh-body-md, grey lock 16
+ *         (padding 4 round it) · --upgrade: premium soft band, 16 side padding, title sh-body-sm-tight, subtitle sh-body-sm,
+ *         sh-button Premium Solid Small "Upgrade" as the action.
+ * Text    title sh-body-lg (Locked sh-body-md · Upgrade sh-body-sm-tight) · subtitle sh-body-md (Upgrade sh-body-sm).
+ * Lock    <span class="sh-list-report__lock sh-icon sh-icon--16" style="--icon:url(icons/filled/lock.svg)" role="img" aria-label="Locked"></span>
+ * Row     no side padding — the card or sheet insets it; padding-y 14 (Upgrade 12), gap 12. Open / Download rows are
+ *         the tap target (<a> / <button>): Focus :focus-visible (.is-focus), Disabled [aria-disabled="true"].
+ *         Figma draws no Hover or Pressed look. Locked / Premium lock / Upgrade rows are <div>s.
+ * Colours not bound in Figma: the gold lock takes premium/border/default (as sh-fpv-locked-text), the grey lock
+ * icon/disabled. Upgrade title/subtitle text/primary · text/tertiary on premium soft are outside §4.2 (report).
+ */
+
+.sh-list-report {
+  --_list-pad-x: var(--sh-space-0);
+  --_list-pad-y: var(--sh-space-14);
+  --_list-gap: var(--sh-space-12);
+  --_list-ring-offset: var(--sh-space-4);   /* no side padding: the focus ring sits 4 outside (FOUNDATION §7.2) */
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sh-list-report--locked { --_list-title: var(--sh-text-disabled); }
+.sh-list-report--locked .sh-list-default__trailing { padding: var(--sh-space-4); }
+
+.sh-list-report--upgrade {
+  --_list-pad-x: var(--sh-space-16);
+  --_list-pad-y: var(--sh-space-12);
+  --_list-bg: var(--sh-premium-background-soft-default);
+}
+
+.sh-list-report__lock { --sh-icon-paint: var(--sh-icon-disabled); }
+.sh-list-report--premium-lock .sh-list-report__lock { --sh-icon-paint: var(--sh-premium-border-default); }

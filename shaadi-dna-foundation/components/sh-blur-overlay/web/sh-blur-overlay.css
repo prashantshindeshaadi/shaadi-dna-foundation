@@ -1,0 +1,81 @@
+/*
+ * sh-blur-overlay — web (HTML5 + CSS)
+ * Spec: ../sh-blur-overlay.md · Figma node 3363:74823 (Unlock Self / Upgrade)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-button/web/sh-button.css · components/sh-graphic/web/sh-graphic.css
+ *
+ * The one lock for gated sections. A 3:1 Visual (sh-graphic Backdrop under sh-graphic Art) above the reason and
+ * one button. No live blur, no gradient layer, no negative margins: the backdrop is a plain image, so the
+ * locked section's data never reaches the page.
+ *
+ *   <section class="sh-blur-overlay" aria-label="Astro details locked">
+ *     <div class="sh-blur-overlay__visual">
+ *       <div class="sh-blur-overlay__backdrop sh-graphic sh-graphic--backdrop" aria-hidden="true"></div>   Backdrop
+ *       <div class="sh-blur-overlay__graphic sh-graphic"><img class="sh-graphic__art" src="…" alt=""></div>  Graphic slot
+ *     </div>
+ *     <div class="sh-blur-overlay__message">
+ *       <p class="sh-blur-overlay__reason sh-body-lg">Add your own details to see Meher's</p>
+ *       <button class="sh-button sh-button--tertiary sh-button--md" type="button">…</button>
+ *     </div>
+ *   </section>
+ *
+ * Unlock   Self: sh-button--tertiary sh-button--md · Upgrade: sh-button--premium-soft sh-button--md
+ *          (the variant only changes the button, so the block has no modifier)
+ * Any sh-graphic placed straight in __visual works too (Backdrop goes behind, Art on top), so the nested
+ * sh-graphic snippets from Code Connect can be dropped in as they are.
+ * Backdrop and Graphic use the same section modifier (sh-graphic--astro is the default, no class).
+ * Mode follows the page theme through sh-graphic. The button brings its own states.
+ */
+
+.sh-blur-overlay {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-8);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-0) var(--sh-space-0) var(--sh-space-24);
+  overflow: hidden;
+  background: var(--sh-background-default);
+  text-align: center;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Visual: 3:1, Backdrop behind, Graphic on top ------------------------ */
+.sh-blur-overlay__visual {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  overflow: hidden;
+}
+.sh-blur-overlay__backdrop,
+.sh-blur-overlay__visual > .sh-graphic--backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.sh-blur-overlay__graphic,
+.sh-blur-overlay__visual > .sh-graphic:not(.sh-graphic--backdrop) {
+  position: relative;
+}
+
+/* ---- Message ------------------------------------------------------------- */
+.sh-blur-overlay__message {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-16);
+  width: 100%;
+  padding: var(--sh-space-0) var(--sh-space-20);
+}
+.sh-blur-overlay__reason {
+  margin: 0;
+  color: var(--sh-text-primary);
+  text-align: center;
+}

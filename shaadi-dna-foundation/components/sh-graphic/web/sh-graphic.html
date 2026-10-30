@@ -1,0 +1,75 @@
+<!doctype html>
+<!--
+  sh-graphic — web (HTML5 + CSS). All 32 variants: Type Art / Backdrop × 8 Graphics × Mode Light / Dark.
+  Spec: ../sh-graphic.md · Figma node 3383:80983
+  Run `python3 tools/build.py` once so dist/ exists. Mode is the page theme: the Dark columns sit in
+  data-theme="dark". The Art drawings are not in the repo yet, so those frames are empty (dashed demo outline).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-graphic</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="sh-graphic.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    p.note { margin: 0 0 var(--sh-space-16); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: grid; grid-template-columns: repeat(4, 240px); gap: var(--sh-space-16); }
+    .grid__head { color: var(--sh-text-secondary); }
+    .cell { margin: 0; padding: var(--sh-space-8); background: var(--sh-background-default); color: var(--sh-text-primary); border-radius: var(--sh-radius-md); }
+    .cell figcaption { margin-bottom: var(--sh-space-8); color: var(--sh-text-secondary); }
+    .missing { outline: 1px dashed var(--sh-border-strong); outline-offset: -1px; }
+    .missing__note { display: block; margin-top: var(--sh-space-4); color: var(--sh-text-tertiary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-graphic</h1>
+  <p class="note sh-body-sm">One row per Graphic; columns Art Light · Art Dark · Backdrop Light · Backdrop Dark, as on the Core page.
+    Backdrops are the repo images; the Art drawings (hand + object) are not in the repo yet.</p>
+  <div class="grid">
+    <div class="grid__head sh-support-label">Type=Art, Mode=Light</div><div class="grid__head sh-support-label">Type=Art, Mode=Dark</div><div class="grid__head sh-support-label">Type=Backdrop, Mode=Light</div><div class="grid__head sh-support-label">Type=Backdrop, Mode=Dark</div>
+    <!-- Graphic=Astro -->
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Art, Graphic=Astro, Mode=Light</figcaption><div class="sh-graphic missing" role="img" aria-label="Astro art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Art, Graphic=Astro, Mode=Dark</figcaption><div class="sh-graphic missing" role="img" aria-label="Astro art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Astro, Mode=Light</figcaption><div class="sh-graphic sh-graphic--backdrop" aria-hidden="true"></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Astro, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--backdrop" aria-hidden="true"></div></figure>
+    <!-- Graphic=Lifestyle -->
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Art, Graphic=Lifestyle, Mode=Light</figcaption><div class="sh-graphic sh-graphic--lifestyle missing" role="img" aria-label="Lifestyle art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Art, Graphic=Lifestyle, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--lifestyle missing" role="img" aria-label="Lifestyle art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Lifestyle, Mode=Light</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--lifestyle" aria-hidden="true"></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Lifestyle, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--lifestyle" aria-hidden="true"></div></figure>
+    <!-- Graphic=Education & Career -->
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Art, Graphic=Education & Career, Mode=Light</figcaption><div class="sh-graphic sh-graphic--education-career missing" role="img" aria-label="Education & Career art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Art, Graphic=Education & Career, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--education-career missing" role="img" aria-label="Education & Career art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Education & Career, Mode=Light</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--education-career" aria-hidden="true"></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Education & Career, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--education-career" aria-hidden="true"></div></figure>
+    <!-- Graphic=Family -->
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Art, Graphic=Family, Mode=Light</figcaption><div class="sh-graphic sh-graphic--family missing" role="img" aria-label="Family art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Art, Graphic=Family, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--family missing" role="img" aria-label="Family art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Family, Mode=Light</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--family" aria-hidden="true"></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Family, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--family" aria-hidden="true"></div></figure>
+    <!-- Graphic=Contact -->
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Art, Graphic=Contact, Mode=Light</figcaption><div class="sh-graphic sh-graphic--contact missing" role="img" aria-label="Contact art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Art, Graphic=Contact, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--contact missing" role="img" aria-label="Contact art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Contact, Mode=Light</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--contact" aria-hidden="true"></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Contact, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--contact" aria-hidden="true"></div></figure>
+    <!-- Graphic=Photos -->
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Art, Graphic=Photos, Mode=Light</figcaption><div class="sh-graphic sh-graphic--photos missing" role="img" aria-label="Photos art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Art, Graphic=Photos, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--photos missing" role="img" aria-label="Photos art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Photos, Mode=Light</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--photos" aria-hidden="true"></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Photos, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--photos" aria-hidden="true"></div></figure>
+    <!-- Graphic=Photo break -->
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Art, Graphic=Photo break, Mode=Light</figcaption><div class="sh-graphic sh-graphic--photo-break missing" role="img" aria-label="Photo break art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Art, Graphic=Photo break, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--photo-break missing" role="img" aria-label="Photo break art"></div><span class="missing__note sh-support-meta">Art image not in repo</span></figure>
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Photo break, Mode=Light</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--photo-break" aria-hidden="true"></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Photo break, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--photo-break" aria-hidden="true"></div></figure>
+    <!-- Graphic=Placeholder -->
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Art, Graphic=Placeholder, Mode=Light</figcaption><div class="sh-graphic sh-graphic--placeholder"><span class="sh-graphic__label sh-body-sm">Graphic · 3:1 · add the final art as a new variant</span></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Art, Graphic=Placeholder, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--placeholder"><span class="sh-graphic__label sh-body-sm">Graphic · 3:1 · add the final art as a new variant</span></div></figure>
+    <figure class="cell"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Placeholder, Mode=Light</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--placeholder" aria-hidden="true"></div></figure>
+    <figure class="cell" data-theme="dark"><figcaption class="sh-support-meta">Type=Backdrop, Graphic=Placeholder, Mode=Dark</figcaption><div class="sh-graphic sh-graphic--backdrop sh-graphic--placeholder" aria-hidden="true"></div></figure>
+  </div>
+</body>
+</html>

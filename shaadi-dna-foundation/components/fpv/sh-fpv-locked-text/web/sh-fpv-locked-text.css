@@ -1,0 +1,66 @@
+/*
+ * sh-fpv-locked-text — web (HTML5 + CSS)
+ * Spec: ../sh-fpv-locked-text.md · Figma node 3313:31645 (Property 1 Default / Date of birth)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · components/sh-icon/web/sh-icon.css
+ *
+ *   <span class="sh-fpv-locked-text" role="img" aria-label="Hidden. Upgrade to view">
+ *     <span class="sh-fpv-locked-text__mask" style="--icon:url(icons/filled/asterisk.svg)" aria-hidden="true">
+ *       <span class="sh-fpv-locked-text__dot sh-icon"></span> … six dots (they inherit the --icon) …
+ *     </span>
+ *     <span class="sh-fpv-locked-text__lock sh-icon sh-icon--12" style="--icon:url(icons/filled/lock.svg)" aria-hidden="true"></span>
+ *   </span>
+ *
+ * Property 1  (none) Default: six gold asterisks + lock
+ *             --date-of-birth: 2 · 2 · 2 asterisks split by two __separator lines (icon/disabled)
+ * Parts       __mask (row, gap 4, 4 in front; carries --icon: icons/filled/asterisk.svg) · __dot (one asterisk)
+ *             __separator (Date of birth only) · __lock (sh-icon/lock, Filled 12) — always the LAST child.
+ * Text after the mask (e.g. "@gmail.com" in sh-list-info) goes between __mask and __lock, so there is
+ * still one lock and it stays last:  ****** @gmail.com 🔒
+ * Gold = the viewer must pay; always paired with Unlock in the section title. Not interactive: no states.
+ *
+ * Colour: Figma binds the asterisks to sh-color-basic/premium/500, a raw step that has no CSS variable and
+ * must not be used directly (FOUNDATION §4.2). Painted with premium/border/default, the semantic token that
+ * aliases premium/500 in Light (Dark resolves one step lighter). The lock colour is not bound in Figma; it
+ * takes the same gold ("gold Line lock" in the spec). See the report.
+ */
+
+.sh-fpv-locked-text {
+  --_gold: var(--sh-premium-border-default);
+
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-4);
+  vertical-align: middle;
+}
+
+.sh-fpv-locked-text__mask {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sh-space-4);
+  padding-left: var(--sh-space-4);
+}
+
+/* One asterisk. no token: Figma's Path is a fixed 8 × 8 vector (no icon size below 12) → sh-space/8 */
+.sh-fpv-locked-text .sh-fpv-locked-text__dot {
+  display: block;
+  width: var(--sh-space-8);
+  height: var(--sh-space-8);
+  --sh-icon-paint: var(--_gold);
+}
+
+/* Date of birth: the DD / MM / YY split. no token for the line's weight or length in Figma
+   → sh-stroke/default wide, the mask's height */
+.sh-fpv-locked-text__separator {
+  display: block;
+  flex: none;
+  align-self: stretch;
+  width: var(--sh-stroke-default);
+  height: var(--sh-icon-size-12);
+  background: var(--sh-icon-disabled);
+}
+
+.sh-fpv-locked-text__lock { --sh-icon-paint: var(--_gold); }

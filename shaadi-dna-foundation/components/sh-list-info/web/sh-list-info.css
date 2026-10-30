@@ -1,0 +1,68 @@
+/*
+ * sh-list-info — web (HTML5 + CSS)
+ * Spec: ../sh-list-info.md · Figma node 2877:15742 (Lines Single / Double × Content Text / Masked Phone /
+ * Masked Email / Masked / Masked Value = 6 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/fpv/sh-fpv-locked-text/web/sh-fpv-locked-text.css (the masked values)
+ *
+ *   <div class="sh-list-info">
+ *     <span class="sh-list-info__icon sh-icon sh-icon--20" style="--icon:url(icons/line/diet.svg)" aria-hidden="true"></span>
+ *     <span class="sh-list-info__content">
+ *       <span class="sh-list-info__text sh-body-lg-tight">Non-Vegetarian</span>
+ *     </span>
+ *   </div>
+ *
+ * Lines    (none) Single: one line, padding-y 8 on the content, icon centred ·
+ *          --double: two lines (detail + __support sh-body-md-tight, gap 4), padding-y 4, icon held in
+ *          __icon-box (padding-y 10) at the top.
+ * Content  (none) Text · --masked-phone: "+91 8042" then sh-fpv-locked-text ·
+ *          --masked-email: sh-fpv-locked-text with "@gmail.com" between the asterisks and the lock ·
+ *          --masked (Double): the detail, then a masked line under it ·
+ *          --masked-value: a short detail then sh-fpv-locked-text (Date of birth) on the same line.
+ *          Masked values: ONE lock, always last — "****** @gmail.com 🔒", "+91 8042 ****** 🔒".
+ * Text     __text sh-body-lg-tight text/secondary · __support sh-body-md-tight text/tertiary. Gap icon → text: gap/form.
+ * Rules    masked rows always pair with Unlock in the section title. Not interactive: no states.
+ */
+
+.sh-list-info {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-gap-form);
+  width: 100%;
+}
+
+.sh-list-info__icon { --sh-icon-paint: var(--sh-icon-primary); }   /* not bound in Figma: sh-icon's default */
+
+.sh-list-info__icon-box {
+  display: flex;
+  flex: none;
+  padding: var(--sh-space-10) var(--sh-space-0);
+}
+
+.sh-list-info__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sh-space-2);
+  min-width: 0;
+  padding: var(--sh-space-8) var(--sh-space-0);
+}
+
+.sh-list-info__text { color: var(--sh-text-secondary); }
+.sh-list-info__support { color: var(--sh-text-tertiary); }
+
+/* ---- Lines=Double ------------------------------------------------------------------------------------ */
+.sh-list-info--double {
+  align-items: flex-start;
+  padding: var(--sh-space-4) var(--sh-space-0);
+}
+.sh-list-info--double .sh-list-info__content {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sh-space-4);
+  padding: var(--sh-space-0);
+}

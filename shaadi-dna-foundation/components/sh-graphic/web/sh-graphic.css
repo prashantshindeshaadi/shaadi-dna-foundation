@@ -1,0 +1,111 @@
+/*
+ * sh-graphic — web (HTML5 + CSS)
+ * Spec: ../sh-graphic.md · Figma node 3383:80983 (Type Art / Backdrop × 8 Graphics × Mode Light / Dark = 32 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css (Placeholder art label only)
+ *
+ * Section images for locked sections, always 3:1. Fills its container's width.
+ *
+ *   Backdrop  <div class="sh-graphic sh-graphic--backdrop sh-graphic--family" aria-hidden="true"></div>
+ *             A plain image (../assets/backdrop-<graphic>-<light|dark>.jpg) with its soft edges baked in.
+ *   Art       <div class="sh-graphic sh-graphic--family">
+ *               <img class="sh-graphic__art" src="…" alt="">      hand + object drawing, 1080 × 360
+ *             </div>
+ *   Placeholder art (no final art yet)
+ *             <div class="sh-graphic sh-graphic--placeholder">
+ *               <span class="sh-graphic__label sh-body-sm">Graphic · 3:1 · add the final art as a new variant</span>
+ *             </div>
+ *
+ * Type     (none) Art: the Art image under the Fade mask (opaque to 70%, clear at the bottom)
+ *          --backdrop: the blurred mock of the section, fills the box
+ * Graphic  (none) Astro | --lifestyle | --education-career | --family | --contact | --photos | --photo-break | --placeholder
+ * Mode     not a class: the backdrop follows the page theme like the tokens do (prefers-color-scheme, or
+ *          data-theme="light|dark" on any ancestor), so no mode is hard-coded. Art is the same in both modes.
+ *
+ * Art images are not in the repo yet (see the report): pass the drawing in __art. Backdrops are.
+ */
+
+.sh-graphic {
+  --_backdrop-light: url("../assets/backdrop-astro-light.jpg");
+  --_backdrop-dark: url("../assets/backdrop-astro-dark.jpg");
+  --_backdrop: var(--_backdrop-light);
+
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  overflow: hidden;
+}
+
+/* ---- Graphic ------------------------------------------------------------- */
+.sh-graphic--lifestyle {
+  --_backdrop-light: url("../assets/backdrop-lifestyle-light.jpg");
+  --_backdrop-dark: url("../assets/backdrop-lifestyle-dark.jpg");
+}
+.sh-graphic--education-career {
+  --_backdrop-light: url("../assets/backdrop-education-career-light.jpg");
+  --_backdrop-dark: url("../assets/backdrop-education-career-dark.jpg");
+}
+.sh-graphic--family {
+  --_backdrop-light: url("../assets/backdrop-family-light.jpg");
+  --_backdrop-dark: url("../assets/backdrop-family-dark.jpg");
+}
+.sh-graphic--contact {
+  --_backdrop-light: url("../assets/backdrop-contact-light.jpg");
+  --_backdrop-dark: url("../assets/backdrop-contact-dark.jpg");
+}
+.sh-graphic--photos {
+  --_backdrop-light: url("../assets/backdrop-photos-light.jpg");
+  --_backdrop-dark: url("../assets/backdrop-photos-dark.jpg");
+}
+.sh-graphic--photo-break {
+  --_backdrop-light: url("../assets/backdrop-photo-break-light.jpg");
+  --_backdrop-dark: url("../assets/backdrop-photo-break-dark.jpg");
+}
+.sh-graphic--placeholder {
+  --_backdrop-light: url("../assets/backdrop-placeholder-light.jpg");
+  --_backdrop-dark: url("../assets/backdrop-placeholder-dark.jpg");
+}
+
+/* ---- Mode: follows the theme (same switches as tokens.css) --------------- */
+@media (prefers-color-scheme: dark) {
+  :where(:root:not([data-theme='light'])) .sh-graphic { --_backdrop: var(--_backdrop-dark); }
+}
+:where([data-theme='light']) .sh-graphic { --_backdrop: var(--_backdrop-light); }
+:where([data-theme='dark']) .sh-graphic { --_backdrop: var(--_backdrop-dark); }
+
+/* ---- Type=Art ------------------------------------------------------------ */
+.sh-graphic:not(.sh-graphic--backdrop):not(.sh-graphic--placeholder) {
+  /* Fade: opaque down to 70%, then clear at the bottom (alpha mask) */
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
+.sh-graphic__art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Graphic=Placeholder, Type=Art: a dashed box with a note (tokens chosen here; the blueprint binds none) */
+.sh-graphic--placeholder:not(.sh-graphic--backdrop) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sh-space-16);
+  border: var(--sh-stroke-default) dashed var(--sh-border-default);
+  border-radius: var(--sh-radius-card);
+}
+.sh-graphic__label {
+  color: var(--sh-text-secondary);
+  text-align: center;
+}
+
+/* ---- Type=Backdrop ------------------------------------------------------- */
+.sh-graphic--backdrop {
+  background: var(--_backdrop) center / cover no-repeat;
+}
