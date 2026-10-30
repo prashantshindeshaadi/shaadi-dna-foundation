@@ -1,0 +1,240 @@
+<!doctype html>
+<!--
+  sh-plan-card — web (HTML5 + CSS). Every variant: Plan (7 tiers) × State Expanded / Collapsed, the booleans, and states.
+  Spec: ../sh-plan-card.md · Figma node 2710:28466
+  Tier colours are an open gap (no tier/* tokens; see sh-plan-card.css): built from existing roles, not Figma's basic steps.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-plan-card</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../sh-tag/web/sh-tag.css">
+  <link rel="stylesheet" href="../../../sh-divider/web/sh-divider.css">
+  <link rel="stylesheet" href="../../../sh-data-point/web/sh-data-point.css">
+  <link rel="stylesheet" href="../../../sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="../../../sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../sh-toggle/web/sh-toggle.css">
+  <link rel="stylesheet" href="sh-plan-card.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-32); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .sh-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-plan-card</h1>
+
+  <h2 class="sh-title-md">State=Expanded</h2>
+  <div class="grid">
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Silver, State=Expanded</figcaption><article class="sh-plan-card" aria-label="Silver plan">
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Silver</h3><span class="sh-plan-card__duration sh-body-sm">1 month</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹509</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹509/month ·</span><s class="sh-plan-card__was sh-body-sm">₹2,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 83% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--neutral sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Silver</span></span></button>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Gold, State=Expanded</figcaption><article class="sh-plan-card sh-plan-card--gold" aria-label="Gold plan">
+        <div class="sh-plan-card__top"><label class="sh-plan-card__plus"><span class="sh-plan-card__plus-label sh-support-label">Plus</span><span class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../../icons/filled/check.svg)"></span></span></span></span></label></div>
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Gold</h3><span class="sh-plan-card__duration sh-body-sm">3 months</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹2,499</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹833/month ·</span><s class="sh-plan-card__was sh-body-sm">₹8,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 72% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--neutral sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Gold</span></span></button>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Gold+, State=Expanded</figcaption><article class="sh-plan-card sh-plan-card--gold-plus" aria-label="Gold+ plan">
+        <div class="sh-plan-card__top"><span class="sh-tag"><span class="sh-tag__label sh-support-label">Most popular</span></span><label class="sh-plan-card__plus"><span class="sh-plan-card__plus-label sh-support-label">Plus</span><span class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" checked><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../../icons/filled/check.svg)"></span></span></span></span></label></div>
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Gold+</h3><span class="sh-plan-card__duration sh-body-sm">3 months</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹2,999</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹1,000/month ·</span><s class="sh-plan-card__was sh-body-sm">₹10,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 73% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--neutral sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Gold+</span></span></button>
+          <p class="sh-plan-card__social-proof sh-body-sm"><span class="sh-icon" style="--icon:url(../../../../icons/line/user-multiple.svg)" aria-hidden="true"></span>2,400 members chose Gold+ this week</p>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Diamond, State=Expanded</figcaption><article class="sh-plan-card sh-plan-card--diamond" aria-label="Diamond plan">
+        <div class="sh-plan-card__top"><label class="sh-plan-card__plus"><span class="sh-plan-card__plus-label sh-support-label">Plus</span><span class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../../icons/filled/check.svg)"></span></span></span></span></label></div>
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Diamond</h3><span class="sh-plan-card__duration sh-body-sm">6 months</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹4,199</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹700/month ·</span><s class="sh-plan-card__was sh-body-sm">₹14,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 72% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--neutral sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Diamond</span></span></button>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Diamond+, State=Expanded</figcaption><article class="sh-plan-card sh-plan-card--diamond-plus" aria-label="Diamond+ plan">
+        <div class="sh-plan-card__top"><label class="sh-plan-card__plus"><span class="sh-plan-card__plus-label sh-support-label">Plus</span><span class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch" checked><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../../icons/filled/check.svg)"></span></span></span></span></label></div>
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Diamond+</h3><span class="sh-plan-card__duration sh-body-sm">6 months</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹4,999</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹833/month ·</span><s class="sh-plan-card__was sh-body-sm">₹17,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 72% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--neutral sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Diamond+</span></span></button>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Platinum+, State=Expanded</figcaption><article class="sh-plan-card sh-plan-card--platinum-plus" aria-label="Platinum+ plan">
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Platinum+</h3><span class="sh-plan-card__duration sh-body-sm">12 months</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹7,499</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹625/month ·</span><s class="sh-plan-card__was sh-body-sm">₹26,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 72% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--neutral sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Platinum+</span></span></button>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Platinum Private, State=Expanded</figcaption><article class="sh-plan-card sh-plan-card--platinum-private" aria-label="Platinum Private plan">
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Platinum Private</h3><span class="sh-plan-card__duration sh-body-sm">12 months</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹24,999</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹2,083/month ·</span><s class="sh-plan-card__was sh-body-sm">₹49,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 50% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--inverse sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Private</span></span></button>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+  </div>
+
+  <h2 class="sh-title-md">State=Collapsed</h2>
+  <div class="grid">
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Silver, State=Collapsed</figcaption><article class="sh-plan-card sh-plan-card--collapsed" aria-label="Silver plan">
+        <button class="sh-plan-card__head" type="button" aria-expanded="false">
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Silver</span><span class="sh-plan-card__duration sh-body-sm">1 month</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹509</span></span>
+        </button>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Gold, State=Collapsed</figcaption><article class="sh-plan-card sh-plan-card--collapsed sh-plan-card--gold" aria-label="Gold plan">
+        <button class="sh-plan-card__head" type="button" aria-expanded="false">
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Gold</span><span class="sh-plan-card__duration sh-body-sm">3 months</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹2,499</span></span>
+        </button>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Gold+, State=Collapsed</figcaption><article class="sh-plan-card sh-plan-card--collapsed sh-plan-card--gold-plus" aria-label="Gold+ plan">
+        <div class="sh-plan-card__top"><span class="sh-tag"><span class="sh-tag__label sh-support-label">Most popular</span></span></div>
+        <button class="sh-plan-card__head" type="button" aria-expanded="false">
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Gold+</span><span class="sh-plan-card__duration sh-body-sm">3 months</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹2,999</span></span>
+        </button>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Diamond, State=Collapsed</figcaption><article class="sh-plan-card sh-plan-card--collapsed sh-plan-card--diamond" aria-label="Diamond plan">
+        <button class="sh-plan-card__head" type="button" aria-expanded="false">
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Diamond</span><span class="sh-plan-card__duration sh-body-sm">6 months</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹4,199</span></span>
+        </button>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Diamond+, State=Collapsed</figcaption><article class="sh-plan-card sh-plan-card--collapsed sh-plan-card--diamond-plus" aria-label="Diamond+ plan">
+        <button class="sh-plan-card__head" type="button" aria-expanded="false">
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Diamond+</span><span class="sh-plan-card__duration sh-body-sm">6 months</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹4,999</span></span>
+        </button>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Platinum+, State=Collapsed</figcaption><article class="sh-plan-card sh-plan-card--collapsed sh-plan-card--platinum-plus" aria-label="Platinum+ plan">
+        <button class="sh-plan-card__head" type="button" aria-expanded="false">
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Platinum+</span><span class="sh-plan-card__duration sh-body-sm">12 months</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹7,499</span></span>
+        </button>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Platinum Private, State=Collapsed</figcaption><article class="sh-plan-card sh-plan-card--collapsed sh-plan-card--platinum-private" aria-label="Platinum Private plan">
+        <button class="sh-plan-card__head" type="button" aria-expanded="false">
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Platinum Private</span><span class="sh-plan-card__duration sh-body-sm">12 months</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹24,999</span></span>
+        </button>
+      </article></figure>
+  </div>
+
+  <h2 class="sh-title-md">Boolean properties</h2>
+  <div class="grid">
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Silver · every boolean off</figcaption><article class="sh-plan-card" aria-label="Silver plan">
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Silver</h3><span class="sh-plan-card__duration sh-body-sm">1 month</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹509</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹509/month ·</span><s class="sh-plan-card__was sh-body-sm">₹2,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 83% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Silver</span></span></button>
+        </div>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Silver · Show tag, Show Plus toggle, Show social proof on</figcaption><article class="sh-plan-card" aria-label="Silver plan">
+        <div class="sh-plan-card__top"><span class="sh-tag"><span class="sh-tag__label sh-support-label">Best value</span></span><label class="sh-plan-card__plus"><span class="sh-plan-card__plus-label sh-support-label">Plus</span><span class="sh-toggle"><input class="sh-toggle__input" type="checkbox" role="switch"><span class="sh-toggle__track" aria-hidden="true"><span class="sh-toggle__thumb"><span class="sh-icon sh-icon--16 sh-toggle__icon" style="--icon:url(../../../../icons/filled/check.svg)"></span></span></span></span></label></div>
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Silver</h3><span class="sh-plan-card__duration sh-body-sm">1 month</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹509</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹509/month ·</span><s class="sh-plan-card__was sh-body-sm">₹2,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 83% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Stand out from other Profiles</span> <span class="sh-visually-hidden">(not included)</span></div></div></div><div class="sh-data-point sh-data-point--md sh-data-point--excluded"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/line/close.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Let Matches contact you directly</span> <span class="sh-visually-hidden">(not included)</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--neutral sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Silver</span></span></button>
+          <p class="sh-plan-card__social-proof sh-body-sm"><span class="sh-icon" style="--icon:url(../../../../icons/line/user-multiple.svg)" aria-hidden="true"></span>2,400 members chose Silver this week</p>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+  </div>
+
+  <h2 class="sh-title-md">States</h2>
+  <div class="grid">
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Gold, State=Collapsed · focus</figcaption><article class="sh-plan-card sh-plan-card--collapsed sh-plan-card--gold" aria-label="Gold plan">
+        <button class="sh-plan-card__head is-focus" type="button" aria-expanded="false">
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Gold</span><span class="sh-plan-card__duration sh-body-sm">3 months</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹2,499</span></span>
+        </button>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Gold, State=Collapsed · disabled</figcaption><article class="sh-plan-card sh-plan-card--collapsed sh-plan-card--gold" aria-label="Gold plan">
+        <button class="sh-plan-card__head" type="button" aria-expanded="false" disabled>
+          <span class="sh-plan-card__name"><span class="sh-plan-card__plan sh-title-md">Gold</span><span class="sh-plan-card__duration sh-body-sm">3 months</span></span>
+          <span class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-title-md">₹2,499</span></span>
+        </button>
+      </article></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Plan=Silver, State=Expanded · CTA hover</figcaption><article class="sh-plan-card" aria-label="Silver plan">
+        <div class="sh-plan-card__head">
+          <div class="sh-plan-card__name"><h3 class="sh-plan-card__plan sh-heading-md">Silver</h3><span class="sh-plan-card__duration sh-body-sm">1 month</span></div>
+          <div class="sh-plan-card__pricing"><span class="sh-plan-card__price sh-heading-md">₹509</span><span class="sh-plan-card__per-month"><span class="sh-body-sm">₹509/month ·</span><s class="sh-plan-card__was sh-body-sm">₹2,999</s></span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Flat 83% off</span></span></div>
+        </div>
+        <hr class="sh-divider sh-divider--soft">
+        <div class="sh-plan-card__benefits"><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">View up to 15 contact numbers</span></div></div></div><div class="sh-data-point sh-data-point--md"><span class="sh-data-point__icon-box"><span class="sh-data-point__icon sh-icon" style="--icon:url(../../../../icons/filled/check.svg)" aria-hidden="true"></span></span><div class="sh-data-point__content"><div class="sh-data-point__row"><span class="sh-data-point__label sh-body-md">Video call &amp; chat with Matches</span></div></div></div></div>
+        <a class="sh-text-link sh-text-link--neutral sh-text-link--md" href="#benefits"><span class="sh-text-link__label sh-button-md">See all benefits</span></a>
+        <div class="sh-plan-card__footer">
+          <button class="sh-button sh-button--primary sh-button--lg sh-plan-card__cta is-hover" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-lg">Continue with Silver</span></span></button>
+          <p class="sh-plan-card__note sh-support-label">Auto-renews on expiry. Cancel anytime</p>
+        </div>
+      </article></figure>
+  </div>
+</body>
+</html>

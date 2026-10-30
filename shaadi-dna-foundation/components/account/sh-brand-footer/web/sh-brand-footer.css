@@ -1,0 +1,97 @@
+/*
+ * sh-brand-footer — web (HTML5 + CSS)
+ * Spec: ../sh-brand-footer.md · Figma node 2712:13754 (one variant; Story slot, Show story)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-divider/web/sh-divider.css
+ *
+ *   <footer class="sh-brand-footer">
+ *     <div class="sh-brand-footer__story-slot">                                     Story slot · Show story
+ *       <figure class="sh-brand-footer__story">                                     the default slot content
+ *         <img class="sh-brand-footer__photo" src="story.jpg" width="144" height="120" alt="Radhika and Yash">
+ *         <figcaption>
+ *           <span class="sh-brand-footer__couple sh-title-md">Radhika &amp; Yash</span>
+ *           <span class="sh-brand-footer__found sh-support-label">Found love on Shaadi</span>
+ *         </figcaption>
+ *       </figure>
+ *     </div>
+ *     <p class="sh-brand-footer__tagline sh-heading-lg">Every <span class="sh-brand-footer__accent">Story</span><br>Begins Here</p>
+ *     <hr class="sh-divider sh-divider--soft">
+ *     <p class="sh-brand-footer__crafted sh-body-md">Crafted with
+ *       <span class="sh-icon sh-icon--16 sh-brand-footer__heart" style="--icon:url(icons/filled/favourite.svg)" role="img" aria-label="love"></span>
+ *       in <span lang="mr">आमची मुंबई</span></p>
+ *   </footer>
+ *
+ * Full width (Figma 360), background/soft, padding sh-space/24 × sh-space/20, gap sh-space/24, centred.
+ * Story slot: any success-story content; the default is a background/default card (radius card, padding 8,
+ * gap 8, sh-shadow/soft) with a photo (radius md), the couple (Title/MD) and "Found love on Shaadi" (Support/Label).
+ * The photo's size comes from the image (width / height attributes): Figma's frame is fixed, with no token.
+ * Tagline: Heading/LG, text/primary; Figma colours part of line 1 in text/brand (__accent).
+ * Not interactive. Devanagari falls back to a system font (FOUNDATION §10).
+ *
+ * Unbound in the blueprint (see the report): the heart's colour (built as icon/brand) and which word of
+ * line 1 is text/brand (built as "Story").
+ */
+
+.sh-brand-footer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-24);
+  width: 100%;
+  padding: var(--sh-space-24) var(--sh-space-20);
+  background: var(--sh-background-soft);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: center;
+}
+
+/* ---- Story slot ---------------------------------------------------------- */
+.sh-brand-footer__story-slot { display: flex; }
+
+.sh-brand-footer__story {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+  margin: 0;
+  padding: var(--sh-space-8);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-default);
+  box-shadow: var(--sh-shadow-soft-x) var(--sh-shadow-soft-y) var(--sh-shadow-soft-blur) var(--sh-shadow-soft-spread) var(--sh-shadow-soft-color);
+}
+.sh-brand-footer__photo {
+  display: block;
+  object-fit: cover;
+  border-radius: var(--sh-radius-md);
+}
+.sh-brand-footer__story figcaption {
+  display: flex;
+  flex-direction: column;
+}
+.sh-brand-footer__couple { color: var(--sh-text-primary); }
+.sh-brand-footer__found  { color: var(--sh-text-tertiary); }
+
+/* ---- Tagline ------------------------------------------------------------- */
+.sh-brand-footer__tagline {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+.sh-brand-footer__accent { color: var(--sh-text-brand); }
+
+/* ---- Crafted ------------------------------------------------------------- */
+.sh-brand-footer__crafted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sh-space-4);
+  margin: 0;
+  color: var(--sh-text-secondary);
+}
+.sh-brand-footer .sh-brand-footer__heart {
+  flex: none;
+  width: var(--sh-icon-size-16);
+  height: var(--sh-icon-size-16);
+  --sh-icon-paint: var(--sh-icon-brand);
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+  sh-location-bar — web (HTML5 + CSS). The one variant, Show distance on / off, a long place name, and the Change link's focus.
+  Spec: ../sh-location-bar.md · Figma node 2712:13770
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-location-bar</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../sh-text-link/web/sh-text-link.css">
+  <link rel="stylesheet" href="sh-location-bar.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .screen { background: var(--sh-background-default); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-location-bar</h1>
+
+  <h2 class="sh-title-md">Show distance</h2>
+  <div class="grid">
+    <figure style="width:360px"><figcaption class="sh-body-sm">Show distance=true</figcaption><div class="screen"><div class="sh-location-bar"><span class="sh-icon sh-icon--16 sh-location-bar__icon" style="--icon:url(../../../../icons/filled/location-pin.svg)" aria-hidden="true"></span><p class="sh-location-bar__text"><span class="sh-location-bar__location sh-title-sm">Airoli, Navi Mumbai</span><span class="sh-location-bar__distance sh-body-sm">· 25 km</span></p><button class="sh-text-link sh-text-link--neutral sh-text-link--sm sh-text-link--no-border" type="button" aria-label="Change location"><span class="sh-text-link__label sh-button-sm">Change</span></button></div></div></figure>
+    <figure style="width:360px"><figcaption class="sh-body-sm">Show distance=false</figcaption><div class="screen"><div class="sh-location-bar"><span class="sh-icon sh-icon--16 sh-location-bar__icon" style="--icon:url(../../../../icons/filled/location-pin.svg)" aria-hidden="true"></span><p class="sh-location-bar__text"><span class="sh-location-bar__location sh-title-sm">Airoli, Navi Mumbai</span></p><button class="sh-text-link sh-text-link--neutral sh-text-link--sm sh-text-link--no-border" type="button" aria-label="Change location"><span class="sh-text-link__label sh-button-sm">Change</span></button></div></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Long place name · Change focused</h2>
+  <div class="grid">
+    <figure style="width:360px"><figcaption class="sh-body-sm">Location=Thiruvananthapuram, Kerala</figcaption><div class="screen"><div class="sh-location-bar"><span class="sh-icon sh-icon--16 sh-location-bar__icon" style="--icon:url(../../../../icons/filled/location-pin.svg)" aria-hidden="true"></span><p class="sh-location-bar__text"><span class="sh-location-bar__location sh-title-sm">Thiruvananthapuram, Kerala</span><span class="sh-location-bar__distance sh-body-sm">· 1,240 km</span></p><button class="sh-text-link sh-text-link--neutral sh-text-link--sm sh-text-link--no-border" type="button" aria-label="Change location"><span class="sh-text-link__label sh-button-sm">Change</span></button></div></div></figure>
+    <figure style="width:360px"><figcaption class="sh-body-sm">Change · focus</figcaption><div class="screen"><div class="sh-location-bar"><span class="sh-icon sh-icon--16 sh-location-bar__icon" style="--icon:url(../../../../icons/filled/location-pin.svg)" aria-hidden="true"></span><p class="sh-location-bar__text"><span class="sh-location-bar__location sh-title-sm">Airoli, Navi Mumbai</span><span class="sh-location-bar__distance sh-body-sm">· 25 km</span></p><button class="sh-text-link sh-text-link--neutral sh-text-link--sm sh-text-link--no-border is-focus" type="button" aria-label="Change location"><span class="sh-text-link__label sh-button-sm">Change</span></button></div></div></figure>
+  </div>
+</body>
+</html>

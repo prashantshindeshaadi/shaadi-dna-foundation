@@ -1,0 +1,103 @@
+/*
+ * sh-account-header — web (HTML5 + CSS)
+ * Spec: ../sh-account-header.md · Figma node 2712:13717 (one variant; Name, Profile ID, Completion, Show completion)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/profile-card/sh-user-images/web/sh-user-images.css · components/sh-avatar/web/sh-avatar.css
+ *   components/sh-progress-ring/web/sh-progress-ring.css · components/sh-tag/web/sh-tag.css · components/sh-chip/web/sh-chip.css
+ *
+ *   <header class="sh-account-header">
+ *     <div class="sh-account-header__photo">
+ *       <div class="sh-progress-ring" role="meter" aria-label="Profile complete" aria-valuemin="0" aria-valuemax="100" aria-valuenow="45">
+ *         <svg class="sh-progress-ring__arcs" aria-hidden="true">
+ *           <circle class="sh-progress-ring__track"></circle>
+ *           <circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="45 100"></circle>
+ *         </svg>
+ *       </div>
+ *       <span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true">
+ *         <span class="sh-avatar__media"><span class="sh-user-image"><img src="me.jpg" alt=""></span></span>
+ *       </span>
+ *       <span class="sh-tag sh-tag--translucent-light sh-account-header__completion">          Show completion
+ *         <span class="sh-tag__label sh-support-label">45%</span>
+ *       </span>
+ *     </div>
+ *     <h1 class="sh-account-header__name sh-heading-sm">Anuradha Sharma</h1>
+ *     <div class="sh-account-header__actions">
+ *       <button class="sh-chip sh-chip--info" type="button">…ID - SH 2822 6292…</button>           copies the ID
+ *       <a class="sh-chip sh-chip--info" href="/profile/edit">…Edit Profile</a>
+ *     </div>
+ *   </header>
+ *
+ * Photo: sh-progress-ring sized to the Photo frame with the lg sh-avatar centred inside it; the Completion
+ * sh-tag (Translucent light, Medium, Rounded) sits on the bottom of the photo. Set the amount on the ring.
+ * Actions: two sh-chip Type Info. In Figma they are read-only Info chips, but here both are actions (copy ID,
+ * open Edit Profile), so this file gives them the Choice chip's hover / pressed backgrounds and a 48 tap area;
+ * focus and disabled come from sh-chip itself. Leading icons: sh-icon/copy and sh-icon/edit (line, 16).
+ *
+ * no token: the Photo frame is 112 × 112 (2 × sh-space/48 + 2 × sh-space/8: the 96 avatar plus the ring).
+ */
+
+.sh-account-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-12);
+  font-family: var(--sh-typo-font-family-primary);
+  text-align: center;
+}
+
+/* ---- Photo: ring, avatar, completion ------------------------------------- */
+.sh-account-header__photo {
+  --_photo: calc(2 * var(--sh-space-48) + 2 * var(--sh-space-8));   /* no token: Figma's fixed 112 Photo frame */
+
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--_photo);
+  height: var(--_photo);
+}
+.sh-account-header__photo > .sh-progress-ring {
+  --_size: var(--_photo);
+  position: absolute;
+  inset: 0;
+}
+.sh-account-header__photo > .sh-avatar { position: relative; }
+
+.sh-account-header__completion {
+  position: absolute;
+  left: 50%;
+  bottom: var(--sh-space-8);
+  transform: translateX(-50%);
+}
+
+/* ---- Name ---------------------------------------------------------------- */
+.sh-account-header__name {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+/* ---- Actions: Info chips used as buttons ---------------------------------- */
+.sh-account-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sh-space-8);
+}
+.sh-account-header__actions .sh-chip { cursor: pointer; text-decoration: none; }
+.sh-account-header__actions .sh-chip::before {           /* 48 tall tap area, as on Choice chips */
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--sh-icon-target-default));
+  height: max(100%, var(--sh-icon-target-default));
+  transform: translate(-50%, -50%);
+}
+.sh-account-header__actions .sh-chip:hover,
+.sh-account-header__actions .sh-chip.is-hover { --_bg: var(--sh-background-strong); }
+.sh-account-header__actions .sh-chip:active,
+.sh-account-header__actions .sh-chip.is-pressed { --_bg: var(--sh-button-tertiary-background-pressed); }

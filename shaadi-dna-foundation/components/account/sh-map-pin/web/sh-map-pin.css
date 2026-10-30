@@ -1,0 +1,98 @@
+/*
+ * sh-map-pin — web (HTML5 + CSS)
+ * Spec: ../sh-map-pin.md · Figma node 2712:13798 (State Default / Selected / State3)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css
+ *   components/profile-card/sh-user-images/web/sh-user-images.css · components/sh-avatar/web/sh-avatar.css
+ *
+ *   <button class="sh-map-pin" type="button" aria-pressed="false" aria-label="Sneha P, 2 km away">
+ *     <span class="sh-map-pin__ring">
+ *       <span class="sh-avatar sh-avatar--sm sh-avatar--image" aria-hidden="true">
+ *         <span class="sh-avatar__media"><span class="sh-user-image"><img src="member.jpg" alt=""></span></span>
+ *       </span>
+ *     </span>
+ *     <span class="sh-map-pin__tail" aria-hidden="true"></span>
+ *   </button>
+ *
+ * State   (none) Default · --selected: background/brand ring and tail, larger (sh-avatar--md inside);
+ *         add aria-pressed="true" as the non-colour cue. State3 is identical to Default in Figma: no modifier.
+ * Place pins on sh-map-background with position: absolute; the pin's tip is its bottom centre.
+ * Interactive (tap selects the member): Focus :focus-visible (.is-focus forces it), Disabled [disabled].
+ * Figma defines no Hover or Pressed look for this component, so none is drawn. Tap area 48 × 48.
+ *
+ * Unbound in the blueprint (see the report): the ring's inset around the avatar (built as sh-space/2), the
+ * tail's size (sh-space/8 × sh-space/4, tucked under the ring by sh-stroke/default) and the Selected size.
+ */
+
+.sh-map-pin {
+  --_fill: var(--sh-background-default);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 48 × 48 tap area around the pin, without changing its size */
+.sh-map-pin::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--sh-icon-target-default));
+  height: max(100%, var(--sh-icon-target-default));
+  transform: translate(-50%, -50%);
+}
+
+/* Photo ring: the avatar on a background/default (Selected: background/brand) circle with sh-shadow/default */
+.sh-map-pin__ring {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  padding: var(--sh-space-2);
+  border-radius: var(--sh-radius-full);
+  background: var(--_fill);
+  box-shadow: var(--sh-shadow-default-x) var(--sh-shadow-default-y) var(--sh-shadow-default-blur) var(--sh-shadow-default-spread) var(--sh-shadow-default-color);
+}
+
+.sh-map-pin__tail {
+  display: block;
+  width: var(--sh-space-8);
+  height: var(--sh-space-4);
+  margin-top: calc(-1 * var(--sh-stroke-default));
+  background: var(--_fill);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* ---- State=Selected ------------------------------------------------------ */
+.sh-map-pin--selected { --_fill: var(--sh-background-brand); }
+
+/* ---- Focus / Disabled ---------------------------------------------------- */
+.sh-map-pin:focus { outline: none; }
+.sh-map-pin__ring::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--sh-space-4));
+  box-sizing: border-box;
+  border: var(--sh-stroke-strong) solid var(--sh-border-focus);
+  border-radius: var(--sh-radius-full);
+  opacity: var(--sh-opacity-hidden);
+  pointer-events: none;
+}
+.sh-map-pin:focus-visible .sh-map-pin__ring::after,
+.sh-map-pin.is-focus .sh-map-pin__ring::after { opacity: var(--sh-opacity-strong); }
+
+.sh-map-pin:disabled,
+.sh-map-pin[aria-disabled="true"] {
+  opacity: var(--sh-opacity-disabled);
+  cursor: default;
+  pointer-events: none;
+}

@@ -1,0 +1,224 @@
+/*
+ * sh-bottom-sheet — web (HTML5 + CSS)
+ * Spec: ../sh-bottom-sheet.md · Figma node 2638:64989
+ * (Type Relaxed / Compact × Center Stacked · Center Side by side · Left Side by side = 6 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css (CTAs) · components/sh-icon-button/web/sh-icon-button.css (Close) ·
+ *   and the parts you put in the slots: sh-avatar (+ sh-user-images) or sh-profile-identity (Visual slot) ·
+ *   sh-list + sh-list-default (+ sh-divider) (Section slot).
+ *
+ *   <div class="sh-bottom-sheet">                                              root: fills the screen (position fixed)
+ *     <div class="sh-bottom-sheet__scrim" aria-hidden="true"></div>             the one dim: scrim + soft blur
+ *     <section class="sh-bottom-sheet__sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+ *       <div class="sh-bottom-sheet__background" aria-hidden="true">…</div>   Show background (Background slot)
+ *       <div class="sh-bottom-sheet__header"><span class="sh-bottom-sheet__grabber" aria-hidden="true"></span></div>
+ *       <div class="sh-bottom-sheet__visual">                                   Show visual (Visual slot)
+ *         <span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true">…</span>
+ *       </div>
+ *       <div class="sh-bottom-sheet__body">
+ *         <div class="sh-bottom-sheet__heading">
+ *           <h2 class="sh-bottom-sheet__title sh-heading-sm" id="sheet-title">Sheet title</h2>
+ *           <p class="sh-bottom-sheet__text sh-body-md">Supporting description copy goes here.</p>   Show body
+ *         </div>
+ *         <div class="sh-bottom-sheet__section">… sh-list rows …</div>          Show section (Section slot)
+ *         <div class="sh-bottom-sheet__note">…</div>                             Show note (Note slot)
+ *         <div class="sh-bottom-sheet__actions">                                 Show actions
+ *           <button class="sh-button sh-button--primary sh-button--md" type="button">…</button>   Primary action
+ *           <button class="sh-button sh-button--ghost sh-button--md" type="button">…</button>     Show secondary action
+ *         </div>
+ *       </div>
+ *       <button class="sh-bottom-sheet__close sh-icon-button sh-icon-button--tertiary sh-icon-button--sm" type="button" aria-label="Close">
+ *         <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/close.svg)" aria-hidden="true"></span>
+ *       </button>
+ *     </section>
+ *   </div>
+ *
+ * Type     (none) Relaxed: hugs its content, side margin padding/sheet-relaxed, no grabber; centred content
+ *          --compact: tall, the body scrolls (the Section slot first), side margin padding/sheet-compact, grabber shows
+ * Align    (none) Center: heading centred · --left: heading left-aligned, actions always side by side.
+ *          The Visual slot is centred in every variant.
+ * Actions  (none) Stacked: primary first, max 200 and centred; secondary (Cancel) full width under it
+ *          --side-by-side: the pair fills the row equally, primary on the left (DOM order: primary first)
+ * CTAs     every CTA is sh-button Size Medium (sh-button--md). Close is always sh-icon-button Tertiary Small.
+ * Scrim    sh-gradient/overlay/scrim + sh-background-blur/uniform/soft. It is the only dim: never build another
+ *          (sh-dialog uses this scrim too). Tapping it closes the sheet (app code).
+ * Booleans Show visual / background / section / note / body / actions / secondary action: include or leave out the part.
+ * States   the sheet itself is not interactive; its buttons and rows carry their own states.
+ *          Move focus into the sheet on open, trap it, close on Escape, return focus on close (app code).
+ *
+ * Every value is a DNA token; composed values with no token of their own are marked "no token".
+ */
+
+.sh-bottom-sheet {
+  --_pad-x: var(--sh-space-padding-sheet-relaxed);
+
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0;
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+/* ---- Scrim: the one dim, a blurred scrim over the page ----------------------------------------------- */
+.sh-bottom-sheet__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--sh-gradient-overlay-scrim);
+  -webkit-backdrop-filter: blur(var(--sh-translucent-background-blur-soft));   /* sh-background-blur/uniform/soft */
+  backdrop-filter: blur(var(--sh-translucent-background-blur-soft));
+}
+
+/* ---- Sheet ------------------------------------------------------------------------------------------- */
+.sh-bottom-sheet__sheet {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
+  margin: 0;
+  border-radius: var(--sh-radius-xxl) var(--sh-radius-xxl) var(--sh-radius-none) var(--sh-radius-none);
+  background: var(--sh-background-default);
+  color: var(--sh-text-primary);
+}
+
+/* Background slot: behind everything, clipped to the rounded top. The graphic sets its own height. */
+.sh-bottom-sheet__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  border-radius: var(--sh-radius-xxl) var(--sh-radius-xxl) var(--sh-radius-none) var(--sh-radius-none);
+  pointer-events: none;
+}
+
+/* Header: the band at the top that holds the grabber and the Close button's 48 tap area.
+   no token: Figma's Header height is unbound; here it is the tap target (sh-icon/target/default). */
+.sh-bottom-sheet__header {
+  position: relative;
+  flex: none;
+  display: flex;
+  justify-content: center;
+  height: var(--sh-icon-target-default);
+  border-radius: var(--sh-radius-xxl) var(--sh-radius-xxl) var(--sh-radius-none) var(--sh-radius-none);
+}
+
+/* Grabber: only on Type=Compact. no token: Figma's grabber is 36 × 4 (36 = space-32 + space-4), top inset unbound (space-8). */
+.sh-bottom-sheet__grabber {
+  display: none;
+  width: calc(var(--sh-space-32) + var(--sh-space-4));
+  height: var(--sh-space-4);
+  margin-top: var(--sh-space-8);
+  border-radius: var(--sh-radius-full);
+  background: var(--sh-border-default);
+}
+
+/* Visual slot: hugs its content (photo, art) and is centred in every variant, 16 above the body */
+.sh-bottom-sheet__visual {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding: var(--sh-space-0) var(--sh-space-0) var(--sh-space-16);
+}
+
+.sh-bottom-sheet__body {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-20);
+  min-height: 0;
+  padding: var(--sh-space-8) var(--_pad-x) var(--sh-space-32);
+}
+
+.sh-bottom-sheet__heading {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+  text-align: center;
+}
+.sh-bottom-sheet__title { margin: 0; color: var(--sh-text-primary); }
+.sh-bottom-sheet__text  { margin: 0; color: var(--sh-text-tertiary); }
+
+/* Section slot: sh-list rows (Style Inline: the body already has the side margin) */
+.sh-bottom-sheet__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-12);      /* Figma binds it on 2 of the variants */
+  min-height: 0;
+}
+
+/* Note slot */
+.sh-bottom-sheet__note {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-12);
+}
+
+/* ---- Actions: sh-button Medium. Stacked by default ---------------------------------------------------- */
+.sh-bottom-sheet__actions {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sh-space-8);
+}
+.sh-bottom-sheet__actions > .sh-button { width: 100%; }
+/* Primary (first): lone-button width. no token: max width 200 = 2 × space-80 + space-40 */
+.sh-bottom-sheet__actions > .sh-button:first-of-type { max-width: calc(var(--sh-space-80) * 2 + var(--sh-space-40)); }
+
+/* Side by side (and Align=Left, which is always side by side): the pair fills equally, primary on the left */
+.sh-bottom-sheet--side-by-side .sh-bottom-sheet__actions,
+.sh-bottom-sheet--left .sh-bottom-sheet__actions {
+  flex-direction: row;
+  justify-content: center;
+}
+.sh-bottom-sheet--side-by-side .sh-bottom-sheet__actions > .sh-button,
+.sh-bottom-sheet--left .sh-bottom-sheet__actions > .sh-button {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+}
+/* A lone primary stays a lone button: max 200, centred */
+.sh-bottom-sheet--side-by-side .sh-bottom-sheet__actions > .sh-button:only-of-type,
+.sh-bottom-sheet--left .sh-bottom-sheet__actions > .sh-button:only-of-type {
+  max-width: calc(var(--sh-space-80) * 2 + var(--sh-space-40));
+}
+
+/* ---- Close: sh-icon-button Tertiary Small, top right over the header ---------------------------------- */
+/* no token: Figma's Close position is unbound; it is centred in the 48 header, inset sh-space/16 from the edge */
+.sh-bottom-sheet__close {
+  position: absolute;
+  top: calc((var(--sh-icon-target-default) - var(--sh-space-32)) / 2);
+  right: var(--sh-space-16);
+}
+
+/* ---- Align=Left ----------------------------------------------------------------------------------- */
+.sh-bottom-sheet--left .sh-bottom-sheet__heading { text-align: left; }
+
+/* ---- Type=Compact: tall, scrolls, grabber, compact margin -------------------------------------------- */
+.sh-bottom-sheet--compact { --_pad-x: var(--sh-space-padding-sheet-compact); }
+.sh-bottom-sheet--compact .sh-bottom-sheet__grabber { display: block; }
+/* no token: Figma's Compact height (min 640 on an 800 screen) has none; the sheet stops sh-space/80 below the top */
+.sh-bottom-sheet--compact .sh-bottom-sheet__sheet { height: calc(100% - var(--sh-space-80)); }
+.sh-bottom-sheet--compact .sh-bottom-sheet__body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+/* The list scrolls while the heading and actions stay put */
+.sh-bottom-sheet--compact .sh-bottom-sheet__section {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}

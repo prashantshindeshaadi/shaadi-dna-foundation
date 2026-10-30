@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  sh-map-background — web (HTML5 + CSS). One variant, shown empty and with sh-map-pin instances on top.
+  Spec: ../sh-map-background.md · Figma node 2715:10572
+  The map artwork is not in the repo: the map is a flat neutral data-URI placeholder. Photos are placeholders too.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-map-background</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="../../../sh-avatar/web/sh-avatar.css">
+  <link rel="stylesheet" href="../../sh-map-pin/web/sh-map-pin.css">
+  <link rel="stylesheet" href="sh-map-background.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .frame { border: var(--sh-stroke-default) solid var(--sh-border-soft); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-map-background</h1>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">sh-map-background</figcaption>
+      <div class="frame" style="width:360px; height:802px"><div class="sh-map-background"><img class="sh-map-background__map" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 802'%3E%3Crect width='360' height='802' fill='%23E2E8F0'/%3E%3C/svg%3E"></div></div>
+    </figure>
+    <figure><figcaption class="sh-body-sm">sh-map-background + sh-map-pin (State=Default, State=Selected)</figcaption>
+      <div class="frame" style="width:360px; height:802px"><div class="sh-map-background"><img class="sh-map-background__map" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 802'%3E%3Crect width='360' height='802' fill='%23E2E8F0'/%3E%3C/svg%3E">
+        <button class="sh-map-pin" type="button" style="left:24%; top:22%" aria-pressed="false" aria-label="Sneha P, 2 km away"><span class="sh-map-pin__ring"><span class="sh-avatar sh-avatar--sm sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span></span><span class="sh-map-pin__tail" aria-hidden="true"></span></button>
+        <button class="sh-map-pin" type="button" style="left:70%; top:30%" aria-pressed="false" aria-label="Pooja M, 4 km away"><span class="sh-map-pin__ring"><span class="sh-avatar sh-avatar--sm sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span></span><span class="sh-map-pin__tail" aria-hidden="true"></span></button>
+        <button class="sh-map-pin sh-map-pin--selected" type="button" style="left:46%; top:44%" aria-pressed="true" aria-label="Riya K, best match, 1 km away"><span class="sh-map-pin__ring"><span class="sh-avatar sh-avatar--md sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span></span><span class="sh-map-pin__tail" aria-hidden="true"></span></button>
+        <button class="sh-map-pin" type="button" style="left:30%; top:61%" aria-pressed="false" aria-label="Neha S, 3 km away"><span class="sh-map-pin__ring"><span class="sh-avatar sh-avatar--sm sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span></span><span class="sh-map-pin__tail" aria-hidden="true"></span></button>
+        <button class="sh-map-pin" type="button" style="left:78%; top:70%" aria-pressed="false" aria-label="Kavya R, 6 km away"><span class="sh-map-pin__ring"><span class="sh-avatar sh-avatar--sm sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span></span><span class="sh-map-pin__tail" aria-hidden="true"></span></button>
+      </div></div>
+    </figure>
+  </div>
+</body>
+</html>

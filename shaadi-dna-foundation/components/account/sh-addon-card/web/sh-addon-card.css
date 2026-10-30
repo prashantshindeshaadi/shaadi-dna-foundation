@@ -1,0 +1,85 @@
+/*
+ * sh-addon-card — web (HTML5 + CSS)
+ * Spec: ../sh-addon-card.md · Figma node 2712:13683 (Type Offer / Active)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-tag/web/sh-tag.css · components/sh-divider/web/sh-divider.css
+ *   components/sh-data-point/web/sh-data-point.css · components/sh-button/web/sh-button.css
+ *
+ *   Type=Offer
+ *   <article class="sh-addon-card">
+ *     <div class="sh-addon-card__visual"><img src="extra-contacts.png" width="40" height="40" alt=""></div>   Visual slot
+ *     <h3 class="sh-addon-card__title sh-title-md">Enjoy 20 extra Contacts</h3>
+ *     <p class="sh-addon-card__price-row">
+ *       <span class="sh-addon-card__price sh-heading-sm">₹225</span>
+ *       <s class="sh-addon-card__was sh-body-sm">₹500</s>
+ *       <span class="sh-tag"><span class="sh-tag__label sh-support-label">55% off</span></span>
+ *     </p>
+ *     <hr class="sh-divider sh-divider--soft">
+ *     <div class="sh-addon-card__benefits">…sh-data-point Size md…</div>                                     Benefits slot
+ *     <button class="sh-button sh-button--primary sh-button--md sh-addon-card__cta" type="button">…</button>
+ *   </article>
+ *
+ *   Type=Active: Visual slot, Title, then <p class="sh-addon-card__status sh-body-md">12 of 20 Contacts left</p>
+ *
+ * Type   (none) Offer · --active (no price row, divider, benefits or CTA; the Status line instead)
+ * Card   background/soft, border/soft, radius card, padding sh-space/16, gap sh-space/12 (Figma width 230).
+ * CTA    sh-button Primary, Medium: a lone button, so it hugs its label, centred, at most 200 wide.
+ * Benefits are sh-data-point md, Plain, Included (icon: sh-icon/check, Filled). Not interactive except the CTA.
+ *
+ * no token: the lone-button max width 200 (2 × sh-space/80 + sh-space/40).
+ */
+
+.sh-addon-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-12);
+  padding: var(--sh-space-16);
+  border: var(--sh-stroke-default) solid var(--sh-border-soft);
+  border-radius: var(--sh-radius-card);
+  background: var(--sh-background-soft);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-addon-card__visual { display: flex; }
+.sh-addon-card__visual > img { display: block; }
+
+.sh-addon-card__title {
+  margin: 0;
+  color: var(--sh-text-primary);
+}
+
+/* ---- Price row ----------------------------------------------------------- */
+.sh-addon-card__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sh-space-4);
+  margin: 0;
+}
+.sh-addon-card__price { color: var(--sh-text-primary); }
+.sh-addon-card__was {
+  color: var(--sh-text-tertiary);
+  text-decoration: line-through var(--sh-stroke-default) currentColor;
+}
+
+/* ---- Benefits slot ------------------------------------------------------- */
+.sh-addon-card__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+}
+
+/* ---- CTA: lone button, hugs, centred, max 200 ---------------------------- */
+.sh-addon-card__cta {
+  align-self: center;
+  max-width: calc(var(--sh-space-80) * 2 + var(--sh-space-40));   /* no token: lone-button max 200 */
+}
+
+/* ---- Type=Active --------------------------------------------------------- */
+.sh-addon-card__status {
+  margin: 0;
+  color: var(--sh-text-tertiary);
+}

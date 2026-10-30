@@ -1,0 +1,43 @@
+/*
+ * sh-map-background — web (HTML5 + CSS)
+ * Spec: ../sh-map-background.md · Figma node 2715:10572 (one variant)
+ *
+ * Needs dist/css/tokens.css, loaded once per page, before this file. Pins: components/account/sh-map-pin/web/sh-map-pin.css
+ *
+ *   <div class="sh-map-background">
+ *     <img class="sh-map-background__map" src="near-me-map.png" alt="">          Figma "Map (image)"
+ *     <button class="sh-map-pin" style="left: 42%; top: 31%" …>…</button>          sh-map-pin instances on top
+ *   </div>
+ *
+ * The map is one exported image (Figma draws it as vectors; the artwork is not in the repo yet). It fills the
+ * frame and is cropped to it. Pins placed inside are positioned absolutely by the screen: left / top put the pin's
+ * tip on the spot (each pin is shifted up by its own height and left by half its width).
+ * Fills its container (Figma frame 360 × 802). Not interactive itself; the map's art is decorative (alt="").
+ *
+ * Open gap (see the report): the map artwork; Figma's "Group" opacity (sh-opacity/extra-strong) belongs to that art.
+ */
+
+.sh-map-background {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--sh-background-soft);   /* shows only until the map image loads */
+}
+
+.sh-map-background__map {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.sh-map-background > .sh-map-pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+}

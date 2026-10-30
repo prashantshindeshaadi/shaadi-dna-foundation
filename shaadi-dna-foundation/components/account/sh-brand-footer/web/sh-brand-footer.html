@@ -1,0 +1,46 @@
+<!doctype html>
+<!--
+  sh-brand-footer — web (HTML5 + CSS). The one variant with Show story on and off.
+  Spec: ../sh-brand-footer.md · Figma node 2712:13754
+  The success-story photo is a neutral data-URI placeholder.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-brand-footer</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../sh-divider/web/sh-divider.css">
+  <link rel="stylesheet" href="sh-brand-footer.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure.demo { margin: 0; }
+    figure.demo > figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-brand-footer</h1>
+  <div class="grid">
+    <figure class="demo" style="width:360px"><figcaption class="sh-body-sm">Show story=true</figcaption><footer class="sh-brand-footer">
+        <div class="sh-brand-footer__story-slot">
+          <figure class="sh-brand-footer__story">
+            <img class="sh-brand-footer__photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E" width="144" height="120" alt="Radhika and Yash">
+            <figcaption><span class="sh-brand-footer__couple sh-title-md">Radhika &amp; Yash</span><span class="sh-brand-footer__found sh-support-label">Found love on Shaadi</span></figcaption>
+          </figure>
+        </div>
+        <p class="sh-brand-footer__tagline sh-heading-lg">Every <span class="sh-brand-footer__accent">Story</span><br>Begins Here</p>
+        <hr class="sh-divider sh-divider--soft">
+        <p class="sh-brand-footer__crafted sh-body-md">Crafted with <span class="sh-icon sh-icon--16 sh-brand-footer__heart" style="--icon:url(../../../../icons/filled/favourite.svg)" role="img" aria-label="love"></span> in <span lang="mr">आमची मुंबई</span></p>
+      </footer></figure>
+    <figure class="demo" style="width:360px"><figcaption class="sh-body-sm">Show story=false</figcaption><footer class="sh-brand-footer">
+        
+        <p class="sh-brand-footer__tagline sh-heading-lg">Every <span class="sh-brand-footer__accent">Story</span><br>Begins Here</p>
+        <hr class="sh-divider sh-divider--soft">
+        <p class="sh-brand-footer__crafted sh-body-md">Crafted with <span class="sh-icon sh-icon--16 sh-brand-footer__heart" style="--icon:url(../../../../icons/filled/favourite.svg)" role="img" aria-label="love"></span> in <span lang="mr">आमची मुंबई</span></p>
+      </footer></figure>
+  </div>
+</body>
+</html>

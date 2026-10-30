@@ -1,0 +1,89 @@
+<!doctype html>
+<!--
+  sh-account-header — web (HTML5 + CSS). The one variant, Show completion on / off, other completion amounts, and the action chips' states.
+  Spec: ../sh-account-header.md · Figma node 2712:13717
+  The member photo is a neutral data-URI placeholder.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-account-header</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../profile-card/sh-user-images/web/sh-user-images.css">
+  <link rel="stylesheet" href="../../../sh-avatar/web/sh-avatar.css">
+  <link rel="stylesheet" href="../../../sh-progress-ring/web/sh-progress-ring.css">
+  <link rel="stylesheet" href="../../../sh-tag/web/sh-tag.css">
+  <link rel="stylesheet" href="../../../sh-chip/web/sh-chip.css">
+  <link rel="stylesheet" href="sh-account-header.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .screen { padding: var(--sh-space-16) 0; background: var(--sh-background-default); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-account-header</h1>
+
+  <h2 class="sh-title-md">Show completion</h2>
+  <div class="grid">
+    <figure style="width:320px"><figcaption class="sh-body-sm">Show completion=true</figcaption><div class="screen"><header class="sh-account-header">
+        <div class="sh-account-header__photo">
+          <div class="sh-progress-ring" role="meter" aria-label="Profile complete" aria-valuemin="0" aria-valuemax="100" aria-valuenow="45"><svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="45 100"></circle></svg></div>
+          <span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span>
+          <span class="sh-tag sh-tag--translucent-light sh-account-header__completion"><span class="sh-tag__label sh-support-label">45%</span></span>
+        </div>
+        <h1 class="sh-account-header__name sh-heading-sm">Anuradha Sharma</h1>
+        <div class="sh-account-header__actions">
+          <button class="sh-chip sh-chip--info" type="button" aria-label="Copy profile ID SH 2822 6292"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../../icons/line/copy.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">ID - SH 2822 6292</span></span></button>
+          <a class="sh-chip sh-chip--info" href="#edit-profile"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../../icons/line/edit.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Edit Profile</span></span></a>
+        </div>
+      </header></div></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Show completion=false</figcaption><div class="screen"><header class="sh-account-header">
+        <div class="sh-account-header__photo">
+          <div class="sh-progress-ring" role="meter" aria-label="Profile complete" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="100 100"></circle></svg></div>
+          <span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span>
+          
+        </div>
+        <h1 class="sh-account-header__name sh-heading-sm">Anuradha Sharma</h1>
+        <div class="sh-account-header__actions">
+          <button class="sh-chip sh-chip--info" type="button" aria-label="Copy profile ID SH 2822 6292"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../../icons/line/copy.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">ID - SH 2822 6292</span></span></button>
+          <a class="sh-chip sh-chip--info" href="#edit-profile"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../../icons/line/edit.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Edit Profile</span></span></a>
+        </div>
+      </header></div></figure>
+  </div>
+
+  <h2 class="sh-title-md">Completion amounts · action states</h2>
+  <div class="grid">
+    <figure style="width:320px"><figcaption class="sh-body-sm">Completion=80% · Profile ID hover</figcaption><div class="screen"><header class="sh-account-header">
+        <div class="sh-account-header__photo">
+          <div class="sh-progress-ring" role="meter" aria-label="Profile complete" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="80 100"></circle></svg></div>
+          <span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span>
+          <span class="sh-tag sh-tag--translucent-light sh-account-header__completion"><span class="sh-tag__label sh-support-label">80%</span></span>
+        </div>
+        <h1 class="sh-account-header__name sh-heading-sm">Rohan Mehta</h1>
+        <div class="sh-account-header__actions">
+          <button class="sh-chip sh-chip--info is-hover" type="button" aria-label="Copy profile ID SH 5310 0447"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../../icons/line/copy.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">ID - SH 5310 0447</span></span></button>
+          <a class="sh-chip sh-chip--info" href="#edit-profile"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../../icons/line/edit.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Edit Profile</span></span></a>
+        </div>
+      </header></div></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Completion=15% · Profile ID focus</figcaption><div class="screen"><header class="sh-account-header">
+        <div class="sh-account-header__photo">
+          <div class="sh-progress-ring" role="meter" aria-label="Profile complete" aria-valuemin="0" aria-valuemax="100" aria-valuenow="15"><svg class="sh-progress-ring__arcs" aria-hidden="true"><circle class="sh-progress-ring__track"></circle><circle class="sh-progress-ring__progress" pathLength="100" stroke-dasharray="15 100"></circle></svg></div>
+          <span class="sh-avatar sh-avatar--lg sh-avatar--image" aria-hidden="true"><span class="sh-avatar__media"><span class="sh-user-image"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2394A3B8'/%3E%3Cstop offset='.55' stop-color='%23475569'/%3E%3Cstop offset='1' stop-color='%231E293B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3C/svg%3E"></span></span></span>
+          <span class="sh-tag sh-tag--translucent-light sh-account-header__completion"><span class="sh-tag__label sh-support-label">15%</span></span>
+        </div>
+        <h1 class="sh-account-header__name sh-heading-sm">Priya Iyer</h1>
+        <div class="sh-account-header__actions">
+          <button class="sh-chip sh-chip--info is-focus" type="button" aria-label="Copy profile ID SH 7720 1185"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../../icons/line/copy.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">ID - SH 7720 1185</span></span></button>
+          <a class="sh-chip sh-chip--info" href="#edit-profile"><span class="sh-icon sh-icon--16 sh-chip__icon" style="--icon:url(../../../../icons/line/edit.svg)" aria-hidden="true"></span><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">Edit Profile</span></span></a>
+        </div>
+      </header></div></figure>
+  </div>
+</body>
+</html>

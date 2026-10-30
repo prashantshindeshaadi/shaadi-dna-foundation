@@ -1,0 +1,45 @@
+<!doctype html>
+<!--
+  sh-membership-card — web (HTML5 + CSS). Every variant: Status Active / Expired.
+  Spec: ../sh-membership-card.md · Figma node 2712:13716
+  The plan badge (Visual slot) is brand artwork not in the repo: a neutral data-URI placeholder stands in.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-membership-card</title>
+  <link rel="stylesheet" href="../../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../sh-tag/web/sh-tag.css">
+  <link rel="stylesheet" href="sh-membership-card.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-default); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2 { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-membership-card</h1>
+
+  <h2 class="sh-title-md">Status</h2>
+  <div class="grid">
+    <figure style="width:320px"><figcaption class="sh-body-sm">Status=Active</figcaption><section class="sh-membership-card" aria-label="Your membership">
+        <div class="sh-membership-card__visual"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 58'%3E%3Crect width='58' height='58' rx='29' fill='%23CBD5E1'/%3E%3C/svg%3E" width="58" height="58" alt=""></div>
+        <div class="sh-membership-card__text">
+          <p class="sh-membership-card__plan-row"><span class="sh-membership-card__plan sh-heading-sm">Gold+</span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Active</span></span></p>
+          <p class="sh-membership-card__details sh-body-md">3 months · Valid till 15th Sep 26</p>
+        </div>
+      </section></figure>
+    <figure style="width:320px"><figcaption class="sh-body-sm">Status=Expired</figcaption><section class="sh-membership-card" aria-label="Your membership">
+        <div class="sh-membership-card__visual"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 58'%3E%3Crect width='58' height='58' rx='29' fill='%23CBD5E1'/%3E%3C/svg%3E" width="58" height="58" alt=""></div>
+        <div class="sh-membership-card__text">
+          <p class="sh-membership-card__plan-row"><span class="sh-membership-card__plan sh-heading-sm">Gold+</span><span class="sh-tag"><span class="sh-tag__label sh-support-label">Expired</span></span></p>
+          <p class="sh-membership-card__details sh-body-md">3 months · Expired 15th Sep 26</p>
+        </div>
+      </section></figure>
+  </div>
+</body>
+</html>

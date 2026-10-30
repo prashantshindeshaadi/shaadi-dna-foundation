@@ -1,0 +1,63 @@
+/*
+ * sh-location-bar — web (HTML5 + CSS)
+ * Spec: ../sh-location-bar.md · Figma node 2712:13770 (one variant; Location, Distance, Show distance)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css
+ *   components/sh-text-link/web/sh-text-link.css   (the Change link)
+ *
+ *   <div class="sh-location-bar">
+ *     <span class="sh-icon sh-icon--16 sh-location-bar__icon" style="--icon:url(icons/filled/location-pin.svg)" aria-hidden="true"></span>
+ *     <p class="sh-location-bar__text">
+ *       <span class="sh-location-bar__location sh-title-sm">Airoli, Navi Mumbai</span>
+ *       <span class="sh-location-bar__distance sh-body-sm">· 25 km</span>               Show distance; leave it out to hide
+ *     </p>
+ *     <button class="sh-text-link sh-text-link--neutral sh-text-link--sm sh-text-link--no-border" type="button">
+ *       <span class="sh-text-link__label sh-button-sm">Change</span>
+ *     </button>
+ *   </div>
+ *
+ * Full width (Figma 360), padding sh-space/8 × sh-space/16, gap sh-space/8. A long place name ends in "…".
+ * Change = sh-text-link Neutral, Small, Underline Off: it brings its own states and 48 tap area; it opens the
+ * location sheet. Pin: sh-icon/location-pin, Filled, 16 (colour unbound in the blueprint: icon/primary, the icon's own).
+ */
+
+.sh-location-bar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-8);
+  width: 100%;
+  padding: var(--sh-space-8) var(--sh-space-16);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-location-bar .sh-location-bar__icon {
+  flex: none;
+  width: var(--sh-icon-size-16);
+  height: var(--sh-icon-size-16);
+  --sh-icon-paint: var(--sh-icon-primary);
+}
+
+.sh-location-bar__text {
+  display: flex;
+  flex: 1 1 0;
+  align-items: baseline;
+  gap: var(--sh-space-4);
+  min-width: 0;
+  margin: 0;
+}
+.sh-location-bar__location {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--sh-text-primary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.sh-location-bar__distance {
+  flex: none;
+  color: var(--sh-text-tertiary);
+  white-space: nowrap;
+}
+
+.sh-location-bar .sh-text-link { flex: none; }

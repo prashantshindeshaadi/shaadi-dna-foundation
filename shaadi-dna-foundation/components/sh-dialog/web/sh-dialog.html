@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+  sh-dialog — web (HTML5 + CSS). Every variant: Type Default / Destructive, with Show close on and off, then in use
+  over a neutral page behind sh-bottom-sheet's scrim (the one dim in DNA).
+  Spec: ../sh-dialog.md · Figma node 2718:41832
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sh-dialog</title>
+  <link rel="stylesheet" href="../../../dist/css/tokens.css">
+  <link rel="stylesheet" href="../../../dist/sh-typo-kit/developer/web/sh-typo.css">
+  <link rel="stylesheet" href="../../../components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../../../components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../../../components/sh-semantic-button/web/sh-semantic-button.css">
+  <link rel="stylesheet" href="../../../components/sh-icon-button/web/sh-icon-button.css">
+  <link rel="stylesheet" href="../../../components/sh-bottom-sheet/web/sh-bottom-sheet.css">
+  <link rel="stylesheet" href="sh-dialog.css">
+  <style>
+    body { margin: 0; padding: var(--sh-space-24) var(--sh-space-page-margin); background: var(--sh-background-soft); color: var(--sh-text-primary); font-family: var(--sh-typo-font-family-primary); }
+    h2.demo { margin: var(--sh-space-32) 0 var(--sh-space-12); }
+    p.lead { margin: 0 0 var(--sh-space-12); color: var(--sh-text-secondary); max-width: 80ch; }
+    .grid { display: flex; gap: var(--sh-space-40); flex-wrap: wrap; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-bottom: var(--sh-space-12); color: var(--sh-text-secondary); }
+    .box { width: 328px; }   /* Figma 328 wide */
+    /* Phone frame: Figma's 360 wide screen, a neutral page under the sheet scrim, the dialog centred with page margins */
+    .phone { position: relative; width: 360px; height: 640px; overflow: hidden; border: var(--sh-stroke-default) solid var(--sh-border-soft); }
+    .page { display: flex; flex-direction: column; gap: var(--sh-space-12); height: 100%; box-sizing: border-box; padding: var(--sh-space-48) var(--sh-space-16); background: var(--sh-background-soft); }
+    .page p { margin: 0; }
+    .block { display: flex; flex-direction: column; gap: var(--sh-space-4); padding: var(--sh-space-padding-card); border-radius: var(--sh-radius-card); background: var(--sh-background-default); }
+    .block .sh-body-sm { color: var(--sh-text-tertiary); }
+    .centre { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 var(--sh-space-16); }
+  </style>
+</head>
+<body>
+  <h1 class="sh-heading-md">sh-dialog</h1>
+
+  <h2 class="demo sh-title-md">Type</h2>
+  <p class="lead sh-body-md">A centred confirm box for desktop and critical actions; on mobile prefer sh-bottom-sheet. Destructive makes the primary red (sh-semantic-button Error Solid) and says what it does in the label.</p>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Default</figcaption><div class="box"><section class="sh-dialog" role="dialog" aria-modal="true" aria-labelledby="d1-title" aria-describedby="d1-body"><div class="sh-dialog__text"><h2 class="sh-dialog__title sh-heading-sm" id="d1-title">Send interest to Priya?</h2><p class="sh-dialog__body sh-body-md" id="d1-body">She will be notified and can accept to start a conversation.</p></div><div class="sh-dialog__actions"><button class="sh-button sh-button--secondary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Cancel</span></span></button><button class="sh-button sh-button--primary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Send interest</span></span></button></div><button class="sh-dialog__close sh-icon-button sh-icon-button--ghost sh-icon-button--sm" type="button" aria-label="Close"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button></section></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Destructive</figcaption><div class="box"><section class="sh-dialog sh-dialog--destructive" role="alertdialog" aria-modal="true" aria-labelledby="d2-title" aria-describedby="d2-body"><div class="sh-dialog__text"><h2 class="sh-dialog__title sh-heading-sm" id="d2-title">Block Rohan?</h2><p class="sh-dialog__body sh-body-md" id="d2-body">He won't be able to see your profile or message you. You can unblock him in Settings.</p></div><div class="sh-dialog__actions"><button class="sh-button sh-button--secondary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Cancel</span></span></button><button class="sh-button sh-semantic-button sh-semantic-button--error sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Block</span></span></button></div><button class="sh-dialog__close sh-icon-button sh-icon-button--ghost sh-icon-button--sm" type="button" aria-label="Close"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button></section></div></figure>
+  </div>
+
+  <h2 class="demo sh-title-md">Show close</h2>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Default · Show close=false</figcaption><div class="box"><section class="sh-dialog" role="dialog" aria-modal="true" aria-labelledby="d3-title" aria-describedby="d3-body"><div class="sh-dialog__text"><h2 class="sh-dialog__title sh-heading-sm" id="d3-title">Send interest to Priya?</h2><p class="sh-dialog__body sh-body-md" id="d3-body">She will be notified and can accept to start a conversation.</p></div><div class="sh-dialog__actions"><button class="sh-button sh-button--secondary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Cancel</span></span></button><button class="sh-button sh-button--primary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Send interest</span></span></button></div></section></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Destructive · Show close=false</figcaption><div class="box"><section class="sh-dialog sh-dialog--destructive" role="alertdialog" aria-modal="true" aria-labelledby="d4-title" aria-describedby="d4-body"><div class="sh-dialog__text"><h2 class="sh-dialog__title sh-heading-sm" id="d4-title">Block Rohan?</h2><p class="sh-dialog__body sh-body-md" id="d4-body">He won't be able to see your profile or message you. You can unblock him in Settings.</p></div><div class="sh-dialog__actions"><button class="sh-button sh-button--secondary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Cancel</span></span></button><button class="sh-button sh-semantic-button sh-semantic-button--error sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Block</span></span></button></div></section></div></figure>
+  </div>
+
+  <h2 class="demo sh-title-md">In use</h2>
+  <p class="lead sh-body-md">Over the page, behind sh-bottom-sheet's blurred scrim: the one dim in DNA.</p>
+  <div class="grid">
+    <figure><figcaption class="sh-body-sm">Type=Default</figcaption><div class="phone"><div class="page" aria-hidden="true"><p class="sh-title-lg">Matches</p><div class="block"><p class="sh-title-md">Priya Nair, 27</p><p class="sh-body-sm">Kochi · Hindu · 5′ 4″</p></div><div class="block"><p class="sh-title-md">Ananya Kulkarni, 29</p><p class="sh-body-sm">Pune · Marathi · 5′ 6″</p></div><div class="block"><p class="sh-title-md">Riya Sharma, 26</p><p class="sh-body-sm">Delhi · Punjabi · 5′ 3″</p></div><div class="block"><p class="sh-title-md">Sneha Patil, 28</p><p class="sh-body-sm">Nashik · Marathi · 5′ 5″</p></div></div><div class="sh-bottom-sheet__scrim" aria-hidden="true"></div><div class="centre"><section class="sh-dialog" role="dialog" aria-modal="true" aria-labelledby="d5-title" aria-describedby="d5-body"><div class="sh-dialog__text"><h2 class="sh-dialog__title sh-heading-sm" id="d5-title">Send interest to Priya?</h2><p class="sh-dialog__body sh-body-md" id="d5-body">She will be notified and can accept to start a conversation.</p></div><div class="sh-dialog__actions"><button class="sh-button sh-button--secondary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Cancel</span></span></button><button class="sh-button sh-button--primary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Send interest</span></span></button></div><button class="sh-dialog__close sh-icon-button sh-icon-button--ghost sh-icon-button--sm" type="button" aria-label="Close"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button></section></div></div></figure>
+    <figure><figcaption class="sh-body-sm">Type=Destructive</figcaption><div class="phone"><div class="page" aria-hidden="true"><p class="sh-title-lg">Matches</p><div class="block"><p class="sh-title-md">Priya Nair, 27</p><p class="sh-body-sm">Kochi · Hindu · 5′ 4″</p></div><div class="block"><p class="sh-title-md">Ananya Kulkarni, 29</p><p class="sh-body-sm">Pune · Marathi · 5′ 6″</p></div><div class="block"><p class="sh-title-md">Riya Sharma, 26</p><p class="sh-body-sm">Delhi · Punjabi · 5′ 3″</p></div><div class="block"><p class="sh-title-md">Sneha Patil, 28</p><p class="sh-body-sm">Nashik · Marathi · 5′ 5″</p></div></div><div class="sh-bottom-sheet__scrim" aria-hidden="true"></div><div class="centre"><section class="sh-dialog sh-dialog--destructive" role="alertdialog" aria-modal="true" aria-labelledby="d6-title" aria-describedby="d6-body"><div class="sh-dialog__text"><h2 class="sh-dialog__title sh-heading-sm" id="d6-title">Block Rohan?</h2><p class="sh-dialog__body sh-body-md" id="d6-body">He won't be able to see your profile or message you. You can unblock him in Settings.</p></div><div class="sh-dialog__actions"><button class="sh-button sh-button--secondary sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Cancel</span></span></button><button class="sh-button sh-semantic-button sh-semantic-button--error sh-button--md" type="button"><span class="sh-button__text"><span class="sh-button__label sh-button-md">Block</span></span></button></div><button class="sh-dialog__close sh-icon-button sh-icon-button--ghost sh-icon-button--sm" type="button" aria-label="Close"><span class="sh-icon-button__icon sh-icon" style="--icon:url(../../../icons/line/close.svg)" aria-hidden="true"></span></button></section></div></div></figure>
+  </div>
+</body>
+</html>

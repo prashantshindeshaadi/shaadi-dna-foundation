@@ -1,0 +1,84 @@
+/*
+ * sh-dialog — web (HTML5 + CSS)
+ * Spec: ../sh-dialog.md · Figma node 2718:41832 (Type Default / Destructive = 2 variants)
+ *
+ * Needs, loaded once per page, before this file:
+ *   dist/css/tokens.css · dist/sh-typo-kit/developer/web/sh-typo.css · components/sh-icon/web/sh-icon.css ·
+ *   components/sh-button/web/sh-button.css (actions) · components/sh-semantic-button/web/sh-semantic-button.css
+ *   (Destructive primary) · components/sh-icon-button/web/sh-icon-button.css (Close)
+ *
+ *   <section class="sh-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-body">
+ *     <div class="sh-dialog__text">
+ *       <h2 class="sh-dialog__title sh-heading-sm" id="dialog-title">Send interest to Priya?</h2>
+ *       <p class="sh-dialog__body sh-body-md" id="dialog-body">She will be notified and can accept to start a conversation.</p>
+ *     </div>
+ *     <div class="sh-dialog__actions">
+ *       <button class="sh-button sh-button--secondary sh-button--md" type="button">…Cancel…</button>       Secondary action
+ *       <button class="sh-button sh-button--primary sh-button--md" type="button">…Send interest…</button>  Primary action
+ *     </div>
+ *     <button class="sh-dialog__close sh-icon-button sh-icon-button--ghost sh-icon-button--sm" type="button" aria-label="Close">
+ *       <span class="sh-icon-button__icon sh-icon" style="--icon:url(icons/line/close.svg)" aria-hidden="true"></span>
+ *     </button>
+ *   </section>
+ *
+ * Type        (none) Default: primary is sh-button Primary Medium.
+ *             --destructive: primary is red, sh-button--md + sh-semantic-button sh-semantic-button--error (Solid);
+ *             use role="alertdialog". The root modifier is a hook only: the look lives in the primary button.
+ * Show close  include or leave out __close (sh-icon-button Ghost Small, top right).
+ * Actions     secondary then primary, side by side, each fills equally up to max 200, centred. Both sh-button Medium.
+ * Dim         a dialog sits over sh-bottom-sheet's scrim (.sh-bottom-sheet__scrim, needs sh-bottom-sheet.css), the one
+ *             dim in DNA; never build another. Centre the dialog in the viewport with page/margin on the sides.
+ * States      the dialog is not interactive; its buttons carry their own states. Focus moves in on open, is trapped,
+ *             Escape closes (not for Destructive confirmations if the app says so), focus returns on close (app code).
+ *
+ * Every value is a DNA token; composed values with no token of their own are marked "no token".
+ */
+
+.sh-dialog {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-24);
+  width: 100%;
+  margin: 0;
+  padding: var(--sh-space-padding-dialog);
+  border-radius: var(--sh-radius-xl);
+  background: var(--sh-background-default);
+  box-shadow: var(--sh-shadow-strong-x) var(--sh-shadow-strong-y) var(--sh-shadow-strong-blur)
+              var(--sh-shadow-strong-spread) var(--sh-shadow-strong-color);
+  color: var(--sh-text-primary);
+  font-family: var(--sh-typo-font-family-primary);
+}
+
+.sh-dialog__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sh-space-8);
+}
+.sh-dialog__title { margin: 0; color: var(--sh-text-primary); }
+.sh-dialog__body  { margin: 0; color: var(--sh-text-secondary); }
+
+/* With Close shown, the title keeps clear of it.
+   no token: Figma's clearance is unbound; it is the Small icon-button's size (sh-space/32) */
+.sh-dialog:has(> .sh-dialog__close) .sh-dialog__title { padding-right: var(--sh-space-32); }
+
+/* ---- Actions: side by side, fill equally up to max 200, centred --------------------------------------- */
+.sh-dialog__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--sh-space-12);
+}
+.sh-dialog__actions > .sh-button {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: calc(var(--sh-space-80) * 2 + var(--sh-space-40));   /* no token: max width 200 = 2 × space-80 + space-40 */
+}
+
+/* ---- Close: sh-icon-button Ghost Small, top right ----------------------------------------------------- */
+/* no token: Figma's Close position is unbound; inset sh-space/8 from the top and right edges */
+.sh-dialog__close {
+  position: absolute;
+  top: var(--sh-space-8);
+  right: var(--sh-space-8);
+}
