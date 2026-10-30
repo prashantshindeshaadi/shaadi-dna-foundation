@@ -3,12 +3,16 @@
 Catalog + Stories for the Shaadi DNA Foundation. It holds no tokens or component code:
 everything comes from `../shaadi-dna-foundation/`, so what you see here is what the repo ships.
 
-| Section | Shows | Source |
+It looks like a Shaadi app: a glass top bar (sh-translucent tokens + blur) with DNA tabs, and every
+control on the page is a DNA component (sh-tab-group, sh-segmented-control, sh-chip, sh-search, sh-card,
+sh-button). "Shaadi Vision" is only our internal name; the app shows "Shaadi DNA".
+
+| Tab | Shows | Source |
 |---|---|---|
-| Catalog · tokens | Colours (Light + Dark), gradients, text styles, spacing, radius, stroke, opacity, shadows | `dist/json/tokens.json`, `dist/css/tokens.css`, the sh-typo kit |
-| Catalog · icons | The whole sh-icon pack, by type | `icons/` |
-| Catalog · components | Every `sh-*` blueprint: purpose, variants, platforms with code, Figma and GitLab links, and the live web build when there is one | `dist/vision/catalog.json` (`tools/vision.py`), `components/*/web/` |
-| Stories | Phone screens per Jira story, assembled from the components' web code | `stories.json` |
+| Home | The whole foundation: colours (Light + Dark), gradients, text styles, spacing, radius, stroke, opacity, shadows, icons, plus component counts by status | `dist/json/tokens.json`, `dist/css/tokens.css`, the sh-typo kit, `icons/` |
+| Catalog | The Core components: status, platforms with code, Figma and GitLab links, live web build | `dist/vision/catalog.json` (`tools/vision.py`), `components/*/web/` |
+| Components | Everything else (full profile view, profile card, account, utility), same layout | same |
+| Stories | One card per Jira story; open one for its header, decisions, phone screens and the components it uses | `stories.json` |
 
 ## Run
 

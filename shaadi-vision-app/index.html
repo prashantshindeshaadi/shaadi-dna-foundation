@@ -1,36 +1,43 @@
 <!doctype html>
 <!--
-  Shaadi Vision App — web. Catalog (tokens, icons, components) + Stories (screens per Jira story).
-  Everything it shows comes from ../shaadi-dna-foundation: tokens.css, the type kit, the icon pack and each
-  component's web/ demo. Run `python3 shaadi-dna-foundation/tools/build.py` first, then serve the repo root:
+  Shaadi Vision App — web. Home (the foundation), Catalog (Core components), Components (everything else) and
+  Stories (screens per Jira story). Everything it shows comes from ../shaadi-dna-foundation, and the app's own
+  chrome is built from DNA components (sh-tab-group, sh-segmented-control, sh-chip, sh-search, sh-card, sh-button).
+  Run `python3 shaadi-dna-foundation/tools/build.py` first, then serve the repo root:
   `python3 -m http.server 8765` → http://localhost:8765/shaadi-vision-app/
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shaadi Vision</title>
+  <title>Shaadi DNA</title>
   <link rel="stylesheet" href="../shaadi-dna-foundation/dist/css/tokens.css">
   <link rel="stylesheet" href="../shaadi-dna-foundation/dist/sh-typo-kit/developer/web/sh-typo.css">
   <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-icon/web/sh-icon.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-indicator/web/sh-indicator.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-tab-item/web/sh-tab-item.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-tab-group/web/sh-tab-group.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-segmented-control/web/sh-segmented-control.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-chip/web/sh-chip.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-search/web/sh-search.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-card/web/sh-card.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-button/web/sh-button.css">
+  <link rel="stylesheet" href="../shaadi-dna-foundation/components/sh-text-link/web/sh-text-link.css">
   <link rel="stylesheet" href="vision.css">
 </head>
 <body>
-  <header class="vn-bar">
-    <a class="vn-brand" href="#/catalog">
-      <span class="sh-icon sh-icon--24 sh-icon--brand" data-icon="line/sparkles.svg" aria-hidden="true"></span>
-      <span class="sh-title-md">Shaadi Vision</span>
+  <header class="vn-bar vn-glass" id="bar">
+    <a class="vn-brand" href="#/home" aria-label="Shaadi DNA, home">
+      <span class="vn-brand__name sh-heading-sm">Shaadi DNA</span>
     </a>
-    <div class="vn-theme" role="radiogroup" aria-label="Theme">
-      <button type="button" class="vn-seg sh-button-sm" role="radio" data-theme-choice="system">System</button>
-      <button type="button" class="vn-seg sh-button-sm" role="radio" data-theme-choice="light">Light</button>
-      <button type="button" class="vn-seg sh-button-sm" role="radio" data-theme-choice="dark">Dark</button>
+    <nav class="vn-bar__tabs sh-tab-group" role="tablist" aria-label="Sections" id="tabs"></nav>
+    <div class="vn-bar__theme sh-segmented-control" role="radiogroup" aria-label="Theme">
+      <button class="sh-tab-item sh-tab-item--segmented" type="button" role="radio" data-theme-choice="system"><span class="sh-tab-item__label">Auto</span></button>
+      <button class="sh-tab-item sh-tab-item--segmented" type="button" role="radio" data-theme-choice="light"><span class="sh-tab-item__label">Light</span></button>
+      <button class="sh-tab-item sh-tab-item--segmented" type="button" role="radio" data-theme-choice="dark"><span class="sh-tab-item__label">Dark</span></button>
     </div>
   </header>
-  <div class="vn-layout">
-    <nav class="vn-nav" id="nav" aria-label="Sections"></nav>
-    <main class="vn-main" id="main" tabindex="-1"></main>
-  </div>
+  <main class="vn-main" id="main" tabindex="-1"></main>
   <script src="vision.js"></script>
 </body>
 </html>

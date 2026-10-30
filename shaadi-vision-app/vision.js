@@ -1,11 +1,11 @@
 /*
- * Shaadi Vision App — Catalog + Stories, rendered from the Shaadi DNA Foundation.
+ * Shaadi Vision App — Home (foundation), Catalog (Core components), Components (everything else), Stories.
  *
  * Data:  ../shaadi-dna-foundation/dist/json/tokens.json   (tools/build.py)
  *        ../shaadi-dna-foundation/dist/vision/catalog.json (tools/vision.py, run by build.py)
  *        ../shaadi-dna-foundation/dist/sh-typo-kit/developer/web/sh-typo.css (text style names)
  *        stories.json                                      (this folder, one entry per Jira story)
- * Routes: #/catalog · #/catalog/<page> · #/catalog/components/<sh-name> · #/stories/<JIRA-ID>
+ * Routes: #/home · #/catalog[/<sh-name>] · #/components[/<sh-name>] · #/stories[/<JIRA-ID>]
  */
 (() => {
   "use strict";
@@ -14,7 +14,13 @@
   const GITLAB = "https://gitlab.com/shaadi/shaadi-app/ai/vision/-/blob/main/shaadi-dna-foundation/";
   const THEME_KEY = "vn-theme";
 
-  const TOKEN_PAGES = [
+  const TABS = [
+    { id: "home", label: "Home" },
+    { id: "catalog", label: "Catalog" },
+    { id: "components", label: "Components" },
+    { id: "stories", label: "Stories" },
+  ];
+  const FOUNDATION_SECTIONS = [
     { id: "colours", title: "Colours" },
     { id: "gradients", title: "Gradients" },
     { id: "typography", title: "Typography" },
@@ -25,20 +31,20 @@
     { id: "shadows", title: "Shadows" },
     { id: "icons", title: "Icons" },
   ];
-
-  const state = { tokens: {}, catalog: { components: [], icons: {} }, stories: [], typo: [] };
-  const ui = { compQuery: "", compWebOnly: false, compStatus: "all", iconKind: "line", iconQuery: "" };
-
   // Component life (FOUNDATION.md §8). Colours are §4.2 soft pairs; the word itself is the non-colour cue.
   const STATUS = {
     "draft": { label: "Draft", hint: "Still being designed in Figma" },
-    "proposed": { label: "Proposed", hint: "Ready for dev: blueprint and draft code in this repo" },
+    "proposed": { label: "Proposed", hint: "Ready for dev: blueprint and draft code in the repo" },
     "in-refinement": { label: "In refinement", hint: "A developer is building it properly" },
     "core": { label: "Core", hint: "Released in the developers' library, Figma aligned" },
   };
 
+  const state = { tokens: {}, catalog: { components: [], icons: {} }, stories: [], typo: [] };
+  const ui = { query: "", webOnly: false, status: "all", iconKind: "line", iconQuery: "" };
+
   const $main = document.getElementById("main");
-  const $nav = document.getElementById("nav");
+  const $tabs = document.getElementById("tabs");
+  const $bar = document.getElementById("bar");
 
   // ---------- helpers ----------
 
@@ -53,7 +59,14 @@
   const px = (t) => parseFloat((t.values || {}).Value) || 0;
   // Absolute URL: a url() inside the --icon custom property resolves against sh-icon.css, not this page.
   const iconUrl = (path) => new URL(`${FOUNDATION}icons/${path}`, location.href).href;
-  const icon = (path, size = 16) => `<span class="sh-icon sh-icon--${size}" style="--icon:url(${iconUrl(path)})" aria-hidden="true"></span>`;
+  const icon = (path, size = 16, cls = "") => `<span class="sh-icon sh-icon--${size} ${cls}" style="--icon:url(${iconUrl(path)})" aria-hidden="true"></span>`;
+  const isCore = (c) => c.group === "Core";
+  const inTab = (tab) => (tab === "catalog" ? isCore : (c) => !isCore(c));
+  const card = (inner, type = "elevated") => `<section class="sh-card sh-card--${type}"><div class="sh-card__content">${inner}</div></section>`;
+  const statusBadge = (c) => `<span class="vn-status vn-status--${esc(c.status)} sh-support-label" title="${esc(STATUS[c.status].hint)}${c.statusSet ? "" : " (default)"}">${esc(STATUS[c.status].label)}</span>`;
+  const chip = (label, attrs, pressed) => `<button class="sh-chip" type="button" aria-pressed="${pressed}" ${attrs}><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">${label}</span></span></button>`;
+  const button = (href, label, iconPath, type = "secondary") => `<a class="sh-button sh-button--${type} sh-button--md" href="${esc(href)}" target="_blank" rel="noopener">${icon(iconPath, 16, "sh-button__icon")}<span class="sh-button__text"><span class="sh-button__label sh-button-md">${esc(label)}</span></span></a>`;
+  const head = (title, text) => `<div class="vn-head"><h1 class="sh-heading-lg">${esc(title)}</h1>${text ? `<p class="sh-body-md">${text}</p>` : ""}</div>`;
 
   async function loadJSON(url) {
     const r = await fetch(url);
@@ -63,114 +76,93 @@
 
   // ---------- theme ----------
 
-  function currentTheme() {
-    try { return localStorage.getItem(THEME_KEY) || "system"; } catch { return "system"; }
-  }
+  function currentTheme() { try { return localStorage.getItem(THEME_KEY) || "system"; } catch { return "system"; } }
   function effectiveTheme() {
     const t = currentTheme();
-    if (t !== "system") return t;
-    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return t !== "system" ? t : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
   }
+  function themeFrame(frame) { try { frame.contentDocument.documentElement.dataset.theme = effectiveTheme(); } catch { /* not loaded */ } }
   function applyTheme(choice) {
     try { localStorage.setItem(THEME_KEY, choice); } catch { /* private window */ }
     const root = document.documentElement;
     if (choice === "system") root.removeAttribute("data-theme"); else root.dataset.theme = choice;
-    document.querySelectorAll("[data-theme-choice]").forEach((b) => b.setAttribute("aria-checked", String(b.dataset.themeChoice === choice)));
+    document.querySelectorAll("[data-theme-choice]").forEach((b) => {
+      const on = b.dataset.themeChoice === choice;
+      b.setAttribute("aria-checked", String(on));
+      b.setAttribute("aria-selected", String(on));
+      b.querySelector(".sh-tab-item__label").className = `sh-tab-item__label ${on ? "sh-button-md" : "sh-body-md"}`;
+    });
     document.querySelectorAll("iframe").forEach(themeFrame);
-  }
-  function themeFrame(frame) {
-    try { frame.contentDocument.documentElement.dataset.theme = effectiveTheme(); } catch { /* not loaded yet */ }
   }
   document.querySelectorAll("[data-theme-choice]").forEach((b) => b.addEventListener("click", () => applyTheme(b.dataset.themeChoice)));
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => applyTheme(currentTheme()));
 
-  // ---------- nav ----------
+  // ---------- tabs ----------
 
-  function renderNav(route) {
-    const link = (href, label, count) => {
-      const target = href.slice(2);
-      const current = route === target || (target !== "catalog" && route.startsWith(target + "/"));
-      return `<a class="vn-nav__item sh-body-md" href="${href}"${current ? ' aria-current="page"' : ""}><span>${esc(label)}</span>${count != null ? `<span class="vn-nav__count sh-support-meta">${count}</span>` : ""}</a>`;
-    };
-    $nav.innerHTML = [
-      `<p class="vn-nav__group sh-support-label">Catalog</p>`,
-      link("#/catalog", "Overview"),
-      ...TOKEN_PAGES.map((p) => link(`#/catalog/${p.id}`, p.title)),
-      link("#/catalog/components", "Components", state.catalog.components.length),
-      `<p class="vn-nav__group sh-support-label">Stories</p>`,
-      ...state.stories.map((s) => link(`#/stories/${s.id}`, `${s.id} · ${s.title}`)),
-    ].join("");
+  function renderTabs(tab) {
+    $tabs.innerHTML = TABS.map((t) => {
+      const on = t.id === tab;
+      return `<a class="sh-tab-item" href="#/${t.id}" role="tab" aria-selected="${on}"${on ? ' aria-current="page"' : ""}><span class="sh-tab-item__label sh-title-md">${t.label}</span></a>`;
+    }).join("");
   }
 
-  function head(title, text) {
-    return `<div class="vn-head"><h1 class="sh-heading-lg">${esc(title)}</h1>${text ? `<p class="sh-body-md">${text}</p>` : ""}</div>`;
-  }
+  // ---------- Home: the foundation ----------
 
-  // ---------- catalog: overview ----------
-
-  function pageOverview() {
+  function pageHome() {
     const comps = state.catalog.components;
     const nIcons = Object.values(state.catalog.icons).reduce((n, list) => n + list.length, 0);
-    const stat = (href, n, label) => `<a class="vn-card" href="${href}"><span class="sh-display vn-stat">${n}</span><span class="sh-body-md vn-muted">${label}</span></a>`;
-    return head("Shaadi Vision", "Everything here is drawn live from the Shaadi DNA Foundation: Figma → foundation → this app. If it looks wrong here, it's wrong in the repo.") +
+    const stat = (n, label, href) => card(`<a class="vn-comp__name sh-display vn-stat" href="${href}">${n}</a><span class="sh-body-md vn-muted">${label}</span>`);
+    const sections = FOUNDATION_SECTIONS.map((s) => `<section class="vn-section" id="f-${s.id}"><h2 class="sh-heading-md">${s.title}</h2>${FOUNDATION_PAGES[s.id]()}</section>`).join("");
+    return head("Shaadi DNA Foundation", "Every token, text style and icon in the Shaadi design system, drawn live from the repo. Change it in Figma, sync, and it changes here.") +
       `<div class="vn-stats">
-        ${stat("#/catalog/colours", Object.keys(state.tokens).length, "Tokens")}
-        ${stat("#/catalog/components", comps.length, "Components")}
-        ${stat("#/catalog/components", comps.filter((c) => c.demo).length, "With web code")}
-        ${stat("#/catalog/icons", nIcons, "Icons")}
-        ${stat(state.stories[0] ? `#/stories/${state.stories[0].id}` : "#/catalog", state.stories.length, "Stories")}
+        ${stat(Object.keys(state.tokens).length, "Tokens", "#/home")}
+        ${stat(comps.filter(isCore).length, "Core components", "#/catalog")}
+        ${stat(comps.filter((c) => !isCore(c)).length, "Other components", "#/components")}
+        ${stat(comps.filter((c) => c.demo).length, "With web code", "#/catalog")}
+        ${stat(nIcons, "Icons", "#/home")}
+        ${stat(state.stories.length, "Stories", "#/stories")}
       </div>
-      <section class="vn-section"><h2 class="sh-title-lg">Component status</h2><div class="vn-stats">${
-        Object.entries(STATUS).map(([id, s]) => `<a class="vn-card" href="#/catalog/components" data-go-status="${id}">
-          <span class="sh-display vn-stat">${comps.filter((c) => c.status === id).length}</span>
-          <span class="vn-status vn-status--${id} sh-support-label">${s.label}</span>
-          <span class="sh-body-sm vn-muted">${s.hint}</span></a>`).join("")}</div></section>`;
+      <section class="vn-section"><h2 class="sh-heading-md">Component status</h2><p class="sh-body-md">Draft → Proposed → In refinement → Core.</p>
+        <div class="vn-stats">${Object.entries(STATUS).map(([id, s]) => card(
+          `<span class="sh-display vn-stat">${comps.filter((c) => c.status === id).length}</span><span class="vn-status vn-status--${id} sh-support-label">${s.label}</span><span class="sh-body-sm vn-muted">${s.hint}</span>`)).join("")}</div>
+      </section>
+      <nav class="vn-sub vn-glass" aria-label="Foundation sections" id="sub">${FOUNDATION_SECTIONS.map((s, i) => chip(s.title, `data-jump="${s.id}"`, i === 0)).join("")}</nav>
+      ${sections}`;
   }
 
-  // ---------- catalog: tokens ----------
-
-  function pageColours() {
+  function secColours() {
     const groups = {};
     for (const [key, t] of tokensOf("sh-color-common/", "color")) (groups[key.split("/")[1]] ||= []).push([key, t]);
     groups.translucent = tokensOf("sh-translucent/", "color");
     const swatch = ([key, t]) => {
       const v = t.values || {};
       const half = (mode) => `<span class="vn-half vn-checker"${mode === "Dark" ? ' data-theme="dark"' : ""}><span class="vn-paint" style="background:${esc(v[mode])}"></span><span class="vn-chip-label sh-support-micro">${mode}</span></span>`;
-      const chip = "Value" in v
+      const swatchChip = "Value" in v
         ? `<div class="vn-swatch__chip vn-swatch__chip--one"><span class="vn-half vn-checker"><span class="vn-paint" style="background:var(${t.css})"></span></span></div>`
         : `<div class="vn-swatch__chip">${half("Light")}${half("Dark")}</div>`;
-      return `<div class="vn-card vn-swatch">${chip}<div class="vn-swatch__body">
+      return `<section class="sh-card vn-swatch">${swatchChip}<div class="vn-swatch__body">
         <span class="sh-title-sm">${esc(key.split("/").slice(1).join("/"))}</span>
         <span class="vn-code sh-support-meta">var(${esc(t.css)})</span>
         <span class="sh-support-meta vn-muted">${esc(valueText(t))}</span>
-        <span class="sh-body-sm vn-muted">${esc(purpose(t))}</span></div></div>`;
+        <span class="sh-body-sm vn-muted">${esc(purpose(t))}</span></div></section>`;
     };
-    const html = Object.entries(groups).map(([g, list]) =>
-      `<section class="vn-section"><h2 class="sh-title-lg">${esc(g)}</h2><div class="vn-grid">${list.map(swatch).join("")}</div></section>`).join("");
-    return head("Colours", "Every colour token, Light and Dark side by side, painted with the values the build ships (dist/json/tokens.json).") + html;
+    return Object.entries(groups).map(([g, list]) => `<h3 class="sh-title-lg" style="margin:var(--sh-space-24) 0 var(--sh-space-12)">${esc(g)}</h3><div class="vn-grid">${list.map(swatch).join("")}</div>`).join("");
   }
 
-  function pageGradients() {
-    const cards = tokensOf("sh-gradient/").map(([key, t]) => `<div class="vn-card vn-swatch">
+  function secGradients() {
+    return `<div class="vn-grid">${tokensOf("sh-gradient/").map(([key, t]) => `<section class="sh-card vn-swatch">
       <div class="vn-swatch__chip vn-swatch__chip--one" style="background:var(${t.css})"></div>
       <div class="vn-swatch__body"><span class="sh-title-sm">${esc(key.replace("sh-gradient/", ""))}</span>
-      <span class="vn-code sh-support-meta">var(${esc(t.css)})</span>
-      <span class="sh-body-sm vn-muted">${esc(purpose(t))}</span></div></div>`).join("");
-    return head("Gradients", "The sh-gradient styles, painted from their CSS variables. They follow the theme.") + `<div class="vn-grid">${cards}</div>`;
+      <span class="vn-code sh-support-meta">var(${esc(t.css)})</span><span class="sh-body-sm vn-muted">${esc(purpose(t))}</span></div></section>`).join("")}</div>`;
   }
 
-  function pageTypography() {
-    const groups = {};
-    for (const cls of state.typo) (groups[cls.replace(/^sh-/, "").split("-")[0]] ||= []).push(cls);
-    const rows = Object.entries(groups).map(([g, list]) => `<section class="vn-section"><h2 class="sh-title-lg">${esc(g)}</h2><div class="vn-rows">${
-      list.map((cls) => `<div class="vn-row"><div class="vn-row__meta"><span class="sh-title-sm">.${esc(cls)}</span><span class="vn-code sh-support-meta" data-type-metrics="${esc(cls)}"></span></div>
-        <div class="vn-type-sample ${esc(cls)}">Find someone who gets you</div></div>`).join("")}</div></section>`).join("");
-    return head("Typography", "The sh-typo kit's text styles (Lexend-SH). Size, line height and weight are read from the rendered sample.") + rows;
+  function secTypography() {
+    return `<div class="vn-rows">${state.typo.map((cls) => `<div class="vn-row"><div class="vn-row__meta"><span class="sh-title-sm">.${esc(cls)}</span><span class="vn-code sh-support-meta" data-type-metrics></span></div>
+      <div class="vn-type-sample ${esc(cls)}">Find someone who gets you</div></div>`).join("")}</div>`;
   }
   function fillTypeMetrics() {
     document.querySelectorAll("[data-type-metrics]").forEach((el) => {
-      const sample = el.closest(".vn-row").querySelector(".vn-type-sample");
-      const cs = getComputedStyle(sample);
+      const cs = getComputedStyle(el.closest(".vn-row").querySelector(".vn-type-sample"));
       el.textContent = `${cs.fontSize} / ${cs.lineHeight} · ${cs.fontWeight}`;
     });
   }
@@ -182,36 +174,22 @@
       <span class="vn-code sh-support-meta">var(${esc(t.css)})</span><span class="sh-body-sm vn-muted">${esc(purpose(t))}</span></div>
       <div>${sample(t)}</div></div>`).join("")}</div>`;
   }
-  const pageSpacing = () => head("Spacing", "Primitive steps and the semantic roles built on them.") +
-    tokenRows("sh-space/", (t) => `<div class="vn-bar-sample" style="width:var(${t.css})"></div>`);
-  const pageRadius = () => head("Radius", "Corner radius scale and roles. In Figma every radius also uses 60% corner smoothing.") +
-    tokenRows("sh-radius/", (t) => `<div class="vn-radius-sample" style="border-radius:var(${t.css})"></div>`);
-  const pageStroke = () => head("Stroke", "Border widths.") +
-    tokenRows("sh-stroke/", (t) => `<div class="vn-stroke-sample" style="border-top-width:var(${t.css})"></div>`);
-  const pageOpacity = () => head("Opacity", "Layer opacities: hidden to full.") +
-    `<div class="vn-checker" style="padding:var(--sh-space-16);border-radius:var(--sh-radius-card)">` +
-    tokenRows("sh-opacity/", (t) => `<div class="vn-opacity-sample" style="opacity:var(${t.css})"></div>`) + `</div>`;
-
-  function pageShadows() {
+  function secShadows() {
     const names = [...new Set(tokensOf("sh-shadow/").map(([k]) => k.split("/")[1]))];
-    const rows = names.map((n) => {
+    return `<div class="vn-rows">${names.map((n) => {
       const v = (p) => `var(--sh-shadow-${n}-${p})`;
       const color = state.tokens[`sh-shadow/${n}/color`];
       return `<div class="vn-row"><div class="vn-row__meta"><span class="sh-title-sm">${esc(n)}</span>
-        <span class="vn-code sh-support-meta">--sh-shadow-${esc(n)}-{x,y,blur,spread,color}</span>
-        <span class="sh-body-sm vn-muted">${esc(color ? purpose(color) : "")}</span></div>
+        <span class="vn-code sh-support-meta">--sh-shadow-${esc(n)}-{x,y,blur,spread,color}</span><span class="sh-body-sm vn-muted">${esc(color ? purpose(color) : "")}</span></div>
         <div class="vn-shadow-stage"><div class="vn-shadow-sample" style="box-shadow:${v("x")} ${v("y")} ${v("blur")} ${v("spread")} ${v("color")}"></div></div></div>`;
-    }).join("");
-    return head("Shadows", "Each shadow is five tokens: x, y, blur, spread and colour.") + `<div class="vn-rows">${rows}</div>`;
+    }).join("")}</div>`;
   }
-
-  function pageIcons() {
+  function secIcons() {
     const kinds = Object.keys(state.catalog.icons);
     if (!kinds.includes(ui.iconKind)) ui.iconKind = kinds[0];
-    const tabs = kinds.map((k) => `<button type="button" class="vn-tab sh-button-sm" role="tab" aria-selected="${k === ui.iconKind}" data-icon-kind="${esc(k)}">${esc(k)} · ${state.catalog.icons[k].length}</button>`).join("");
-    return head("Icons", "The sh-icon pack (Hugeicons Rounded). Line and filled icons take the text colour; pictograms, brand marks and tags keep their own.") +
-      `<div class="vn-tools"><input class="vn-search sh-body-md" type="search" placeholder="Search icons" aria-label="Search icons" value="${esc(ui.iconQuery)}" data-icon-search></div>
-       <div class="vn-tabs" role="tablist">${tabs}</div><div class="vn-icons" data-icon-grid></div>`;
+    return `<div class="vn-tools">${search("Search icons", ui.iconQuery, "data-icon-search")}</div>
+      <div class="vn-chips" role="group" aria-label="Icon type">${kinds.map((k) => chip(`${esc(k)} · ${state.catalog.icons[k].length}`, `data-icon-kind="${esc(k)}"`, k === ui.iconKind)).join("")}</div>
+      <div class="vn-icons" data-icon-grid></div>`;
   }
   function renderIconGrid() {
     const grid = document.querySelector("[data-icon-grid]");
@@ -225,10 +203,25 @@
     }).join("") || `<p class="vn-muted sh-body-md">No icon matches.</p>`;
   }
 
-  // ---------- catalog: components ----------
+  const FOUNDATION_PAGES = {
+    colours: secColours,
+    gradients: secGradients,
+    typography: secTypography,
+    spacing: () => tokenRows("sh-space/", (t) => `<div class="vn-bar-sample" style="width:var(${t.css})"></div>`),
+    radius: () => tokenRows("sh-radius/", (t) => `<div class="vn-radius-sample" style="border-radius:var(${t.css})"></div>`),
+    stroke: () => tokenRows("sh-stroke/", (t) => `<div class="vn-stroke-sample" style="border-top-width:var(${t.css})"></div>`),
+    opacity: () => `<div class="vn-checker" style="padding:var(--sh-space-16);border-radius:var(--sh-radius-card)">${tokenRows("sh-opacity/", (t) => `<div class="vn-opacity-sample" style="opacity:var(${t.css})"></div>`)}</div>`,
+    shadows: secShadows,
+    icons: secIcons,
+  };
 
-  const statusBadge = (c) => `<span class="vn-status vn-status--${esc(c.status)} sh-support-label" title="${esc(STATUS[c.status].hint)}${c.statusSet ? "" : " (default)"}">${esc(STATUS[c.status].label)}</span>`;
+  // ---------- Catalog / Components ----------
 
+  function search(placeholder, value, attr) {
+    return `<label class="sh-search">${icon("line/search.svg", 16, "sh-search__icon")}
+      <input class="sh-search__field sh-body-md" type="search" placeholder="${esc(placeholder)}" aria-label="${esc(placeholder)}" value="${esc(value)}" ${attr}>
+      <button class="sh-search__clear" type="button" aria-label="Clear search" data-clear>${icon("line/close.svg", 16, "sh-search__icon")}</button></label>`;
+  }
   function platformPills(c) {
     return ["Web", "Compose", "SwiftUI"].map((p) => {
       const on = c.platforms.includes(p);
@@ -236,59 +229,74 @@
     }).join("");
   }
 
-  function pageComponents() {
-    return head("Components", "Every sh-* component in the foundation, grouped as in Figma. The badge is where each one is: Draft → Proposed → In refinement → Core.") +
-      `<div class="vn-tools">
-        <input class="vn-search sh-body-md" type="search" placeholder="Search name, purpose or keyword" aria-label="Search components" value="${esc(ui.compQuery)}" data-comp-search>
-        <label class="vn-check sh-body-md"><input type="checkbox" data-comp-web${ui.compWebOnly ? " checked" : ""}> Has web code</label>
-      </div><div class="vn-tabs" role="tablist" aria-label="Status" data-status-tabs></div><div data-comp-list></div>`;
+  function pageList(tab) {
+    const title = tab === "catalog" ? "Catalog" : "Components";
+    const text = tab === "catalog"
+      ? "The Core components: the building blocks every Shaadi screen is made of."
+      : "Feature components from the full profile view, profile card, account and utility pages, built from the Core ones.";
+    return head(title, text) +
+      `<div class="vn-tools">${search("Search name, purpose or keyword", ui.query, "data-comp-search")}
+        ${chip("Has web code", "data-web-only", ui.webOnly)}</div>
+       <div class="vn-chips" role="group" aria-label="Status" data-status-chips></div>
+       <div data-comp-list data-tab="${tab}"></div>`;
   }
   function renderComponentList() {
     const box = document.querySelector("[data-comp-list]");
     if (!box) return;
-    const q = ui.compQuery.trim().toLowerCase();
-    const match = (c) => (!ui.compWebOnly || c.demo) && (!q || [c.name, c.purpose, ...c.keywords].join(" ").toLowerCase().includes(q));
-    const hit = (c) => match(c) && (ui.compStatus === "all" || c.status === ui.compStatus);
-    const tabs = document.querySelector("[data-status-tabs]");
+    const tab = box.dataset.tab;
+    const q = ui.query.trim().toLowerCase();
+    const match = (c) => inTab(tab)(c) && (!ui.webOnly || c.demo) && (!q || [c.name, c.purpose, ...c.keywords].join(" ").toLowerCase().includes(q));
     const counted = state.catalog.components.filter(match);
-    tabs.innerHTML = [["all", "All"], ...Object.entries(STATUS).map(([id, s]) => [id, s.label])].map(([id, label]) =>
-      `<button type="button" class="vn-tab sh-button-sm" role="tab" aria-selected="${ui.compStatus === id}" data-status="${id}">${label} · ${id === "all" ? counted.length : counted.filter((c) => c.status === id).length}</button>`).join("");
+    document.querySelector("[data-status-chips]").innerHTML = [["all", "All"], ...Object.entries(STATUS).map(([id, s]) => [id, s.label])]
+      .map(([id, label]) => chip(`${label} · ${id === "all" ? counted.length : counted.filter((c) => c.status === id).length}`, `data-status="${id}"`, ui.status === id)).join("");
+    const shown = counted.filter((c) => ui.status === "all" || c.status === ui.status);
     const groups = {};
-    for (const c of state.catalog.components.filter(hit)) (groups[c.group] ||= []).push(c);
-    const order = Object.keys(groups).sort((a, b) => (a === "Core" ? -1 : b === "Core" ? 1 : a.localeCompare(b)));
-    box.innerHTML = order.map((g) => `<section class="vn-section"><h2 class="sh-title-lg">${esc(g)} · ${groups[g].length}</h2><div class="vn-grid">${
-      groups[g].map((c) => `<a class="vn-card vn-comp" href="#/catalog/components/${esc(c.name)}">
-        <div class="vn-comp__top"><span class="sh-title-md">${esc(c.name)}</span>${statusBadge(c)}</div>
-        <p class="sh-body-sm">${esc(c.purpose || "No purpose line in the blueprint yet.")}</p>
-        <div class="vn-pills">${platformPills(c)}</div></a>`).join("")}</div></section>`).join("") ||
+    for (const c of shown) (groups[c.group.replace(/ \(migration, not yet core\)/, "")] ||= []).push(c);
+    box.innerHTML = Object.keys(groups).sort().map((g) => `<section class="vn-section"><h2 class="sh-title-lg">${esc(g)} · ${groups[g].length}</h2><div class="vn-grid">${
+      groups[g].map((c) => card(`<div class="vn-comp__top"><a class="vn-comp__name sh-title-md" href="#/${tab}/${esc(c.name)}">${esc(c.name)}</a>${statusBadge(c)}</div>
+        <p class="sh-body-sm vn-clamp">${esc(c.purpose || "No purpose line in the blueprint yet.")}</p>
+        <div class="vn-pills">${platformPills(c)}</div>`)).join("")}</div></section>`).join("") ||
       `<p class="vn-muted sh-body-md">No component matches.</p>`;
   }
 
-  function pageComponent(name) {
+  function pageComponent(tab, name) {
     const c = state.catalog.components.find((x) => x.name === name);
-    if (!c) return head("Not found", `No component named <code>${esc(name)}</code>. <a href="#/catalog/components">Back to components</a>.`);
+    const back = `<a class="vn-crumb sh-support-label" href="#/${tab}">← ${tab === "catalog" ? "Catalog" : "Components"}</a>`;
+    if (!c) return back + head("Not found", `No component named ${esc(name)}.`);
     const links = [
-      c.figma && `<a class="vn-link sh-button-md" href="${esc(c.figma)}" target="_blank" rel="noopener">${icon("line/link.svg")}Open in Figma</a>`,
-      `<a class="vn-link sh-button-md" href="${GITLAB}${esc(c.blueprint)}" target="_blank" rel="noopener">${icon("line/book.svg")}Blueprint on GitLab</a>`,
-      c.demo && `<a class="vn-link sh-button-md" href="${FOUNDATION}${esc(c.demo)}" target="_blank" rel="noopener">${icon("line/eye.svg")}Web demo, full page</a>`,
+      c.figma && button(c.figma, "Open in Figma", "line/link.svg"),
+      button(GITLAB + c.blueprint, "Blueprint on GitLab", "line/book.svg"),
+      c.demo && button(FOUNDATION + c.demo, "Web demo, full page", "line/eye.svg"),
     ].filter(Boolean).join("");
+    const extra = [c.statusSet ? "" : "default for its Figma page", c.owner && `owner ${esc(c.owner)}`, c.note && esc(c.note),
+      c.mr && `<a href="${esc(c.mr)}" target="_blank" rel="noopener">merge request</a>`].filter(Boolean).join(" · ");
     const demo = c.demo
       ? `<iframe class="vn-frame" title="${esc(c.name)} web demo" src="${FOUNDATION}${esc(c.demo)}" data-autosize></iframe>`
       : `<div class="vn-empty"><span class="sh-title-md">No web code yet</span><span class="sh-body-md">The blueprint is ready; the web build of ${esc(c.name)} hasn't been written. Platforms with code: ${esc(c.platforms.join(", ") || "none")}.</span></div>`;
-    return `<p class="sh-support-label vn-muted"><a href="#/catalog/components">Components</a> / ${esc(c.group)}</p>` +
-      head(c.name, esc(c.purpose)) +
+    return back + head(c.name, esc(c.purpose)) +
       `<div class="vn-pills">${statusBadge(c)}${platformPills(c)}<span class="vn-pill sh-support-meta">${c.variants} variants</span></div>
-       <p class="sh-body-sm vn-muted" style="margin-top:var(--sh-space-8)">${esc(STATUS[c.status].hint)}${c.statusSet ? "" : " · default for its Figma page, not set in components/status.json"}${c.owner ? ` · owner ${esc(c.owner)}` : ""}${c.note ? ` · ${esc(c.note)}` : ""}${c.mr ? ` · <a href="${esc(c.mr)}" target="_blank" rel="noopener">merge request</a>` : ""}</p>
+       <p class="sh-body-sm vn-muted" style="margin-top:var(--sh-space-8)">${esc(STATUS[c.status].hint)}${extra ? ` · ${extra}` : ""}</p>
        ${c.keywords.length ? `<div class="vn-pills" style="margin-top:var(--sh-space-8)">${c.keywords.map((k) => `<span class="vn-pill sh-support-meta">${esc(k)}</span>`).join("")}</div>` : ""}
        <div class="vn-links">${links}</div>
-       <section class="vn-section"><h2 class="sh-title-lg">Live web build</h2>${demo}</section>`;
+       <section class="vn-section"><h2 class="sh-heading-md">Live web build</h2>${demo}</section>`;
   }
 
-  // ---------- stories ----------
+  // ---------- Stories ----------
 
-  // A screen is assembled from blocks: either a DNA component picked out of its web/ demo page
-  // ({from, pick, count}), or a little layout HTML using DNA classes ({html}). Picked markup has its
-  // relative URLs made absolute, and the demo page's stylesheets come along.
+  const storyComponents = (s) => [...new Set(s.screens.flatMap((sc) => sc.blocks.filter((b) => b.from).map((b) => b.from.split("/").pop().replace(/\.html$/, ""))))];
+
+  function pageStories() {
+    return head("Stories", "Every Jira story with its screens, put together live from the components. Open one to see its details.") +
+      `<div class="vn-grid">${state.stories.map((s) => card(
+        `<div class="vn-comp__top"><span class="vn-pill vn-pill--on sh-support-label">${esc(s.id)}</span><span class="vn-pill sh-support-label">${esc(s.status || "")}</span></div>
+         <a class="vn-comp__name sh-heading-sm" href="#/stories/${esc(s.id)}">${esc(s.title)}</a>
+         <p class="sh-body-sm vn-clamp">${esc(s.summary)}</p>
+         <span class="sh-support-meta vn-muted">${s.screens.length} screens · ${storyComponents(s).length} components</span>`)).join("")}</div>`;
+  }
+
+  // A screen is assembled from blocks: a DNA component picked out of its web/ demo page ({from, pick, count, skip})
+  // or a little layout HTML using DNA classes ({html}). Picked markup has its relative URLs made absolute, and the
+  // demo page's stylesheets come along.
   async function buildScreen(screen) {
     const links = new Set();
     const parts = [];
@@ -314,13 +322,26 @@
 
   function pageStory(id) {
     const s = state.stories.find((x) => x.id === id);
-    if (!s) return head("Not found", `No story ${esc(id)} in stories.json.`);
-    const screens = s.screens.map((sc, i) => `<figure class="vn-screen" style="margin:0">
-      <div class="vn-phone"><iframe title="${esc(sc.name)}" data-screen="${i}"></iframe></div>
-      <figcaption><span class="sh-title-sm">${esc(sc.name)}</span>${sc.note ? `<br><span class="sh-body-sm vn-muted">${esc(sc.note)}</span>` : ""}</figcaption></figure>`).join("");
-    return `<p class="sh-support-label vn-muted">Story · ${esc(s.status || "")}</p>` + head(`${s.id} · ${s.title}`, esc(s.summary)) +
-      (s.decisions?.length ? `<div class="vn-pills">${s.decisions.map((d) => `<span class="vn-pill sh-support-meta">${esc(d)}</span>`).join("")}</div>` : "") +
-      `<section class="vn-section"><div class="vn-screens">${screens}</div></section>`;
+    const back = `<a class="vn-crumb sh-support-label" href="#/stories">← Stories</a>`;
+    if (!s) return back + head("Not found", `No story ${esc(id)} in stories.json.`);
+    const used = storyComponents(s);
+    const link = (name) => {
+      const c = state.catalog.components.find((x) => x.name === name);
+      return c ? `<a class="sh-chip" href="#/${isCore(c) ? "catalog" : "components"}/${esc(name)}"><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">${esc(name)}</span></span></a>` : "";
+    };
+    const fact = (n, label) => `<div class="vn-fact"><span class="sh-heading-md">${n}</span><span class="sh-support-label vn-muted">${label}</span></div>`;
+    return back +
+      `<header class="vn-story-head">
+        <div class="vn-story-head__tags"><span class="vn-pill vn-pill--on sh-support-label">${esc(s.id)}</span><span class="vn-pill sh-support-label">${esc(s.status || "")}</span></div>
+        <h1 class="sh-heading-lg">${esc(s.title)}</h1>
+        <p class="sh-body-md">${esc(s.summary)}</p>
+        <div class="vn-facts">${fact(s.screens.length, "Screens")}${fact(used.length, "Components")}${fact((s.decisions || []).length, "Decisions")}</div>
+      </header>
+      ${s.decisions?.length ? `<section class="vn-section"><h2 class="sh-heading-md">Decisions</h2><div class="vn-chips">${s.decisions.map((d) => `<span class="sh-chip sh-chip--info"><span class="sh-chip__content"><span class="sh-chip__label sh-body-md">${esc(d)}</span></span></span>`).join("")}</div></section>` : ""}
+      <section class="vn-section"><h2 class="sh-heading-md">Screens</h2><div class="vn-screens">${s.screens.map((sc, i) => `<figure class="vn-screen">
+        <div class="vn-phone"><iframe title="${esc(sc.name)}" data-screen="${i}"></iframe></div>
+        <figcaption><span class="sh-title-sm">${esc(sc.name)}</span>${sc.note ? `<br><span class="sh-body-sm vn-muted">${esc(sc.note)}</span>` : ""}</figcaption></figure>`).join("")}</div></section>
+      <section class="vn-section"><h2 class="sh-heading-md">Components used</h2><div class="vn-chips">${used.map(link).join("")}</div></section>`;
   }
   async function fillStoryScreens(id) {
     const s = state.stories.find((x) => x.id === id);
@@ -335,54 +356,63 @@
 
   function autosize(frame) {
     const fit = () => { try { frame.style.height = frame.contentDocument.documentElement.scrollHeight + "px"; } catch { /* cross-origin */ } };
-    frame.addEventListener("load", () => {
-      themeFrame(frame); fit();
-      try { new ResizeObserver(fit).observe(frame.contentDocument.body); } catch { /* old browser */ }
-    });
+    frame.addEventListener("load", () => { themeFrame(frame); fit(); try { new ResizeObserver(fit).observe(frame.contentDocument.body); } catch { /* old browser */ } });
   }
 
-  function route() {
-    const path = (location.hash.replace(/^#\/?/, "") || "catalog").replace(/\/$/, "");
-    const [section, page, item] = path.split("/");
-    renderNav(path);
-    $nav.querySelector("[aria-current]")?.scrollIntoView({ block: "nearest", inline: "center" });
-    let html;
-    if (section === "stories") html = pageStory(page);
-    else if (!page) html = pageOverview();
-    else if (page === "components") html = item ? pageComponent(decodeURIComponent(item)) : pageComponents();
-    else html = ({ colours: pageColours, gradients: pageGradients, typography: pageTypography, spacing: pageSpacing, radius: pageRadius,
-                   stroke: pageStroke, opacity: pageOpacity, shadows: pageShadows, icons: pageIcons }[page] || pageOverview)();
-    $main.innerHTML = html;
-    $main.scrollTop = 0; window.scrollTo(0, 0);
-    const h1 = (document.querySelector(".vn-head h1") || {}).textContent;
-    document.title = h1 && h1 !== "Shaadi Vision" ? `${h1} · Shaadi Vision` : "Shaadi Vision";
+  // Sticky offsets: the chip strip sits under the bar; anchors scroll clear of both.
+  function measure() {
+    document.documentElement.style.setProperty("--vn-bar-h", `${$bar.offsetHeight}px`);
+    const sub = document.getElementById("sub");
+    document.documentElement.style.setProperty("--vn-sub-h", `${sub ? sub.offsetHeight : 0}px`);
+  }
+  new ResizeObserver(measure).observe($bar);
 
-    if (page === "typography") document.fonts.ready.then(fillTypeMetrics);
-    if (page === "icons") renderIconGrid();
-    if (page === "components" && !item) renderComponentList();
-    if (section === "stories") fillStoryScreens(page);
+  function route() {
+    const [tab = "home", item] = (location.hash.replace(/^#\/?/, "") || "home").replace(/\/$/, "").split("/").map(decodeURIComponent);
+    const known = TABS.some((t) => t.id === tab) ? tab : "home";
+    renderTabs(known);
+    let html;
+    if (known === "home") html = pageHome();
+    else if (known === "stories") html = item ? pageStory(item) : pageStories();
+    else html = item ? pageComponent(known, item) : pageList(known);
+    $main.innerHTML = html;
+    window.scrollTo(0, 0);
+    const h1 = $main.querySelector("h1")?.textContent;
+    document.title = h1 && known !== "home" ? `${h1} · Shaadi DNA` : "Shaadi DNA";
+
+    if (known === "home") { renderIconGrid(); document.fonts.ready.then(fillTypeMetrics); measure(); }
+    if ((known === "catalog" || known === "components") && !item) renderComponentList();
+    if (known === "stories" && item) fillStoryScreens(item);
     document.querySelectorAll("iframe").forEach((f) => f.addEventListener("load", () => themeFrame(f)));
     document.querySelectorAll("iframe[data-autosize]").forEach(autosize);
   }
 
   $main.addEventListener("input", (e) => {
-    if (e.target.matches("[data-comp-search]")) { ui.compQuery = e.target.value; renderComponentList(); }
+    if (e.target.matches("[data-comp-search]")) { ui.query = e.target.value; renderComponentList(); }
     if (e.target.matches("[data-icon-search]")) { ui.iconQuery = e.target.value; renderIconGrid(); }
   });
-  $main.addEventListener("change", (e) => {
-    if (e.target.matches("[data-comp-web]")) { ui.compWebOnly = e.target.checked; renderComponentList(); }
-  });
   $main.addEventListener("click", (e) => {
-    const go = e.target.closest("[data-go-status]");
-    if (go) ui.compStatus = go.dataset.goStatus;
-    const st = e.target.closest("[data-status]");
-    if (st) { ui.compStatus = st.dataset.status; renderComponentList(); return; }
-    const tab = e.target.closest("[data-icon-kind]");
-    if (tab) { ui.iconKind = tab.dataset.iconKind; document.querySelectorAll("[data-icon-kind]").forEach((t) => t.setAttribute("aria-selected", String(t === tab))); renderIconGrid(); }
+    const t = (sel) => e.target.closest(sel);
+    if (t("[data-clear]")) {
+      const field = t("[data-clear]").closest(".sh-search").querySelector("input");
+      field.value = ""; field.dispatchEvent(new Event("input", { bubbles: true })); field.focus();
+    } else if (t("[data-web-only]")) {
+      ui.webOnly = !ui.webOnly; t("[data-web-only]").setAttribute("aria-pressed", String(ui.webOnly)); renderComponentList();
+    } else if (t("[data-status]")) {
+      ui.status = t("[data-status]").dataset.status; renderComponentList();
+    } else if (t("[data-icon-kind]")) {
+      const b = t("[data-icon-kind]");
+      ui.iconKind = b.dataset.iconKind;
+      document.querySelectorAll("[data-icon-kind]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      renderIconGrid();
+    } else if (t("[data-jump]")) {
+      const b = t("[data-jump]");
+      document.querySelectorAll("[data-jump]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      document.getElementById(`f-${b.dataset.jump}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
 
   async function start() {
-    document.querySelectorAll("[data-icon]").forEach((el) => el.style.setProperty("--icon", `url(${iconUrl(el.dataset.icon)})`));
     applyTheme(currentTheme());
     try {
       const [tokens, catalog, stories, typoCss] = await Promise.all([
